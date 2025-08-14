@@ -59,7 +59,7 @@ export function PDFLinks({ productName, links }: PDFLinksProps) {
               viewport={{ once: true }}
             >
               <Card className="h-full hover:shadow-lg transition-all duration-300 group">
-                <CardHeader className="pb-4">
+                <CardHeader className="pb-4 ">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
                       <FileText className="h-6 w-6 text-blue-600" />
@@ -71,7 +71,9 @@ export function PDFLinks({ productName, links }: PDFLinksProps) {
                     </div>
                   </div>
                   {link.description && (
-                    <p className="text-sm text-gray-600">{link.description}</p>
+                    <p className="text-sm min-h-12 text-gray-600">
+                      {link.description}
+                    </p>
                   )}
                 </CardHeader>
 

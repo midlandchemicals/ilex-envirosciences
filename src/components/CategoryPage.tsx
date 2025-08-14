@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
@@ -13,14 +14,13 @@ import {
   Droplets,
   FlaskConical,
 } from "lucide-react";
-import type { MenuItem, PageType, Product } from "../types";
+import type { MenuItem } from "../types";
 
 interface CategoryPageProps {
   category: MenuItem;
-  onPageChange: (page: PageType, item?: MenuItem, product?: Product) => void;
 }
 
-export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
+export function CategoryPage({ category }: CategoryPageProps) {
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -99,7 +99,6 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
   };
 
   const getProductImage = (productName: string) => {
-    // Return different images based on product type
     if (productName.toLowerCase().includes("cal")) {
       return "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop";
     } else if (productName.toLowerCase().includes("mag")) {
@@ -143,12 +142,18 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
                 {getCategoryDescription(category.link)}
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                  Browse Products
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                <Button
+                  size="lg"
+                  className="bg-blue-600 hover:bg-blue-700"
+                  asChild
+                >
+                  <Link to={`/${category.link}`}>
+                    Browse Products
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
-                <Button variant="outline" size="lg">
-                  Technical Information
+                <Button variant="outline" size="lg" asChild>
+                  <Link to="/product-guide">Technical Information</Link>
                 </Button>
               </div>
             </motion.div>
@@ -210,10 +215,12 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
                   <CardContent>
                     <Button
                       className="w-full group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-green-600 transition-all duration-300"
-                      onClick={() => onPageChange("product", category, product)}
+                      asChild
                     >
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      <Link to={`/${category.link}/${product.link}`}>
+                        Learn More
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -239,16 +246,17 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
             <Button
               size="lg"
               className="bg-white text-blue-600 hover:bg-gray-100"
-              onClick={() => onPageChange("contact")}
+              asChild
             >
-              Contact Our Experts
+              <Link to="/contact">Contact Our Experts</Link>
             </Button>
             <Button
               variant="outline"
               size="lg"
               className="border-white text-white hover:bg-white hover:text-blue-600"
+              asChild
             >
-              View Compatibility Chart
+              <Link to="/product-guide">View Compatibility Chart</Link>
             </Button>
           </div>
         </div>

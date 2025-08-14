@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Card, CardContent } from "./ui/card";
@@ -17,127 +18,115 @@ import {
   Mail,
   FileText,
 } from "lucide-react";
-import type { MenuItem, PageType, Product } from "../types";
+import type { MenuItem } from "../types";
 
 interface NavigationProps {
-  currentPage: PageType;
-  onPageChange: (page: PageType, item?: MenuItem, product?: Product) => void;
   mobileMenuOpen: boolean;
   setMobileMenuOpen: (open: boolean) => void;
 }
 
+const menuData: MenuItem[] = [
+  {
+    menu_item: "Products",
+    link: "products",
+    products: [
+      { product: "Phosphite Range", link: "phosphite-range" },
+      { product: "Foliar Nutrients", link: "foliar-range" },
+      { product: "Calcium Supplements", link: "calcium-range" },
+      { product: "Biostimulants", link: "biostimulants" },
+      { product: "Seed Treatments", link: "seed-treatments" },
+      { product: "Organic Range", link: "organic-range" },
+    ],
+  },
+  { menu_item: "About", link: "about" },
+  { menu_item: "Contact", link: "contact" },
+  { menu_item: "How to Buy", link: "how-to-buy" },
+];
+
+const productRanges = [
+  {
+    title: "The Ilex Phosphite Range",
+    link: "phosphite-range",
+    icon: <Beaker className="h-4 w-4" />,
+    products: [
+      { product: "Crop Rooter® Plus", link: "crop-rooter-plus" },
+      { product: "PK MAXX™ +", link: "pk-maxx" },
+      { product: "OilSeed Raiser™", link: "oilseed-raiser" },
+      { product: "CaPITAL™", link: "capital" },
+      { product: "Tensile™", link: "tensile" },
+      { product: "Beet Raiser™", link: "beet-raiser" },
+      { product: "Maniphos™", link: "maniphos" },
+      { product: "PK VEG™", link: "pk-veg" },
+    ],
+  },
+  {
+    title: "The Ilex Foliar Nutrient Range",
+    link: "foliar-range",
+    icon: <Sprout className="h-4 w-4" />,
+    products: [
+      { product: "Mn SUPER™", link: "mn-super" },
+      { product: "Mag Plus™", link: "mag-plus" },
+      { product: "ful-oN™", link: "ful-on" },
+      { product: "Mn-Cu Plus™", link: "mn-cu-plus" },
+      { product: "Foliar Boost™", link: "foliar-boost" },
+      { product: "Cu-Zin™", link: "cu-zin" },
+      { product: "Pro-K™", link: "pro-k" },
+      { product: "Pro-Sul™", link: "pro-sul" },
+    ],
+  },
+  {
+    title: "Calcium Supplements",
+    link: "calcium-range",
+    icon: <Shield className="h-4 w-4" />,
+    products: [
+      { product: "Pro-Cal™", link: "pro-cal" },
+      { product: "Advocate™", link: "advocate" },
+      { product: "CaPITAL™", link: "capital" },
+    ],
+  },
+  {
+    title: "Biostimulants",
+    link: "biostimulants",
+    icon: <Leaf className="h-4 w-4" />,
+    products: [
+      { product: "Stimplex®", link: "stimplex" },
+      { product: "Toggle®", link: "toggle" },
+    ],
+  },
+  {
+    title: "Seed Treatments",
+    link: "seed-treatments",
+    icon: <Wheat className="h-4 w-4" />,
+    products: [
+      { product: "Start-uP® MAXX", link: "start-up-maxx" },
+      { product: "Start-uP®", link: "start-up" },
+      { product: "ProZest™", link: "prozest" },
+      { product: "Man-uP™", link: "man-up" },
+    ],
+  },
+  {
+    title: "The Ilex Organic Range",
+    link: "organic-range",
+    icon: <FlaskConical className="h-4 w-4" />,
+    products: [
+      { product: "Complete™ (6-2-4)", link: "complete-6-2-4" },
+      {
+        product: "Complete Hi-Fruit™ (4-2-6)",
+        link: "complete-hi-fruit-4-2-6",
+      },
+      { product: "K-Max™ (3-1-8)", link: "k-max-3-1-8" },
+      { product: "N-Max™ (7-2-2)", link: "n-max-7-2-2" },
+      { product: "Ultimate Gold™ (8-7-7)", link: "ultimate-gold-8-7-7" },
+    ],
+  },
+];
+
 export function Navigation({
-  onPageChange,
   mobileMenuOpen,
   setMobileMenuOpen,
 }: NavigationProps) {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
-
-  const menuData: MenuItem[] = [
-    {
-      menu_item: "Products",
-      link: "products",
-      products: [
-        { product: "Phosphite Range", link: "phosphite-range" },
-        { product: "Foliar Nutrients", link: "foliar-range" },
-        { product: "Calcium Supplements", link: "calcium-range" },
-        { product: "Biostimulants", link: "biostimulants" },
-        { product: "Seed Treatments", link: "seed-treatments" },
-        { product: "Organic Range", link: "organic-range" },
-      ],
-    },
-    {
-      menu_item: "About",
-      link: "about",
-    },
-    {
-      menu_item: "Contact",
-      link: "contact",
-    },
-    {
-      menu_item: "How to Buy",
-      link: "how-to-buy",
-    },
-  ];
-
-  const productRanges = [
-    {
-      title: "The Ilex Phosphite Range",
-      link: "phosphite-range",
-      icon: <Beaker className="h-4 w-4" />,
-      products: [
-        { product: "Crop Rooter® Plus", link: "crop-rooter-plus" },
-        { product: "PK MAXX™ +", link: "pk-maxx" },
-        { product: "OilSeed Raiser™", link: "oilseed-raiser" },
-        { product: "CaPITAL™", link: "capital" },
-        { product: "Tensile™", link: "tensile" },
-        { product: "Beet Raiser™", link: "beet-raiser" },
-        { product: "Maniphos™", link: "maniphos" },
-        { product: "PK VEG™", link: "pk-veg" },
-      ],
-    },
-    {
-      title: "The Ilex Foliar Nutrient Range",
-      link: "foliar-range",
-      icon: <Sprout className="h-4 w-4" />,
-      products: [
-        { product: "Mn SUPER™", link: "mn-super" },
-        { product: "Mag Plus™", link: "mag-plus" },
-        { product: "ful-oN™", link: "ful-on" },
-        { product: "Mn-Cu Plus™", link: "mn-cu-plus" },
-        { product: "Foliar Boost™", link: "foliar-boost" },
-        { product: "Cu-Zin™", link: "cu-zin" },
-        { product: "Pro-K™", link: "pro-k" },
-        { product: "Pro-Sul™", link: "pro-sul" },
-      ],
-    },
-    {
-      title: "Calcium Supplements",
-      link: "calcium-range",
-      icon: <Shield className="h-4 w-4" />,
-      products: [
-        { product: "Pro-Cal™", link: "pro-cal" },
-        { product: "Advocate™", link: "advocate" },
-        { product: "CaPITAL™", link: "capital" },
-      ],
-    },
-    {
-      title: "Biostimulants",
-      link: "biostimulants",
-      icon: <Leaf className="h-4 w-4" />,
-      products: [
-        { product: "Stimplex®", link: "stimplex" },
-        { product: "Toggle®", link: "toggle" },
-      ],
-    },
-    {
-      title: "Seed Treatments",
-      link: "seed-treatments",
-      icon: <Wheat className="h-4 w-4" />,
-      products: [
-        { product: "Start-uP® MAXX", link: "start-up-maxx" },
-        { product: "Start-uP®", link: "start-up" },
-        { product: "ProZest™", link: "prozest" },
-        { product: "Man-uP™", link: "man-up" },
-      ],
-    },
-    {
-      title: "The Ilex Organic Range",
-      link: "organic-range",
-      icon: <FlaskConical className="h-4 w-4" />,
-      products: [
-        { product: "Complete™ (6-2-4)", link: "complete-6-2-4" },
-        {
-          product: "Complete Hi-Fruit™ (4-2-6)",
-          link: "complete-hi-fruit-4-2-6",
-        },
-        { product: "K-Max™ (3-1-8)", link: "k-max-3-1-8" },
-        { product: "N-Max™ (7-2-2)", link: "n-max-7-2-2" },
-        { product: "Ultimate Gold™ (8-7-7)", link: "ultimate-gold-8-7-7" },
-      ],
-    },
-  ];
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -148,7 +137,6 @@ export function Navigation({
         setOpenDropdown(null);
       }
     }
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
@@ -162,26 +150,26 @@ export function Navigation({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-3">
-          {/* Logo */}
           <Button
+            asChild
             variant="ghost"
-            onClick={() => onPageChange("home")}
             className="flex items-center gap-3 hover:bg-transparent p-2 flex-shrink-0"
           >
-            <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg flex items-center justify-center">
-              <Leaf className="h-5 w-5 text-white" />
-            </div>
-            <div className="text-left hidden sm:block">
-              <h1 className="text-lg font-semibold text-gray-900 leading-tight">
-                Ilex EnviroSciences
-              </h1>
-              <p className="text-xs text-gray-500 leading-tight">
-                Foliar Nutrition Solutions
-              </p>
-            </div>
+            <Link to="/">
+              <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg flex items-center justify-center">
+                <Leaf className="h-5 w-5 text-white" />
+              </div>
+              <div className="text-left hidden sm:block">
+                <h1 className="text-lg font-semibold text-gray-900 leading-tight">
+                  Ilex EnviroSciences
+                </h1>
+                <p className="text-xs text-gray-500 leading-tight">
+                  Crop Nutrition Solutions
+                </p>
+              </div>
+            </Link>
           </Button>
 
-          {/* Desktop Navigation */}
           <nav
             className="hidden xl:flex items-center gap-1 flex-1 justify-end"
             ref={dropdownRef}
@@ -202,7 +190,6 @@ export function Navigation({
                       {item.menu_item}
                       <ChevronDown className="h-3 w-3" />
                     </Button>
-
                     <AnimatePresence>
                       {openDropdown === item.link && (
                         <motion.div
@@ -221,70 +208,62 @@ export function Navigation({
                                     className="border-b border-gray-100 last:border-b-0 pb-2 mb-2 last:pb-0 last:mb-0"
                                   >
                                     <Button
+                                      asChild
                                       variant="ghost"
                                       className="w-full justify-start text-xs font-medium mb-1 h-auto py-1 px-2"
-                                      onClick={() => {
-                                        onPageChange(range.link as PageType, {
-                                          menu_item: range.title,
-                                          link: range.link,
-                                          products: range.products,
-                                        });
-                                        setOpenDropdown(null);
-                                      }}
                                     >
-                                      {range.icon}
-                                      <span className="ml-2">
-                                        {range.title.replace("The Ilex ", "")}
-                                      </span>
-                                      <Badge
-                                        variant="secondary"
-                                        className="ml-auto text-xs"
+                                      <Link
+                                        to={`/${range.link}`}
+                                        onClick={() => setOpenDropdown(null)}
                                       >
-                                        {range.products.length}
-                                      </Badge>
+                                        {range.icon}
+                                        <span className="ml-2">
+                                          {range.title.replace("The Ilex ", "")}
+                                        </span>
+                                        <Badge
+                                          variant="secondary"
+                                          className="ml-auto text-xs"
+                                        >
+                                          {range.products.length}
+                                        </Badge>
+                                      </Link>
                                     </Button>
                                     <div className="ml-4 space-y-0.5">
                                       {range.products
                                         .slice(0, 4)
                                         .map((product, productIndex) => (
                                           <Button
+                                            asChild
                                             key={productIndex}
                                             variant="ghost"
                                             className="w-full justify-start text-xs h-auto py-0.5 px-2 text-gray-600"
-                                            onClick={() => {
-                                              onPageChange(
-                                                "product",
-                                                {
-                                                  menu_item: range.title,
-                                                  link: range.link,
-                                                  products: range.products,
-                                                },
-                                                product
-                                              );
-                                              setOpenDropdown(null);
-                                            }}
                                           >
-                                            {product.product}
+                                            <Link
+                                              key={product.link}
+                                              to={`/${range.link}/${product.link}`}
+                                              onClick={() =>
+                                                setOpenDropdown(null)
+                                              }
+                                            >
+                                              {product.product}
+                                            </Link>
                                           </Button>
                                         ))}
                                       {range.products.length > 4 && (
                                         <Button
+                                          asChild
                                           variant="ghost"
                                           className="w-full justify-start text-xs h-auto py-0.5 px-2 text-blue-600"
-                                          onClick={() => {
-                                            onPageChange(
-                                              range.link as PageType,
-                                              {
-                                                menu_item: range.title,
-                                                link: range.link,
-                                                products: range.products,
-                                              }
-                                            );
-                                            setOpenDropdown(null);
-                                          }}
                                         >
-                                          +{range.products.length - 4} more
-                                          products
+                                          <Link
+                                            to={`/${range.link}`}
+                                            onClick={() =>
+                                              setOpenDropdown(null)
+                                            }
+                                          >
+                                            +{range.products.length - 4} more
+                                            products
+                                          </Link>
                                         </Button>
                                       )}
                                     </div>
@@ -299,18 +278,17 @@ export function Navigation({
                   </div>
                 ) : (
                   <Button
+                    asChild
                     variant="ghost"
                     className="text-sm hover:bg-gray-100 px-3 py-2 h-auto"
-                    onClick={() => onPageChange(item.link as PageType)}
                   >
-                    {item.menu_item}
+                    <Link to={`/${item.link}`}>{item.menu_item}</Link>
                   </Button>
                 )}
               </div>
             ))}
           </nav>
 
-          {/* Mobile/Tablet Navigation for medium screens */}
           <nav
             className="hidden lg:flex xl:hidden items-center gap-1 flex-1 justify-end"
             ref={dropdownRef}
@@ -328,7 +306,6 @@ export function Navigation({
                 Products
                 <ChevronDown className="h-3 w-3" />
               </Button>
-
               <AnimatePresence>
                 {openDropdown === "products" && (
                   <motion.div
@@ -343,27 +320,25 @@ export function Navigation({
                         <div className="grid grid-cols-2 gap-2 max-h-80 overflow-y-auto">
                           {productRanges.map((range, rangeIndex) => (
                             <Button
+                              asChild
                               key={rangeIndex}
                               variant="ghost"
                               className="w-full justify-start text-xs h-auto py-2 px-2 flex-col items-start"
-                              onClick={() => {
-                                onPageChange(range.link as PageType, {
-                                  menu_item: range.title,
-                                  link: range.link,
-                                  products: range.products,
-                                });
-                                setOpenDropdown(null);
-                              }}
                             >
-                              <div className="flex items-center gap-1 mb-1">
-                                {range.icon}
-                                <span className="font-medium">
-                                  {range.title.replace("The Ilex ", "")}
-                                </span>
-                              </div>
-                              <Badge variant="secondary" className="text-xs">
-                                {range.products.length} products
-                              </Badge>
+                              <Link
+                                to={`/${range.link}`}
+                                onClick={() => setOpenDropdown(null)}
+                              >
+                                <div className="flex items-center gap-1 mb-1">
+                                  {range.icon}
+                                  <span className="font-medium">
+                                    {range.title.replace("The Ilex ", "")}
+                                  </span>
+                                </div>
+                                <Badge variant="secondary" className="text-xs">
+                                  {range.products.length} products
+                                </Badge>
+                              </Link>
                             </Button>
                           ))}
                         </div>
@@ -373,24 +348,22 @@ export function Navigation({
                 )}
               </AnimatePresence>
             </div>
-
             <Button
+              asChild
               variant="ghost"
               className="text-sm hover:bg-gray-100 px-3 py-2 h-auto"
-              onClick={() => onPageChange("about")}
             >
-              About
+              <Link to="/about">About</Link>
             </Button>
             <Button
+              asChild
               variant="ghost"
               className="text-sm hover:bg-gray-100 px-3 py-2 h-auto"
-              onClick={() => onPageChange("contact")}
             >
-              Contact
+              <Link to="/contact">Contact</Link>
             </Button>
           </nav>
 
-          {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="sm"
@@ -405,7 +378,6 @@ export function Navigation({
           </Button>
         </div>
 
-        {/* Mobile Navigation */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
@@ -416,7 +388,6 @@ export function Navigation({
               transition={{ duration: 0.3 }}
             >
               <div className="pt-4 space-y-2">
-                {/* Products Dropdown */}
                 <div>
                   <Button
                     variant="ghost"
@@ -439,7 +410,6 @@ export function Navigation({
                       }`}
                     />
                   </Button>
-
                   <AnimatePresence>
                     {openDropdown === "mobile-products" && (
                       <motion.div
@@ -449,17 +419,16 @@ export function Navigation({
                         className="ml-4 mt-2 space-y-1 max-h-64 overflow-y-auto"
                       >
                         {productRanges.map((range, rangeIndex) => (
-                          <div key={rangeIndex}>
-                            <Button
-                              variant="ghost"
-                              size="sm"
-                              className="w-full justify-start text-sm p-2 h-auto font-medium"
+                          <Button
+                            asChild
+                            key={rangeIndex}
+                            variant="ghost"
+                            size="sm"
+                            className="w-full justify-start text-sm p-2 h-auto font-medium"
+                          >
+                            <Link
+                              to={`/${range.link}`}
                               onClick={() => {
-                                onPageChange(range.link as PageType, {
-                                  menu_item: range.title,
-                                  link: range.link,
-                                  products: range.products,
-                                });
                                 setMobileMenuOpen(false);
                                 setOpenDropdown(null);
                               }}
@@ -474,49 +443,45 @@ export function Navigation({
                                   {range.products.length}
                                 </Badge>
                               </div>
-                            </Button>
-                          </div>
+                            </Link>
+                          </Button>
                         ))}
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
-
-                {/* Other Menu Items */}
                 <Button
+                  asChild
                   variant="ghost"
                   className="w-full justify-start p-3 h-auto"
-                  onClick={() => {
-                    onPageChange("about");
-                    setMobileMenuOpen(false);
-                  }}
                 >
-                  <FileText className="h-4 w-4 mr-2" />
-                  About Us
+                  <Link to="/about" onClick={() => setMobileMenuOpen(false)}>
+                    <FileText className="h-4 w-4 mr-2" />
+                    About Us
+                  </Link>
                 </Button>
-
                 <Button
+                  asChild
                   variant="ghost"
                   className="w-full justify-start p-3 h-auto"
-                  onClick={() => {
-                    onPageChange("contact");
-                    setMobileMenuOpen(false);
-                  }}
                 >
-                  <Phone className="h-4 w-4 mr-2" />
-                  Contact Us
+                  <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
+                    <Phone className="h-4 w-4 mr-2" />
+                    Contact Us
+                  </Link>
                 </Button>
-
                 <Button
+                  asChild
                   variant="ghost"
                   className="w-full justify-start p-3 h-auto"
-                  onClick={() => {
-                    onPageChange("how-to-buy");
-                    setMobileMenuOpen(false);
-                  }}
                 >
-                  <Mail className="h-4 w-4 mr-2" />
-                  How to Buy
+                  <Link
+                    to="/how-to-buy"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <Mail className="h-4 w-4 mr-2" />
+                    How to Buy
+                  </Link>
                 </Button>
               </div>
             </motion.div>

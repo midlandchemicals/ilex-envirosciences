@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom"; // Add Link
 import {
   Card,
   CardContent,
@@ -21,13 +22,10 @@ import {
   Target,
   Heart,
 } from "lucide-react";
-import type { MenuItem, PageType, Product } from "../types";
 
-interface HomePageProps {
-  onPageChange: (page: PageType, item?: MenuItem, product?: Product) => void;
-}
+// Remove onPageChange from props
 
-export function HomePage({ onPageChange }: HomePageProps) {
+export function HomePage() {
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -159,12 +157,20 @@ export function HomePage({ onPageChange }: HomePageProps) {
               <Button
                 size="lg"
                 className="bg-green-600 hover:bg-green-700 text-lg px-8 py-4"
+                asChild
               >
-                Explore Our Products
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <Link to="/phosphite-range">
+                  Explore Our Products
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-                Contact Our Experts
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-lg px-8 py-4"
+                asChild
+              >
+                <Link to="/contact">Contact Our Experts</Link>
               </Button>
             </div>
           </motion.div>
@@ -221,10 +227,12 @@ export function HomePage({ onPageChange }: HomePageProps) {
                   <CardContent>
                     <Button
                       className="w-full group-hover:bg-gradient-to-r group-hover:from-green-600 group-hover:to-blue-600 transition-all duration-300"
-                      onClick={() => onPageChange(range.link as PageType)}
+                      asChild
                     >
-                      Explore Range
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      <Link to={`/${range.link}`}>
+                        Explore Range
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -288,17 +296,17 @@ export function HomePage({ onPageChange }: HomePageProps) {
             <Button
               size="lg"
               className="bg-white text-green-600 hover:bg-gray-100 text-lg px-8 py-4"
-              onClick={() => onPageChange("contact")}
+              asChild
             >
-              Contact Our Experts
+              <Link to="/contact">Contact Our Experts</Link>
             </Button>
             <Button
               variant="outline"
               size="lg"
               className="border-white text-white hover:bg-white hover:text-green-600 text-lg px-8 py-4"
-              onClick={() => onPageChange("how-to-buy")}
+              asChild
             >
-              How to Buy
+              <Link to="/how-to-buy">How to Buy</Link>
             </Button>
           </div>
         </div>
