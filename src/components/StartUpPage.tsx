@@ -11,7 +11,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
-
+import img from "../../public/start-up-img.jpg";
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
@@ -147,14 +147,17 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
     {
       title: "Start-uP Leaflet",
       description: "Complete product information and application guidelines",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/start-up/Start-Up-1606-i.pdf",
     },
     {
       title: "Phosphite Action Information Sheet",
       description: "Technical information about phosphite mode of action",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/start-up/phosphites-1701-iv.pdf",
     },
     {
       title: "Start-uP on Pulses",
       description: "Specific application guidelines for pulse crops",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/start-up/Start-uP-Pulses.pdf",
     },
   ];
 
@@ -291,7 +294,7 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
             >
               <div className="relative z-10">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
+                  src={img}
                   alt="Start-uP Product"
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />

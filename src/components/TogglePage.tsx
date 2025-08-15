@@ -11,7 +11,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
-
+import img from "../../public/Toggle-img.jpg";
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -195,10 +195,12 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
     {
       title: "Toggle Plus Leaflet",
       description: "Complete product information and application guidelines",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/Toggle/Toggle.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/Toggle/Compatibility-Chart-0923-ii.pdf",
     },
   ];
 
@@ -349,7 +351,7 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
             >
               <div className="relative z-10">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600&h=400&fit=crop"
+                  src={img}
                   alt="Toggle - Broadfield Crop Biostimulant"
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />

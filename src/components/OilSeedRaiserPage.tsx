@@ -15,6 +15,7 @@ import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import img from "../../public/oilseed-raiser-img.jpeg";
 import {
   Leaf,
   Zap,
@@ -167,15 +168,24 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
       title: "OilSeed Raiser™ Leaflet",
       description:
         "Complete product information and application guidelines for oilseed rape",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/oilseed-raiser/Oil-Seed-Raiser-2003-i.pdf",
     },
     {
-      title: "Oilseed Rape Nutrition Guide",
+      title: "Phosphite Action Information Sheet",
       description:
         "Comprehensive guide to oilseed rape nutritional requirements",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/oilseed-raiser/phosphites-1701-iv.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/oilseed-raiser/Compatibility-Chart-0923-ii.pdf",
+    },
+    {
+      title: "YEN Trial Data",
+      description:
+        "Trial results showing that using OilSeed Raiser with foliar nutrients significantly boosted oilseed rape yield and farm profit.",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/oilseed-raiser/YEN-Trial-Update-July-17.pdf",
     },
   ];
 
@@ -300,7 +310,7 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
             >
               <div className="relative z-10">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop"
+                  src={img}
                   alt="OilSeed Raiser Product"
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />

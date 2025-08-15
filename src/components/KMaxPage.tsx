@@ -11,7 +11,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
-
+import img from "../../public/K-max-img.jpg";
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
@@ -133,10 +133,12 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
     {
       title: "K-Max (3-1-8) Leaflet",
       description: "Complete product information and application guidelines",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/K-max/Organic-Umbrella-1606i.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/K-max/Compatibility-Chart-0923-ii.pdf",
     },
   ];
 
@@ -286,7 +288,7 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
             >
               <div className="relative z-10">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1464822759356-8d6106e78f86?w=600&h=400&fit=crop"
+                  src={img}
                   alt="K-Max - Maximum Potassium for Fruit Development"
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />

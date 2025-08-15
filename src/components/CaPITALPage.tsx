@@ -15,6 +15,7 @@ import { Separator } from "./ui/separator";
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
+import img from "../../public/capital-img.png";
 //import capitalImage from 'figma:asset/d3428fbdd9d80d27a65a47fc1c5a4592faf33f5f.png';
 const capitalImage = "https://example.com/capital-image.png"; // Replace with actual URL
 import {
@@ -162,14 +163,17 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
     {
       title: "CaPITAL™ Leaflet",
       description: "Complete product information and application guidelines",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/capital/Capital-1606-i.pdf",
     },
     {
       title: "Phosphite Action Information Sheet",
       description: "Technical information about phosphite mode of action",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/capital/phosphites-1701-iv%20(1).pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/capital/Compatibility-Chart-0923-ii%20(1).pdf",
     },
   ];
 
@@ -319,7 +323,7 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
             >
               <div className="relative z-10">
                 <img
-                  src={capitalImage}
+                  src={img}
                   alt="CaPITAL Product"
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />

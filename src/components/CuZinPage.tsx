@@ -14,6 +14,7 @@ import { Badge } from "./ui/badge";
 import { Separator } from "./ui/separator";
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
+import img from "../../public/cu-zin-img.jpg";
 import { AnalysisPieChart } from "./AnalysisPieChart";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import {
@@ -144,10 +145,12 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
     {
       title: "Cu-Zin Plus™ Leaflet",
       description: "Complete product information and application guidelines",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/cu-zin/Cu-Zin-Arable-1904ii.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/cu-zin/Compatibility-Chart-0923-ii.pdf",
     },
   ];
 
@@ -297,7 +300,7 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
             >
               <div className="relative z-10">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
+                  src={img}
                   alt="Cu-Zin Product"
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />

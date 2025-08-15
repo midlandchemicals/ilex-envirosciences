@@ -79,7 +79,7 @@ export function PDFLinks({ productName, links }: PDFLinksProps) {
 
                 <CardContent>
                   <Button
-                    className="w-full group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-green-600 transition-all duration-300"
+                    className="w-full cursor-pointer group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-green-600 transition-all duration-300"
                     onClick={() => handleDownload(link.title, link.url)}
                   >
                     <Download className="mr-2 h-4 w-4" />

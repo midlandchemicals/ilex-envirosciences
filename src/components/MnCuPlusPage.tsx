@@ -12,6 +12,8 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
 
+import img from "../../public/Mn-cu-plus-img.png";
+
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
@@ -204,15 +206,13 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
     {
       title: "Mn-Cu Plus Leaflet",
       description: "Complete product information and application guidelines",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/Mn-cuplus/Compatibility-Chart-0923-ii.pdf",
     },
-    {
-      title: "Micronutrient Deficiency Guide",
-      description:
-        "Visual guide to identifying manganese and copper deficiencies",
-    },
+
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/Mn-cuplus/Mn-Cu-Plus-Arable-1606i.pdf",
     },
   ];
 
@@ -360,7 +360,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
             >
               <div className="relative z-10">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
+                  src={img}
                   alt="Mn-Cu Plus Product"
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />

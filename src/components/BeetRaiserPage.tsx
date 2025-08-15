@@ -11,6 +11,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
+import img from "../../public/beetroot-img.jpg";
 
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
@@ -165,17 +166,20 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
 
   const pdfLinks = [
     {
-      title: "Beet Raiser™ Leaflet",
+      title: "Beet Raiser™ Plus Leaflet",
       description:
         "Complete product information and application guidelines for sugar beet",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/Beet-raiser/Beet-Raiser-2003-i.pdf",
     },
     {
-      title: "Sugar Beet Nutrition Guide",
+      title: "Phopsphite Action Information Sheet",
       description: "Comprehensive guide to sugar beet nutritional requirements",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/Beet-raiser/phosphites-1701-iv.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/Beet-raiser/Compatibility-Chart-0923-ii.pdf",
     },
   ];
 
@@ -290,7 +294,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
             >
               <div className="relative z-10">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1592921870789-04563d55041c?w=600&h=400&fit=crop"
+                  src={img}
                   alt="Beet Raiser Product"
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />

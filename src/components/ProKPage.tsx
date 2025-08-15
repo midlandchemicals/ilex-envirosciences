@@ -11,7 +11,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
-
+import img from "../../public/Pro-k-img.jpg";
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
@@ -201,15 +201,13 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
     {
       title: "Pro-K Leaflet",
       description: "Complete product information and application guidelines",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/pro-k/ILEX-Pro-Arable-1703iii.pdf",
     },
-    {
-      title: "Potassium Benefits Guide",
-      description:
-        "Understanding the role of potassium in crop quality and yield",
-    },
+
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/pro-k/Compatibility-Chart-0923-ii.pdf",
     },
   ];
 
@@ -356,7 +354,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
             >
               <div className="relative z-10">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
+                  src={img}
                   alt="Pro-K Product"
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />

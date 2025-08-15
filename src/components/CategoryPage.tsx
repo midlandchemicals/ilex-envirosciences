@@ -99,17 +99,69 @@ export function CategoryPage({ category }: CategoryPageProps) {
   };
 
   const getProductImage = (productName: string) => {
-    if (productName.toLowerCase().includes("cal")) {
-      return "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop";
-    } else if (productName.toLowerCase().includes("mag")) {
-      return "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=300&fit=crop";
-    } else if (
-      productName.toLowerCase().includes("seed") ||
-      productName.toLowerCase().includes("start")
-    ) {
-      return "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=300&fit=crop";
-    } else {
-      return "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=400&h=300&fit=crop";
+    switch (productName) {
+      case "Crop Rooter® Plus":
+        return "../../public/Advocate-img.png";
+      case "PK MAXX™ +":
+        return "../../public/pK-maxx-img.png";
+      case "OilSeed Raiser™":
+        return "../../public/oilseed-raiser-img.jpeg";
+      case "CaPITAL™":
+        return "../../public/capital-img.png";
+      case "Tensile™":
+        return "../../public/Tensil-img.jpg";
+      case "Beet Raiser™":
+        return "../../public/beetroot-img.jpg";
+      case "Maniphos™":
+        return "../../public/Maniphos-img.jpg";
+      case "PK VEG™":
+        return "../../public/PK-veg-img.jpg";
+      case "Mn SUPER™":
+        return "../../public/Mn-super-img.jpg";
+      case "Pro-K™":
+        return "../../public/Pro-k-img.jpg";
+      case "Mag Plus™":
+        return "../../public/Mag-plus-img.jpg";
+      case "ful-oN™":
+        return "../../public/ful-on-img.jpg";
+      case "Mn-Cu Plus™":
+        return "../../public/Mn-cu-plus-img.png";
+      case "Foliar Boost™":
+        return "../../public/foiler-img.jpg";
+      case "Cu-Zin™":
+        return "../../public/cu-zin-img.jpg";
+
+      case "Pro-Sul™":
+        return "../../public/Pro-sul-img.jpg";
+      case "Pro-Cal™":
+        return "../../public/Pro-cal-img.jpg";
+      case "Advocate™":
+        return "../../public/Advocate-img.png";
+
+      case "Stimplex®":
+        return "../../public/Stimplex-img.jpg";
+      case "Toggle®":
+        return "../../public/Toggle-img.jpg";
+      case "Start-uP® MAXX":
+        return "../../public/start-up-max-img.jpg";
+      case "Start-uP®":
+        return "../../public/start-up-img.jpg";
+      case "ProZest™":
+        return "../../public/Pro-zest-img.jpeg";
+      case "Man-uP™":
+        return "../../public/Man-up-img.jpg";
+      case "Complete™ (6-2-4)":
+        return "../../public/Complete(6-2-4)-img.jpg";
+      case "N-Max™ (7-2-2)":
+        return "../../public/N-max-img.jpg";
+      case "Complete Hi-Fruit™ (4-2-6)":
+        return "../../public/CompleteHifruite-img.jpg";
+      case "K-Max™ (3-1-8)":
+        return "../../public/K-max-img.jpg";
+      case "Ultimate Gold™ (8-7-7)":
+        return "../../public/Ultimate-gold-img.jpg";
+      default:
+        return "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=600&h=400&fit=crop";
     }
   };
 

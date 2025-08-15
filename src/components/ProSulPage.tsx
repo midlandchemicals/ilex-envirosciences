@@ -11,7 +11,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
-
+import img from "../../public/Pro-sul-img.jpg";
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
@@ -202,14 +202,13 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
     {
       title: "Pro-Sul™ Leaflet",
       description: "Complete product information and application guidelines",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/pro-sul/ILEX-Pro-Arable-1703iii%20(1).pdf",
     },
-    {
-      title: "Sulfur Deficiency Guide",
-      description: "Visual guide to identifying sulfur deficiency symptoms",
-    },
+
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/pro-sul/Compatibility-Chart-0923-ii%20(1).pdf",
     },
   ];
 
@@ -357,7 +356,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
             >
               <div className="relative z-10">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
+                  src={img}
                   alt="Pro-Sul Product"
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />

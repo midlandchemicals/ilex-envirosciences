@@ -11,6 +11,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
+import img from "../../public/pk-maxx-img.png";
 
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
@@ -204,18 +205,22 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
     {
       title: "PK MAXX + Leaflet",
       description: "Complete product information and application guidelines",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/pk-max/PK_MAXX__2201_i.pdf",
     },
     {
       title: "Phosphite Action Information Sheet",
       description: "Technical information about phosphite mode of action",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/pk-max/phosphites-1701-iv.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/pk-max/Compatibility-Chart-0923-ii%20(1).pdf",
     },
     {
       title: "Potato Field Trial Data",
       description: "Independent trial results showing yield improvements",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/pk-max/PKMAXX-Field-Trials-Summary-2015-2016-2017.pdf",
     },
   ];
 
@@ -365,7 +370,7 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
             >
               <div className="relative z-10">
                 <img
-                  src={pkMaxxImage}
+                  src={img}
                   alt="PK MAXX Plus Product"
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />

@@ -11,7 +11,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
-
+import img from "../../public/crop-rooter-img.png";
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
@@ -164,22 +164,27 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
     {
       title: "Crop Rooter® Plus Leaflet",
       description: "Complete product information and application guidelines",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/crop-rooter/Crop-Rooter-Plus-Trials-1124-i.pdf",
     },
     {
       title: "Phosphite Action Information Sheet",
       description: "Technical information about phosphite mode of action",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/crop-rooter/phosphites-1701-iv.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/crop-rooter/Compatibility-Chart.pdf",
     },
     {
       title: "Crop Rooter® NIAB Trial Data",
       description: "Independent NIAB TAG trial results and analysis",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/crop-rooter/Crop-RooterPlus-NIAB-TAG-Spring-2019.pdf",
     },
     {
       title: "Crop Rooter® Velcourt Trial Data",
       description: "Comprehensive Velcourt field trial results",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/crop-rooter/Crop-Rooter-Plus-Velcourt.pdf",
     },
   ];
 
@@ -354,7 +359,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
             >
               <div className="relative z-10">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
+                  src={img}
                   alt="Crop Rooter Plus Product"
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />

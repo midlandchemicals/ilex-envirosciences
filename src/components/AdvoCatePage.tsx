@@ -12,6 +12,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
 
+import img from "../../public/Advocate-img.png";
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
@@ -176,10 +177,12 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
     {
       title: "AdvoCate Leaflet",
       description: "Complete product information and application guidelines",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/advocate/Advocate-1606-ii.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/advocate/Compatibility-Chart-0923-ii%20(1).pdf",
     },
   ];
 
@@ -199,8 +202,7 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
     targetCrops: [
       {
         name: "Potatoes",
-        image:
-          "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400&h=300&fit=crop",
+        image: "",
         benefits: [
           "Enhanced tuber development",
           "Improved skin quality",
@@ -329,7 +331,7 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
             >
               <div className="relative z-10">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop"
+                  src={img}
                   alt="AdvoCate Product - Premium Vegetables"
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />

@@ -11,7 +11,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
-
+import img from "../../public/Stimplex-img.jpg";
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -215,30 +215,37 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
     {
       title: "Stimplex Plus Leaflet",
       description: "Complete product information and application guidelines",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/stimplex/Stimplex_2203_vii.pdf",
     },
     {
       title: "Stimplex Action",
       description: "Mode of action and scientific background",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/stimplex/Stimplex-Action-i.pdf",
     },
     {
       title: "Stimplex Arcadian Brochure",
       description: "Comprehensive product brochure with case studies",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/stimplex/arcadian-brochure.pdf",
     },
     {
       title: "Case Study: Bell Brothers Nurseries Ltd",
       description: "Real-world application results and testimonials",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/stimplex/Case-Study-Stimplex-i.pdf",
     },
     {
       title: "Organic Farmers and Growers Certificate",
       description: "Official organic certification documentation",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/stimplex/OFG.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other products",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/stimplex/Compatibility-Chart-0923-ii.pdf",
     },
     {
       title: "Stimplex Field Guide",
       description: "Practical field application guide",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/stimplex/field-guide.pdf",
     },
   ];
 
@@ -389,7 +396,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
             >
               <div className="relative z-10">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop"
+                  src={img}
                   alt="Stimplex - Premium Seaweed Biostimulant"
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />

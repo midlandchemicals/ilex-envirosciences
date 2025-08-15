@@ -11,7 +11,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
-
+import img from "../../public/PK-veg-img.jpg";
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
@@ -202,14 +202,17 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
       title: "PK VEG Leaflet",
       description:
         "Complete product information and application guidelines for vegetables",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/PK-Veg/PK-VEG-2003-i.pdf",
     },
     {
       title: "Phosphite Action Information Sheet",
       description: "Technical information about phosphite mode of action",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/PK-Veg/phosphites-1701-iv.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/PK-Veg/Compatibility-Chart-0923-ii.pdf",
     },
   ];
 
@@ -356,7 +359,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
             >
               <div className="relative z-10">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1590004845575-c7745b1faf0d?w=600&h=400&fit=crop"
+                  src={img}
                   alt="PK VEG Product"
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />

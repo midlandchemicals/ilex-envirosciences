@@ -11,7 +11,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
-
+import img from "../../public/Maniphos-img.jpg";
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
@@ -203,18 +203,18 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
     {
       title: "Maniphos™ Leaflet",
       description: "Complete product information and application guidelines",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/Maniphos/Maniphos-2003-i.pdf",
     },
-    {
-      title: "Manganese Deficiency Guide",
-      description: "Visual guide to identifying manganese deficiency symptoms",
-    },
+
     {
       title: "Phosphite Action Information Sheet",
       description: "Technical information about phosphite mode of action",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/Maniphos/phosphites-1701-iv.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/Maniphos/Compatibility-Chart-0923-ii.pdf",
     },
   ];
 
@@ -361,7 +361,7 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
             >
               <div className="relative z-10">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
+                  src={img}
                   alt="Maniphos Product"
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />

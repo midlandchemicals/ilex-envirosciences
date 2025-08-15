@@ -11,7 +11,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
-
+import img from "../../public/CompleteHifruite-img.jpg";
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
@@ -132,10 +132,12 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
     {
       title: "Complete Hi-Fruit (4-2-6) Leaflet",
       description: "Complete product information and application guidelines",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/Complete-hi-fruit/Organic-Umbrella-1606i.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/Complete-hi-fruit/Compatibility-Chart-0923-ii.pdf",
     },
   ];
 
@@ -287,7 +289,7 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
             >
               <div className="relative z-10">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1464822759356-8d6106e78f86?w=600&h=400&fit=crop"
+                  src={img}
                   alt="Complete Hi-Fruit - Enhanced Fruit Development"
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />

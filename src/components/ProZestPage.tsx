@@ -11,7 +11,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
-
+import img from "../../public/Pro-zest-img.jpeg";
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
@@ -149,10 +149,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
     {
       title: "ProZest Leaflet",
       description: "Complete product information and application guidelines",
-    },
-    {
-      title: "Advanced Potato Nutrition Guide",
-      description: "Comprehensive guide to potato nutrition and management",
+      url: "https://margdwcgeanpawjvnvqf.supabase.co/storage/v1/object/public/Ilex/ProZest/ProZeSt-1606i.pdf",
     },
   ];
 
@@ -266,7 +263,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
             >
               <div className="relative z-10">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600&h=400&fit=crop"
+                  src={img}
                   alt="ProZest Product - Potato Field"
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
