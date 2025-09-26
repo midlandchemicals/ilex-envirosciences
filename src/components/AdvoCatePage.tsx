@@ -1,25 +1,32 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
-import { Badge } from './ui/badge';
-import { Separator } from './ui/separator';
-import { ProductShowcase } from './ProductShowcase';
-import { PDFLinks } from './PDFLinks';
-import { AnalysisPieChart } from './AnalysisPieChart';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { 
-  Leaf, 
-  Zap, 
-  Target, 
-  Beaker, 
-  Droplets, 
-  Clock, 
-  Package, 
-  Phone, 
-  Mail, 
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Badge } from "./ui/badge";
+import { Separator } from "./ui/separator";
+import { ProductShowcase } from "./ProductShowcase";
+import { PDFLinks } from "./PDFLinks";
+import { AnalysisPieChart } from "./AnalysisPieChart";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { smoothScrollToSection } from "../utils/scrollHelpers";
+import {
+  Leaf,
+  Zap,
+  Target,
+  Beaker,
+  Droplets,
+  Clock,
+  Package,
+  Phone,
+  Mail,
   MapPin,
   CheckCircle,
   ArrowRight,
@@ -38,78 +45,90 @@ import {
   Flower,
   Activity,
   Apple,
-  ShoppingCart
-} from 'lucide-react';
+  ShoppingCart,
+} from "lucide-react";
 
 interface ContactFormProps {
-  onSubmit: (formData: { name: string; email: string; message: string }) => void;
+  onSubmit: (formData: {
+    name: string;
+    email: string;
+    message: string;
+  }) => void;
 }
 
 export function AdvoCatePage({ onSubmit }: ContactFormProps) {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit(formData);
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: "", email: "", message: "" });
   };
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.6 },
   };
 
   const staggerContainer = {
     animate: {
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const benefits = [
     {
       icon: <Activity className="h-8 w-8 text-cyan-600" />,
       title: "Exceptional Calcium Mobility",
-      description: "Advanced complexing technology ensures optimal calcium movement within the crop"
+      description:
+        "Advanced complexing technology ensures optimal calcium movement within the crop",
     },
     {
       icon: <Shield className="h-8 w-8 text-green-600" />,
       title: "Corrects Physiological Disorders",
-      description: "Effectively addresses calcium-related disorders in vegetables and fruits"
+      description:
+        "Effectively addresses calcium-related disorders in vegetables and fruits",
     },
     {
       icon: <Package className="h-8 w-8 text-purple-600" />,
       title: "Increases Storage Quality",
-      description: "Enhanced storage characteristics and shelf life in vegetables"
+      description:
+        "Enhanced storage characteristics and shelf life in vegetables",
     },
     {
       icon: <Sprout className="h-8 w-8 text-orange-600" />,
       title: "Promotes Root Development",
-      description: "Timed applications at key growth stages enhance root system development"
+      description:
+        "Timed applications at key growth stages enhance root system development",
     },
     {
       icon: <Beaker className="h-8 w-8 text-blue-600" />,
       title: "Unique Generation Formulation",
-      description: "Calcium complexed with natural sugars, amino acids, and seaweed"
+      description:
+        "Calcium complexed with natural sugars, amino acids, and seaweed",
     },
     {
       icon: <Award className="h-8 w-8 text-yellow-600" />,
       title: "Complete Micronutrient Package",
-      description: "Includes zinc, iron, molybdenum, and boron with 7.5% bio-active agents"
-    }
+      description:
+        "Includes zinc, iron, molybdenum, and boron with 7.5% bio-active agents",
+    },
   ];
 
   const cropApplications = [
@@ -119,40 +138,40 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
       timing: "Start of tuber bulking & during tuber bulking",
       notes: "Critical for tuber development and quality",
       color: "bg-amber-100 text-amber-800",
-      icon: <Apple className="h-5 w-5 text-amber-600" />
+      icon: <Apple className="h-5 w-5 text-amber-600" />,
     },
     {
-      crop: "Root Crops", 
+      crop: "Root Crops",
       rate: "1.0-2.0 l/ha",
       timing: "From 4-6 true leaves, repeat at 14-21 day intervals",
       notes: "Enhanced root development and quality",
       color: "bg-orange-100 text-orange-800",
-      icon: <Sprout className="h-5 w-5 text-orange-600" />
+      icon: <Sprout className="h-5 w-5 text-orange-600" />,
     },
     {
       crop: "Lettuce & Leafy Salads",
-      rate: "1.0-2.0 l/ha", 
+      rate: "1.0-2.0 l/ha",
       timing: "From 10-14 days post planting, repeat at 10-14 day intervals",
       notes: "Improved leaf quality and storage",
       color: "bg-green-100 text-green-800",
-      icon: <Leaf className="h-5 w-5 text-green-600" />
+      icon: <Leaf className="h-5 w-5 text-green-600" />,
     },
     {
       crop: "Brassicas",
       rate: "1.0-2.0 l/ha",
-      timing: "From 3-4 true leaves, repeat at 10-14 day intervals", 
+      timing: "From 3-4 true leaves, repeat at 10-14 day intervals",
       notes: "Enhanced head development and quality",
       color: "bg-emerald-100 text-emerald-800",
-      icon: <Flower className="h-5 w-5 text-emerald-600" />
+      icon: <Flower className="h-5 w-5 text-emerald-600" />,
     },
     {
       crop: "Alliums",
       rate: "1.0-2.0 l/ha",
       timing: "From 3-4 true leaves, repeat at 14-21 day intervals",
       notes: "Improved bulb development and storage",
-      color: "bg-purple-100 text-purple-800", 
-      icon: <Target className="h-5 w-5 text-purple-600" />
-    }
+      color: "bg-purple-100 text-purple-800",
+      icon: <Target className="h-5 w-5 text-purple-600" />,
+    },
   ];
 
   const analysisData = {
@@ -162,102 +181,113 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
     "Iron (Fe)": "0.18",
     "Molybdenum (Mo)": "0.10",
     "Boron (B)": "0.02",
-    "Bio-active Agents": "7.5"
+    "Bio-active Agents": "7.5",
   };
 
   const pdfLinks = [
     {
       title: "AdvoCate Leaflet",
-      description: "Complete product information and application guidelines"
+      description: "Complete product information and application guidelines",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Advocate-1606-ii.pdf",
     },
     {
-      title: "Compatibility Chart", 
-      description: "Tank mixing compatibility with other agricultural products"
-    }
+      title: "Compatibility Chart",
+      description: "Tank mixing compatibility with other agricultural products",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2023/10/Compatibility-Chart-0923-ii.pdf",
+    },
   ];
 
   // ProductShowcase data
   const showcaseData = {
     productName: "AdvoCate",
-    productDescription: "A unique generation formulation of calcium, complexed with natural sugars, amino acids, and seaweed, providing exceptional calcium mobility within the crop. Recommended for correcting physiological disorders and increasing storage qualities in a wide variety of vegetables. The advanced complexing technology ensures optimal calcium uptake and translocation throughout the plant.",
+    productDescription:
+      "A unique generation formulation of calcium, complexed with natural sugars, amino acids, and seaweed, providing exceptional calcium mobility within the crop. Recommended for correcting physiological disorders and increasing storage qualities in a wide variety of vegetables. The advanced complexing technology ensures optimal calcium uptake and translocation throughout the plant.",
     keyFeatures: [
       "9% calcium (as CaO) with exceptional mobility",
       "Complexed with natural sugars, amino acids & seaweed",
       "3.6% nitrate nitrogen for enhanced uptake",
       "Complete micronutrient package (Zn, Fe, Mo, B)",
       "7.5% bio-active agents for enhanced effectiveness",
-      "Corrects physiological disorders effectively"
+      "Corrects physiological disorders effectively",
     ],
     targetCrops: [
       {
         name: "Potatoes",
-        image: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400&h=300&fit=crop",
         benefits: [
           "Enhanced tuber development",
           "Improved skin quality",
           "Better storage characteristics",
-          "Reduced physiological disorders"
-        ]
+          "Reduced physiological disorders",
+        ],
       },
       {
         name: "Root Vegetables",
-        image: "https://images.unsplash.com/photo-1445282768818-728615cc910a?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1445282768818-728615cc910a?w=400&h=300&fit=crop",
         benefits: [
           "Strong root development",
           "Enhanced skin quality",
           "Improved storage life",
-          "Better market presentation"
-        ]
+          "Better market presentation",
+        ],
       },
       {
         name: "Leafy Salads",
-        image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop",
         benefits: [
           "Enhanced leaf quality",
           "Improved storage qualities",
           "Better nutritional content",
-          "Reduced tip burn"
-        ]
+          "Reduced tip burn",
+        ],
       },
       {
         name: "Brassicas",
-        image: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400&h=300&fit=crop",
         benefits: [
           "Improved head development",
           "Enhanced storage quality",
           "Better disease resistance",
-          "Reduced calcium disorders"
-        ]
-      }
+          "Reduced calcium disorders",
+        ],
+      },
     ],
     scientificBenefits: [
       {
         title: "Calcium Complexing Technology",
-        description: "Advanced formulation with natural sugars, amino acids and seaweed for exceptional mobility",
-        icon: <Activity className="h-6 w-6 text-cyan-600" />
+        description:
+          "Advanced formulation with natural sugars, amino acids and seaweed for exceptional mobility",
+        icon: <Activity className="h-6 w-6 text-cyan-600" />,
       },
       {
         title: "Physiological Disorder Prevention",
-        description: "Targeted calcium delivery prevents and corrects calcium-related crop disorders",
-        icon: <Shield className="h-6 w-6 text-green-600" />
+        description:
+          "Targeted calcium delivery prevents and corrects calcium-related crop disorders",
+        icon: <Shield className="h-6 w-6 text-green-600" />,
       },
       {
         title: "Bio-Active Enhancement",
-        description: "7.5% bio-active agents improve nutrient uptake and plant metabolism",
-        icon: <Beaker className="h-6 w-6 text-purple-600" />
+        description:
+          "7.5% bio-active agents improve nutrient uptake and plant metabolism",
+        icon: <Beaker className="h-6 w-6 text-purple-600" />,
       },
       {
         title: "Storage Quality Enhancement",
-        description: "Improved calcium status enhances storage life and post-harvest quality",
-        icon: <Package className="h-6 w-6 text-orange-600" />
-      }
-    ]
+        description:
+          "Improved calcium status enhances storage life and post-harvest quality",
+        icon: <Package className="h-6 w-6 text-orange-600" />,
+      },
+    ],
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-white to-blue-50">
       {/* Hero Section */}
-      <motion.section 
+      <motion.section
         className="relative py-20 px-4 overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -274,27 +304,44 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
                 AdvoCate
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-                A unique generation formulation of calcium, complexed with natural sugars, amino acids, and seaweed, 
-                providing exceptional calcium mobility within the crop. Recommended for correcting physiological 
-                disorders and increasing storage qualities in a wide variety of vegetables.
+                A unique generation formulation of calcium, complexed with
+                natural sugars, amino acids, and seaweed, providing exceptional
+                calcium mobility within the crop. Recommended for correcting
+                physiological disorders and increasing storage qualities in a
+                wide variety of vegetables.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                The advanced complexing technology ensures optimal calcium uptake and translocation throughout the plant, 
-                making it highly effective for preventing and correcting calcium-related disorders while enhancing 
-                overall crop quality and storage characteristics.
+                The advanced complexing technology ensures optimal calcium
+                uptake and translocation throughout the plant, making it highly
+                effective for preventing and correcting calcium-related
+                disorders while enhancing overall crop quality and storage
+                characteristics.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-cyan-600 hover:bg-cyan-700 text-lg px-8 py-4">
-                  Get Product Info
+                <Button
+                  size="lg"
+                  className="bg-cyan-600 cursor-pointer hover:bg-cyan-700 text-lg px-8 py-4"
+                  onClick={() =>
+                    smoothScrollToSection("application-guidelines-maniphos")
+                  }
+                >
+                  Application Guidelines
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-                  View Application Guide
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-lg cursor-pointer px-8 py-4"
+                  onClick={() =>
+                    smoothScrollToSection("technical-resources-maniphos")
+                  }
+                >
+                  View Technical Resources
                 </Button>
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="relative"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -314,10 +361,10 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Product Showcase */}
-      <ProductShowcase {...showcaseData} />
+      {/* <ProductShowcase {...showcaseData} /> */}
 
       {/* Key Benefits Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-white/50"
         variants={staggerContainer}
         initial="initial"
@@ -328,10 +375,11 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
           <motion.div className="text-center mb-16" variants={fadeInUp}>
             <h2 className="text-4xl font-bold mb-6">Key Benefits</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover why AdvoCate delivers exceptional calcium nutrition for vegetables
+              Discover why AdvoCate delivers exceptional calcium nutrition for
+              vegetables
             </p>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
               <motion.div key={index} variants={fadeInUp}>
@@ -353,19 +401,25 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Analysis Pie Chart */}
-      <AnalysisPieChart analysis={analysisData} title="AdvoCate Advanced Formulation Analysis" />
+      <AnalysisPieChart
+        analysis={analysisData}
+        title="AdvoCate Advanced Formulation Analysis"
+      />
 
       {/* Calcium Technology Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-cyan-50 to-blue-50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Advanced Calcium Complexing Technology</h2>
+            <h2 className="text-4xl font-bold mb-6">
+              Advanced Calcium Complexing Technology
+            </h2>
             <p className="text-xl text-gray-600">
-              Unique formulation with natural bio-active agents for exceptional calcium mobility
+              Unique formulation with natural bio-active agents for exceptional
+              calcium mobility
             </p>
           </div>
 
@@ -375,46 +429,60 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
                     <Activity className="h-8 w-8 text-cyan-600" />
-                    <h3 className="text-2xl font-semibold">Unique Generation Formulation</h3>
+                    <h3 className="text-2xl font-semibold">
+                      Unique Generation Formulation
+                    </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="p-4 bg-cyan-50 rounded-lg">
-                      <h4 className="font-semibold text-cyan-800 mb-2">9% Calcium (as CaO)</h4>
+                      <h4 className="font-semibold text-cyan-800 mb-2">
+                        9% Calcium (as CaO)
+                      </h4>
                       <p className="text-cyan-700 text-sm">
-                        High concentration calcium complexed for exceptional plant mobility
+                        High concentration calcium complexed for exceptional
+                        plant mobility
                       </p>
                     </div>
-                    
+
                     <div className="p-4 bg-blue-50 rounded-lg">
-                      <h4 className="font-semibold text-blue-800 mb-2">7.5% Bio-Active Agents</h4>
+                      <h4 className="font-semibold text-blue-800 mb-2">
+                        7.5% Bio-Active Agents
+                      </h4>
                       <p className="text-blue-700 text-sm">
-                        Natural sugars, amino acids & seaweed for enhanced uptake
+                        Natural sugars, amino acids & seaweed for enhanced
+                        uptake
                       </p>
                     </div>
-                    
+
                     <div className="flex items-start gap-3">
                       <Beaker className="h-6 w-6 text-green-600 mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-2">Complete Micronutrient Package</h4>
+                        <h4 className="font-semibold mb-2">
+                          Complete Micronutrient Package
+                        </h4>
                         <p className="text-gray-600 text-sm">
-                          Includes zinc (1.5%), iron (0.18%), molybdenum (0.10%), and boron (0.02%) 
-                          for comprehensive plant nutrition.
+                          Includes zinc (1.5%), iron (0.18%), molybdenum
+                          (0.10%), and boron (0.02%) for comprehensive plant
+                          nutrition.
                         </p>
                       </div>
                     </div>
-                    
+
                     <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-cyan-800 mb-2">Advanced Complexing</h4>
+                      <h4 className="font-semibold text-cyan-800 mb-2">
+                        Advanced Complexing
+                      </h4>
                       <p className="text-cyan-700 text-sm">
-                        Natural complexing agents ensure exceptional calcium mobility within 
-                        the crop for optimal physiological function and disorder prevention.
+                        Natural complexing agents ensure exceptional calcium
+                        mobility within the crop for optimal physiological
+                        function and disorder prevention.
                       </p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             </div>
-            
+
             <div>
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600&h=400&fit=crop"
@@ -427,19 +495,19 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Application Guidelines */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-white/50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div id="application-guidelines-advocate" className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Application Guidelines</h2>
             <p className="text-xl text-gray-600">
               Crop-specific rates and timings for optimal calcium nutrition
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {cropApplications.map((crop, index) => (
               <motion.div
@@ -477,8 +545,8 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
               </motion.div>
             ))}
           </div>
-          
-          <motion.div 
+
+          <motion.div
             className="mt-12 space-y-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -490,11 +558,15 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
                 <div className="flex items-start gap-3">
                   <Droplets className="h-6 w-6 text-cyan-600 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-cyan-800">Application Method</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-cyan-800">
+                      Application Method
+                    </h3>
                     <p className="text-cyan-700 mb-4">
-                      Best applied as a foliar spray at water rates of 200-600 l/ha depending on the crop type 
-                      and stage of growth. Propagated plants benefit from application via irrigation techniques 
-                      at a rate of 4-6 ml per litre of water, ideally just prior to planting out.
+                      Best applied as a foliar spray at water rates of 200-600
+                      l/ha depending on the crop type and stage of growth.
+                      Propagated plants benefit from application via irrigation
+                      techniques at a rate of 4-6 ml per litre of water, ideally
+                      just prior to planting out.
                     </p>
                   </div>
                 </div>
@@ -506,10 +578,13 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
                 <div className="flex items-start gap-3">
                   <Target className="h-6 w-6 text-blue-600 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-blue-800">Key Growth Stages</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-blue-800">
+                      Key Growth Stages
+                    </h3>
                     <p className="text-blue-700">
-                      Timed applications at key growth stages will promote root development and ensure 
-                      optimal calcium status throughout the crop development cycle, preventing physiological 
+                      Timed applications at key growth stages will promote root
+                      development and ensure optimal calcium status throughout
+                      the crop development cycle, preventing physiological
                       disorders and enhancing storage quality.
                     </p>
                   </div>
@@ -521,7 +596,7 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Pack Sizes Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-blue-50 to-cyan-50"
         {...fadeInUp}
         viewport={{ once: true }}
@@ -533,22 +608,39 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
               Professional calcium nutrition for vegetable production
             </p>
           </div>
-          
+
           <div className="max-w-4xl mx-auto">
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Package className="h-8 w-8 text-cyan-600" />
-                  <h3 className="text-2xl font-semibold">Available Pack Sizes</h3>
+                  <h3 className="text-2xl font-semibold">
+                    Available Pack Sizes
+                  </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="text-center p-6 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg">
-                    <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">2 × 10L</Badge>
-                    <p className="text-gray-600">Perfect for specialized vegetable nutrition programs</p>
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      2 × 10L
+                    </Badge>
+                    <p className="text-gray-600">
+                      Perfect for specialized vegetable nutrition programs
+                    </p>
                   </div>
                   <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg">
-                    <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">1000L IBC</Badge>
-                    <p className="text-gray-600">Cost-effective solution for large-scale vegetable production</p>
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      1000L IBC
+                    </Badge>
+                    <p className="text-gray-600">
+                      Cost-effective solution for large-scale vegetable
+                      production
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -558,10 +650,14 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* PDF Links Section */}
-      <PDFLinks productName="AdvoCate" links={pdfLinks} />
+      <PDFLinks
+        id="technical-resources-advocate"
+        productName="AdvoCate"
+        links={pdfLinks}
+      />
 
       {/* Contact Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-cyan-600 to-blue-600 text-white"
         {...fadeInUp}
         viewport={{ once: true }}
@@ -579,24 +675,24 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
                     <p>Market Rasen LN8 3RH</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6" />
                   <p>+44 (0) 1673 885175</p>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
                   <p>office@ilex-envirosciences.com</p>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Clock className="h-6 w-6" />
                   <p>Monday–Friday: 09:00–17:00</p>
                 </div>
               </div>
             </div>
-            
+
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardHeader>
                 <CardTitle className="text-white">Product Enquiry</CardTitle>
@@ -632,8 +728,8 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
                     rows={4}
                     className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30"
                   />
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="w-full bg-white text-cyan-600 hover:bg-gray-100"
                   >
                     Submit Enquiry

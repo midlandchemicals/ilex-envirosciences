@@ -1,25 +1,31 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
-import { Badge } from './ui/badge';
-import { Separator } from './ui/separator';
-import { ProductShowcase } from './ProductShowcase';
-import { PDFLinks } from './PDFLinks';
-import { AnalysisPieChart } from './AnalysisPieChart';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { 
-  Leaf, 
-  Zap, 
-  Target, 
-  Beaker, 
-  Droplets, 
-  Clock, 
-  Package, 
-  Phone, 
-  Mail, 
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Badge } from "./ui/badge";
+import { Separator } from "./ui/separator";
+import { ProductShowcase } from "./ProductShowcase";
+import { PDFLinks } from "./PDFLinks";
+import { AnalysisPieChart } from "./AnalysisPieChart";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import {
+  Leaf,
+  Zap,
+  Target,
+  Beaker,
+  Droplets,
+  Clock,
+  Package,
+  Phone,
+  Mail,
   MapPin,
   CheckCircle,
   ArrowRight,
@@ -36,78 +42,91 @@ import {
   Sparkles,
   Wheat,
   Star,
-  Activity
-} from 'lucide-react';
+  Activity,
+} from "lucide-react";
+import { smoothScrollToSection } from "../utils/scrollHelpers";
 
 interface ContactFormProps {
-  onSubmit: (formData: { name: string; email: string; message: string }) => void;
+  onSubmit: (formData: {
+    name: string;
+    email: string;
+    message: string;
+  }) => void;
 }
 
 export function MnSuperPage({ onSubmit }: ContactFormProps) {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit(formData);
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: "", email: "", message: "" });
   };
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.6 },
   };
 
   const staggerContainer = {
     animate: {
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const benefits = [
     {
       icon: <Zap className="h-8 w-8 text-purple-600" />,
       title: "Quick-Acting Nutrient Supply",
-      description: "Rapid uptake and immediate plant response to correct manganese deficiencies"
+      description:
+        "Rapid uptake and immediate plant response to correct manganese deficiencies",
     },
     {
       icon: <Star className="h-8 w-8 text-orange-600" />,
       title: "High Concentration of Manganese",
-      description: "25% manganese content provides maximum nutrition density for efficient application"
+      description:
+        "25% manganese content provides maximum nutrition density for efficient application",
     },
     {
       icon: <Target className="h-8 w-8 text-green-600" />,
       title: "Effective at Low Application Rates",
-      description: "5 litres at maintenance rate treats up to 10ha, minimizing storage and packaging waste"
+      description:
+        "5 litres at maintenance rate treats up to 10ha, minimizing storage and packaging waste",
     },
     {
       icon: <Activity className="h-8 w-8 text-blue-600" />,
       title: "Multi-Nutrient Enhancement",
-      description: "Helps increase the levels of magnesium and zinc in the plant alongside manganese"
+      description:
+        "Helps increase the levels of magnesium and zinc in the plant alongside manganese",
     },
     {
       icon: <FlaskConical className="h-8 w-8 text-cyan-600" />,
       title: "Easy Tank Mix Integration",
-      description: "Formulated to disperse and dissolve quickly for easy use in tank mixes"
+      description:
+        "Formulated to disperse and dissolve quickly for easy use in tank mixes",
     },
     {
       icon: <Package className="h-8 w-8 text-red-600" />,
       title: "Space-Efficient Storage",
-      description: "Compact 5L packs minimize storage requirements while maximizing field coverage"
-    }
+      description:
+        "Compact 5L packs minimize storage requirements while maximizing field coverage",
+    },
   ];
 
   const applicationRates = [
@@ -117,7 +136,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
       description: "For preventing manganese deficiencies in healthy crops",
       coverage: "Up to 10ha per 5L pack",
       color: "bg-green-100 text-green-800",
-      icon: <Shield className="h-5 w-5 text-green-600" />
+      icon: <Shield className="h-5 w-5 text-green-600" />,
     },
     {
       type: "Deficiency Rate",
@@ -125,8 +144,8 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
       description: "For correcting existing manganese deficiencies",
       coverage: "3.3-6.7ha per 5L pack",
       color: "bg-orange-100 text-orange-800",
-      icon: <Zap className="h-5 w-5 text-orange-600" />
-    }
+      icon: <Zap className="h-5 w-5 text-orange-600" />,
+    },
   ];
 
   const analysisData = {
@@ -134,102 +153,113 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
     "Sulphur (SO3)": "15",
     "Nitrogen (N)": "9",
     "Magnesium (MgO)": "3.3",
-    "Zinc (Zn)": "1"
+    "Zinc (Zn)": "1",
   };
 
   const pdfLinks = [
     {
       title: "Mn SUPER Leaflet",
-      description: "Complete product information and application guidelines"
+      description: "Complete product information and application guidelines",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Mn-SUPER-2009i.pdf",
     },
     {
       title: "Compatibility Chart",
-      description: "Tank mixing compatibility with other agricultural products"
-    }
+      description: "Tank mixing compatibility with other agricultural products",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Mn-SUPER-2009i.pdf",
+    },
   ];
 
   // ProductShowcase data
   const showcaseData = {
     productName: "Mn SUPER™",
-    productDescription: "The most recent introduction from Ilex EnviroSciences Ltd. Provides a uniquely effective treatment for manganese deficiency issues, whilst providing a range of additional crop benefits from its next-generation formula of foliar nutrients. Combines soluble manganese, magnesium, and zinc with nitrogen and sulphur for excellent performance even at low rates of application.",
+    productDescription:
+      "The most recent introduction from Ilex EnviroSciences Ltd. Provides a uniquely effective treatment for manganese deficiency issues, whilst providing a range of additional crop benefits from its next-generation formula of foliar nutrients. Combines soluble manganese, magnesium, and zinc with nitrogen and sulphur for excellent performance even at low rates of application.",
     keyFeatures: [
       "25% manganese content - highest concentration available",
       "Next-generation formula with multi-nutrient complex",
       "Quick-acting nutrient supply for immediate response",
       "Combines Mn, Mg, Zn, N, and S in one application",
       "5L treats up to 10ha at maintenance rate",
-      "Minimizes storage space and packaging waste"
+      "Minimizes storage space and packaging waste",
     ],
     targetCrops: [
       {
         name: "Cereals",
-        image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=300&fit=crop",
         benefits: [
           "Enhanced photosynthesis efficiency",
           "Improved grain development",
           "Better enzyme function",
-          "Increased chlorophyll production"
-        ]
+          "Increased chlorophyll production",
+        ],
       },
       {
         name: "Oilseed Rape",
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
         benefits: [
           "Improved oil synthesis",
           "Enhanced seed development",
           "Better winter survival",
-          "Increased antioxidant activity"
-        ]
+          "Increased antioxidant activity",
+        ],
       },
       {
         name: "Sugar Beet",
-        image: "https://images.unsplash.com/photo-1592921870789-04563d55041c?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1592921870789-04563d55041c?w=400&h=300&fit=crop",
         benefits: [
           "Enhanced sugar accumulation",
           "Improved root development",
           "Better stress tolerance",
-          "Increased photosynthetic rate"
-        ]
+          "Increased photosynthetic rate",
+        ],
       },
       {
         name: "Vegetables",
-        image: "https://images.unsplash.com/photo-1590004953392-5aba2e72269a?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1590004953392-5aba2e72269a?w=400&h=300&fit=crop",
         benefits: [
           "Better quality and appearance",
           "Enhanced nutritional content",
           "Improved shelf life",
-          "Reduced susceptibility to disorders"
-        ]
-      }
+          "Reduced susceptibility to disorders",
+        ],
+      },
     ],
     scientificBenefits: [
       {
         title: "Manganese Enzyme Systems",
-        description: "Essential for photosynthesis, respiration, and antioxidant enzyme function",
-        icon: <Atom className="h-6 w-6 text-purple-600" />
+        description:
+          "Essential for photosynthesis, respiration, and antioxidant enzyme function",
+        icon: <Atom className="h-6 w-6 text-purple-600" />,
       },
       {
         title: "Multi-Nutrient Synergy",
-        description: "Combines Mn, Mg, Zn, N, and S for comprehensive plant nutrition",
-        icon: <Activity className="h-6 w-6 text-blue-600" />
+        description:
+          "Combines Mn, Mg, Zn, N, and S for comprehensive plant nutrition",
+        icon: <Activity className="h-6 w-6 text-blue-600" />,
       },
       {
         title: "High Concentration Formula",
-        description: "25% manganese provides maximum efficiency at minimal application rates",
-        icon: <Star className="h-6 w-6 text-orange-600" />
+        description:
+          "25% manganese provides maximum efficiency at minimal application rates",
+        icon: <Star className="h-6 w-6 text-orange-600" />,
       },
       {
         title: "Rapid Plant Uptake",
-        description: "Quick-acting formulation ensures immediate correction of deficiency symptoms",
-        icon: <Zap className="h-6 w-6 text-green-600" />
-      }
-    ]
+        description:
+          "Quick-acting formulation ensures immediate correction of deficiency symptoms",
+        icon: <Zap className="h-6 w-6 text-green-600" />,
+      },
+    ],
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-orange-50">
       {/* Hero Section */}
-      <motion.section 
+      <motion.section
         className="relative py-20 px-4 overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -246,27 +276,42 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
                 Mn SUPER™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-                The most recent introduction from Ilex EnviroSciences Ltd. Provides a uniquely effective treatment 
-                for manganese deficiency issues, whilst providing a range of additional crop benefits from its 
-                next-generation formula of foliar nutrients.
+                The most recent introduction from Ilex EnviroSciences Ltd.
+                Provides a uniquely effective treatment for manganese deficiency
+                issues, whilst providing a range of additional crop benefits
+                from its next-generation formula of foliar nutrients.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Combines soluble manganese, magnesium, and zinc with nitrogen and sulphur for excellent performance 
-                even at low rates of application. 5 litres treats up to 10ha at maintenance rate, minimizing storage 
-                space and reducing packaging waste.
+                Combines soluble manganese, magnesium, and zinc with nitrogen
+                and sulphur for excellent performance even at low rates of
+                application. 5 litres treats up to 10ha at maintenance rate,
+                minimizing storage space and reducing packaging waste.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-lg px-8 py-4">
-                  Get Product Info
+                <Button
+                  size="lg"
+                  className="bg-purple-600 cursor-pointer hover:bg-purple-700 text-lg px-8 py-4"
+                  onClick={() =>
+                    smoothScrollToSection("application-guidelines-mnsuper")
+                  }
+                >
+                  Application Guidlines
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-                  View Application Guide
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-lg cursor-pointer px-8 py-4"
+                  onClick={() =>
+                    smoothScrollToSection("technical-resources-mnsuper")
+                  }
+                >
+                  View Technical Resources
                 </Button>
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="relative"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -286,10 +331,10 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Product Showcase */}
-      <ProductShowcase {...showcaseData} />
+      {/* <ProductShowcase {...showcaseData} /> */}
 
       {/* Key Benefits Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-white/50"
         variants={staggerContainer}
         initial="initial"
@@ -300,10 +345,11 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
           <motion.div className="text-center mb-16" variants={fadeInUp}>
             <h2 className="text-4xl font-bold mb-6">Key Benefits</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover why Mn SUPER™ delivers the most effective manganese nutrition available
+              Discover why Mn SUPER™ delivers the most effective manganese
+              nutrition available
             </p>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
               <motion.div key={index} variants={fadeInUp}>
@@ -325,17 +371,22 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Analysis Pie Chart */}
-      <AnalysisPieChart analysis={analysisData} title="Mn SUPER™ Multi-Nutrient Analysis" />
+      <AnalysisPieChart
+        analysis={analysisData}
+        title="Mn SUPER™ Multi-Nutrient Analysis"
+      />
 
       {/* High Concentration Technology Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-purple-50 to-orange-50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Next-Generation Technology</h2>
+            <h2 className="text-4xl font-bold mb-6">
+              Next-Generation Technology
+            </h2>
             <p className="text-xl text-gray-600">
               Understanding the advanced formulation behind Mn SUPER™
             </p>
@@ -347,54 +398,65 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
                     <Star className="h-8 w-8 text-purple-600" />
-                    <h3 className="text-2xl font-semibold">25% Manganese Concentration</h3>
+                    <h3 className="text-2xl font-semibold">
+                      25% Manganese Concentration
+                    </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="flex items-start gap-3">
                       <Atom className="h-6 w-6 text-purple-600 mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-2">Maximum Efficiency</h4>
+                        <h4 className="font-semibold mb-2">
+                          Maximum Efficiency
+                        </h4>
                         <p className="text-gray-600">
-                          Highest manganese concentration available ensures maximum nutrient 
-                          delivery with minimal application volume.
+                          Highest manganese concentration available ensures
+                          maximum nutrient delivery with minimal application
+                          volume.
                         </p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start gap-3">
                       <Activity className="h-6 w-6 text-blue-600 mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-2">Multi-Nutrient Complex</h4>
+                        <h4 className="font-semibold mb-2">
+                          Multi-Nutrient Complex
+                        </h4>
                         <p className="text-gray-600">
-                          Combines manganese with magnesium, zinc, nitrogen, and sulfur for 
-                          comprehensive plant nutrition.
+                          Combines manganese with magnesium, zinc, nitrogen, and
+                          sulfur for comprehensive plant nutrition.
                         </p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start gap-3">
                       <Zap className="h-6 w-6 text-orange-600 mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-2">Rapid Plant Response</h4>
+                        <h4 className="font-semibold mb-2">
+                          Rapid Plant Response
+                        </h4>
                         <p className="text-gray-600">
-                          Quick-acting formulation provides immediate correction of manganese 
-                          deficiency symptoms.
+                          Quick-acting formulation provides immediate correction
+                          of manganese deficiency symptoms.
                         </p>
                       </div>
                     </div>
-                    
+
                     <div className="bg-purple-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-purple-800 mb-2">Economy & Efficiency</h4>
+                      <h4 className="font-semibold text-purple-800 mb-2">
+                        Economy & Efficiency
+                      </h4>
                       <p className="text-purple-700">
-                        5L treats up to 10ha at maintenance rate, minimizing storage 
-                        requirements and packaging waste.
+                        5L treats up to 10ha at maintenance rate, minimizing
+                        storage requirements and packaging waste.
                       </p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             </div>
-            
+
             <div>
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
@@ -407,19 +469,21 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Application Guidelines */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-white/50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div id="application-guidelines-mnsuper" className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Application Rates & Coverage</h2>
+            <h2 className="text-4xl font-bold mb-6">
+              Application Rates & Coverage
+            </h2>
             <p className="text-xl text-gray-600">
               Efficient manganese nutrition for all arable crops
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {applicationRates.map((rate, index) => (
               <motion.div
@@ -436,21 +500,27 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
                       <CardTitle className="text-xl">{rate.type}</CardTitle>
                     </div>
                     <div className="text-center p-4 bg-gray-50 rounded-lg mb-4">
-                      <Badge className={`${rate.color} text-2xl px-4 py-2 mb-2`}>
+                      <Badge
+                        className={`${rate.color} text-2xl px-4 py-2 mb-2`}
+                      >
                         {rate.rate}
                       </Badge>
-                      <p className="text-sm text-gray-600 mt-2">{rate.coverage}</p>
+                      <p className="text-sm text-gray-600 mt-2">
+                        {rate.coverage}
+                      </p>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 text-center">{rate.description}</p>
+                    <p className="text-gray-600 text-center">
+                      {rate.description}
+                    </p>
                   </CardContent>
                 </Card>
               </motion.div>
             ))}
           </div>
-          
-          <motion.div 
+
+          <motion.div
             className="mt-12 max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -462,10 +532,13 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-6 w-6 text-red-600 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-red-800">Severe Deficiency Treatment</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-red-800">
+                      Severe Deficiency Treatment
+                    </h3>
                     <p className="text-red-700">
-                      In case of severe deficiencies, repeat applications at the 1 l/ha rate until 
-                      symptoms are corrected. Monitor plant response and adjust timing accordingly.
+                      In case of severe deficiencies, repeat applications at the
+                      1 l/ha rate until symptoms are corrected. Monitor plant
+                      response and adjust timing accordingly.
                     </p>
                   </div>
                 </div>
@@ -476,7 +549,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Pack Sizes Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-orange-50 to-purple-50"
         {...fadeInUp}
         viewport={{ once: true }}
@@ -488,24 +561,44 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
               Space-efficient packaging for maximum field coverage
             </p>
           </div>
-          
+
           <div className="max-w-4xl mx-auto">
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Package className="h-8 w-8 text-purple-600" />
-                  <h3 className="text-2xl font-semibold">Available Pack Sizes</h3>
+                  <h3 className="text-2xl font-semibold">
+                    Available Pack Sizes
+                  </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-orange-50 rounded-lg">
-                    <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">2 × 5L</Badge>
-                    <p className="text-gray-600 mb-2">Compact twin pack for easy handling</p>
-                    <p className="text-sm text-gray-500">Up to 20ha coverage at maintenance rate</p>
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      2 × 5L
+                    </Badge>
+                    <p className="text-gray-600 mb-2">
+                      Compact twin pack for easy handling
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      Up to 20ha coverage at maintenance rate
+                    </p>
                   </div>
                   <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-orange-50 rounded-lg">
-                    <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">600L IBC</Badge>
-                    <p className="text-gray-600 mb-2">Bulk solution for large operations</p>
-                    <p className="text-sm text-gray-500">Up to 1200ha coverage at maintenance rate</p>
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      600L IBC
+                    </Badge>
+                    <p className="text-gray-600 mb-2">
+                      Bulk solution for large operations
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      Up to 1200ha coverage at maintenance rate
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -515,10 +608,14 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* PDF Links Section */}
-      <PDFLinks productName="Mn SUPER™" links={pdfLinks} />
+      <PDFLinks
+        id="technical-resources-mnsuper"
+        productName="Mn SUPER™"
+        links={pdfLinks}
+      />
 
       {/* Contact Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-purple-600 to-orange-600 text-white"
         {...fadeInUp}
         viewport={{ once: true }}
@@ -536,24 +633,24 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
                     <p>Market Rasen LN8 3RH</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6" />
                   <p>+44 (0) 1673 885175</p>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
                   <p>office@ilex-envirosciences.com</p>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Clock className="h-6 w-6" />
                   <p>Monday–Friday: 09:00–17:00</p>
                 </div>
               </div>
             </div>
-            
+
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardHeader>
                 <CardTitle className="text-white">Product Enquiry</CardTitle>
@@ -589,8 +686,8 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
                     rows={4}
                     className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30"
                   />
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="w-full bg-white text-purple-600 hover:bg-gray-100"
                   >
                     Submit Enquiry

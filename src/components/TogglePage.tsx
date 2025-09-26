@@ -1,24 +1,30 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
-import { Badge } from './ui/badge';
-import { Separator } from './ui/separator';
-import { ProductShowcase } from './ProductShowcase';
-import { PDFLinks } from './PDFLinks';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { 
-  Leaf, 
-  Zap, 
-  Target, 
-  Beaker, 
-  Droplets, 
-  Clock, 
-  Package, 
-  Phone, 
-  Mail, 
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Badge } from "./ui/badge";
+import { Separator } from "./ui/separator";
+import { ProductShowcase } from "./ProductShowcase";
+import { PDFLinks } from "./PDFLinks";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import {
+  Leaf,
+  Zap,
+  Target,
+  Beaker,
+  Droplets,
+  Clock,
+  Package,
+  Phone,
+  Mail,
   MapPin,
   CheckCircle,
   ArrowRight,
@@ -40,157 +46,179 @@ import {
   Tractor,
   BarChart3,
   RefreshCw,
-  Gauge
-} from 'lucide-react';
+  Gauge,
+} from "lucide-react";
+import { smoothScrollToSection } from "../utils/scrollHelpers";
 
 interface ContactFormProps {
-  onSubmit: (formData: { name: string; email: string; message: string }) => void;
+  onSubmit: (formData: {
+    name: string;
+    email: string;
+    message: string;
+  }) => void;
 }
 
 export function TogglePage({ onSubmit }: ContactFormProps) {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit(formData);
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: "", email: "", message: "" });
   };
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.6 },
   };
 
   const staggerContainer = {
     animate: {
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const benefits = [
     {
       icon: <Sprout className="h-8 w-8 text-green-600" />,
       title: "Enhances Root Growth & Early Development",
-      description: "Promotes strong root system establishment and accelerated early plant development"
+      description:
+        "Promotes strong root system establishment and accelerated early plant development",
     },
     {
       icon: <Sun className="h-8 w-8 text-yellow-600" />,
       title: "Increases Photosynthesis & Nutrient Usage",
-      description: "Optimizes photosynthetic efficiency and enhances nutrient uptake and utilization"
+      description:
+        "Optimizes photosynthetic efficiency and enhances nutrient uptake and utilization",
     },
     {
       icon: <Heart className="h-8 w-8 text-red-600" />,
       title: "Promotes Overall Plant Health",
-      description: "Comprehensive plant health enhancement through natural biostimulation"
+      description:
+        "Comprehensive plant health enhancement through natural biostimulation",
     },
     {
       icon: <Shield className="h-8 w-8 text-blue-600" />,
       title: "Maximises Environmental Stress Resistance",
-      description: "Natural defense mechanisms against drought, waterlogging, and environmental stresses"
+      description:
+        "Natural defense mechanisms against drought, waterlogging, and environmental stresses",
     },
     {
       icon: <TrendingUp className="h-8 w-8 text-purple-600" />,
       title: "Improves Quality & Yield",
-      description: "Enhanced crop quality characteristics and increased yield potential"
+      description:
+        "Enhanced crop quality characteristics and increased yield potential",
     },
     {
       icon: <Award className="h-8 w-8 text-orange-600" />,
       title: "Highest Quality Standards",
-      description: "Premium product quality and consistency from North Atlantic Ascophyllum nodosum"
+      description:
+        "Premium product quality and consistency from North Atlantic Ascophyllum nodosum",
     },
     {
       icon: <RefreshCw className="h-8 w-8 text-teal-600" />,
       title: "Excellent Curative Properties",
-      description: "Outstanding recovery from injury or stressful conditions like drought or waterlogging"
+      description:
+        "Outstanding recovery from injury or stressful conditions like drought or waterlogging",
     },
     {
       icon: <Gauge className="h-8 w-8 text-indigo-600" />,
       title: "Preventative Treatment",
-      description: "Routine use maintains superior crop health and alleviates physiological stress"
-    }
+      description:
+        "Routine use maintains superior crop health and alleviates physiological stress",
+    },
   ];
 
   const cropApplications = [
     {
       crop: "Cereals - Tillering",
       rate: "1.5-3.0 l/ha",
-      timing: "Apply during early tillering stage for enhanced root development and establishment",
+      timing:
+        "Apply during early tillering stage for enhanced root development and establishment",
       color: "bg-yellow-100 text-yellow-800",
-      icon: <Wheat className="h-5 w-5 text-yellow-600" />
+      icon: <Wheat className="h-5 w-5 text-yellow-600" />,
     },
     {
       crop: "Cereals - Stem Elongation",
-      rate: "1.5-3.0 l/ha", 
-      timing: "Apply during stem elongation to support rapid growth and stress tolerance",
+      rate: "1.5-3.0 l/ha",
+      timing:
+        "Apply during stem elongation to support rapid growth and stress tolerance",
       color: "bg-amber-100 text-amber-800",
-      icon: <TrendingUp className="h-5 w-5 text-amber-600" />
+      icon: <TrendingUp className="h-5 w-5 text-amber-600" />,
     },
     {
       crop: "Cereals - Flag Leaf",
       rate: "1.5-3.0 l/ha",
-      timing: "Apply at flag leaf stage to optimize grain development and quality",
+      timing:
+        "Apply at flag leaf stage to optimize grain development and quality",
       color: "bg-orange-100 text-orange-800",
-      icon: <Leaf className="h-5 w-5 text-orange-600" />
+      icon: <Leaf className="h-5 w-5 text-orange-600" />,
     },
     {
       crop: "Oilseed Rape - 3 Weeks Post Emergence",
       rate: "1.5-3.0 l/ha",
       timing: "Apply 3 weeks after emergence for strong establishment",
       color: "bg-blue-100 text-blue-800",
-      icon: <Sprout className="h-5 w-5 text-blue-600" />
+      icon: <Sprout className="h-5 w-5 text-blue-600" />,
     },
     {
       crop: "Oilseed Rape - Stem Extension",
       rate: "1.5-3.0 l/ha",
       timing: "Apply during stem extension to support rapid growth phase",
       color: "bg-cyan-100 text-cyan-800",
-      icon: <Activity className="h-5 w-5 text-cyan-600" />
+      icon: <Activity className="h-5 w-5 text-cyan-600" />,
     },
     {
       crop: "Oilseed Rape - Pod Set",
       rate: "1.5-3.0 l/ha",
       timing: "Apply at pod set stage for enhanced yield and oil quality",
       color: "bg-teal-100 text-teal-800",
-      icon: <Target className="h-5 w-5 text-teal-600" />
+      icon: <Target className="h-5 w-5 text-teal-600" />,
     },
     {
       crop: "Peas & Beans",
       rate: "2.0-4.0 l/ha",
-      timing: "Apply at 2-3 weeks post emergence. Repeat at 14-21 day intervals",
+      timing:
+        "Apply at 2-3 weeks post emergence. Repeat at 14-21 day intervals",
       color: "bg-green-100 text-green-800",
-      icon: <Apple className="h-5 w-5 text-green-600" />
-    }
+      icon: <Apple className="h-5 w-5 text-green-600" />,
+    },
   ];
 
   const pdfLinks = [
     {
       title: "Toggle Plus Leaflet",
-      description: "Complete product information and application guidelines"
+      description: "Complete product information and application guidelines",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Toggle%C2%AE-2001-ii.pdf",
     },
     {
       title: "Compatibility Chart",
-      description: "Tank mixing compatibility with other agricultural products"
-    }
+      description: "Tank mixing compatibility with other agricultural products",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2023/10/Compatibility-Chart-0923-ii.pdf",
+    },
   ];
 
   // ProductShowcase data
   const showcaseData = {
     productName: "Toggle",
-    productDescription: "A super-value concentrated liquid biostimulant specifically developed for broadfield crops. Enhances root growth, early plant development, photosynthesis, and nutrient usage to promote overall plant health. Maximizes natural plant resistance to environmental stresses to improve quality and yield. Should be used routinely as a preventative treatment to maintain superior crop health and alleviate symptoms of physiological and nutritional stress, with excellent curative properties for recovery from injury or stressful conditions like drought or waterlogging.",
+    productDescription:
+      "A super-value concentrated liquid biostimulant specifically developed for broadfield crops. Enhances root growth, early plant development, photosynthesis, and nutrient usage to promote overall plant health. Maximizes natural plant resistance to environmental stresses to improve quality and yield. Should be used routinely as a preventative treatment to maintain superior crop health and alleviate symptoms of physiological and nutritional stress, with excellent curative properties for recovery from injury or stressful conditions like drought or waterlogging.",
     keyFeatures: [
       "Super-value concentrated liquid biostimulant for broadfield crops",
       "Enhances root growth and early plant development",
@@ -198,78 +226,86 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
       "Maximizes natural plant resistance to environmental stress",
       "Excellent curative properties for stress recovery",
       "Routine preventative treatment for superior crop health",
-      "Contains naturally balanced compounds from North Atlantic seaweed"
+      "Contains naturally balanced compounds from North Atlantic seaweed",
     ],
     targetCrops: [
       {
         name: "Cereals",
-        image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=300&fit=crop",
         benefits: [
           "Enhanced tillering and establishment",
           "Improved grain development",
           "Better stress tolerance",
-          "Increased yield potential"
-        ]
+          "Increased yield potential",
+        ],
       },
       {
         name: "Oilseed Rape",
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
         benefits: [
           "Strong early establishment",
           "Enhanced pod development",
           "Improved oil quality",
-          "Better winter hardiness"
-        ]
+          "Better winter hardiness",
+        ],
       },
       {
         name: "Peas & Beans",
-        image: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=400&h=300&fit=crop",
         benefits: [
           "Enhanced nodulation",
           "Improved nitrogen fixation",
           "Better pod fill",
-          "Increased protein content"
-        ]
+          "Increased protein content",
+        ],
       },
       {
         name: "Broadfield Crops",
-        image: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=400&h=300&fit=crop",
         benefits: [
           "Cost-effective treatment",
           "Broad spectrum application",
           "Enhanced stress resilience",
-          "Improved crop uniformity"
-        ]
-      }
+          "Improved crop uniformity",
+        ],
+      },
     ],
     scientificBenefits: [
       {
         title: "Broadfield Crop Specialist",
-        description: "Specifically formulated for large-scale arable crop production with cost-effective application rates",
-        icon: <Tractor className="h-6 w-6 text-green-600" />
+        description:
+          "Specifically formulated for large-scale arable crop production with cost-effective application rates",
+        icon: <Tractor className="h-6 w-6 text-green-600" />,
       },
       {
         title: "Preventative Treatment",
-        description: "Routine application maintains superior crop health and prevents physiological stress",
-        icon: <Shield className="h-6 w-6 text-blue-600" />
+        description:
+          "Routine application maintains superior crop health and prevents physiological stress",
+        icon: <Shield className="h-6 w-6 text-blue-600" />,
       },
       {
         title: "Curative Properties",
-        description: "Excellent recovery properties for crops stressed by drought, waterlogging, or injury",
-        icon: <RefreshCw className="h-6 w-6 text-purple-600" />
+        description:
+          "Excellent recovery properties for crops stressed by drought, waterlogging, or injury",
+        icon: <RefreshCw className="h-6 w-6 text-purple-600" />,
       },
       {
         title: "North Atlantic Seaweed",
-        description: "Contains naturally balanced nutrients and bioactive compounds from Ascophyllum nodosum",
-        icon: <Waves className="h-6 w-6 text-cyan-600" />
-      }
-    ]
+        description:
+          "Contains naturally balanced nutrients and bioactive compounds from Ascophyllum nodosum",
+        icon: <Waves className="h-6 w-6 text-cyan-600" />,
+      },
+    ],
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
       {/* Hero Section */}
-      <motion.section 
+      <motion.section
         className="relative py-20 px-4 overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -282,32 +318,48 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
               <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200 text-lg px-4 py-2">
                 Super-Value Concentrated Biostimulant for Broadfield Crops
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold leading-[1.2] mb-6 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
                 Toggle
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-                A super-value concentrated liquid biostimulant specifically developed for broadfield crops. 
-                Enhances root growth, early plant development, photosynthesis, and nutrient usage to promote 
-                overall plant health. Maximizes natural plant resistance to environmental stresses to improve 
-                quality and yield.
+                A super-value concentrated liquid biostimulant specifically
+                developed for broadfield crops. Enhances root growth, early
+                plant development, photosynthesis, and nutrient usage to promote
+                overall plant health. Maximizes natural plant resistance to
+                environmental stresses to improve quality and yield.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Should be used routinely as a preventative treatment to maintain superior crop health and 
-                alleviate symptoms of physiological and nutritional stress, with excellent curative properties 
-                for recovery from injury or stressful conditions like drought or waterlogging.
+                Should be used routinely as a preventative treatment to maintain
+                superior crop health and alleviate symptoms of physiological and
+                nutritional stress, with excellent curative properties for
+                recovery from injury or stressful conditions like drought or
+                waterlogging.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-4">
-                  Get Product Info
+                <Button
+                  size="lg"
+                  className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-lg px-8 py-4"
+                  onClick={() =>
+                    smoothScrollToSection("application-guidelines-togglepage")
+                  }
+                >
+                  Application Guidlines
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-                  View Application Guide
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-lg cursor-pointer px-8 py-4"
+                  onClick={() =>
+                    smoothScrollToSection("technical-resources-togglepage")
+                  }
+                >
+                  View Technical Resources
                 </Button>
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="relative"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -327,10 +379,10 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Product Showcase */}
-      <ProductShowcase {...showcaseData} />
+      {/* <ProductShowcase {...showcaseData} /> */}
 
       {/* Key Benefits Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-white/50"
         variants={staggerContainer}
         initial="initial"
@@ -341,10 +393,11 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
           <motion.div className="text-center mb-16" variants={fadeInUp}>
             <h2 className="text-4xl font-bold mb-6">Key Benefits</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover why Toggle is the super-value choice for broadfield crop biostimulation
+              Discover why Toggle is the super-value choice for broadfield crop
+              biostimulation
             </p>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
               <motion.div key={index} variants={fadeInUp}>
@@ -366,16 +419,19 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Broadfield Technology Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-blue-50 to-green-50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Broadfield Crop Specialist</h2>
+            <h2 className="text-4xl font-bold mb-6">
+              Broadfield Crop Specialist
+            </h2>
             <p className="text-xl text-gray-600">
-              Super-value biostimulant specifically developed for large-scale arable production
+              Super-value biostimulant specifically developed for large-scale
+              arable production
             </p>
           </div>
 
@@ -385,42 +441,56 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
                     <Tractor className="h-8 w-8 text-blue-600" />
-                    <h3 className="text-2xl font-semibold">Broadfield Excellence</h3>
+                    <h3 className="text-2xl font-semibold">
+                      Broadfield Excellence
+                    </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="p-4 bg-blue-50 rounded-lg">
-                      <h4 className="font-semibold text-blue-800 mb-2">Cost-Effective Application</h4>
+                      <h4 className="font-semibold text-blue-800 mb-2">
+                        Cost-Effective Application
+                      </h4>
                       <p className="text-blue-700 text-sm">
-                        Super-value formulation designed for large-scale broadfield crop production
+                        Super-value formulation designed for large-scale
+                        broadfield crop production
                       </p>
                     </div>
-                    
+
                     <div className="p-4 bg-green-50 rounded-lg">
-                      <h4 className="font-semibold text-green-800 mb-2">Easy-to-Use Liquid</h4>
+                      <h4 className="font-semibold text-green-800 mb-2">
+                        Easy-to-Use Liquid
+                      </h4>
                       <p className="text-green-700 text-sm">
-                        Free from solids with pH suited to efficient uptake and maximum tank-mix compatibility
+                        Free from solids with pH suited to efficient uptake and
+                        maximum tank-mix compatibility
                       </p>
                     </div>
-                    
+
                     <div className="p-4 bg-purple-50 rounded-lg">
-                      <h4 className="font-semibold text-purple-800 mb-2">Preventative & Curative</h4>
+                      <h4 className="font-semibold text-purple-800 mb-2">
+                        Preventative & Curative
+                      </h4>
                       <p className="text-purple-700 text-sm">
-                        Routine preventative treatment with excellent curative properties for stress recovery
+                        Routine preventative treatment with excellent curative
+                        properties for stress recovery
                       </p>
                     </div>
-                    
+
                     <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-blue-800 mb-2">Natural Compounds</h4>
+                      <h4 className="font-semibold text-blue-800 mb-2">
+                        Natural Compounds
+                      </h4>
                       <p className="text-blue-700 text-sm">
-                        Contains naturally balanced plant nutrients, vitamins, and active compounds 
-                        derived from North Atlantic Ascophyllum nodosum.
+                        Contains naturally balanced plant nutrients, vitamins,
+                        and active compounds derived from North Atlantic
+                        Ascophyllum nodosum.
                       </p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             </div>
-            
+
             <div>
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600&h=400&fit=crop"
@@ -433,19 +503,23 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Application Guidelines */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-white/50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div
+          id="application-guidelines-togglepage"
+          className="max-w-7xl mx-auto"
+        >
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Application Guidelines</h2>
             <p className="text-xl text-gray-600">
-              Stage-specific rates and timings for optimal broadfield crop performance
+              Stage-specific rates and timings for optimal broadfield crop
+              performance
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-6">
             {cropApplications.map((crop, index) => (
               <motion.div
@@ -477,8 +551,8 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
               </motion.div>
             ))}
           </div>
-          
-          <motion.div 
+
+          <motion.div
             className="mt-12 space-y-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -490,12 +564,15 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
                 <div className="flex items-start gap-3">
                   <Droplets className="h-6 w-6 text-blue-600 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-blue-800">Application Method</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-blue-800">
+                      Application Method
+                    </h3>
                     <p className="text-blue-700">
-                      Recommended for application as a foliar spray at water rates of 100-300 l/ha 
-                      depending on the crop and growth stage. Formulated as an easy-to-use liquid 
-                      free from solids and with a pH suited to efficient crop uptake and maximum 
-                      tank-mix compatibility.
+                      Recommended for application as a foliar spray at water
+                      rates of 100-300 l/ha depending on the crop and growth
+                      stage. Formulated as an easy-to-use liquid free from
+                      solids and with a pH suited to efficient crop uptake and
+                      maximum tank-mix compatibility.
                     </p>
                   </div>
                 </div>
@@ -507,11 +584,14 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
                 <div className="flex items-start gap-3">
                   <RefreshCw className="h-6 w-6 text-green-600 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-green-800">Preventative & Curative</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-green-800">
+                      Preventative & Curative
+                    </h3>
                     <p className="text-green-700">
-                      Use routinely as a preventative treatment to maintain superior crop health. 
-                      Excellent curative properties for recovery from injury or stressful conditions 
-                      such as drought or waterlogging.
+                      Use routinely as a preventative treatment to maintain
+                      superior crop health. Excellent curative properties for
+                      recovery from injury or stressful conditions such as
+                      drought or waterlogging.
                     </p>
                   </div>
                 </div>
@@ -522,7 +602,7 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Pack Sizes Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-green-50 to-blue-50"
         {...fadeInUp}
         viewport={{ once: true }}
@@ -534,17 +614,24 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
               Super-value biostimulant for broadfield crop production
             </p>
           </div>
-          
+
           <div className="max-w-4xl mx-auto">
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Package className="h-8 w-8 text-blue-600" />
-                  <h3 className="text-2xl font-semibold">Available Pack Size</h3>
+                  <h3 className="text-2xl font-semibold">
+                    Available Pack Size
+                  </h3>
                 </div>
                 <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-green-50 rounded-lg">
-                  <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">2 × 10L</Badge>
-                  <p className="text-gray-600">Cost-effective biostimulant specifically developed for broadfield crops</p>
+                  <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">
+                    2 × 10L
+                  </Badge>
+                  <p className="text-gray-600">
+                    Cost-effective biostimulant specifically developed for
+                    broadfield crops
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -553,10 +640,14 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* PDF Links Section */}
-      <PDFLinks productName="Toggle" links={pdfLinks} />
+      <PDFLinks
+        id="technical-resources-togglepage"
+        productName="Toggle"
+        links={pdfLinks}
+      />
 
       {/* Contact Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-blue-600 to-green-600 text-white"
         {...fadeInUp}
         viewport={{ once: true }}
@@ -574,24 +665,24 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
                     <p>Market Rasen LN8 3RH</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6" />
                   <p>+44 (0) 1673 885175</p>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
                   <p>office@ilex-envirosciences.com</p>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Clock className="h-6 w-6" />
                   <p>Monday–Friday: 09:00–17:00</p>
                 </div>
               </div>
             </div>
-            
+
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardHeader>
                 <CardTitle className="text-white">Product Enquiry</CardTitle>
@@ -627,8 +718,8 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
                     rows={4}
                     className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30"
                   />
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="w-full bg-white text-blue-600 hover:bg-gray-100"
                   >
                     Submit Enquiry

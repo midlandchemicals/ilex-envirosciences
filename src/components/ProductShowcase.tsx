@@ -46,7 +46,7 @@ export function ProductShowcase({
   targetCrops,
   scientificBenefits
 }: ProductShowcaseProps) {
-  const [activeTab, setActiveTab] = useState('product');
+  const [activeTab, setActiveTab] = useState('results');
   const [selectedCrop, setSelectedCrop] = useState(0);
 
   const fadeInUp = {
@@ -84,10 +84,10 @@ export function ProductShowcase({
         </motion.div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-4 mb-8">
-            <TabsTrigger value="product" className="flex items-center gap-2">
-              <Package className="h-4 w-4" />
-              Product
+          <TabsList className="grid w-full grid-cols-3 mb-8">
+            <TabsTrigger value="results" className="flex items-center gap-2">
+              <BarChart3 className="h-4 w-4" />
+              Results
             </TabsTrigger>
             <TabsTrigger value="science" className="flex items-center gap-2">
               <Atom className="h-4 w-4" />
@@ -96,10 +96,6 @@ export function ProductShowcase({
             <TabsTrigger value="application" className="flex items-center gap-2">
               <Target className="h-4 w-4" />
               Application
-            </TabsTrigger>
-            <TabsTrigger value="results" className="flex items-center gap-2">
-              <BarChart3 className="h-4 w-4" />
-              Results
             </TabsTrigger>
           </TabsList>
 

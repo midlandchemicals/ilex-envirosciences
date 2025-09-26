@@ -1,25 +1,32 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
-import { Badge } from './ui/badge';
-import { Separator } from './ui/separator';
-import { ProductShowcase } from './ProductShowcase';
-import { PDFLinks } from './PDFLinks';
-import { AnalysisPieChart } from './AnalysisPieChart';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { 
-  Leaf, 
-  Zap, 
-  Target, 
-  Beaker, 
-  Droplets, 
-  Clock, 
-  Package, 
-  Phone, 
-  Mail, 
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Badge } from "./ui/badge";
+import { Separator } from "./ui/separator";
+import { ProductShowcase } from "./ProductShowcase";
+import { PDFLinks } from "./PDFLinks";
+import { AnalysisPieChart } from "./AnalysisPieChart";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { smoothScrollToSection } from "../utils/scrollHelpers";
+import {
+  Leaf,
+  Zap,
+  Target,
+  Beaker,
+  Droplets,
+  Clock,
+  Package,
+  Phone,
+  Mail,
   MapPin,
   CheckCircle,
   ArrowRight,
@@ -43,105 +50,120 @@ import {
   Cherry,
   Gem,
   Trophy,
-  Flame
-} from 'lucide-react';
+  Flame,
+} from "lucide-react";
 
 interface ContactFormProps {
-  onSubmit: (formData: { name: string; email: string; message: string }) => void;
+  onSubmit: (formData: {
+    name: string;
+    email: string;
+    message: string;
+  }) => void;
 }
 
 export function KMaxPage({ onSubmit }: ContactFormProps) {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit(formData);
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: "", email: "", message: "" });
   };
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.6 },
   };
 
   const staggerContainer = {
     animate: {
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const benefits = [
     {
       icon: <Crown className="h-8 w-8 text-purple-600" />,
       title: "Highest Analysis Organically Sourced Potassium",
-      description: "Offers the highest analysis of organically sourced potassium in liquid form (8.2% K2O)"
+      description:
+        "Offers the highest analysis of organically sourced potassium in liquid form (8.2% K2O)",
     },
     {
       icon: <Shield className="h-8 w-8 text-green-600" />,
       title: "Safe & Effective Plant Protein Source",
-      description: "Derived from plant protein sources for safe and effective organic fertilization"
+      description:
+        "Derived from plant protein sources for safe and effective organic fertilization",
     },
     {
       icon: <Droplets className="h-8 w-8 text-blue-600" />,
       title: "Easy-to-Use Liquid Formulation",
-      description: "Formulated as an easy-to-use liquid for convenient application"
+      description:
+        "Formulated as an easy-to-use liquid for convenient application",
     },
     {
       icon: <Heart className="h-8 w-8 text-red-600" />,
       title: "Balanced Nutrient Combination",
-      description: "Contains balanced nutrients to encourage strong and healthy growth in fruiting and flowering plants"
+      description:
+        "Contains balanced nutrients to encourage strong and healthy growth in fruiting and flowering plants",
     },
     {
       icon: <Cherry className="h-8 w-8 text-pink-600" />,
       title: "Stimulates Reproductive Growth",
-      description: "Particularly important for stimulating reproductive growth and promoting fruit development"
+      description:
+        "Particularly important for stimulating reproductive growth and promoting fruit development",
     },
     {
       icon: <GraduationCap className="h-8 w-8 text-indigo-600" />,
       title: "Fully Approved for Organic Systems",
-      description: "Certified by the Soil Association for use in organic cropping systems in the UK"
-    }
+      description:
+        "Certified by the Soil Association for use in organic cropping systems in the UK",
+    },
   ];
 
   const analysisData = {
     "Nitrogen (N)": "3.8",
-    "Phosphorus (P2O5)": "1.6", 
+    "Phosphorus (P2O5)": "1.6",
     "Potassium (K2O)": "8.2",
     "Sodium (Na2O)": "0.3",
     "Calcium (CaO)": "0.3",
     "Sulphur (SO3)": "1.2",
-    "Magnesium (MgO)": "0.1"
+    "Magnesium (MgO)": "0.1",
   };
 
   const pdfLinks = [
     {
       title: "K-Max (3-1-8) Leaflet",
-      description: "Complete product information and application guidelines"
+      description: "Complete product information and application guidelines",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Organic-Umbrella-1606i.pdf",
     },
     {
       title: "Compatibility Chart",
-      description: "Tank mixing compatibility with other agricultural products"
-    }
+      description: "Tank mixing compatibility with other agricultural products",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2023/10/Compatibility-Chart-0923-ii.pdf",
+    },
   ];
 
   // ProductShowcase data
   const showcaseData = {
     productName: "K-Max (3-1-8)",
-    productDescription: "Offers the highest analysis of organically sourced potassium in liquid form. Improves crop potential in both protected and outdoor crops by supplying key nutrients at crucial stages of growth. Particularly important for stimulating reproductive growth and promoting fruit development. Derived from plant protein sources, it is a safe and effective fertilizer for organic cropping systems.",
+    productDescription:
+      "Offers the highest analysis of organically sourced potassium in liquid form. Improves crop potential in both protected and outdoor crops by supplying key nutrients at crucial stages of growth. Particularly important for stimulating reproductive growth and promoting fruit development. Derived from plant protein sources, it is a safe and effective fertilizer for organic cropping systems.",
     keyFeatures: [
       "Highest analysis of organically sourced potassium (8.2% K2O)",
       "Derived from plant protein sources for organic systems",
@@ -149,78 +171,86 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
       "Promotes exceptional fruit development",
       "Safe and effective liquid formulation",
       "Supplies key nutrients at crucial growth stages",
-      "Certified by Soil Association for organic cropping systems"
+      "Certified by Soil Association for organic cropping systems",
     ],
     targetCrops: [
       {
         name: "Protected Crops",
-        image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop",
         benefits: [
           "Enhanced reproductive growth",
           "Improved fruit development",
           "Optimal nutrient timing",
-          "Increased yield potential"
-        ]
+          "Increased yield potential",
+        ],
       },
       {
         name: "Outdoor Crops",
-        image: "https://images.unsplash.com/photo-1464822759356-8d6106e78f86?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1464822759356-8d6106e78f86?w=400&h=300&fit=crop",
         benefits: [
           "Superior fruit quality",
           "Enhanced crop potential",
           "Optimal potassium nutrition",
-          "Improved marketability"
-        ]
+          "Improved marketability",
+        ],
       },
       {
         name: "Fruiting Plants",
-        image: "https://images.unsplash.com/photo-1464822759356-8d6106e78f86?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1464822759356-8d6106e78f86?w=400&h=300&fit=crop",
         benefits: [
           "Stimulated reproductive growth",
           "Enhanced fruit development",
           "Improved fruit size and quality",
-          "Extended fruiting period"
-        ]
+          "Extended fruiting period",
+        ],
       },
       {
         name: "Flowering Plants",
-        image: "https://images.unsplash.com/photo-1464822759356-8d6106e78f86?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1464822759356-8d6106e78f86?w=400&h=300&fit=crop",
         benefits: [
           "Enhanced flowering performance",
           "Improved bloom quality",
           "Better color development",
-          "Extended flowering season"
-        ]
-      }
+          "Extended flowering season",
+        ],
+      },
     ],
     scientificBenefits: [
       {
         title: "Plant Protein Source",
-        description: "Derived from plant protein sources providing safe and effective organic nutrition",
-        icon: <Leaf className="h-6 w-6 text-green-600" />
+        description:
+          "Derived from plant protein sources providing safe and effective organic nutrition",
+        icon: <Leaf className="h-6 w-6 text-green-600" />,
       },
       {
         title: "Highest Potassium Analysis",
-        description: "8.2% K2O - the highest analysis of organically sourced potassium in liquid form",
-        icon: <Crown className="h-6 w-6 text-purple-600" />
+        description:
+          "8.2% K2O - the highest analysis of organically sourced potassium in liquid form",
+        icon: <Crown className="h-6 w-6 text-purple-600" />,
       },
       {
         title: "Reproductive Growth Stimulation",
-        description: "Particularly important for stimulating reproductive growth and promoting fruit development",
-        icon: <Cherry className="h-6 w-6 text-pink-600" />
+        description:
+          "Particularly important for stimulating reproductive growth and promoting fruit development",
+        icon: <Cherry className="h-6 w-6 text-pink-600" />,
       },
       {
         title: "Organic Certification",
-        description: "Fully approved and certified for use in organic cropping systems by the Soil Association",
-        icon: <Award className="h-6 w-6 text-indigo-600" />
-      }
-    ]
+        description:
+          "Fully approved and certified for use in organic cropping systems by the Soil Association",
+        icon: <Award className="h-6 w-6 text-indigo-600" />,
+      },
+    ],
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
       {/* Hero Section */}
-      <motion.section 
+      <motion.section
         className="relative py-20 px-4 overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -237,26 +267,43 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
                 K-Max (3-1-8)
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-                Offers the highest analysis of organically sourced potassium in liquid form. Improves crop potential 
-                in both protected and outdoor crops by supplying key nutrients at crucial stages of growth. 
-                Particularly important for stimulating reproductive growth and promoting fruit development.
+                Offers the highest analysis of organically sourced potassium in
+                liquid form. Improves crop potential in both protected and
+                outdoor crops by supplying key nutrients at crucial stages of
+                growth. Particularly important for stimulating reproductive
+                growth and promoting fruit development.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Derived from plant protein sources, it is a safe and effective fertilizer for organic cropping systems. 
-                Fully approved and certified for use in organic cropping systems in the UK by the Soil Association.
+                Derived from plant protein sources, it is a safe and effective
+                fertilizer for organic cropping systems. Fully approved and
+                certified for use in organic cropping systems in the UK by the
+                Soil Association.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-lg px-8 py-4">
-                  Get Product Info
+                <Button
+                  size="lg"
+                  className="bg-purple-600 cursor-pointer hover:bg-purple-700 text-lg px-8 py-4"
+                  onClick={() =>
+                    smoothScrollToSection("application-guidelines-kmaxpage")
+                  }
+                >
+                  Application Guidelines
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-                  View Organic Certificate
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-lg cursor-pointer px-8 py-4"
+                  onClick={() =>
+                    smoothScrollToSection("technical-resources-kmaxpage")
+                  }
+                >
+                  View Technical Resources
                 </Button>
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="relative"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -276,10 +323,10 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Product Showcase */}
-      <ProductShowcase {...showcaseData} />
+      {/* <ProductShowcase {...showcaseData} /> */}
 
       {/* Key Benefits Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-white/50"
         variants={staggerContainer}
         initial="initial"
@@ -290,10 +337,11 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
           <motion.div className="text-center mb-16" variants={fadeInUp}>
             <h2 className="text-4xl font-bold mb-6">Key Benefits</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover why K-Max (3-1-8) delivers the highest potassium nutrition for organic systems
+              Discover why K-Max (3-1-8) delivers the highest potassium
+              nutrition for organic systems
             </p>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
               <motion.div key={index} variants={fadeInUp}>
@@ -315,19 +363,25 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Analysis Pie Chart */}
-      <AnalysisPieChart analysis={analysisData} title="K-Max (3-1-8) Maximum Potassium Analysis" />
+      <AnalysisPieChart
+        analysis={analysisData}
+        title="K-Max (3-1-8) Maximum Potassium Analysis"
+      />
 
       {/* Maximum Potassium Technology Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-purple-50 to-pink-50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Maximum Potassium Technology</h2>
+            <h2 className="text-4xl font-bold mb-6">
+              Maximum Potassium Technology
+            </h2>
             <p className="text-xl text-gray-600">
-              Highest analysis organically sourced potassium for exceptional fruit development
+              Highest analysis organically sourced potassium for exceptional
+              fruit development
             </p>
           </div>
 
@@ -337,42 +391,56 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
                     <Gem className="h-8 w-8 text-purple-600" />
-                    <h3 className="text-2xl font-semibold">Maximum Potassium Analysis</h3>
+                    <h3 className="text-2xl font-semibold">
+                      Maximum Potassium Analysis
+                    </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="p-4 bg-purple-50 rounded-lg">
-                      <h4 className="font-semibold text-purple-800 mb-2">8.2% Potassium (K2O)</h4>
+                      <h4 className="font-semibold text-purple-800 mb-2">
+                        8.2% Potassium (K2O)
+                      </h4>
                       <p className="text-purple-700 text-sm">
-                        Highest analysis of organically sourced potassium in liquid form
+                        Highest analysis of organically sourced potassium in
+                        liquid form
                       </p>
                     </div>
-                    
+
                     <div className="p-4 bg-blue-50 rounded-lg">
-                      <h4 className="font-semibold text-blue-800 mb-2">3.8% Nitrogen (N)</h4>
+                      <h4 className="font-semibold text-blue-800 mb-2">
+                        3.8% Nitrogen (N)
+                      </h4>
                       <p className="text-blue-700 text-sm">
-                        Balanced nitrogen from plant protein sources for healthy growth
+                        Balanced nitrogen from plant protein sources for healthy
+                        growth
                       </p>
                     </div>
-                    
+
                     <div className="p-4 bg-green-50 rounded-lg">
-                      <h4 className="font-semibold text-green-800 mb-2">1.6% Phosphorus (P2O5)</h4>
+                      <h4 className="font-semibold text-green-800 mb-2">
+                        1.6% Phosphorus (P2O5)
+                      </h4>
                       <p className="text-green-700 text-sm">
-                        Essential phosphorus for energy transfer and reproductive development
+                        Essential phosphorus for energy transfer and
+                        reproductive development
                       </p>
                     </div>
-                    
+
                     <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-purple-800 mb-2">Plant Protein Source</h4>
+                      <h4 className="font-semibold text-purple-800 mb-2">
+                        Plant Protein Source
+                      </h4>
                       <p className="text-purple-700 text-sm">
-                        Derived from plant protein sources with complete trace elements including 
-                        sulphur (1.2%), calcium (0.3%), and magnesium (0.1%) for comprehensive nutrition.
+                        Derived from plant protein sources with complete trace
+                        elements including sulphur (1.2%), calcium (0.3%), and
+                        magnesium (0.1%) for comprehensive nutrition.
                       </p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             </div>
-            
+
             <div>
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1464822759356-8d6106e78f86?w=600&h=400&fit=crop"
@@ -385,42 +453,51 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Application Benefits Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-white/50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div id="application-guidelines-kmaxpage" className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Application Benefits</h2>
             <p className="text-xl text-gray-600">
               Optimal nutrition for both protected and outdoor crop systems
             </p>
           </div>
-          
+
           <div className="grid lg:grid-cols-2 gap-12">
             <Card className="bg-purple-50 border border-purple-200">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Droplets className="h-8 w-8 text-purple-600" />
-                  <h3 className="text-2xl font-semibold text-purple-800">Foliar Application</h3>
+                  <h3 className="text-2xl font-semibold text-purple-800">
+                    Foliar Application
+                  </h3>
                 </div>
                 <p className="text-purple-700 mb-6">
-                  Apply as a foliar spray for direct nutrient uptake. The liquid formulation ensures 
-                  rapid absorption and immediate availability of nutrients during crucial growth stages.
+                  Apply as a foliar spray for direct nutrient uptake. The liquid
+                  formulation ensures rapid absorption and immediate
+                  availability of nutrients during crucial growth stages.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-purple-600" />
-                    <span className="text-purple-700">Rapid nutrient uptake</span>
+                    <span className="text-purple-700">
+                      Rapid nutrient uptake
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-purple-600" />
-                    <span className="text-purple-700">Easy liquid application</span>
+                    <span className="text-purple-700">
+                      Easy liquid application
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-purple-600" />
-                    <span className="text-purple-700">Immediate nutrient availability</span>
+                    <span className="text-purple-700">
+                      Immediate nutrient availability
+                    </span>
                   </div>
                 </div>
               </CardContent>
@@ -430,12 +507,14 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Factory className="h-8 w-8 text-pink-600" />
-                  <h3 className="text-2xl font-semibold text-pink-800">Fertigation</h3>
+                  <h3 className="text-2xl font-semibold text-pink-800">
+                    Fertigation
+                  </h3>
                 </div>
                 <p className="text-pink-700 mb-6">
-                  Apply through fertigation systems for root zone nutrition. Particularly effective 
-                  for supplying key nutrients at crucial stages of growth in both protected and 
-                  outdoor crops.
+                  Apply through fertigation systems for root zone nutrition.
+                  Particularly effective for supplying key nutrients at crucial
+                  stages of growth in both protected and outdoor crops.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
@@ -444,18 +523,22 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-pink-600" />
-                    <span className="text-pink-700">Optimal timing delivery</span>
+                    <span className="text-pink-700">
+                      Optimal timing delivery
+                    </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-pink-600" />
-                    <span className="text-pink-700">Enhanced crop potential</span>
+                    <span className="text-pink-700">
+                      Enhanced crop potential
+                    </span>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </div>
-          
-          <motion.div 
+
+          <motion.div
             className="mt-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -467,12 +550,16 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
                 <div className="flex items-start gap-3">
                   <Cherry className="h-6 w-6 text-purple-600 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-purple-800">Reproductive Growth & Fruit Development</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-purple-800">
+                      Reproductive Growth & Fruit Development
+                    </h3>
                     <p className="text-purple-700">
-                      K-Max is particularly important for stimulating reproductive growth and promoting fruit development. 
-                      The highest analysis of organically sourced potassium provides optimal nutrition at crucial stages 
-                      of growth, improving crop potential in both protected and outdoor crop systems while maintaining 
-                      full organic certification compliance.
+                      K-Max is particularly important for stimulating
+                      reproductive growth and promoting fruit development. The
+                      highest analysis of organically sourced potassium provides
+                      optimal nutrition at crucial stages of growth, improving
+                      crop potential in both protected and outdoor crop systems
+                      while maintaining full organic certification compliance.
                     </p>
                   </div>
                 </div>
@@ -483,7 +570,7 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Pack Sizes Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-pink-50 to-purple-50"
         {...fadeInUp}
         viewport={{ once: true }}
@@ -495,22 +582,40 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
               Maximum potassium nutrition for organic cropping systems
             </p>
           </div>
-          
+
           <div className="max-w-4xl mx-auto">
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Package className="h-8 w-8 text-purple-600" />
-                  <h3 className="text-2xl font-semibold">Available Pack Sizes</h3>
+                  <h3 className="text-2xl font-semibold">
+                    Available Pack Sizes
+                  </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg">
-                    <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">20L</Badge>
-                    <p className="text-gray-600">Perfect for specialized organic fruit and reproductive growth programs</p>
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      20L
+                    </Badge>
+                    <p className="text-gray-600">
+                      Perfect for specialized organic fruit and reproductive
+                      growth programs
+                    </p>
                   </div>
                   <div className="text-center p-6 bg-gradient-to-br from-pink-50 to-purple-50 rounded-lg">
-                    <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">1000L IBC</Badge>
-                    <p className="text-gray-600">Cost-effective solution for large-scale organic production systems</p>
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      1000L IBC
+                    </Badge>
+                    <p className="text-gray-600">
+                      Cost-effective solution for large-scale organic production
+                      systems
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -520,10 +625,14 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* PDF Links Section */}
-      <PDFLinks productName="K-Max (3-1-8)" links={pdfLinks} />
+      <PDFLinks
+        id="technical-resources-kmaxpage"
+        productName="K-Max (3-1-8)"
+        links={pdfLinks}
+      />
 
       {/* Contact Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white"
         {...fadeInUp}
         viewport={{ once: true }}
@@ -541,24 +650,24 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
                     <p>Market Rasen LN8 3RH</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6" />
                   <p>+44 (0) 1673 885175</p>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
                   <p>office@ilex-envirosciences.com</p>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Clock className="h-6 w-6" />
                   <p>Monday–Friday: 09:00–17:00</p>
                 </div>
               </div>
             </div>
-            
+
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardHeader>
                 <CardTitle className="text-white">Product Enquiry</CardTitle>
@@ -594,8 +703,8 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
                     rows={4}
                     className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30"
                   />
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="w-full bg-white text-purple-600 hover:bg-gray-100"
                   >
                     Submit Enquiry

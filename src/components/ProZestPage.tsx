@@ -1,25 +1,31 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
-import { Badge } from './ui/badge';
-import { Separator } from './ui/separator';
-import { ProductShowcase } from './ProductShowcase';
-import { PDFLinks } from './PDFLinks';
-import { AnalysisPieChart } from './AnalysisPieChart';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { 
-  Leaf, 
-  Zap, 
-  Target, 
-  Beaker, 
-  Droplets, 
-  Clock, 
-  Package, 
-  Phone, 
-  Mail, 
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Badge } from "./ui/badge";
+import { Separator } from "./ui/separator";
+import { ProductShowcase } from "./ProductShowcase";
+import { PDFLinks } from "./PDFLinks";
+import { AnalysisPieChart } from "./AnalysisPieChart";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import {
+  Leaf,
+  Zap,
+  Target,
+  Beaker,
+  Droplets,
+  Clock,
+  Package,
+  Phone,
+  Mail,
   MapPin,
   CheckCircle,
   ArrowRight,
@@ -38,170 +44,188 @@ import {
   Flower,
   Activity,
   Shovel,
-  Apple
-} from 'lucide-react';
+  Apple,
+} from "lucide-react";
+import { smoothScrollToSection } from "../utils/scrollHelpers";
 
 interface ContactFormProps {
-  onSubmit: (formData: { name: string; email: string; message: string }) => void;
+  onSubmit: (formData: {
+    name: string;
+    email: string;
+    message: string;
+  }) => void;
 }
 
 export function ProZestPage({ onSubmit }: ContactFormProps) {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit(formData);
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: "", email: "", message: "" });
   };
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.6 },
   };
 
   const staggerContainer = {
     animate: {
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const benefits = [
     {
       icon: <Zap className="h-8 w-8 text-orange-600" />,
       title: "Prevents Nutrition-Related Disorders",
-      description: "Targeted nutrition prevents common potato deficiency problems and disorders"
+      description:
+        "Targeted nutrition prevents common potato deficiency problems and disorders",
     },
     {
       icon: <TrendingUp className="h-8 w-8 text-green-600" />,
       title: "Improves Yield Potential",
-      description: "Enhances overall yield through improved nutrient availability at planting"
+      description:
+        "Enhances overall yield through improved nutrient availability at planting",
     },
     {
       icon: <Sparkles className="h-8 w-8 text-blue-600" />,
       title: "Enhanced Skin Finish",
-      description: "Improves potato skin quality and appearance for better market value"
+      description:
+        "Improves potato skin quality and appearance for better market value",
     },
     {
       icon: <Shield className="h-8 w-8 text-purple-600" />,
       title: "Improved Storage Characteristics",
-      description: "Calcium improves storage quality and reduces post-harvest losses"
+      description:
+        "Calcium improves storage quality and reduces post-harvest losses",
     },
     {
       icon: <Atom className="h-8 w-8 text-cyan-600" />,
       title: "Mildly Acidic Growing Environment",
-      description: "Sulfur provides optimal pH conditions for potato development"
+      description:
+        "Sulfur provides optimal pH conditions for potato development",
     },
     {
       icon: <Package className="h-8 w-8 text-yellow-600" />,
       title: "Dual Formulation Options",
-      description: "Available in both liquid and powder forms for application flexibility"
-    }
+      description:
+        "Available in both liquid and powder forms for application flexibility",
+    },
   ];
 
   const formulations = [
     {
       type: "Liquid",
       applications: [
-        { rate: "3 litres per tonne of seed", notes: "Direct seed application" },
-        { rate: "9.0 l/ha at planting", notes: "Field application rate" }
+        {
+          rate: "3 litres per tonne of seed",
+          notes: "Direct seed application",
+        },
+        { rate: "9.0 l/ha at planting", notes: "Field application rate" },
       ],
-      color: "bg-blue-100 text-blue-800"
+      color: "bg-blue-100 text-blue-800",
     },
     {
       type: "Powder",
       applications: [
-        { rate: "3.25 kg per tonne of seed", notes: "At planting application" }
+        { rate: "3.25 kg per tonne of seed", notes: "At planting application" },
       ],
-      color: "bg-orange-100 text-orange-800"
-    }
+      color: "bg-orange-100 text-orange-800",
+    },
   ];
 
   const analysisData = {
     "Zinc (Zn) - Liquid": "25",
-    "Sulphur (S) - Liquid": "25", 
+    "Sulphur (S) - Liquid": "25",
     "Calcium (Ca) - Liquid": "8",
     "Zinc (Zn) - Powder": "30",
     "Sulphur (S) - Powder": "30",
-    "Calcium (Ca) - Powder": "10"
+    "Calcium (Ca) - Powder": "10",
   };
 
   const pdfLinks = [
     {
       title: "ProZest Leaflet",
-      description: "Complete product information and application guidelines"
+      description: "Complete product information and application guidelines",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/ProZeSt-1606i.pdf",
     },
-    {
-      title: "Advanced Potato Nutrition Guide",
-      description: "Comprehensive guide to potato nutrition and management"
-    }
   ];
 
   // ProductShowcase data
   const showcaseData = {
     productName: "ProZest",
-    productDescription: "A powder or liquid formulation of zinc, sulphur, and calcium for application to potatoes at planting to prevent and correct nutrition-related disorders and improve yield potential. Supplies key nutrients to improve skin finish and increase overall yields. Sulphur provides a mildly acidic growing environment, and calcium improves storage characteristics.",
+    productDescription:
+      "A powder or liquid formulation of zinc, sulphur, and calcium for application to potatoes at planting to prevent and correct nutrition-related disorders and improve yield potential. Supplies key nutrients to improve skin finish and increase overall yields. Sulphur provides a mildly acidic growing environment, and calcium improves storage characteristics.",
     keyFeatures: [
       "Available in both liquid and powder formulations",
       "High zinc content (25-30%) for enzyme function",
       "Sulfur (25-30%) for soil pH optimization",
       "Calcium (8-10%) for storage quality",
       "At-planting application for immediate availability",
-      "Prevents nutrition-related disorders"
+      "Prevents nutrition-related disorders",
     ],
     targetCrops: [
       {
         name: "Potatoes",
-        image: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400&h=300&fit=crop",
         benefits: [
           "Enhanced skin finish and quality",
           "Improved yield potential",
           "Better storage characteristics",
-          "Reduced nutritional disorders"
-        ]
-      }
+          "Reduced nutritional disorders",
+        ],
+      },
     ],
     scientificBenefits: [
       {
         title: "Zinc Functions",
-        description: "Essential for enzyme systems, protein synthesis, and growth regulation",
-        icon: <Atom className="h-6 w-6 text-orange-600" />
+        description:
+          "Essential for enzyme systems, protein synthesis, and growth regulation",
+        icon: <Atom className="h-6 w-6 text-orange-600" />,
       },
       {
         title: "Sulfur Environment",
-        description: "Creates mildly acidic growing conditions optimal for potato development",
-        icon: <Beaker className="h-6 w-6 text-yellow-600" />
+        description:
+          "Creates mildly acidic growing conditions optimal for potato development",
+        icon: <Beaker className="h-6 w-6 text-yellow-600" />,
       },
       {
         title: "Calcium Enhancement",
         description: "Improves cell wall strength and storage characteristics",
-        icon: <Shield className="h-6 w-6 text-blue-600" />
+        icon: <Shield className="h-6 w-6 text-blue-600" />,
       },
       {
         title: "At-Planting Application",
-        description: "Immediate nutrient availability when potato plants need it most",
-        icon: <Shovel className="h-6 w-6 text-green-600" />
-      }
-    ]
+        description:
+          "Immediate nutrient availability when potato plants need it most",
+        icon: <Shovel className="h-6 w-6 text-green-600" />,
+      },
+    ],
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-yellow-50">
       {/* Hero Section */}
-      <motion.section 
+      <motion.section
         className="relative py-20 px-4 overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -218,26 +242,42 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                 ProZest
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-                A powder or liquid formulation of zinc, sulphur, and calcium for application to potatoes at 
-                planting to prevent and correct nutrition-related disorders and improve yield potential. 
-                Supplies key nutrients to improve skin finish and increase overall yields.
+                A powder or liquid formulation of zinc, sulphur, and calcium for
+                application to potatoes at planting to prevent and correct
+                nutrition-related disorders and improve yield potential.
+                Supplies key nutrients to improve skin finish and increase
+                overall yields.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Sulphur provides a mildly acidic growing environment, and calcium improves storage 
-                characteristics, making ProZest the ideal choice for comprehensive potato nutrition.
+                Sulphur provides a mildly acidic growing environment, and
+                calcium improves storage characteristics, making ProZest the
+                ideal choice for comprehensive potato nutrition.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-lg px-8 py-4">
-                  Get Product Info
+                <Button
+                  size="lg"
+                  className="bg-orange-600 cursor-pointer hover:bg-orange-700 text-lg px-8 py-4"
+                  onClick={() =>
+                    smoothScrollToSection("application-guidelines-prozest")
+                  }
+                >
+                  Application Guidlines
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-                  View Application Guide
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-lg cursor-pointer px-8 py-4"
+                  onClick={() =>
+                    smoothScrollToSection("technical-resources-prozest")
+                  }
+                >
+                  View Technical Resources
                 </Button>
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="relative"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -257,10 +297,10 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Product Showcase */}
-      <ProductShowcase {...showcaseData} />
+      {/* <ProductShowcase {...showcaseData} /> */}
 
       {/* Key Benefits Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-white/50"
         variants={staggerContainer}
         initial="initial"
@@ -271,10 +311,11 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
           <motion.div className="text-center mb-16" variants={fadeInUp}>
             <h2 className="text-4xl font-bold mb-6">Key Benefits</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover why ProZest delivers superior potato nutrition at planting
+              Discover why ProZest delivers superior potato nutrition at
+              planting
             </p>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
               <motion.div key={index} variants={fadeInUp}>
@@ -296,19 +337,25 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Analysis Pie Chart */}
-      <AnalysisPieChart analysis={analysisData} title="ProZest Nutrient Analysis" />
+      <AnalysisPieChart
+        analysis={analysisData}
+        title="ProZest Nutrient Analysis"
+      />
 
       {/* Dual Formulation Technology Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-orange-50 to-yellow-50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Dual Formulation Technology</h2>
+            <h2 className="text-4xl font-bold mb-6">
+              Dual Formulation Technology
+            </h2>
             <p className="text-xl text-gray-600">
-              Choose between liquid and powder formulations for maximum flexibility
+              Choose between liquid and powder formulations for maximum
+              flexibility
             </p>
           </div>
 
@@ -318,11 +365,15 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
                     <Package className="h-8 w-8 text-orange-600" />
-                    <h3 className="text-2xl font-semibold">Formulation Comparison</h3>
+                    <h3 className="text-2xl font-semibold">
+                      Formulation Comparison
+                    </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="p-4 bg-blue-50 rounded-lg">
-                      <h4 className="font-semibold text-blue-800 mb-3">Liquid Formulation</h4>
+                      <h4 className="font-semibold text-blue-800 mb-3">
+                        Liquid Formulation
+                      </h4>
                       <div className="space-y-2 text-sm">
                         <div className="flex justify-between">
                           <span>Zinc (Zn)</span>
@@ -338,9 +389,11 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="p-4 bg-orange-50 rounded-lg">
-                      <h4 className="font-semibold text-orange-800 mb-3">Powder Formulation</h4>
+                      <h4 className="font-semibold text-orange-800 mb-3">
+                        Powder Formulation
+                      </h4>
                       <div className="space-y-2 text-sm">
                         <div className="flex justify-between">
                           <span>Zinc (Zn)</span>
@@ -356,9 +409,11 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="bg-yellow-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-yellow-800 mb-2">Application Benefits</h4>
+                      <h4 className="font-semibold text-yellow-800 mb-2">
+                        Application Benefits
+                      </h4>
                       <ul className="text-yellow-700 text-sm space-y-1">
                         <li>• Prevents zinc deficiency disorders</li>
                         <li>• Creates optimal soil pH conditions</li>
@@ -370,7 +425,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                 </CardContent>
               </Card>
             </div>
-            
+
             <div>
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600&h=400&fit=crop"
@@ -383,19 +438,19 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Application Guidelines */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-white/50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div id="application-guidelines-prozest" className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Application Guidelines</h2>
             <p className="text-xl text-gray-600">
               At-planting application rates for both formulations
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {formulations.map((formulation, index) => (
               <motion.div
@@ -408,7 +463,9 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                 <Card className="h-full hover:shadow-lg transition-all duration-300 bg-white/80 backdrop-blur-sm">
                   <CardHeader>
                     <div className="text-center mb-4">
-                      <Badge className={`${formulation.color} text-xl px-4 py-2`}>
+                      <Badge
+                        className={`${formulation.color} text-xl px-4 py-2`}
+                      >
                         {formulation.type} Formulation
                       </Badge>
                     </div>
@@ -416,9 +473,16 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                   <CardContent>
                     <div className="space-y-4">
                       {formulation.applications.map((app, appIndex) => (
-                        <div key={appIndex} className="p-3 bg-gray-50 rounded-lg">
-                          <div className="font-semibold text-center mb-2">{app.rate}</div>
-                          <p className="text-sm text-gray-600 text-center">{app.notes}</p>
+                        <div
+                          key={appIndex}
+                          className="p-3 bg-gray-50 rounded-lg"
+                        >
+                          <div className="font-semibold text-center mb-2">
+                            {app.rate}
+                          </div>
+                          <p className="text-sm text-gray-600 text-center">
+                            {app.notes}
+                          </p>
                         </div>
                       ))}
                     </div>
@@ -427,8 +491,8 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
               </motion.div>
             ))}
           </div>
-          
-          <motion.div 
+
+          <motion.div
             className="mt-12 max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -440,10 +504,13 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                 <div className="flex items-start gap-3">
                   <Shovel className="h-6 w-6 text-green-600 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-green-800">Application Method</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-green-800">
+                      Application Method
+                    </h3>
                     <p className="text-green-700">
-                      Apply at planting directly to the seed or incorporate into the planting furrow 
-                      for immediate nutrient availability to developing potato plants.
+                      Apply at planting directly to the seed or incorporate into
+                      the planting furrow for immediate nutrient availability to
+                      developing potato plants.
                     </p>
                   </div>
                 </div>
@@ -454,7 +521,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Pack Sizes Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-yellow-50 to-orange-50"
         {...fadeInUp}
         viewport={{ once: true }}
@@ -466,22 +533,38 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
               Convenient packaging for potato planting operations
             </p>
           </div>
-          
+
           <div className="max-w-4xl mx-auto">
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Package className="h-8 w-8 text-orange-600" />
-                  <h3 className="text-2xl font-semibold">Available Pack Sizes</h3>
+                  <h3 className="text-2xl font-semibold">
+                    Available Pack Sizes
+                  </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-orange-50 rounded-lg">
-                    <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">Liquid: 4 × 3L boxed</Badge>
-                    <p className="text-gray-600">Convenient liquid formulation for easy application</p>
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      Liquid: 4 × 3L boxed
+                    </Badge>
+                    <p className="text-gray-600">
+                      Convenient liquid formulation for easy application
+                    </p>
                   </div>
                   <div className="text-center p-6 bg-gradient-to-br from-orange-50 to-yellow-50 rounded-lg">
-                    <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">Powder: 4 × 3.25kg boxed</Badge>
-                    <p className="text-gray-600">Powder formulation for dry application at planting</p>
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      Powder: 4 × 3.25kg boxed
+                    </Badge>
+                    <p className="text-gray-600">
+                      Powder formulation for dry application at planting
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -491,10 +574,14 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* PDF Links Section */}
-      <PDFLinks productName="ProZest" links={pdfLinks} />
+      <PDFLinks
+        id="technical-resources-prozest"
+        productName="ProZest"
+        links={pdfLinks}
+      />
 
       {/* Contact Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-orange-600 to-yellow-600 text-white"
         {...fadeInUp}
         viewport={{ once: true }}
@@ -512,24 +599,24 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                     <p>Market Rasen LN8 3RH</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6" />
                   <p>+44 (0) 1673 885175</p>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
                   <p>office@ilex-envirosciences.com</p>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Clock className="h-6 w-6" />
                   <p>Monday–Friday: 09:00–17:00</p>
                 </div>
               </div>
             </div>
-            
+
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardHeader>
                 <CardTitle className="text-white">Product Enquiry</CardTitle>
@@ -565,8 +652,8 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                     rows={4}
                     className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30"
                   />
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="w-full bg-white text-orange-600 hover:bg-gray-100"
                   >
                     Submit Enquiry

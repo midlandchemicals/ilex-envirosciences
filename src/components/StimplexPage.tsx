@@ -1,24 +1,30 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
-import { Badge } from './ui/badge';
-import { Separator } from './ui/separator';
-import { ProductShowcase } from './ProductShowcase';
-import { PDFLinks } from './PDFLinks';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { 
-  Leaf, 
-  Zap, 
-  Target, 
-  Beaker, 
-  Droplets, 
-  Clock, 
-  Package, 
-  Phone, 
-  Mail, 
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Badge } from "./ui/badge";
+import { Separator } from "./ui/separator";
+import { ProductShowcase } from "./ProductShowcase";
+import { PDFLinks } from "./PDFLinks";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import {
+  Leaf,
+  Zap,
+  Target,
+  Beaker,
+  Droplets,
+  Clock,
+  Package,
+  Phone,
+  Mail,
   MapPin,
   CheckCircle,
   ArrowRight,
@@ -37,193 +43,223 @@ import {
   Apple,
   Wheat,
   Flower2,
-  GraduationCap
-} from 'lucide-react';
+  GraduationCap,
+} from "lucide-react";
+import { smoothScrollToSection } from "../utils/scrollHelpers";
 
 interface ContactFormProps {
-  onSubmit: (formData: { name: string; email: string; message: string }) => void;
+  onSubmit: (formData: {
+    name: string;
+    email: string;
+    message: string;
+  }) => void;
 }
 
 export function StimplexPage({ onSubmit }: ContactFormProps) {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit(formData);
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: "", email: "", message: "" });
   };
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.6 },
   };
 
   const staggerContainer = {
     animate: {
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const benefits = [
     {
       icon: <Sprout className="h-8 w-8 text-green-600" />,
       title: "Enhances Root Growth & Early Development",
-      description: "Promotes strong root system development and accelerated early plant growth"
+      description:
+        "Promotes strong root system development and accelerated early plant growth",
     },
     {
       icon: <Sun className="h-8 w-8 text-yellow-600" />,
       title: "Increases Photosynthesis & Nutrient Usage",
-      description: "Optimizes photosynthetic efficiency and enhances nutrient uptake and utilization"
+      description:
+        "Optimizes photosynthetic efficiency and enhances nutrient uptake and utilization",
     },
     {
       icon: <Heart className="h-8 w-8 text-red-600" />,
       title: "Promotes Overall Plant Health",
-      description: "Comprehensive plant health enhancement through natural biostimulation"
+      description:
+        "Comprehensive plant health enhancement through natural biostimulation",
     },
     {
       icon: <Shield className="h-8 w-8 text-blue-600" />,
       title: "Maximises Environmental Stress Resistance",
-      description: "Natural defense mechanisms against drought, heat, and other environmental stresses"
+      description:
+        "Natural defense mechanisms against drought, heat, and other environmental stresses",
     },
     {
       icon: <TrendingUp className="h-8 w-8 text-purple-600" />,
       title: "Improves Quality & Yield",
-      description: "Enhanced crop quality characteristics and increased yield potential"
+      description:
+        "Enhanced crop quality characteristics and increased yield potential",
     },
     {
       icon: <Award className="h-8 w-8 text-orange-600" />,
       title: "Highest Quality Standards",
-      description: "Premium product quality and consistency from North Atlantic Ascophyllum nodosum"
+      description:
+        "Premium product quality and consistency from North Atlantic Ascophyllum nodosum",
     },
     {
       icon: <Leaf className="h-8 w-8 text-emerald-600" />,
       title: "Approved for Organic Growing",
-      description: "Certified for use in organic growing systems and sustainable agriculture"
-    }
+      description:
+        "Certified for use in organic growing systems and sustainable agriculture",
+    },
   ];
 
   const cropApplications = [
     {
       crop: "Brassicas",
       rate: "2.5-3.5 l/ha",
-      timing: "Apply at 2-4 true leaf stage. Repeat at 14-21 day intervals. Final application 4-7 days prior to harvest.",
+      timing:
+        "Apply at 2-4 true leaf stage. Repeat at 14-21 day intervals. Final application 4-7 days prior to harvest.",
       color: "bg-green-100 text-green-800",
-      icon: <Leaf className="h-5 w-5 text-green-600" />
+      icon: <Leaf className="h-5 w-5 text-green-600" />,
     },
     {
       crop: "Lettuce & Leafy Salads",
-      rate: "2.0-3.5 l/ha", 
-      timing: "Apply at 2-4 true leaf stage. Repeat at 10-14 day intervals. Final application 3-5 days prior to harvest.",
+      rate: "2.0-3.5 l/ha",
+      timing:
+        "Apply at 2-4 true leaf stage. Repeat at 10-14 day intervals. Final application 3-5 days prior to harvest.",
       color: "bg-emerald-100 text-emerald-800",
-      icon: <Flower2 className="h-5 w-5 text-emerald-600" />
+      icon: <Flower2 className="h-5 w-5 text-emerald-600" />,
     },
     {
       crop: "Potatoes",
       rate: "2.5-3.5 l/ha",
-      timing: "Apply at early tuber bulking stages. Repeat at 14-21 day intervals.",
+      timing:
+        "Apply at early tuber bulking stages. Repeat at 14-21 day intervals.",
       color: "bg-amber-100 text-amber-800",
-      icon: <Apple className="h-5 w-5 text-amber-600" />
+      icon: <Apple className="h-5 w-5 text-amber-600" />,
     },
     {
       crop: "Root Crops",
       rate: "2.5-3.5 l/ha",
-      timing: "Apply at 2-3 weeks after emergence. Repeat at 14-21 days depending on growing season.",
+      timing:
+        "Apply at 2-3 weeks after emergence. Repeat at 14-21 days depending on growing season.",
       color: "bg-orange-100 text-orange-800",
-      icon: <Sprout className="h-5 w-5 text-orange-600" />
+      icon: <Sprout className="h-5 w-5 text-orange-600" />,
     },
     {
       crop: "Alliums",
       rate: "2.0-3.5 l/ha",
-      timing: "Apply at 2-3 weeks after emergence. Repeat at 14-21 day intervals.",
+      timing:
+        "Apply at 2-3 weeks after emergence. Repeat at 14-21 day intervals.",
       color: "bg-purple-100 text-purple-800",
-      icon: <Target className="h-5 w-5 text-purple-600" />
+      icon: <Target className="h-5 w-5 text-purple-600" />,
     },
     {
       crop: "Asparagus",
       rate: "2.0-3.0 l/ha",
-      timing: "Apply to fern when sufficient foliage present. Repeat at 21-28 day intervals as required.",
+      timing:
+        "Apply to fern when sufficient foliage present. Repeat at 21-28 day intervals as required.",
       color: "bg-teal-100 text-teal-800",
-      icon: <TreePine className="h-5 w-5 text-teal-600" />
+      icon: <TreePine className="h-5 w-5 text-teal-600" />,
     },
     {
       crop: "Strawberries",
       rate: "1.5-2.5 l/ha",
-      timing: "Apply 10 to 14 days after emergence. Repeat at early flowering then at 2-3 weeks intervals.",
+      timing:
+        "Apply 10 to 14 days after emergence. Repeat at early flowering then at 2-3 weeks intervals.",
       color: "bg-red-100 text-red-800",
-      icon: <Heart className="h-5 w-5 text-red-600" />
+      icon: <Heart className="h-5 w-5 text-red-600" />,
     },
     {
       crop: "Protected Edibles",
       rate: "2-4 ml/litre",
       timing: "Apply via drench or fertigation every 10 to 21 days.",
       color: "bg-blue-100 text-blue-800",
-      icon: <Shield className="h-5 w-5 text-blue-600" />
+      icon: <Shield className="h-5 w-5 text-blue-600" />,
     },
     {
       crop: "Protected Ornamentals",
       rate: "1-2 ml/litre",
       timing: "Apply via drench or fertigation every 7 to 10 days.",
       color: "bg-pink-100 text-pink-800",
-      icon: <Sparkles className="h-5 w-5 text-pink-600" />
+      icon: <Sparkles className="h-5 w-5 text-pink-600" />,
     },
     {
       crop: "Cereals",
       rate: "1.0-3.0 l/ha",
-      timing: "Seed treatment: 2.0-3.0 l/tonne. Foliar: Early tillering, stem elongation, and flag leaf stages.",
+      timing:
+        "Seed treatment: 2.0-3.0 l/tonne. Foliar: Early tillering, stem elongation, and flag leaf stages.",
       color: "bg-yellow-100 text-yellow-800",
-      icon: <Wheat className="h-5 w-5 text-yellow-600" />
-    }
+      icon: <Wheat className="h-5 w-5 text-yellow-600" />,
+    },
   ];
 
   const pdfLinks = [
     {
       title: "Stimplex Plus Leaflet",
-      description: "Complete product information and application guidelines"
+      description: "Complete product information and application guidelines",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2022/04/Stimplex_2203_vii.pdf",
     },
     {
       title: "Stimplex Action",
-      description: "Mode of action and scientific background"
+      description: "Mode of action and scientific background",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Stimplex-Action-i.pdf",
     },
     {
       title: "Stimplex Arcadian Brochure",
-      description: "Comprehensive product brochure with case studies"
+      description: "Comprehensive product brochure with case studies",
+      url: "https://flipflashpages.uniflip.com/3/100974/1096744/pub/html5.html#page/1",
     },
     {
       title: "Case Study: Bell Brothers Nurseries Ltd",
-      description: "Real-world application results and testimonials"
+      description: "Real-world application results and testimonials",
+      url: "https://ilex-envirosciences.com/stimplex/_wp_link_placeholder",
     },
     {
       title: "Organic Farmers and Growers Certificate",
-      description: "Official organic certification documentation"
+      description: "Official organic certification documentation",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2022/02/OFG.pdf",
     },
     {
       title: "Compatibility Chart",
-      description: "Tank mixing compatibility with other products"
+      description: "Tank mixing compatibility with other products",
+      url: "https://ilex-envirosciences.com/stimplex/_wp_link_placeholder",
     },
     {
       title: "Stimplex Field Guide",
-      description: "Practical field application guide"
-    }
+      description: "Practical field application guide",
+      url: "https://interactivepdf.uniflip.com/2/100974/1088169/pub/html5.html#page/1",
+    },
   ];
 
   // ProductShowcase data
   const showcaseData = {
     productName: "Stimplex",
-    productDescription: "A concentrated liquid biostimulant containing key natural compounds and nutrients to enhance root growth, early plant development, photosynthesis, and nutrient usage, promoting overall plant health. Maximizes natural plant resistance to environmental stresses and improves quality and yield. Derived from pure sources of North Atlantic Ascophyllum nodosum using a uniquely benign extraction process that guarantees maximum performance and consistency.",
+    productDescription:
+      "A concentrated liquid biostimulant containing key natural compounds and nutrients to enhance root growth, early plant development, photosynthesis, and nutrient usage, promoting overall plant health. Maximizes natural plant resistance to environmental stresses and improves quality and yield. Derived from pure sources of North Atlantic Ascophyllum nodosum using a uniquely benign extraction process that guarantees maximum performance and consistency.",
     keyFeatures: [
       "Concentrated liquid biostimulant from North Atlantic seaweed",
       "Enhances root growth and early plant development",
@@ -231,78 +267,86 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
       "Maximizes natural plant resistance to environmental stress",
       "Approved for use in organic growing systems",
       "Suitable for conventional and organic-grown crops",
-      "Uniquely benign extraction process for maximum consistency"
+      "Uniquely benign extraction process for maximum consistency",
     ],
     targetCrops: [
       {
         name: "Leafy Vegetables",
-        image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop",
         benefits: [
           "Enhanced leaf development",
           "Improved stress tolerance",
           "Better nutritional quality",
-          "Extended shelf life"
-        ]
+          "Extended shelf life",
+        ],
       },
       {
         name: "Root Vegetables",
-        image: "https://images.unsplash.com/photo-1445282768818-728615cc910a?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1445282768818-728615cc910a?w=400&h=300&fit=crop",
         benefits: [
           "Stronger root development",
           "Enhanced tuber quality",
           "Better storage characteristics",
-          "Improved market presentation"
-        ]
+          "Improved market presentation",
+        ],
       },
       {
         name: "Cereals",
-        image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=300&fit=crop",
         benefits: [
           "Enhanced root establishment",
           "Improved tillering",
           "Better grain development",
-          "Increased stress tolerance"
-        ]
+          "Increased stress tolerance",
+        ],
       },
       {
         name: "Protected Crops",
-        image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop",
         benefits: [
           "Accelerated growth",
           "Enhanced productivity",
           "Better environmental adaptation",
-          "Improved crop quality"
-        ]
-      }
+          "Improved crop quality",
+        ],
+      },
     ],
     scientificBenefits: [
       {
         title: "North Atlantic Ascophyllum nodosum",
-        description: "Premium seaweed source provides naturally balanced compounds for optimal plant biostimulation",
-        icon: <Waves className="h-6 w-6 text-blue-600" />
+        description:
+          "Premium seaweed source provides naturally balanced compounds for optimal plant biostimulation",
+        icon: <Waves className="h-6 w-6 text-blue-600" />,
       },
       {
         title: "Benign Extraction Process",
-        description: "Uniquely gentle extraction method preserves bioactive compounds for maximum efficacy",
-        icon: <Beaker className="h-6 w-6 text-green-600" />
+        description:
+          "Uniquely gentle extraction method preserves bioactive compounds for maximum efficacy",
+        icon: <Beaker className="h-6 w-6 text-green-600" />,
       },
       {
         title: "Natural Stress Resistance",
-        description: "Enhances plants' natural defense mechanisms against environmental stresses",
-        icon: <Shield className="h-6 w-6 text-purple-600" />
+        description:
+          "Enhances plants' natural defense mechanisms against environmental stresses",
+        icon: <Shield className="h-6 w-6 text-purple-600" />,
       },
       {
         title: "Organic Certification",
-        description: "Certified by Soil Association and Organic Farmers & Growers for organic systems",
-        icon: <Award className="h-6 w-6 text-orange-600" />
-      }
-    ]
+        description:
+          "Certified by Soil Association and Organic Farmers & Growers for organic systems",
+        icon: <Award className="h-6 w-6 text-orange-600" />,
+      },
+    ],
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
       {/* Hero Section */}
-      <motion.section 
+      <motion.section
         className="relative py-20 px-4 overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -319,27 +363,44 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                 Stimplex
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-                A concentrated liquid biostimulant containing key natural compounds and nutrients to enhance root growth, 
-                early plant development, photosynthesis, and nutrient usage, promoting overall plant health. Maximizes 
-                natural plant resistance to environmental stresses and improves quality and yield.
+                A concentrated liquid biostimulant containing key natural
+                compounds and nutrients to enhance root growth, early plant
+                development, photosynthesis, and nutrient usage, promoting
+                overall plant health. Maximizes natural plant resistance to
+                environmental stresses and improves quality and yield.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Derived from pure sources of North Atlantic Ascophyllum nodosum using a uniquely benign extraction 
-                process that guarantees maximum performance and consistency. Suitable for a wide range of conventional 
-                and organic-grown arable, horticultural, and ornamental crops.
+                Derived from pure sources of North Atlantic Ascophyllum nodosum
+                using a uniquely benign extraction process that guarantees
+                maximum performance and consistency. Suitable for a wide range
+                of conventional and organic-grown arable, horticultural, and
+                ornamental crops.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-lg px-8 py-4">
-                  Get Product Info
+                <Button
+                  size="lg"
+                  className="bg-green-600 cursor-pointer hover:bg-green-700 text-lg px-8 py-4"
+                  onClick={() =>
+                    smoothScrollToSection("application-guidelines-stimplexpage")
+                  }
+                >
+                  Application Guidlines
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8 py-4">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-lg cursor-pointer px-8 py-4"
+                  onClick={() =>
+                    smoothScrollToSection("technical-resources-stimplexpage")
+                  }
+                >
                   View Field Guide
                 </Button>
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="relative"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -359,10 +420,10 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Product Showcase */}
-      <ProductShowcase {...showcaseData} />
+      {/* <ProductShowcase {...showcaseData} /> */}
 
       {/* Key Benefits Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-white/50"
         variants={staggerContainer}
         initial="initial"
@@ -373,10 +434,11 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
           <motion.div className="text-center mb-16" variants={fadeInUp}>
             <h2 className="text-4xl font-bold mb-6">Key Benefits</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover why Stimplex is the premium choice for natural crop biostimulation
+              Discover why Stimplex is the premium choice for natural crop
+              biostimulation
             </p>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
               <motion.div key={index} variants={fadeInUp}>
@@ -398,16 +460,19 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Seaweed Technology Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-green-50 to-blue-50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">North Atlantic Seaweed Excellence</h2>
+            <h2 className="text-4xl font-bold mb-6">
+              North Atlantic Seaweed Excellence
+            </h2>
             <p className="text-xl text-gray-600">
-              Premium Ascophyllum nodosum with uniquely benign extraction process
+              Premium Ascophyllum nodosum with uniquely benign extraction
+              process
             </p>
           </div>
 
@@ -417,42 +482,56 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
                     <Waves className="h-8 w-8 text-blue-600" />
-                    <h3 className="text-2xl font-semibold">Premium Seaweed Source</h3>
+                    <h3 className="text-2xl font-semibold">
+                      Premium Seaweed Source
+                    </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="p-4 bg-blue-50 rounded-lg">
-                      <h4 className="font-semibold text-blue-800 mb-2">North Atlantic Ascophyllum nodosum</h4>
+                      <h4 className="font-semibold text-blue-800 mb-2">
+                        North Atlantic Ascophyllum nodosum
+                      </h4>
                       <p className="text-blue-700 text-sm">
-                        Sourced from pristine North Atlantic waters, providing the highest quality bioactive compounds
+                        Sourced from pristine North Atlantic waters, providing
+                        the highest quality bioactive compounds
                       </p>
                     </div>
-                    
+
                     <div className="p-4 bg-green-50 rounded-lg">
-                      <h4 className="font-semibold text-green-800 mb-2">Benign Extraction Process</h4>
+                      <h4 className="font-semibold text-green-800 mb-2">
+                        Benign Extraction Process
+                      </h4>
                       <p className="text-green-700 text-sm">
-                        Uniquely gentle extraction method preserves maximum bioactivity and consistency
+                        Uniquely gentle extraction method preserves maximum
+                        bioactivity and consistency
                       </p>
                     </div>
-                    
+
                     <div className="p-4 bg-orange-50 rounded-lg">
-                      <h4 className="font-semibold text-orange-800 mb-2">Organic Certification</h4>
+                      <h4 className="font-semibold text-orange-800 mb-2">
+                        Organic Certification
+                      </h4>
                       <p className="text-orange-700 text-sm">
-                        Certified by the Soil Association and licensed by Organic Farmers & Growers
+                        Certified by the Soil Association and licensed by
+                        Organic Farmers & Growers
                       </p>
                     </div>
-                    
+
                     <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-green-800 mb-2">Natural Compounds</h4>
+                      <h4 className="font-semibold text-green-800 mb-2">
+                        Natural Compounds
+                      </h4>
                       <p className="text-green-700 text-sm">
-                        Contains naturally balanced plant nutrients, vitamins, and bioactive compounds 
-                        for comprehensive plant health enhancement.
+                        Contains naturally balanced plant nutrients, vitamins,
+                        and bioactive compounds for comprehensive plant health
+                        enhancement.
                       </p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             </div>
-            
+
             <div>
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop"
@@ -465,19 +544,23 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Application Guidelines */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-white/50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div
+          id="application-guidelines-stimplexpage"
+          className="max-w-7xl mx-auto"
+        >
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Application Guidelines</h2>
             <p className="text-xl text-gray-600">
-              Comprehensive crop-specific rates and timings for optimal biostimulation
+              Comprehensive crop-specific rates and timings for optimal
+              biostimulation
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-6">
             {cropApplications.map((crop, index) => (
               <motion.div
@@ -509,8 +592,8 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
               </motion.div>
             ))}
           </div>
-          
-          <motion.div 
+
+          <motion.div
             className="mt-12 space-y-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -522,11 +605,14 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                 <div className="flex items-start gap-3">
                   <Droplets className="h-6 w-6 text-green-600 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-green-800">Application Method</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-green-800">
+                      Application Method
+                    </h3>
                     <p className="text-green-700">
-                      Recommended for application as a foliar spray at water rates of 200-600 l/ha 
-                      depending on the crop type and stage of growth. Can also be applied through 
-                      fertigation systems for protected crops.
+                      Recommended for application as a foliar spray at water
+                      rates of 200-600 l/ha depending on the crop type and stage
+                      of growth. Can also be applied through fertigation systems
+                      for protected crops.
                     </p>
                   </div>
                 </div>
@@ -538,10 +624,13 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                 <div className="flex items-start gap-3">
                   <GraduationCap className="h-6 w-6 text-blue-600 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-blue-800">Organic Certification</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-blue-800">
+                      Organic Certification
+                    </h3>
                     <p className="text-blue-700">
-                      Certified by the Soil Association and licensed by Organic Farmers & Growers (UK2). 
-                      Approved for use in organic growing systems and sustainable agriculture practices.
+                      Certified by the Soil Association and licensed by Organic
+                      Farmers & Growers (UK2). Approved for use in organic
+                      growing systems and sustainable agriculture practices.
                     </p>
                   </div>
                 </div>
@@ -552,7 +641,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Pack Sizes Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-blue-50 to-green-50"
         {...fadeInUp}
         viewport={{ once: true }}
@@ -564,17 +653,24 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
               Premium biostimulant for all crop types and growing systems
             </p>
           </div>
-          
+
           <div className="max-w-4xl mx-auto">
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Package className="h-8 w-8 text-green-600" />
-                  <h3 className="text-2xl font-semibold">Available Pack Size</h3>
+                  <h3 className="text-2xl font-semibold">
+                    Available Pack Size
+                  </h3>
                 </div>
                 <div className="text-center p-6 bg-gradient-to-br from-green-50 to-blue-50 rounded-lg">
-                  <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">2 × 10L</Badge>
-                  <p className="text-gray-600">Premium biostimulant suitable for all conventional and organic crops</p>
+                  <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">
+                    2 × 10L
+                  </Badge>
+                  <p className="text-gray-600">
+                    Premium biostimulant suitable for all conventional and
+                    organic crops
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -583,10 +679,14 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* PDF Links Section */}
-      <PDFLinks productName="Stimplex" links={pdfLinks} />
+      <PDFLinks
+        id="technical-resources-stimplexpage"
+        productName="Stimplex"
+        links={pdfLinks}
+      />
 
       {/* Contact Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-green-600 to-blue-600 text-white"
         {...fadeInUp}
         viewport={{ once: true }}
@@ -604,24 +704,24 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                     <p>Market Rasen LN8 3RH</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6" />
                   <p>+44 (0) 1673 885175</p>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
                   <p>office@ilex-envirosciences.com</p>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Clock className="h-6 w-6" />
                   <p>Monday–Friday: 09:00–17:00</p>
                 </div>
               </div>
             </div>
-            
+
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardHeader>
                 <CardTitle className="text-white">Product Enquiry</CardTitle>
@@ -657,8 +757,8 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                     rows={4}
                     className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30"
                   />
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="w-full bg-white text-green-600 hover:bg-gray-100"
                   >
                     Submit Enquiry

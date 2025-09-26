@@ -1,8 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
-import { FileText, Download, ExternalLink } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Button } from "./ui/button";
+import { FileText, Download, ExternalLink } from "lucide-react";
 
 interface PDFLink {
   title: string;
@@ -13,34 +13,39 @@ interface PDFLink {
 interface PDFLinksProps {
   productName: string;
   links: PDFLink[];
+  id: string;
 }
 
-export function PDFLinks({ productName, links }: PDFLinksProps) {
+export function PDFLinks({ productName, links, id }: PDFLinksProps) {
   const handleDownload = (title: string, url?: string) => {
     if (url) {
-      window.open(url, '_blank');
+      window.open(url, "_blank");
     } else {
       // Simulate download - in real app this would be actual PDF URLs
       console.log(`Downloading ${title} for ${productName}`);
-      alert(`${title} would be downloaded here. In production, this would link to the actual PDF file.`);
+      alert(
+        `${title} would be downloaded here. In production, this would link to the actual PDF file.`
+      );
     }
   };
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.5 }
+    transition: { duration: 0.5 },
   };
 
   return (
-    <motion.section 
+    <motion.section
       className="py-16 px-4 bg-gray-50"
       {...fadeInUp}
       viewport={{ once: true }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div id={id} className="max-w-7xl mx-auto">
         <motion.div className="text-center mb-12" {...fadeInUp}>
-          <h2 className="text-4xl font-bold mb-4 text-gray-900">Technical Resources</h2>
+          <h2 className="text-4xl font-bold mb-4 text-gray-900">
+            Technical Resources
+          </h2>
           <p className="text-xl text-gray-600">
             Download comprehensive technical information and compatibility data
           </p>
@@ -62,17 +67,23 @@ export function PDFLinks({ productName, links }: PDFLinksProps) {
                       <FileText className="h-6 w-6 text-blue-600" />
                     </div>
                     <div className="flex-1">
-                      <CardTitle className="text-lg leading-tight">{link.title}</CardTitle>
+                      <CardTitle className="text-lg leading-tight">
+                        {link.title}
+                      </CardTitle>
                     </div>
                   </div>
-                  {link.description && (
-                    <p className="text-sm text-gray-600">{link.description}</p>
-                  )}
+                  <div className="min-h-16">
+                    {link.description && (
+                      <p className="text-sm text-gray-600">
+                        {link.description}
+                      </p>
+                    )}
+                  </div>
                 </CardHeader>
-                
+
                 <CardContent>
-                  <Button 
-                    className="w-full group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-green-600 transition-all duration-300"
+                  <Button
+                    className="w-full cursor-pointer group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-green-600 transition-all duration-300"
                     onClick={() => handleDownload(link.title, link.url)}
                   >
                     <Download className="mr-2 h-4 w-4" />
@@ -84,21 +95,6 @@ export function PDFLinks({ productName, links }: PDFLinksProps) {
             </motion.div>
           ))}
         </div>
-
-        <motion.div 
-          className="mt-12 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-gray-600">
-            Need additional technical support? 
-            <Button variant="link" className="text-blue-600 hover:text-blue-700 p-0 ml-1">
-              Contact our technical team
-            </Button>
-          </p>
-        </motion.div>
       </div>
     </motion.section>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   Card,
@@ -17,19 +18,15 @@ import {
   Shield,
   Leaf,
   Wheat,
-  Droplets,
   FlaskConical,
   Zap,
   Target,
   Heart,
 } from "lucide-react";
-import { MenuItem, PageType } from "../types";
 
-interface HomePageProps {
-  onPageChange: (page: PageType, item?: MenuItem, product?: any) => void;
-}
+export function HomePage() {
+  const navigate = useNavigate();
 
-export function HomePage({ onPageChange }: HomePageProps) {
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -44,122 +41,6 @@ export function HomePage({ onPageChange }: HomePageProps) {
     },
   };
 
-  // Verify category data structure on component mount
-  React.useEffect(() => {
-    const validateCategoryData = () => {
-      const categoryKeys = [
-        "phosphite-range",
-        "foliar-range",
-        "calcium-range",
-        "biostimulants",
-        "seed-treatments",
-        "organic-range",
-      ];
-      const validationResults = categoryKeys.map((key) => {
-        const category = categoryData[key as keyof typeof categoryData];
-        return {
-          category: key,
-          valid: !!(
-            category?.title &&
-            category?.link &&
-            category?.products?.length > 0
-          ),
-          productCount: category?.products?.length || 0,
-        };
-      });
-
-      console.log("Category validation results:", validationResults);
-
-      const invalidCategories = validationResults.filter(
-        (result) => !result.valid
-      );
-      if (invalidCategories.length > 0) {
-        console.error("Invalid category data found:", invalidCategories);
-      }
-    };
-
-    validateCategoryData();
-  }, []);
-
-  // Complete product data organized by category
-  const categoryData = {
-    "phosphite-range": {
-      title: "The Ilex Phosphite Range",
-      link: "phosphite-range",
-      products: [
-        { product: "Crop Rooter® Plus", link: "crop-rooter-plus" },
-        { product: "PK MAXX™ +", link: "pk-maxx" },
-        { product: "OilSeed Raiser™", link: "oilseed-raiser" },
-        { product: "CaPITAL™", link: "capital" },
-        { product: "Tensile™", link: "tensile" },
-        { product: "Beet Raiser™", link: "beet-raiser" },
-        { product: "Maniphos™", link: "maniphos" },
-        { product: "PK VEG™", link: "pk-veg" },
-      ],
-    },
-    "foliar-range": {
-      title: "The Ilex Foliar Nutrient Range",
-      link: "foliar-range",
-      products: [
-        { product: "Mn SUPER™", link: "mn-super" },
-        { product: "Mag Plus™", link: "mag-plus" },
-        { product: "ful-oN™", link: "ful-on" },
-        { product: "Mn-Cu Plus™", link: "mn-cu-plus" },
-        { product: "Foliar Boost™", link: "foliar-boost" },
-        { product: "Cu-Zin™", link: "cu-zin" },
-        { product: "Pro-K™", link: "pro-k" },
-        { product: "Pro-Sul™", link: "pro-sul" },
-      ],
-    },
-    "calcium-range": {
-      title: "Calcium Supplements",
-      link: "calcium-range",
-      products: [
-        { product: "Pro-Cal™", link: "pro-cal" },
-        { product: "Advocate™", link: "advocate" },
-        { product: "CaPITAL™", link: "capital" },
-      ],
-    },
-    biostimulants: {
-      title: "Biostimulants",
-      link: "biostimulants",
-      products: [
-        { product: "Stimplex®", link: "stimplex" },
-        { product: "Toggle®", link: "toggle" },
-      ],
-    },
-    "seed-treatments": {
-      title: "Seed Treatments",
-      link: "seed-treatments",
-      products: [
-        { product: "Start-uP® MAXX", link: "start-up-maxx" },
-        { product: "Start-uP®", link: "start-up" },
-        { product: "ProZest™", link: "prozest" },
-        { product: "Man-uP™", link: "man-up" },
-      ],
-    },
-    "organic-range": {
-      title: "The Ilex Organic Range",
-      link: "organic-range",
-      products: [
-        { product: "Complete™ (6-2-4)", link: "complete-6-2-4" },
-        {
-          product: "Complete Hi-Fruit™ (4-2-6)",
-          link: "complete-hi-fruit-4-2-6",
-        },
-        { product: "K-Max™ (3-1-8)", link: "k-max-3-1-8" },
-        { product: "N-Max™ (7-2-2)", link: "n-max-7-2-2" },
-        { product: "Ultimate Gold™ (8-7-7)", link: "ultimate-gold-8-7-7" },
-      ],
-    },
-  };
-
-  // Helper function to safely get product count
-  const getProductCount = (categoryKey: keyof typeof categoryData): number => {
-    const category = categoryData[categoryKey];
-    return category?.products?.length || 0;
-  };
-
   const productRanges = [
     {
       title: "Phosphite Range",
@@ -168,7 +49,7 @@ export function HomePage({ onPageChange }: HomePageProps) {
       icon: <Beaker className="h-8 w-8 text-blue-600" />,
       link: "phosphite-range",
       gradient: "from-blue-500 to-purple-600",
-      productCount: getProductCount("phosphite-range"),
+      productCount: 8,
       image:
         "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=400&h=300&fit=crop",
     },
@@ -179,7 +60,7 @@ export function HomePage({ onPageChange }: HomePageProps) {
       icon: <Sprout className="h-8 w-8 text-green-600" />,
       link: "foliar-range",
       gradient: "from-green-500 to-emerald-600",
-      productCount: getProductCount("foliar-range"),
+      productCount: 8,
       image:
         "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=300&fit=crop",
     },
@@ -190,7 +71,7 @@ export function HomePage({ onPageChange }: HomePageProps) {
       icon: <Shield className="h-8 w-8 text-orange-600" />,
       link: "calcium-range",
       gradient: "from-orange-500 to-red-500",
-      productCount: getProductCount("calcium-range"),
+      productCount: 3,
       image:
         "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop",
     },
@@ -201,7 +82,7 @@ export function HomePage({ onPageChange }: HomePageProps) {
       icon: <Leaf className="h-8 w-8 text-emerald-600" />,
       link: "biostimulants",
       gradient: "from-emerald-500 to-teal-600",
-      productCount: getProductCount("biostimulants"),
+      productCount: 2,
       image:
         "https://images.unsplash.com/photo-1609252847389-15ce22b37f65?w=400&h=300&fit=crop",
     },
@@ -212,7 +93,7 @@ export function HomePage({ onPageChange }: HomePageProps) {
       icon: <Wheat className="h-8 w-8 text-amber-600" />,
       link: "seed-treatments",
       gradient: "from-amber-500 to-yellow-600",
-      productCount: getProductCount("seed-treatments"),
+      productCount: 4,
       image:
         "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=300&fit=crop",
     },
@@ -223,55 +104,11 @@ export function HomePage({ onPageChange }: HomePageProps) {
       icon: <FlaskConical className="h-8 w-8 text-purple-600" />,
       link: "organic-range",
       gradient: "from-purple-500 to-pink-600",
-      productCount: getProductCount("organic-range"),
+      productCount: 5,
       image:
         "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop",
     },
   ];
-
-  // Function to handle category navigation with validation
-  const handleExploreRange = (categoryLink: string) => {
-    // Validate that the category exists
-    const category = categoryData[categoryLink as keyof typeof categoryData];
-
-    if (!category) {
-      console.error(`Category "${categoryLink}" not found`);
-      return;
-    }
-
-    // Ensure all expected products are present
-    if (!category.products || category.products.length === 0) {
-      console.error(`No products found for category "${categoryLink}"`);
-      return;
-    }
-
-    // Validate product structure
-    const invalidProducts = category.products.filter(
-      (product) => !product.product || !product.link
-    );
-    if (invalidProducts.length > 0) {
-      console.error(
-        `Invalid product data found in category "${categoryLink}":`,
-        invalidProducts
-      );
-      return;
-    }
-
-    // Create the MenuItem object for the CategoryPage
-    const categoryMenuItem: MenuItem = {
-      menu_item: category.title,
-      link: category.link,
-      products: category.products,
-    };
-
-    // Navigate to the category page
-    onPageChange(categoryLink as PageType, categoryMenuItem);
-
-    // Log successful navigation for debugging
-    console.log(
-      `Successfully navigated to ${categoryLink} with ${category.products.length} products`
-    );
-  };
 
   const features = [
     {
@@ -293,6 +130,10 @@ export function HomePage({ onPageChange }: HomePageProps) {
         "Environmentally responsible products that support long-term soil health",
     },
   ];
+
+  const handleExploreRange = (categoryLink: string) => {
+    navigate(`/products/${categoryLink}`);
+  };
 
   return (
     <div className="min-h-screen">
@@ -330,7 +171,7 @@ export function HomePage({ onPageChange }: HomePageProps) {
                 variant="outline"
                 size="lg"
                 className="text-lg px-8 py-4"
-                onClick={() => onPageChange("contact")}
+                onClick={() => navigate("/contact")}
               >
                 Contact Our Experts
               </Button>
@@ -388,7 +229,7 @@ export function HomePage({ onPageChange }: HomePageProps) {
 
                   <CardContent>
                     <Button
-                      className="w-full group-hover:bg-gradient-to-r group-hover:from-green-600 group-hover:to-blue-600 transition-all duration-300"
+                      className="w-full cursor-pointer group-hover:bg-gradient-to-r group-hover:from-green-600 group-hover:to-blue-600 transition-all duration-300"
                       onClick={() => handleExploreRange(range.link)}
                     >
                       Explore Range
@@ -456,7 +297,7 @@ export function HomePage({ onPageChange }: HomePageProps) {
             <Button
               size="lg"
               className="bg-white text-green-600 hover:bg-gray-100 text-lg px-8 py-4"
-              onClick={() => onPageChange("contact")}
+              onClick={() => navigate("/contact")}
             >
               Contact Our Experts
             </Button>
@@ -464,7 +305,7 @@ export function HomePage({ onPageChange }: HomePageProps) {
               variant="outline"
               size="lg"
               className="border-white text-white hover:bg-white hover:text-green-600 text-lg px-8 py-4"
-              onClick={() => onPageChange("how-to-buy")}
+              onClick={() => navigate("/how-to-buy")}
             >
               How to Buy
             </Button>

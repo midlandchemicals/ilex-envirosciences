@@ -15,6 +15,7 @@ import { Separator } from "./ui/separator";
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
+import { smoothScrollToSection } from "../utils/scrollHelpers";
 let capitalImage = "";
 import {
   Leaf,
@@ -166,14 +167,17 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
     {
       title: "CaPITAL™ Leaflet",
       description: "Complete product information and application guidelines",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Capital-1606-i.pdf",
     },
     {
       title: "Phosphite Action Information Sheet",
       description: "Technical information about phosphite mode of action",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/phosphites-1701-iv.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2023/10/Compatibility-Chart-0923-ii.pdf",
     },
   ];
 
@@ -300,17 +304,23 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-green-600 hover:bg-green-700 text-lg px-8 py-4"
+                  className="bg-green-600 cursor-pointer hover:bg-green-700 text-lg px-8 py-4"
+                  onClick={() =>
+                    smoothScrollToSection("application-guidelines-capital")
+                  }
                 >
-                  Get Product Info
+                  Application Guidelines
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg px-8 py-4"
+                  className="text-lg cursor-pointer px-8 py-4"
+                  onClick={() =>
+                    smoothScrollToSection("technical-resources-capital")
+                  }
                 >
-                  View Technical Data
+                  View Technical Resources
                 </Button>
               </div>
             </motion.div>
@@ -335,7 +345,7 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Product Showcase */}
-      <ProductShowcase {...showcaseData} />
+      {/* <ProductShowcase {...showcaseData} /> */}
 
       {/* Key Benefits Section */}
       <motion.section
@@ -507,7 +517,7 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
         {...fadeInUp}
         viewport={{ once: true }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div id="application-guidelines-capital" className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
               Application Rates & Timings
@@ -681,7 +691,11 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* PDF Links Section */}
-      <PDFLinks productName="CaPITAL™" links={pdfLinks} />
+      <PDFLinks
+        id="technical-resources-capital"
+        productName="CaPITAL™"
+        links={pdfLinks}
+      />
 
       {/* Contact Section */}
       <motion.section

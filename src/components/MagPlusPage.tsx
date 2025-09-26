@@ -1,25 +1,31 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
-import { Badge } from './ui/badge';
-import { Separator } from './ui/separator';
-import { ProductShowcase } from './ProductShowcase';
-import { PDFLinks } from './PDFLinks';
-import { AnalysisPieChart } from './AnalysisPieChart';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { 
-  Leaf, 
-  Zap, 
-  Target, 
-  Beaker, 
-  Droplets, 
-  Clock, 
-  Package, 
-  Phone, 
-  Mail, 
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Badge } from "./ui/badge";
+import { Separator } from "./ui/separator";
+import { ProductShowcase } from "./ProductShowcase";
+import { PDFLinks } from "./PDFLinks";
+import { AnalysisPieChart } from "./AnalysisPieChart";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import {
+  Leaf,
+  Zap,
+  Target,
+  Beaker,
+  Droplets,
+  Clock,
+  Package,
+  Phone,
+  Mail,
   MapPin,
   CheckCircle,
   ArrowRight,
@@ -30,209 +36,232 @@ import {
   Sprout,
   Shield,
   Activity,
-  Sparkles
-} from 'lucide-react';
+  Sparkles,
+} from "lucide-react";
+import { smoothScrollToSection } from "../utils/scrollHelpers";
 
 interface ContactFormProps {
-  onSubmit: (formData: { name: string; email: string; message: string }) => void;
+  onSubmit: (formData: {
+    name: string;
+    email: string;
+    message: string;
+  }) => void;
 }
 
 export function MagPlusPage({ onSubmit }: ContactFormProps) {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmit(formData);
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: "", email: "", message: "" });
   };
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.6 },
   };
 
   const staggerContainer = {
     animate: {
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const benefits = [
     {
       icon: <Zap className="h-8 w-8 text-green-600" />,
       title: "High Concentrated Fast-Acting",
-      description: "Eliminates time-consuming and bulky procedures involving bags of powdered product"
+      description:
+        "Eliminates time-consuming and bulky procedures involving bags of powdered product",
     },
     {
       icon: <Target className="h-8 w-8 text-purple-600" />,
       title: "Low Application Rates",
-      description: "Superior performance even at low rates, reducing transport needs around the farm"
+      description:
+        "Superior performance even at low rates, reducing transport needs around the farm",
     },
     {
       icon: <Beaker className="h-8 w-8 text-blue-600" />,
       title: "Enhanced Formulation",
-      description: "Soluble Magnesium with Nitrogen for superior performance and plant uptake"
+      description:
+        "Soluble Magnesium with Nitrogen for superior performance and plant uptake",
     },
     {
       icon: <Leaf className="h-8 w-8 text-green-500" />,
       title: "Deficiency Prevention & Correction",
-      description: "Effective for both prevention and correction of magnesium deficiency in crops"
+      description:
+        "Effective for both prevention and correction of magnesium deficiency in crops",
     },
     {
       icon: <Sparkles className="h-8 w-8 text-cyan-600" />,
       title: "New Generation Technology",
-      description: "Part of Ilex's innovative new generation of foliar nutrients"
+      description:
+        "Part of Ilex's innovative new generation of foliar nutrients",
     },
     {
       icon: <Award className="h-8 w-8 text-orange-600" />,
       title: "Superior Performance",
-      description: "Demonstrates enhanced results even at reduced application rates"
-    }
+      description:
+        "Demonstrates enhanced results even at reduced application rates",
+    },
   ];
 
   const crops = [
     {
       name: "Cereals",
       rate: "2.0 – 4.0 l/ha",
-      timing: "Apply from Zadoks G.S. 23. To assist grain fill and quality repeat at flag leaf stage G.S. 39-41",
-      color: "bg-amber-100 text-amber-800"
+      timing:
+        "Apply from Zadoks G.S. 23. To assist grain fill and quality repeat at flag leaf stage G.S. 39-41",
+      color: "bg-amber-100 text-amber-800",
     },
     {
       name: "Oilseed Rape",
       rate: "2.0 – 4.0 l/ha",
-      timing: "Apply from 6-8 leaves to pre-flowering. Repeat during periods of rapid growth",
-      color: "bg-yellow-100 text-yellow-800"
+      timing:
+        "Apply from 6-8 leaves to pre-flowering. Repeat during periods of rapid growth",
+      color: "bg-yellow-100 text-yellow-800",
     },
     {
       name: "Potatoes",
       rate: "3.0 – 5.0 l/ha",
-      timing: "Apply at start of tuber bulking. Repeat @ 3.0 – 5.0 l/ha during tuber bulking",
-      color: "bg-orange-100 text-orange-800"
+      timing:
+        "Apply at start of tuber bulking. Repeat @ 3.0 – 5.0 l/ha during tuber bulking",
+      color: "bg-orange-100 text-orange-800",
     },
     {
       name: "Brassicas / Field Vegetables",
       rate: "3.0 – 5.0 l/ha",
       timing: "Apply from 6-8 true leaves. Repeat at 14-21 day intervals",
-      color: "bg-green-100 text-green-800"
-    }
+      color: "bg-green-100 text-green-800",
+    },
   ];
 
   const analysisData = {
     "Magnesium (MgO)": "13",
-    "Nitrogen (N)": "9"
+    "Nitrogen (N)": "9",
   };
 
   const pdfLinks = [
     {
       title: "Mag Plus™ Leaflet",
-      description: "Complete product information and technical specifications"
+      description: "Complete product information and technical specifications",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Mag-Plus-1606-i.pdf",
     },
     {
       title: "Compatibility Chart",
-      description: "Tank mixing compatibility with other agricultural products"
+      description: "Tank mixing compatibility with other agricultural products",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2023/10/Compatibility-Chart-0923-ii.pdf",
     },
-    {
-      title: "Foliar Nutrient Guide",
-      description: "Comprehensive guide to foliar nutrition applications"
-    }
   ];
 
   // ProductShowcase data
   const showcaseData = {
     productName: "Mag Plus™",
-    productDescription: "Historically the prevention and correction of magnesium deficiency has involved time-consuming and bulky procedures involving bags of powdered product. To provide farmers with an effective alternative, Ilex have introduced the high concentration liquid Mag Plus as part of their new generation of foliar nutrients. Due to its enhanced formulation of soluble Magnesium with Nitrogen, Mag Plus is able to demonstrate superior performance even at low rates of application.",
+    productDescription:
+      "Historically the prevention and correction of magnesium deficiency has involved time-consuming and bulky procedures involving bags of powdered product. To provide farmers with an effective alternative, Ilex have introduced the high concentration liquid Mag Plus as part of their new generation of foliar nutrients. Due to its enhanced formulation of soluble Magnesium with Nitrogen, Mag Plus is able to demonstrate superior performance even at low rates of application.",
     keyFeatures: [
       "High concentration liquid formulation (13% MgO)",
       "Enhanced with nitrogen (9% N) for superior uptake",
       "Low application rates reduce transport requirements",
       "Fast-acting liquid eliminates powder handling",
       "Prevents and corrects magnesium deficiency",
-      "Part of Ilex's new generation foliar nutrients"
+      "Part of Ilex's new generation foliar nutrients",
     ],
     targetCrops: [
       {
         name: "Cereals",
-        image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=300&fit=crop",
         benefits: [
           "Enhanced grain fill and quality",
           "Improved photosynthesis efficiency",
           "Better stress tolerance",
-          "Increased yield potential"
-        ]
+          "Increased yield potential",
+        ],
       },
       {
         name: "Oilseed Rape",
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
         benefits: [
           "Enhanced flowering development",
           "Improved oil content",
           "Better winter hardiness",
-          "Increased pod fill"
-        ]
+          "Increased pod fill",
+        ],
       },
       {
         name: "Potatoes",
-        image: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400&h=300&fit=crop",
         benefits: [
           "Enhanced tuber development",
           "Improved skin quality",
           "Better storage characteristics",
-          "Increased marketable yield"
-        ]
+          "Increased marketable yield",
+        ],
       },
       {
         name: "Vegetables",
-        image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop",
+        image:
+          "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop",
         benefits: [
           "Enhanced leaf color and quality",
           "Improved photosynthetic efficiency",
           "Better stress tolerance",
-          "Increased nutritional value"
-        ]
-      }
+          "Increased nutritional value",
+        ],
+      },
     ],
     scientificBenefits: [
       {
         title: "Magnesium Functions",
-        description: "Essential for chlorophyll formation and photosynthesis, enzyme activation, and carbohydrate metabolism",
-        icon: <Leaf className="h-6 w-6 text-green-600" />
+        description:
+          "Essential for chlorophyll formation and photosynthesis, enzyme activation, and carbohydrate metabolism",
+        icon: <Leaf className="h-6 w-6 text-green-600" />,
       },
       {
         title: "Nitrogen Enhancement",
-        description: "Nitrogen inclusion improves magnesium uptake and translocation within the plant",
-        icon: <Zap className="h-6 w-6 text-blue-600" />
+        description:
+          "Nitrogen inclusion improves magnesium uptake and translocation within the plant",
+        icon: <Zap className="h-6 w-6 text-blue-600" />,
       },
       {
         title: "Liquid Technology",
-        description: "High concentration liquid formulation ensures rapid absorption and distribution",
-        icon: <Droplets className="h-6 w-6 text-purple-600" />
+        description:
+          "High concentration liquid formulation ensures rapid absorption and distribution",
+        icon: <Droplets className="h-6 w-6 text-purple-600" />,
       },
       {
         title: "Deficiency Correction",
-        description: "Rapidly corrects magnesium deficiency symptoms while preventing future occurrences",
-        icon: <Target className="h-6 w-6 text-orange-600" />
-      }
-    ]
+        description:
+          "Rapidly corrects magnesium deficiency symptoms while preventing future occurrences",
+        icon: <Target className="h-6 w-6 text-orange-600" />,
+      },
+    ],
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
       {/* Hero Section */}
-      <motion.section 
+      <motion.section
         className="relative py-20 px-4 overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -245,32 +274,50 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
               <Badge className="mb-4 bg-green-100 text-green-800 hover:bg-green-200 text-lg px-4 py-2">
                 High Concentrated Fast-Acting Magnesium Liquid
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-[1.2] bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
                 Mag Plus™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-                Historically the prevention and correction of magnesium deficiency has involved time-consuming 
-                and bulky procedures involving bags of powdered product. More recently basic liquid products 
-                have appeared on the market however these still require high dose rates and therefore the need 
-                to transport large volumes of product around the farm.
+                Historically the prevention and correction of magnesium
+                deficiency has involved time-consuming and bulky procedures
+                involving bags of powdered product. More recently basic liquid
+                products have appeared on the market however these still require
+                high dose rates and therefore the need to transport large
+                volumes of product around the farm.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                To provide farmers with an effective alternative Ilex have introduced the high concentration liquid 
-                Mag Plus as part of their new generation of foliar nutrients. Due to its enhanced formulation of 
-                soluble Magnesium with Nitrogen, Mag Plus is able to demonstrate superior performance even at low rates of application.
+                To provide farmers with an effective alternative Ilex have
+                introduced the high concentration liquid Mag Plus as part of
+                their new generation of foliar nutrients. Due to its enhanced
+                formulation of soluble Magnesium with Nitrogen, Mag Plus is able
+                to demonstrate superior performance even at low rates of
+                application.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-lg px-8 py-4">
-                  Get Product Info
+                <Button
+                  size="lg"
+                  className="bg-green-600 cursor-pointer hover:bg-green-700 text-lg px-8 py-4"
+                  onClick={() =>
+                    smoothScrollToSection("application-guidelines-magplus")
+                  }
+                >
+                  Application Guidlines
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8 py-4">
-                  View Compatibility Chart
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-lg cursor-pointer px-8 py-4"
+                  onClick={() =>
+                    smoothScrollToSection("technical-resources-magplus")
+                  }
+                >
+                  View Technical Resources
                 </Button>
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="relative"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -290,10 +337,10 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Product Showcase */}
-      <ProductShowcase {...showcaseData} />
+      {/* <ProductShowcase {...showcaseData} /> */}
 
       {/* Key Benefits Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-white/50"
         variants={staggerContainer}
         initial="initial"
@@ -304,10 +351,11 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
           <motion.div className="text-center mb-16" variants={fadeInUp}>
             <h2 className="text-4xl font-bold mb-6">Key Benefits</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover why Mag Plus™ is the preferred choice for modern agriculture
+              Discover why Mag Plus™ is the preferred choice for modern
+              agriculture
             </p>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
               <motion.div key={index} variants={fadeInUp}>
@@ -329,17 +377,22 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Analysis Pie Chart */}
-      <AnalysisPieChart analysis={analysisData} title="Mag Plus™ Nutrient Analysis" />
+      <AnalysisPieChart
+        analysis={analysisData}
+        title="Mag Plus™ Nutrient Analysis"
+      />
 
       {/* Technical Analysis Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-green-50 to-blue-50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Advanced Magnesium Technology</h2>
+            <h2 className="text-4xl font-bold mb-6">
+              Advanced Magnesium Technology
+            </h2>
             <p className="text-xl text-gray-600">
               Enhanced formulation for superior magnesium nutrition
             </p>
@@ -351,48 +404,75 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
                     <FlaskConical className="h-8 w-8 text-green-600" />
-                    <h3 className="text-2xl font-semibold">Chemical Composition</h3>
+                    <h3 className="text-2xl font-semibold">
+                      Chemical Composition
+                    </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="flex justify-between items-center p-4 bg-green-50 rounded-lg">
-                      <span className="text-gray-700 font-medium">Magnesium (MgO)</span>
+                      <span className="text-gray-700 font-medium">
+                        Magnesium (MgO)
+                      </span>
                       <div className="flex items-center gap-2">
-                        <Badge variant="secondary" className="text-lg px-3 py-1">13% w/v</Badge>
+                        <Badge
+                          variant="secondary"
+                          className="text-lg px-3 py-1"
+                        >
+                          13% w/v
+                        </Badge>
                         <Badge variant="outline">130 g/l</Badge>
                       </div>
                     </div>
-                    
+
                     <div className="flex justify-between items-center p-4 bg-blue-50 rounded-lg">
-                      <span className="text-gray-700 font-medium">Nitrogen (N)</span>
+                      <span className="text-gray-700 font-medium">
+                        Nitrogen (N)
+                      </span>
                       <div className="flex items-center gap-2">
-                        <Badge variant="secondary" className="text-lg px-3 py-1">9% w/v</Badge>
+                        <Badge
+                          variant="secondary"
+                          className="text-lg px-3 py-1"
+                        >
+                          9% w/v
+                        </Badge>
                         <Badge variant="outline">90 g/l</Badge>
                       </div>
                     </div>
-                    
+
                     <div className="grid grid-cols-2 gap-4">
                       <div className="text-center p-4 bg-gradient-to-br from-green-50 to-blue-50 rounded-lg">
-                        <p className="text-2xl font-bold text-green-600 mb-1">13%</p>
-                        <p className="text-sm text-gray-600">High Magnesium Content</p>
+                        <p className="text-2xl font-bold text-green-600 mb-1">
+                          13%
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          High Magnesium Content
+                        </p>
                       </div>
                       <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-green-50 rounded-lg">
-                        <p className="text-2xl font-bold text-blue-600 mb-1">9%</p>
-                        <p className="text-sm text-gray-600">Enhanced with Nitrogen</p>
+                        <p className="text-2xl font-bold text-blue-600 mb-1">
+                          9%
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          Enhanced with Nitrogen
+                        </p>
                       </div>
                     </div>
-                    
+
                     <div className="bg-green-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-green-800 mb-2">Enhanced Performance</h4>
+                      <h4 className="font-semibold text-green-800 mb-2">
+                        Enhanced Performance
+                      </h4>
                       <p className="text-green-700 text-sm">
-                        Soluble magnesium with nitrogen for superior plant uptake and performance, 
-                        demonstrating enhanced results even at reduced application rates.
+                        Soluble magnesium with nitrogen for superior plant
+                        uptake and performance, demonstrating enhanced results
+                        even at reduced application rates.
                       </p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             </div>
-            
+
             <div>
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=600&h=400&fit=crop"
@@ -405,19 +485,22 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Application Guidelines */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-white/50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div id="application-guidelines-magplus" className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Application Rates & Timings for Arable Crops</h2>
+            <h2 className="text-4xl font-bold mb-6">
+              Application Rates & Timings
+            </h2>
             <p className="text-xl text-gray-600">
-              Apply Mag Plus for the prevention and correction of magnesium deficiency as follows
+              Apply Mag Plus for the prevention and correction of magnesium
+              deficiency as follows
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-6">
             {crops.map((crop, index) => (
               <motion.div
@@ -444,8 +527,8 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
               </motion.div>
             ))}
           </div>
-          
-          <motion.div 
+
+          <motion.div
             className="mt-12 p-6 bg-amber-50 rounded-2xl border border-amber-200"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -455,10 +538,13 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
             <div className="flex items-start gap-3">
               <CheckCircle className="h-6 w-6 text-amber-600 mt-1" />
               <div>
-                <h3 className="text-lg font-semibold mb-2 text-amber-800">Important Note</h3>
+                <h3 className="text-lg font-semibold mb-2 text-amber-800">
+                  Important Note
+                </h3>
                 <p className="text-amber-700">
-                  In the case of severe magnesium deficiency, repeat applications are recommended 
-                  for all crops until symptoms are corrected.
+                  In the case of severe magnesium deficiency, repeat
+                  applications are recommended for all crops until symptoms are
+                  corrected.
                 </p>
               </div>
             </div>
@@ -467,7 +553,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Pack Sizes Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-blue-50 to-green-50"
         {...fadeInUp}
         viewport={{ once: true }}
@@ -479,22 +565,40 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
               Convenient packaging for all farming operations
             </p>
           </div>
-          
+
           <div className="max-w-4xl mx-auto">
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Package className="h-8 w-8 text-green-600" />
-                  <h3 className="text-2xl font-semibold">Available Pack Sizes</h3>
+                  <h3 className="text-2xl font-semibold">
+                    Available Pack Sizes
+                  </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="text-center p-6 bg-gradient-to-br from-green-50 to-blue-50 rounded-lg">
-                    <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">2 × 10L</Badge>
-                    <p className="text-gray-600">Perfect for smaller operations and diverse crop applications</p>
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      2 × 10L
+                    </Badge>
+                    <p className="text-gray-600">
+                      Perfect for smaller operations and diverse crop
+                      applications
+                    </p>
                   </div>
                   <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-green-50 rounded-lg">
-                    <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">1000L IBC</Badge>
-                    <p className="text-gray-600">Cost-effective solution for large-scale agricultural operations</p>
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      1000L IBC
+                    </Badge>
+                    <p className="text-gray-600">
+                      Cost-effective solution for large-scale agricultural
+                      operations
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -504,10 +608,14 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* PDF Links Section */}
-      <PDFLinks productName="Mag Plus™" links={pdfLinks} />
+      <PDFLinks
+        id="technical-resources-magplus"
+        productName="Mag Plus™"
+        links={pdfLinks}
+      />
 
       {/* Contact Section */}
-      <motion.section 
+      <motion.section
         className="py-20 px-4 bg-gradient-to-r from-green-600 to-blue-600 text-white"
         {...fadeInUp}
         viewport={{ once: true }}
@@ -525,24 +633,24 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
                     <p>Market Rasen LN8 3RH</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6" />
                   <p>+44 (0) 1673 885175</p>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
                   <p>office@ilex-envirosciences.com</p>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <Clock className="h-6 w-6" />
                   <p>Monday–Friday: 09:00–17:00</p>
                 </div>
               </div>
             </div>
-            
+
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardHeader>
                 <CardTitle className="text-white">Product Enquiry</CardTitle>
@@ -578,8 +686,8 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
                     rows={4}
                     className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30"
                   />
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="w-full bg-white text-green-600 hover:bg-gray-100"
                   >
                     Submit Enquiry

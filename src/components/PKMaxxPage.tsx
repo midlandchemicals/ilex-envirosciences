@@ -37,6 +37,7 @@ import {
   Sprout,
   Shield,
 } from "lucide-react";
+import { smoothScrollToSection } from "../utils/scrollHelpers";
 
 interface ContactFormProps {
   onSubmit: (formData: {
@@ -204,18 +205,22 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
     {
       title: "PK MAXX + Leaflet",
       description: "Complete product information and application guidelines",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2022/04/PK_MAXX__2201_i.pdf",
     },
     {
       title: "Phosphite Action Information Sheet",
       description: "Technical information about phosphite mode of action",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/phosphites-1701-iv.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2023/10/Compatibility-Chart-0923-ii.pdf",
     },
     {
       title: "Potato Field Trial Data",
       description: "Independent trial results showing yield improvements",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/PKMAXX-Field-Trials-Summary-2015-2016-2017.pdf",
     },
   ];
 
@@ -342,15 +347,21 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-green-600 hover:bg-green-700 text-lg px-8 py-4"
+                  className="bg-green-600 cursor-pointer hover:bg-green-700 text-lg px-8 py-4"
+                  onClick={() =>
+                    smoothScrollToSection("application-guidelines-pkmax")
+                  }
                 >
-                  Get Product Info
+                  Application Guidlines
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg px-8 py-4"
+                  className="text-lg cursor-pointer px-8 py-4"
+                  onClick={() =>
+                    smoothScrollToSection("technical-resources-pkmax")
+                  }
                 >
                   View Trial Results
                 </Button>
@@ -377,7 +388,7 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* Product Showcase */}
-      <ProductShowcase {...showcaseData} />
+      {/* <ProductShowcase {...showcaseData} /> */}
 
       {/* Key Benefits Section */}
       <motion.section
@@ -428,7 +439,7 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
         {...fadeInUp}
         viewport={{ once: true }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div id="application-guidelines-pkmax" className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
               Application Rates & Timings
@@ -598,7 +609,11 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
       </motion.section>
 
       {/* PDF Links Section */}
-      <PDFLinks productName="PK MAXX™ +" links={pdfLinks} />
+      <PDFLinks
+        id="technical-resources-pkmax"
+        productName="PK MAXX™ +"
+        links={pdfLinks}
+      />
 
       {/* Contact Section */}
       <motion.section
