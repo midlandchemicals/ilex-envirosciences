@@ -51,6 +51,8 @@ import {
   Bolt,
   Gauge,
   Coffee,
+  Recycle,
+  Microscope,
 } from "lucide-react";
 import { smoothScrollToSection } from "../utils/scrollHelpers";
 
@@ -100,43 +102,43 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Flame className="h-8 w-8 text-green-600" />,
+      icon: <Flame className="h-8 w-8 text-[#6abf4b]" />,
       title: "Highest Analysis Organically Sourced Nitrogen",
       description:
         "Offers the highest analysis of organically sourced nitrogen in liquid form (7.0% N)",
     },
     {
-      icon: <Shield className="h-8 w-8 text-blue-600" />,
+      icon: <Shield className="h-8 w-8 text-[#6abf4b]" />,
       title: "Safe & Effective from Approved Sources",
       description:
         "Derived from approved molasses and plant protein sources for organic fertilization",
     },
     {
-      icon: <Droplets className="h-8 w-8 text-purple-600" />,
+      icon: <Droplets className="h-8 w-8 text-[#6abf4b]" />,
       title: "Easy-to-Use Liquid Formulation",
       description:
         "Formulated as an easy-to-use liquid for convenient and efficient application",
     },
     {
-      icon: <Bolt className="h-8 w-8 text-orange-600" />,
+      icon: <Bolt className="h-8 w-8 text-[#6abf4b]" />,
       title: "Immediate & Lasting Boost",
       description:
         "Provides immediate and lasting boost to both protected and outdoor crops",
     },
     {
-      icon: <Leaf className="h-8 w-8 text-emerald-600" />,
+      icon: <Leaf className="h-8 w-8 text-[#6abf4b]" />,
       title: "Maximizes Green Leaf Area",
       description:
         "Maximizes green leaf area and enhances vigorous vegetative growth",
     },
     {
-      icon: <Heart className="h-8 w-8 text-red-600" />,
+      icon: <Heart className="h-8 w-8 text-[#6abf4b]" />,
       title: "Balanced Nutrient Combination",
       description:
         "Contains balanced nutrients to encourage strong and healthy growth in majority of crops",
     },
     {
-      icon: <GraduationCap className="h-8 w-8 text-indigo-600" />,
+      icon: <GraduationCap className="h-8 w-8 text-[#6abf4b]" />,
       title: "Fully Approved for Organic Systems",
       description:
         "Certified by the Soil Association for use in organic cropping systems in the UK",
@@ -230,31 +232,31 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
         title: "Approved Organic Sources",
         description:
           "Derived from approved molasses and plant protein sources for safe organic nutrition",
-        icon: <Leaf className="h-6 w-6 text-green-600" />,
+        icon: <Leaf className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Highest Nitrogen Analysis",
         description:
           "7.0% N - the highest analysis of organically sourced nitrogen in liquid form",
-        icon: <Flame className="h-6 w-6 text-orange-600" />,
+        icon: <Flame className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Immediate & Lasting Effect",
         description:
           "Provides both immediate boost and lasting enhancement to crop growth and development",
-        icon: <Bolt className="h-6 w-6 text-blue-600" />,
+        icon: <Bolt className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Organic Certification",
         description:
           "Fully approved and certified for use in organic cropping systems by the Soil Association",
-        icon: <Award className="h-6 w-6 text-indigo-600" />,
+        icon: <Award className="h-6 w-6 text-[#6abf4b]" />,
       },
     ],
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
+    <div className="min-h-screen mt-10 bg-[#ececec]">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -262,14 +264,14 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-green-600/10 to-blue-600/10" />
+        <div className="absolute inset-0 bg-[#ececec]/50" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <Badge className="mb-4 bg-green-100 text-green-800 hover:bg-green-200 text-lg px-4 py-2">
+              <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
                 Highest Analysis Organically Sourced Nitrogen in Liquid Form
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] bg-clip-text text-transparent">
                 N-Max (7-2-2)
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -288,7 +290,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-green-600 cursor-pointer hover:bg-green-700 text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-lg px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection("application-guidelines-nmaxpage")
                   }
@@ -299,7 +301,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg cursor-pointer px-8 py-4"
+                  className="text-[#6abf4b] cursor-pointer px-8 py-4 border-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
                     smoothScrollToSection("technical-resources-nmaxpage")
                   }
@@ -322,7 +324,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-green-400 to-blue-400 rounded-2xl opacity-20" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
             </motion.div>
           </div>
         </div>
@@ -376,7 +378,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
 
       {/* Maximum Nitrogen Technology Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-green-50 to-blue-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -396,7 +398,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <Flame className="h-8 w-8 text-green-600" />
+                    <Flame className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-2xl font-semibold">
                       Maximum Nitrogen Analysis
                     </h3>
@@ -412,27 +414,27 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
                       </p>
                     </div>
 
-                    <div className="p-4 bg-blue-50 rounded-lg">
-                      <h4 className="font-semibold text-blue-800 mb-2">
+                    <div className="p-4 bg-green-50 rounded-lg">
+                      <h4 className="font-semibold text-green-800 mb-2">
                         2.0% Phosphorus (P2O5)
                       </h4>
-                      <p className="text-blue-700 text-sm">
+                      <p className="text-green-700 text-sm">
                         Essential phosphorus for energy transfer and root
                         development support
                       </p>
                     </div>
 
-                    <div className="p-4 bg-purple-50 rounded-lg">
-                      <h4 className="font-semibold text-purple-800 mb-2">
+                    <div className="p-4 bg-green-50 rounded-lg">
+                      <h4 className="font-semibold text-green-800 mb-2">
                         2.0% Potassium (K2O)
                       </h4>
-                      <p className="text-purple-700 text-sm">
+                      <p className="text-green-700 text-sm">
                         Balanced potassium for overall plant health and stress
                         tolerance
                       </p>
                     </div>
 
-                    <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4">
+                    <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-4">
                       <h4 className="font-semibold text-green-800 mb-2">
                         Approved Organic Sources
                       </h4>
@@ -511,35 +513,35 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
               </CardContent>
             </Card>
 
-            <Card className="bg-blue-50 border border-blue-200">
+            <Card className="bg-green-50 border border-green-200">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Factory className="h-8 w-8 text-blue-600" />
-                  <h3 className="text-2xl font-semibold text-blue-800">
+                  <Factory className="h-8 w-8 text-green-600" />
+                  <h3 className="text-2xl font-semibold text-green-800">
                     Fertigation
                   </h3>
                 </div>
-                <p className="text-blue-700 mb-6">
+                <p className="text-green-700 mb-6">
                   Apply through fertigation systems for sustained root zone
                   nutrition. Provides lasting growth enhancement for both
                   protected and outdoor crop systems.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-blue-600" />
-                    <span className="text-blue-700">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-green-700">
                       Sustained root zone nutrition
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-blue-600" />
-                    <span className="text-blue-700">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-green-700">
                       Lasting growth enhancement
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-blue-600" />
-                    <span className="text-blue-700">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-green-700">
                       Improved crop uniformity
                     </span>
                   </div>
@@ -555,7 +557,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200">
+            <Card className="bg-gradient-to-r from-green-50 to-green-100 border border-green-200">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
                   <Leaf className="h-6 w-6 text-green-600 mt-1" />
@@ -580,7 +582,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-blue-50 to-green-50"
+        className="py-20 px-4 bg-white/50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -596,13 +598,13 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-green-600" />
+                  <Package className="h-8 w-8 text-[#6abf4b]" />
                   <h3 className="text-2xl font-semibold">
                     Available Pack Sizes
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-gradient-to-br from-green-50 to-blue-50 rounded-lg">
+                  <div className="text-center p-6 bg-green-50 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -614,7 +616,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
                       programs
                     </p>
                   </div>
-                  <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-green-50 rounded-lg">
+                  <div className="text-center p-6 bg-green-100 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -642,7 +644,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
 
       {/* Contact Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-green-600 to-blue-600 text-white"
+        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -714,7 +716,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-white text-green-600 hover:bg-gray-100"
+                    className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
                   >
                     Submit Enquiry
                   </Button>

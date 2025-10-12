@@ -37,13 +37,13 @@ export function PDFLinks({ productName, links, id }: PDFLinksProps) {
 
   return (
     <motion.section
-      className="py-16 px-4 bg-gray-50"
+      className="py-16 px-4 bg-white/50"
       {...fadeInUp}
       viewport={{ once: true }}
     >
       <div id={id} className="max-w-7xl mx-auto">
         <motion.div className="text-center mb-12" {...fadeInUp}>
-          <h2 className="text-4xl font-bold mb-4 text-gray-900">
+          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] bg-clip-text text-transparent">
             Technical Resources
           </h2>
           <p className="text-xl text-gray-600">
@@ -60,11 +60,11 @@ export function PDFLinks({ productName, links, id }: PDFLinksProps) {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full hover:shadow-lg transition-all duration-300 group">
+              <Card className="h-full hover:shadow-lg transition-all duration-300 group bg-white/70 backdrop-blur-sm">
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-                      <FileText className="h-6 w-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-[#6abf4b]/10 rounded-lg flex items-center justify-center group-hover:bg-[#6abf4b]/20 transition-colors">
+                      <FileText className="h-6 w-6 text-[#6abf4b]" />
                     </div>
                     <div className="flex-1">
                       <CardTitle className="text-lg leading-tight">
@@ -83,7 +83,7 @@ export function PDFLinks({ productName, links, id }: PDFLinksProps) {
 
                 <CardContent>
                   <Button
-                    className="w-full cursor-pointer group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-green-600 transition-all duration-300"
+                    className="w-full cursor-pointer group-hover:bg-gradient-to-r group-hover:from-[#6abf4b] group-hover:to-[#5aa338] transition-all duration-300"
                     onClick={() => handleDownload(link.title, link.url)}
                   >
                     <Download className="mr-2 h-4 w-4" />

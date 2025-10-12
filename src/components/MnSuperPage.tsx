@@ -92,37 +92,37 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Zap className="h-8 w-8 text-purple-600" />,
+      icon: <Zap className="h-8 w-8 text-green-600" />,
       title: "Quick-Acting Nutrient Supply",
       description:
         "Rapid uptake and immediate plant response to correct manganese deficiencies",
     },
     {
-      icon: <Star className="h-8 w-8 text-orange-600" />,
+      icon: <Star className="h-8 w-8 text-blue-600" />,
       title: "High Concentration of Manganese",
       description:
         "25% manganese content provides maximum nutrition density for efficient application",
     },
     {
-      icon: <Target className="h-8 w-8 text-green-600" />,
+      icon: <Target className="h-8 w-8 text-green-700" />,
       title: "Effective at Low Application Rates",
       description:
         "5 litres at maintenance rate treats up to 10ha, minimizing storage and packaging waste",
     },
     {
-      icon: <Activity className="h-8 w-8 text-blue-600" />,
+      icon: <Activity className="h-8 w-8 text-blue-700" />,
       title: "Multi-Nutrient Enhancement",
       description:
         "Helps increase the levels of magnesium and zinc in the plant alongside manganese",
     },
     {
-      icon: <FlaskConical className="h-8 w-8 text-cyan-600" />,
+      icon: <FlaskConical className="h-8 w-8 text-green-500" />,
       title: "Easy Tank Mix Integration",
       description:
         "Formulated to disperse and dissolve quickly for easy use in tank mixes",
     },
     {
-      icon: <Package className="h-8 w-8 text-red-600" />,
+      icon: <Package className="h-8 w-8 text-green-400" />,
       title: "Space-Efficient Storage",
       description:
         "Compact 5L packs minimize storage requirements while maximizing field coverage",
@@ -143,8 +143,8 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
       rate: "0.75-1.50 l/ha",
       description: "For correcting existing manganese deficiencies",
       coverage: "3.3-6.7ha per 5L pack",
-      color: "bg-orange-100 text-orange-800",
-      icon: <Zap className="h-5 w-5 text-orange-600" />,
+      color: "bg-blue-100 text-blue-800",
+      icon: <Zap className="h-5 w-5 text-blue-600" />,
     },
   ];
 
@@ -233,7 +233,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
         title: "Manganese Enzyme Systems",
         description:
           "Essential for photosynthesis, respiration, and antioxidant enzyme function",
-        icon: <Atom className="h-6 w-6 text-purple-600" />,
+        icon: <Atom className="h-6 w-6 text-green-600" />,
       },
       {
         title: "Multi-Nutrient Synergy",
@@ -245,7 +245,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
         title: "High Concentration Formula",
         description:
           "25% manganese provides maximum efficiency at minimal application rates",
-        icon: <Star className="h-6 w-6 text-orange-600" />,
+        icon: <Star className="h-6 w-6 text-blue-600" />,
       },
       {
         title: "Rapid Plant Uptake",
@@ -257,7 +257,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-orange-50">
+    <div className="min-h-screen mt-10 bg-[#ececec]">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -265,14 +265,14 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-orange-600/10" />
+        <div className="absolute inset-0 bg-[#ececec]/50" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <Badge className="mb-4 bg-purple-100 text-purple-800 hover:bg-purple-200 text-lg px-4 py-2">
+              <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
                 Next-Generation High Concentration Manganese
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-orange-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
                 Mn SUPER™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -290,7 +290,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-purple-600 cursor-pointer hover:bg-purple-700 text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-lg px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection("application-guidelines-mnsuper")
                   }
@@ -301,7 +301,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg cursor-pointer px-8 py-4"
+                  className="text-lg cursor-pointer px-8 py-4 border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
                     smoothScrollToSection("technical-resources-mnsuper")
                   }
@@ -324,7 +324,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-purple-400 to-orange-400 rounded-2xl opacity-20" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
             </motion.div>
           </div>
         </div>
@@ -378,7 +378,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
 
       {/* High Concentration Technology Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-purple-50 to-orange-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -397,14 +397,14 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <Star className="h-8 w-8 text-purple-600" />
+                    <Star className="h-8 w-8 text-green-600" />
                     <h3 className="text-2xl font-semibold">
                       25% Manganese Concentration
                     </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="flex items-start gap-3">
-                      <Atom className="h-6 w-6 text-purple-600 mt-1" />
+                      <Atom className="h-6 w-6 text-green-600 mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Maximum Efficiency
@@ -431,7 +431,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Zap className="h-6 w-6 text-orange-600 mt-1" />
+                      <Zap className="h-6 w-6 text-blue-600 mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Rapid Plant Response
@@ -443,11 +443,11 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
                       </div>
                     </div>
 
-                    <div className="bg-purple-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-purple-800 mb-2">
+                    <div className="bg-green-50 rounded-lg p-4">
+                      <h4 className="font-semibold text-green-800 mb-2">
                         Economy & Efficiency
                       </h4>
-                      <p className="text-purple-700">
+                      <p className="text-green-700">
                         5L treats up to 10ha at maintenance rate, minimizing
                         storage requirements and packaging waste.
                       </p>
@@ -527,15 +527,15 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-red-50 border border-red-200">
+            <Card className="bg-blue-50 border border-blue-200">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-red-600 mt-1" />
+                  <CheckCircle className="h-6 w-6 text-blue-600 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-red-800">
+                    <h3 className="text-lg font-semibold mb-2 text-blue-800">
                       Severe Deficiency Treatment
                     </h3>
-                    <p className="text-red-700">
+                    <p className="text-blue-700">
                       In case of severe deficiencies, repeat applications at the
                       1 l/ha rate until symptoms are corrected. Monitor plant
                       response and adjust timing accordingly.
@@ -550,7 +550,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-orange-50 to-purple-50"
+        className="py-20 px-4 bg-white/50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -566,13 +566,13 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-purple-600" />
+                  <Package className="h-8 w-8 text-green-600" />
                   <h3 className="text-2xl font-semibold">
                     Available Pack Sizes
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-orange-50 rounded-lg">
+                  <div className="text-center p-6 bg-[#ececec] rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -586,7 +586,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
                       Up to 20ha coverage at maintenance rate
                     </p>
                   </div>
-                  <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-orange-50 rounded-lg">
+                  <div className="text-center p-6 bg-[#ececec] rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -616,7 +616,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
 
       {/* Contact Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-purple-600 to-orange-600 text-white"
+        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -688,7 +688,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-white text-purple-600 hover:bg-gray-100"
+                    className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
                   >
                     Submit Enquiry
                   </Button>

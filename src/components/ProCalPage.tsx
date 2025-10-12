@@ -88,37 +88,37 @@ export function ProCalPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Target className="h-8 w-8 text-blue-600" />,
+      icon: <Target className="h-8 w-8 text-[#6abf4b]" />,
       title: "Enhanced Nutrient Delivery System",
       description:
         "Maximises calcium uptake through advanced formulation technology",
     },
     {
-      icon: <Heart className="h-8 w-8 text-green-600" />,
+      icon: <Heart className="h-8 w-8 text-[#6abf4b]" />,
       title: "Promotes Root Growth & Plant Health",
       description:
         "Strong root system development leading to healthier crops throughout growth cycle",
     },
     {
-      icon: <Sparkles className="h-8 w-8 text-purple-600" />,
+      icon: <Sparkles className="h-8 w-8 text-[#6abf4b]" />,
       title: "Improves Appearance & Marketability",
       description:
         "Enhanced color, appearance and overall crop quality for better market value",
     },
     {
-      icon: <Shield className="h-8 w-8 text-orange-600" />,
+      icon: <Shield className="h-8 w-8 text-[#6abf4b]" />,
       title: "Increases Storage Quality",
       description:
         "Better storage characteristics extending shelf life and reducing post-harvest losses",
     },
     {
-      icon: <Droplets className="h-8 w-8 text-cyan-600" />,
+      icon: <Droplets className="h-8 w-8 text-[#6abf4b]" />,
       title: "Easy to Use Liquid",
       description:
         "Good tank mix compatibility with convenient liquid formulation",
     },
     {
-      icon: <Award className="h-8 w-8 text-yellow-600" />,
+      icon: <Award className="h-8 w-8 text-[#6abf4b]" />,
       title: "Advanced Formulation",
       description:
         "Stabilised nitrogen with plant-available calcium and essential micronutrients",
@@ -131,47 +131,47 @@ export function ProCalPage({ onSubmit }: ContactFormProps) {
       rate: "5.0-10.0 l/ha",
       timing:
         "Apply from 4-6 true leaves. Repeat at 14-21 day intervals up to harvest",
-      color: "bg-green-100 text-green-800",
+      color: "bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20",
     },
     {
       name: "Carrots",
       rate: "5.0-10.0 l/ha",
       timing:
         "Apply from 4-6 true leaves. Repeat at 14-21 day intervals up to strawing",
-      color: "bg-orange-100 text-orange-800",
+      color: "bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20",
     },
     {
       name: "Alliums",
       rate: "5.0-8.0 l/ha",
       timing: "Apply from 4-6 true leaves. Repeat at 14-21 day intervals",
-      color: "bg-purple-100 text-purple-800",
+      color: "bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20",
     },
     {
       name: "Lettuce / Leafy Salads",
       rate: "3.0-6.0 l/ha",
       timing:
         "Apply from 4-6 true leaves. Repeat at 10-14 day intervals up to harvest",
-      color: "bg-emerald-100 text-emerald-800",
+      color: "bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20",
     },
     {
       name: "Potatoes",
       rate: "5.0 l/ha",
       timing:
         "Apply from start of tuber bulking. Repeat @ 5.0 l/ha during tuber bulking",
-      color: "bg-amber-100 text-amber-800",
+      color: "bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20",
     },
     {
       name: "Cereals",
       rate: "5.0-10.0 l/ha",
       timing:
         "Apply at growth Stages (Zadoks) 23-30, 39-45 and 50-59. For milling wheat: additional 30-50 l/ha at GS 69-75",
-      color: "bg-yellow-100 text-yellow-800",
+      color: "bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20",
     },
     {
       name: "Oilseed Rape",
       rate: "5.0-10.0 l/ha",
       timing: "Apply at or just prior to rapid growth",
-      color: "bg-blue-100 text-blue-800",
+      color: "bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20",
     },
   ];
 
@@ -282,7 +282,7 @@ export function ProCalPage({ onSubmit }: ContactFormProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen mt-10 bg-[#ececec]">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -290,14 +290,14 @@ export function ProCalPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-green-600/10" />
+        <div className="absolute inset-0 bg-[#ececec]/50" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200 text-lg px-4 py-2">
+              <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
                 Advanced Foliar Nutrition with Stabilised Nitrogen & Calcium
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
                 Pro-Cal™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -314,7 +314,7 @@ export function ProCalPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-white text-lg px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection("application-guidelines-procal")
                   }
@@ -325,7 +325,7 @@ export function ProCalPage({ onSubmit }: ContactFormProps) {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg cursor-pointer px-8 py-4"
+                  className="text-lg cursor-pointer px-8 py-4 border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
                     smoothScrollToSection("technical-resources-procal")
                   }
@@ -348,7 +348,7 @@ export function ProCalPage({ onSubmit }: ContactFormProps) {
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-blue-400 to-green-400 rounded-2xl opacity-20" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
             </motion.div>
           </div>
         </div>
@@ -402,7 +402,7 @@ export function ProCalPage({ onSubmit }: ContactFormProps) {
 
       {/* Technical Analysis Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-blue-50 to-green-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -422,13 +422,13 @@ export function ProCalPage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <FlaskConical className="h-8 w-8 text-blue-600" />
+                    <FlaskConical className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-2xl font-semibold">
                       Advanced Formulation
                     </h3>
                   </div>
                   <div className="space-y-6">
-                    <div className="flex justify-between items-center p-4 bg-blue-50 rounded-lg">
+                    <div className="flex justify-between items-center p-4 bg-white/70 rounded-lg">
                       <span className="text-gray-700 font-medium">
                         Stabilised Nitrogen
                       </span>
@@ -437,7 +437,7 @@ export function ProCalPage({ onSubmit }: ContactFormProps) {
                       </Badge>
                     </div>
 
-                    <div className="flex justify-between items-center p-4 bg-green-50 rounded-lg">
+                    <div className="flex justify-between items-center p-4 bg-white/70 rounded-lg">
                       <span className="text-gray-700 font-medium">
                         Plant-Available Calcium
                       </span>
@@ -446,7 +446,7 @@ export function ProCalPage({ onSubmit }: ContactFormProps) {
                       </Badge>
                     </div>
 
-                    <div className="flex justify-between items-center p-4 bg-purple-50 rounded-lg">
+                    <div className="flex justify-between items-center p-4 bg-white/70 rounded-lg">
                       <span className="text-gray-700 font-medium">
                         Essential Micronutrients
                       </span>
@@ -455,25 +455,25 @@ export function ProCalPage({ onSubmit }: ContactFormProps) {
                       </Badge>
                     </div>
 
-                    <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-blue-800 mb-2">
+                    <div className="bg-white/70 rounded-lg p-4">
+                      <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Crop Benefits
                       </h4>
                       <div className="grid grid-cols-1 gap-2">
                         <div className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-600" />
+                          <CheckCircle className="h-4 w-4 text-[#6abf4b]" />
                           <span className="text-sm text-gray-700">
                             Strong root system development
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-600" />
+                          <CheckCircle className="h-4 w-4 text-[#6abf4b]" />
                           <span className="text-sm text-gray-700">
                             Enhanced crop appearance & color
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 text-green-600" />
+                          <CheckCircle className="h-4 w-4 text-[#6abf4b]" />
                           <span className="text-sm text-gray-700">
                             Improved storage quality
                           </span>
@@ -586,7 +586,7 @@ export function ProCalPage({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-green-50 to-blue-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -599,15 +599,15 @@ export function ProCalPage({ onSubmit }: ContactFormProps) {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+            <Card className="bg-[#ececec] border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-blue-600" />
+                  <Package className="h-8 w-8 text-[#6abf4b]" />
                   <h3 className="text-2xl font-semibold">
                     Available Pack Sizes
                   </h3>
                 </div>
-                <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-green-50 rounded-lg">
+                <div className="text-center p-6 bg-[#ececec] rounded-lg">
                   <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">
                     20L
                   </Badge>
@@ -631,7 +631,7 @@ export function ProCalPage({ onSubmit }: ContactFormProps) {
 
       {/* Contact Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-blue-600 to-green-600 text-white"
+        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -703,7 +703,7 @@ export function ProCalPage({ onSubmit }: ContactFormProps) {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-white text-blue-600 hover:bg-gray-100"
+                    className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
                   >
                     Submit Enquiry
                   </Button>

@@ -92,7 +92,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
         "Eliminates time-consuming and bulky procedures involving bags of powdered product",
     },
     {
-      icon: <Target className="h-8 w-8 text-purple-600" />,
+      icon: <Target className="h-8 w-8 text-blue-600" />,
       title: "Low Application Rates",
       description:
         "Superior performance even at low rates, reducing transport needs around the farm",
@@ -104,19 +104,19 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
         "Soluble Magnesium with Nitrogen for superior performance and plant uptake",
     },
     {
-      icon: <Leaf className="h-8 w-8 text-green-500" />,
+      icon: <Leaf className="h-8 w-8 text-green-600" />,
       title: "Deficiency Prevention & Correction",
       description:
         "Effective for both prevention and correction of magnesium deficiency in crops",
     },
     {
-      icon: <Sparkles className="h-8 w-8 text-cyan-600" />,
+      icon: <Sparkles className="h-8 w-8 text-green-600" />,
       title: "New Generation Technology",
       description:
         "Part of Ilex's innovative new generation of foliar nutrients",
     },
     {
-      icon: <Award className="h-8 w-8 text-orange-600" />,
+      icon: <Award className="h-8 w-8 text-green-600" />,
       title: "Superior Performance",
       description:
         "Demonstrates enhanced results even at reduced application rates",
@@ -129,21 +129,21 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
       rate: "2.0 – 4.0 l/ha",
       timing:
         "Apply from Zadoks G.S. 23. To assist grain fill and quality repeat at flag leaf stage G.S. 39-41",
-      color: "bg-amber-100 text-amber-800",
+      color: "bg-green-100 text-green-800",
     },
     {
       name: "Oilseed Rape",
       rate: "2.0 – 4.0 l/ha",
       timing:
         "Apply from 6-8 leaves to pre-flowering. Repeat during periods of rapid growth",
-      color: "bg-yellow-100 text-yellow-800",
+      color: "bg-green-50 text-green-800",
     },
     {
       name: "Potatoes",
       rate: "3.0 – 5.0 l/ha",
       timing:
         "Apply at start of tuber bulking. Repeat @ 3.0 – 5.0 l/ha during tuber bulking",
-      color: "bg-orange-100 text-orange-800",
+      color: "bg-green-200 text-green-900",
     },
     {
       name: "Brassicas / Field Vegetables",
@@ -247,19 +247,19 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
         title: "Liquid Technology",
         description:
           "High concentration liquid formulation ensures rapid absorption and distribution",
-        icon: <Droplets className="h-6 w-6 text-purple-600" />,
+        icon: <Droplets className="h-6 w-6 text-green-600" />,
       },
       {
         title: "Deficiency Correction",
         description:
           "Rapidly corrects magnesium deficiency symptoms while preventing future occurrences",
-        icon: <Target className="h-6 w-6 text-orange-600" />,
+        icon: <Target className="h-6 w-6 text-green-600" />,
       },
     ],
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
+    <div className="min-h-screen mt-10 bg-[#ececec]">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -267,14 +267,14 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-green-600/10 to-blue-600/10" />
+        <div className="absolute inset-0 bg-[#ececec]/50" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <Badge className="mb-4 bg-green-100 text-green-800 hover:bg-green-200 text-lg px-4 py-2">
+              <Badge className="mb-4 bg-[#d4edc9] text-gray-900 hover:bg-[#bfe3a1] text-lg px-4 py-2">
                 High Concentrated Fast-Acting Magnesium Liquid
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-[1.2] bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
                 Mag Plus™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -296,7 +296,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-green-600 cursor-pointer hover:bg-green-700 text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-white text-lg px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection("application-guidelines-magplus")
                   }
@@ -307,7 +307,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg cursor-pointer px-8 py-4"
+                  className="border-[#6abf4b] text-[#6abf4b] hover:bg-[#eaf5e5] text-lg cursor-pointer px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection("technical-resources-magplus")
                   }
@@ -330,7 +330,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-green-400 to-blue-400 rounded-2xl opacity-20" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
             </motion.div>
           </div>
         </div>
@@ -384,7 +384,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
 
       {/* Technical Analysis Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-green-50 to-blue-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -424,7 +424,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
                       </div>
                     </div>
 
-                    <div className="flex justify-between items-center p-4 bg-blue-50 rounded-lg">
+                    <div className="flex justify-between items-center p-4 bg-green-50 rounded-lg">
                       <span className="text-gray-700 font-medium">
                         Nitrogen (N)
                       </span>
@@ -440,7 +440,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
-                      <div className="text-center p-4 bg-gradient-to-br from-green-50 to-blue-50 rounded-lg">
+                      <div className="text-center p-4 bg-gradient-to-br from-green-50 to-white rounded-lg">
                         <p className="text-2xl font-bold text-green-600 mb-1">
                           13%
                         </p>
@@ -448,7 +448,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
                           High Magnesium Content
                         </p>
                       </div>
-                      <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-green-50 rounded-lg">
+                      <div className="text-center p-4 bg-gradient-to-br from-white to-green-50 rounded-lg">
                         <p className="text-2xl font-bold text-blue-600 mb-1">
                           9%
                         </p>
@@ -529,19 +529,19 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
           </div>
 
           <motion.div
-            className="mt-12 p-6 bg-amber-50 rounded-2xl border border-amber-200"
+            className="mt-12 p-6 bg-green-50 rounded-2xl border border-green-200"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
             <div className="flex items-start gap-3">
-              <CheckCircle className="h-6 w-6 text-amber-600 mt-1" />
+              <CheckCircle className="h-6 w-6 text-green-600 mt-1" />
               <div>
-                <h3 className="text-lg font-semibold mb-2 text-amber-800">
+                <h3 className="text-lg font-semibold mb-2 text-green-800">
                   Important Note
                 </h3>
-                <p className="text-amber-700">
+                <p className="text-green-700">
                   In the case of severe magnesium deficiency, repeat
                   applications are recommended for all crops until symptoms are
                   corrected.
@@ -554,7 +554,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-blue-50 to-green-50"
+        className="py-20 px-4 bg-white/50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -570,13 +570,13 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-green-600" />
+                  <Package className="h-8 w-8 text-[#6abf4b]" />
                   <h3 className="text-2xl font-semibold">
                     Available Pack Sizes
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-gradient-to-br from-green-50 to-blue-50 rounded-lg">
+                  <div className="text-center p-6 bg-gradient-to-br from-green-50 to-white rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -588,7 +588,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
                       applications
                     </p>
                   </div>
-                  <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-green-50 rounded-lg">
+                  <div className="text-center p-6 bg-gradient-to-br from-white to-green-50 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -616,7 +616,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
 
       {/* Contact Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-green-600 to-blue-600 text-white"
+        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -688,7 +688,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-white text-green-600 hover:bg-gray-100"
+                    className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
                   >
                     Submit Enquiry
                   </Button>

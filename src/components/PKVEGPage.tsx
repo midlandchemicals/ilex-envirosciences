@@ -315,7 +315,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-purple-50">
+    <div className="min-h-screen mt-10 bg-gray-50">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -323,14 +323,14 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-green-600/10 to-purple-600/10" />
+        <div className="absolute inset-0 bg-[#ececec]/50" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <Badge className="mb-4 bg-green-100 text-green-800 hover:bg-green-200 text-lg px-4 py-2">
+              <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
                 Concentrated Phosphite Solution for Vegetables
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 to-purple-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
                 PK VEG™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -347,7 +347,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-green-600 cursor-pointer hover:bg-green-700 text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-lg px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection("application-guidelines-pkveg")
                   }
@@ -381,7 +381,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-green-400 to-purple-400 rounded-2xl opacity-20" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
             </motion.div>
           </div>
         </div>
@@ -392,7 +392,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
 
       {/* Key Benefits Section */}
       <motion.section
-        className="py-20 px-4 bg-white/50"
+        className="py-20 px-4 bg-white"
         variants={staggerContainer}
         initial="initial"
         whileInView="animate"
@@ -435,7 +435,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
 
       {/* Vegetable Specialist Technology Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-green-50 to-purple-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -614,7 +614,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-purple-50 to-green-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -676,7 +676,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
 
       {/* Contact Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-green-600 to-purple-600 text-white"
+        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -748,7 +748,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-white text-green-600 hover:bg-gray-100"
+                    className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
                   >
                     Submit Enquiry
                   </Button>

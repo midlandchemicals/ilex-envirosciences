@@ -99,37 +99,37 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <GraduationCap className="h-8 w-8 text-green-600" />,
+      icon: <GraduationCap className="h-8 w-8 text-[#6abf4b]" />,
       title: "Organic Certification",
       description:
         "Certified by Organic Farmers & Growers (UK2) and The Soil Association for organic systems",
     },
     {
-      icon: <Droplets className="h-8 w-8 text-blue-600" />,
+      icon: <Droplets className="h-8 w-8 text-[#6abf4b]" />,
       title: "Easy-to-Use Liquid Formulation",
       description:
         "Free-flowing liquid with high water solubility and minimal sedimentation",
     },
     {
-      icon: <Recycle className="h-8 w-8 text-purple-600" />,
+      icon: <Recycle className="h-8 w-8 text-[#6abf4b]" />,
       title: "Sustainable Plant Sources",
       description:
         "Derived from cane sugar molasses and sustainable sources of plant material",
     },
     {
-      icon: <Crown className="h-8 w-8 text-orange-600" />,
+      icon: <Crown className="h-8 w-8 text-[#6abf4b]" />,
       title: "Higher Potassium Content",
       description:
         "Enhanced potassium for situations with restricted crop maturity or fruit development",
     },
     {
-      icon: <Heart className="h-8 w-8 text-red-600" />,
+      icon: <Heart className="h-8 w-8 text-[#6abf4b]" />,
       title: "Balanced Nutrient Combination",
       description:
         "Encourages strong and healthy growth in all fruiting and flowering plants",
     },
     {
-      icon: <Coffee className="h-8 w-8 text-yellow-600" />,
+      icon: <Coffee className="h-8 w-8 text-[#6abf4b]" />,
       title: "Enhanced Nutrient Absorption",
       description:
         "Carbohydrates and sugars fuel beneficial microbes and fungi for better uptake",
@@ -223,31 +223,31 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
         title: "Higher Potassium Formulation",
         description:
           "6.1% K2O provides enhanced potassium for situations with restricted crop maturity or fruit development",
-        icon: <Crown className="h-6 w-6 text-orange-600" />,
+        icon: <Crown className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Sustainable Plant Sources",
         description:
           "Derived from cane sugar molasses and sustainable plant material for environmental responsibility",
-        icon: <Recycle className="h-6 w-6 text-green-600" />,
+        icon: <Recycle className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Microbial Enhancement",
         description:
           "Carbohydrates and sugars provide fuel for beneficial microbes and fungi improving nutrient uptake",
-        icon: <Microscope className="h-6 w-6 text-blue-600" />,
+        icon: <Microscope className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Complete Mineral Package",
         description:
           "Balanced nutrients with enhanced calcium and magnesium for comprehensive plant nutrition",
-        icon: <Atom className="h-6 w-6 text-purple-600" />,
+        icon: <Atom className="h-6 w-6 text-[#6abf4b]" />,
       },
     ],
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-red-50">
+    <div className="min-h-screen mt-10 bg-[#ececec]">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -255,15 +255,15 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-600/10 to-red-600/10" />
+        <div className="absolute inset-0 bg-[#ececec]/50" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <Badge className="mb-4 bg-orange-100 text-orange-800 hover:bg-orange-200 text-lg px-4 py-2">
+              <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
                 Higher Potassium 4-2-6 Formulation for Enhanced Fruit
                 Development
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] bg-clip-text text-transparent">
                 Complete Hi-Fruit (4-2-6)
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -283,7 +283,7 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-orange-600 cursor-pointer hover:bg-orange-700 text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-lg px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection(
                       "application-guidelines-completeHifruit"
@@ -296,7 +296,7 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg cursor-pointer px-8 py-4"
+                  className="text-lg cursor-pointer px-8 py-4 border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
                     smoothScrollToSection("technical-resources-completeHifruit")
                   }
@@ -319,7 +319,7 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-orange-400 to-red-400 rounded-2xl opacity-20" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
             </motion.div>
           </div>
         </div>
@@ -373,7 +373,7 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
 
       {/* Enhanced Potassium Technology Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-orange-50 to-red-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -393,27 +393,27 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <Crown className="h-8 w-8 text-orange-600" />
+                    <Crown className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-2xl font-semibold">
                       Higher Potassium Formulation
                     </h3>
                   </div>
                   <div className="space-y-6">
-                    <div className="p-4 bg-orange-50 rounded-lg">
-                      <h4 className="font-semibold text-orange-800 mb-2">
+                    <div className="p-4 bg-green-50 rounded-lg">
+                      <h4 className="font-semibold text-green-800 mb-2">
                         6.1% Potassium (K2O)
                       </h4>
-                      <p className="text-orange-700 text-sm">
+                      <p className="text-green-700 text-sm">
                         Enhanced potassium content for situations with
                         restricted crop maturity or fruit development
                       </p>
                     </div>
 
-                    <div className="p-4 bg-blue-50 rounded-lg">
-                      <h4 className="font-semibold text-blue-800 mb-2">
+                    <div className="p-4 bg-green-50 rounded-lg">
+                      <h4 className="font-semibold text-green-800 mb-2">
                         4.5% Nitrogen (N)
                       </h4>
-                      <p className="text-blue-700 text-sm">
+                      <p className="text-green-700 text-sm">
                         Balanced nitrogen for healthy vegetative growth and
                         fruit development
                       </p>
@@ -429,11 +429,11 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
                       </p>
                     </div>
 
-                    <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-orange-800 mb-2">
+                    <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-4">
+                      <h4 className="font-semibold text-green-800 mb-2">
                         Complete Mineral Enhancement
                       </h4>
-                      <p className="text-orange-700 text-sm">
+                      <p className="text-green-700 text-sm">
                         Enhanced calcium (0.6%), magnesium (0.5%), and sulphur
                         (0.5%) for comprehensive fruit and flowering plant
                         nutrition.
@@ -474,35 +474,35 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            <Card className="bg-orange-50 border border-orange-200">
+            <Card className="bg-green-50 border border-green-200">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Droplets className="h-8 w-8 text-orange-600" />
-                  <h3 className="text-2xl font-semibold text-orange-800">
+                  <Droplets className="h-8 w-8 text-green-600" />
+                  <h3 className="text-2xl font-semibold text-green-800">
                     Foliar Application
                   </h3>
                 </div>
-                <p className="text-orange-700 mb-6">
+                <p className="text-green-700 mb-6">
                   Apply as a foliar spray for direct nutrient uptake through the
                   leaves. The free-flowing liquid with high water solubility
                   ensures reliable application with minimal sedimentation.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-orange-600" />
-                    <span className="text-orange-700">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-green-700">
                       High water solubility
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-orange-600" />
-                    <span className="text-orange-700">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-green-700">
                       Minimal sedimentation
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-orange-600" />
-                    <span className="text-orange-700">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-green-700">
                       Rapid nutrient uptake
                     </span>
                   </div>
@@ -510,35 +510,37 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
               </CardContent>
             </Card>
 
-            <Card className="bg-red-50 border border-red-200">
+            <Card className="bg-green-50 border border-green-200">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Factory className="h-8 w-8 text-red-600" />
-                  <h3 className="text-2xl font-semibold text-red-800">
+                  <Factory className="h-8 w-8 text-green-600" />
+                  <h3 className="text-2xl font-semibold text-green-800">
                     Fertigation
                   </h3>
                 </div>
-                <p className="text-red-700 mb-6">
+                <p className="text-green-700 mb-6">
                   Apply through fertigation systems for root zone nutrition.
                   Particularly effective for protected crops with increased
                   potassium needs and situations with restricted soil fertility.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-red-600" />
-                    <span className="text-red-700">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-green-700">
                       Enhanced microbial activity
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-red-600" />
-                    <span className="text-red-700">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-green-700">
                       Improved nutrient absorption
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-red-600" />
-                    <span className="text-red-700">Root zone development</span>
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-green-700">
+                      Root zone development
+                    </span>
                   </div>
                 </div>
               </CardContent>
@@ -552,15 +554,15 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200">
+            <Card className="bg-gradient-to-r from-green-50 to-green-100 border border-green-200">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <Star className="h-6 w-6 text-orange-600 mt-1" />
+                  <Star className="h-6 w-6 text-green-600 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-orange-800">
+                    <h3 className="text-lg font-semibold mb-2 text-green-800">
                       Ideal Applications
                     </h3>
-                    <p className="text-orange-700">
+                    <p className="text-green-700">
                       Perfect for outdoor vegetable and fruit crops under
                       restricted soil fertility or poor weather conditions, and
                       in protected crops where increased potassium needs arise
@@ -579,7 +581,7 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-red-50 to-orange-50"
+        className="py-20 px-4 bg-white/50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -595,13 +597,13 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-orange-600" />
+                  <Package className="h-8 w-8 text-[#6abf4b]" />
                   <h3 className="text-2xl font-semibold">
                     Available Pack Sizes
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-gradient-to-br from-orange-50 to-red-50 rounded-lg">
+                  <div className="text-center p-6 bg-green-50 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -613,7 +615,7 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
                       programs
                     </p>
                   </div>
-                  <div className="text-center p-6 bg-gradient-to-br from-red-50 to-orange-50 rounded-lg">
+                  <div className="text-center p-6 bg-green-100 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -641,7 +643,7 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
 
       {/* Contact Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-orange-600 to-red-600 text-white"
+        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -714,7 +716,7 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-white text-orange-600 hover:bg-gray-100"
+                    className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
                   >
                     Submit Enquiry
                   </Button>

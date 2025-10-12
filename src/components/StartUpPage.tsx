@@ -92,37 +92,37 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Zap className="h-8 w-8 text-green-600" />,
+      icon: <Zap className="h-8 w-8 text-[#6abf4b]" />,
       title: "Phosphite P to Power Root Growth",
       description:
         "Proven phosphite technology promotes rapid root establishment and development",
     },
     {
-      icon: <Activity className="h-8 w-8 text-blue-600" />,
+      icon: <Activity className="h-8 w-8 text-[#6abf4b]" />,
       title: "High Levels of Manganese",
       description:
         "Counters low manganese availability in soil for optimal early growth",
     },
     {
-      icon: <Atom className="h-8 w-8 text-purple-600" />,
+      icon: <Atom className="h-8 w-8 text-[#6abf4b]" />,
       title: "Amino Acids Supplement",
       description:
         "Essential amino acids supplement crop development during critical early stages",
     },
     {
-      icon: <Target className="h-8 w-8 text-orange-600" />,
+      icon: <Target className="h-8 w-8 text-[#6abf4b]" />,
       title: "Trace Element Package",
       description:
         "Comprehensive trace elements readily available to germinating seed",
     },
     {
-      icon: <Sprout className="h-8 w-8 text-cyan-600" />,
+      icon: <Sprout className="h-8 w-8 text-[#6abf4b]" />,
       title: "More Even Establishment",
       description:
         "Promotes uniform germination and establishment across the field",
     },
     {
-      icon: <Award className="h-8 w-8 text-yellow-600" />,
+      icon: <Award className="h-8 w-8 text-[#6abf4b]" />,
       title: "Enhanced Nutrient Uptake",
       description:
         "Increased quality and yield potential through improved nutrient utilization",
@@ -134,15 +134,15 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
       crop: "Cereals",
       rate: "2.0 litres per tonne of seed",
       notes: "Original formula for cereal seed treatment",
-      color: "bg-yellow-100 text-yellow-800",
-      icon: <Wheat className="h-5 w-5 text-yellow-600" />,
+      color: "bg-green-100 text-green-800",
+      icon: <Wheat className="h-5 w-5 text-green-600" />,
     },
     {
       crop: "Oilseed Rape",
       rate: "3.0 litres per tonne of seed",
       notes: "Enhanced establishment for oilseed crops",
-      color: "bg-blue-100 text-blue-800",
-      icon: <Flower className="h-5 w-5 text-blue-600" />,
+      color: "bg-green-100 text-green-800",
+      icon: <Flower className="h-5 w-5 text-green-600" />,
     },
   ];
 
@@ -223,31 +223,31 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
         title: "Phosphite Technology",
         description:
           "Proven phosphite chemistry provides immediate plant availability and root enhancement",
-        icon: <Zap className="h-6 w-6 text-green-600" />,
+        icon: <Zap className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Ureic Nitrogen",
         description:
           "Readily available nitrogen source for immediate plant uptake and utilization",
-        icon: <Atom className="h-6 w-6 text-blue-600" />,
+        icon: <Atom className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Potassium Enhancement",
         description:
           "Essential potassium for stress tolerance and overall plant health",
-        icon: <Shield className="h-6 w-6 text-purple-600" />,
+        icon: <Shield className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Bioactive Compounds",
         description:
           "Natural compounds from seaweed enhance plant metabolism and development",
-        icon: <Leaf className="h-6 w-6 text-orange-600" />,
+        icon: <Leaf className="h-6 w-6 text-[#6abf4b]" />,
       },
     ],
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
+    <div className="min-h-screen mt-10 bg-[#ececec]">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -255,14 +255,14 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-green-600/10 to-blue-600/10" />
+        <div className="absolute inset-0 bg-[#ececec]/50" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <Badge className="mb-4 bg-green-100 text-green-800 hover:bg-green-200 text-lg px-4 py-2">
+              <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
                 Original Formula Seed Treatment
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] bg-clip-text text-transparent">
                 Start-uP
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -280,7 +280,7 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-green-600 cursor-pointer hover:bg-green-700 text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-lg px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection("application-guidelines-startuppage")
                   }
@@ -291,7 +291,7 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg cursor-pointer px-8 py-4"
+                  className="text-lg cursor-pointer px-8 py-4 border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
                     smoothScrollToSection("technical-resources-startuppage")
                   }
@@ -314,7 +314,7 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-green-400 to-blue-400 rounded-2xl opacity-20" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
             </motion.div>
           </div>
         </div>
@@ -367,7 +367,7 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
 
       {/* Original Formula Technology Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-green-50 to-blue-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -386,14 +386,14 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <FlaskConical className="h-8 w-8 text-green-600" />
+                    <FlaskConical className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-2xl font-semibold">
                       Proven Formula Components
                     </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="flex items-start gap-3">
-                      <Zap className="h-6 w-6 text-green-600 mt-1" />
+                      <Zap className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Phosphite Technology
@@ -407,7 +407,7 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Atom className="h-6 w-6 text-blue-600 mt-1" />
+                      <Atom className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">Ureic Nitrogen</h4>
                         <p className="text-gray-600">
@@ -419,7 +419,7 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Shield className="h-6 w-6 text-purple-600 mt-1" />
+                      <Shield className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Potassium Enhancement
@@ -512,15 +512,15 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-orange-50 border border-orange-200">
+            <Card className="bg-green-50 border border-green-200">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-orange-600 mt-1" />
+                  <CheckCircle className="h-6 w-6 text-green-600 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-orange-800">
+                    <h3 className="text-lg font-semibold mb-2 text-green-800">
                       Application Limit
                     </h3>
-                    <p className="text-orange-700">
+                    <p className="text-green-700">
                       Apply directly to the seed or after pre-diluting with
                       water. Do not exceed a total application rate of 3.0
                       litres per tonne of seed.
@@ -535,7 +535,7 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-blue-50 to-green-50"
+        className="py-20 px-4 bg-white/50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -551,12 +551,12 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-green-600" />
+                  <Package className="h-8 w-8 text-[#6abf4b]" />
                   <h3 className="text-2xl font-semibold">
                     Available Pack Sizes
                   </h3>
                 </div>
-                <div className="text-center p-6 bg-gradient-to-br from-green-50 to-blue-50 rounded-lg">
+                <div className="text-center p-6 bg-green-50 rounded-lg">
                   <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">
                     20L
                   </Badge>
@@ -579,7 +579,7 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
 
       {/* Contact Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-green-600 to-blue-600 text-white"
+        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -651,7 +651,7 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-white text-green-600 hover:bg-gray-100"
+                    className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
                   >
                     Submit Enquiry
                   </Button>

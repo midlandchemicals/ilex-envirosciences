@@ -270,7 +270,7 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
+    <div className="min-h-screen mt-10 bg-[#ececec]">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -278,14 +278,14 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-green-600/10 to-blue-600/10" />
+        <div className="absolute inset-0 bg-[#ececec]/50" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <Badge className="mb-4 bg-green-100 text-green-800 hover:bg-green-200 text-lg px-4 py-2">
+              <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
                 Proven Phosphite Technology for Vegetables & Salads
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
                 CaPITAL™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -304,7 +304,7 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-green-600 cursor-pointer hover:bg-green-700 text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-white text-lg px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection("application-guidelines-capital")
                   }
@@ -315,7 +315,7 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg cursor-pointer px-8 py-4"
+                  className="text-lg cursor-pointer px-8 py-4 border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
                     smoothScrollToSection("technical-resources-capital")
                   }
@@ -338,7 +338,7 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-green-400 to-blue-400 rounded-2xl opacity-20" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
             </motion.div>
           </div>
         </div>
@@ -401,10 +401,10 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
             <div>
               <h2 className="text-4xl font-bold mb-8">Technical Analysis</h2>
               <div className="space-y-6">
-                <Card className="border-0 bg-gradient-to-r from-green-50 to-blue-50">
+                <Card className="border-0 bg-white/80 backdrop-blur-sm">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <FlaskConical className="h-6 w-6 text-green-600" />
+                      <FlaskConical className="h-6 w-6 text-[#6abf4b]" />
                       <h3 className="text-xl font-semibold">
                         Primary Nutrients
                       </h3>
@@ -448,29 +448,29 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
                   </CardContent>
                 </Card>
 
-                <Card className="border-0 bg-gradient-to-r from-blue-50 to-purple-50">
+                <Card className="border-0 bg-white/80 backdrop-blur-sm">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <Atom className="h-6 w-6 text-blue-600" />
+                      <Atom className="h-6 w-6 text-[#6abf4b]" />
                       <h3 className="text-xl font-semibold">
                         Key Micronutrients
                       </h3>
                     </div>
                     <div className="grid grid-cols-3 gap-4">
                       <div className="text-center p-3 bg-white/50 rounded-lg">
-                        <p className="text-xl font-semibold text-green-600 mb-1">
+                        <p className="text-xl font-semibold text-[#6abf4b] mb-1">
                           2.4%
                         </p>
                         <p className="text-sm text-gray-600">Zinc (Zn)</p>
                       </div>
                       <div className="text-center p-3 bg-white/50 rounded-lg">
-                        <p className="text-xl font-semibold text-blue-600 mb-1">
+                        <p className="text-xl font-semibold text-[#6abf4b] mb-1">
                           0.8%
                         </p>
                         <p className="text-sm text-gray-600">Boron (B)</p>
                       </div>
                       <div className="text-center p-3 bg-white/50 rounded-lg">
-                        <p className="text-xl font-semibold text-purple-600 mb-1">
+                        <p className="text-xl font-semibold text-[#6abf4b] mb-1">
                           4%
                         </p>
                         <p className="text-sm text-gray-600">Nitrogen (N)</p>
@@ -479,10 +479,10 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
                   </CardContent>
                 </Card>
 
-                <Card className="border-0 bg-gradient-to-r from-purple-50 to-pink-50">
+                <Card className="border-0 bg-white/80 backdrop-blur-sm">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <Package className="h-6 w-6 text-purple-600" />
+                      <Package className="h-6 w-6 text-[#6abf4b]" />
                       <h3 className="text-xl font-semibold">
                         Pack Sizes Available
                       </h3>
@@ -513,7 +513,7 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
 
       {/* Application Guidelines */}
       <motion.section
-        className="py-20 px-4"
+        className="py-20 px-4 bg-white/50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -536,11 +536,13 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-lg transition-all duration-300">
+                <Card className="h-full hover:shadow-lg transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
                   <CardHeader>
                     <div className="flex items-center justify-between mb-2">
                       <CardTitle className="text-lg">{crop.name}</CardTitle>
-                      <Badge className={crop.color}>{crop.rate}</Badge>
+                      <Badge className="bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20">
+                        {crop.rate}
+                      </Badge>
                     </div>
                   </CardHeader>
                   <CardContent>
@@ -561,15 +563,15 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-blue-50 border border-blue-200">
+            <Card className="bg-white/80 backdrop-blur-sm border-0">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <Droplets className="h-6 w-6 text-blue-600 mt-1" />
+                  <Droplets className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-blue-800">
+                    <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Application Method
                     </h3>
-                    <p className="text-blue-700">
+                    <p className="text-gray-700">
                       CaPITAL is best applied as a foliar spray at water rates
                       of between 200-600 l/ha depending on the crop type and
                       stage of growth.
@@ -579,15 +581,15 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
               </CardContent>
             </Card>
 
-            <Card className="bg-green-50 border border-green-200">
+            <Card className="bg-white/80 backdrop-blur-sm border-0">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <Sprout className="h-6 w-6 text-green-600 mt-1" />
+                  <Sprout className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-green-800">
+                    <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Propagated Plants
                     </h3>
-                    <p className="text-green-700">
+                    <p className="text-gray-700">
                       *Propagated plants will benefit from an application of
                       CaPITAL via irrigation techniques at a rate of 3-4 mls per
                       litre of water ideally just prior to planting out.
@@ -602,7 +604,7 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
 
       {/* Key Benefit Highlight Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-green-50 to-blue-50"
+        className="py-20 px-4 bg-white/50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -616,10 +618,10 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
 
           <div className="grid lg:grid-cols-3 gap-8 items-center">
             <div className="space-y-6">
-              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <Card className="bg-white/80 backdrop-blur-sm border-0">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <Heart className="h-8 w-8 text-green-600" />
+                    <Heart className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-xl font-semibold">Root Development</h3>
                   </div>
                   <p className="text-gray-600">
@@ -629,10 +631,10 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <Card className="bg-white/80 backdrop-blur-sm border-0">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <Shield className="h-8 w-8 text-blue-600" />
+                    <Shield className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-xl font-semibold">Plant Health</h3>
                   </div>
                   <p className="text-gray-600">
@@ -645,9 +647,9 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
 
             <div className="text-center">
               <div className="relative">
-                <div className="w-48 h-48 mx-auto bg-gradient-to-br from-green-100 to-blue-100 rounded-full flex items-center justify-center shadow-xl">
+                <div className="w-48 h-48 mx-auto bg-[#ececec] rounded-full flex items-center justify-center shadow-xl">
                   <div className="text-center">
-                    <FlaskConical className="h-16 w-16 text-green-600 mx-auto mb-2" />
+                    <FlaskConical className="h-16 w-16 text-[#6abf4b] mx-auto mb-2" />
                     <p className="text-xl font-semibold text-gray-800">
                       Proven
                     </p>
@@ -658,10 +660,10 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
             </div>
 
             <div className="space-y-6">
-              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <Card className="bg-white/80 backdrop-blur-sm border-0">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <Layers className="h-8 w-8 text-purple-600" />
+                    <Layers className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-xl font-semibold">
                       Cell Wall Strength
                     </h3>
@@ -673,10 +675,10 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <Card className="bg-white/80 backdrop-blur-sm border-0">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <Zap className="h-8 w-8 text-orange-600" />
+                    <Zap className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-xl font-semibold">Fast-Acting</h3>
                   </div>
                   <p className="text-gray-600">
@@ -699,7 +701,7 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
 
       {/* Contact Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-green-600 to-blue-600 text-white"
+        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -771,7 +773,7 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-white text-green-600 hover:bg-gray-100"
+                    className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
                   >
                     Submit Enquiry
                   </Button>

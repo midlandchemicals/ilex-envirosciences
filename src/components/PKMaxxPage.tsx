@@ -15,7 +15,7 @@ import { Separator } from "./ui/separator";
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
-let pkMaxxImage = "";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 import {
   Leaf,
   Zap,
@@ -85,37 +85,37 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <TrendingUp className="h-8 w-8 text-green-600" />,
+      icon: <TrendingUp className="h-8 w-8 text-[#6abf4b]" />,
       title: "Improves Quality and Yield",
       description:
         "Proven results in improving both crop quality and overall yield performance",
     },
     {
-      icon: <Target className="h-8 w-8 text-blue-600" />,
+      icon: <Target className="h-8 w-8 text-[#6abf4b]" />,
       title: "Wide Range of Crops",
       description:
         "Effective on a wide range of field and vegetable crops for versatile application",
     },
     {
-      icon: <Zap className="h-8 w-8 text-purple-600" />,
+      icon: <Zap className="h-8 w-8 text-[#6abf4b]" />,
       title: "Maximises Phosphorus Availability",
       description:
         "Combines phosphate and phosphite forms for rapid and efficient delivery",
     },
     {
-      icon: <Leaf className="h-8 w-8 text-green-500" />,
+      icon: <Leaf className="h-8 w-8 text-[#6abf4b]" />,
       title: "Promotes Root Development",
       description:
         "Stimulates healthy root development for stronger, more resilient plants",
     },
     {
-      icon: <Package className="h-8 w-8 text-orange-600" />,
+      icon: <Package className="h-8 w-8 text-[#6abf4b]" />,
       title: "All-in-One Nutrient Package",
       description:
         "Multi-nutrient formulation combining phosphorus with key micronutrients",
     },
     {
-      icon: <Droplets className="h-8 w-8 text-cyan-600" />,
+      icon: <Droplets className="h-8 w-8 text-[#6abf4b]" />,
       title: "Rapid Delivery & Tank Compatible",
       description:
         "Fast-acting formula that's easy to use and highly compatible in tank mixes",
@@ -128,27 +128,27 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
       rate: "2.0 l/ha",
       timing:
         "Apply at start of tuber bulking. Repeat during tuber bulking. *For increased tuber number, first application at tuber initiation",
-      color: "bg-orange-100 text-orange-800",
+      color: "bg-green-100 text-green-800",
     },
     {
       name: "Cereals",
       rate: "0.5-1.5 l/ha",
       timing:
         "Apply to improve crop establishment (Zadoks G.S. 16-23). Repeat at start of rapid growth (G.S. 30-33) and start of booting (G.S. 39-45)",
-      color: "bg-amber-100 text-amber-800",
+      color: "bg-green-100 text-green-800",
     },
     {
       name: "Oilseed Rape",
       rate: "1.0-2.0 l/ha",
       timing:
         "Apply from 6-8 true leaves. Repeat just prior to and during rapid growth",
-      color: "bg-yellow-100 text-yellow-800",
+      color: "bg-green-100 text-green-800",
     },
     {
       name: "Alliums",
       rate: "2.0-3.0 l/ha",
       timing: "Apply from 3-4 true leaves. Repeat at 14-21 day intervals",
-      color: "bg-purple-100 text-purple-800",
+      color: "bg-green-100 text-green-800",
     },
     {
       name: "Asparagus",
@@ -162,28 +162,28 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
       rate: "1.5-3.0 l/ha",
       timing:
         "Apply from 4-6 true leaves. Repeat at 14-21 day intervals as required",
-      color: "bg-emerald-100 text-emerald-800",
+      color: "bg-green-100 text-green-800",
     },
     {
       name: "Lettuce/Leafy Salads",
       rate: "2.0-3.0 l/ha",
       timing:
         "Apply from 10-14 days post planting. Repeat at 10-14 day intervals as required",
-      color: "bg-lime-100 text-lime-800",
+      color: "bg-green-100 text-green-800",
     },
     {
       name: "Roots",
       rate: "1.5-2.5 l/ha",
       timing:
         "Apply from 4-6 true leaves. Repeat at 14-21 day intervals depending on growing season",
-      color: "bg-orange-100 text-orange-800",
+      color: "bg-green-100 text-green-800",
     },
     {
       name: "Sugar Beet",
       rate: "1.5-3.0 l/ha",
       timing:
         "Apply from 4-6 true leaves. Repeat at 14-21 day intervals as required",
-      color: "bg-red-100 text-red-800",
+      color: "bg-green-100 text-green-800",
     },
   ];
 
@@ -227,7 +227,6 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
   // ProductShowcase data
   const showcaseData = {
     productName: "PK MAXX™ +",
-    productImage: pkMaxxImage,
     productDescription:
       "A unique multi-nutrient formulation which combines phosphorus with key micronutrients to promote root development and boost healthy plant growth in a wide range of field and vegetable crops.",
     keyFeatures: [
@@ -289,31 +288,31 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
         title: "Dual Phosphorus System",
         description:
           "Combines phosphate and phosphite forms for immediate and sustained phosphorus availability",
-        icon: <Atom className="h-6 w-6 text-blue-600" />,
+        icon: <Atom className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Enhanced Uptake",
         description:
           "Specially formulated for rapid foliar absorption and translocation within the plant",
-        icon: <Zap className="h-6 w-6 text-green-600" />,
+        icon: <Zap className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Root Development",
         description:
           "Stimulates root growth and branching for improved nutrient and water uptake",
-        icon: <Sprout className="h-6 w-6 text-purple-600" />,
+        icon: <Sprout className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Stress Tolerance",
         description:
           "Enhances plant resistance to environmental stresses and disease pressure",
-        icon: <Shield className="h-6 w-6 text-orange-600" />,
+        icon: <Shield className="h-6 w-6 text-[#6abf4b]" />,
       },
     ],
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
+    <div className="min-h-screen mt-10 bg-[#ececec]">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -321,14 +320,14 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-green-600/10 to-blue-600/10" />
+        <div className="absolute inset-0 bg-[#ececec]/50" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <Badge className="mb-4 bg-green-100 text-green-800 hover:bg-green-200 text-lg px-4 py-2">
+              <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
                 Unique Multi-Nutrient Formulation
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] bg-clip-text text-transparent">
                 PK MAXX™ +
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -347,18 +346,18 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-green-600 cursor-pointer hover:bg-green-700 text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-lg px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection("application-guidelines-pkmax")
                   }
                 >
-                  Application Guidlines
+                  Application Guidelines
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg cursor-pointer px-8 py-4"
+                  className="text-[#6abf4b] cursor-pointer px-8 py-4 border-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
                     smoothScrollToSection("technical-resources-pkmax")
                   }
@@ -375,13 +374,13 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="relative z-10">
-                <img
-                  src={pkMaxxImage}
+                <ImageWithFallback
+                  src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600&h=400&fit=crop"
                   alt="PK MAXX Plus Product"
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-green-400 to-blue-400 rounded-2xl opacity-20" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
             </motion.div>
           </div>
         </div>
@@ -458,7 +457,7 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-lg transition-all duration-300">
+                <Card className="h-full hover:shadow-lg transition-all duration-300 bg-white/80 backdrop-blur-sm">
                   <CardHeader>
                     <div className="flex items-center justify-between mb-2">
                       <CardTitle className="text-lg">{crop.name}</CardTitle>
@@ -477,19 +476,19 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
           </div>
 
           <motion.div
-            className="mt-12 p-6 bg-blue-50 rounded-2xl border border-blue-200"
+            className="mt-12 p-6 bg-green-50 rounded-2xl border border-green-200"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
             <div className="flex items-start gap-3">
-              <Droplets className="h-6 w-6 text-blue-600 mt-1" />
+              <Droplets className="h-6 w-6 text-green-600 mt-1" />
               <div>
-                <h3 className="text-lg font-semibold mb-2 text-blue-800">
+                <h3 className="text-lg font-semibold mb-2 text-green-800">
                   Application Method
                 </h3>
-                <p className="text-blue-700">
+                <p className="text-green-700">
                   PK MAXX+ is best applied as a foliar spray at water rates of
                   200-600 l/ha depending on the crop type and stage of growth.
                 </p>
@@ -501,7 +500,7 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
 
       {/* Independent Trials Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-gray-50 to-blue-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -518,7 +517,7 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-4">
-                    <Award className="h-8 w-8 text-green-600" />
+                    <Award className="h-8 w-8 text-[#6abf4b]" />
                     <CardTitle className="text-2xl">
                       Potato Trial Results
                     </CardTitle>
@@ -568,15 +567,15 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
             </div>
 
             <div className="space-y-6">
-              <Card className="bg-blue-50 border border-blue-200">
+              <Card className="bg-green-50 border border-green-200">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-3">
-                    <BarChart3 className="h-6 w-6 text-blue-600 mt-1" />
+                    <BarChart3 className="h-6 w-6 text-green-600 mt-1" />
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-blue-800">
+                      <h3 className="text-lg font-semibold mb-2 text-green-800">
                         Consistent Performance
                       </h3>
-                      <p className="text-blue-700">
+                      <p className="text-green-700">
                         Adding PK MAXX+ has shown consistent performance in a
                         variety of UK trials across different crop types and
                         growing conditions.
@@ -617,7 +616,7 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
 
       {/* Contact Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-green-600 to-blue-600 text-white"
+        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -689,7 +688,7 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-white text-green-600 hover:bg-gray-100"
+                    className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
                   >
                     Submit Enquiry
                   </Button>

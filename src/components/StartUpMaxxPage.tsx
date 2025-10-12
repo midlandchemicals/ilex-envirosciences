@@ -93,37 +93,37 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Zap className="h-8 w-8 text-blue-600" />,
+      icon: <Zap className="h-8 w-8 text-[#6abf4b]" />,
       title: "Phosphite P to Power Root Growth",
       description:
         "Advanced phosphite chemistry promotes rapid root establishment and development",
     },
     {
-      icon: <Activity className="h-8 w-8 text-green-600" />,
+      icon: <Activity className="h-8 w-8 text-[#6abf4b]" />,
       title: "High Levels of Manganese",
       description:
         "Counters low manganese availability in soil for optimal early growth",
     },
     {
-      icon: <Atom className="h-8 w-8 text-purple-600" />,
+      icon: <Atom className="h-8 w-8 text-[#6abf4b]" />,
       title: "Amino Acids Supplement",
       description:
         "Essential amino acids supplement crop development during critical early stages",
     },
     {
-      icon: <Target className="h-8 w-8 text-orange-600" />,
+      icon: <Target className="h-8 w-8 text-[#6abf4b]" />,
       title: "Trace Element Package",
       description:
         "Comprehensive trace elements readily available to germinating seed",
     },
     {
-      icon: <Sprout className="h-8 w-8 text-cyan-600" />,
+      icon: <Sprout className="h-8 w-8 text-[#6abf4b]" />,
       title: "More Even Establishment",
       description:
         "Promotes uniform germination and establishment across the field",
     },
     {
-      icon: <Award className="h-8 w-8 text-yellow-600" />,
+      icon: <Award className="h-8 w-8 text-[#6abf4b]" />,
       title: "Enhanced Nutrient Uptake",
       description:
         "Increased quality and yield potential through improved nutrient utilization",
@@ -135,8 +135,8 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
       crop: "Cereals",
       rate: "3.0 litres per tonne of seed",
       notes: "Autumn and spring sown wheat and barley",
-      color: "bg-yellow-100 text-yellow-800",
-      icon: <Wheat className="h-5 w-5 text-yellow-600" />,
+      color: "bg-green-100 text-green-800",
+      icon: <Wheat className="h-5 w-5 text-green-600" />,
     },
     {
       crop: "Peas",
@@ -149,8 +149,8 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
       crop: "Beans",
       rate: "3.0 litres per tonne of seed",
       notes: "Improved nodulation and nitrogen fixation",
-      color: "bg-purple-100 text-purple-800",
-      icon: <Sprout className="h-5 w-5 text-purple-600" />,
+      color: "bg-green-100 text-green-800",
+      icon: <Sprout className="h-5 w-5 text-green-600" />,
     },
   ];
 
@@ -252,31 +252,31 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
         title: "Phosphite Technology",
         description:
           "Advanced phosphite chemistry provides immediate plant availability and systemic movement",
-        icon: <Zap className="h-6 w-6 text-blue-600" />,
+        icon: <Zap className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Manganese Enhancement",
         description:
           "High manganese levels counter soil deficiencies for optimal enzyme function",
-        icon: <Activity className="h-6 w-6 text-green-600" />,
+        icon: <Activity className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Amino Acid Complex",
         description:
           "Essential amino acids from seaweed support protein synthesis and development",
-        icon: <Atom className="h-6 w-6 text-purple-600" />,
+        icon: <Atom className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Trace Element Package",
         description:
           "Comprehensive micronutrients readily available to germinating seeds",
-        icon: <Target className="h-6 w-6 text-orange-600" />,
+        icon: <Target className="h-6 w-6 text-[#6abf4b]" />,
       },
     ],
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen mt-10 bg-[#ececec]">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -284,14 +284,14 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-green-600/10" />
+        <div className="absolute inset-0 bg-[#ececec]/50" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200 text-lg px-4 py-2">
+              <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
                 Advanced Seed Treatment with Phosphite Chemistry
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] bg-clip-text text-transparent">
                 Start-uP MAXX
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -308,7 +308,7 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-lg px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection("application-guidelines-startupmaxx")
                   }
@@ -319,7 +319,7 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg cursor-pointer px-8 py-4"
+                  className="text-lg cursor-pointer px-8 py-4 border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
                     smoothScrollToSection("technical-resources-startupmaxx")
                   }
@@ -342,7 +342,7 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-blue-400 to-green-400 rounded-2xl opacity-20" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
             </motion.div>
           </div>
         </div>
@@ -396,7 +396,7 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
 
       {/* Trial Results Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-blue-50 to-green-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -415,7 +415,7 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <GraduationCap className="h-8 w-8 text-blue-600" />
+                    <GraduationCap className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-2xl font-semibold">
                       Trial Performance Results
                     </h3>
@@ -433,18 +433,18 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
                           <div
-                            className="bg-blue-600 h-2 rounded-full"
+                            className="bg-[#6abf4b] h-2 rounded-full"
                             style={{ width: `${(result.yield / 200) * 100}%` }}
                           />
                         </div>
                       </div>
                     ))}
                   </div>
-                  <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-                    <h4 className="font-semibold text-blue-800 mb-2">
+                  <div className="mt-6 p-4 bg-green-50 rounded-lg">
+                    <h4 className="font-semibold text-green-800 mb-2">
                       Key Findings
                     </h4>
-                    <p className="text-blue-700 text-sm">
+                    <p className="text-green-700 text-sm">
                       Start-uP MAXX showed the highest performance in
                       independent trials, delivering 200 T/Ha compared to
                       untreated controls.
@@ -520,15 +520,15 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-blue-50 border border-blue-200">
+            <Card className="bg-green-50 border border-green-200">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <Droplets className="h-6 w-6 text-blue-600 mt-1" />
+                  <Droplets className="h-6 w-6 text-green-600 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-blue-800">
+                    <h3 className="text-lg font-semibold mb-2 text-green-800">
                       Application Method
                     </h3>
-                    <p className="text-blue-700">
+                    <p className="text-green-700">
                       Apply directly to the seed or after pre-diluting with
                       water. Formulated as a totally water-soluble liquid.
                       Agitate prior to use and apply through existing seed
@@ -562,7 +562,7 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-green-50 to-blue-50"
+        className="py-20 px-4 bg-white/50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -578,12 +578,12 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-blue-600" />
+                  <Package className="h-8 w-8 text-[#6abf4b]" />
                   <h3 className="text-2xl font-semibold">
                     Available Pack Sizes
                   </h3>
                 </div>
-                <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-green-50 rounded-lg">
+                <div className="text-center p-6 bg-green-50 rounded-lg">
                   <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">
                     20L
                   </Badge>
@@ -607,7 +607,7 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
 
       {/* Contact Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-blue-600 to-green-600 text-white"
+        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -679,7 +679,7 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-white text-blue-600 hover:bg-gray-100"
+                    className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
                   >
                     Submit Enquiry
                   </Button>

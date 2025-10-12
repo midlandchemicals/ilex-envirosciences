@@ -11,12 +11,9 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
-import { Separator } from "./ui/separator";
-import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { smoothScrollToSection } from "../utils/scrollHelpers";
 import {
   Leaf,
   Zap,
@@ -44,8 +41,9 @@ import {
   Wheat,
   Flower,
   Activity,
-  Crown,
+  Combine,
 } from "lucide-react";
+import { smoothScrollToSection } from "../utils/scrollHelpers";
 
 interface ContactFormProps {
   onSubmit: (formData: {
@@ -93,16 +91,10 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Crown className="h-8 w-8 text-purple-600" />,
+      icon: <Combine className="h-8 w-8 text-green-600" />,
       title: "High Potassium Concentration",
       description:
         "Concentrated potassium source for maximum efficiency and rapid plant response",
-    },
-    {
-      icon: <Target className="h-8 w-8 text-blue-600" />,
-      title: "Quality Enhancement",
-      description:
-        "Improves crop quality, color, flavor, and storage characteristics",
     },
     {
       icon: <Zap className="h-8 w-8 text-green-600" />,
@@ -111,16 +103,22 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
         "Foliar application ensures immediate potassium availability during critical periods",
     },
     {
-      icon: <Shield className="h-8 w-8 text-orange-600" />,
-      title: "Enhanced Stress Tolerance",
+      icon: <Target className="h-8 w-8 text-blue-600" />,
+      title: "Quality Enhancement",
       description:
-        "Improves plant resistance to drought, frost, and disease stress",
+        "Improves crop quality, color, flavor, and storage characteristics",
     },
     {
-      icon: <Activity className="h-8 w-8 text-cyan-600" />,
+      icon: <Activity className="h-8 w-8 text-orange-600" />,
       title: "Metabolic Optimization",
       description:
         "Supports enzyme function, photosynthesis, and protein synthesis",
+    },
+    {
+      icon: <Shield className="h-8 w-8 text-cyan-600" />,
+      title: "Enhanced Stress Tolerance",
+      description:
+        "Improves plant resistance to drought, frost, and disease stress",
     },
     {
       icon: <Award className="h-8 w-8 text-red-600" />,
@@ -210,11 +208,10 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
 
   const pdfLinks = [
     {
-      title: "Pro-K Leaflet",
+      title: "Pro-K™ Leaflet",
       description: "Complete product information and application guidelines",
       url: "https://ilex-envirosciences.com/wp-content/uploads/2022/04/ILEX-Pro-Arable-1703iii.pdf",
     },
-
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
@@ -222,95 +219,8 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
     },
   ];
 
-  // ProductShowcase data
-  const showcaseData = {
-    productName: "Pro-K™",
-    productDescription:
-      "A premium potassium-focused foliar feed designed to maximize crop quality and yield potential. With 30% K2O content, Pro-K™ provides concentrated potassium nutrition when crops need it most. Enhances quality characteristics, improves stress tolerance, and optimizes metabolic processes for superior crop performance.",
-    keyFeatures: [
-      "High concentration potassium (30% K2O)",
-      "Quality-focused formulation",
-      "Enhanced stress tolerance properties",
-      "Rapid foliar uptake technology",
-      "Compatible with other nutrients",
-      "Broad spectrum crop application",
-    ],
-    targetCrops: [
-      {
-        name: "Cereals",
-        image:
-          "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=300&fit=crop",
-        benefits: [
-          "Enhanced grain quality",
-          "Improved protein content",
-          "Better disease resistance",
-          "Increased yield stability",
-        ],
-      },
-      {
-        name: "Oilseed Rape",
-        image:
-          "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
-        benefits: [
-          "Enhanced oil quality",
-          "Improved seed development",
-          "Better winter survival",
-          "Increased oil content",
-        ],
-      },
-      {
-        name: "Sugar Beet",
-        image:
-          "https://images.unsplash.com/photo-1592921870789-04563d55041c?w=400&h=300&fit=crop",
-        benefits: [
-          "Enhanced sugar content",
-          "Improved root quality",
-          "Better storage characteristics",
-          "Increased processing quality",
-        ],
-      },
-      {
-        name: "Potatoes",
-        image:
-          "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400&h=300&fit=crop",
-        benefits: [
-          "Enhanced tuber quality",
-          "Improved processing characteristics",
-          "Better storage properties",
-          "Reduced defects",
-        ],
-      },
-    ],
-    scientificBenefits: [
-      {
-        title: "Quality Enhancement",
-        description:
-          "Potassium directly improves crop quality, color, flavor, and storage characteristics",
-        icon: <Crown className="h-6 w-6 text-purple-600" />,
-      },
-      {
-        title: "Enzyme Activation",
-        description:
-          "Essential for over 60 enzyme systems involved in plant metabolism",
-        icon: <Activity className="h-6 w-6 text-blue-600" />,
-      },
-      {
-        title: "Osmotic Regulation",
-        description:
-          "Controls water balance and helps plants cope with stress conditions",
-        icon: <Shield className="h-6 w-6 text-green-600" />,
-      },
-      {
-        title: "Photosynthesis Support",
-        description:
-          "Optimizes photosynthetic processes and sugar translocation",
-        icon: <Zap className="h-6 w-6 text-orange-600" />,
-      },
-    ],
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50">
+    <div className="min-h-screen mt-10 bg-gray-50">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -318,14 +228,14 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-blue-600/10" />
+        <div className="absolute inset-0 bg-[#ececec]/50" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <Badge className="mb-4 bg-purple-100 text-purple-800 hover:bg-purple-200 text-lg px-4 py-2">
-                Premium Potassium-Focused Foliar Feed
+              <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
+                Potassium Foliar Technology
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
                 Pro-K™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -342,9 +252,9 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-purple-600 cursor-pointer hover:bg-purple-700 text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-lg px-8 py-4"
                   onClick={() =>
-                    smoothScrollToSection("application-guidelines-prokpage")
+                    smoothScrollToSection("application-guidelines-prok")
                   }
                 >
                   Application Guidelines
@@ -355,7 +265,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
                   size="lg"
                   className="text-lg cursor-pointer px-8 py-4"
                   onClick={() =>
-                    smoothScrollToSection("technical-resources-prokpage")
+                    smoothScrollToSection("technical-resources-prok")
                   }
                 >
                   View Technical Resources
@@ -376,18 +286,15 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-purple-400 to-blue-400 rounded-2xl opacity-20" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
             </motion.div>
           </div>
         </div>
       </motion.section>
 
-      {/* Product Showcase */}
-      {/* <ProductShowcase {...showcaseData} /> */}
-
       {/* Key Benefits Section */}
       <motion.section
-        className="py-20 px-4 bg-white/50"
+        className="py-20 px-4 bg-white"
         variants={staggerContainer}
         initial="initial"
         whileInView="animate"
@@ -430,7 +337,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
 
       {/* Potassium Technology Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-purple-50 to-blue-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -447,14 +354,25 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <Crown className="h-8 w-8 text-purple-600" />
+                    <Combine className="h-8 w-8 text-green-600" />
                     <h3 className="text-2xl font-semibold">
                       Premium Potassium Nutrition
                     </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="flex items-start gap-3">
-                      <Target className="h-6 w-6 text-purple-600 mt-1" />
+                      <Zap className="h-6 w-6 text-green-600 mt-1" />
+                      <div>
+                        <h4 className="font-semibold mb-2">Rapid Uptake</h4>
+                        <p className="text-gray-600">
+                          Foliar application ensures immediate potassium
+                          availability during critical periods.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <Target className="h-6 w-6 text-blue-600 mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Quality Enhancement
@@ -467,34 +385,23 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Activity className="h-6 w-6 text-blue-600 mt-1" />
+                      <Activity className="h-6 w-6 text-orange-600 mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-2">Enzyme Systems</h4>
+                        <h4 className="font-semibold mb-2">
+                          Metabolic Optimization
+                        </h4>
                         <p className="text-gray-600">
-                          Essential for over 60 enzyme systems involved in
-                          photosynthesis, protein synthesis, and carbohydrate
-                          metabolism.
+                          Supports enzyme function, photosynthesis, and protein
+                          synthesis.
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3">
-                      <Shield className="h-6 w-6 text-green-600 mt-1" />
-                      <div>
-                        <h4 className="font-semibold mb-2">Stress Tolerance</h4>
-                        <p className="text-gray-600">
-                          Improves plant resistance to drought, frost, and
-                          disease by optimizing osmotic regulation and cell
-                          strength.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="bg-purple-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-purple-800 mb-2">
+                    <div className="bg-green-50 rounded-lg p-4">
+                      <h4 className="font-semibold text-green-800 mb-2">
                         Foliar Advantage
                       </h4>
-                      <p className="text-purple-700">
+                      <p className="text-green-700">
                         Foliar application bypasses soil fixation, ensuring
                         immediate potassium availability during critical growth
                         periods.
@@ -522,7 +429,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
         {...fadeInUp}
         viewport={{ once: true }}
       >
-        <div id="application-guidelines-prokpage" className="max-w-7xl mx-auto">
+        <div id="application-guidelines-prok" className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Application Guidelines</h2>
             <p className="text-xl text-gray-600">
@@ -580,15 +487,15 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-purple-50 border border-purple-200">
+            <Card className="bg-green-50 border border-green-200">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <Droplets className="h-6 w-6 text-purple-600 mt-1" />
+                  <CheckCircle className="h-6 w-6 text-green-600 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-purple-800">
+                    <h3 className="text-lg font-semibold mb-2 text-green-800">
                       Application Method
                     </h3>
-                    <p className="text-purple-700">
+                    <p className="text-green-700">
                       Apply in 200-400 l/ha of water for optimal coverage.
                       Timing is critical - apply during periods of active growth
                       for maximum quality benefits.
@@ -603,7 +510,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-blue-50 to-purple-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -619,13 +526,13 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-purple-600" />
+                  <Package className="h-8 w-8 text-green-600" />
                   <h3 className="text-2xl font-semibold">
                     Available Pack Sizes
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-blue-50 rounded-lg">
+                  <div className="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -637,7 +544,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
                       applications
                     </p>
                   </div>
-                  <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-blue-50 rounded-lg">
+                  <div className="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -658,14 +565,14 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
 
       {/* PDF Links Section */}
       <PDFLinks
-        id="technical-resources-prokpage"
+        id="technical-resources-prok"
         productName="Pro-K™"
         links={pdfLinks}
       />
 
       {/* Contact Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white"
+        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -737,7 +644,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-white text-purple-600 hover:bg-gray-100"
+                    className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
                   >
                     Submit Enquiry
                   </Button>

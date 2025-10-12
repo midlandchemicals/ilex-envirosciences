@@ -92,13 +92,13 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Combine className="h-8 w-8 text-orange-600" />,
+      icon: <Combine className="h-8 w-8 text-green-600" />,
       title: "Dual Micronutrient Power",
       description:
         "Combines manganese and copper in one efficient application for comprehensive nutrition",
     },
     {
-      icon: <Zap className="h-8 w-8 text-blue-600" />,
+      icon: <Zap className="h-8 w-8 text-green-600" />,
       title: "Rapid Deficiency Correction",
       description:
         "Quick-acting formulation provides immediate response to micronutrient deficiencies",
@@ -110,19 +110,19 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
         "Two essential micronutrients delivered in a single, efficient treatment",
     },
     {
-      icon: <Activity className="h-8 w-8 text-purple-600" />,
+      icon: <Activity className="h-8 w-8 text-green-600" />,
       title: "Enhanced Enzyme Function",
       description:
         "Supports critical enzyme systems for photosynthesis and plant metabolism",
     },
     {
-      icon: <Shield className="h-8 w-8 text-cyan-600" />,
+      icon: <Shield className="h-8 w-8 text-green-600" />,
       title: "Tank Mix Compatible",
       description:
         "Easily integrated with other foliar treatments and crop protection products",
     },
     {
-      icon: <Award className="h-8 w-8 text-red-600" />,
+      icon: <Award className="h-8 w-8 text-green-600" />,
       title: "Broad Crop Suitability",
       description:
         "Effective across a wide range of arable and horticultural crops",
@@ -144,8 +144,8 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
           notes: "Critical growth phase",
         },
       ],
-      color: "bg-yellow-100 text-yellow-800",
-      icon: <Wheat className="h-5 w-5 text-yellow-600" />,
+      color: "bg-[#ececec] text-green-800",
+      icon: <Wheat className="h-5 w-5 text-green-600" />,
     },
     {
       crop: "Oilseed Rape",
@@ -161,8 +161,8 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
           notes: "Pre-flowering support",
         },
       ],
-      color: "bg-blue-100 text-blue-800",
-      icon: <Flower className="h-5 w-5 text-blue-600" />,
+      color: "bg-[#ececec] text-green-800",
+      icon: <Flower className="h-5 w-5 text-green-600" />,
     },
     {
       crop: "Sugar Beet",
@@ -178,7 +178,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
           notes: "Growth optimization",
         },
       ],
-      color: "bg-green-100 text-green-800",
+      color: "bg-[#ececec] text-green-800",
       icon: <Sprout className="h-5 w-5 text-green-600" />,
     },
     {
@@ -195,8 +195,8 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
           notes: "Quality enhancement",
         },
       ],
-      color: "bg-orange-100 text-orange-800",
-      icon: <Leaf className="h-5 w-5 text-orange-600" />,
+      color: "bg-[#ececec] text-green-800",
+      icon: <Leaf className="h-5 w-5 text-green-600" />,
     },
   ];
 
@@ -286,13 +286,13 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
         title: "Manganese Functions",
         description:
           "Essential for photosynthesis, respiration, and antioxidant enzyme systems",
-        icon: <Atom className="h-6 w-6 text-orange-600" />,
+        icon: <Atom className="h-6 w-6 text-green-600" />,
       },
       {
         title: "Copper Functions",
         description:
           "Critical for enzyme systems, protein synthesis, and cell wall development",
-        icon: <FlaskConical className="h-6 w-6 text-blue-600" />,
+        icon: <FlaskConical className="h-6 w-6 text-green-600" />,
       },
       {
         title: "Synergistic Action",
@@ -304,13 +304,13 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
         title: "Rapid Response",
         description:
           "Quick correction of deficiency symptoms and restoration of normal function",
-        icon: <Zap className="h-6 w-6 text-purple-600" />,
+        icon: <Zap className="h-6 w-6 text-green-600" />,
       },
     ],
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
+    <div className="min-h-screen mt-10 bg-[#ececec]">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -318,14 +318,14 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-600/10 to-blue-600/10" />
+        <div className="absolute inset-0 bg-[#ececec]/50" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <Badge className="mb-4 bg-orange-100 text-orange-800 hover:bg-orange-200 text-lg px-4 py-2">
+              <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
                 Combined Manganese & Copper Micronutrient Treatment
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
                 Mn-Cu Plus™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -343,7 +343,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-orange-600 cursor-pointer hover:bg-orange-700 text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-lg px-8 py-4 text-white"
                   onClick={() =>
                     smoothScrollToSection("application-guidelines-mncuplus")
                   }
@@ -354,7 +354,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg cursor-pointer px-8 py-4"
+                  className="text-lg cursor-pointer px-8 py-4 border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
                     smoothScrollToSection("technical-resources-mncuplus")
                   }
@@ -377,7 +377,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-orange-400 to-blue-400 rounded-2xl opacity-20" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
             </motion.div>
           </div>
         </div>
@@ -431,7 +431,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
 
       {/* Dual Micronutrient Technology Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-orange-50 to-blue-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -451,14 +451,14 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <Combine className="h-8 w-8 text-orange-600" />
+                    <Combine className="h-8 w-8 text-green-600" />
                     <h3 className="text-2xl font-semibold">
                       Combined Micronutrient Power
                     </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="flex items-start gap-3">
-                      <Atom className="h-6 w-6 text-orange-600 mt-1" />
+                      <Atom className="h-6 w-6 text-green-600 mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Manganese Functions (8%)
@@ -472,7 +472,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <FlaskConical className="h-6 w-6 text-blue-600 mt-1" />
+                      <FlaskConical className="h-6 w-6 text-green-600 mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Copper Functions (5%)
@@ -499,11 +499,11 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
                       </div>
                     </div>
 
-                    <div className="bg-orange-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-orange-800 mb-2">
+                    <div className="bg-[#ececec] rounded-lg p-4">
+                      <h4 className="font-semibold text-green-800 mb-2">
                         Enhanced Formula
                       </h4>
-                      <p className="text-orange-700">
+                      <p className="text-green-700">
                         Includes nitrogen, magnesium, and sulphur to support
                         optimal micronutrient utilization and plant function.
                       </p>
@@ -588,15 +588,15 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-red-50 border border-red-200">
+            <Card className="bg-[#ececec] border border-[#d1e7d1] shadow">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-red-600 mt-1" />
+                  <CheckCircle className="h-6 w-6 text-green-600 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-red-800">
+                    <h3 className="text-lg font-semibold mb-2 text-green-800">
                       Deficiency Treatment
                     </h3>
-                    <p className="text-red-700">
+                    <p className="text-green-700">
                       For severe deficiencies, increase rate to 3-4 l/ha and
                       repeat application after 2-3 weeks if symptoms persist.
                     </p>
@@ -610,7 +610,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-blue-50 to-orange-50"
+        className="py-20 px-4 bg-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -626,13 +626,13 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-orange-600" />
+                  <Package className="h-8 w-8 text-green-600" />
                   <h3 className="text-2xl font-semibold">
                     Available Pack Sizes
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-gradient-to-br from-orange-50 to-blue-50 rounded-lg">
+                  <div className="text-center p-6 bg-white/70 rounded-lg shadow">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -644,7 +644,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
                       use
                     </p>
                   </div>
-                  <div className="text-center p-6 bg-gradient-to-br from-orange-50 to-blue-50 rounded-lg">
+                  <div className="text-center p-6 bg-white/70 rounded-lg shadow">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -672,7 +672,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
 
       {/* Contact Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-orange-600 to-blue-600 text-white"
+        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -744,7 +744,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-white text-orange-600 hover:bg-gray-100"
+                    className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
                   >
                     Submit Enquiry
                   </Button>

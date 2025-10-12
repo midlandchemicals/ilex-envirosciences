@@ -94,37 +94,37 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Zap className="h-8 w-8 text-orange-600" />,
+      icon: <Zap className="h-8 w-8 text-[#6abf4b]" />,
       title: "Prevents Nutrition-Related Disorders",
       description:
         "Targeted nutrition prevents common potato deficiency problems and disorders",
     },
     {
-      icon: <TrendingUp className="h-8 w-8 text-green-600" />,
+      icon: <TrendingUp className="h-8 w-8 text-[#6abf4b]" />,
       title: "Improves Yield Potential",
       description:
         "Enhances overall yield through improved nutrient availability at planting",
     },
     {
-      icon: <Sparkles className="h-8 w-8 text-blue-600" />,
+      icon: <Sparkles className="h-8 w-8 text-[#6abf4b]" />,
       title: "Enhanced Skin Finish",
       description:
         "Improves potato skin quality and appearance for better market value",
     },
     {
-      icon: <Shield className="h-8 w-8 text-purple-600" />,
+      icon: <Shield className="h-8 w-8 text-[#6abf4b]" />,
       title: "Improved Storage Characteristics",
       description:
         "Calcium improves storage quality and reduces post-harvest losses",
     },
     {
-      icon: <Atom className="h-8 w-8 text-cyan-600" />,
+      icon: <Atom className="h-8 w-8 text-[#6abf4b]" />,
       title: "Mildly Acidic Growing Environment",
       description:
         "Sulfur provides optimal pH conditions for potato development",
     },
     {
-      icon: <Package className="h-8 w-8 text-yellow-600" />,
+      icon: <Package className="h-8 w-8 text-[#6abf4b]" />,
       title: "Dual Formulation Options",
       description:
         "Available in both liquid and powder forms for application flexibility",
@@ -141,14 +141,14 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
         },
         { rate: "9.0 l/ha at planting", notes: "Field application rate" },
       ],
-      color: "bg-blue-100 text-blue-800",
+      color: "bg-green-100 text-green-800",
     },
     {
       type: "Powder",
       applications: [
         { rate: "3.25 kg per tonne of seed", notes: "At planting application" },
       ],
-      color: "bg-orange-100 text-orange-800",
+      color: "bg-green-200 text-green-900",
     },
   ];
 
@@ -200,30 +200,30 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
         title: "Zinc Functions",
         description:
           "Essential for enzyme systems, protein synthesis, and growth regulation",
-        icon: <Atom className="h-6 w-6 text-orange-600" />,
+        icon: <Atom className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Sulfur Environment",
         description:
           "Creates mildly acidic growing conditions optimal for potato development",
-        icon: <Beaker className="h-6 w-6 text-yellow-600" />,
+        icon: <Beaker className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Calcium Enhancement",
         description: "Improves cell wall strength and storage characteristics",
-        icon: <Shield className="h-6 w-6 text-blue-600" />,
+        icon: <Shield className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "At-Planting Application",
         description:
           "Immediate nutrient availability when potato plants need it most",
-        icon: <Shovel className="h-6 w-6 text-green-600" />,
+        icon: <Shovel className="h-6 w-6 text-[#6abf4b]" />,
       },
     ],
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-yellow-50">
+    <div className="min-h-screen mt-10 bg-[#ececec]">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -231,14 +231,14 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-600/10 to-yellow-600/10" />
+        <div className="absolute inset-0 bg-[#ececec]/50" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <Badge className="mb-4 bg-orange-100 text-orange-800 hover:bg-orange-200 text-lg px-4 py-2">
+              <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
                 Potato Specialist Nutrition at Planting
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-600 to-yellow-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] bg-clip-text text-transparent">
                 ProZest
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -256,7 +256,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-orange-600 cursor-pointer hover:bg-orange-700 text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-lg px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection("application-guidelines-prozest")
                   }
@@ -267,7 +267,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg cursor-pointer px-8 py-4"
+                  className="text-lg cursor-pointer px-8 py-4 border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
                     smoothScrollToSection("technical-resources-prozest")
                   }
@@ -290,7 +290,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-orange-400 to-yellow-400 rounded-2xl opacity-20" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
             </motion.div>
           </div>
         </div>
@@ -344,7 +344,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
 
       {/* Dual Formulation Technology Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-orange-50 to-yellow-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -364,14 +364,14 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <Package className="h-8 w-8 text-orange-600" />
+                    <Package className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-2xl font-semibold">
                       Formulation Comparison
                     </h3>
                   </div>
                   <div className="space-y-6">
-                    <div className="p-4 bg-blue-50 rounded-lg">
-                      <h4 className="font-semibold text-blue-800 mb-3">
+                    <div className="p-4 bg-green-50 rounded-lg">
+                      <h4 className="font-semibold text-green-800 mb-3">
                         Liquid Formulation
                       </h4>
                       <div className="space-y-2 text-sm">
@@ -390,8 +390,8 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                       </div>
                     </div>
 
-                    <div className="p-4 bg-orange-50 rounded-lg">
-                      <h4 className="font-semibold text-orange-800 mb-3">
+                    <div className="p-4 bg-green-100 rounded-lg">
+                      <h4 className="font-semibold text-green-900 mb-3">
                         Powder Formulation
                       </h4>
                       <div className="space-y-2 text-sm">
@@ -410,11 +410,11 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                       </div>
                     </div>
 
-                    <div className="bg-yellow-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-yellow-800 mb-2">
+                    <div className="bg-green-50 rounded-lg p-4">
+                      <h4 className="font-semibold text-green-800 mb-2">
                         Application Benefits
                       </h4>
-                      <ul className="text-yellow-700 text-sm space-y-1">
+                      <ul className="text-green-700 text-sm space-y-1">
                         <li>• Prevents zinc deficiency disorders</li>
                         <li>• Creates optimal soil pH conditions</li>
                         <li>• Enhances storage quality through calcium</li>
@@ -522,7 +522,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-yellow-50 to-orange-50"
+        className="py-20 px-4 bg-white/50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -538,13 +538,13 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-orange-600" />
+                  <Package className="h-8 w-8 text-[#6abf4b]" />
                   <h3 className="text-2xl font-semibold">
                     Available Pack Sizes
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-orange-50 rounded-lg">
+                  <div className="text-center p-6 bg-green-50 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -555,7 +555,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                       Convenient liquid formulation for easy application
                     </p>
                   </div>
-                  <div className="text-center p-6 bg-gradient-to-br from-orange-50 to-yellow-50 rounded-lg">
+                  <div className="text-center p-6 bg-green-100 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -582,7 +582,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
 
       {/* Contact Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-orange-600 to-yellow-600 text-white"
+        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -654,7 +654,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-white text-orange-600 hover:bg-gray-100"
+                    className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
                   >
                     Submit Enquiry
                   </Button>

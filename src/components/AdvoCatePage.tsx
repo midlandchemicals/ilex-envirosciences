@@ -94,37 +94,37 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Activity className="h-8 w-8 text-cyan-600" />,
+      icon: <Activity className="h-8 w-8 text-[#6abf4b]" />,
       title: "Exceptional Calcium Mobility",
       description:
         "Advanced complexing technology ensures optimal calcium movement within the crop",
     },
     {
-      icon: <Shield className="h-8 w-8 text-green-600" />,
+      icon: <Shield className="h-8 w-8 text-[#6abf4b]" />,
       title: "Corrects Physiological Disorders",
       description:
         "Effectively addresses calcium-related disorders in vegetables and fruits",
     },
     {
-      icon: <Package className="h-8 w-8 text-purple-600" />,
+      icon: <Package className="h-8 w-8 text-[#6abf4b]" />,
       title: "Increases Storage Quality",
       description:
         "Enhanced storage characteristics and shelf life in vegetables",
     },
     {
-      icon: <Sprout className="h-8 w-8 text-orange-600" />,
+      icon: <Sprout className="h-8 w-8 text-[#6abf4b]" />,
       title: "Promotes Root Development",
       description:
         "Timed applications at key growth stages enhance root system development",
     },
     {
-      icon: <Beaker className="h-8 w-8 text-blue-600" />,
+      icon: <Beaker className="h-8 w-8 text-[#6abf4b]" />,
       title: "Unique Generation Formulation",
       description:
         "Calcium complexed with natural sugars, amino acids, and seaweed",
     },
     {
-      icon: <Award className="h-8 w-8 text-yellow-600" />,
+      icon: <Award className="h-8 w-8 text-[#6abf4b]" />,
       title: "Complete Micronutrient Package",
       description:
         "Includes zinc, iron, molybdenum, and boron with 7.5% bio-active agents",
@@ -137,40 +137,40 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
       rate: "1.0-2.0 l/ha",
       timing: "Start of tuber bulking & during tuber bulking",
       notes: "Critical for tuber development and quality",
-      color: "bg-amber-100 text-amber-800",
-      icon: <Apple className="h-5 w-5 text-amber-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Apple className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Root Crops",
       rate: "1.0-2.0 l/ha",
       timing: "From 4-6 true leaves, repeat at 14-21 day intervals",
       notes: "Enhanced root development and quality",
-      color: "bg-orange-100 text-orange-800",
-      icon: <Sprout className="h-5 w-5 text-orange-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Sprout className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Lettuce & Leafy Salads",
       rate: "1.0-2.0 l/ha",
       timing: "From 10-14 days post planting, repeat at 10-14 day intervals",
       notes: "Improved leaf quality and storage",
-      color: "bg-green-100 text-green-800",
-      icon: <Leaf className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Leaf className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Brassicas",
       rate: "1.0-2.0 l/ha",
       timing: "From 3-4 true leaves, repeat at 10-14 day intervals",
       notes: "Enhanced head development and quality",
-      color: "bg-emerald-100 text-emerald-800",
-      icon: <Flower className="h-5 w-5 text-emerald-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Flower className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Alliums",
       rate: "1.0-2.0 l/ha",
       timing: "From 3-4 true leaves, repeat at 14-21 day intervals",
       notes: "Improved bulb development and storage",
-      color: "bg-purple-100 text-purple-800",
-      icon: <Target className="h-5 w-5 text-purple-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Target className="h-5 w-5 text-[#6abf4b]" />,
     },
   ];
 
@@ -285,7 +285,7 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+    <div className="min-h-screen bg-[#ececec]">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -293,14 +293,14 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/10 to-blue-600/10" />
-        <div className="relative max-w-7xl mx-auto">
+        <div className="absolute inset-0 bg-[#ececec]/50" />
+        <div className="relative max-w-7xl mt-10 mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <Badge className="mb-4 bg-cyan-100 text-cyan-800 hover:bg-cyan-200 text-lg px-4 py-2">
+              <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
                 Advanced Calcium Complex with Natural Bio-Active Agents
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
                 AdvoCate
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -320,9 +320,9 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-cyan-600 cursor-pointer hover:bg-cyan-700 text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-white text-lg px-8 py-4"
                   onClick={() =>
-                    smoothScrollToSection("application-guidelines-maniphos")
+                    smoothScrollToSection("application-guidelines-advocate")
                   }
                 >
                   Application Guidelines
@@ -331,9 +331,9 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg cursor-pointer px-8 py-4"
+                  className="text-lg cursor-pointer px-8 py-4 border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
-                    smoothScrollToSection("technical-resources-maniphos")
+                    smoothScrollToSection("technical-resources-advocate")
                   }
                 >
                   View Technical Resources
@@ -354,7 +354,7 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-cyan-400 to-blue-400 rounded-2xl opacity-20" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
             </motion.div>
           </div>
         </div>
@@ -408,7 +408,7 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
 
       {/* Calcium Technology Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-cyan-50 to-blue-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -428,34 +428,34 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <Activity className="h-8 w-8 text-cyan-600" />
+                    <Activity className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-2xl font-semibold">
                       Unique Generation Formulation
                     </h3>
                   </div>
                   <div className="space-y-6">
-                    <div className="p-4 bg-cyan-50 rounded-lg">
-                      <h4 className="font-semibold text-cyan-800 mb-2">
+                    <div className="p-4 bg-white/80 rounded-lg">
+                      <h4 className="font-semibold text-[#6abf4b] mb-2">
                         9% Calcium (as CaO)
                       </h4>
-                      <p className="text-cyan-700 text-sm">
+                      <p className="text-[#6abf4b] text-sm">
                         High concentration calcium complexed for exceptional
                         plant mobility
                       </p>
                     </div>
 
-                    <div className="p-4 bg-blue-50 rounded-lg">
-                      <h4 className="font-semibold text-blue-800 mb-2">
+                    <div className="p-4 bg-white/80 rounded-lg">
+                      <h4 className="font-semibold text-[#6abf4b] mb-2">
                         7.5% Bio-Active Agents
                       </h4>
-                      <p className="text-blue-700 text-sm">
+                      <p className="text-[#6abf4b] text-sm">
                         Natural sugars, amino acids & seaweed for enhanced
                         uptake
                       </p>
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Beaker className="h-6 w-6 text-green-600 mt-1" />
+                      <Beaker className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Complete Micronutrient Package
@@ -468,11 +468,11 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
                       </div>
                     </div>
 
-                    <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-cyan-800 mb-2">
+                    <div className="bg-white/80 rounded-lg p-4">
+                      <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Advanced Complexing
                       </h4>
-                      <p className="text-cyan-700 text-sm">
+                      <p className="text-[#6abf4b] text-sm">
                         Natural complexing agents ensure exceptional calcium
                         mobility within the crop for optimal physiological
                         function and disorder prevention.
@@ -524,7 +524,9 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
                       <CardTitle className="text-lg">{crop.crop}</CardTitle>
                     </div>
                     <div className="text-center p-3 bg-gray-50 rounded-lg mb-3">
-                      <Badge className={`${crop.color} text-lg px-3 py-1 mb-2`}>
+                      <Badge
+                        className={`${crop.color} text-lg px-3 py-1 mb-2 hover:bg-[#6abf4b]/20`}
+                      >
                         {crop.rate}
                       </Badge>
                     </div>
@@ -536,8 +538,8 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
                         <p className="text-sm text-gray-600">{crop.timing}</p>
                       </div>
                       <div className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                        <p className="text-sm text-green-700">{crop.notes}</p>
+                        <CheckCircle className="h-4 w-4 text-[#6abf4b] mt-1 flex-shrink-0" />
+                        <p className="text-sm text-[#6abf4b]">{crop.notes}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -553,15 +555,15 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-cyan-50 border border-cyan-200">
+            <Card className="bg-[#ececec] border-0">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <Droplets className="h-6 w-6 text-cyan-600 mt-1" />
+                  <Droplets className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-cyan-800">
+                    <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Application Method
                     </h3>
-                    <p className="text-cyan-700 mb-4">
+                    <p className="text-[#6abf4b] mb-4">
                       Best applied as a foliar spray at water rates of 200-600
                       l/ha depending on the crop type and stage of growth.
                       Propagated plants benefit from application via irrigation
@@ -573,15 +575,15 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
               </CardContent>
             </Card>
 
-            <Card className="bg-blue-50 border border-blue-200">
+            <Card className="bg-[#ececec] border-0">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <Target className="h-6 w-6 text-blue-600 mt-1" />
+                  <Target className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-blue-800">
+                    <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Key Growth Stages
                     </h3>
-                    <p className="text-blue-700">
+                    <p className="text-[#6abf4b]">
                       Timed applications at key growth stages will promote root
                       development and ensure optimal calcium status throughout
                       the crop development cycle, preventing physiological
@@ -597,7 +599,7 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-blue-50 to-cyan-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -613,13 +615,13 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-cyan-600" />
+                  <Package className="h-8 w-8 text-[#6abf4b]" />
                   <h3 className="text-2xl font-semibold">
                     Available Pack Sizes
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-gradient-to-br from-cyan-50 to-blue-50 rounded-lg">
+                  <div className="text-center p-6 bg-[#ececec] rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -630,7 +632,7 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
                       Perfect for specialized vegetable nutrition programs
                     </p>
                   </div>
-                  <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg">
+                  <div className="text-center p-6 bg-[#ececec] rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -658,7 +660,7 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
 
       {/* Contact Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-cyan-600 to-blue-600 text-white"
+        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -730,7 +732,7 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-white text-cyan-600 hover:bg-gray-100"
+                    className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
                   >
                     Submit Enquiry
                   </Button>

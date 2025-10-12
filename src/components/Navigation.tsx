@@ -1,35 +1,34 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Button } from './ui/button';
-import { Badge } from './ui/badge';
-import { Card, CardContent } from './ui/card';
-import { 
-  Leaf, 
-  Menu, 
-  X, 
-  ChevronDown, 
-  Beaker,
-  Sprout,
-  Shield,
-  Wheat,
-  FlaskConical,
-  Phone,
-  Mail,
-  FileText
-} from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 export function Navigation() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const productRanges = [
+  const handleMouseEnter = (link: string) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setOpenDropdown(link);
+  };
+
+  const handleMouseLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 200); // 200ms delay before closing
+  };
+
+  const menuItems = [
     {
-      title: "The Ilex Phosphite Range",
+      title: "Phosphite Range",
       link: "phosphite-range",
-      icon: <Beaker className="h-4 w-4" />,
       products: [
         { product: "Crop Rooter® Plus", link: "crop-rooter-plus" },
         { product: "PK MAXX™ +", link: "pk-maxx" },
@@ -42,9 +41,8 @@ export function Navigation() {
       ]
     },
     {
-      title: "The Ilex Foliar Nutrient Range",
+      title: "Foliar Range",
       link: "foliar-range",
-      icon: <Sprout className="h-4 w-4" />,
       products: [
         { product: "Mn SUPER™", link: "mn-super" },
         { product: "Mag Plus™", link: "mag-plus" },
@@ -59,7 +57,6 @@ export function Navigation() {
     {
       title: "Calcium Supplements",
       link: "calcium-range",
-      icon: <Shield className="h-4 w-4" />,
       products: [
         { product: "Pro-Cal™", link: "pro-cal" },
         { product: "Advocate™", link: "advocate" },
@@ -69,7 +66,6 @@ export function Navigation() {
     {
       title: "Biostimulants",
       link: "biostimulants",
-      icon: <Leaf className="h-4 w-4" />,
       products: [
         { product: "Stimplex®", link: "stimplex" },
         { product: "Toggle®", link: "toggle" }
@@ -78,7 +74,6 @@ export function Navigation() {
     {
       title: "Seed Treatments",
       link: "seed-treatments",
-      icon: <Wheat className="h-4 w-4" />,
       products: [
         { product: "Start-uP® MAXX", link: "start-up-maxx" },
         { product: "Start-uP®", link: "start-up" },
@@ -87,9 +82,15 @@ export function Navigation() {
       ]
     },
     {
-      title: "The Ilex Organic Range",
+      title: "Water Conditioners",
+      link: "water-conditioners",
+      products: [
+        { product: "ModipHy Xtra™", link: "modiphy-xtra" }
+      ]
+    },
+    {
+      title: "Ilex Organic Range",
       link: "organic-range",
-      icon: <FlaskConical className="h-4 w-4" />,
       products: [
         { product: "Complete™ (6-2-4)", link: "complete-6-2-4" },
         { product: "Complete Hi-Fruit™ (4-2-6)", link: "complete-hi-fruit-4-2-6" },
@@ -108,7 +109,12 @@ export function Navigation() {
     }
 
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
   }, []);
 
   // Close mobile menu when location changes
@@ -117,289 +123,177 @@ export function Navigation() {
     setOpenDropdown(null);
   }, [location]);
 
-  const isActive = (path: string) => {
-    return location.pathname === path || location.pathname.startsWith(path + '/');
+  const scrollToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact-us');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // If not on homepage, navigate to homepage first
+      if (location.pathname !== '/') {
+        navigate('/#contact-us');
+      }
+    }
   };
 
   return (
-    <motion.header 
-      className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-3">
+    <header className="fixed top-0 left-0 right-0 z-[60] bg-[#ececec] shadow-sm">
+      <div className="max-w-[1400px] mx-auto px-5 py-4">
+        <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link
-            to="/"
-            className="flex items-center gap-3 hover:opacity-80 transition-opacity p-2 flex-shrink-0"
-          >
-            <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg flex items-center justify-center">
-              <Leaf className="h-5 w-5 text-white" />
-            </div>
-            <div className="text-left hidden sm:block">
-              <h1 className="text-lg font-semibold text-gray-900 leading-tight">Ilex EnviroSciences</h1>
-              <p className="text-xs text-gray-500 leading-tight">Foliar Nutrition Solutions</p>
-            </div>
+          <Link to="/" className="flex-shrink-0">
+            <img 
+              src="/images/ilexlogonobg.png" 
+              alt="Ilex Logo" 
+              className="h-[50px] w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center gap-1 flex-1 justify-end" ref={dropdownRef}>
-            {/* Products Dropdown */}
-            <div className="relative">
-              <Button
-                variant="ghost"
-                className={`flex items-center gap-1 text-sm hover:bg-gray-100 px-3 py-2 h-auto ${
-                  isActive('/products') ? 'bg-gray-100 text-blue-600' : ''
-                }`}
-                onClick={() => setOpenDropdown(openDropdown === 'products' ? null : 'products')}
-              >
-                Products
-                <ChevronDown className="h-3 w-3" />
-              </Button>
-              
-              <AnimatePresence>
-                {openDropdown === 'products' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-1 w-80 z-50"
+          <div className="hidden md:flex items-center gap-4">
+            <nav>
+              <ul className="flex gap-2 list-none m-0 p-0">
+                {menuItems.map((item, index) => (
+                  <li 
+                    key={index} 
+                    className="relative"
                   >
-                    <Card className="shadow-xl border-0 bg-white/98 backdrop-blur-sm">
-                      <CardContent className="p-4">
-                        <div className="grid grid-cols-1 gap-1 max-h-96 overflow-y-auto">
-                          {productRanges.map((range, rangeIndex) => (
-                            <div key={rangeIndex} className="border-b border-gray-100 last:border-b-0 pb-2 mb-2 last:pb-0 last:mb-0">
-                              <Link
-                                to={`/products/${range.link}`}
-                                className="w-full justify-start text-xs font-medium mb-1 h-auto py-1 px-2 flex items-center hover:bg-gray-50 rounded"
-                                onClick={() => setOpenDropdown(null)}
-                              >
-                                {range.icon}
-                                <span className="ml-2">{range.title.replace('The Ilex ', '')}</span>
-                                <Badge variant="secondary" className="ml-auto text-xs">
-                                  {range.products.length}
-                                </Badge>
-                              </Link>
-                              <div className="ml-4 space-y-0.5">
-                                {range.products.slice(0, 4).map((product, productIndex) => (
-                                  <Link
-                                    key={productIndex}
-                                    to={`/products/${range.link}/${product.link}`}
-                                    className="block w-full text-xs py-0.5 px-2 text-gray-600 hover:bg-gray-50 rounded"
-                                    onClick={() => setOpenDropdown(null)}
-                                  >
-                                    {product.product}
-                                  </Link>
-                                ))}
-                                {range.products.length > 4 && (
-                                  <Link
-                                    to={`/products/${range.link}`}
-                                    className="block w-full text-xs py-0.5 px-2 text-blue-600 hover:bg-gray-50 rounded"
-                                    onClick={() => setOpenDropdown(null)}
-                                  >
-                                    +{range.products.length - 4} more products
-                                  </Link>
-                                )}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-            
-            {/* Other navigation items */}
-            <Link
-              to="/about"
-              className={`text-sm hover:bg-gray-100 px-3 py-2 rounded transition-colors ${
-                isActive('/about') ? 'bg-gray-100 text-blue-600' : ''
-              }`}
-            >
-              About
-            </Link>
-            <Link
-              to="/contact"
-              className={`text-sm hover:bg-gray-100 px-3 py-2 rounded transition-colors ${
-                isActive('/contact') ? 'bg-gray-100 text-blue-600' : ''
-              }`}
-            >
-              Contact
-            </Link>
-            <Link
-              to="/how-to-buy"
-              className={`text-sm hover:bg-gray-100 px-3 py-2 rounded transition-colors ${
-                isActive('/how-to-buy') ? 'bg-gray-100 text-blue-600' : ''
-              }`}
-            >
-              How to Buy
-            </Link>
-          </nav>
-
-          {/* Mobile/Tablet Navigation for medium screens */}
-          <nav className="hidden lg:flex xl:hidden items-center gap-1 flex-1 justify-end" ref={dropdownRef}>
-            <div className="relative">
-              <Button
-                variant="ghost"
-                className="flex items-center gap-1 text-sm hover:bg-gray-100 px-3 py-2 h-auto"
-                onClick={() => setOpenDropdown(openDropdown === 'products' ? null : 'products')}
-              >
-                Products
-                <ChevronDown className="h-3 w-3" />
-              </Button>
-              
-              <AnimatePresence>
-                {openDropdown === 'products' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full right-0 mt-1 w-72 z-50"
-                  >
-                    <Card className="shadow-xl border-0 bg-white/98 backdrop-blur-sm">
-                      <CardContent className="p-3">
-                        <div className="grid grid-cols-2 gap-2 max-h-80 overflow-y-auto">
-                          {productRanges.map((range, rangeIndex) => (
+                    <Link
+                      to={`/products/${item.link}`}
+                      className="font-semibold text-[0.82rem] px-0 py-2 text-[#333] inline-block relative transition-colors hover:text-[#6abf4b] cursor-pointer"
+                      onMouseEnter={() => handleMouseEnter(item.link)}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      {item.title}
+                    </Link>
+                    
+                    {/* Desktop Dropdown */}
+                    {openDropdown === item.link && (
+                      <div
+                        className="absolute top-full left-0 bg-[#ececec] min-w-[200px] z-[70] shadow-lg"
+                        onMouseEnter={() => handleMouseEnter(item.link)}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        <div className="py-2">
+                          {item.products.map((product, pIndex) => (
                             <Link
-                              key={rangeIndex}
-                              to={`/products/${range.link}`}
-                              className="w-full justify-start text-xs h-auto py-2 px-2 flex flex-col items-start hover:bg-gray-50 rounded"
-                              onClick={() => setOpenDropdown(null)}
+                              key={pIndex}
+                              to={`/products/${item.link}/${product.link}`}
+                              className="block px-4 py-2 text-sm text-[#333] whitespace-nowrap transition-all hover:bg-[#d8d8d8] hover:text-[#6abf4b] hover:pl-5"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                if (closeTimeoutRef.current) {
+                                  clearTimeout(closeTimeoutRef.current);
+                                }
+                                setOpenDropdown(null);
+                              }}
                             >
-                              <div className="flex items-center gap-1 mb-1">
-                                {range.icon}
-                                <span className="font-medium">{range.title.replace('The Ilex ', '')}</span>
-                              </div>
-                              <Badge variant="secondary" className="text-xs">
-                                {range.products.length} products
-                              </Badge>
+                              {product.product}
                             </Link>
                           ))}
                         </div>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-            
-            <Link
-              to="/about"
-              className="text-sm hover:bg-gray-100 px-3 py-2 rounded transition-colors"
-            >
-              About
-            </Link>
-            <Link
-              to="/contact"
-              className="text-sm hover:bg-gray-100 px-3 py-2 rounded transition-colors"
-            >
-              Contact
-            </Link>
-          </nav>
+                      </div>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="sm"
-            className="xl:hidden flex-shrink-0 p-2"
+            {/* Contact Us Button */}
+            <a
+              href="#contact-us"
+              onClick={scrollToContact}
+              className="text-[0.82rem] text-white px-7 py-3 bg-[#6abf4b] rounded-md font-bold transition-all hover:bg-[#5aa338] hover:-translate-y-0.5"
+            >
+              Contact Us
+            </a>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="md:hidden text-[2rem] cursor-pointer"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
+            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
 
         {/* Mobile Navigation */}
         <AnimatePresence>
           {mobileMenuOpen && (
-            <motion.div 
-              className="xl:hidden pb-4 border-t border-gray-200 mt-2"
+            <motion.nav
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
+              className="md:hidden mt-4 overflow-hidden"
             >
-              <div className="pt-4 space-y-2">
-                {/* Products Dropdown */}
-                <div>
-                  <Button
-                    variant="ghost"
-                    className="w-full justify-between text-left p-3 h-auto"
-                    onClick={() => setOpenDropdown(openDropdown === 'mobile-products' ? null : 'mobile-products')}
-                  >
-                    <span className="flex items-center gap-2">
-                      <Beaker className="h-4 w-4" />
-                      Products
-                    </span>
-                    <ChevronDown className={`h-4 w-4 transition-transform ${openDropdown === 'mobile-products' ? 'rotate-180' : ''}`} />
-                  </Button>
-                  
-                  <AnimatePresence>
-                    {openDropdown === 'mobile-products' && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="ml-4 mt-2 space-y-1 max-h-64 overflow-y-auto"
-                      >
-                        {productRanges.map((range, rangeIndex) => (
-                          <div key={rangeIndex}>
-                            <Link
-                              to={`/products/${range.link}`}
-                              className="w-full justify-start text-sm p-2 h-auto font-medium flex items-center gap-2 hover:bg-gray-50 rounded"
-                              onClick={() => setMobileMenuOpen(false)}
-                            >
-                              {range.icon}
-                              {range.title.replace('The Ilex ', '')}
-                              <Badge variant="secondary" className="ml-auto text-xs">
-                                {range.products.length}
-                              </Badge>
-                            </Link>
+              <ul className="flex flex-col gap-0 list-none m-0 p-0 bg-[#f8f8f8] rounded-lg overflow-hidden">
+                {menuItems.map((item, index) => (
+                  <li key={index} className="border-b border-[#eee] last:border-b-0">
+                    <a
+                      href="#"
+                      className="block px-5 py-4 text-left font-semibold transition-colors hover:bg-[#ececec]"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setOpenDropdown(openDropdown === `mobile-${item.link}` ? null : `mobile-${item.link}`);
+                      }}
+                    >
+                      <span className="flex items-center justify-between">
+                        {item.title}
+                        <ChevronDown 
+                          className={`transition-transform ${openDropdown === `mobile-${item.link}` ? 'rotate-180' : ''}`}
+                          size={20}
+                        />
+                      </span>
+                    </a>
+                    
+                    <AnimatePresence>
+                      {openDropdown === `mobile-${item.link}` && (
+                        <motion.div
+                          initial={{ maxHeight: 0, opacity: 0 }}
+                          animate={{ maxHeight: 500, opacity: 1 }}
+                          exit={{ maxHeight: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="overflow-hidden bg-white"
+                        >
+                          <div className="px-5 py-2">
+                            {item.products.map((product, pIndex) => (
+                              <Link
+                                key={pIndex}
+                                to={`/products/${item.link}/${product.link}`}
+                                className="block py-2 pl-4 text-sm text-[#333] transition-all hover:text-[#6abf4b]"
+                                onClick={() => {
+                                  setMobileMenuOpen(false);
+                                  setOpenDropdown(null);
+                                }}
+                              >
+                                {product.product}
+                              </Link>
+                            ))}
                           </div>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </li>
+                ))}
+              </ul>
 
-                {/* Other Menu Items */}
-                <Link
-                  to="/about"
-                  className="w-full justify-start p-3 h-auto flex items-center hover:bg-gray-50 rounded"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <FileText className="h-4 w-4 mr-2" />
-                  About Us
-                </Link>
-                
-                <Link
-                  to="/contact"
-                  className="w-full justify-start p-3 h-auto flex items-center hover:bg-gray-50 rounded"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <Phone className="h-4 w-4 mr-2" />
-                  Contact Us
-                </Link>
-                
-                <Link
-                  to="/how-to-buy"
-                  className="w-full justify-start p-3 h-auto flex items-center hover:bg-gray-50 rounded"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <Mail className="h-4 w-4 mr-2" />
-                  How to Buy
-                </Link>
-              </div>
-            </motion.div>
+              {/* Mobile Contact Button */}
+              <a
+                href="#contact-us"
+                onClick={(e) => {
+                  scrollToContact(e);
+                  setMobileMenuOpen(false);
+                }}
+                className="block mt-4 text-center text-white px-7 py-3 bg-[#6abf4b] rounded-md font-bold transition-all hover:bg-[#5aa338]"
+              >
+                Contact Us
+              </a>
+            </motion.nav>
           )}
         </AnimatePresence>
       </div>
-    </motion.header>
+    </header>
   );
 }

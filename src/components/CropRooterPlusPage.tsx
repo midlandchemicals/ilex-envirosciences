@@ -102,37 +102,37 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Sprout className="h-8 w-8 text-green-600" />,
+      icon: <Sprout className="h-8 w-8 text-[#6abf4b]" />,
       title: "Stimulates Early Rooting",
       description:
         "Promotes early root development for healthy plant establishment and development",
     },
     {
-      icon: <Target className="h-8 w-8 text-blue-600" />,
+      icon: <Target className="h-8 w-8 text-[#6abf4b]" />,
       title: "Foliar Nutrient + Biostimulant",
       description:
         "Combines foliar nutrient and biostimulant advantages in one application",
     },
     {
-      icon: <Shield className="h-8 w-8 text-purple-600" />,
+      icon: <Shield className="h-8 w-8 text-[#6abf4b]" />,
       title: "Winter Stress Resistance",
       description:
         "Potassium helps reduce environmental stresses during winter dormancy and frost damage",
     },
     {
-      icon: <Database className="h-8 w-8 text-orange-600" />,
+      icon: <Database className="h-8 w-8 text-[#6abf4b]" />,
       title: "Proven Independent Results",
       description:
         "Backed by extensive independent trial data showing consistent performance",
     },
     {
-      icon: <Droplets className="h-8 w-8 text-cyan-600" />,
+      icon: <Droplets className="h-8 w-8 text-[#6abf4b]" />,
       title: "Tank-Mix Compatibility",
       description:
         "Extensive tank-mix compatibility with flexible application timings",
     },
     {
-      icon: <Zap className="h-8 w-8 text-green-500" />,
+      icon: <Zap className="h-8 w-8 text-[#6abf4b]" />,
       title: "Concentrated Formula",
       description:
         "Formulated as a true solution with targeted, low application rates",
@@ -146,23 +146,23 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
       timing: "G.S.14-16 repeated @ T0, T1 & T2",
       description: "For maximum root stimulation and establishment",
       color: "bg-green-100 text-green-800",
-      icon: <Sprout className="h-5 w-5 text-green-600" />,
+      icon: <Sprout className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       type: "Standard Program",
       rate: "2 × 1.0 l/ha",
       timing: "G.S.14-16 and @ T2",
       description: "Balanced approach for consistent performance",
-      color: "bg-blue-100 text-blue-800",
-      icon: <Target className="h-5 w-5 text-blue-600" />,
+      color: "bg-green-100 text-green-800",
+      icon: <Target className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       type: "Stress Recovery",
       rate: "Up to 2.0 l/ha",
       timing: "As required for stressed/late crops",
       description: "Higher rates for challenging conditions",
-      color: "bg-orange-100 text-orange-800",
-      icon: <Shield className="h-5 w-5 text-orange-600" />,
+      color: "bg-green-100 text-green-800",
+      icon: <Shield className="h-5 w-5 text-[#6abf4b]" />,
     },
   ];
 
@@ -314,31 +314,31 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
         title: "Amino Acid Complex",
         description:
           "19 plant-derived amino acids provide building blocks for protein synthesis and enzyme function",
-        icon: <Atom className="h-6 w-6 text-blue-600" />,
+        icon: <Atom className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Root Development",
         description:
           "Stimulates early rooting for improved establishment and nutrient uptake capacity",
-        icon: <Sprout className="h-6 w-6 text-green-600" />,
+        icon: <Sprout className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Biostimulant Action",
         description:
           "Combines nutritional and biostimulant effects for enhanced plant performance",
-        icon: <Zap className="h-6 w-6 text-purple-600" />,
+        icon: <Zap className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Stress Tolerance",
         description:
           "Potassium content helps plants resist frost damage and environmental stresses",
-        icon: <Shield className="h-6 w-6 text-orange-600" />,
+        icon: <Shield className="h-6 w-6 text-[#6abf4b]" />,
       },
     ],
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
+    <div className="min-h-screen mt-10 bg-[#ececec]">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -346,14 +346,14 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-green-600/10 to-blue-600/10" />
+        <div className="absolute inset-0 bg-[#ececec]/50" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <Badge className="mb-4 bg-green-100 text-green-800 hover:bg-green-200 text-lg px-4 py-2">
+              <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
                 Next Generation Crop Biostimulant with 19 Amino Acids
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] bg-clip-text text-transparent">
                 Crop Rooter® Plus
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -371,7 +371,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-green-600 cursor-pointer hover:bg-green-700 text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-lg px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection(
                       "application-guidelines-croproooterplus"
@@ -384,7 +384,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg cursor-pointer px-8 py-4"
+                  className="text-[#6abf4b] cursor-pointer px-8 py-4 border-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
                     smoothScrollToSection("technical-resources-croproooterplus")
                   }
@@ -407,7 +407,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-green-400 to-blue-400 rounded-2xl opacity-20" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
             </motion.div>
           </div>
         </div>
@@ -520,15 +520,15 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-blue-50 border border-blue-200">
+            <Card className="bg-green-50 border border-green-200">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <Droplets className="h-6 w-6 text-blue-600 mt-1" />
+                  <Droplets className="h-6 w-6 text-green-600 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-blue-800">
+                    <h3 className="text-lg font-semibold mb-2 text-green-800">
                       Application Notes
                     </h3>
-                    <p className="text-blue-700">
+                    <p className="text-green-700">
                       Crop Rooter® Plus is formulated as a totally water-soluble
                       liquid and can be readily incorporated into most commonly
                       applied tank mixes.
@@ -543,7 +543,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
 
       {/* Independent Trials Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-gray-50 to-blue-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -561,7 +561,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
               <CardHeader>
                 <div className="flex items-center gap-3 mb-4">
-                  <Award className="h-8 w-8 text-green-600" />
+                  <Award className="h-8 w-8 text-[#6abf4b]" />
                   <CardTitle className="text-2xl">
                     NIAB TAG Independent Trials
                   </CardTitle>
@@ -585,14 +585,14 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
                       </p>
                     </div>
 
-                    <div className="text-center p-6 bg-blue-50 rounded-xl">
-                      <div className="text-4xl font-bold text-blue-600 mb-2">
+                    <div className="text-center p-6 bg-green-50 rounded-xl">
+                      <div className="text-4xl font-bold text-green-600 mb-2">
                         4.48%
                       </div>
-                      <p className="text-lg text-blue-800">
+                      <p className="text-lg text-green-800">
                         Overall Yield Increase
                       </p>
-                      <p className="text-sm text-blue-700 mt-2">
+                      <p className="text-sm text-green-700 mt-2">
                         With follow-up applications
                       </p>
                     </div>
@@ -642,7 +642,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
             </div>
 
             {/* Northamptonshire Trial */}
-            <Card className="bg-white/90 backdrop-blur-sm">
+            <Card className="bg-white/80 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-xl">
                   Northamptonshire (Winter Wheat var. Crusoe) - 2021
@@ -661,7 +661,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
                           name === "yield" ? "Yield" : "Increase",
                         ]}
                       />
-                      <Bar dataKey="yield" fill="#059669" />
+                      <Bar dataKey="yield" fill="#6abf4b" />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
@@ -673,7 +673,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
             </Card>
 
             {/* Lincolnshire Trial */}
-            <Card className="bg-white/90 backdrop-blur-sm">
+            <Card className="bg-white/80 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-xl">
                   Lincolnshire (Winter Wheat var. SISKIN) - 2020
@@ -692,7 +692,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
                           name === "yield" ? "Yield" : "Increase",
                         ]}
                       />
-                      <Bar dataKey="yield" fill="#2563eb" />
+                      <Bar dataKey="yield" fill="#6abf4b" />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
@@ -704,7 +704,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
             </Card>
 
             {/* Statistical Confidence */}
-            <Card className="bg-gradient-to-r from-green-50 to-blue-50 border-green-200">
+            <Card className="bg-gradient-to-r from-green-50 to-green-100 border border-green-200">
               <CardContent className="p-8">
                 <div className="text-center">
                   <div className="text-5xl font-bold text-green-600 mb-4">
@@ -734,7 +734,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
             </Card>
 
             {/* Spring Barley Trials 2023 */}
-            <Card className="bg-white/90 backdrop-blur-sm">
+            <Card className="bg-white/80 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-xl">
                   Spring Barley Trials 2023 - Velcourt
@@ -764,28 +764,28 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
                             "Yield Response",
                           ]}
                         />
-                        <Bar dataKey="response" fill="#7c3aed" />
+                        <Bar dataKey="response" fill="#6abf4b" />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
 
                   <div className="space-y-6">
-                    <div className="text-center p-4 bg-purple-50 rounded-lg">
-                      <div className="text-3xl font-bold text-purple-600 mb-2">
+                    <div className="text-center p-4 bg-green-50 rounded-lg">
+                      <div className="text-3xl font-bold text-green-600 mb-2">
                         0.152 t/ha
                       </div>
-                      <p className="text-purple-800">Average Yield Response</p>
+                      <p className="text-green-800">Average Yield Response</p>
                     </div>
 
                     <div className="space-y-3">
                       <div className="flex items-center gap-2">
-                        <Star className="h-5 w-5 text-yellow-500" />
+                        <Star className="h-5 w-5 text-green-500" />
                         <span className="text-gray-700">
                           10 statistically significant yield increases
                         </span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Database className="h-5 w-5 text-blue-500" />
+                        <Database className="h-5 w-5 text-green-500" />
                         <span className="text-gray-700">
                           Four geographically diverse sites
                         </span>
@@ -814,7 +814,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
 
       {/* Contact Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-green-600 to-blue-600 text-white"
+        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -886,7 +886,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-white text-green-600 hover:bg-gray-100"
+                    className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
                   >
                     Submit Enquiry
                   </Button>

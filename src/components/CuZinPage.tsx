@@ -95,31 +95,31 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
         "Maintains increased levels of copper and zinc in the plant for extended periods of growth, maximizing pollen production and enhancing grain-fill",
     },
     {
-      icon: <Sparkles className="h-8 w-8 text-blue-600" />,
+      icon: <Sparkles className="h-8 w-8 text-green-600" />,
       title: "High Concentration Formula",
       description:
         "High concentration of copper (12% w/v) with zinc (36% w/v) for maximum efficiency and performance",
     },
     {
-      icon: <Target className="h-8 w-8 text-purple-600" />,
+      icon: <Target className="h-8 w-8 text-green-600" />,
       title: "Effective at Low Application Rates",
       description:
         "Delivers superior results at low application rates, reducing costs and handling while maintaining effectiveness",
     },
     {
-      icon: <Droplets className="h-8 w-8 text-cyan-600" />,
+      icon: <Droplets className="h-8 w-8 text-green-600" />,
       title: "Disperses Quickly in Tank",
       description:
         "Specially formulated to disperse quickly in the spray tank for easy application and uniform distribution",
     },
     {
-      icon: <Shield className="h-8 w-8 text-green-500" />,
+      icon: <Shield className="h-8 w-8 text-green-600" />,
       title: "Rainfast on Leaf Surface",
       description:
         "Trials have shown that the formulation is rainfast on the leaf surface soon after application",
     },
     {
-      icon: <CheckCircle className="h-8 w-8 text-orange-600" />,
+      icon: <CheckCircle className="h-8 w-8 text-green-600" />,
       title: "Extensively Compatibility Tested",
       description:
         "Extensively tested with a wide range of pesticides and found physically compatible with the vast majority of approved agrochemicals",
@@ -132,15 +132,15 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
       rate: "0.50 – 0.75 l/ha",
       description:
         "For preventing copper and zinc deficiencies in healthy crops",
-      color: "bg-green-100 text-green-800",
+      color: "bg-green-50 text-green-800",
       icon: <Shield className="h-5 w-5 text-green-600" />,
     },
     {
       type: "Deficiency Rate",
       rate: "1.00 – 1.50 l/ha",
       description: "For correcting existing copper and zinc deficiencies",
-      color: "bg-orange-100 text-orange-800",
-      icon: <Zap className="h-5 w-5 text-orange-600" />,
+      color: "bg-green-100 text-green-700",
+      icon: <Zap className="h-5 w-5 text-green-600" />,
     },
   ];
 
@@ -226,7 +226,7 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
         title: "Copper Enzyme Function",
         description:
           "Copper is essential for enzyme systems involved in photosynthesis and lignin formation",
-        icon: <Atom className="h-6 w-6 text-blue-600" />,
+        icon: <Atom className="h-6 w-6 text-green-600" />,
       },
       {
         title: "Zinc Metabolism",
@@ -238,19 +238,19 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
         title: "Extended Availability",
         description:
           "Formulated for sustained release and extended nutrient availability in plant tissues",
-        icon: <Timer className="h-6 w-6 text-purple-600" />,
+        icon: <Timer className="h-6 w-6 text-green-600" />,
       },
       {
         title: "Compatibility Tested",
         description:
           "Extensively tested with pesticides and found compatible with the vast majority of agrochemicals",
-        icon: <Shield className="h-6 w-6 text-orange-600" />,
+        icon: <Shield className="h-6 w-6 text-green-600" />,
       },
     ],
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
+    <div className="min-h-screen mt-10 bg-white">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -258,14 +258,14 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-green-600/10 to-blue-600/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#6abf4b]/10 to-[#5aa338]/10" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <Badge className="mb-4 bg-orange-100 text-orange-800 hover:bg-orange-200 text-lg px-4 py-2">
+              <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
                 High Concentration Copper & Zinc Micronutrients
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
                 Cu-Zin™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -285,7 +285,7 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-orange-600 cursor-pointer hover:bg-orange-700 text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-lg px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection("application-guidelines-cuzin")
                   }
@@ -319,7 +319,7 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-orange-400 to-blue-400 rounded-2xl opacity-20" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
             </motion.div>
           </div>
         </div>
@@ -330,7 +330,7 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
 
       {/* Key Benefits Section */}
       <motion.section
-        className="py-20 px-4 bg-white/50"
+        className="py-20 px-4 bg-white"
         variants={staggerContainer}
         initial="initial"
         whileInView="animate"
@@ -382,10 +382,10 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
             <div>
               <h2 className="text-4xl font-bold mb-8">Technical Analysis</h2>
               <div className="space-y-6">
-                <Card className="border-0 bg-gradient-to-r from-orange-50 to-blue-50">
+                <Card className="border-0 bg-green-50">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <FlaskConical className="h-6 w-6 text-orange-600" />
+                      <FlaskConical className="h-6 w-6 text-green-600" />
                       <h3 className="text-xl font-semibold">
                         Micronutrient Composition
                       </h3>
@@ -420,10 +420,10 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
                   </CardContent>
                 </Card>
 
-                <Card className="border-0 bg-gradient-to-r from-blue-50 to-purple-50">
+                <Card className="border-0 bg-green-50">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <Atom className="h-6 w-6 text-blue-600" />
+                      <Atom className="h-6 w-6 text-green-600" />
                       <h3 className="text-xl font-semibold">
                         High Concentration Formula
                       </h3>
@@ -434,33 +434,17 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
                     </p>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="text-center p-3 bg-white/50 rounded-lg">
-                        <p className="text-2xl font-bold text-orange-600 mb-1">
+                        <p className="text-2xl font-bold text-green-600 mb-1">
                           36%
                         </p>
                         <p className="text-sm text-gray-600">Zinc Content</p>
                       </div>
                       <div className="text-center p-3 bg-white/50 rounded-lg">
-                        <p className="text-2xl font-bold text-blue-600 mb-1">
+                        <p className="text-2xl font-bold text-green-600 mb-1">
                           12%
                         </p>
                         <p className="text-sm text-gray-600">Copper Content</p>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-0 bg-gradient-to-r from-purple-50 to-pink-50">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Package className="h-6 w-6 text-purple-600" />
-                      <h3 className="text-xl font-semibold">
-                        Pack Sizes Available
-                      </h3>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      <Badge variant="secondary" className="text-lg px-3 py-1">
-                        2 × 5L
-                      </Badge>
                     </div>
                   </CardContent>
                 </Card>
@@ -535,15 +519,15 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-red-50 border border-red-200">
+            <Card className="bg-green-50 border border-green-200">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-red-600 mt-1" />
+                  <CheckCircle className="h-6 w-6 text-green-600 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-red-800">
+                    <h3 className="text-lg font-semibold mb-2 text-green-800">
                       Severe Deficiency Treatment
                     </h3>
-                    <p className="text-red-700">
+                    <p className="text-green-700">
                       In the case of severe zinc and copper deficiencies, repeat
                       applications at the 1 l/ha rate are recommended until
                       symptoms are corrected.
@@ -558,7 +542,7 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
 
       {/* Compatibility Highlight Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-blue-50 to-green-50"
+        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -572,15 +556,15 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
 
           <div className="grid lg:grid-cols-3 gap-8 items-center">
             <div className="space-y-6">
-              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <Card className="bg-green-50 border-0 shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <Shield className="h-8 w-8 text-blue-600" />
-                    <h3 className="text-xl font-semibold">
+                    <Shield className="h-8 w-8 text-green-600" />
+                    <h3 className="text-xl font-semibold text-green-800">
                       Wide Compatibility
                     </h3>
                   </div>
-                  <p className="text-gray-600">
+                  <p className="text-green-700">
                     Extensively tested with a wide range of pesticides and found
                     physically compatible with the vast majority of approved
                     agrochemicals.
@@ -588,13 +572,15 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <Card className="bg-green-50 border-0 shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <Droplets className="h-8 w-8 text-cyan-600" />
-                    <h3 className="text-xl font-semibold">Quick Dispersion</h3>
+                    <Droplets className="h-8 w-8 text-green-600" />
+                    <h3 className="text-xl font-semibold text-green-800">
+                      Quick Dispersion
+                    </h3>
                   </div>
-                  <p className="text-gray-600">
+                  <p className="text-green-700">
                     Specially formulated to disperse quickly in the spray tank,
                     ensuring easy mixing and uniform application.
                   </p>
@@ -604,26 +590,28 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
 
             <div className="text-center">
               <div className="relative">
-                <div className="w-48 h-48 mx-auto bg-gradient-to-br from-orange-100 to-blue-100 rounded-full flex items-center justify-center shadow-xl">
+                <div className="w-48 h-48 mx-auto bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center shadow-xl">
                   <div className="text-center">
-                    <FlaskConical className="h-16 w-16 text-orange-600 mx-auto mb-2" />
-                    <p className="text-xl font-semibold text-gray-800">
+                    <FlaskConical className="h-16 w-16 text-green-600 mx-auto mb-2" />
+                    <p className="text-xl font-semibold text-green-800">
                       Extensively
                     </p>
-                    <p className="text-lg text-gray-600">Tested</p>
+                    <p className="text-lg text-green-700">Tested</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="space-y-6">
-              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <Card className="bg-green-50 border-0 shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <Sparkles className="h-8 w-8 text-green-600" />
-                    <h3 className="text-xl font-semibold">Rainfast Formula</h3>
+                    <h3 className="text-xl font-semibold text-green-800">
+                      Rainfast Formula
+                    </h3>
                   </div>
-                  <p className="text-gray-600">
+                  <p className="text-green-700">
                     Trials have shown that the formulation is rainfast on the
                     leaf surface soon after application, ensuring reliable
                     performance.
@@ -631,21 +619,63 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <Card className="bg-green-50 border-0 shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <Timer className="h-8 w-8 text-purple-600" />
-                    <h3 className="text-xl font-semibold">
+                    <Timer className="h-8 w-8 text-green-600" />
+                    <h3 className="text-xl font-semibold text-green-800">
                       Extended Nutrition
                     </h3>
                   </div>
-                  <p className="text-gray-600">
+                  <p className="text-green-700">
                     Maintains increased levels of copper and zinc in plants for
                     extended periods, maximizing nutritional benefits.
                   </p>
                 </CardContent>
               </Card>
             </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Pack Sizes Available Section */}
+      <motion.section
+        className="py-20 px-4 bg-[#ececec]"
+        {...fadeInUp}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-6">Pack Sizes Available</h2>
+            <p className="text-xl text-gray-600">
+              Convenient sizes for all farming operations
+            </p>
+          </div>
+          <div className="max-w-xl mx-auto">
+            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <Package className="h-8 w-8 text-green-600" />
+                  <h3 className="text-2xl font-semibold">
+                    Available Pack Sizes
+                  </h3>
+                </div>
+                <div className="grid md:grid-cols-1 gap-6">
+                  <div className="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      2 × 5L
+                    </Badge>
+                    <p className="text-gray-600">
+                      Ideal for small to medium-sized users and convenient
+                      handling
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </motion.section>
@@ -659,7 +689,7 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
 
       {/* Contact Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-orange-600 to-blue-600 text-white"
+        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -731,7 +761,7 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-white text-orange-600 hover:bg-gray-100"
+                    className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
                   >
                     Submit Enquiry
                   </Button>

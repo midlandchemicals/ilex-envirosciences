@@ -82,36 +82,36 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Activity className="h-8 w-8 text-purple-600" />,
+      icon: <Activity className="h-8 w-8 text-[#6abf4b]" />,
       title: "High Levels of Manganese",
       description:
         "12.5% manganese content counters low availability for optimal enzyme function",
     },
     {
-      icon: <Target className="h-8 w-8 text-green-600" />,
+      icon: <Target className="h-8 w-8 text-[#6abf4b]" />,
       title: "Essential Elements Readily Available",
       description:
         "Nutrients immediately available to germinating seed when needed most",
     },
     {
-      icon: <Sprout className="h-8 w-8 text-blue-600" />,
+      icon: <Sprout className="h-8 w-8 text-[#6abf4b]" />,
       title: "Promotes Root and Shoot Development",
       description:
         "Enhanced early growth and establishment for stronger crop foundation",
     },
     {
-      icon: <Snowflake className="h-8 w-8 text-cyan-600" />,
+      icon: <Snowflake className="h-8 w-8 text-[#6abf4b]" />,
       title: "Winter Hardiness Enhancement",
       description:
         "Promotes winter hardiness in autumn sown crops for better survival",
     },
     {
-      icon: <Award className="h-8 w-8 text-orange-600" />,
+      icon: <Award className="h-8 w-8 text-[#6abf4b]" />,
       title: "Increases Quality and Yield Potential",
       description: "Enhanced crop performance through improved nutrient status",
     },
     {
-      icon: <Droplets className="h-8 w-8 text-yellow-600" />,
+      icon: <Droplets className="h-8 w-8 text-[#6abf4b]" />,
       title: "True Solution Application",
       description:
         "Even application to seed with efficient coverage and quick drying",
@@ -123,15 +123,15 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
       crop: "Cereals",
       rate: "3.0 litres per tonne of seed",
       notes: "Enhanced establishment and winter hardiness",
-      color: "bg-yellow-100 text-yellow-800",
-      icon: <Wheat className="h-5 w-5 text-yellow-600" />,
+      color: "bg-green-100 text-green-800",
+      icon: <Wheat className="h-5 w-5 text-green-600" />,
     },
     {
       crop: "Oilseed Rape",
       rate: "3.0 litres per tonne of seed",
       notes: "Improved winter survival and spring vigour",
-      color: "bg-blue-100 text-blue-800",
-      icon: <Flower className="h-5 w-5 text-blue-600" />,
+      color: "bg-green-100 text-green-800",
+      icon: <Flower className="h-5 w-5 text-green-600" />,
     },
   ];
 
@@ -201,31 +201,31 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
         title: "Manganese Functions",
         description:
           "Essential for photosynthesis, enzyme activation, and chlorophyll synthesis",
-        icon: <Activity className="h-6 w-6 text-purple-600" />,
+        icon: <Activity className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Nitrate Nitrogen",
         description:
           "Immediately available nitrogen source for rapid early growth",
-        icon: <Zap className="h-6 w-6 text-green-600" />,
+        icon: <Zap className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Winter Hardiness",
         description:
           "Enhanced cold tolerance and survival in autumn-sown crops",
-        icon: <Snowflake className="h-6 w-6 text-blue-600" />,
+        icon: <Snowflake className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Seed Flow Technology",
         description:
           "Maintains even seed flow in drilling equipment for uniform establishment",
-        icon: <Target className="h-6 w-6 text-orange-600" />,
+        icon: <Target className="h-6 w-6 text-[#6abf4b]" />,
       },
     ],
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50">
+    <div className="min-h-screen mt-10 bg-[#ececec]">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -233,14 +233,14 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-blue-600/10" />
+        <div className="absolute inset-0 bg-[#ececec]/50" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <Badge className="mb-4 bg-purple-100 text-purple-800 hover:bg-purple-200 text-lg px-4 py-2">
+              <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
                 Manganese Seed Treatment for Cereals & Oilseed Rape
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] bg-clip-text text-transparent">
                 Man-uP
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -257,9 +257,9 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-purple-600 cursor-pointer hover:bg-purple-700 text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-lg px-8 py-4"
                   onClick={() =>
-                    smoothScrollToSection("application-guidelines-maniphos")
+                    smoothScrollToSection("application-guidelines-manup")
                   }
                 >
                   Application Guidlines
@@ -268,9 +268,9 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg cursor-pointer px-8 py-4"
+                  className="text-lg cursor-pointer px-8 py-4 border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
-                    smoothScrollToSection("technical-resources-maniphos")
+                    smoothScrollToSection("technical-resources-manup")
                   }
                 >
                   View Technical Resources
@@ -291,7 +291,7 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-purple-400 to-blue-400 rounded-2xl opacity-20" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
             </motion.div>
           </div>
         </div>
@@ -345,7 +345,7 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
 
       {/* Manganese Technology Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-purple-50 to-blue-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -364,14 +364,14 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <Activity className="h-8 w-8 text-purple-600" />
+                    <Activity className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-2xl font-semibold">
                       Advanced Seed Treatment Formula
                     </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="flex items-start gap-3">
-                      <Activity className="h-6 w-6 text-purple-600 mt-1" />
+                      <Activity className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           High Manganese Content
@@ -385,7 +385,7 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Zap className="h-6 w-6 text-green-600 mt-1" />
+                      <Zap className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">Nitrate Nitrogen</h4>
                         <p className="text-gray-600">
@@ -396,7 +396,7 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Droplets className="h-6 w-6 text-blue-600 mt-1" />
+                      <Droplets className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Surfactant Technology
@@ -409,11 +409,11 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
                       </div>
                     </div>
 
-                    <div className="bg-purple-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-purple-800 mb-2">
+                    <div className="bg-green-50 rounded-lg p-4">
+                      <h4 className="font-semibold text-green-800 mb-2">
                         Winter Hardiness
                       </h4>
-                      <p className="text-purple-700">
+                      <p className="text-green-700">
                         Specially formulated to promote winter hardiness in
                         autumn-sown crops for enhanced survival and spring
                         vigour.
@@ -441,7 +441,7 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
         {...fadeInUp}
         viewport={{ once: true }}
       >
-        <div id="application-guidelines-maniphos" className="max-w-7xl mx-auto">
+        <div id="application-guidelines-manup" className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Application Guidelines</h2>
             <p className="text-xl text-gray-600">
@@ -487,15 +487,15 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-blue-50 border border-blue-200">
+            <Card className="bg-green-50 border border-green-200">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <Droplets className="h-6 w-6 text-blue-600 mt-1" />
+                  <Droplets className="h-6 w-6 text-green-600 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-blue-800">
+                    <h3 className="text-lg font-semibold mb-2 text-green-800">
                       Application Method
                     </h3>
-                    <p className="text-blue-700">
+                    <p className="text-green-700">
                       Apply directly to the seed or after pre-diluting with
                       water. Formulated as a totally water-soluble liquid.
                       Agitate prior to use and apply through existing seed
@@ -529,7 +529,7 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-blue-50 to-purple-50"
+        className="py-20 px-4 bg-white/50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -545,12 +545,12 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-purple-600" />
+                  <Package className="h-8 w-8 text-[#6abf4b]" />
                   <h3 className="text-2xl font-semibold">
                     Available Pack Sizes
                   </h3>
                 </div>
-                <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-blue-50 rounded-lg">
+                <div className="text-center p-6 bg-green-50 rounded-lg">
                   <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">
                     20L
                   </Badge>
@@ -567,14 +567,14 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
 
       {/* PDF Links Section */}
       <PDFLinks
-        id="technical-resources-maniphos"
+        id="technical-resources-manup"
         productName="Man-uP"
         links={pdfLinks}
       />
 
       {/* Contact Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white"
+        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -646,7 +646,7 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-white text-purple-600 hover:bg-gray-100"
+                    className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
                   >
                     Submit Enquiry
                   </Button>

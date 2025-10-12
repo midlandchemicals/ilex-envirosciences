@@ -92,7 +92,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Rocket className="h-8 w-8 text-blue-600" />,
+      icon: <Rocket className="h-8 w-8 text-green-600" />,
       title: "Complete Multi-Nutrient Solution",
       description:
         "Comprehensive nutrition package delivering multiple essential nutrients in one application",
@@ -104,25 +104,25 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
         "Quick-acting formulation provides immediate nutrient availability for rapid plant uptake",
     },
     {
-      icon: <Target className="h-8 w-8 text-purple-600" />,
+      icon: <Target className="h-8 w-8 text-green-600" />,
       title: "Broad Spectrum Application",
       description:
         "Suitable for wide range of arable and horticultural crops throughout growing season",
     },
     {
-      icon: <Activity className="h-8 w-8 text-orange-600" />,
+      icon: <Activity className="h-8 w-8 text-green-600" />,
       title: "Enhanced Crop Performance",
       description:
         "Optimizes plant metabolism and photosynthesis for improved yield and quality",
     },
     {
-      icon: <Shield className="h-8 w-8 text-cyan-600" />,
+      icon: <Shield className="h-8 w-8 text-green-600" />,
       title: "Stress Resilience",
       description:
         "Improves plant tolerance to environmental and physiological stress conditions",
     },
     {
-      icon: <Award className="h-8 w-8 text-red-600" />,
+      icon: <Award className="h-8 w-8 text-green-600" />,
       title: "Cost-Effective Nutrition",
       description:
         "Multiple nutrients delivered efficiently in single application reducing labor costs",
@@ -149,8 +149,8 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
           notes: "Quality enhancement",
         },
       ],
-      color: "bg-yellow-100 text-yellow-800",
-      icon: <Wheat className="h-5 w-5 text-yellow-600" />,
+      color: "bg-[#e6f4df] text-[#5aa338]",
+      icon: <Wheat className="h-5 w-5 text-green-600" />,
     },
     {
       crop: "Oilseed Rape",
@@ -166,8 +166,8 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
           notes: "Pre-flowering support",
         },
       ],
-      color: "bg-blue-100 text-blue-800",
-      icon: <Flower className="h-5 w-5 text-blue-600" />,
+      color: "bg-[#e6f4df] text-[#5aa338]",
+      icon: <Flower className="h-5 w-5 text-green-600" />,
     },
     {
       crop: "Sugar Beet",
@@ -183,7 +183,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
           notes: "Growth optimization",
         },
       ],
-      color: "bg-green-100 text-green-800",
+      color: "bg-[#e6f4df] text-[#5aa338]",
       icon: <Sprout className="h-5 w-5 text-green-600" />,
     },
     {
@@ -200,8 +200,8 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
           notes: "Yield optimization",
         },
       ],
-      color: "bg-orange-100 text-orange-800",
-      icon: <Leaf className="h-5 w-5 text-orange-600" />,
+      color: "bg-[#e6f4df] text-[#5aa338]",
+      icon: <Leaf className="h-5 w-5 text-green-600" />,
     },
   ];
 
@@ -295,7 +295,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
         title: "Complete Nutrition",
         description:
           "All essential macro and micronutrients in balanced formulation",
-        icon: <Rocket className="h-6 w-6 text-blue-600" />,
+        icon: <Rocket className="h-6 w-6 text-green-600" />,
       },
       {
         title: "Synergistic Action",
@@ -307,19 +307,19 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
         title: "Rapid Availability",
         description:
           "Foliar application ensures immediate nutrient availability",
-        icon: <Zap className="h-6 w-6 text-purple-600" />,
+        icon: <Zap className="h-6 w-6 text-green-600" />,
       },
       {
         title: "Stress Mitigation",
         description:
           "Helps plants overcome nutritional and environmental stress",
-        icon: <Shield className="h-6 w-6 text-orange-600" />,
+        icon: <Shield className="h-6 w-6 text-green-600" />,
       },
     ],
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+    <div className="min-h-screen mt-10 bg-[#ececec]">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -327,14 +327,14 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-green-600/10" />
+        <div className="absolute inset-0 bg-[#ececec]/50" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200 text-lg px-4 py-2">
+              <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
                 Complete Multi-Nutrient Foliar Solution
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
                 Foliar Boost™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -352,7 +352,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-white text-lg px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection("application-guidelines-filiarboost")
                   }
@@ -363,7 +363,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg cursor-pointer px-8 py-4"
+                  className="text-lg cursor-pointer px-8 py-4 border-gray-400 text-gray-700"
                   onClick={() =>
                     smoothScrollToSection("technical-resources-filiarboost")
                   }
@@ -386,7 +386,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
                   className="w-full h-96 object-cover rounded-2xl shadow-2xl"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-blue-400 to-green-400 rounded-2xl opacity-20" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
             </motion.div>
           </div>
         </div>
@@ -440,7 +440,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
 
       {/* Multi-Nutrient Technology Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-blue-50 to-green-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -459,14 +459,14 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <Rocket className="h-8 w-8 text-blue-600" />
+                    <Rocket className="h-8 w-8 text-green-600" />
                     <h3 className="text-2xl font-semibold">
                       Complete Nutrition Package
                     </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="flex items-start gap-3">
-                      <FlaskConical className="h-6 w-6 text-blue-600 mt-1" />
+                      <FlaskConical className="h-6 w-6 text-green-600 mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">Major Nutrients</h4>
                         <p className="text-gray-600">
@@ -491,7 +491,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Sparkles className="h-6 w-6 text-purple-600 mt-1" />
+                      <Sparkles className="h-6 w-6 text-green-600 mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">Micronutrients</h4>
                         <p className="text-gray-600">
@@ -501,11 +501,11 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
                       </div>
                     </div>
 
-                    <div className="bg-blue-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-blue-800 mb-2">
+                    <div className="bg-[#e6f4df] rounded-lg p-4">
+                      <h4 className="font-semibold text-[#5aa338] mb-2">
                         Synergistic Formula
                       </h4>
-                      <p className="text-blue-700">
+                      <p className="text-[#5aa338]">
                         All nutrients work together to optimize plant
                         metabolism, stress tolerance, and overall crop
                         performance.
@@ -594,15 +594,15 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-green-50 border border-green-200">
+            <Card className="bg-[#e6f4df] border border-[#c6e2b8]">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
                   <Droplets className="h-6 w-6 text-green-600 mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-green-800">
+                    <h3 className="text-lg font-semibold mb-2 text-[#5aa338]">
                       Application Method
                     </h3>
-                    <p className="text-green-700">
+                    <p className="text-[#5aa338]">
                       Apply in 200-400 l/ha of water. Ensure thorough coverage
                       for optimal uptake. Can be repeated throughout the growing
                       season as required.
@@ -617,7 +617,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-green-50 to-blue-50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -633,13 +633,13 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-blue-600" />
+                  <Package className="h-8 w-8 text-green-600" />
                   <h3 className="text-2xl font-semibold">
                     Available Pack Sizes
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-green-50 rounded-lg">
+                  <div className="text-center p-6 bg-white/80 rounded-lg backdrop-blur-sm">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -651,7 +651,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
                       multi-application schedules
                     </p>
                   </div>
-                  <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-green-50 rounded-lg">
+                  <div className="text-center p-6 bg-white/80 rounded-lg backdrop-blur-sm">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -679,7 +679,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
 
       {/* Contact Section */}
       <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-blue-600 to-green-600 text-white"
+        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -751,7 +751,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
                   />
                   <Button
                     type="submit"
-                    className="w-full bg-white text-blue-600 hover:bg-gray-100"
+                    className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
                   >
                     Submit Enquiry
                   </Button>

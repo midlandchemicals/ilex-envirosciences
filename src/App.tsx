@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Navigation } from "./components/Navigation";
-import { HomePage } from "./components/HomePage";
+import { HomePage } from "./components/HomePageNew";
 import { CategoryPage } from "./components/CategoryPage";
 import { ScrollToTopInstant } from "./components/ScrollToTop";
 import { MagPlusPage } from "./components/MagPlusPage";
@@ -98,6 +98,13 @@ const categoryData = {
       { product: "Start-uP®", link: "start-up" },
       { product: "ProZest™", link: "prozest" },
       { product: "Man-uP™", link: "man-up" },
+    ],
+  },
+  "water-conditioners": {
+    title: "Water Conditioners",
+    link: "water-conditioners",
+    products: [
+      { product: "ModipHy Xtra™", link: "modiphy-xtra" },
     ],
   },
   "organic-range": {
