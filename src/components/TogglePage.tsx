@@ -14,6 +14,7 @@ import { Badge } from "./ui/badge";
 import { Separator } from "./ui/separator";
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
+import { AnalysisPieChart } from "./AnalysisPieChart";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import {
   Leaf,
@@ -151,55 +152,61 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
       rate: "1.5-3.0 l/ha",
       timing:
         "Apply during early tillering stage for enhanced root development and establishment",
-      color: "bg-green-100 text-green-800",
-      icon: <Wheat className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Wheat className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Cereals - Stem Elongation",
       rate: "1.5-3.0 l/ha",
       timing:
         "Apply during stem elongation to support rapid growth and stress tolerance",
-      color: "bg-green-100 text-green-800",
-      icon: <TrendingUp className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <TrendingUp className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Cereals - Flag Leaf",
       rate: "1.5-3.0 l/ha",
       timing:
         "Apply at flag leaf stage to optimize grain development and quality",
-      color: "bg-green-100 text-green-800",
-      icon: <Leaf className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Leaf className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Oilseed Rape - 3 Weeks Post Emergence",
       rate: "1.5-3.0 l/ha",
       timing: "Apply 3 weeks after emergence for strong establishment",
-      color: "bg-green-100 text-green-800",
-      icon: <Sprout className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Sprout className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Oilseed Rape - Stem Extension",
       rate: "1.5-3.0 l/ha",
       timing: "Apply during stem extension to support rapid growth phase",
-      color: "bg-green-100 text-green-800",
-      icon: <Activity className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Activity className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Oilseed Rape - Pod Set",
       rate: "1.5-3.0 l/ha",
       timing: "Apply at pod set stage for enhanced yield and oil quality",
-      color: "bg-green-100 text-green-800",
-      icon: <Target className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Target className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Peas & Beans",
       rate: "2.0-4.0 l/ha",
       timing:
         "Apply at 2-3 weeks post emergence. Repeat at 14-21 day intervals",
-      color: "bg-green-100 text-green-800",
-      icon: <Apple className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Apple className="h-5 w-5 text-[#6abf4b]" />,
     },
   ];
+
+  const analysisData = {
+    "Organic Matter": "High",
+    "Bioactive Compounds": "Balanced",
+    "Stress Resistance": "Enhanced",
+  };
 
   const pdfLinks = [
     {
@@ -311,7 +318,7 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-[#ececec]/50" />
+        <div className="absolute inset-0 bg-[#6abf4b]/20" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
@@ -343,7 +350,7 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
                     smoothScrollToSection("application-guidelines-togglepage")
                   }
                 >
-                  Application Guidlines
+                  Application Guidelines
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
@@ -360,19 +367,41 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
             </motion.div>
 
             <motion.div
-              className="relative"
-              initial={{ opacity: 0, scale: 0.8 }}
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -3 }}
             >
-              <div className="relative z-10">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600&h=400&fit=crop"
-                  alt="Toggle - Broadfield Crop Biostimulant"
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-                />
+              {/* Main image container */}
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600&h=400&fit=crop"
+                    alt="Toggle - Broadfield Crop Biostimulant"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+              >
+                Broadfield Specialist
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -418,6 +447,12 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
         </div>
       </motion.section>
 
+      {/* Analysis Pie Chart */}
+      <AnalysisPieChart
+        analysis={analysisData}
+        title="Toggle Biostimulant Composition"
+      />
+
       {/* Broadfield Technology Section */}
       <motion.section
         className="py-20 px-4 bg-[#ececec]"
@@ -446,41 +481,41 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
                     </h3>
                   </div>
                   <div className="space-y-6">
-                    <div className="p-4 bg-green-50 rounded-lg">
-                      <h4 className="font-semibold text-green-800 mb-2">
+                    <div className="p-4 bg-[#6abf4b]/10 rounded-lg">
+                      <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Cost-Effective Application
                       </h4>
-                      <p className="text-green-700 text-sm">
+                      <p className="text-[#6abf4b] text-sm">
                         Super-value formulation designed for large-scale
                         broadfield crop production
                       </p>
                     </div>
 
-                    <div className="p-4 bg-green-50 rounded-lg">
-                      <h4 className="font-semibold text-green-800 mb-2">
+                    <div className="p-4 bg-[#6abf4b]/10 rounded-lg">
+                      <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Easy-to-Use Liquid
                       </h4>
-                      <p className="text-green-700 text-sm">
+                      <p className="text-[#6abf4b] text-sm">
                         Free from solids with pH suited to efficient uptake and
                         maximum tank-mix compatibility
                       </p>
                     </div>
 
-                    <div className="p-4 bg-green-50 rounded-lg">
-                      <h4 className="font-semibold text-green-800 mb-2">
+                    <div className="p-4 bg-[#6abf4b]/10 rounded-lg">
+                      <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Preventative & Curative
                       </h4>
-                      <p className="text-green-700 text-sm">
+                      <p className="text-[#6abf4b] text-sm">
                         Routine preventative treatment with excellent curative
                         properties for stress recovery
                       </p>
                     </div>
 
-                    <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-4">
-                      <h4 className="font-semibold text-green-800 mb-2">
+                    <div className="bg-[#6abf4b]/10 rounded-lg p-4">
+                      <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Natural Compounds
                       </h4>
-                      <p className="text-green-700 text-sm">
+                      <p className="text-[#6abf4b] text-sm">
                         Contains naturally balanced plant nutrients, vitamins,
                         and active compounds derived from North Atlantic
                         Ascophyllum nodosum.
@@ -491,13 +526,61 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
               </Card>
             </div>
 
-            <div>
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600&h=400&fit=crop"
-                alt="Broadfield Crop Production"
-                className="w-full h-80 object-cover rounded-2xl shadow-xl"
-              />
-            </div>
+            <motion.div
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600&h=400&fit=crop"
+                    alt="Broadfield Crop Production"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+              </div>
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+              >
+                Super-Value Formulation
+              </motion.div>
+            </motion.div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <Card className="inline-block bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Package className="h-6 w-6 text-[#6abf4b]" />
+                  <h3 className="text-xl font-semibold">
+                    Pack Sizes Available
+                  </h3>
+                </div>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <Badge variant="secondary" className="text-lg px-3 py-1">
+                    2 × 10L
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </motion.section>
@@ -536,14 +619,16 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
                       <CardTitle className="text-lg">{crop.crop}</CardTitle>
                     </div>
                     <div className="text-center p-3 bg-gray-50 rounded-lg mb-3">
-                      <Badge className={`${crop.color} text-lg px-3 py-1 mb-2`}>
+                      <Badge
+                        className={`${crop.color} text-lg px-3 py-1 mb-2 hover:bg-[#6abf4b]/20`}
+                      >
                         {crop.rate}
                       </Badge>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <div className="flex items-start gap-2">
-                      <Clock className="h-4 w-4 text-gray-500 mt-1 flex-shrink-0" />
+                      <Clock className="h-4 w-4 text-[#6abf4b] mt-1 flex-shrink-0" />
                       <p className="text-sm text-gray-600">{crop.timing}</p>
                     </div>
                   </CardContent>
@@ -559,15 +644,15 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-green-50 border border-green-200">
+            <Card className="bg-[#6abf4b]/10 border border-[#6abf4b]/20">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <Droplets className="h-6 w-6 text-green-600 mt-1" />
+                  <Droplets className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-green-800">
+                    <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Application Method
                     </h3>
-                    <p className="text-green-700">
+                    <p className="text-gray-700">
                       Recommended for application as a foliar spray at water
                       rates of 100-300 l/ha depending on the crop and growth
                       stage. Formulated as an easy-to-use liquid free from
@@ -579,15 +664,15 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
               </CardContent>
             </Card>
 
-            <Card className="bg-green-50 border border-green-200">
+            <Card className="bg-[#6abf4b]/10 border border-[#6abf4b]/20">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <RefreshCw className="h-6 w-6 text-green-600 mt-1" />
+                  <RefreshCw className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-green-800">
+                    <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Preventative & Curative
                     </h3>
-                    <p className="text-green-700">
+                    <p className="text-gray-700">
                       Use routinely as a preventative treatment to maintain
                       superior crop health. Excellent curative properties for
                       recovery from injury or stressful conditions such as
@@ -603,7 +688,7 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-white/50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -621,17 +706,22 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
                 <div className="flex items-center gap-3 mb-6">
                   <Package className="h-8 w-8 text-[#6abf4b]" />
                   <h3 className="text-2xl font-semibold">
-                    Available Pack Size
+                    Available Pack Sizes
                   </h3>
                 </div>
-                <div className="text-center p-6 bg-green-50 rounded-lg">
-                  <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">
-                    2 × 10L
-                  </Badge>
-                  <p className="text-gray-600">
-                    Cost-effective biostimulant specifically developed for
-                    broadfield crops
-                  </p>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      2 × 10L
+                    </Badge>
+                    <p className="text-gray-600">
+                      Cost-effective biostimulant specifically developed for
+                      broadfield crops
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>

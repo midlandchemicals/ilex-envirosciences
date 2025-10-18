@@ -93,37 +93,37 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Sunrise className="h-8 w-8 text-yellow-600" />,
+      icon: <Sunrise className="h-8 w-8 text-[#6abf4b]" />,
       title: "Oilseed Rape Specialist",
       description:
         "Specifically formulated to meet the unique nutritional demands of oilseed rape crops",
     },
     {
-      icon: <Zap className="h-8 w-8 text-blue-600" />,
+      icon: <Zap className="h-8 w-8 text-[#6abf4b]" />,
       title: "Enhanced Oil Content",
       description:
         "Promotes oil synthesis and quality for premium marketable yields",
     },
     {
-      icon: <Target className="h-8 w-8 text-green-600" />,
+      icon: <Target className="h-8 w-8 text-[#6abf4b]" />,
       title: "Critical Growth Stage Support",
       description:
         "Optimized nutrition during key developmental periods for maximum impact",
     },
     {
-      icon: <Activity className="h-8 w-8 text-purple-600" />,
+      icon: <Activity className="h-8 w-8 text-[#6abf4b]" />,
       title: "Improved Winter Hardiness",
       description:
         "Enhances plant resilience and survival through challenging winter conditions",
     },
     {
-      icon: <Award className="h-8 w-8 text-orange-600" />,
+      icon: <Award className="h-8 w-8 text-[#6abf4b]" />,
       title: "Proven Performance",
       description:
         "Field-tested formulation delivering consistent results across UK conditions",
     },
     {
-      icon: <Shield className="h-8 w-8 text-cyan-600" />,
+      icon: <Shield className="h-8 w-8 text-[#6abf4b]" />,
       title: "Stress Tolerance",
       description:
         "Improves plant ability to cope with environmental and physiological stresses",
@@ -137,7 +137,7 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
       rate: "2-3 l/ha",
       notes: "Critical for strong plant development before winter",
       color: "bg-orange-100 text-orange-800",
-      icon: <Sprout className="h-5 w-5 text-orange-600" />,
+      icon: <Sprout className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       stage: "Spring Recovery",
@@ -145,7 +145,7 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
       rate: "2-3 l/ha",
       notes: "Support rapid spring growth and stem extension",
       color: "bg-green-100 text-green-800",
-      icon: <Leaf className="h-5 w-5 text-green-600" />,
+      icon: <Leaf className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       stage: "Pre-Flowering",
@@ -153,7 +153,7 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
       rate: "2-3 l/ha",
       notes: "Optimize flower development and pod set",
       color: "bg-yellow-100 text-yellow-800",
-      icon: <Flower className="h-5 w-5 text-yellow-600" />,
+      icon: <Flower className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       stage: "Pod Fill",
@@ -161,7 +161,7 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
       rate: "2-3 l/ha",
       notes: "Enhance seed development and oil content",
       color: "bg-blue-100 text-blue-800",
-      icon: <Package className="h-5 w-5 text-blue-600" />,
+      icon: <Package className="h-5 w-5 text-[#6abf4b]" />,
     },
   ];
 
@@ -241,24 +241,24 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
         title: "Oil Synthesis",
         description:
           "Specialized nutrients support oil formation and quality development",
-        icon: <Sunrise className="h-6 w-6 text-yellow-600" />,
+        icon: <Sunrise className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Winter Hardiness",
         description:
           "Strengthens plant resilience for better winter survival rates",
-        icon: <Shield className="h-6 w-6 text-blue-600" />,
+        icon: <Shield className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Growth Optimization",
         description: "Balanced nutrition for each critical growth stage",
-        icon: <Activity className="h-6 w-6 text-green-600" />,
+        icon: <Activity className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Stress Mitigation",
         description:
           "Helps plants overcome environmental and physiological challenges",
-        icon: <Award className="h-6 w-6 text-purple-600" />,
+        icon: <Award className="h-6 w-6 text-[#6abf4b]" />,
       },
     ],
   };
@@ -272,7 +272,7 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-[#ececec]/50" />
+        <div className="absolute inset-0 bg-[#6abf4b]/20" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
@@ -321,19 +321,41 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
             </motion.div>
 
             <motion.div
-              className="relative"
-              initial={{ opacity: 0, scale: 0.8 }}
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -3 }}
             >
-              <div className="relative z-10">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop"
-                  alt="OilSeed Raiser Product"
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-                />
+              {/* Main image container */}
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="/assets/product images/Phosphite/OilSeed Raiser.jpg"
+                    alt="OilSeed Raiser Product"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+              >
+                Oilseed Rape Specialist
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -402,40 +424,76 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {applicationStages.map((stage, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full hover:shadow-lg transition-all duration-300 bg-white/80 backdrop-blur-sm">
-                  <CardHeader>
-                    <div className="flex items-center gap-3 mb-4">
-                      {stage.icon}
-                      <CardTitle className="text-xl">{stage.stage}</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <div className="p-3 bg-gray-50 rounded-lg">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm font-medium text-gray-700">
-                            {stage.timing}
-                          </span>
-                          <Badge className={`${stage.color} text-sm px-2 py-1`}>
-                            {stage.rate}
-                          </Badge>
-                        </div>
-                        <p className="text-xs text-gray-600">{stage.notes}</p>
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="space-y-4">
+              {applicationStages.map((stage, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="hover:shadow-lg transition-all duration-300 bg-white/80 backdrop-blur-sm">
+                    <CardHeader>
+                      <div className="flex items-center gap-3 mb-3">
+                        {stage.icon}
+                        <CardTitle className="text-xl">{stage.stage}</CardTitle>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                      <div className="text-center p-3 bg-gray-50 rounded-lg mb-3">
+                        <Badge className={`${stage.color} text-sm px-3 py-1`}>
+                          {stage.rate}
+                        </Badge>
+                        <p className="text-xs text-gray-600 mt-1">
+                          {stage.timing}
+                        </p>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-600 text-sm">{stage.notes}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="/assets/product images/Phosphite/OilSeed Raiser.jpg"
+                    alt="Oilseed Rape Growth Stages"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+              </div>
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+              >
+                Growth Stage Support
               </motion.div>
-            ))}
+            </motion.div>
           </div>
 
           <motion.div
@@ -484,7 +542,7 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-yellow-600" />
+                  <Package className="h-8 w-8 text-[#6abf4b]" />
                   <h3 className="text-2xl font-semibold">
                     Available Pack Sizes
                   </h3>

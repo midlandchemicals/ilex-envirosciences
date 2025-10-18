@@ -86,37 +86,37 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Zap className="h-8 w-8 text-green-600" />,
+      icon: <Zap className="h-8 w-8 text-[#6abf4b]" />,
       title: "High Concentrated Fast-Acting",
       description:
         "Eliminates time-consuming and bulky procedures involving bags of powdered product",
     },
     {
-      icon: <Target className="h-8 w-8 text-blue-600" />,
+      icon: <Target className="h-8 w-8 text-[#6abf4b]" />,
       title: "Low Application Rates",
       description:
         "Superior performance even at low rates, reducing transport needs around the farm",
     },
     {
-      icon: <Beaker className="h-8 w-8 text-blue-600" />,
+      icon: <Beaker className="h-8 w-8 text-[#6abf4b]" />,
       title: "Enhanced Formulation",
       description:
         "Soluble Magnesium with Nitrogen for superior performance and plant uptake",
     },
     {
-      icon: <Leaf className="h-8 w-8 text-green-600" />,
+      icon: <Leaf className="h-8 w-8 text-[#6abf4b]" />,
       title: "Deficiency Prevention & Correction",
       description:
         "Effective for both prevention and correction of magnesium deficiency in crops",
     },
     {
-      icon: <Sparkles className="h-8 w-8 text-green-600" />,
+      icon: <Sparkles className="h-8 w-8 text-[#6abf4b]" />,
       title: "New Generation Technology",
       description:
         "Part of Ilex's innovative new generation of foliar nutrients",
     },
     {
-      icon: <Award className="h-8 w-8 text-green-600" />,
+      icon: <Award className="h-8 w-8 text-[#6abf4b]" />,
       title: "Superior Performance",
       description:
         "Demonstrates enhanced results even at reduced application rates",
@@ -235,25 +235,25 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
         title: "Magnesium Functions",
         description:
           "Essential for chlorophyll formation and photosynthesis, enzyme activation, and carbohydrate metabolism",
-        icon: <Leaf className="h-6 w-6 text-green-600" />,
+        icon: <Leaf className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Nitrogen Enhancement",
         description:
           "Nitrogen inclusion improves magnesium uptake and translocation within the plant",
-        icon: <Zap className="h-6 w-6 text-blue-600" />,
+        icon: <Zap className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Liquid Technology",
         description:
           "High concentration liquid formulation ensures rapid absorption and distribution",
-        icon: <Droplets className="h-6 w-6 text-green-600" />,
+        icon: <Droplets className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Deficiency Correction",
         description:
           "Rapidly corrects magnesium deficiency symptoms while preventing future occurrences",
-        icon: <Target className="h-6 w-6 text-green-600" />,
+        icon: <Target className="h-6 w-6 text-[#6abf4b]" />,
       },
     ],
   };
@@ -267,11 +267,11 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-[#ececec]/50" />
+        <div className="absolute inset-0 bg-[#6abf4b]/20" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
-              <Badge className="mb-4 bg-[#d4edc9] text-gray-900 hover:bg-[#bfe3a1] text-lg px-4 py-2">
+              <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
                 High Concentrated Fast-Acting Magnesium Liquid
               </Badge>
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
@@ -301,13 +301,13 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
                     smoothScrollToSection("application-guidelines-magplus")
                   }
                 >
-                  Application Guidlines
+                  Application Guidelines
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-[#6abf4b] text-[#6abf4b] hover:bg-[#eaf5e5] text-lg cursor-pointer px-8 py-4"
+                  className="text-lg cursor-pointer px-8 py-4 border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
                     smoothScrollToSection("technical-resources-magplus")
                   }
@@ -318,19 +318,41 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
             </motion.div>
 
             <motion.div
-              className="relative"
-              initial={{ opacity: 0, scale: 0.8 }}
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -3 }}
             >
-              <div className="relative z-10">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
-                  alt="Mag Plus Product"
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-                />
+              {/* Main image container */}
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="/assets/product images/Phosphite/Magiphos.jpg"
+                    alt="Mag Plus Product"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+              >
+                Magnesium Specialist
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -403,7 +425,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <FlaskConical className="h-8 w-8 text-green-600" />
+                    <FlaskConical className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-2xl font-semibold">
                       Chemical Composition
                     </h3>
@@ -441,7 +463,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
 
                     <div className="grid grid-cols-2 gap-4">
                       <div className="text-center p-4 bg-gradient-to-br from-green-50 to-white rounded-lg">
-                        <p className="text-2xl font-bold text-green-600 mb-1">
+                        <p className="text-2xl font-bold text-[#6abf4b] mb-1">
                           13%
                         </p>
                         <p className="text-sm text-gray-600">
@@ -449,7 +471,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
                         </p>
                       </div>
                       <div className="text-center p-4 bg-gradient-to-br from-white to-green-50 rounded-lg">
-                        <p className="text-2xl font-bold text-blue-600 mb-1">
+                        <p className="text-2xl font-bold text-[#6abf4b] mb-1">
                           9%
                         </p>
                         <p className="text-sm text-gray-600">
@@ -459,10 +481,10 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="bg-green-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-green-800 mb-2">
+                      <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Enhanced Performance
                       </h4>
-                      <p className="text-green-700 text-sm">
+                      <p className="text-gray-600 text-sm">
                         Soluble magnesium with nitrogen for superior plant
                         uptake and performance, demonstrating enhanced results
                         even at reduced application rates.
@@ -473,13 +495,64 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
               </Card>
             </div>
 
-            <div>
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=600&h=400&fit=crop"
-                alt="Agricultural Science - Magnesium Research"
-                className="w-full h-80 object-cover rounded-2xl shadow-xl"
-              />
-            </div>
+            <motion.div
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="/assets/product images/Phosphite/Magiphos.jpg"
+                    alt="Agricultural Science - Magnesium Research"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+              </div>
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+              >
+                Advanced Formulation
+              </motion.div>
+            </motion.div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <Card className="inline-block bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Package className="h-6 w-6 text-[#6abf4b]" />
+                  <h3 className="text-xl font-semibold">
+                    Pack Sizes Available
+                  </h3>
+                </div>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <Badge variant="secondary" className="text-lg px-3 py-1">
+                    2 × 10L
+                  </Badge>
+                  <Badge variant="secondary" className="text-lg px-3 py-1">
+                    1000L IBC
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </motion.section>
@@ -510,7 +583,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-lg transition-all duration-300 bg-white/80 backdrop-blur-sm">
+                <Card className="h-full hover:shadow-lg transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
                   <CardHeader>
                     <div className="flex items-center justify-between mb-2">
                       <CardTitle className="text-xl">{crop.name}</CardTitle>
@@ -536,12 +609,12 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
             viewport={{ once: true }}
           >
             <div className="flex items-start gap-3">
-              <CheckCircle className="h-6 w-6 text-green-600 mt-1" />
+              <CheckCircle className="h-6 w-6 text-[#6abf4b] mt-1" />
               <div>
-                <h3 className="text-lg font-semibold mb-2 text-green-800">
+                <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                   Important Note
                 </h3>
-                <p className="text-green-700">
+                <p className="text-gray-700">
                   In the case of severe magnesium deficiency, repeat
                   applications are recommended for all crops until symptoms are
                   corrected.
@@ -549,61 +622,6 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
               </div>
             </div>
           </motion.div>
-        </div>
-      </motion.section>
-
-      {/* Pack Sizes Section */}
-      <motion.section
-        className="py-20 px-4 bg-white/50"
-        {...fadeInUp}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-6">Pack Sizes Available</h2>
-            <p className="text-xl text-gray-600">
-              Convenient packaging for all farming operations
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-[#6abf4b]" />
-                  <h3 className="text-2xl font-semibold">
-                    Available Pack Sizes
-                  </h3>
-                </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-gradient-to-br from-green-50 to-white rounded-lg">
-                    <Badge
-                      variant="secondary"
-                      className="text-xl px-4 py-2 mb-4"
-                    >
-                      2 × 10L
-                    </Badge>
-                    <p className="text-gray-600">
-                      Perfect for smaller operations and diverse crop
-                      applications
-                    </p>
-                  </div>
-                  <div className="text-center p-6 bg-gradient-to-br from-white to-green-50 rounded-lg">
-                    <Badge
-                      variant="secondary"
-                      className="text-xl px-4 py-2 mb-4"
-                    >
-                      1000L IBC
-                    </Badge>
-                    <p className="text-gray-600">
-                      Cost-effective solution for large-scale agricultural
-                      operations
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </motion.section>
 

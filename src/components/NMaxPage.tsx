@@ -264,7 +264,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-[#ececec]/50" />
+        <div className="absolute inset-0 bg-[#6abf4b]/20" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
@@ -295,13 +295,13 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
                     smoothScrollToSection("application-guidelines-nmaxpage")
                   }
                 >
-                  Application Guidlines
+                  Application Guidelines
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-[#6abf4b] cursor-pointer px-8 py-4 border-[#6abf4b] hover:bg-[#6abf4b]/10"
+                  className="text-lg cursor-pointer px-8 py-4 border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
                     smoothScrollToSection("technical-resources-nmaxpage")
                   }
@@ -312,19 +312,41 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
             </motion.div>
 
             <motion.div
-              className="relative"
-              initial={{ opacity: 0, scale: 0.8 }}
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -3 }}
             >
-              <div className="relative z-10">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop"
-                  alt="N-Max - Maximum Nitrogen for Vegetative Growth"
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-                />
+              {/* Main image container */}
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop"
+                    alt="N-Max - Maximum Nitrogen for Vegetative Growth"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+              >
+                Organic Nitrogen Specialist
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -404,41 +426,41 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
                     </h3>
                   </div>
                   <div className="space-y-6">
-                    <div className="p-4 bg-green-50 rounded-lg">
-                      <h4 className="font-semibold text-green-800 mb-2">
+                    <div className="p-4 bg-[#6abf4b]/10 rounded-lg">
+                      <h4 className="font-semibold text-[#6abf4b] mb-2">
                         7.0% Nitrogen (N)
                       </h4>
-                      <p className="text-green-700 text-sm">
+                      <p className="text-[#6abf4b] text-sm">
                         Highest analysis of organically sourced nitrogen in
                         liquid form for maximum vegetative growth
                       </p>
                     </div>
 
-                    <div className="p-4 bg-green-50 rounded-lg">
-                      <h4 className="font-semibold text-green-800 mb-2">
+                    <div className="p-4 bg-[#6abf4b]/10 rounded-lg">
+                      <h4 className="font-semibold text-[#6abf4b] mb-2">
                         2.0% Phosphorus (P2O5)
                       </h4>
-                      <p className="text-green-700 text-sm">
+                      <p className="text-[#6abf4b] text-sm">
                         Essential phosphorus for energy transfer and root
                         development support
                       </p>
                     </div>
 
-                    <div className="p-4 bg-green-50 rounded-lg">
-                      <h4 className="font-semibold text-green-800 mb-2">
+                    <div className="p-4 bg-[#6abf4b]/10 rounded-lg">
+                      <h4 className="font-semibold text-[#6abf4b] mb-2">
                         2.0% Potassium (K2O)
                       </h4>
-                      <p className="text-green-700 text-sm">
+                      <p className="text-[#6abf4b] text-sm">
                         Balanced potassium for overall plant health and stress
                         tolerance
                       </p>
                     </div>
 
-                    <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-4">
-                      <h4 className="font-semibold text-green-800 mb-2">
+                    <div className="bg-[#6abf4b]/10 rounded-lg p-4">
+                      <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Approved Organic Sources
                       </h4>
-                      <p className="text-green-700 text-sm">
+                      <p className="text-[#6abf4b] text-sm">
                         Derived from approved molasses and plant protein sources
                         with trace elements including calcium (0.3%), sulphur
                         (0.5%), and magnesium (0.1%) for comprehensive
@@ -450,13 +472,43 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
               </Card>
             </div>
 
-            <div>
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop"
-                alt="Maximum Vegetative Growth"
-                className="w-full h-80 object-cover rounded-2xl shadow-xl"
-              />
-            </div>
+            <motion.div
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop"
+                    alt="Maximum Vegetative Growth"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+              </div>
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+              >
+                Maximum Nitrogen
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </motion.section>
@@ -477,35 +529,35 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            <Card className="bg-green-50 border border-green-200">
+            <Card className="bg-[#6abf4b]/10 border border-[#6abf4b]/20">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Droplets className="h-8 w-8 text-green-600" />
-                  <h3 className="text-2xl font-semibold text-green-800">
+                  <Droplets className="h-8 w-8 text-[#6abf4b]" />
+                  <h3 className="text-2xl font-semibold text-[#6abf4b]">
                     Foliar Application
                   </h3>
                 </div>
-                <p className="text-green-700 mb-6">
+                <p className="text-[#6abf4b] mb-6">
                   Apply as a foliar spray for immediate nitrogen uptake. The
                   liquid formulation ensures rapid absorption and immediate
                   boost to green leaf area development.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
-                    <span className="text-green-700">
+                    <CheckCircle className="h-4 w-4 text-[#6abf4b]" />
+                    <span className="text-[#6abf4b]">
                       Immediate nitrogen boost
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
-                    <span className="text-green-700">
+                    <CheckCircle className="h-4 w-4 text-[#6abf4b]" />
+                    <span className="text-[#6abf4b]">
                       Rapid leaf area development
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
-                    <span className="text-green-700">
+                    <CheckCircle className="h-4 w-4 text-[#6abf4b]" />
+                    <span className="text-[#6abf4b]">
                       Enhanced green coloration
                     </span>
                   </div>
@@ -513,35 +565,35 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
               </CardContent>
             </Card>
 
-            <Card className="bg-green-50 border border-green-200">
+            <Card className="bg-[#6abf4b]/10 border border-[#6abf4b]/20">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Factory className="h-8 w-8 text-green-600" />
-                  <h3 className="text-2xl font-semibold text-green-800">
+                  <Factory className="h-8 w-8 text-[#6abf4b]" />
+                  <h3 className="text-2xl font-semibold text-[#6abf4b]">
                     Fertigation
                   </h3>
                 </div>
-                <p className="text-green-700 mb-6">
+                <p className="text-[#6abf4b] mb-6">
                   Apply through fertigation systems for sustained root zone
                   nutrition. Provides lasting growth enhancement for both
                   protected and outdoor crop systems.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
-                    <span className="text-green-700">
+                    <CheckCircle className="h-4 w-4 text-[#6abf4b]" />
+                    <span className="text-[#6abf4b]">
                       Sustained root zone nutrition
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
-                    <span className="text-green-700">
+                    <CheckCircle className="h-4 w-4 text-[#6abf4b]" />
+                    <span className="text-[#6abf4b]">
                       Lasting growth enhancement
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
-                    <span className="text-green-700">
+                    <CheckCircle className="h-4 w-4 text-[#6abf4b]" />
+                    <span className="text-[#6abf4b]">
                       Improved crop uniformity
                     </span>
                   </div>
@@ -557,15 +609,15 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-gradient-to-r from-green-50 to-green-100 border border-green-200">
+            <Card className="bg-[#6abf4b]/10 border border-[#6abf4b]/20">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <Leaf className="h-6 w-6 text-green-600 mt-1" />
+                  <Leaf className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-green-800">
+                    <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Maximum Green Leaf Area Development
                     </h3>
-                    <p className="text-green-700">
+                    <p className="text-[#6abf4b]">
                       N-Max maximizes green leaf area and enhances vegetative
                       growth through the highest analysis of organically sourced
                       nitrogen. Provides immediate and lasting boost to crop
@@ -582,7 +634,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-white/50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -604,7 +656,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-green-50 rounded-lg">
+                  <div className="text-center p-6 bg-[#6abf4b]/10 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -616,7 +668,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
                       programs
                     </p>
                   </div>
-                  <div className="text-center p-6 bg-green-100 rounded-lg">
+                  <div className="text-center p-6 bg-[#6abf4b]/10 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"

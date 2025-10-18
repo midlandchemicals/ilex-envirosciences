@@ -141,14 +141,14 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
         },
         { rate: "9.0 l/ha at planting", notes: "Field application rate" },
       ],
-      color: "bg-green-100 text-green-800",
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
     },
     {
       type: "Powder",
       applications: [
         { rate: "3.25 kg per tonne of seed", notes: "At planting application" },
       ],
-      color: "bg-green-200 text-green-900",
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
     },
   ];
 
@@ -231,7 +231,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-[#ececec]/50" />
+        <div className="absolute inset-0 bg-[#6abf4b]/20" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
@@ -261,7 +261,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                     smoothScrollToSection("application-guidelines-prozest")
                   }
                 >
-                  Application Guidlines
+                  Application Guidelines
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
@@ -278,19 +278,41 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
             </motion.div>
 
             <motion.div
-              className="relative"
-              initial={{ opacity: 0, scale: 0.8 }}
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -3 }}
             >
-              <div className="relative z-10">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600&h=400&fit=crop"
-                  alt="ProZest Product - Potato Field"
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-                />
+              {/* Main image container */}
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600&h=400&fit=crop"
+                    alt="ProZest Product - Potato Field"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+              >
+                Potato Nutrition Specialist
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -370,8 +392,8 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                     </h3>
                   </div>
                   <div className="space-y-6">
-                    <div className="p-4 bg-green-50 rounded-lg">
-                      <h4 className="font-semibold text-green-800 mb-3">
+                    <div className="p-4 bg-[#6abf4b]/10 rounded-lg">
+                      <h4 className="font-semibold text-[#6abf4b] mb-3">
                         Liquid Formulation
                       </h4>
                       <div className="space-y-2 text-sm">
@@ -390,8 +412,8 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                       </div>
                     </div>
 
-                    <div className="p-4 bg-green-100 rounded-lg">
-                      <h4 className="font-semibold text-green-900 mb-3">
+                    <div className="p-4 bg-[#6abf4b]/10 rounded-lg">
+                      <h4 className="font-semibold text-[#6abf4b] mb-3">
                         Powder Formulation
                       </h4>
                       <div className="space-y-2 text-sm">
@@ -410,11 +432,11 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                       </div>
                     </div>
 
-                    <div className="bg-green-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-green-800 mb-2">
+                    <div className="bg-[#6abf4b]/10 rounded-lg p-4">
+                      <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Application Benefits
                       </h4>
-                      <ul className="text-green-700 text-sm space-y-1">
+                      <ul className="text-[#6abf4b] text-sm space-y-1">
                         <li>• Prevents zinc deficiency disorders</li>
                         <li>• Creates optimal soil pH conditions</li>
                         <li>• Enhances storage quality through calcium</li>
@@ -426,13 +448,43 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
               </Card>
             </div>
 
-            <div>
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600&h=400&fit=crop"
-                alt="Healthy Potato Crop"
-                className="w-full h-80 object-cover rounded-2xl shadow-xl"
-              />
-            </div>
+            <motion.div
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600&h=400&fit=crop"
+                    alt="Healthy Potato Crop"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+              </div>
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+              >
+                Dual Formulation
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </motion.section>
@@ -464,7 +516,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                   <CardHeader>
                     <div className="text-center mb-4">
                       <Badge
-                        className={`${formulation.color} text-xl px-4 py-2`}
+                        className={`${formulation.color} text-xl px-4 py-2 hover:bg-[#6abf4b]/20`}
                       >
                         {formulation.type} Formulation
                       </Badge>
@@ -499,15 +551,15 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-green-50 border border-green-200">
+            <Card className="bg-[#6abf4b]/10 border border-[#6abf4b]/20">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <Shovel className="h-6 w-6 text-green-600 mt-1" />
+                  <Shovel className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-green-800">
+                    <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Application Method
                     </h3>
-                    <p className="text-green-700">
+                    <p className="text-[#6abf4b]">
                       Apply at planting directly to the seed or incorporate into
                       the planting furrow for immediate nutrient availability to
                       developing potato plants.
@@ -522,7 +574,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-white/50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -544,7 +596,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-green-50 rounded-lg">
+                  <div className="text-center p-6 bg-[#6abf4b]/10 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -555,7 +607,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                       Convenient liquid formulation for easy application
                     </p>
                   </div>
-                  <div className="text-center p-6 bg-green-100 rounded-lg">
+                  <div className="text-center p-6 bg-[#6abf4b]/10 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"

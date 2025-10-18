@@ -16,6 +16,7 @@ import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { smoothScrollToSection } from "../utils/scrollHelpers";
 import {
   Leaf,
   Zap,
@@ -45,7 +46,6 @@ import {
   Activity,
   Flame,
 } from "lucide-react";
-import { smoothScrollToSection } from "../utils/scrollHelpers";
 
 interface ContactFormProps {
   onSubmit: (formData: {
@@ -93,37 +93,37 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Flame className="h-8 w-8 text-yellow-600" />,
+      icon: <Flame className="h-8 w-8 text-[#6abf4b]" />,
       title: "Premium Sulfur Nutrition",
       description:
         "Provides essential sulfur nutrition for protein synthesis and oil quality enhancement",
     },
     {
-      icon: <Zap className="h-8 w-8 text-green-600" />,
+      icon: <Zap className="h-8 w-8 text-[#6abf4b]" />,
       title: "Rapid Plant Uptake",
       description:
         "Fast-acting formulation ensures immediate sulfur availability when crops need it most",
     },
     {
-      icon: <Target className="h-8 w-8 text-blue-600" />,
+      icon: <Target className="h-8 w-8 text-[#6abf4b]" />,
       title: "Protein & Oil Quality",
       description:
         "Essential for amino acid synthesis and oil quality improvement in oilseed crops",
     },
     {
-      icon: <Activity className="h-8 w-8 text-purple-600" />,
+      icon: <Activity className="h-8 w-8 text-[#6abf4b]" />,
       title: "Enhanced Metabolism",
       description:
         "Supports chlorophyll formation and enzyme activation for optimal plant function",
     },
     {
-      icon: <Shield className="h-8 w-8 text-cyan-600" />,
+      icon: <Shield className="h-8 w-8 text-[#6abf4b]" />,
       title: "Stress Tolerance",
       description:
         "Improves plant ability to cope with environmental stresses and disease pressure",
     },
     {
-      icon: <Award className="h-8 w-8 text-orange-600" />,
+      icon: <Award className="h-8 w-8 text-[#6abf4b]" />,
       title: "Broad Crop Compatibility",
       description:
         "Effective across a wide range of crops including cereals, oilseeds, and vegetables",
@@ -145,8 +145,8 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
           notes: "Grain quality enhancement",
         },
       ],
-      // badge color classes replaced below
-      icon: <Wheat className="h-5 w-5 text-yellow-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Wheat className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Oilseed Rape",
@@ -162,7 +162,8 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
           notes: "Seed development support",
         },
       ],
-      icon: <Flower className="h-5 w-5 text-blue-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Flower className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Vegetables",
@@ -178,7 +179,8 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
           notes: "Nutritional quality boost",
         },
       ],
-      icon: <Leaf className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Leaf className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Legumes",
@@ -194,7 +196,8 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
           notes: "Quality optimization",
         },
       ],
-      icon: <Sprout className="h-5 w-5 text-purple-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Sprout className="h-5 w-5 text-[#6abf4b]" />,
     },
   ];
 
@@ -283,25 +286,25 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
         title: "Protein Synthesis",
         description:
           "Essential for amino acid formation and protein quality in grains and seeds",
-        icon: <Atom className="h-6 w-6 text-yellow-600" />,
+        icon: <Atom className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Oil Quality Enhancement",
         description:
           "Critical for oil formation and quality characteristics in oilseed crops",
-        icon: <Flame className="h-6 w-6 text-orange-600" />,
+        icon: <Flame className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Enzyme Activation",
         description:
           "Required for numerous enzyme systems and metabolic processes",
-        icon: <Zap className="h-6 w-6 text-green-600" />,
+        icon: <Zap className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Chlorophyll Formation",
         description:
           "Essential for chlorophyll synthesis and photosynthetic efficiency",
-        icon: <Leaf className="h-6 w-6 text-blue-600" />,
+        icon: <Leaf className="h-6 w-6 text-[#6abf4b]" />,
       },
     ],
   };
@@ -326,26 +329,26 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
                 Pro-Sul™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-                A premium sulfur foliar fertilizer designed to prevent and
-                correct sulfur deficiencies while supporting essential plant
-                functions. Essential for protein synthesis, oil quality, and
-                overall crop performance across a wide range of agricultural
-                applications.
+                Pro-Sul is formulated together with plant available Sulphur to
+                supply this essential nutrient at key growth stages. Sulphur is
+                linked with Nitrogen as a vital constituent in cellular and
+                protein synthesis. Deficiency symptoms are pale green or yellow
+                leaves and unlike Nitrogen the youngest leaves are affected
+                first. This is because although some Sulphur can be re-mobilised
+                from the older leaves as the Sulphate ion this is generally not
+                sufficient and foliar treatment with Pro-Sul will help maintain
+                healthy new growth.
               </p>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Formulated for rapid uptake and immediate plant response,
-                Pro-Sul™ delivers critical sulfur nutrition when your crops need
-                it most for optimal quality and yield development.
-              </p>
+
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-white text-lg px-8 py-4"
                   onClick={() =>
-                    smoothScrollToSection("application-guidelines-prosoul")
+                    smoothScrollToSection("application-guidelines-prosul")
                   }
                 >
-                  Application Guidlines
+                  Application Guidelines
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
@@ -353,7 +356,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
                   size="lg"
                   className="text-lg cursor-pointer px-8 py-4 border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
-                    smoothScrollToSection("technical-resources-prosoul")
+                    smoothScrollToSection("technical-resources-prosul")
                   }
                 >
                   View Technical Resources
@@ -362,19 +365,41 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
             </motion.div>
 
             <motion.div
-              className="relative"
-              initial={{ opacity: 0, scale: 0.8 }}
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -3 }}
             >
-              <div className="relative z-10">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
-                  alt="Pro-Sul Product"
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-                />
+              {/* Main image container */}
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="/assets/product images/Foliar/pro-sul.png"
+                    alt="Pro-Sul Product"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+              >
+                Sulfur Specialist
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -448,14 +473,14 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <Flame className="h-8 w-8 text-yellow-600" />
+                    <Flame className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-2xl font-semibold">
                       Essential Sulfur Functions
                     </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="flex items-start gap-3">
-                      <Atom className="h-6 w-6 text-yellow-600 mt-1" />
+                      <Atom className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Protein Synthesis
@@ -469,7 +494,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Flame className="h-6 w-6 text-orange-600 mt-1" />
+                      <Flame className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Oil Quality Enhancement
@@ -483,7 +508,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Zap className="h-6 w-6 text-green-600 mt-1" />
+                      <Zap className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Enzyme Activation
@@ -496,11 +521,11 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
                       </div>
                     </div>
 
-                    <div className="bg-[#ececec] rounded-lg p-4">
+                    <div className="bg-[#6abf4b]/10 rounded-lg p-4">
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Enhanced Formula
                       </h4>
-                      <p className="text-[#5aa338]">
+                      <p className="text-[#6abf4b]">
                         Pro-Sul™ includes nitrogen, potassium, and magnesium to
                         support optimal sulfur utilization and plant function.
                       </p>
@@ -510,13 +535,64 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
               </Card>
             </div>
 
-            <div>
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
-                alt="Healthy Crop Development"
-                className="w-full h-80 object-cover rounded-2xl shadow-xl"
-              />
-            </div>
+            <motion.div
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="/assets/product images/Foliar/pro-sul.png"
+                    alt="Healthy Crop Development"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+              </div>
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+              >
+                Advanced Formulation
+              </motion.div>
+            </motion.div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <Card className="inline-block bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Package className="h-6 w-6 text-[#6abf4b]" />
+                  <h3 className="text-xl font-semibold">
+                    Pack Sizes Available
+                  </h3>
+                </div>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <Badge variant="secondary" className="text-lg px-3 py-1">
+                    20L
+                  </Badge>
+                  <Badge variant="secondary" className="text-lg px-3 py-1">
+                    1000L IBC
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </motion.section>
@@ -527,7 +603,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
         {...fadeInUp}
         viewport={{ once: true }}
       >
-        <div id="application-guidelines-prosoul" className="max-w-7xl mx-auto">
+        <div id="application-guidelines-prosul" className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Application Guidelines</h2>
             <p className="text-xl text-gray-600">
@@ -544,7 +620,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-lg transition-all duration-300 bg-white/80 backdrop-blur-sm">
+                <Card className="h-full hover:shadow-lg transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-4">
                       {crop.icon}
@@ -562,7 +638,9 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
                             <span className="text-sm font-medium text-gray-700">
                               {stage.stage}
                             </span>
-                            <Badge className="bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-sm px-2 py-1">
+                            <Badge
+                              className={`${crop.color} text-sm px-2 py-1`}
+                            >
                               {stage.rate}
                             </Badge>
                           </div>
@@ -583,18 +661,18 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-[#ececec] border border-[#6abf4b]/30">
+            <Card className="bg-white/80 backdrop-blur-sm border-0">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
                     <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
-                      Deficiency Treatment
+                      Application Method
                     </h3>
-                    <p className="text-[#5aa338]">
-                      For severe sulfur deficiencies, apply at the higher rate
-                      and repeat after 2-3 weeks if symptoms persist. Monitor
-                      plant response closely.
+                    <p className="text-gray-700">
+                      Apply in 200-400 l/ha of water for optimal coverage.
+                      Timing is critical - apply during periods of active growth
+                      for maximum quality benefits.
                     </p>
                   </div>
                 </div>
@@ -628,7 +706,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-[#ececec] rounded-lg">
+                  <div className="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -640,7 +718,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
                       enhancement
                     </p>
                   </div>
-                  <div className="text-center p-6 bg-[#ececec] rounded-lg">
+                  <div className="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -660,7 +738,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
 
       {/* PDF Links Section */}
       <PDFLinks
-        id="technical-resources-prosoul"
+        id="technical-resources-prosul"
         productName="Pro-Sul™"
         links={pdfLinks}
       />
@@ -696,7 +774,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <Clock className="h-6 w-6" />
+                  <Timer className="h-6 w-6" />
                   <p>Monday–Friday: 09:00–17:00</p>
                 </div>
               </div>

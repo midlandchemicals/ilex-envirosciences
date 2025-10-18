@@ -250,7 +250,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen mt-10 bg-[#ececec]">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -258,8 +258,8 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-[#ececec]/50" />
-        <div className="relative max-w-7xl mt-10 mx-auto">
+        <div className="absolute inset-0 bg-[#6abf4b]/20" />
+        <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
               <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
@@ -283,7 +283,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-white text-lg px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection("application-guidelines-beetraiser")
                   }
@@ -294,7 +294,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg cursor-pointer px-8 py-4"
+                  className="text-lg cursor-pointer px-8 py-4 border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
                     smoothScrollToSection("technical-resources-beetraiser")
                   }
@@ -305,19 +305,41 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
             </motion.div>
 
             <motion.div
-              className="relative"
-              initial={{ opacity: 0, scale: 0.8 }}
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.02 }}
             >
-              <div className="relative z-10">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1592921870789-04563d55041c?w=600&h=400&fit=crop"
-                  alt="Beet Raiser Product"
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-                />
+              {/* Main image container */}
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="/assets/product images/Phosphite/Beet Raiser 2.jpg"
+                    alt="Beet Raiser Product"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+              >
+                Sugar Beet Specialist
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -328,7 +350,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
 
       {/* Key Benefits Section */}
       <motion.section
-        className="py-20 px-4 bg-white"
+        className="py-20 px-4 bg-white/50"
         variants={staggerContainer}
         initial="initial"
         whileInView="animate"
@@ -395,7 +417,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-lg transition-all duration-300 bg-white/80 backdrop-blur-sm">
+                <Card className="h-full hover:shadow-lg transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-4">
                       {stage.icon}
@@ -429,15 +451,15 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-green-50 border border-green-200">
+            <Card className="bg-white/80 backdrop-blur-sm border-0">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <Droplets className="h-6 w-6 text-green-600 mt-1" />
+                  <Droplets className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-green-800">
+                    <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Application Method
                     </h3>
-                    <p className="text-green-700">
+                    <p className="text-gray-700">
                       Apply in 200-400 l/ha of water ensuring good coverage.
                       Time applications to coincide with active growth periods
                       for maximum uptake efficiency.
@@ -527,64 +549,61 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
               </Card>
             </div>
 
-            <div>
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1592921870789-04563d55041c?w=600&h=400&fit=crop"
-                alt="Sugar Beet Crop Development"
-                className="w-full h-80 object-cover rounded-2xl shadow-xl"
-              />
-            </div>
-          </div>
-        </div>
-      </motion.section>
+            <motion.div
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="/assets/product images/Phosphite/Beet Raiser 2.jpg"
+                    alt="Sugar Beet Crop Development"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
 
-      {/* Pack Sizes Section */}
-      <motion.section
-        className="py-20 px-4 bg-white/50"
-        {...fadeInUp}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-6">Pack Sizes Available</h2>
-            <p className="text-xl text-gray-600">
-              Convenient sizes for all sugar beet growing operations
-            </p>
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+              </div>
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+              >
+                Optimized Nutrition
+              </motion.div>
+            </motion.div>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-red-600" />
-                  <h3 className="text-2xl font-semibold">
-                    Available Pack Sizes
+          <div className="mt-8 text-center">
+            <Card className="inline-block bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Package className="h-6 w-6 text-[#6abf4b]" />
+                  <h3 className="text-xl font-semibold">
+                    Pack Sizes Available
                   </h3>
                 </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-gradient-to-br from-red-50 to-green-50 rounded-lg">
-                    <Badge
-                      variant="secondary"
-                      className="text-xl px-4 py-2 mb-4"
-                    >
-                      20L
-                    </Badge>
-                    <p className="text-gray-600">
-                      Perfect for sugar beet specialist nutrition programs
-                    </p>
-                  </div>
-                  <div className="text-center p-6 bg-gradient-to-br from-red-50 to-green-50 rounded-lg">
-                    <Badge
-                      variant="secondary"
-                      className="text-xl px-4 py-2 mb-4"
-                    >
-                      1000L IBC
-                    </Badge>
-                    <p className="text-gray-600">
-                      Cost-effective solution for large-scale sugar beet
-                      production
-                    </p>
-                  </div>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <Badge variant="secondary" className="text-lg px-3 py-1">
+                    20L
+                  </Badge>
+                  <Badge variant="secondary" className="text-lg px-3 py-1">
+                    1000L IBC
+                  </Badge>
                 </div>
               </CardContent>
             </Card>

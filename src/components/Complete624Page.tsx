@@ -257,7 +257,7 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-[#ececec]/50" />
+        <div className="absolute inset-0 bg-[#6abf4b]/20" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
@@ -305,19 +305,41 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
             </motion.div>
 
             <motion.div
-              className="relative"
-              initial={{ opacity: 0, scale: 0.8 }}
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -3 }}
             >
-              <div className="relative z-10">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop"
-                  alt="Complete 6-2-4 - Versatile Plant Nutrition"
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-                />
+              {/* Main image container */}
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop"
+                    alt="Complete 6-2-4 - Versatile Plant Nutrition"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+              >
+                Sustainable Nutrition
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -338,7 +360,7 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
           <motion.div className="text-center mb-16" variants={fadeInUp}>
             <h2 className="text-4xl font-bold mb-6">Key Benefits</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover why Complete (6-2-4) is the versatile choice for
+              Discover why Complete (6-6-4) is the versatile choice for
               sustainable plant nutrition
             </p>
           </motion.div>
@@ -396,41 +418,41 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
                     </h3>
                   </div>
                   <div className="space-y-6">
-                    <div className="p-4 bg-green-50 rounded-lg">
-                      <h4 className="font-semibold text-green-800 mb-2">
+                    <div className="p-4 bg-[#6abf4b]/10 rounded-lg">
+                      <h4 className="font-semibold text-[#6abf4b] mb-2">
                         6.2% Nitrogen (N)
                       </h4>
-                      <p className="text-green-700 text-sm">
+                      <p className="text-[#6abf4b] text-sm">
                         Essential for vigorous green tissue development and
                         overall plant growth
                       </p>
                     </div>
 
-                    <div className="p-4 bg-green-50 rounded-lg">
-                      <h4 className="font-semibold text-green-800 mb-2">
+                    <div className="p-4 bg-[#6abf4b]/10 rounded-lg">
+                      <h4 className="font-semibold text-[#6abf4b] mb-2">
                         2.0% Phosphorus (P2O5)
                       </h4>
-                      <p className="text-green-700 text-sm">
+                      <p className="text-[#6abf4b] text-sm">
                         Critical for root development, flowering, and energy
                         transfer processes
                       </p>
                     </div>
 
-                    <div className="p-4 bg-green-50 rounded-lg">
-                      <h4 className="font-semibold text-green-800 mb-2">
+                    <div className="p-4 bg-[#6abf4b]/10 rounded-lg">
+                      <h4 className="font-semibold text-[#6abf4b] mb-2">
                         4.2% Potassium (K2O)
                       </h4>
-                      <p className="text-green-700 text-sm">
+                      <p className="text-[#6abf4b] text-sm">
                         Essential for plant health, disease resistance, and
                         quality improvement
                       </p>
                     </div>
 
-                    <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-4">
-                      <h4 className="font-semibold text-green-800 mb-2">
+                    <div className="bg-[#6abf4b]/10 rounded-lg p-4">
+                      <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Complete Mineral Package
                       </h4>
-                      <p className="text-green-700 text-sm">
+                      <p className="text-[#6abf4b] text-sm">
                         Includes calcium (0.4%), magnesium (0.2%), sulphur
                         (0.5%), and trace elements for comprehensive plant
                         nutrition.
@@ -441,13 +463,43 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
               </Card>
             </div>
 
-            <div>
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1464822759356-8d6106e78f86?w=600&h=400&fit=crop"
-                alt="Sustainable Plant Nutrition"
-                className="w-full h-80 object-cover rounded-2xl shadow-xl"
-              />
-            </div>
+            <motion.div
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="https://images.unsplash.com/photo-1464822759356-8d6106e78f86?w=600&h=400&fit=crop"
+                    alt="Sustainable Plant Nutrition"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+              </div>
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+              >
+                Organic Certified
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </motion.section>
@@ -470,35 +522,35 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            <Card className="bg-green-50 border border-green-200">
+            <Card className="bg-[#6abf4b]/10 border border-[#6abf4b]/20">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Droplets className="h-8 w-8 text-green-600" />
-                  <h3 className="text-2xl font-semibold text-green-800">
+                  <Droplets className="h-8 w-8 text-[#6abf4b]" />
+                  <h3 className="text-2xl font-semibold text-[#6abf4b]">
                     Foliar Application
                   </h3>
                 </div>
-                <p className="text-green-700 mb-6">
+                <p className="text-[#6abf4b] mb-6">
                   Apply as a foliar spray for direct nutrient uptake through the
                   leaves. The free-flowing liquid disperses easily in water with
                   minimal mixing required.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
-                    <span className="text-green-700">
+                    <CheckCircle className="h-4 w-4 text-[#6abf4b]" />
+                    <span className="text-[#6abf4b]">
                       Quick nutrient uptake
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
-                    <span className="text-green-700">
+                    <CheckCircle className="h-4 w-4 text-[#6abf4b]" />
+                    <span className="text-[#6abf4b]">
                       Easy mixing and application
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
-                    <span className="text-green-700">
+                    <CheckCircle className="h-4 w-4 text-[#6abf4b]" />
+                    <span className="text-[#6abf4b]">
                       Immediate plant response
                     </span>
                   </div>
@@ -506,35 +558,35 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
               </CardContent>
             </Card>
 
-            <Card className="bg-green-50 border border-green-200">
+            <Card className="bg-[#6abf4b]/10 border border-[#6abf4b]/20">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Factory className="h-8 w-8 text-green-600" />
-                  <h3 className="text-2xl font-semibold text-green-800">
+                  <Factory className="h-8 w-8 text-[#6abf4b]" />
+                  <h3 className="text-2xl font-semibold text-[#6abf4b]">
                     Fertigation
                   </h3>
                 </div>
-                <p className="text-green-700 mb-6">
+                <p className="text-[#6abf4b] mb-6">
                   Apply through fertigation systems for root zone nutrition and
                   microbial enhancement. Carbohydrates and sugars fuel
                   beneficial soil microbes and fungi.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
-                    <span className="text-green-700">
+                    <CheckCircle className="h-4 w-4 text-[#6abf4b]" />
+                    <span className="text-[#6abf4b]">
                       Enhanced soil biology
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
-                    <span className="text-green-700">
+                    <CheckCircle className="h-4 w-4 text-[#6abf4b]" />
+                    <span className="text-[#6abf4b]">
                       Improved nutrient absorption
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
-                    <span className="text-green-700">
+                    <CheckCircle className="h-4 w-4 text-[#6abf4b]" />
+                    <span className="text-[#6abf4b]">
                       Root zone development
                     </span>
                   </div>
@@ -550,15 +602,15 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-green-50 border border-green-200">
+            <Card className="bg-[#6abf4b]/10 border border-[#6abf4b]/20">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <Coffee className="h-6 w-6 text-green-600 mt-1" />
+                  <Coffee className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-green-800">
+                    <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Microbial Enhancement
                     </h3>
-                    <p className="text-green-700">
+                    <p className="text-[#6abf4b]">
                       The carbohydrates and sugars from cane sugar molasses
                       provide a natural high-carbon source of fuel for
                       beneficial microbes and fungi, enhancing nutrient
@@ -575,7 +627,7 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-white/50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -597,7 +649,7 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-green-50 rounded-lg">
+                  <div className="text-center p-6 bg-[#6abf4b]/10 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -609,7 +661,7 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
                       applications
                     </p>
                   </div>
-                  <div className="text-center p-6 bg-green-100 rounded-lg">
+                  <div className="text-center p-6 bg-[#6abf4b]/10 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"

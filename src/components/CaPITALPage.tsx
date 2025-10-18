@@ -15,8 +15,8 @@ import { Separator } from "./ui/separator";
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { smoothScrollToSection } from "../utils/scrollHelpers";
-let capitalImage = "";
 import {
   Leaf,
   Zap,
@@ -87,37 +87,37 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Heart className="h-8 w-8 text-green-600" />,
+      icon: <Heart className="h-8 w-8 text-[#6abf4b]" />,
       title: "Root Development",
       description:
         "The provision of optimum levels of Calcium are important for root development, maintaining plant health and strengthening cell walls for improved quality and shelf life",
     },
     {
-      icon: <Shield className="h-8 w-8 text-blue-600" />,
+      icon: <Shield className="h-8 w-8 text-[#6abf4b]" />,
       title: "Plant Health",
       description:
         "Maintains overall plant health through superior calcium nutrition and phosphite technology",
     },
     {
-      icon: <Layers className="h-8 w-8 text-purple-600" />,
+      icon: <Layers className="h-8 w-8 text-[#6abf4b]" />,
       title: "Strengthens Cell Walls",
       description:
         "Calcium strengthens cell walls for improved crop quality and extended shelf life",
     },
     {
-      icon: <Zap className="h-8 w-8 text-orange-600" />,
+      icon: <Zap className="h-8 w-8 text-[#6abf4b]" />,
       title: "Fast-Acting Nutrition",
       description:
         "Formulated for rapid absorption and maximum availability at key growth stages",
     },
     {
-      icon: <Target className="h-8 w-8 text-cyan-600" />,
+      icon: <Target className="h-8 w-8 text-[#6abf4b]" />,
       title: "Vegetable & Salad Specialist",
       description:
         "Specifically formulated for vegetable and salad crops with proven phosphite technology",
     },
     {
-      icon: <Atom className="h-8 w-8 text-green-500" />,
+      icon: <Atom className="h-8 w-8 text-[#6abf4b]" />,
       title: "Enhanced Formulation",
       description:
         "Contains high levels of soluble calcium with key nutrients boron and zinc",
@@ -184,7 +184,6 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
   // ProductShowcase data
   const showcaseData = {
     productName: "CaPITAL™",
-    productImage: capitalImage,
     productDescription:
       "A highly effective foliar treatment specifically formulated for vegetable and salad crops, using proven phosphite technology to optimize healthy plant growth through superior nutrition. Contains high levels of soluble calcium together with boron and zinc, important for root development, maintaining plant health, and strengthening cell walls for improved quality and shelf life.",
     keyFeatures: [
@@ -246,25 +245,25 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
         title: "Phosphite Technology",
         description:
           "Advanced phosphite formulation provides immediate plant availability and systemic movement",
-        icon: <Atom className="h-6 w-6 text-blue-600" />,
+        icon: <Atom className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Calcium Fortification",
         description:
           "High levels of soluble calcium strengthen cell walls and improve structural integrity",
-        icon: <Shield className="h-6 w-6 text-green-600" />,
+        icon: <Shield className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Micronutrient Complex",
         description:
           "Boron and zinc work synergistically with calcium for optimal plant metabolism",
-        icon: <Zap className="h-6 w-6 text-purple-600" />,
+        icon: <Zap className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Quality Enhancement",
         description:
           "Improves crop quality, shelf life, and post-harvest performance",
-        icon: <Award className="h-6 w-6 text-orange-600" />,
+        icon: <Award className="h-6 w-6 text-[#6abf4b]" />,
       },
     ],
   };
@@ -278,7 +277,7 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-[#ececec]/50" />
+        <div className="absolute inset-0 bg-[#6abf4b]/20" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
@@ -326,19 +325,41 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
             </motion.div>
 
             <motion.div
-              className="relative"
-              initial={{ opacity: 0, scale: 0.8 }}
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -3 }}
             >
-              <div className="relative z-10">
-                <img
-                  src={capitalImage}
-                  alt="CaPITAL Product"
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-                />
+              {/* Main image container */}
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="/assets/product images/Calcium Supplements/Capital.png"
+                    alt="CaPITAL Product"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+              >
+                Vegetable Specialist
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -392,121 +413,160 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
 
       {/* Technical Analysis Section */}
       <motion.section
-        className="py-20 px-4 bg-white/50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6">Technical Analysis</h2>
+            <p className="text-xl text-gray-600">
+              Comprehensive nutrient profile for optimal crop nutrition
+            </p>
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-8">Technical Analysis</h2>
-              <div className="space-y-6">
-                <Card className="border-0 bg-white/80 backdrop-blur-sm">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <FlaskConical className="h-6 w-6 text-[#6abf4b]" />
-                      <h3 className="text-xl font-semibold">
-                        Primary Nutrients
-                      </h3>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-600">
-                          Phosphorus Pentoxide (P₂O₅)
-                        </span>
-                        <div className="flex items-center gap-2">
-                          <Badge
-                            variant="secondary"
-                            className="text-lg px-3 py-1"
-                          >
-                            30% w/v
-                          </Badge>
-                          <Badge variant="outline">300 g/l</Badge>
+              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-4">
+                    <FlaskConical className="h-8 w-8 text-[#6abf4b]" />
+                    <CardTitle className="text-2xl">
+                      Primary Nutrients
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                      <span className="text-gray-700 font-medium">
+                        Phosphorus Pentoxide (P₂O₅)
+                      </span>
+                      <div className="text-right">
+                        <div className="text-lg font-bold text-[#6abf4b]">
+                          30% w/v
                         </div>
-                      </div>
-                      <Separator />
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-600">Potassium (K₂O)</span>
-                        <div className="flex items-center gap-2">
-                          <Badge variant="secondary" className="px-3 py-1">
-                            8% w/v
-                          </Badge>
-                          <Badge variant="outline">80 g/l</Badge>
-                        </div>
-                      </div>
-                      <Separator />
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-600">Calcium (as CaO)</span>
-                        <div className="flex items-center gap-2">
-                          <Badge variant="secondary" className="px-3 py-1">
-                            6.6% w/v
-                          </Badge>
-                          <Badge variant="outline">66 g/l</Badge>
-                        </div>
+                        <div className="text-sm text-gray-600">300 g/l</div>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
+                    <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                      <span className="text-gray-700 font-medium">
+                        Potassium (K₂O)
+                      </span>
+                      <div className="text-right">
+                        <div className="text-lg font-bold text-[#6abf4b]">
+                          8% w/v
+                        </div>
+                        <div className="text-sm text-gray-600">80 g/l</div>
+                      </div>
+                    </div>
+                    <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                      <span className="text-gray-700 font-medium">
+                        Calcium (as CaO)
+                      </span>
+                      <div className="text-right">
+                        <div className="text-lg font-bold text-[#6abf4b]">
+                          6.6% w/v
+                        </div>
+                        <div className="text-sm text-gray-600">66 g/l</div>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
 
-                <Card className="border-0 bg-white/80 backdrop-blur-sm">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Atom className="h-6 w-6 text-[#6abf4b]" />
-                      <h3 className="text-xl font-semibold">
-                        Key Micronutrients
-                      </h3>
+              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl mt-6">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-4">
+                    <Atom className="h-8 w-8 text-[#6abf4b]" />
+                    <CardTitle className="text-2xl">
+                      Key Micronutrients
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    <div className="text-center p-4 bg-gray-50 rounded-lg">
+                      <div className="text-2xl font-bold text-[#6abf4b] mb-1">
+                        2.4%
+                      </div>
+                      <p className="text-sm text-gray-600">Zinc (Zn)</p>
                     </div>
-                    <div className="grid grid-cols-3 gap-4">
-                      <div className="text-center p-3 bg-white/50 rounded-lg">
-                        <p className="text-xl font-semibold text-[#6abf4b] mb-1">
-                          2.4%
-                        </p>
-                        <p className="text-sm text-gray-600">Zinc (Zn)</p>
+                    <div className="text-center p-4 bg-gray-50 rounded-lg">
+                      <div className="text-2xl font-bold text-[#6abf4b] mb-1">
+                        0.8%
                       </div>
-                      <div className="text-center p-3 bg-white/50 rounded-lg">
-                        <p className="text-xl font-semibold text-[#6abf4b] mb-1">
-                          0.8%
-                        </p>
-                        <p className="text-sm text-gray-600">Boron (B)</p>
-                      </div>
-                      <div className="text-center p-3 bg-white/50 rounded-lg">
-                        <p className="text-xl font-semibold text-[#6abf4b] mb-1">
-                          4%
-                        </p>
-                        <p className="text-sm text-gray-600">Nitrogen (N)</p>
-                      </div>
+                      <p className="text-sm text-gray-600">Boron (B)</p>
                     </div>
-                  </CardContent>
-                </Card>
+                    <div className="text-center p-4 bg-gray-50 rounded-lg">
+                      <div className="text-2xl font-bold text-[#6abf4b] mb-1">
+                        4%
+                      </div>
+                      <p className="text-sm text-gray-600">Nitrogen (N)</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
 
-                <Card className="border-0 bg-white/80 backdrop-blur-sm">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Package className="h-6 w-6 text-[#6abf4b]" />
-                      <h3 className="text-xl font-semibold">
-                        Pack Sizes Available
-                      </h3>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      <Badge variant="secondary" className="text-lg px-3 py-1">
-                        2 × 10L
-                      </Badge>
-                      <Badge variant="secondary" className="text-lg px-3 py-1">
-                        1000L IBC
-                      </Badge>
-                    </div>
-                  </CardContent>
-                </Card>
+            <motion.div
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="/assets/product images/Calcium Supplements/Capital.png"
+                    alt="CaPITAL Product"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
               </div>
-            </div>
 
-            <div>
-              <img
-                src={capitalImage}
-                alt="CaPITAL Product"
-                className="w-full h-auto max-h-96 object-contain rounded-2xl shadow-xl"
-              />
-            </div>
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+              >
+                Advanced Formulation
+              </motion.div>
+            </motion.div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <Card className="inline-block bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Package className="h-6 w-6 text-[#6abf4b]" />
+                  <h3 className="text-xl font-semibold">
+                    Pack Sizes Available
+                  </h3>
+                </div>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <Badge variant="secondary" className="text-lg px-3 py-1">
+                    2 × 10L
+                  </Badge>
+                  <Badge variant="secondary" className="text-lg px-3 py-1">
+                    1000L IBC
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </motion.section>

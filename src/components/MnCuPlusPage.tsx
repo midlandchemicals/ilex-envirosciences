@@ -11,10 +11,12 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
-
+import { Separator } from "./ui/separator";
+import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { smoothScrollToSection } from "../utils/scrollHelpers";
 import {
   Leaf,
   Zap,
@@ -44,7 +46,6 @@ import {
   Activity,
   Combine,
 } from "lucide-react";
-import { smoothScrollToSection } from "../utils/scrollHelpers";
 
 interface ContactFormProps {
   onSubmit: (formData: {
@@ -92,37 +93,37 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Combine className="h-8 w-8 text-green-600" />,
+      icon: <Combine className="h-8 w-8 text-[#6abf4b]" />,
       title: "Dual Micronutrient Power",
       description:
         "Combines manganese and copper in one efficient application for comprehensive nutrition",
     },
     {
-      icon: <Zap className="h-8 w-8 text-green-600" />,
+      icon: <Zap className="h-8 w-8 text-[#6abf4b]" />,
       title: "Rapid Deficiency Correction",
       description:
         "Quick-acting formulation provides immediate response to micronutrient deficiencies",
     },
     {
-      icon: <Target className="h-8 w-8 text-green-600" />,
+      icon: <Target className="h-8 w-8 text-[#6abf4b]" />,
       title: "Cost-Effective Application",
       description:
         "Two essential micronutrients delivered in a single, efficient treatment",
     },
     {
-      icon: <Activity className="h-8 w-8 text-green-600" />,
+      icon: <Activity className="h-8 w-8 text-[#6abf4b]" />,
       title: "Enhanced Enzyme Function",
       description:
         "Supports critical enzyme systems for photosynthesis and plant metabolism",
     },
     {
-      icon: <Shield className="h-8 w-8 text-green-600" />,
+      icon: <Shield className="h-8 w-8 text-[#6abf4b]" />,
       title: "Tank Mix Compatible",
       description:
         "Easily integrated with other foliar treatments and crop protection products",
     },
     {
-      icon: <Award className="h-8 w-8 text-green-600" />,
+      icon: <Award className="h-8 w-8 text-[#6abf4b]" />,
       title: "Broad Crop Suitability",
       description:
         "Effective across a wide range of arable and horticultural crops",
@@ -145,7 +146,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
         },
       ],
       color: "bg-[#ececec] text-green-800",
-      icon: <Wheat className="h-5 w-5 text-green-600" />,
+      icon: <Wheat className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Oilseed Rape",
@@ -162,7 +163,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
         },
       ],
       color: "bg-[#ececec] text-green-800",
-      icon: <Flower className="h-5 w-5 text-green-600" />,
+      icon: <Flower className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Sugar Beet",
@@ -179,7 +180,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
         },
       ],
       color: "bg-[#ececec] text-green-800",
-      icon: <Sprout className="h-5 w-5 text-green-600" />,
+      icon: <Sprout className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Vegetables",
@@ -196,7 +197,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
         },
       ],
       color: "bg-[#ececec] text-green-800",
-      icon: <Leaf className="h-5 w-5 text-green-600" />,
+      icon: <Leaf className="h-5 w-5 text-[#6abf4b]" />,
     },
   ];
 
@@ -286,25 +287,25 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
         title: "Manganese Functions",
         description:
           "Essential for photosynthesis, respiration, and antioxidant enzyme systems",
-        icon: <Atom className="h-6 w-6 text-green-600" />,
+        icon: <Atom className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Copper Functions",
         description:
           "Critical for enzyme systems, protein synthesis, and cell wall development",
-        icon: <FlaskConical className="h-6 w-6 text-green-600" />,
+        icon: <FlaskConical className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Synergistic Action",
         description:
           "Combined Mn and Cu work together to optimize plant metabolism",
-        icon: <Combine className="h-6 w-6 text-green-600" />,
+        icon: <Combine className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Rapid Response",
         description:
           "Quick correction of deficiency symptoms and restoration of normal function",
-        icon: <Zap className="h-6 w-6 text-green-600" />,
+        icon: <Zap className="h-6 w-6 text-[#6abf4b]" />,
       },
     ],
   };
@@ -318,7 +319,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-[#ececec]/50" />
+        <div className="absolute inset-0 bg-[#6abf4b]/20" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
@@ -343,12 +344,12 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-lg px-8 py-4 text-white"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-white text-lg px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection("application-guidelines-mncuplus")
                   }
                 >
-                  Application Guidlines
+                  Application Guidelines
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
@@ -365,19 +366,41 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
             </motion.div>
 
             <motion.div
-              className="relative"
-              initial={{ opacity: 0, scale: 0.8 }}
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -3 }}
             >
-              <div className="relative z-10">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
-                  alt="Mn-Cu Plus Product"
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-                />
+              {/* Main image container */}
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="/assets/product images/Foliar/MnCuPlus.jpg"
+                    alt="Mn-Cu Plus Product"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+              >
+                Dual Micronutrient
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -449,16 +472,18 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
-                <CardContent className="p-8">
+                <CardHeader>
                   <div className="flex items-center gap-3 mb-6">
-                    <Combine className="h-8 w-8 text-green-600" />
+                    <Combine className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-2xl font-semibold">
                       Combined Micronutrient Power
                     </h3>
                   </div>
+                </CardHeader>
+                <CardContent className="p-8">
                   <div className="space-y-6">
                     <div className="flex items-start gap-3">
-                      <Atom className="h-6 w-6 text-green-600 mt-1" />
+                      <Atom className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Manganese Functions (8%)
@@ -472,7 +497,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <FlaskConical className="h-6 w-6 text-green-600 mt-1" />
+                      <FlaskConical className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Copper Functions (5%)
@@ -486,7 +511,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Zap className="h-6 w-6 text-green-600 mt-1" />
+                      <Zap className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Synergistic Action
@@ -513,13 +538,64 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
               </Card>
             </div>
 
-            <div>
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
-                alt="Healthy Arable Crops"
-                className="w-full h-80 object-cover rounded-2xl shadow-xl"
-              />
-            </div>
+            <motion.div
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="/assets/product images/Foliar/MnCuPlus.jpg"
+                    alt="Healthy Arable Crops"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+              </div>
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+              >
+                Synergistic Nutrition
+              </motion.div>
+            </motion.div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <Card className="inline-block bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Package className="h-6 w-6 text-[#6abf4b]" />
+                  <h3 className="text-xl font-semibold">
+                    Pack Sizes Available
+                  </h3>
+                </div>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <Badge variant="secondary" className="text-lg px-3 py-1">
+                    20L
+                  </Badge>
+                  <Badge variant="secondary" className="text-lg px-3 py-1">
+                    1000L IBC
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </motion.section>
@@ -547,7 +623,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-lg transition-all duration-300 bg-white/80 backdrop-blur-sm">
+                <Card className="h-full hover:shadow-lg transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-4">
                       {crop.icon}
@@ -588,15 +664,15 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-[#ececec] border border-[#d1e7d1] shadow">
+            <Card className="bg-white/80 backdrop-blur-sm border-0">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-green-600 mt-1" />
+                  <CheckCircle className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-green-800">
+                    <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Deficiency Treatment
                     </h3>
-                    <p className="text-green-700">
+                    <p className="text-gray-700">
                       For severe deficiencies, increase rate to 3-4 l/ha and
                       repeat application after 2-3 weeks if symptoms persist.
                     </p>
@@ -610,7 +686,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-white"
+        className="py-20 px-4 bg-white/50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -626,13 +702,13 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-green-600" />
+                  <Package className="h-8 w-8 text-[#6abf4b]" />
                   <h3 className="text-2xl font-semibold">
                     Available Pack Sizes
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-white/70 rounded-lg shadow">
+                  <div className="text-center p-6 bg-white/70 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -644,7 +720,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
                       use
                     </p>
                   </div>
-                  <div className="text-center p-6 bg-white/70 rounded-lg shadow">
+                  <div className="text-center p-6 bg-white/70 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"

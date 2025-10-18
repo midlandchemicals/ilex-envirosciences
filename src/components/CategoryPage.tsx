@@ -122,141 +122,72 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
   };
 
   return (
-    <div
-      className={`min-h-screen bg-gradient-to-br ${getCategoryGradient(
-        category.link
-      )}`}
-    >
-      {/* Hero Section */}
-      <motion.section
-        className="relative py-20 px-4 overflow-hidden"
+    <div className="min-h-screen bg-white pt-24">
+      {/* Category Header */}
+      <motion.header
+        className="bg-gradient-to-r from-[#6abf4b] to-[#5aa338] py-12 px-4 text-white"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.5 }}
       >
-        <div className="relative max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div {...fadeInUp}>
-              <div className="flex items-center gap-4 mb-6">
-                {getCategoryIcon(category.link)}
-                <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-200 text-lg px-4 py-2">
-                  {category.products?.length || 0} Products Available
-                </Badge>
-              </div>
-              <h1 className="text-5xl lg:text-6xl mb-6 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div>
+              <h1 className="text-3xl md:text-4xl font-bold mb-2">
                 {category.menu_item.replace("The Ilex ", "")}
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-white/90 max-w-3xl">
                 {getCategoryDescription(category.link)}
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                  Browse Products
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button variant="outline" size="lg">
-                  Technical Information
-                </Button>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="relative"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <div className="relative z-10">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=600&h=400&fit=crop"
-                  alt={category.menu_item}
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-                />
-              </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-blue-400 to-green-400 rounded-2xl opacity-20" />
-            </motion.div>
+            </div>
+            <Badge className="bg-white text-[#5aa338] hover:bg-white/90 text-base px-4 py-2">
+              {category.products?.length || 0} Products
+            </Badge>
           </div>
         </div>
-      </motion.section>
+      </motion.header>
 
       {/* Products Grid */}
       <motion.section
-        className="py-20 px-4"
+        className="py-12 px-4"
         variants={staggerContainer}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto">
-          <motion.div className="text-center mb-16" variants={fadeInUp}>
-            <h2 className="text-4xl mb-6">Available Products</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Choose from our comprehensive range of specialized products
-            </p>
-          </motion.div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {category.products?.map((product, index) => (
-              <motion.div key={index} variants={fadeInUp} className="group">
-                <Card className="h-full hover:shadow-xl transition-all duration-500 border-0 bg-white/70 backdrop-blur-sm overflow-hidden">
-                  <div className="relative">
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className="group"
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              >
+                <Card className="h-full flex flex-col border border-gray-100 hover:border-[#6abf4b] transition-all duration-300 overflow-hidden">
+                  <div className="h-48 bg-gray-50 flex items-center justify-center p-4">
                     <ImageWithFallback
                       src={getProductImage(product.product)}
                       alt={product.product}
-                      className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-contain p-4"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
-
-                  <CardHeader className="pb-4">
-                    <CardTitle className="text-lg leading-tight">
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-lg text-gray-800">
                       {product.product}
                     </CardTitle>
                   </CardHeader>
-
-                  <CardContent>
+                  <CardContent className="pt-0 mt-auto">
                     <Button
-                      className="w-full cursor-pointer group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-green-600 transition-all duration-300"
+                      className="w-full bg-[#6abf4b] hover:bg-[#5aa338] text-white"
                       onClick={() => onPageChange("product", category, product)}
                     >
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      View Details
                     </Button>
                   </CardContent>
                 </Card>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </motion.section>
-
-      {/* CTA Section */}
-      <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-blue-600 to-green-600 text-white"
-        {...fadeInUp}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl mb-6">Need Expert Advice?</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Our agricultural specialists can help you choose the right products
-            for your specific needs
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button
-              size="lg"
-              className="bg-white text-blue-600 hover:bg-gray-100"
-              onClick={() => onPageChange("contact")}
-            >
-              Contact Our Experts
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-blue-600"
-            >
-              View Technical Resources
-            </Button>
           </div>
         </div>
       </motion.section>

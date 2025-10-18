@@ -11,9 +11,12 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
+import { Separator } from "./ui/separator";
+import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { smoothScrollToSection } from "../utils/scrollHelpers";
 import {
   Leaf,
   Zap,
@@ -43,7 +46,6 @@ import {
   Activity,
   Combine,
 } from "lucide-react";
-import { smoothScrollToSection } from "../utils/scrollHelpers";
 
 interface ContactFormProps {
   onSubmit: (formData: {
@@ -91,37 +93,37 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Combine className="h-8 w-8 text-green-600" />,
+      icon: <Combine className="h-8 w-8 text-[#6abf4b]" />,
       title: "High Potassium Concentration",
       description:
         "Concentrated potassium source for maximum efficiency and rapid plant response",
     },
     {
-      icon: <Zap className="h-8 w-8 text-green-600" />,
+      icon: <Zap className="h-8 w-8 text-[#6abf4b]" />,
       title: "Rapid Uptake",
       description:
         "Foliar application ensures immediate potassium availability during critical periods",
     },
     {
-      icon: <Target className="h-8 w-8 text-blue-600" />,
+      icon: <Target className="h-8 w-8 text-[#6abf4b]" />,
       title: "Quality Enhancement",
       description:
         "Improves crop quality, color, flavor, and storage characteristics",
     },
     {
-      icon: <Activity className="h-8 w-8 text-orange-600" />,
+      icon: <Activity className="h-8 w-8 text-[#6abf4b]" />,
       title: "Metabolic Optimization",
       description:
         "Supports enzyme function, photosynthesis, and protein synthesis",
     },
     {
-      icon: <Shield className="h-8 w-8 text-cyan-600" />,
+      icon: <Shield className="h-8 w-8 text-[#6abf4b]" />,
       title: "Enhanced Stress Tolerance",
       description:
         "Improves plant resistance to drought, frost, and disease stress",
     },
     {
-      icon: <Award className="h-8 w-8 text-red-600" />,
+      icon: <Award className="h-8 w-8 text-[#6abf4b]" />,
       title: "Broad Crop Application",
       description:
         "Effective across arable and horticultural crops throughout growing season",
@@ -144,7 +146,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
         },
       ],
       color: "bg-yellow-100 text-yellow-800",
-      icon: <Wheat className="h-5 w-5 text-yellow-600" />,
+      icon: <Wheat className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Oilseed Rape",
@@ -161,7 +163,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
         },
       ],
       color: "bg-blue-100 text-blue-800",
-      icon: <Flower className="h-5 w-5 text-blue-600" />,
+      icon: <Flower className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Sugar Beet",
@@ -178,7 +180,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
         },
       ],
       color: "bg-green-100 text-green-800",
-      icon: <Sprout className="h-5 w-5 text-green-600" />,
+      icon: <Sprout className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Potatoes",
@@ -195,7 +197,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
         },
       ],
       color: "bg-orange-100 text-orange-800",
-      icon: <Leaf className="h-5 w-5 text-orange-600" />,
+      icon: <Leaf className="h-5 w-5 text-[#6abf4b]" />,
     },
   ];
 
@@ -220,7 +222,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
   ];
 
   return (
-    <div className="min-h-screen mt-10 bg-gray-50">
+    <div className="min-h-screen mt-10 bg-[#ececec]">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -228,7 +230,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-[#ececec]/50" />
+        <div className="absolute inset-0 bg-[#6abf4b]/20" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
@@ -252,7 +254,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-white text-lg px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection("application-guidelines-prok")
                   }
@@ -263,7 +265,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg cursor-pointer px-8 py-4"
+                  className="text-lg cursor-pointer px-8 py-4 border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
                     smoothScrollToSection("technical-resources-prok")
                   }
@@ -274,19 +276,41 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
             </motion.div>
 
             <motion.div
-              className="relative"
-              initial={{ opacity: 0, scale: 0.8 }}
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -3 }}
             >
-              <div className="relative z-10">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
-                  alt="Pro-K Product"
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-                />
+              {/* Main image container */}
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="/assets/product images/Foliar/ProK.png"
+                    alt="Pro-K Product"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+              >
+                Potassium Specialist
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -294,7 +318,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
 
       {/* Key Benefits Section */}
       <motion.section
-        className="py-20 px-4 bg-white"
+        className="py-20 px-4 bg-white/50"
         variants={staggerContainer}
         initial="initial"
         whileInView="animate"
@@ -354,14 +378,14 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <Combine className="h-8 w-8 text-green-600" />
+                    <Combine className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-2xl font-semibold">
                       Premium Potassium Nutrition
                     </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="flex items-start gap-3">
-                      <Zap className="h-6 w-6 text-green-600 mt-1" />
+                      <Zap className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">Rapid Uptake</h4>
                         <p className="text-gray-600">
@@ -372,7 +396,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Target className="h-6 w-6 text-blue-600 mt-1" />
+                      <Target className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Quality Enhancement
@@ -385,7 +409,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Activity className="h-6 w-6 text-orange-600 mt-1" />
+                      <Activity className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Metabolic Optimization
@@ -398,10 +422,10 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="bg-green-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-green-800 mb-2">
+                      <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Foliar Advantage
                       </h4>
-                      <p className="text-green-700">
+                      <p className="text-gray-600">
                         Foliar application bypasses soil fixation, ensuring
                         immediate potassium availability during critical growth
                         periods.
@@ -412,13 +436,64 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
               </Card>
             </div>
 
-            <div>
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
-                alt="High Quality Crop Development"
-                className="w-full h-80 object-cover rounded-2xl shadow-xl"
-              />
-            </div>
+            <motion.div
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
+                    alt="High Quality Crop Development"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+              </div>
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+              >
+                Premium Formula
+              </motion.div>
+            </motion.div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <Card className="inline-block bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Package className="h-6 w-6 text-[#6abf4b]" />
+                  <h3 className="text-xl font-semibold">
+                    Pack Sizes Available
+                  </h3>
+                </div>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <Badge variant="secondary" className="text-lg px-3 py-1">
+                    20L
+                  </Badge>
+                  <Badge variant="secondary" className="text-lg px-3 py-1">
+                    1000L IBC
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </motion.section>
@@ -446,7 +521,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-lg transition-all duration-300 bg-white/80 backdrop-blur-sm">
+                <Card className="h-full hover:shadow-lg transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-4">
                       {crop.icon}
@@ -487,15 +562,15 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-green-50 border border-green-200">
+            <Card className="bg-white/80 backdrop-blur-sm border-0">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-green-600 mt-1" />
+                  <CheckCircle className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-green-800">
+                    <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Application Method
                     </h3>
-                    <p className="text-green-700">
+                    <p className="text-gray-700">
                       Apply in 200-400 l/ha of water for optimal coverage.
                       Timing is critical - apply during periods of active growth
                       for maximum quality benefits.
@@ -526,7 +601,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-green-600" />
+                  <Package className="h-8 w-8 text-[#6abf4b]" />
                   <h3 className="text-2xl font-semibold">
                     Available Pack Sizes
                   </h3>

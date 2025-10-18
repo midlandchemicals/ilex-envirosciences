@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import React, { useState, useRef, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, ChevronDown } from "lucide-react";
+import logo from "/assets/ilexlogonobg.png";
 
 export function Navigation() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -37,8 +38,8 @@ export function Navigation() {
         { product: "Tensile™", link: "tensile" },
         { product: "Beet Raiser™", link: "beet-raiser" },
         { product: "Maniphos™", link: "maniphos" },
-        { product: "PK VEG™", link: "pk-veg" }
-      ]
+        { product: "PK VEG™", link: "pk-veg" },
+      ],
     },
     {
       title: "Foliar Range",
@@ -51,8 +52,8 @@ export function Navigation() {
         { product: "Foliar Boost™", link: "foliar-boost" },
         { product: "Cu-Zin™", link: "cu-zin" },
         { product: "Pro-K™", link: "pro-k" },
-        { product: "Pro-Sul™", link: "pro-sul" }
-      ]
+        { product: "Pro-Sul™", link: "pro-sul" },
+      ],
     },
     {
       title: "Calcium Supplements",
@@ -60,16 +61,16 @@ export function Navigation() {
       products: [
         { product: "Pro-Cal™", link: "pro-cal" },
         { product: "Advocate™", link: "advocate" },
-        { product: "CaPITAL™", link: "capital" }
-      ]
+        { product: "CaPITAL™", link: "capital" },
+      ],
     },
     {
       title: "Biostimulants",
       link: "biostimulants",
       products: [
         { product: "Stimplex®", link: "stimplex" },
-        { product: "Toggle®", link: "toggle" }
-      ]
+        { product: "Toggle®", link: "toggle" },
+      ],
     },
     {
       title: "Seed Treatments",
@@ -78,39 +79,43 @@ export function Navigation() {
         { product: "Start-uP® MAXX", link: "start-up-maxx" },
         { product: "Start-uP®", link: "start-up" },
         { product: "ProZest™", link: "prozest" },
-        { product: "Man-uP™", link: "man-up" }
-      ]
+        { product: "Man-uP™", link: "man-up" },
+      ],
     },
     {
       title: "Water Conditioners",
       link: "water-conditioners",
-      products: [
-        { product: "ModipHy Xtra™", link: "modiphy-xtra" }
-      ]
+      products: [{ product: "ModipHy Xtra™", link: "modiphy-xtra" }],
     },
     {
       title: "Ilex Organic Range",
       link: "organic-range",
       products: [
         { product: "Complete™ (6-2-4)", link: "complete-6-2-4" },
-        { product: "Complete Hi-Fruit™ (4-2-6)", link: "complete-hi-fruit-4-2-6" },
+        {
+          product: "Complete Hi-Fruit™ (4-2-6)",
+          link: "complete-hi-fruit-4-2-6",
+        },
         { product: "K-Max™ (3-1-8)", link: "k-max-3-1-8" },
         { product: "N-Max™ (7-2-2)", link: "n-max-7-2-2" },
-        { product: "Ultimate Gold™ (8-7-7)", link: "ultimate-gold-8-7-7" }
-      ]
-    }
+        { product: "Ultimate Gold™ (8-7-7)", link: "ultimate-gold-8-7-7" },
+      ],
+    },
   ];
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setOpenDropdown(null);
       }
     }
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
       if (closeTimeoutRef.current) {
         clearTimeout(closeTimeoutRef.current);
       }
@@ -125,13 +130,13 @@ export function Navigation() {
 
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
-    const contactSection = document.getElementById('contact-us');
+    const contactSection = document.getElementById("contact-us");
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+      contactSection.scrollIntoView({ behavior: "smooth" });
     } else {
       // If not on homepage, navigate to homepage first
-      if (location.pathname !== '/') {
-        navigate('/#contact-us');
+      if (location.pathname !== "/") {
+        navigate("/#contact-us");
       }
     }
   };
@@ -142,35 +147,28 @@ export function Navigation() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
-            <img 
-              src="/images/ilexlogonobg.png" 
-              alt="Ilex Logo" 
-              className="h-[50px] w-auto"
-            />
+            <img src={logo} alt="Ilex Logo" className="h-[50px] w-auto" />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-4">
-            <nav>
-              <ul className="flex gap-2 list-none m-0 p-0">
+          {/* Desktop Navigation - Updated for better spacing and responsiveness */}
+          <div className="hidden md:flex  items-center">
+            <nav className="w-full mr-2 lg:mr-10">
+              <ul className="flex flex-wrap justify-center gap-0.5 md:gap-2 lg:gap-3 list-none m-0 p-0">
                 {menuItems.map((item, index) => (
-                  <li 
-                    key={index} 
-                    className="relative"
-                  >
+                  <li key={index} className="relative">
                     <Link
                       to={`/products/${item.link}`}
-                      className="font-semibold text-[0.82rem] px-0 py-2 text-[#333] inline-block relative transition-colors hover:text-[#6abf4b] cursor-pointer"
+                      className="font-semibold text-sm px-2.5 py-1.5 text-[#333] inline-block hover:text-[#6abf4b] cursor-pointer whitespace-nowrap hover:bg-white/20 rounded"
                       onMouseEnter={() => handleMouseEnter(item.link)}
                       onMouseLeave={handleMouseLeave}
                     >
                       {item.title}
                     </Link>
-                    
+
                     {/* Desktop Dropdown */}
                     {openDropdown === item.link && (
                       <div
-                        className="absolute top-full left-0 bg-[#ececec] min-w-[200px] z-[70] shadow-lg"
+                        className="absolute top-full left-1/2 -translate-x-1/2 bg-white min-w-[220px] z-[70] shadow-xl rounded-b-md overflow-hidden"
                         onMouseEnter={() => handleMouseEnter(item.link)}
                         onMouseLeave={handleMouseLeave}
                       >
@@ -203,7 +201,7 @@ export function Navigation() {
             <a
               href="#contact-us"
               onClick={scrollToContact}
-              className="text-[0.82rem] text-white px-7 py-3 bg-[#6abf4b] rounded-md font-bold transition-all hover:bg-[#5aa338] hover:-translate-y-0.5"
+              className="text-[0.82rem] text-white px-7 text-nowrap py-3 bg-[#6abf4b] rounded-md font-bold transition-all hover:bg-[#5aa338] hover:-translate-y-0.5"
             >
               Contact Us
             </a>
@@ -223,31 +221,42 @@ export function Navigation() {
           {mobileMenuOpen && (
             <motion.nav
               initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
+              animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
               className="md:hidden mt-4 overflow-hidden"
             >
               <ul className="flex flex-col gap-0 list-none m-0 p-0 bg-[#f8f8f8] rounded-lg overflow-hidden">
                 {menuItems.map((item, index) => (
-                  <li key={index} className="border-b border-[#eee] last:border-b-0">
+                  <li
+                    key={index}
+                    className="border-b border-[#eee] last:border-b-0"
+                  >
                     <a
                       href="#"
                       className="block px-5 py-4 text-left font-semibold transition-colors hover:bg-[#ececec]"
                       onClick={(e) => {
                         e.preventDefault();
-                        setOpenDropdown(openDropdown === `mobile-${item.link}` ? null : `mobile-${item.link}`);
+                        setOpenDropdown(
+                          openDropdown === `mobile-${item.link}`
+                            ? null
+                            : `mobile-${item.link}`
+                        );
                       }}
                     >
                       <span className="flex items-center justify-between">
                         {item.title}
-                        <ChevronDown 
-                          className={`transition-transform ${openDropdown === `mobile-${item.link}` ? 'rotate-180' : ''}`}
+                        <ChevronDown
+                          className={`transition-transform ${
+                            openDropdown === `mobile-${item.link}`
+                              ? "rotate-180"
+                              : ""
+                          }`}
                           size={20}
                         />
                       </span>
                     </a>
-                    
+
                     <AnimatePresence>
                       {openDropdown === `mobile-${item.link}` && (
                         <motion.div

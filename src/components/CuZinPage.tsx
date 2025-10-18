@@ -89,37 +89,37 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Timer className="h-8 w-8 text-green-600" />,
+      icon: <Timer className="h-8 w-8 text-[#6abf4b]" />,
       title: "Extended Nutrient Supply",
       description:
         "Maintains increased levels of copper and zinc in the plant for extended periods of growth, maximizing pollen production and enhancing grain-fill",
     },
     {
-      icon: <Sparkles className="h-8 w-8 text-green-600" />,
+      icon: <Sparkles className="h-8 w-8 text-[#6abf4b]" />,
       title: "High Concentration Formula",
       description:
         "High concentration of copper (12% w/v) with zinc (36% w/v) for maximum efficiency and performance",
     },
     {
-      icon: <Target className="h-8 w-8 text-green-600" />,
+      icon: <Target className="h-8 w-8 text-[#6abf4b]" />,
       title: "Effective at Low Application Rates",
       description:
         "Delivers superior results at low application rates, reducing costs and handling while maintaining effectiveness",
     },
     {
-      icon: <Droplets className="h-8 w-8 text-green-600" />,
+      icon: <Droplets className="h-8 w-8 text-[#6abf4b]" />,
       title: "Disperses Quickly in Tank",
       description:
         "Specially formulated to disperse quickly in the spray tank for easy application and uniform distribution",
     },
     {
-      icon: <Shield className="h-8 w-8 text-green-600" />,
+      icon: <Shield className="h-8 w-8 text-[#6abf4b]" />,
       title: "Rainfast on Leaf Surface",
       description:
         "Trials have shown that the formulation is rainfast on the leaf surface soon after application",
     },
     {
-      icon: <CheckCircle className="h-8 w-8 text-green-600" />,
+      icon: <CheckCircle className="h-8 w-8 text-[#6abf4b]" />,
       title: "Extensively Compatibility Tested",
       description:
         "Extensively tested with a wide range of pesticides and found physically compatible with the vast majority of approved agrochemicals",
@@ -133,14 +133,14 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
       description:
         "For preventing copper and zinc deficiencies in healthy crops",
       color: "bg-green-50 text-green-800",
-      icon: <Shield className="h-5 w-5 text-green-600" />,
+      icon: <Shield className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       type: "Deficiency Rate",
       rate: "1.00 – 1.50 l/ha",
       description: "For correcting existing copper and zinc deficiencies",
       color: "bg-green-100 text-green-700",
-      icon: <Zap className="h-5 w-5 text-green-600" />,
+      icon: <Zap className="h-5 w-5 text-[#6abf4b]" />,
     },
   ];
 
@@ -226,31 +226,31 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
         title: "Copper Enzyme Function",
         description:
           "Copper is essential for enzyme systems involved in photosynthesis and lignin formation",
-        icon: <Atom className="h-6 w-6 text-green-600" />,
+        icon: <Atom className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Zinc Metabolism",
         description:
           "Zinc is crucial for protein synthesis, growth regulators, and reproductive development",
-        icon: <Zap className="h-6 w-6 text-green-600" />,
+        icon: <Zap className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Extended Availability",
         description:
           "Formulated for sustained release and extended nutrient availability in plant tissues",
-        icon: <Timer className="h-6 w-6 text-green-600" />,
+        icon: <Timer className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Compatibility Tested",
         description:
           "Extensively tested with pesticides and found compatible with the vast majority of agrochemicals",
-        icon: <Shield className="h-6 w-6 text-green-600" />,
+        icon: <Shield className="h-6 w-6 text-[#6abf4b]" />,
       },
     ],
   };
 
   return (
-    <div className="min-h-screen mt-10 bg-white">
+    <div className="min-h-screen mt-10 bg-[#ececec]">
       {/* Hero Section */}
       <motion.section
         className="relative py-20 px-4 overflow-hidden"
@@ -258,7 +258,7 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#6abf4b]/10 to-[#5aa338]/10" />
+        <div className="absolute inset-0 bg-[#6abf4b]/20" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
@@ -285,7 +285,7 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-lg px-8 py-4"
+                  className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-white text-lg px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection("application-guidelines-cuzin")
                   }
@@ -296,9 +296,9 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg cursor-pointer px-8 py-4"
+                  className="text-lg cursor-pointer px-8 py-4 border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
-                    smoothScrollToSection("technical-resources-capital")
+                    smoothScrollToSection("technical-resources-cuzin")
                   }
                 >
                   View Technical Resources
@@ -307,19 +307,41 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
             </motion.div>
 
             <motion.div
-              className="relative"
-              initial={{ opacity: 0, scale: 0.8 }}
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -3 }}
             >
-              <div className="relative z-10">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
-                  alt="Cu-Zin Product"
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-                />
+              {/* Main image container */}
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="/assets/product images/Foliar/Cu-Zin.jpg"
+                    alt="Cu-Zin Product"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+              >
+                Micronutrient Specialist
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -330,7 +352,7 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
 
       {/* Key Benefits Section */}
       <motion.section
-        className="py-20 px-4 bg-white"
+        className="py-20 px-4 bg-white/50"
         variants={staggerContainer}
         initial="initial"
         whileInView="animate"
@@ -373,98 +395,133 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
 
       {/* Technical Analysis Section */}
       <motion.section
-        className="py-20 px-4 bg-white/50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-8">Technical Analysis</h2>
-              <div className="space-y-6">
-                <Card className="border-0 bg-green-50">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <FlaskConical className="h-6 w-6 text-green-600" />
-                      <h3 className="text-xl font-semibold">
-                        Micronutrient Composition
-                      </h3>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-600">Zinc (Zn)</span>
-                        <div className="flex items-center gap-2">
-                          <Badge
-                            variant="secondary"
-                            className="text-lg px-3 py-1"
-                          >
-                            36% w/v
-                          </Badge>
-                          <Badge variant="outline">360 g/l</Badge>
-                        </div>
-                      </div>
-                      <Separator />
-                      <div className="flex justify-between items-center">
-                        <span className="text-gray-600">Copper (Cu)</span>
-                        <div className="flex items-center gap-2">
-                          <Badge
-                            variant="secondary"
-                            className="text-lg px-3 py-1"
-                          >
-                            12% w/v
-                          </Badge>
-                          <Badge variant="outline">120 g/l</Badge>
-                        </div>
+              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <FlaskConical className="h-8 w-8 text-[#6abf4b]" />
+                    <h3 className="text-2xl font-semibold">
+                      Micronutrient Composition
+                    </h3>
+                  </div>
+                  <div className="space-y-6">
+                    <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                      <span className="text-gray-700 font-medium">
+                        Zinc (Zn)
+                      </span>
+                      <div className="flex items-center gap-2">
+                        <Badge
+                          variant="secondary"
+                          className="text-lg px-3 py-1"
+                        >
+                          36% w/v
+                        </Badge>
+                        <Badge variant="outline">360 g/l</Badge>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
 
-                <Card className="border-0 bg-green-50">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Atom className="h-6 w-6 text-green-600" />
-                      <h3 className="text-xl font-semibold">
-                        High Concentration Formula
-                      </h3>
+                    <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                      <span className="text-gray-700 font-medium">
+                        Copper (Cu)
+                      </span>
+                      <div className="flex items-center gap-2">
+                        <Badge
+                          variant="secondary"
+                          className="text-lg px-3 py-1"
+                        >
+                          12% w/v
+                        </Badge>
+                        <Badge variant="outline">120 g/l</Badge>
+                      </div>
                     </div>
-                    <p className="text-gray-600 mb-4">
-                      Specially formulated for maximum nutrient density and
-                      extended plant availability
-                    </p>
+
                     <div className="grid grid-cols-2 gap-4">
-                      <div className="text-center p-3 bg-white/50 rounded-lg">
-                        <p className="text-2xl font-bold text-green-600 mb-1">
+                      <div className="text-center p-3 bg-gray-50 rounded-lg">
+                        <p className="text-2xl font-bold text-[#6abf4b] mb-1">
                           36%
                         </p>
                         <p className="text-sm text-gray-600">Zinc Content</p>
                       </div>
-                      <div className="text-center p-3 bg-white/50 rounded-lg">
-                        <p className="text-2xl font-bold text-green-600 mb-1">
+                      <div className="text-center p-3 bg-gray-50 rounded-lg">
+                        <p className="text-2xl font-bold text-[#6abf4b] mb-1">
                           12%
                         </p>
                         <p className="text-sm text-gray-600">Copper Content</p>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
-              </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
 
-            <div>
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop"
-                alt="Cu-Zin Product"
-                className="w-full h-80 object-cover rounded-2xl shadow-xl"
-              />
-            </div>
+            <motion.div
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="/assets/product images/Foliar/Cu-Zin.jpg"
+                    alt="Cu-Zin Product"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+              </div>
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+              >
+                High Concentration
+              </motion.div>
+            </motion.div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <Card className="inline-block bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Package className="h-6 w-6 text-[#6abf4b]" />
+                  <h3 className="text-xl font-semibold">
+                    Pack Sizes Available
+                  </h3>
+                </div>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <Badge variant="secondary" className="text-lg px-3 py-1">
+                    2 × 5L
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </motion.section>
 
       {/* Application Guidelines */}
       <motion.section
-        className="py-20 px-4"
+        className="py-20 px-4 bg-white/50"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -488,24 +545,20 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full hover:shadow-lg transition-all duration-300 bg-white/80 backdrop-blur-sm">
+                <Card className="h-full hover:shadow-lg transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-3">
                       {rate.icon}
                       <CardTitle className="text-xl">{rate.type}</CardTitle>
                     </div>
-                    <div className="text-center p-4 bg-gray-50 rounded-lg">
-                      <Badge
-                        className={`${rate.color} text-2xl px-4 py-2 mb-2`}
-                      >
+                    <div className="text-center p-3 bg-gray-50 rounded-lg">
+                      <Badge className={`${rate.color} text-lg px-3 py-1`}>
                         {rate.rate}
                       </Badge>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 text-center">
-                      {rate.description}
-                    </p>
+                    <p className="text-sm text-gray-600">{rate.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -519,15 +572,15 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-green-50 border border-green-200">
+            <Card className="bg-white/80 backdrop-blur-sm border-0">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-green-600 mt-1" />
+                  <CheckCircle className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-green-800">
+                    <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Severe Deficiency Treatment
                     </h3>
-                    <p className="text-green-700">
+                    <p className="text-gray-700">
                       In the case of severe zinc and copper deficiencies, repeat
                       applications at the 1 l/ha rate are recommended until
                       symptoms are corrected.
@@ -540,149 +593,9 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
         </div>
       </motion.section>
 
-      {/* Compatibility Highlight Section */}
-      <motion.section
-        className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
-        {...fadeInUp}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Proven Compatibility</h2>
-            <p className="text-xl text-gray-600">
-              Extensively tested for reliable tank mixing performance
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8 items-center">
-            <div className="space-y-6">
-              <Card className="bg-green-50 border-0 shadow-lg">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Shield className="h-8 w-8 text-green-600" />
-                    <h3 className="text-xl font-semibold text-green-800">
-                      Wide Compatibility
-                    </h3>
-                  </div>
-                  <p className="text-green-700">
-                    Extensively tested with a wide range of pesticides and found
-                    physically compatible with the vast majority of approved
-                    agrochemicals.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-green-50 border-0 shadow-lg">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Droplets className="h-8 w-8 text-green-600" />
-                    <h3 className="text-xl font-semibold text-green-800">
-                      Quick Dispersion
-                    </h3>
-                  </div>
-                  <p className="text-green-700">
-                    Specially formulated to disperse quickly in the spray tank,
-                    ensuring easy mixing and uniform application.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="text-center">
-              <div className="relative">
-                <div className="w-48 h-48 mx-auto bg-gradient-to-br from-green-100 to-green-200 rounded-full flex items-center justify-center shadow-xl">
-                  <div className="text-center">
-                    <FlaskConical className="h-16 w-16 text-green-600 mx-auto mb-2" />
-                    <p className="text-xl font-semibold text-green-800">
-                      Extensively
-                    </p>
-                    <p className="text-lg text-green-700">Tested</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <Card className="bg-green-50 border-0 shadow-lg">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Sparkles className="h-8 w-8 text-green-600" />
-                    <h3 className="text-xl font-semibold text-green-800">
-                      Rainfast Formula
-                    </h3>
-                  </div>
-                  <p className="text-green-700">
-                    Trials have shown that the formulation is rainfast on the
-                    leaf surface soon after application, ensuring reliable
-                    performance.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-green-50 border-0 shadow-lg">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Timer className="h-8 w-8 text-green-600" />
-                    <h3 className="text-xl font-semibold text-green-800">
-                      Extended Nutrition
-                    </h3>
-                  </div>
-                  <p className="text-green-700">
-                    Maintains increased levels of copper and zinc in plants for
-                    extended periods, maximizing nutritional benefits.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* Pack Sizes Available Section */}
-      <motion.section
-        className="py-20 px-4 bg-[#ececec]"
-        {...fadeInUp}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-6">Pack Sizes Available</h2>
-            <p className="text-xl text-gray-600">
-              Convenient sizes for all farming operations
-            </p>
-          </div>
-          <div className="max-w-xl mx-auto">
-            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-green-600" />
-                  <h3 className="text-2xl font-semibold">
-                    Available Pack Sizes
-                  </h3>
-                </div>
-                <div className="grid md:grid-cols-1 gap-6">
-                  <div className="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
-                    <Badge
-                      variant="secondary"
-                      className="text-xl px-4 py-2 mb-4"
-                    >
-                      2 × 5L
-                    </Badge>
-                    <p className="text-gray-600">
-                      Ideal for small to medium-sized users and convenient
-                      handling
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </motion.section>
-
       {/* PDF Links Section */}
       <PDFLinks
-        id="technical-resources-capital"
+        id="technical-resources-cuzin"
         productName="Cu-Zin™"
         links={pdfLinks}
       />
@@ -708,17 +621,17 @@ export function CuZinPage({ onSubmit }: ContactFormProps) {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <Phone className="h-6 w-6" />
+                  <Phone className="h-6 w-8" />
                   <p>+44 (0) 1673 885175</p>
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <Mail className="h-6 w-6" />
+                  <Mail className="h-6 w-8" />
                   <p>office@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <Clock className="h-6 w-6" />
+                  <Clock className="h-6 w-8" />
                   <p>Monday–Friday: 09:00–17:00</p>
                 </div>
               </div>

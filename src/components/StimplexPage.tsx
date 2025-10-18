@@ -14,6 +14,7 @@ import { Badge } from "./ui/badge";
 import { Separator } from "./ui/separator";
 import { ProductShowcase } from "./ProductShowcase";
 import { PDFLinks } from "./PDFLinks";
+import { AnalysisPieChart } from "./AnalysisPieChart";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import {
   Leaf,
@@ -142,80 +143,86 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
       rate: "2.5-3.5 l/ha",
       timing:
         "Apply at 2-4 true leaf stage. Repeat at 14-21 day intervals. Final application 4-7 days prior to harvest.",
-      color: "bg-green-100 text-green-800",
-      icon: <Leaf className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Leaf className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Lettuce & Leafy Salads",
       rate: "2.0-3.5 l/ha",
       timing:
         "Apply at 2-4 true leaf stage. Repeat at 10-14 day intervals. Final application 3-5 days prior to harvest.",
-      color: "bg-green-100 text-green-800",
-      icon: <Flower2 className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Flower2 className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Potatoes",
       rate: "2.5-3.5 l/ha",
       timing:
         "Apply at early tuber bulking stages. Repeat at 14-21 day intervals.",
-      color: "bg-green-100 text-green-800",
-      icon: <Apple className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Apple className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Root Crops",
       rate: "2.5-3.5 l/ha",
       timing:
         "Apply at 2-3 weeks after emergence. Repeat at 14-21 days depending on growing season.",
-      color: "bg-green-100 text-green-800",
-      icon: <Sprout className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Sprout className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Alliums",
       rate: "2.0-3.5 l/ha",
       timing:
         "Apply at 2-3 weeks after emergence. Repeat at 14-21 day intervals.",
-      color: "bg-green-100 text-green-800",
-      icon: <Target className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Target className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Asparagus",
       rate: "2.0-3.0 l/ha",
       timing:
         "Apply to fern when sufficient foliage present. Repeat at 21-28 day intervals as required.",
-      color: "bg-green-100 text-green-800",
-      icon: <TreePine className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <TreePine className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Strawberries",
       rate: "1.5-2.5 l/ha",
       timing:
         "Apply 10 to 14 days after emergence. Repeat at early flowering then at 2-3 weeks intervals.",
-      color: "bg-green-100 text-green-800",
-      icon: <Heart className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Heart className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Protected Edibles",
       rate: "2-4 ml/litre",
       timing: "Apply via drench or fertigation every 10 to 21 days.",
-      color: "bg-green-100 text-green-800",
-      icon: <Shield className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Shield className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Protected Ornamentals",
       rate: "1-2 ml/litre",
       timing: "Apply via drench or fertigation every 7 to 10 days.",
-      color: "bg-green-100 text-green-800",
-      icon: <Sparkles className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Sparkles className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Cereals",
       rate: "1.0-3.0 l/ha",
       timing:
         "Seed treatment: 2.0-3.0 l/tonne. Foliar: Early tillering, stem elongation, and flag leaf stages.",
-      color: "bg-green-100 text-green-800",
-      icon: <Wheat className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Wheat className="h-5 w-5 text-[#6abf4b]" />,
     },
   ];
+
+  const analysisData = {
+    "Organic Matter": "100",
+    "Bioactive Compounds": "High",
+    "Plant Nutrients": "Balanced",
+  };
 
   const pdfLinks = [
     {
@@ -352,7 +359,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-[#ececec]/50" />
+        <div className="absolute inset-0 bg-[#6abf4b]/20" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
@@ -384,7 +391,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                     smoothScrollToSection("application-guidelines-stimplexpage")
                   }
                 >
-                  Application Guidlines
+                  Application Guidelines
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
@@ -395,25 +402,47 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                     smoothScrollToSection("technical-resources-stimplexpage")
                   }
                 >
-                  View Field Guide
+                  View Technical Resources
                 </Button>
               </div>
             </motion.div>
 
             <motion.div
-              className="relative"
-              initial={{ opacity: 0, scale: 0.8 }}
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -3 }}
             >
-              <div className="relative z-10">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop"
-                  alt="Stimplex - Premium Seaweed Biostimulant"
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-                />
+              {/* Main image container */}
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop"
+                    alt="Stimplex - Premium Seaweed Biostimulant"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+              >
+                Seaweed Biostimulant
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -458,6 +487,12 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
           </div>
         </div>
       </motion.section>
+
+      {/* Analysis Pie Chart */}
+      <AnalysisPieChart
+        analysis={analysisData}
+        title="Stimplex Biostimulant Composition"
+      />
 
       {/* Seaweed Technology Section */}
       <motion.section
@@ -532,13 +567,61 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
               </Card>
             </div>
 
-            <div>
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop"
-                alt="North Atlantic Seaweed Harvesting"
-                className="w-full h-80 object-cover rounded-2xl shadow-xl"
-              />
-            </div>
+            <motion.div
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop"
+                    alt="North Atlantic Seaweed Harvesting"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+              </div>
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+              >
+                Premium Extraction
+              </motion.div>
+            </motion.div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <Card className="inline-block bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Package className="h-6 w-6 text-[#6abf4b]" />
+                  <h3 className="text-xl font-semibold">
+                    Pack Sizes Available
+                  </h3>
+                </div>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <Badge variant="secondary" className="text-lg px-3 py-1">
+                    2 × 10L
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </motion.section>
@@ -577,14 +660,16 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                       <CardTitle className="text-lg">{crop.crop}</CardTitle>
                     </div>
                     <div className="text-center p-3 bg-gray-50 rounded-lg mb-3">
-                      <Badge className="bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-3 py-1 mb-2">
+                      <Badge
+                        className={`${crop.color} text-lg px-3 py-1 mb-2 hover:bg-[#6abf4b]/20`}
+                      >
                         {crop.rate}
                       </Badge>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <div className="flex items-start gap-2">
-                      <Clock className="h-4 w-4 text-gray-500 mt-1 flex-shrink-0" />
+                      <Clock className="h-4 w-4 text-[#6abf4b] mt-1 flex-shrink-0" />
                       <p className="text-sm text-gray-600">{crop.timing}</p>
                     </div>
                   </CardContent>
@@ -600,7 +685,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-[#6abf4b]/10 border-0">
+            <Card className="bg-[#6abf4b]/10 border border-[#6abf4b]/20">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
                   <Droplets className="h-6 w-6 text-[#6abf4b] mt-1" />
@@ -608,7 +693,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                     <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Application Method
                     </h3>
-                    <p className="text-[#6abf4b]">
+                    <p className="text-gray-700">
                       Recommended for application as a foliar spray at water
                       rates of 200-600 l/ha depending on the crop type and stage
                       of growth. Can also be applied through fertigation systems
@@ -619,7 +704,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
               </CardContent>
             </Card>
 
-            <Card className="bg-[#6abf4b]/10 border-0">
+            <Card className="bg-[#6abf4b]/10 border border-[#6abf4b]/20">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
                   <GraduationCap className="h-6 w-6 text-[#6abf4b] mt-1" />
@@ -627,7 +712,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                     <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Organic Certification
                     </h3>
-                    <p className="text-[#6abf4b]">
+                    <p className="text-gray-700">
                       Certified by the Soil Association and licensed by Organic
                       Farmers & Growers (UK2). Approved for use in organic
                       growing systems and sustainable agriculture practices.
@@ -663,14 +748,19 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                     Available Pack Size
                   </h3>
                 </div>
-                <div className="text-center p-6 bg-[#ececec] rounded-lg">
-                  <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">
-                    2 × 10L
-                  </Badge>
-                  <p className="text-gray-600">
-                    Premium biostimulant suitable for all conventional and
-                    organic crops
-                  </p>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      2 × 10L
+                    </Badge>
+                    <p className="text-gray-600">
+                      Premium biostimulant suitable for all conventional and
+                      organic crops
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>

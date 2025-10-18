@@ -41,6 +41,7 @@ import { NMaxPage } from "./components/NMaxPage";
 import { UltimateGoldPage } from "./components/UltimateGoldPage";
 import { RegulatoryPage } from "./components/RegulatoryPage";
 import { ProductGuidePage } from "./components/ProductGuidePage";
+import { ModipHyXtraPage } from "./components/ModifyXtra";
 import { MenuItem } from "./types";
 
 // Product data organized by category
@@ -104,7 +105,7 @@ const categoryData = {
     title: "Water Conditioners",
     link: "water-conditioners",
     products: [
-      { product: "ModipHy Xtra™", link: "modiphy-xtra" },
+      { product: "Modiphy Xtra", link: "modiphy-xtra" },
     ],
   },
   "organic-range": {
@@ -248,6 +249,8 @@ function ProductRoute() {
         return <NMaxPage onSubmit={handleFormSubmit} />;
       case "ultimate-gold-8-7-7":
         return <UltimateGoldPage onSubmit={handleFormSubmit} />;
+      case "modiphy-xtra":
+        return <ModipHyXtraPage onSubmit={handleFormSubmit} />;
       default:
         // Generic product page for other products
         return (
@@ -433,7 +436,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <p className="text-gray-400 mb-4 text-sm">
-              © TM ® 2024 - Ilex EnviroSciences and all of its trade and product
+              © TM ® {new Date().getFullYear()} - Ilex EnviroSciences and all of its trade and product
               names are property of Ilex EnviroSciences ltd
             </p>
             <p className="text-gray-400 mb-2 text-sm">

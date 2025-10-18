@@ -11,7 +11,24 @@ import {
   ChevronRight,
   Star,
 } from "lucide-react";
-
+import logo from "/assets/ilexlogonobg.png";
+import midlandLogo from "/assets/midchemnobg.png";
+import sunnyImage from "/assets/sunny.png";
+import brianImage from "/assets/Brian.png";
+import robImage from "/assets/Rob.png";
+import ebicLogo from "/assets/ebic-logo.png";
+import pbsgLogo from "/assets/pbsg-logo.jpg";
+import stopFamilyFarmTax from "/assets/stop-family-farm-tax.png";
+import northhertsLogo from "/assets/northherts.png";
+import samcoLogo from "/assets/samco.png";
+import ouseLogo from "/assets/ouse.png";
+import woldmarshLogo from "/assets/woldmarsh.png";
+import afLogo from "/assets/af.png";
+import orionLogo from "/assets/orion.png";
+import framLogo from "/assets/fram.png";
+import agricureLogo from "/assets/agricure.jpg";
+import dbgLogo from "/assets/dbg.jpeg";
+import bartholLogo from "/assets/barthol.png";
 // Splash Screen Component
 function SplashScreen({ onComplete }: { onComplete: () => void }) {
   useEffect(() => {
@@ -29,7 +46,7 @@ function SplashScreen({ onComplete }: { onComplete: () => void }) {
       className="fixed inset-0 z-50 flex items-center justify-center bg-white"
     >
       <motion.img
-        src="/images/ilexlogonobg.png"
+        src={logo}
         alt="Ilex Logo"
         className="w-48 h-auto"
         initial={{ scale: 1, opacity: 1 }}
@@ -146,7 +163,7 @@ function BrandsMarquee() {
               draggable={false}
             >
               <img
-                src={`/images/${brand}`}
+                src={`/src/assets/${brand}`}
                 alt={brand}
                 className="h-16 w-auto object-contain pointer-events-none"
                 draggable={false}
@@ -325,21 +342,21 @@ export function HomePage() {
       role: "Managing Director",
       email: "sunny@midlandchem.com",
       description: `<p>Sunny, founder of Midland Chemicals, has over 40 years of hands-on experience in the chemical industry.</p><p>For many years, before merging companies, Sunny worked closely with Ilex EnviroSciences, collaborating on complex formulation and process challenges.</p><p>His expertise and client-focused approach have consistently delivered practical, custom-made chemical solutions that help businesses succeed.</p>`,
-      image: "/images/sunny.png",
+      image: sunnyImage,
     },
     {
       name: "Brian Aconley",
       role: "Agricultural Consultant",
       email: "brian@ilex-envirosciences.com",
       description: `<p>With more than 35 years' experience in agricultural chemistry, Brian Aconley has helped farmers, growers, and agribusinesses across the UK and Europe with specialist crop nutrition and biostimulant products.</p><p>Previously one of the original Technical Directors at Ilex EnviroSciences, Brian brings his extensive expertise to Midland Chemicals.</p><p>He works closely with clients at every stage of the supply chain to design and develop bespoke, highly effective products tailored to their specific requirements.</p>`,
-      image: "/images/Brian.png",
+      image: brianImage,
     },
     {
       name: "Robert Cameron",
       role: "Head of Quality Control",
       email: "rob@midlandchem.com",
       description: `<p>Robert brings extensive expertise in analytical chemistry and quality assurance to Ilex EnviroSciences.</p><p>As Head of Quality Control, he ensures that every product meets the highest standards of consistency, safety, and performance.</p><p>With a practical, solutions-driven approach, Robert works closely with our production team to maintain regulatory compliance and deliver the reliability our customers depend on.</p>`,
-      image: "/images/Rob.png",
+      image: robImage,
     },
   ];
 
@@ -474,19 +491,43 @@ export function HomePage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
-                className="bg-[#6abf4b] hover:bg-[#5aa338] text-white px-7 py-6 text-lg font-bold rounded-md transition-all hover:-translate-y-0.5"
-                onClick={() => navigate("/products/phosphite-range")}
+                className="bg-[#6abf4b] hover:bg-[#5aa338] cursor-pointer text-white px-7 py-6 text-lg font-bold rounded-md transition-all hover:-translate-y-0.5"
+                onClick={() => {
+                  const productsSection = document.getElementById("products");
+                  if (productsSection) {
+                    const headerOffset = 80; // Adjust this value based on your header height
+                    const elementPosition =
+                      productsSection.getBoundingClientRect().top;
+                    const offsetPosition =
+                      elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: "smooth",
+                    });
+                  }
+                }}
               >
                 Our Products
               </Button>
               <Button
                 variant="outline"
-                className="bg-white/20 border-2 border-white text-white hover:bg-white hover:text-[#6abf4b] px-7 py-6 text-lg font-bold rounded-md transition-all"
-                onClick={() =>
-                  document
-                    .getElementById("contact-us")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
+                className="bg-white/20 border-2 cursor-pointer border-white text-white hover:bg-white hover:text-[#6abf4b] px-7 py-6 text-lg font-bold rounded-md transition-all"
+                onClick={() => {
+                  const contactSection = document.getElementById("contact-us");
+                  if (contactSection) {
+                    const headerOffset = 100; // Same offset as products button
+                    const elementPosition =
+                      contactSection.getBoundingClientRect().top;
+                    const offsetPosition =
+                      elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: "smooth",
+                    });
+                  }
+                }}
               >
                 Contact Us
               </Button>
@@ -511,7 +552,7 @@ export function HomePage() {
               >
                 <div className="text-center mb-4">
                   <img
-                    src="/images/ilexlogonobg.png"
+                    src={logo}
                     alt="Ilex Logo"
                     className="w-32 h-auto mx-auto"
                   />
@@ -534,16 +575,17 @@ export function HomePage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="flex-1 min-w-[320px] max-w-[460px] border border-gray-300 border-l-4 border-l-[#5bb63b] rounded-lg p-5 bg-white shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="text-center mb-4">
+                <div className="text-center mb-0">
                   <a
                     href="https://www.midlandchem.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <img
-                      src="/images/midchemnobg.png"
+                      src={midlandLogo}
                       alt="Midland Chem Logo"
-                      className="w-32 h-auto mx-auto -mt-2"
+                      height={10}
+                      className="w-32 h-auto mx-auto -mt-4"
                     />
                   </a>
                 </div>
@@ -614,10 +656,10 @@ export function HomePage() {
                 </p>
                 <a
                   href={`mailto:${member.email}?subject=Ilex%20Website%20Enquiry`}
-                  className="text-sm text-black hover:text-[#6abf4b] transition-colors flex items-center justify-center gap-2"
+                  className="text-sm text-black hover:text-[#6abf4b] text-nowrap transition-colors flex items-center justify-center gap-2"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <Mail size={16} className="text-[#6abf4b]" />
+                  <Mail className="text-[#6abf4b] h-5 w-5 flex-shrink-0" />
                   {member.email}
                 </a>
               </motion.div>
@@ -640,24 +682,28 @@ export function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white border border-gray-200 border-l-4 border-l-[#6abf4b] rounded-lg p-6 shadow-sm hover:shadow-lg transition-all cursor-pointer group"
+                  className="bg-white border border-gray-200 border-l-4 border-l-[#6abf4b] rounded-lg p-6 shadow-sm hover:shadow-lg transition-all cursor-pointer group flex flex-col h-full"
                   onClick={() => navigate(`/products/${product.link}`)}
                 >
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4 group-hover:text-[#5aa338] transition-colors">
-                    {product.title}
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    {product.description}
-                  </p>
-                  <Button
-                    className="bg-gray-100 hover:bg-[#6abf4b] text-[#6abf4b] hover:text-white w-full transition-colors"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigate(`/products/${product.link}`);
-                    }}
-                  >
-                    Explore
-                  </Button>
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-semibold text-gray-900 mb-4 group-hover:text-[#5aa338] transition-colors">
+                      {product.title}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed">
+                      {product.description}
+                    </p>
+                  </div>
+                  <div className="mt-6">
+                    <Button
+                      className="bg-gray-100 cursor-pointer hover:bg-[#6abf4b] text-[#6abf4b] hover:text-white w-full transition-colors"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/products/${product.link}`);
+                      }}
+                    >
+                      Explore
+                    </Button>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -669,20 +715,24 @@ export function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
               className="bg-white border border-gray-200 border-l-4 border-l-[#6abf4b] rounded-lg p-8 shadow-sm hover:shadow-lg transition-all cursor-pointer group flex flex-col lg:flex-row items-start justify-between gap-6"
-              onClick={() => navigate('/products/organic-range')}
+              onClick={() => navigate("/products/organic-range")}
             >
               <div className="flex-1">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-[#5aa338] transition-colors">
                   Ilex Organic Range
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  The Ilex Organic Nutrition range delivers carefully balanced liquid formulations, offering easy to use supplementary feeds to improve crop development and alleviate nutritional stress. All products are certified by the Soil Association and licensed by Organic Farmers & Growers.
+                  The Ilex Organic Nutrition range delivers carefully balanced
+                  liquid formulations, offering easy to use supplementary feeds
+                  to improve crop development and alleviate nutritional stress.
+                  All products are certified by the Soil Association and
+                  licensed by Organic Farmers & Growers.
                 </p>
                 <Button
                   className="bg-gray-100 hover:bg-[#6abf4b] text-[#6abf4b] hover:text-white transition-colors"
                   onClick={(e) => {
                     e.stopPropagation();
-                    navigate('/products/organic-range');
+                    navigate("/products/organic-range");
                   }}
                 >
                   Explore
@@ -734,7 +784,11 @@ export function HomePage() {
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#6abf4b] rounded-full" />
               </h2>
               <p className="text-base leading-relaxed max-w-4xl mx-auto">
-                Ilex EnviroSciences is committed to supporting the safety and quality of our products together with independent qualified data to prove their value. Our membership of both EBIC & PBSG ensures our engagement with Regulators to defend and promote the value of Biostimulants.
+                Ilex EnviroSciences is committed to supporting the safety and
+                quality of our products together with independent qualified data
+                to prove their value. Our membership of both EBIC & PBSG ensures
+                our engagement with Regulators to defend and promote the value
+                of Biostimulants.
               </p>
             </motion.div>
 
@@ -755,7 +809,7 @@ export function HomePage() {
                     className="flex-shrink-0 hover:opacity-80 transition-opacity"
                   >
                     <img
-                      src="/images/ebic-logo.png"
+                      src={ebicLogo}
                       alt="EBIC Logo"
                       className="w-24 h-auto object-contain"
                     />
@@ -770,10 +824,16 @@ export function HomePage() {
                   </div>
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed mb-3">
-                  EBIC fosters the role of the biostimulants sector in helping farmers to grow adequate quantities of high quality crops profitably while using resources wisely.
+                  EBIC fosters the role of the biostimulants sector in helping
+                  farmers to grow adequate quantities of high quality crops
+                  profitably while using resources wisely.
                 </p>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  To do this, EBIC advocates an operating environment that creates a truly European market for biostimulants and recognises their contribution to sustainable agricultural production, green innovation, economic growth and other societal objectives.
+                  To do this, EBIC advocates an operating environment that
+                  creates a truly European market for biostimulants and
+                  recognises their contribution to sustainable agricultural
+                  production, green innovation, economic growth and other
+                  societal objectives.
                 </p>
               </motion.div>
 
@@ -793,7 +853,7 @@ export function HomePage() {
                     className="flex-shrink-0 hover:opacity-80 transition-opacity"
                   >
                     <img
-                      src="/images/pbsg-logo.jpg"
+                      src={pbsgLogo}
                       alt="PBSG Logo"
                       className="w-24 h-auto object-contain"
                     />
@@ -808,10 +868,13 @@ export function HomePage() {
                   </div>
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed mb-3">
-                  The PBSG was created by a group of like-minded biostimulant manufacturers to lobby Regulators for continued phosphite use.
+                  The PBSG was created by a group of like-minded biostimulant
+                  manufacturers to lobby Regulators for continued phosphite use.
                 </p>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  Our aim is to lobby the Regulators to support the continued use of phosphites as biostimulants to enable subsequent registration under new EU and GB Regulations.
+                  Our aim is to lobby the Regulators to support the continued
+                  use of phosphites as biostimulants to enable subsequent
+                  registration under new EU and GB Regulations.
                 </p>
               </motion.div>
             </div>
@@ -831,10 +894,10 @@ export function HomePage() {
                 className="inline-block hover:opacity-90 transition-opacity"
               >
                 <img
-                  src="/images/stop-family-farm-tax.png"
+                  src={stopFamilyFarmTax}
                   alt="Stop The Family Farm Tax Campaign Banner"
-                  className="max-w-full h-auto mx-auto"
-                  style={{ maxWidth: '650px' }}
+                  className="max-w-full w-80 xl:w-full h-auto mx-auto"
+                  style={{ maxWidth: "650px" }}
                 />
               </a>
             </motion.div>
@@ -855,22 +918,60 @@ export function HomePage() {
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#6abf4b] rounded-full" />
               </h2>
               <p className="text-base leading-relaxed max-w-3xl mx-auto">
-                Ilex EnviroSciences works with leading agricultural buying groups to deliver reliable solutions and trusted partnerships across the UK.
+                Ilex EnviroSciences works with leading agricultural buying
+                groups to deliver reliable solutions and trusted partnerships
+                across the UK.
               </p>
             </motion.div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
               {[
-                { name: 'North Herts Farmers', logo: '/images/northherts.png', url: 'https://www.nhfarmers.co.uk/' },
-                { name: 'Samco', logo: '/images/samco.png', url: 'https://www.samco.org.uk/' },
-                { name: 'Ouse & Cherwell', logo: '/images/ouse.png', url: 'https://www.ouseandcherwell.co.uk/' },
-                { name: 'Woldmarsh', logo: '/images/woldmarsh.png', url: 'https://www.woldmarsh.com/' },
-                { name: 'AF', logo: '/images/af.png', url: 'https://af.farm/' },
-                { name: 'Orion Farming Group', logo: '/images/orion.png', url: 'https://www.ofg.org.uk/' },
-                { name: 'Fram Farmers', logo: '/images/framfarmers.png', url: 'https://www.framfarmers.co.uk/' },
-                { name: 'Agricure', logo: '/images/agricure.jpg', url: 'https://www.agricure.co.uk/' },
-                { name: 'DBG', logo: '/images/dbg.jpeg', url: 'https://derwentbuyersgroup.com/' },
-                { name: 'Bartholomews', logo: '/images/barthol.png', url: 'https://www.bartholomews.co.uk/' },
+                {
+                  name: "North Herts Farmers",
+                  logo: northhertsLogo,
+                  url: "https://www.nhfarmers.co.uk/",
+                },
+                {
+                  name: "Samco",
+                  logo: samcoLogo,
+                  url: "https://www.samco.org.uk/",
+                },
+                {
+                  name: "Ouse & Cherwell",
+                  logo: ouseLogo,
+                  url: "https://www.ouseandcherwell.co.uk/",
+                },
+                {
+                  name: "Woldmarsh",
+                  logo: woldmarshLogo,
+                  url: "https://www.woldmarsh.com/",
+                },
+                { name: "AF", logo: afLogo, url: "https://af.farm/" },
+                {
+                  name: "Orion Farming Group",
+                  logo: orionLogo,
+                  url: "https://www.ofg.org.uk/",
+                },
+                {
+                  name: "Fram Farmers",
+                  logo: framLogo,
+                  url: "https://www.framfarmers.co.uk/",
+                },
+                {
+                  name: "Agricure",
+                  logo: agricureLogo,
+                  url: "https://www.agricure.co.uk/",
+                },
+                {
+                  name: "DBG",
+                  logo: dbgLogo,
+                  url: "https://derwentbuyersgroup.com/",
+                },
+                {
+                  name: "Bartholomews",
+                  logo: bartholLogo,
+                  url: "https://www.bartholomews.co.uk/",
+                },
               ].map((group, index) => (
                 <motion.a
                   key={index}
@@ -909,22 +1010,24 @@ export function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-[#f5f5f5] rounded-lg p-4 cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all"
+                  className="bg-[#f5f5f5] rounded-lg p-4 cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col h-full"
                   onClick={() => setSelectedTestimonial(index)}
                 >
-                  <div className="text-center">
+                  <div className="flex-1 flex flex-col">
                     <p
                       className="font-bold text-sm mb-2"
                       dangerouslySetInnerHTML={{ __html: testimonial.company }}
                     />
-                    <div className="flex justify-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          size={14}
-                          className="fill-[#6abf4b] text-[#6abf4b]"
-                        />
-                      ))}
+                    <div className="mt-auto pt-4">
+                      <div className="flex justify-center gap-0.5">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            size={16}
+                            className="fill-[#6abf4b] text-[#6abf4b] flex-shrink-0"
+                          />
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -992,7 +1095,10 @@ export function HomePage() {
                   transition={{ delay: 0.2 }}
                   className="bg-white border-l-4 border-[#6abf4b] rounded-lg p-5 shadow-sm hover:shadow-md transition-all flex items-start gap-4"
                 >
-                  <MapPin size={24} className="text-[#6abf4b] flex-shrink-0 mt-1" />
+                  <MapPin
+                    size={24}
+                    className="text-[#6abf4b] flex-shrink-0 mt-1"
+                  />
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">
                       Our Headquarters

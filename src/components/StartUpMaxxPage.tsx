@@ -135,22 +135,22 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
       crop: "Cereals",
       rate: "3.0 litres per tonne of seed",
       notes: "Autumn and spring sown wheat and barley",
-      color: "bg-green-100 text-green-800",
-      icon: <Wheat className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Wheat className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Peas",
       rate: "3.0 litres per tonne of seed",
       notes: "Enhanced establishment and early vigour",
-      color: "bg-green-100 text-green-800",
-      icon: <Sprout className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Sprout className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Beans",
       rate: "3.0 litres per tonne of seed",
       notes: "Improved nodulation and nitrogen fixation",
-      color: "bg-green-100 text-green-800",
-      icon: <Sprout className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      icon: <Sprout className="h-5 w-5 text-[#6abf4b]" />,
     },
   ];
 
@@ -284,7 +284,7 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute inset-0 bg-[#ececec]/50" />
+        <div className="absolute inset-0 bg-[#6abf4b]/20" />
         <div className="relative max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
@@ -313,7 +313,7 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
                     smoothScrollToSection("application-guidelines-startupmaxx")
                   }
                 >
-                  Application Guidlines
+                  Application Guidelines
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
@@ -324,25 +324,47 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
                     smoothScrollToSection("technical-resources-startupmaxx")
                   }
                 >
-                  View Trial Results
+                  View Technical Resources
                 </Button>
               </div>
             </motion.div>
 
             <motion.div
-              className="relative"
-              initial={{ opacity: 0, scale: 0.8 }}
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -3 }}
             >
-              <div className="relative z-10">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
-                  alt="Start-uP MAXX Product"
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-                />
+              {/* Main image container */}
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
+                    alt="Start-uP MAXX Product"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#6abf4b]/20 rounded-2xl" />
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+              >
+                Advanced Seed Treatment
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -422,7 +444,10 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
                   </div>
                   <div className="space-y-4">
                     {trialData.map((result, index) => (
-                      <div key={index} className="p-4 bg-gray-50 rounded-lg">
+                      <div
+                        key={index}
+                        className="p-4 bg-[#6abf4b]/10 rounded-lg"
+                      >
                         <div className="flex justify-between items-center mb-2">
                           <span className="font-medium text-gray-700">
                             {result.treatment}
@@ -440,11 +465,11 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-6 p-4 bg-green-50 rounded-lg">
-                    <h4 className="font-semibold text-green-800 mb-2">
+                  <div className="mt-6 p-4 bg-[#6abf4b]/10 rounded-lg">
+                    <h4 className="font-semibold text-[#6abf4b] mb-2">
                       Key Findings
                     </h4>
-                    <p className="text-green-700 text-sm">
+                    <p className="text-[#6abf4b] text-sm">
                       Start-uP MAXX showed the highest performance in
                       independent trials, delivering 200 T/Ha compared to
                       untreated controls.
@@ -454,13 +479,43 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
               </Card>
             </div>
 
-            <div>
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1589927986089-35812388d1b4?w=600&h=400&fit=crop"
-                alt="Trial Results - Healthy Crop Growth"
-                className="w-full h-80 object-cover rounded-2xl shadow-xl"
-              />
-            </div>
+            <motion.div
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative aspect-square w-full">
+                  <ImageWithFallback
+                    src="https://images.unsplash.com/photo-1589927986089-35812388d1b4?w=600&h=400&fit=crop"
+                    alt="Trial Results - Healthy Crop Growth"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+              </div>
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+              >
+                Independent Trials
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </motion.section>
@@ -498,7 +553,9 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
                       <CardTitle className="text-xl">{crop.crop}</CardTitle>
                     </div>
                     <div className="text-center p-3 bg-gray-50 rounded-lg mb-3">
-                      <Badge className={`${crop.color} text-lg px-3 py-1`}>
+                      <Badge
+                        className={`${crop.color} text-lg px-3 py-1 hover:bg-[#6abf4b]/20`}
+                      >
                         {crop.rate}
                       </Badge>
                     </div>
@@ -520,15 +577,15 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-green-50 border border-green-200">
+            <Card className="bg-[#6abf4b]/10 border border-[#6abf4b]/20">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <Droplets className="h-6 w-6 text-green-600 mt-1" />
+                  <Droplets className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-green-800">
+                    <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Application Method
                     </h3>
-                    <p className="text-green-700">
+                    <p className="text-[#6abf4b]">
                       Apply directly to the seed or after pre-diluting with
                       water. Formulated as a totally water-soluble liquid.
                       Agitate prior to use and apply through existing seed
@@ -539,15 +596,15 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
               </CardContent>
             </Card>
 
-            <Card className="bg-green-50 border border-green-200">
+            <Card className="bg-[#6abf4b]/10 border border-[#6abf4b]/20">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-green-600 mt-1" />
+                  <CheckCircle className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-green-800">
+                    <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Compatibility
                     </h3>
-                    <p className="text-green-700">
+                    <p className="text-[#6abf4b]">
                       Fully compatible with other commonly used seed treatments.
                       Clean equipment thoroughly with water after treatment. Do
                       not exceed 3.0 litres per tonne of seed.
@@ -562,7 +619,7 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
 
       {/* Pack Sizes Section */}
       <motion.section
-        className="py-20 px-4 bg-white/50"
+        className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
@@ -583,7 +640,7 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
                     Available Pack Sizes
                   </h3>
                 </div>
-                <div className="text-center p-6 bg-green-50 rounded-lg">
+                <div className="text-center p-6 bg-[#6abf4b]/10 rounded-lg">
                   <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">
                     20L
                   </Badge>
