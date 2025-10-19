@@ -323,7 +323,7 @@ export function UltimateGoldPage({ onSubmit }: ContactFormProps) {
               <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
                 <div className="relative aspect-square w-full">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop"
+                    src="/assets/product images/Organic/Ultimate Gold.jpg"
                     alt="Ultimate Gold - Premium Protected Cropping Nutrition"
                     className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
@@ -483,7 +483,7 @@ export function UltimateGoldPage({ onSubmit }: ContactFormProps) {
               <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
                 <div className="relative aspect-square w-full">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop"
+                    src="/assets/product images/Organic/Ultimate Gold.jpg"
                     alt="Premium Protected Cropping"
                     className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />

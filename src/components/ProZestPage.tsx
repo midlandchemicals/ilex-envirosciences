@@ -288,7 +288,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
               <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
                 <div className="relative aspect-square w-full">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600&h=400&fit=crop"
+                    src="/assets/product images/Seed Treatments/ProZeSt.jpg"
                     alt="ProZest Product - Potato Field"
                     className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
@@ -458,7 +458,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
               <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
                 <div className="relative aspect-square w-full">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600&h=400&fit=crop"
+                    src="/assets/product images/Seed Treatments/ProZeSt.jpg"
                     alt="Healthy Potato Crop"
                     className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />

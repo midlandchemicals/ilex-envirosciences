@@ -289,7 +289,7 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
               <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
                 <div className="relative aspect-square w-full">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&h=400&fit=crop"
+                    src="/assets/product images/Seed Treatments/Man uP.jpg"
                     alt="Man-uP Product"
                     className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
@@ -456,7 +456,7 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
               <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
                 <div className="relative aspect-square w-full">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop"
+                    src="/assets/product images/Seed Treatments/Man uP.jpg"
                     alt="Healthy Winter Crop"
                     className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
