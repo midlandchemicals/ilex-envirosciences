@@ -280,7 +280,11 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
                 Specialist Oilseed Rape Nutrition
               </Badge>
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
-                OilSeed Raiser™
+                <span className="text-[#007a3f]">O</span>
+                il
+                <span className="text-[#007a3f]">S</span>
+                eed <span className="text-[#007a3f]">R</span>
+                aiser™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                 A specialist foliar nutrition solution specifically formulated
@@ -441,7 +445,7 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
                         <CardTitle className="text-xl">{stage.stage}</CardTitle>
                       </div>
                       <div className="text-center p-3 bg-gray-50 rounded-lg mb-3">
-                        <Badge className={`${stage.color} text-sm px-3 py-1`}>
+                        <Badge className={`bg-[#6abf4b] text-sm px-3 py-1`}>
                           {stage.rate}
                         </Badge>
                         <p className="text-xs text-gray-600 mt-1">
@@ -548,7 +552,7 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-gradient-to-br from-yellow-50 to-blue-50 rounded-lg">
+                  <div className="text-center p-6 bg-gradient-to-br bg-[#6abf4b]/10 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -559,7 +563,7 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
                       Perfect for oilseed rape specialist nutrition programs
                     </p>
                   </div>
-                  <div className="text-center p-6 bg-gradient-to-br from-yellow-50 to-blue-50 rounded-lg">
+                  <div className="text-center p-6 bg-gradient-to-br bg-[#6abf4b]/10 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -598,21 +602,23 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <MapPin className="h-6 w-6" />
-                  <div>
-                    <p>Ilex EnviroSciences Ltd</p>
-                    <p>Willingham Hall, Willingham Road</p>
-                    <p>Market Rasen LN8 3RH</p>
+                  <div className="max-w-80">
+                    <p>
+                      Ilex EnviroSciences Ltd 13a Brindely Close , Holly Lane
+                      Industrial Estate , Atherstone , Warwickshire Market Rasen
+                      LN8 3RH
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6" />
-                  <p>+44 (0) 1673 885175</p>
+                  <p>+44 1827722911</p>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>office@ilex-envirosciences.com</p>
+                  <p>sales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

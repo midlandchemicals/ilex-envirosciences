@@ -94,37 +94,37 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Gem className="h-8 w-8 text-blue-600" />,
+      icon: <Gem className="h-8 w-8 text-[#6abf4b]" />,
       title: "Silicon Cell Wall Protection",
       description:
         "Silicon deposited in cell walls forms a protective layer reducing transpiration through outer cells",
     },
     {
-      icon: <Sun className="h-8 w-8 text-orange-600" />,
+      icon: <Sun className="h-8 w-8 text-[#6abf4b]" />,
       title: "Enhanced Heat Stress Tolerance",
       description:
         "Plants wilt less and are more tolerant of heat stress with improved leaf presentation to light",
     },
     {
-      icon: <Sprout className="h-8 w-8 text-green-600" />,
+      icon: <Sprout className="h-8 w-8 text-[#6abf4b]" />,
       title: "Improved Stem Strength",
       description:
         "Increased strength in cell walls improves leaf presentation to light and enhances stem strength",
     },
     {
-      icon: <Zap className="h-8 w-8 text-purple-600" />,
+      icon: <Zap className="h-8 w-8 text-[#6abf4b]" />,
       title: "Enhanced Nutrient Uptake",
       description:
         "Soluble silicon enhances nutrient uptake and can increase chlorophyll concentration",
     },
     {
-      icon: <Leaf className="h-8 w-8 text-green-500" />,
+      icon: <Leaf className="h-8 w-8 text-[#6abf4b]" />,
       title: "Thicker, Darker Leaves",
       description:
         "Leaves can be thicker and darker green compared to those grown without soluble silicon",
     },
     {
-      icon: <Shield className="h-8 w-8 text-red-600" />,
+      icon: <Shield className="h-8 w-8 text-[#6abf4b]" />,
       title: "Mechanical Barrier",
       description:
         "Epidermal cell walls containing silicon deposits act as a mechanical barrier to fungi and insects",
@@ -137,14 +137,14 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
       rate: "1.25-2.5 l/ha",
       timing: "Apply at GS (Zadoks) 21-23. Repeat at G.S. 30-33",
       color: "bg-yellow-100 text-yellow-800",
-      icon: <Wheat className="h-5 w-5 text-yellow-600" />,
+      icon: <Wheat className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Oilseed Rape",
       rate: "1.25-3.0 l/ha",
       timing: "Apply from 4-6 true leaves. Repeat at 14-21 day intervals",
       color: "bg-yellow-100 text-yellow-800",
-      icon: <Flower className="h-5 w-5 text-yellow-600" />,
+      icon: <Flower className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Lettuce & Leafy Salads",
@@ -152,42 +152,42 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
       timing:
         "Apply from 10-14 days post planting. Repeat at 10-14 day intervals",
       color: "bg-green-100 text-green-800",
-      icon: <Leaf className="h-5 w-5 text-green-600" />,
+      icon: <Leaf className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Cucurbits",
       rate: "1.5-3.0 l/ha",
       timing: "Apply at 4-6 true leaves. Repeat at 10-14 day intervals",
       color: "bg-orange-100 text-orange-800",
-      icon: <Sprout className="h-5 w-5 text-orange-600" />,
+      icon: <Sprout className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Brassicas",
       rate: "1.5-3.0 l/ha",
       timing: "Apply from 4-6 true leaves. Repeat at 14-21 day intervals",
       color: "bg-blue-100 text-blue-800",
-      icon: <Leaf className="h-5 w-5 text-blue-600" />,
+      icon: <Leaf className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Root Crops",
       rate: "1.5-3.0 l/ha",
       timing: "Apply from 4-6 true leaves. Repeat at 14-21 day intervals",
       color: "bg-purple-100 text-purple-800",
-      icon: <Sprout className="h-5 w-5 text-purple-600" />,
+      icon: <Sprout className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Peas & Beans",
       rate: "1.5-3.0 l/ha",
       timing: "Apply at 6-8 true leaves. Repeat at 10-14 day intervals",
       color: "bg-green-100 text-green-800",
-      icon: <Sprout className="h-5 w-5 text-green-600" />,
+      icon: <Sprout className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Alliums",
       rate: "1.5-3.0 l/ha",
       timing: "Apply at 4-6 true leaves. Repeat at 14-21 day intervals",
       color: "bg-indigo-100 text-indigo-800",
-      icon: <Sprout className="h-5 w-5 text-indigo-600" />,
+      icon: <Sprout className="h-5 w-5 text-[#6abf4b]" />,
     },
   ];
 
@@ -280,25 +280,25 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
         title: "Silicon Technology",
         description:
           "Soluble silicon increases deposited in cell walls, forming a protective layer that strengthens plants",
-        icon: <Gem className="h-6 w-6 text-blue-600" />,
+        icon: <Gem className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Phosphite Action",
         description:
           "Rapid uptake and systemic movement of phosphite P enhances plant nutrition and defense",
-        icon: <Zap className="h-6 w-6 text-green-600" />,
+        icon: <Zap className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Seaweed Biostimulants",
         description:
           "Natural compounds from Ascophyllum Nodosum enhance plant metabolism and stress tolerance",
-        icon: <Waves className="h-6 w-6 text-purple-600" />,
+        icon: <Waves className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Enhanced Photosynthesis",
         description:
           "Improved leaf presentation to light and increased chlorophyll concentration boost photosynthesis",
-        icon: <Sun className="h-6 w-6 text-orange-600" />,
+        icon: <Sun className="h-6 w-6 text-[#6abf4b]" />,
       },
     ],
   };
@@ -320,7 +320,9 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
                 Silicon + Potassium + Phosphite P + Seaweed Biostimulants
               </Badge>
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
-                Tensile™
+                Ten
+                <span className="text-[#ff5757]">si</span>
+                le™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                 A highly efficient liquid nutrient combining silicon and
@@ -469,14 +471,14 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <Gem className="h-8 w-8 text-blue-600" />
+                    <Gem className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-2xl font-semibold">
                       How Silicon Works
                     </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="flex items-start gap-3">
-                      <Shield className="h-6 w-6 text-blue-600 mt-1" />
+                      <Shield className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Cell Wall Strengthening
@@ -490,7 +492,7 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Droplets className="h-6 w-6 text-cyan-600 mt-1" />
+                      <Droplets className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Reduced Transpiration
@@ -504,7 +506,7 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Sun className="h-6 w-6 text-orange-600 mt-1" />
+                      <Sun className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Enhanced Light Utilization
@@ -517,7 +519,7 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Shield className="h-6 w-6 text-red-600 mt-1" />
+                      <Shield className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Natural Defense Barrier
@@ -572,22 +574,38 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
             </motion.div>
           </div>
 
-          <div className="mt-8 text-center">
-            <Card className="inline-block bg-white/80 backdrop-blur-sm border-0 shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Package className="h-6 w-6 text-[#6abf4b]" />
-                  <h3 className="text-xl font-semibold">
-                    Pack Sizes Available
+          <div className="max-w-4xl mx-auto mt-12">
+            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <Package className="h-8 w-8 text-[#6abf4b]" />
+                  <h3 className="text-2xl font-semibold">
+                    Available Pack Sizes
                   </h3>
                 </div>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  <Badge variant="secondary" className="text-lg px-3 py-1">
-                    2 × 10L
-                  </Badge>
-                  <Badge variant="secondary" className="text-lg px-3 py-1">
-                    1000L IBC
-                  </Badge>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="text-center p-6 bg-gradient-to-br bg-[#6abf4b]/10 rounded-lg">
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      2 × 10L
+                    </Badge>
+                    <p className="text-gray-600">
+                      Ideal for targeted applications and smaller operations
+                    </p>
+                  </div>
+                  <div className="text-center p-6 bg-gradient-to-br bg-[#6abf4b]/10 rounded-lg">
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      1000L IBC
+                    </Badge>
+                    <p className="text-gray-600">
+                      Cost-effective for large-scale farming operations
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -630,7 +648,7 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
                       <CardTitle className="text-lg">{app.crop}</CardTitle>
                     </div>
                     <div className="text-center p-3 bg-gray-50 rounded-lg mb-3">
-                      <Badge className={`${app.color} text-lg px-3 py-1`}>
+                      <Badge className={`bg-[#6abf4b] text-sm px-3 py-1`}>
                         {app.rate}
                       </Badge>
                     </div>
@@ -708,7 +726,7 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <Gem className="h-8 w-8 text-blue-600" />
+                    <Gem className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-xl font-semibold">
                       Cell Wall Protection
                     </h3>
@@ -723,7 +741,7 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <Sun className="h-8 w-8 text-orange-600" />
+                    <Sun className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-xl font-semibold">
                       Heat Stress Tolerance
                     </h3>
@@ -754,7 +772,7 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <Shield className="h-8 w-8 text-red-600" />
+                    <Shield className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-xl font-semibold">
                       Mechanical Barrier
                     </h3>
@@ -769,7 +787,7 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <Zap className="h-8 w-8 text-purple-600" />
+                    <Zap className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-xl font-semibold">
                       Nutrient Enhancement
                     </h3>
@@ -805,21 +823,23 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <MapPin className="h-6 w-6" />
-                  <div>
-                    <p>Ilex EnviroSciences Ltd</p>
-                    <p>Willingham Hall, Willingham Road</p>
-                    <p>Market Rasen LN8 3RH</p>
+                  <div className="max-w-80">
+                    <p>
+                      Ilex EnviroSciences Ltd 13a Brindely Close , Holly Lane
+                      Industrial Estate , Atherstone , Warwickshire Market Rasen
+                      LN8 3RH
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6" />
-                  <p>+44 (0) 1673 885175</p>
+                  <p>+44 1827722911</p>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>office@ilex-envirosciences.com</p>
+                  <p>sales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

@@ -224,11 +224,9 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
         "Complete product information and comprehensive application guidelines",
       url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Foliar-Boost-1606-i.pdf",
     },
-
     {
       title: "Compatibility Chart",
-      description:
-        "Tank mixing compatibility with other other agricultural products",
+      description: "Tank mixing compatibility with other agricultural products",
       url: "https://ilex-envirosciences.com/wp-content/uploads/2023/10/Compatibility-Chart-0923-ii.pdf",
     },
   ];
@@ -337,11 +335,11 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
                 Complete Multi-Nutrient Foliar Solution
               </Badge>
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
-                Foliar Boost™
+                Foliar <span className="text-[#0cc0df]">Boost</span>™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                 A comprehensive multi-nutrient foliar solution designed to
-                provide complete nutritional support across a wide range of
+                provide comprehensive nutritional support across a wide range of
                 crops. Combines major nutrients (N, P, K) with essential
                 secondary nutrients and micronutrients to deliver optimal plant
                 nutrition.
@@ -578,27 +576,6 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
               </motion.div>
             </motion.div>
           </div>
-
-          <div className="mt-8 text-center">
-            <Card className="inline-block bg-white/80 backdrop-blur-sm border-0 shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Package className="h-6 w-6 text-[#6abf4b]" />
-                  <h3 className="text-xl font-semibold">
-                    Pack Sizes Available
-                  </h3>
-                </div>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  <Badge variant="secondary" className="text-lg px-3 py-1">
-                    20L
-                  </Badge>
-                  <Badge variant="secondary" className="text-lg px-3 py-1">
-                    1000L IBC
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </motion.section>
 
@@ -646,9 +623,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
                             <span className="text-sm font-medium text-gray-700">
                               {stage.stage}
                             </span>
-                            <Badge
-                              className={`${crop.color} text-sm px-2 py-1`}
-                            >
+                            <Badge className={`bg-[#6abf4b] text-sm px-2 py-1`}>
                               {stage.rate}
                             </Badge>
                           </div>
@@ -700,7 +675,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-6">Pack Sizes Available</h2>
             <p className="text-xl text-gray-600">
-              Convenient sizes for all farming operations
+              Space-efficient packaging for maximum field coverage
             </p>
           </div>
 
@@ -708,34 +683,38 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Package className="h-8 w-8 text-[#6abf4b]" />
+                  <Package className="h-8 w-8 text-green-600" />
                   <h3 className="text-2xl font-semibold">
                     Available Pack Sizes
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-white/80 rounded-lg backdrop-blur-sm">
+                  <div className="text-center p-6 bg-[#6abf4b]/10 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
                     >
                       20L
                     </Badge>
-                    <p className="text-gray-600">
-                      Perfect for comprehensive nutrition programs and
-                      multi-application schedules
+                    <p className="text-gray-600 mb-2">
+                      Compact pack for easy handling
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      Up to 6ha coverage at standard rate
                     </p>
                   </div>
-                  <div className="text-center p-6 bg-white/80 rounded-lg backdrop-blur-sm">
+                  <div className="text-center p-6 bg-[#6abf4b]/10 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
                     >
                       1000L IBC
                     </Badge>
-                    <p className="text-gray-600">
-                      Cost-effective solution for large-scale complete nutrition
-                      programs
+                    <p className="text-gray-600 mb-2">
+                      Bulk solution for large operations
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      Up to 300ha coverage at standard rate
                     </p>
                   </div>
                 </div>
@@ -765,21 +744,23 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <MapPin className="h-6 w-6" />
-                  <div>
-                    <p>Ilex EnviroSciences Ltd</p>
-                    <p>Willingham Hall, Willingham Road</p>
-                    <p>Market Rasen LN8 3RH</p>
+                  <div className="max-w-80">
+                    <p>
+                      Ilex EnviroSciences Ltd 13a Brindely Close , Holly Lane
+                      Industrial Estate , Atherstone , Warwickshire Market Rasen
+                      LN8 3RH
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6" />
-                  <p>+44 (0) 1673 885175</p>
+                  <p>+44 1827722911</p>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>office@ilex-envirosciences.com</p>
+                  <p>sales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

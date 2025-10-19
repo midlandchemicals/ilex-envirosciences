@@ -272,7 +272,7 @@ export function UltimateGoldPage({ onSubmit }: ContactFormProps) {
               <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
                 Premium Fish Extract Suspension for Protected Cropping
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r  bg-clip-text text-black">
                 Ultimate Gold (8-7-7)
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
@@ -712,21 +712,23 @@ export function UltimateGoldPage({ onSubmit }: ContactFormProps) {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <MapPin className="h-6 w-6" />
-                  <div>
-                    <p>Ilex EnviroSciences Ltd</p>
-                    <p>Willingham Hall, Willingham Road</p>
-                    <p>Market Rasen LN8 3RH</p>
+                  <div className="max-w-80">
+                    <p>
+                      Ilex EnviroSciences Ltd 13a Brindely Close , Holly Lane
+                      Industrial Estate , Atherstone , Warwickshire Market Rasen
+                      LN8 3RH
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6" />
-                  <p>+44 (0) 1673 885175</p>
+                  <p>+44 1827722911</p>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>office@ilex-envirosciences.com</p>
+                  <p>sales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

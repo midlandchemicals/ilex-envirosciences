@@ -4,6 +4,7 @@ import {
   useParams,
   useNavigate,
   useLocation,
+  Link,
 } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Navigation } from "./components/Navigation";
@@ -104,9 +105,7 @@ const categoryData = {
   "water-conditioners": {
     title: "Water Conditioners",
     link: "water-conditioners",
-    products: [
-      { product: "Modiphy Xtra", link: "modiphy-xtra" },
-    ],
+    products: [{ product: "Modiphy Xtra", link: "modiphy-xtra" }],
   },
   "organic-range": {
     title: "The Ilex Organic Range",
@@ -383,9 +382,7 @@ export default function App() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Scroll to top on route change */}
       <ScrollToTopInstant />
-
       <Navigation />
-
       <motion.main
         key={location.pathname}
         initial={{ opacity: 0, x: 20 }}
@@ -430,34 +427,81 @@ export default function App() {
           <Route path="*" element={<StaticPage pageType="not-found" />} />
         </Routes>
       </motion.main>
-
       {/* Footer */}
-      <footer className="py-12 px-4 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center">
-            <p className="text-gray-400 mb-4 text-sm">
-              © TM ® {new Date().getFullYear()} - Ilex EnviroSciences and all of its trade and product
-              names are property of Ilex EnviroSciences ltd
-            </p>
-            <p className="text-gray-400 mb-2 text-sm">
-              Company Registration Number: 04991822 | V.A.T Registration Number:
-              829 4192 07
-            </p>
-            <div className="flex justify-center gap-6 text-sm">
-              <a
-                href="/about"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="/about"
-                className="text-gray-400 hover:text-white transition-colors duration-200"
-              >
-                Terms & Conditions
-              </a>
-            </div>
+
+      <footer className="py-10 px-5 bg-[#ececec] text-[#555]">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+          {/* Left: Logo */}
+          <div>
+            <img
+              src="/assets/ilexlogonobg.png"
+              alt="Ilex Logo"
+              className="max-w-[140px] h-auto grayscale-[20%] hover:grayscale-0 transition-all duration-300"
+            />
           </div>
+
+          {/* Center: Navigation */}
+          <nav className="flex flex-wrap justify-center gap-6">
+            <Link
+              to="/"
+              className="text-[#555] font-medium hover:text-black hover:-translate-y-0.5 transition-all duration-200"
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
+              className="text-[#555] font-medium hover:text-black hover:-translate-y-0.5 transition-all duration-200"
+            >
+              About
+            </Link>
+            <Link
+              to="/products"
+              className="text-[#555] font-medium hover:text-black hover:-translate-y-0.5 transition-all duration-200"
+            >
+              Products
+            </Link>
+
+            <Link
+              to="/contact"
+              className="text-[#555] font-medium hover:text-black hover:-translate-y-0.5 transition-all duration-200"
+            >
+              Privacy policy
+            </Link>
+            <Link
+              to="/contact"
+              className="text-[#555] font-medium hover:text-black hover:-translate-y-0.5 transition-all duration-200"
+            >
+              Terms & Condition
+            </Link>
+          </nav>
+
+          {/* Right: Partner Logo */}
+          <div>
+            <a
+              href="https://www.midlandchem.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/assets/midchemnobg.png"
+                alt="Midland Chem Logo"
+                className="max-w-[140px] h-auto grayscale-[20%] hover:grayscale-0 transition-all duration-300"
+              />
+            </a>
+          </div>
+        </div>
+
+        {/* Bottom copyright */}
+        <div className="text-center text-[#888] text-sm mt-8">
+          <p>
+            Company Registration Number: 04991822
+            <br />
+            V.A.T Registration Number: 829 4192 07
+          </p>
+          <p className="mt-2 font-bold">
+            © {new Date().getFullYear()} Ilex EnviroSciences Ltd. All rights
+            reserved.
+          </p>
         </div>
       </footer>
     </div>

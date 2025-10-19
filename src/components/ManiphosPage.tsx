@@ -93,37 +93,37 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Combine className="h-8 w-8 text-purple-600" />,
+      icon: <Combine className="h-8 w-8 text-[#6abf4b]" />,
       title: "Manganese with Phosphite Technology",
       description:
         "Combines essential manganese micronutrient with proven phosphite delivery system",
     },
     {
-      icon: <Zap className="h-8 w-8 text-green-600" />,
+      icon: <Zap className="h-8 w-8 text-[#4a9c2d]" />,
       title: "Rapid Deficiency Correction",
       description:
         "Quick-acting formulation provides immediate response to manganese deficiency symptoms",
     },
     {
-      icon: <Target className="h-8 w-8 text-blue-600" />,
+      icon: <Target className="h-8 w-8 text-[#2e7c1f]" />,
       title: "Enhanced Enzyme Function",
       description:
         "Supports critical enzyme systems for photosynthesis and plant metabolism",
     },
     {
-      icon: <Activity className="h-8 w-8 text-orange-600" />,
+      icon: <Activity className="h-8 w-8 text-[#6abf4b]" />,
       title: "Photosynthesis Support",
       description:
         "Essential for chlorophyll synthesis and oxygen evolution in photosystem II",
     },
     {
-      icon: <Shield className="h-8 w-8 text-cyan-600" />,
+      icon: <Shield className="h-8 w-8 text-[#4a9c2d]" />,
       title: "Tank Mix Compatible",
       description:
         "Easily integrated with other foliar treatments and crop protection products",
     },
     {
-      icon: <Award className="h-8 w-8 text-red-600" />,
+      icon: <Award className="h-8 w-8 text-[#2e7c1f]" />,
       title: "Broad Crop Application",
       description:
         "Effective across a wide range of arable and horticultural crops",
@@ -145,8 +145,8 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
           notes: "Critical growth phase",
         },
       ],
-      color: "bg-yellow-100 text-yellow-800",
-      icon: <Wheat className="h-5 w-5 text-yellow-600" />,
+      color: "bg-[#6abf4b]/10 text-[#2e7c1f]",
+      icon: <Wheat className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Oilseed Rape",
@@ -162,8 +162,8 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
           notes: "Pre-flowering support",
         },
       ],
-      color: "bg-blue-100 text-blue-800",
-      icon: <Flower className="h-5 w-5 text-blue-600" />,
+      color: "bg-[#6abf4b]/20 text-[#2e7c1f]",
+      icon: <Flower className="h-5 w-5 text-[#4a9c2d]" />,
     },
     {
       crop: "Sugar Beet",
@@ -179,8 +179,8 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
           notes: "Growth optimization",
         },
       ],
-      color: "bg-green-100 text-green-800",
-      icon: <Sprout className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/30 text-[#2e7c1f]",
+      icon: <Sprout className="h-5 w-5 text-[#2e7c1f]" />,
     },
     {
       crop: "Vegetables",
@@ -196,8 +196,8 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
           notes: "Quality enhancement",
         },
       ],
-      color: "bg-orange-100 text-orange-800",
-      icon: <Leaf className="h-5 w-5 text-orange-600" />,
+      color: "bg-[#6abf4b]/40 text-[#2e7c1f]",
+      icon: <Leaf className="h-5 w-5 text-[#1d4f14]" />,
     },
   ];
 
@@ -332,7 +332,8 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
                 Manganese with Phosphite Technology
               </Badge>
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
-                Maniphos™
+                <span className="text-[#ff5757]">Man</span>
+                iphos™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                 A specialized manganese treatment treatment enhanced with proven
@@ -415,7 +416,7 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
 
       {/* Key Benefits Section */}
       <motion.section
-        className="py-20 px-4 bg-white/50"
+        className="py-20 px-4 bg-white"
         variants={staggerContainer}
         initial="initial"
         whileInView="animate"
@@ -458,33 +459,35 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
 
       {/* Manganese Technology Section */}
       <motion.section
-        className="py-20 px-4 bg-[#ececec]"
+        className="py-20 px-4 bg-[#f5f9f4]"
         {...fadeInUp}
         viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Manganese Technology</h2>
-            <p className="text-xl text-gray-600">
+            <h2 className="text-4xl font-bold mb-6 text-[#2e7c1f]">
+              Manganese Technology
+            </h2>
+            <p className="text-xl text-gray-700">
               Understanding the critical role of manganese in crop performance
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
+              <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <Combine className="h-8 w-8 text-purple-600" />
-                    <h3 className="text-2xl font-semibold">
+                    <Combine className="h-8 w-8 text-[#6abf4b]" />
+                    <h3 className="text-2xl font-semibold text-gray-800">
                       Manganese with Phosphite Power
                     </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="flex items-start gap-3">
-                      <Activity className="h-6 w-6 text-purple-600 mt-1" />
+                      <Activity className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-2">
+                        <h4 className="font-semibold mb-2 text-gray-800">
                           Photosynthesis Enhancement
                         </h4>
                         <p className="text-gray-600">
@@ -496,9 +499,9 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Atom className="h-6 w-6 text-green-600 mt-1" />
+                      <Atom className="h-6 w-6 text-[#4a9c2d] mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-2">
+                        <h4 className="font-semibold mb-2 text-gray-800">
                           Enzyme Activation
                         </h4>
                         <p className="text-gray-600">
@@ -510,25 +513,26 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Zap className="h-6 w-6 text-blue-600 mt-1" />
+                      <Zap className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-2">
-                          Phosphite Delivery
+                        <h4 className="font-semibold mb-2 text-gray-800">
+                          Phosphite Advantage
                         </h4>
                         <p className="text-gray-600">
-                          Rapid uptake and systemic movement ensures immediate
-                          manganese availability where it's needed most.
+                          The phosphite component enhances manganese uptake and
+                          systemic movement within the plant for efficient
+                          distribution.
                         </p>
                       </div>
                     </div>
 
-                    <div className="bg-purple-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-purple-800 mb-2">
+                    <div className="bg-[#6abf4b]/10 rounded-lg p-4 border border-[#6abf4b]/20">
+                      <h4 className="font-semibold text-[#2e7c1f] mb-2">
                         Enhanced Formula
                       </h4>
-                      <p className="text-purple-700">
-                        Includes phosphorus, potassium, and nitrogen to support
-                        optimal manganese utilization and plant function.
+                      <p className="text-[#4a9c2d]">
+                        Combines manganese with phosphorus, potassium, and
+                        nitrogen for comprehensive plant nutrition and health.
                       </p>
                     </div>
                   </div>
@@ -547,7 +551,7 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
                 <div className="relative aspect-square w-full">
                   <ImageWithFallback
                     src="/assets/product images/Phosphite/Maniphos.jpg"
-                    alt="Healthy Crop Development"
+                    alt="Manganese in Plant Metabolism"
                     className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
@@ -570,27 +574,45 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.3 }}
               >
-                Advanced Formulation
+                Manganese Uptake & Transport
               </motion.div>
             </motion.div>
           </div>
 
-          <div className="mt-8 text-center">
-            <Card className="inline-block bg-white/80 backdrop-blur-sm border-0 shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Package className="h-6 w-6 text-[#6abf4b]" />
-                  <h3 className="text-xl font-semibold">
-                    Pack Sizes Available
+          {/* Pack Sizes Section */}
+          <div className="mt-16 max-w-4xl mx-auto">
+            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <Package className="h-8 w-8 text-[#6abf4b]" />
+                  <h3 className="text-2xl font-semibold">
+                    Available Pack Sizes
                   </h3>
                 </div>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  <Badge variant="secondary" className="text-lg px-3 py-1">
-                    20L
-                  </Badge>
-                  <Badge variant="secondary" className="text-lg px-3 py-1">
-                    1000L IBC
-                  </Badge>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="text-center p-6 bg-gradient-to-br bg-[#6abf4b]/10 rounded-lg">
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      20L
+                    </Badge>
+                    <p className="text-gray-600">
+                      Convenient size for precise applications and smaller
+                      operations
+                    </p>
+                  </div>
+                  <div className="text-center p-6 bg-gradient-to-br bg-[#6abf4b]/10 rounded-lg">
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      1000L IBC
+                    </Badge>
+                    <p className="text-gray-600">
+                      Cost-effective solution for large-scale farming operations
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -702,21 +724,23 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <MapPin className="h-6 w-6" />
-                  <div>
-                    <p>Ilex EnviroSciences Ltd</p>
-                    <p>Willingham Hall, Willingham Road</p>
-                    <p>Market Rasen LN8 3RH</p>
+                  <div className="max-w-80">
+                    <p>
+                      Ilex EnviroSciences Ltd 13a Brindely Close , Holly Lane
+                      Industrial Estate , Atherstone , Warwickshire Market Rasen
+                      LN8 3RH
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6" />
-                  <p>+44 (0) 1673 885175</p>
+                  <p>+44 1827722911</p>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>office@ilex-envirosciences.com</p>
+                  <p>sales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

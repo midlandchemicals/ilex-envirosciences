@@ -93,37 +93,37 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Apple className="h-8 w-8 text-green-600" />,
+      icon: <Apple className="h-8 w-8 text-[#6abf4b]" />,
       title: "Vegetable Specialist",
       description:
         "Specifically formulated for field vegetable crops with tailored nutrient ratios",
     },
     {
-      icon: <Zap className="h-8 w-8 text-purple-600" />,
+      icon: <Zap className="h-8 w-8 text-[#6abf4b]" />,
       title: "Concentrated Phosphite Solution",
       description:
         "High concentration phosphite for rapid uptake and immediate plant response",
     },
     {
-      icon: <Target className="h-8 w-8 text-blue-600" />,
+      icon: <Target className="h-8 w-8 text-[#6abf4b]" />,
       title: "Effective at Low Application Rates",
       description:
         "Concentrated formulation provides maximum nutrition efficiency with minimal volume",
     },
     {
-      icon: <Atom className="h-8 w-8 text-orange-600" />,
+      icon: <Atom className="h-8 w-8 text-[#6abf4b]" />,
       title: "Enhanced P & K Nutrition",
       description:
         "Optimal phosphorus and potassium balance for vegetable crop requirements",
     },
     {
-      icon: <Activity className="h-8 w-8 text-cyan-600" />,
+      icon: <Activity className="h-8 w-8 text-[#6abf4b]" />,
       title: "Improves Crop Quality",
       description:
         "Enhanced nutrient quality leads to better marketable yields and crop appearance",
     },
     {
-      icon: <Shield className="h-8 w-8 text-red-600" />,
+      icon: <Shield className="h-8 w-8 text-[#6abf4b]" />,
       title: "Tank Mix Compatible",
       description:
         "Compatible with most agricultural products for flexible application programs",
@@ -146,7 +146,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
         },
       ],
       color: "bg-green-100 text-green-800",
-      icon: <Leaf className="h-5 w-5 text-green-600" />,
+      icon: <Leaf className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Root Vegetables",
@@ -163,7 +163,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
         },
       ],
       color: "bg-orange-100 text-orange-800",
-      icon: <Sprout className="h-5 w-5 text-orange-600" />,
+      icon: <Sprout className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Salad Crops",
@@ -180,7 +180,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
         },
       ],
       color: "bg-blue-100 text-blue-800",
-      icon: <Apple className="h-5 w-5 text-blue-600" />,
+      icon: <Apple className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Fruiting Vegetables",
@@ -197,7 +197,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
         },
       ],
       color: "bg-purple-100 text-purple-800",
-      icon: <Flower className="h-5 w-5 text-purple-600" />,
+      icon: <Flower className="h-5 w-5 text-[#6abf4b]" />,
     },
   ];
 
@@ -291,25 +291,25 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
         title: "Phosphite Technology",
         description:
           "Rapid uptake and systemic movement for immediate plant response",
-        icon: <Zap className="h-6 w-6 text-purple-600" />,
+        icon: <Zap className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Vegetable-Specific Formula",
         description:
           "Tailored P:K ratio optimized for vegetable crop requirements",
-        icon: <Apple className="h-6 w-6 text-green-600" />,
+        icon: <Apple className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Quality Enhancement",
         description:
           "Improves appearance, shelf life, and nutritional content of vegetables",
-        icon: <Award className="h-6 w-6 text-blue-600" />,
+        icon: <Award className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Micronutrient Support",
         description:
           "Essential magnesium and boron for optimal enzyme function",
-        icon: <Atom className="h-6 w-6 text-orange-600" />,
+        icon: <Atom className="h-6 w-6 text-[#6abf4b]" />,
       },
     ],
   };
@@ -476,14 +476,14 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <Apple className="h-8 w-8 text-green-600" />
+                    <Apple className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-2xl font-semibold">
                       Vegetable-Optimized Formula
                     </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="flex items-start gap-3">
-                      <Zap className="h-6 w-6 text-purple-600 mt-1" />
+                      <Zap className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Phosphite Technology
@@ -496,7 +496,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Target className="h-6 w-6 text-blue-600 mt-1" />
+                      <Target className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Optimized P:K Ratio
@@ -510,7 +510,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Award className="h-6 w-6 text-orange-600 mt-1" />
+                      <Award className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Quality Enhancement
@@ -575,22 +575,39 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
             </motion.div>
           </div>
 
-          <div className="mt-8 text-center">
-            <Card className="inline-block bg-white/80 backdrop-blur-sm border-0 shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Package className="h-6 w-6 text-[#6abf4b]" />
-                  <h3 className="text-xl font-semibold">
-                    Pack Sizes Available
+          <div className="mt-8 max-w-4xl mx-auto text-center">
+            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <Package className="h-8 w-8 text-[#6abf4b]" />
+                  <h3 className="text-2xl font-semibold">
+                    Available Pack Sizes
                   </h3>
                 </div>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  <Badge variant="secondary" className="text-lg px-3 py-1">
-                    20L
-                  </Badge>
-                  <Badge variant="secondary" className="text-lg px-3 py-1">
-                    1000L IBC
-                  </Badge>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="text-center p-6 bg-gradient-to-br from-[#6abf4b]/10 rounded-lg">
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      20L
+                    </Badge>
+                    <p className="text-gray-600">
+                      Perfect for vegetable specialist nutrition programs
+                    </p>
+                  </div>
+                  <div className="text-center p-6 bg-gradient-to-br from-[#6abf4b]/10 rounded-lg">
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      1000L IBC
+                    </Badge>
+                    <p className="text-gray-600">
+                      Cost-effective solution for large-scale vegetable
+                      production
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -641,9 +658,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
                             <span className="text-sm font-medium text-gray-700">
                               {stage.stage}
                             </span>
-                            <Badge
-                              className={`${crop.color} text-sm px-2 py-1`}
-                            >
+                            <Badge className={`bg-[#6abf4b] text-sm px-2 py-1`}>
                               {stage.rate}
                             </Badge>
                           </div>
@@ -705,21 +720,23 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <MapPin className="h-6 w-6" />
-                  <div>
-                    <p>Ilex EnviroSciences Ltd</p>
-                    <p>Willingham Hall, Willingham Road</p>
-                    <p>Market Rasen LN8 3RH</p>
+                  <div className="max-w-80">
+                    <p>
+                      Ilex EnviroSciences Ltd 13a Brindely Close , Holly Lane
+                      Industrial Estate , Atherstone , Warwickshire Market Rasen
+                      LN8 3RH
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6" />
-                  <p>+44 (0) 1673 885175</p>
+                  <p>+44 1827722911</p>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>office@ilex-envirosciences.com</p>
+                  <p>sales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

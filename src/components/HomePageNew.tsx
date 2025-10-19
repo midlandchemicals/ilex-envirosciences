@@ -163,7 +163,7 @@ function BrandsMarquee() {
               draggable={false}
             >
               <img
-                src={`/src/assets/${brand}`}
+                src={`/assets/${brand}`}
                 alt={brand}
                 className="h-16 w-auto object-contain pointer-events-none"
                 draggable={false}

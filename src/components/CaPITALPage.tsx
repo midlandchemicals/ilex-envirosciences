@@ -285,7 +285,8 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
                 Proven Phosphite Technology for Vegetables & Salads
               </Badge>
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
-                CaPITAL™
+                <span className="text-[#ffbd59]">Ca</span>
+                PITAL™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                 With Ilex's proven phosphite technology to optimise healthy
@@ -548,22 +549,38 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
             </motion.div>
           </div>
 
-          <div className="mt-8 text-center">
-            <Card className="inline-block bg-white/80 backdrop-blur-sm border-0 shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Package className="h-6 w-6 text-[#6abf4b]" />
-                  <h3 className="text-xl font-semibold">
-                    Pack Sizes Available
+          <div className="max-w-4xl mx-auto mt-12">
+            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <Package className="h-8 w-8 text-[#6abf4b]" />
+                  <h3 className="text-2xl font-semibold">
+                    Available Pack Sizes
                   </h3>
                 </div>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  <Badge variant="secondary" className="text-lg px-3 py-1">
-                    2 × 10L
-                  </Badge>
-                  <Badge variant="secondary" className="text-lg px-3 py-1">
-                    1000L IBC
-                  </Badge>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="text-center p-6 bg-gradient-to-br bg-[#6abf4b]/10 rounded-lg">
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      2 × 10L
+                    </Badge>
+                    <p className="text-gray-600">
+                      Perfect for precise application in smaller operations
+                    </p>
+                  </div>
+                  <div className="text-center p-6 bg-gradient-to-br bg-[#6abf4b]/10 rounded-lg">
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      1000L IBC
+                    </Badge>
+                    <p className="text-gray-600">
+                      Cost-effective solution for large-scale operations
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -600,7 +617,7 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
                   <CardHeader>
                     <div className="flex items-center justify-between mb-2">
                       <CardTitle className="text-lg">{crop.name}</CardTitle>
-                      <Badge className="bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20">
+                      <Badge className="bg-[#6abf4b] text-sm">
                         {crop.rate}
                       </Badge>
                     </div>
@@ -772,21 +789,23 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <MapPin className="h-6 w-6" />
-                  <div>
-                    <p>Ilex EnviroSciences Ltd</p>
-                    <p>Willingham Hall, Willingham Road</p>
-                    <p>Market Rasen LN8 3RH</p>
+                  <div className="max-w-80">
+                    <p>
+                      Ilex EnviroSciences Ltd 13a Brindely Close , Holly Lane
+                      Industrial Estate , Atherstone , Warwickshire Market Rasen
+                      LN8 3RH
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6" />
-                  <p>+44 (0) 1673 885175</p>
+                  <p>+44 1827722911</p>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>office@ilex-envirosciences.com</p>
+                  <p>sales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

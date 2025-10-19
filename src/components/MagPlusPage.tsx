@@ -328,7 +328,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
               <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
                 <div className="relative aspect-square w-full">
                   <ImageWithFallback
-                    src="/assets/product images/Phosphite/Magiphos.jpg"
+                    src="/assets/product images/Foliar/Mag plus.jpg"
                     alt="Mag Plus Product"
                     className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
@@ -505,7 +505,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
               <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
                 <div className="relative aspect-square w-full">
                   <ImageWithFallback
-                    src="/assets/product images/Phosphite/Magiphos.jpg"
+                    src="/assets/product images/Foliar/Mag plus.jpg"
                     alt="Agricultural Science - Magnesium Research"
                     className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
@@ -532,27 +532,6 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
                 Advanced Formulation
               </motion.div>
             </motion.div>
-          </div>
-
-          <div className="mt-8 text-center">
-            <Card className="inline-block bg-white/80 backdrop-blur-sm border-0 shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Package className="h-6 w-6 text-[#6abf4b]" />
-                  <h3 className="text-xl font-semibold">
-                    Pack Sizes Available
-                  </h3>
-                </div>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  <Badge variant="secondary" className="text-lg px-3 py-1">
-                    2 × 10L
-                  </Badge>
-                  <Badge variant="secondary" className="text-lg px-3 py-1">
-                    1000L IBC
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </motion.section>
@@ -587,7 +566,9 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
                   <CardHeader>
                     <div className="flex items-center justify-between mb-2">
                       <CardTitle className="text-xl">{crop.name}</CardTitle>
-                      <Badge className={crop.color}>{crop.rate}</Badge>
+                      <Badge className="bg-[#6abf4b] text-sm">
+                        {crop.rate}
+                      </Badge>
                     </div>
                   </CardHeader>
                   <CardContent>
@@ -625,6 +606,65 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
         </div>
       </motion.section>
 
+      {/* Pack Sizes Section */}
+      <motion.section
+        className="py-20 px-4 bg-white/50"
+        {...fadeInUp}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-6">Pack Sizes Available</h2>
+            <p className="text-xl text-gray-600">
+              Space-efficient packaging for maximum field coverage
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <Package className="h-8 w-8 text-green-600" />
+                  <h3 className="text-2xl font-semibold">
+                    Available Pack Sizes
+                  </h3>
+                </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="text-center p-6 bg-[#6abf4b]/10 rounded-lg">
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      2 × 10L
+                    </Badge>
+                    <p className="text-gray-600 mb-2">
+                      Compact twin pack for easy handling
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      Up to 10ha coverage at maintenance rate
+                    </p>
+                  </div>
+                  <div className="text-center p-6 bg-[#6abf4b]/10 rounded-lg">
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      1000L IBC
+                    </Badge>
+                    <p className="text-gray-600 mb-2">
+                      Bulk solution for large operations
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      Up to 500ha coverage at maintenance rate
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </motion.section>
+
       {/* PDF Links Section */}
       <PDFLinks
         id="technical-resources-magplus"
@@ -645,21 +685,23 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <MapPin className="h-6 w-6" />
-                  <div>
-                    <p>Ilex EnviroSciences Ltd</p>
-                    <p>Willingham Hall, Willingham Road</p>
-                    <p>Market Rasen LN8 3RH</p>
+                  <div className="max-w-80">
+                    <p>
+                      Ilex EnviroSciences Ltd 13a Brindely Close , Holly Lane
+                      Industrial Estate , Atherstone , Warwickshire Market Rasen
+                      LN8 3RH
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6" />
-                  <p>+44 (0) 1673 885175</p>
+                  <p>+44 1827722911</p>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>office@ilex-envirosciences.com</p>
+                  <p>sales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

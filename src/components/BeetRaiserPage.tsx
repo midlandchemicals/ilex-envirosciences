@@ -93,37 +93,37 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Candy className="h-8 w-8 text-red-600" />,
+      icon: <Candy className="h-8 w-8 text-[#6abf4b]" />,
       title: "Sugar Beet Specialist",
       description:
-        "Specifically formulated to meet the unique nutritional demands of sugar beet crops",
+        "Formulated specifically for the unique nutritional needs of sugar beet crops",
     },
     {
-      icon: <Zap className="h-8 w-8 text-green-600" />,
-      title: "Enhanced Sugar Content",
+      icon: <Activity className="h-8 w-8 text-[#4a9c2d]" />,
+      title: "Growth Enhancement",
       description:
-        "Promotes sugar accumulation and quality for premium processing yields",
+        "Promotes vigorous growth and development throughout the growing season",
     },
     {
-      icon: <Target className="h-8 w-8 text-blue-600" />,
-      title: "Critical Growth Stage Support",
+      icon: <Shield className="h-8 w-8 text-[#2e7c1f]" />,
+      title: "Stress Resistance",
       description:
-        "Optimized nutrition during key developmental periods for maximum impact",
+        "Improves plant ability to cope with environmental and physiological stresses",
     },
     {
-      icon: <Activity className="h-8 w-8 text-purple-600" />,
+      icon: <Package className="h-8 w-8 text-[#4a9c2d]" />,
       title: "Improved Root Development",
       description:
         "Enhances root size, quality, and sugar accumulation throughout the growing season",
     },
     {
-      icon: <Award className="h-8 w-8 text-orange-600" />,
+      icon: <Award className="h-8 w-8 text-[#2e7c1f]" />,
       title: "Proven Performance",
       description:
         "Field-tested formulation delivering consistent results across UK sugar beet conditions",
     },
     {
-      icon: <Shield className="h-8 w-8 text-cyan-600" />,
+      icon: <Shield className="h-8 w-8 text-[#2e7c1f]" />,
       title: "Stress Tolerance",
       description:
         "Improves plant ability to cope with environmental and physiological stresses",
@@ -136,32 +136,32 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
       timing: "4-6 true leaves",
       rate: "2-3 l/ha",
       notes: "Critical for strong early development and root establishment",
-      color: "bg-green-100 text-green-800",
-      icon: <Sprout className="h-5 w-5 text-green-600" />,
+      color: "bg-[#6abf4b]/10 text-[#2e7c1f]",
+      icon: <Sprout className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       stage: "Canopy Development",
       timing: "8-12 leaves",
       rate: "2-3 l/ha",
       notes: "Support rapid canopy growth and leaf area expansion",
-      color: "bg-blue-100 text-blue-800",
-      icon: <Leaf className="h-5 w-5 text-blue-600" />,
+      color: "bg-[#6abf4b]/20 text-[#2e7c1f]",
+      icon: <Leaf className="h-5 w-5 text-[#4a9c2d]" />,
     },
     {
       stage: "Root Bulking",
       timing: "Canopy closure to root growth",
       rate: "2-3 l/ha",
       notes: "Optimize root size development and sugar accumulation",
-      color: "bg-orange-100 text-orange-800",
-      icon: <Package className="h-5 w-5 text-orange-600" />,
+      color: "bg-[#6abf4b]/30 text-[#2e7c1f]",
+      icon: <Package className="h-5 w-5 text-[#2e7c1f]" />,
     },
     {
       stage: "Sugar Accumulation",
       timing: "Root bulking to harvest",
       rate: "2-3 l/ha",
       notes: "Enhance sugar content and processing quality",
-      color: "bg-red-100 text-red-800",
-      icon: <Candy className="h-5 w-5 text-red-600" />,
+      color: "bg-[#6abf4b]/40 text-[#2e7c1f]",
+      icon: <Candy className="h-5 w-5 text-[#1d4f14]" />,
     },
   ];
 
@@ -266,7 +266,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
                 Specialist Sugar Beet Nutrition
               </Badge>
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
-                Beet Raiser™
+                <span className="text-[#007a3f]">Beet</span> Raiser™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                 A specialist foliar nutrition solution specifically formulated
@@ -419,7 +419,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
               >
                 <Card className="h-full hover:shadow-lg transition-all duration-300 border-0 bg-white/80 backdrop-blur-sm">
                   <CardHeader>
-                    <div className="flex items-center gap-3 mb-4">
+                    <div className="flex  items-center gap-3 mb-4">
                       {stage.icon}
                       <CardTitle className="text-xl">{stage.stage}</CardTitle>
                     </div>
@@ -431,7 +431,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
                           <span className="text-sm font-medium text-gray-700">
                             {stage.timing}
                           </span>
-                          <Badge className={`${stage.color} text-sm px-2 py-1`}>
+                          <Badge className={`bg-[#6abf4b] text-sm px-2 py-1`}>
                             {stage.rate}
                           </Badge>
                         </div>
@@ -493,16 +493,18 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <Candy className="h-8 w-8 text-red-600" />
-                    <h3 className="text-2xl font-semibold">
+                    <Candy className="h-8 w-8 text-[#6abf4b]" />
+                    <h3 className="text-2xl font-semibold text-gray-800">
                       Sugar Beet-Optimized Formula
                     </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="flex items-start gap-3">
-                      <Package className="h-6 w-6 text-red-600 mt-1" />
+                      <Package className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-2">Root Development</h4>
+                        <h4 className="font-semibold mb-2 text-gray-800">
+                          Root Development
+                        </h4>
                         <p className="text-gray-600">
                           Specialized nutrition supports root bulking and sugar
                           accumulation for maximum processing quality.
@@ -511,9 +513,11 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Candy className="h-6 w-6 text-orange-600 mt-1" />
+                      <Candy className="h-6 w-6 text-[#4a9c2d] mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-2">Sugar Formation</h4>
+                        <h4 className="font-semibold mb-2 text-gray-800">
+                          Sugar Formation
+                        </h4>
                         <p className="text-gray-600">
                           Balanced nutrition enhances photosynthesis and sugar
                           translocation to roots for optimal sugar content.
@@ -522,9 +526,9 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Activity className="h-6 w-6 text-green-600 mt-1" />
+                      <Activity className="h-6 w-6 text-[#2e7c1f] mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-2">
+                        <h4 className="font-semibold mb-2 text-gray-800">
                           Growth Optimization
                         </h4>
                         <p className="text-gray-600">
@@ -534,11 +538,11 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
                       </div>
                     </div>
 
-                    <div className="bg-red-50 rounded-lg p-4">
-                      <h4 className="font-semibold text-red-800 mb-2">
+                    <div className="bg-[#6abf4b]/10 rounded-lg p-4 border border-[#6abf4b]/20">
+                      <h4 className="font-semibold text-[#2e7c1f] mb-2">
                         Processing Quality
                       </h4>
-                      <p className="text-red-700">
+                      <p className="text-[#4a9c2d]">
                         Enhanced with sodium and other key nutrients to optimize
                         sugar beet processing characteristics and sugar
                         extraction efficiency.
@@ -588,22 +592,38 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
             </motion.div>
           </div>
 
-          <div className="mt-8 text-center">
-            <Card className="inline-block bg-white/80 backdrop-blur-sm border-0 shadow-lg">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Package className="h-6 w-6 text-[#6abf4b]" />
-                  <h3 className="text-xl font-semibold">
-                    Pack Sizes Available
+          <div className="max-w-4xl mx-auto mt-12">
+            <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <Package className="h-8 w-8 text-[#6abf4b]" />
+                  <h3 className="text-2xl font-semibold">
+                    Available Pack Sizes
                   </h3>
                 </div>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  <Badge variant="secondary" className="text-lg px-3 py-1">
-                    20L
-                  </Badge>
-                  <Badge variant="secondary" className="text-lg px-3 py-1">
-                    1000L IBC
-                  </Badge>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="text-center p-6 bg-gradient-to-br bg-[#6abf4b]/10 rounded-lg">
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      20L
+                    </Badge>
+                    <p className="text-gray-600">
+                      Convenient size for precise sugar beet applications
+                    </p>
+                  </div>
+                  <div className="text-center p-6 bg-gradient-to-br bg-[#6abf4b]/10 rounded-lg">
+                    <Badge
+                      variant="secondary"
+                      className="text-xl px-4 py-2 mb-4"
+                    >
+                      1000L IBC
+                    </Badge>
+                    <p className="text-gray-600">
+                      Economical choice for large-scale sugar beet production
+                    </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -631,21 +651,23 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <MapPin className="h-6 w-6" />
-                  <div>
-                    <p>Ilex EnviroSciences Ltd</p>
-                    <p>Willingham Hall, Willingham Road</p>
-                    <p>Market Rasen LN8 3RH</p>
+                  <div className="max-w-80">
+                    <p>
+                      Ilex EnviroSciences Ltd 13a Brindely Close , Holly Lane
+                      Industrial Estate , Atherstone , Warwickshire Market Rasen
+                      LN8 3RH
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6" />
-                  <p>+44 (0) 1673 885175</p>
+                  <p>+44 1827722911</p>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>office@ilex-envirosciences.com</p>
+                  <p>sales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

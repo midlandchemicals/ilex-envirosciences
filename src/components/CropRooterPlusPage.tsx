@@ -202,26 +202,6 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
     },
   ];
 
-  // Trial data for charts
-  const northamptonshireData = [
-    { treatment: "SFP", yield: 9.5, increase: 0 },
-    { treatment: "3x0.5L", yield: 10.5, increase: 10.5 },
-    { treatment: "3x1L", yield: 10.5, increase: 10.5 },
-    { treatment: "2x1L", yield: 10.0, increase: 5.3 },
-    { treatment: "4x0.5L", yield: 10.0, increase: 5.3 },
-    { treatment: "1x0.5L", yield: 10.0, increase: 5.3 },
-  ];
-
-  const lincolnshireData = [
-    { treatment: "SFP", yield: 12.0, increase: 0 },
-    { treatment: "2x0.5L", yield: 13.0, increase: 8.3 },
-    { treatment: "2x1L", yield: 13.0, increase: 8.3 },
-    { treatment: "2x2L", yield: 14.0, increase: 16.7 },
-    { treatment: "4x0.5L", yield: 13.0, increase: 8.3 },
-    { treatment: "4x1L", yield: 14.0, increase: 16.7 },
-    { treatment: "4x2L", yield: 14.0, increase: 16.7 },
-  ];
-
   // Spring Barley Trials 2023 data (full set of 24 yield responses)
   // Sorted in ascending order by response, with id reassigned sequentially 1..24
   const springBarleyData = [
@@ -354,8 +334,8 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
               <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
                 Next Generation Crop Biostimulant with 19 Amino Acids
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] bg-clip-text text-transparent">
-                Crop Rooter® Plus
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r text-black bg-clip-text ">
+                Crop Rooter® <span className="text-[#007a3f]">Plus</span>
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                 Crop Rooter® Plus optimises nutrient uptake, improves
@@ -518,7 +498,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
                       <CardTitle className="text-lg">{rate.type}</CardTitle>
                     </div>
                     <div className="text-center p-4 bg-gray-50 rounded-lg mb-4">
-                      <Badge className={`${rate.color} text-xl px-4 py-2 mb-2`}>
+                      <Badge className={`bg-[#6abf4b] text-sm px-4 py-2 mb-2`}>
                         {rate.rate}
                       </Badge>
                       <p className="text-sm text-gray-600 mt-2">
@@ -561,6 +541,34 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
               </CardContent>
             </Card>
           </motion.div>
+        </div>
+        <div className="max-w-4xl mx-auto mt-12">
+          <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+            <CardContent className="p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <Package className="h-8 w-8 text-[#6abf4b]" />
+                <h3 className="text-2xl font-semibold">Available Pack Sizes</h3>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="text-center p-6 bg-gradient-to-br bg-[#6abf4b]/10 rounded-lg">
+                  <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">
+                    2 × 10L
+                  </Badge>
+                  <p className="text-gray-600">
+                    Ideal for targeted applications and smaller operations
+                  </p>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-br bg-[#6abf4b]/10 rounded-lg">
+                  <Badge variant="secondary" className="text-xl px-4 py-2 mb-4">
+                    1000L IBC
+                  </Badge>
+                  <p className="text-gray-600">
+                    Cost-effective for large-scale farming operations
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </motion.section>
 
@@ -709,20 +717,11 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
               </CardHeader>
               <CardContent>
                 <div className="h-80">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={northamptonshireData}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="treatment" />
-                      <YAxis />
-                      <Tooltip
-                        formatter={(value, name) => [
-                          name === "yield" ? `${value} t/ha` : `+${value}%`,
-                          name === "yield" ? "Yield" : "Increase",
-                        ]}
-                      />
-                      <Bar dataKey="yield" fill="#6abf4b" />
-                    </BarChart>
-                  </ResponsiveContainer>
+                  <ImageWithFallback
+                    src="/assets/NorthernHemisphere.png"
+                    alt="Northamptonshire Trial Results"
+                    className="w-full h-full object-contain rounded-lg"
+                  />
                 </div>
                 <p className="text-center text-gray-600 mt-4">
                   Consistent yield improvements across all treatment programs,
@@ -735,25 +734,16 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
             <Card className="bg-white/80 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-xl">
-                  Lincolnshire (Winter Wheat var. SISKIN) - 2020
+                  Lincolnshire (Winter Wheat var. Siskin) - 2020
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="h-80">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={lincolnshireData}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="treatment" />
-                      <YAxis />
-                      <Tooltip
-                        formatter={(value, name) => [
-                          name === "yield" ? `${value} t/ha` : `+${value}%`,
-                          name === "yield" ? "Yield" : "Increase",
-                        ]}
-                      />
-                      <Bar dataKey="yield" fill="#6abf4b" />
-                    </BarChart>
-                  </ResponsiveContainer>
+                  <ImageWithFallback
+                    src="/assets/Linconsphere.png"
+                    alt="Lincolnshire Trial Results"
+                    className="w-full h-full object-contain rounded-lg"
+                  />
                 </div>
                 <p className="text-center text-gray-600 mt-4">
                   Higher baseline yields with consistent 1-2 t/ha improvements
@@ -884,21 +874,23 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <MapPin className="h-6 w-6" />
-                  <div>
-                    <p>Ilex EnviroSciences Ltd</p>
-                    <p>Willingham Hall, Willingham Road</p>
-                    <p>Market Rasen LN8 3RH</p>
+                  <div className="max-w-80">
+                    <p>
+                      Ilex EnviroSciences Ltd 13a Brindely Close , Holly Lane
+                      Industrial Estate , Atherstone , Warwickshire Market Rasen
+                      LN8 3RH
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6" />
-                  <p>+44 (0) 1673 885175</p>
+                  <p>+44 1827722911</p>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>office@ilex-envirosciences.com</p>
+                  <p>sales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

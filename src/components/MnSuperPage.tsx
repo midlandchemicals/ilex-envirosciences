@@ -93,37 +93,37 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
 
   const benefits = [
     {
-      icon: <Zap className="h-8 w-8 text-green-600" />,
+      icon: <Zap className="h-8 w-8 text-[#6abf4b]" />,
       title: "Quick-Acting Nutrient Supply",
       description:
         "Rapid uptake and immediate plant response to correct manganese deficiencies",
     },
     {
-      icon: <Star className="h-8 w-8 text-blue-600" />,
+      icon: <Star className="h-8 w-8 text-[#6abf4b]" />,
       title: "High Concentration of Manganese",
       description:
         "25% manganese content provides maximum nutrition density for efficient application",
     },
     {
-      icon: <Target className="h-8 w-8 text-green-700" />,
+      icon: <Target className="h-8 w-8 text-[#6abf4b]" />,
       title: "Effective at Low Application Rates",
       description:
         "5 litres at maintenance rate treats up to 10ha, minimizing storage and packaging waste",
     },
     {
-      icon: <Activity className="h-8 w-8 text-blue-700" />,
+      icon: <Activity className="h-8 w-8 text-[#6abf4b]" />,
       title: "Multi-Nutrient Enhancement",
       description:
         "Helps increase the levels of magnesium and zinc in the plant alongside manganese",
     },
     {
-      icon: <FlaskConical className="h-8 w-8 text-green-500" />,
+      icon: <FlaskConical className="h-8 w-8 text-[#6abf4b]" />,
       title: "Easy Tank Mix Integration",
       description:
         "Formulated to disperse and dissolve quickly for easy use in tank mixes",
     },
     {
-      icon: <Package className="h-8 w-8 text-green-400" />,
+      icon: <Package className="h-8 w-8 text-[#6abf4b]" />,
       title: "Space-Efficient Storage",
       description:
         "Compact 5L packs minimize storage requirements while maximizing field coverage",
@@ -137,7 +137,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
       description: "For preventing manganese deficiencies in healthy crops",
       coverage: "Up to 10ha per 5L pack",
       color: "bg-green-100 text-green-800",
-      icon: <Shield className="h-5 w-5 text-green-600" />,
+      icon: <Shield className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       type: "Deficiency Rate",
@@ -145,7 +145,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
       description: "For correcting existing manganese deficiencies",
       coverage: "3.3-6.7ha per 5L pack",
       color: "bg-blue-100 text-blue-800",
-      icon: <Zap className="h-5 w-5 text-blue-600" />,
+      icon: <Zap className="h-5 w-5 text-[#6abf4b]" />,
     },
   ];
 
@@ -234,25 +234,25 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
         title: "Manganese Enzyme Systems",
         description:
           "Essential for photosynthesis, respiration, and antioxidant enzyme function",
-        icon: <Atom className="h-6 w-6 text-green-600" />,
+        icon: <Atom className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Multi-Nutrient Synergy",
         description:
           "Combines Mn, Mg, Zn, N, and S for comprehensive plant nutrition",
-        icon: <Activity className="h-6 w-6 text-blue-600" />,
+        icon: <Activity className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "High Concentration Formula",
         description:
           "25% manganese provides maximum efficiency at minimal application rates",
-        icon: <Star className="h-6 w-6 text-blue-600" />,
+        icon: <Star className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
         title: "Rapid Plant Uptake",
         description:
           "Quick-acting formulation ensures immediate correction of deficiency symptoms",
-        icon: <Zap className="h-6 w-6 text-green-600" />,
+        icon: <Zap className="h-6 w-6 text-[#6abf4b]" />,
       },
     ],
   };
@@ -274,7 +274,8 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
                 Next-Generation High Concentration Manganese
               </Badge>
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
-                Mn SUPER™
+                <span className="text-[#ff3131]">Mn</span>
+                SUPER™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                 The most recent introduction from Ilex EnviroSciences Ltd.
@@ -296,7 +297,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
                     smoothScrollToSection("application-guidelines-mnsuper")
                   }
                 >
-                  Application Guidlines
+                  Application Guidelines
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
@@ -420,14 +421,14 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
               <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-xl">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <Star className="h-8 w-8 text-green-600" />
+                    <Star className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-2xl font-semibold">
                       25% Manganese Concentration
                     </h3>
                   </div>
                   <div className="space-y-6">
                     <div className="flex items-start gap-3">
-                      <Atom className="h-6 w-6 text-green-600 mt-1" />
+                      <Atom className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Maximum Efficiency
@@ -441,7 +442,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Activity className="h-6 w-6 text-blue-600 mt-1" />
+                      <Activity className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Multi-Nutrient Complex
@@ -454,7 +455,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Zap className="h-6 w-6 text-blue-600 mt-1" />
+                      <Zap className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
                           Rapid Plant Response
@@ -583,7 +584,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
             <Card className="bg-blue-50 border border-blue-200">
               <CardContent className="p-6">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-blue-600 mt-1" />
+                  <CheckCircle className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
                     <h3 className="text-lg font-semibold mb-2 text-blue-800">
                       Severe Deficiency Treatment
@@ -625,7 +626,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
                   </h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center p-6 bg-[#ececec] rounded-lg">
+                  <div className="text-center p-6 bg-[#6abf4b]/10 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -639,7 +640,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
                       Up to 20ha coverage at maintenance rate
                     </p>
                   </div>
-                  <div className="text-center p-6 bg-[#ececec] rounded-lg">
+                  <div className="text-center p-6 bg-[#6abf4b]/10 rounded-lg">
                     <Badge
                       variant="secondary"
                       className="text-xl px-4 py-2 mb-4"
@@ -680,21 +681,23 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <MapPin className="h-6 w-6" />
-                  <div>
-                    <p>Ilex EnviroSciences Ltd</p>
-                    <p>Willingham Hall, Willingham Road</p>
-                    <p>Market Rasen LN8 3RH</p>
+                  <div className="max-w-80">
+                    <p>
+                      Ilex EnviroSciences Ltd 13a Brindely Close , Holly Lane
+                      Industrial Estate , Atherstone , Warwickshire Market Rasen
+                      LN8 3RH
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6" />
-                  <p>+44 (0) 1673 885175</p>
+                  <p>+44 1827722911</p>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>office@ilex-envirosciences.com</p>
+                  <p>sales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

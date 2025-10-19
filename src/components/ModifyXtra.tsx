@@ -250,7 +250,8 @@ export function ModipHyXtraPage({ onSubmit }: ContactFormProps) {
                 Advanced Water Conditioner for Optimal Spray Performance
               </Badge>
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
-                ModipHy Xtra™
+                ModipHy <span className="text-[#0cc0df]">X</span>
+                tra™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                 A high-performance water conditioner formulated to counter the
@@ -277,7 +278,7 @@ export function ModipHyXtraPage({ onSubmit }: ContactFormProps) {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg cursor-pointer px-8 py-4"
+                  className="text-lg cursor-pointer border-[#6abf4b] text-[#6abf4b] px-8 py-4"
                   onClick={() =>
                     smoothScrollToSection("technical-resources-modiphy")
                   }
@@ -491,13 +492,43 @@ export function ModipHyXtraPage({ onSubmit }: ContactFormProps) {
               </Card>
             </div>
 
-            <div>
-              <ImageWithFallback
-                src={ModiphyXtraImage}
-                alt="Spray Solution Optimisation"
-                className="w-full h-80 object-cover rounded-2xl shadow-xl"
-              />
-            </div>
+            <motion.div
+              className="relative w-full max-w-lg mx-auto group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -3 }}
+            >
+              {/* Main image container */}
+              <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
+                <div className="relative h-120 w-full">
+                  <ImageWithFallback
+                    src={ModiphyXtraImage}
+                    alt="Spray Solution Optimisation"
+                    className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                {/* Decorative border effect */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-300 group-hover:border-[#6abf4b]/20" />
+
+                {/* Corner accents */}
+                <div className="absolute -left-0.5 -top-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -left-0.5 -top-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-6 w-0.5 bg-[#6abf4b] transition-all duration-300 group-hover:h-8" />
+                <div className="absolute -right-0.5 -bottom-0.5 h-0.5 w-6 bg-[#6abf4b] transition-all duration-300 group-hover:w-8" />
+              </div>
+
+              {/* Floating label */}
+              <motion.div
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-white px-4 py-1.5 text-xs font-medium text-[#6abf4b] shadow-md"
+                initial={{ y: 8, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+              >
+                Advanced Formulation
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </motion.section>
@@ -695,21 +726,23 @@ export function ModipHyXtraPage({ onSubmit }: ContactFormProps) {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <MapPin className="h-6 w-6" />
-                  <div>
-                    <p>Ilex EnviroSciences Ltd</p>
-                    <p>Willingham Hall, Willingham Road</p>
-                    <p>Market Rasen LN8 3RH</p>
+                  <div className="max-w-80">
+                    <p>
+                      Ilex EnviroSciences Ltd 13a Brindely Close , Holly Lane
+                      Industrial Estate , Atherstone , Warwickshire Market Rasen
+                      LN8 3RH
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Phone className="h-6 w-6" />
-                  <p>+44 (0) 1673 885175</p>
+                  <p>+44 1827722911</p>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>office@ilex-envirosciences.com</p>
+                  <p>sales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">
