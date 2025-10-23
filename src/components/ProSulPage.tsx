@@ -94,15 +94,15 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
   const benefits = [
     {
       icon: <Flame className="h-8 w-8 text-[#6abf4b]" />,
-      title: "Premium Sulfur Nutrition",
+      title: "Premium Sulphur Nutrition",
       description:
-        "Provides essential sulfur nutrition for protein synthesis and oil quality enhancement",
+        "Provides essential sulphur nutrition for protein synthesis and oil quality enhancement",
     },
     {
       icon: <Zap className="h-8 w-8 text-[#6abf4b]" />,
       title: "Rapid Plant Uptake",
       description:
-        "Fast-acting formulation ensures immediate sulfur availability when crops need it most",
+        "Fast-acting formulation ensures immediate sulphur availability when crops need it most",
     },
     {
       icon: <Target className="h-8 w-8 text-[#6abf4b]" />,
@@ -137,7 +137,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
         {
           stage: "Tillering to stem extension",
           rate: "2-3 l/ha",
-          notes: "Early sulfur support",
+          notes: "Early sulphur support",
         },
         {
           stage: "Flag leaf emergence",
@@ -202,7 +202,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
   ];
 
   const analysisData = {
-    "Sulfur (S)": "30.0",
+    "Sulphur (S)": "30.0",
     "Nitrogen (N)": "5.0",
     "Potassium (K₂O)": "8.0",
     "Magnesium (MgO)": "2.0",
@@ -226,9 +226,9 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
   const showcaseData = {
     productName: "Pro-Sul™",
     productDescription:
-      "A premium sulfur foliar fertilizer designed to prevent and correct sulfur deficiencies while supporting essential plant functions. Essential for protein synthesis, oil quality, and overall crop performance. Formulated for rapid uptake and immediate plant response.",
+      "A premium sulphur foliar fertilizer designed to prevent and correct sulphur deficiencies while supporting essential plant functions. Essential for protein synthesis, oil quality, and overall crop performance. Formulated for rapid uptake and immediate plant response.",
     keyFeatures: [
-      "30% sulfur content for maximum effectiveness",
+      "30% sulphur content for maximum effectiveness",
       "Enhanced with nitrogen, potassium, and magnesium",
       "Fast-acting formulation for immediate response",
       "Essential for protein synthesis and oil quality",
@@ -323,7 +323,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div {...fadeInUp}>
               <Badge className="mb-4 bg-[#6abf4b]/10 text-[#6abf4b] hover:bg-[#6abf4b]/20 text-lg px-4 py-2">
-                Premium Sulfur Nutrition Technology
+                Premium Sulphur Nutrition Technology
               </Badge>
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
                 Pro-Sul™
@@ -398,7 +398,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.3 }}
               >
-                Sulfur Specialist
+                Sulphur Specialist
               </motion.div>
             </motion.div>
           </div>
@@ -420,7 +420,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
           <motion.div className="text-center mb-16" variants={fadeInUp}>
             <h2 className="text-4xl font-bold mb-6">Key Benefits</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover why Pro-Sul™ delivers essential sulfur nutrition for
+              Discover why Pro-Sul™ delivers essential sulphur nutrition for
               superior crop quality
             </p>
           </motion.div>
@@ -451,7 +451,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
         title="Pro-Sul™ Nutrient Analysis"
       />
 
-      {/* Sulfur Technology Section */}
+      {/* Sulphur Technology Section */}
       <motion.section
         className="py-20 px-4 bg-[#ececec]"
         {...fadeInUp}
@@ -460,10 +460,10 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
-              Sulfur Nutrition Technology
+              Sulphur Nutrition Technology
             </h2>
             <p className="text-xl text-gray-600">
-              Understanding the critical role of sulfur in crop quality and
+              Understanding the critical role of sulphur in crop quality and
               performance
             </p>
           </div>
@@ -475,7 +475,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
                   <div className="flex items-center gap-3 mb-6">
                     <Flame className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-2xl font-semibold">
-                      Essential Sulfur Functions
+                      Essential Sulphur Functions
                     </h3>
                   </div>
                   <div className="space-y-6">
@@ -527,7 +527,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
                       </h4>
                       <p className="text-#000000">
                        <b>Pro-Sul™ includes nitrogen, potassium, and magnesium to
-                        support optimal sulfur utilisation and plant function.</b>
+                        support optimal sulphur utilisation and plant function.</b>
                       </p>
                     </div>
                   </div>
@@ -612,7 +612,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Application Guidelines</h2>
             <p className="text-xl text-gray-600">
-              Strategic sulfur nutrition for all major crop types
+              Strategic sulphur nutrition for all major crop types
             </p>
           </div>
 

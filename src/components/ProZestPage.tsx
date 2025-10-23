@@ -121,7 +121,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
       icon: <Atom className="h-8 w-8 text-[#6abf4b]" />,
       title: "Mildly Acidic Growing Environment",
       description:
-        "Sulfur provides optimal pH conditions for potato development",
+        "Sulphur provides optimal pH conditions for potato development",
     },
     {
       icon: <Package className="h-8 w-8 text-[#6abf4b]" />,
@@ -177,7 +177,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
     keyFeatures: [
       "Available in both liquid and powder formulations",
       "High zinc content (25-30%) for enzyme function",
-      "Sulfur (25-30%) for soil pH optimization",
+      "Sulphur (25-30%) for soil pH optimization",
       "Calcium (8-10%) for storage quality",
       "At-planting application for immediate availability",
       "Prevents nutrition-related disorders",
@@ -203,7 +203,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
         icon: <Atom className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
-        title: "Sulfur Environment",
+        title: "Sulphur Environment",
         description:
           "Creates mildly acidic growing conditions optimal for potato development",
         icon: <Beaker className="h-6 w-6 text-[#6abf4b]" />,

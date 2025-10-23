@@ -506,7 +506,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
                           Secondary Nutrients
                         </h4>
                         <p className="text-gray-600">
-                          Magnesium and sulfur support enzyme function,
+                          Magnesium and sulphur support enzyme function,
                           chlorophyll synthesis, and protein formation.
                         </p>
                       </div>

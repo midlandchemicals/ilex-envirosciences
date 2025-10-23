@@ -449,7 +449,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
                         </h4>
                         <p className="text-gray-600">
                           Combines manganese with magnesium, zinc, nitrogen, and
-                          sulfur for comprehensive plant nutrition.
+                          sulphur for comprehensive plant nutrition.
                         </p>
                       </div>
                     </div>
