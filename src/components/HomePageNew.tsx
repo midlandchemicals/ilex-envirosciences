@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import logo from "/assets/ilexlogonobg.png";
 import midlandLogo from "/assets/midchemnobg.png";
-import sunnyImage from "/assets/sunny.png";
+import sunnyImage from "/assets/sunny.jpg";
 import brianImage from "/assets/Brian.png";
 import robImage from "/assets/Rob.png";
 import ebicLogo from "/assets/ebic-logo.png";
