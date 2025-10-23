@@ -550,7 +550,7 @@ export function RegulatoryPage() {
                       <div className="text-slate-300">
                         Willingham Hall, Willingham Road
                       </div>
-                      <div className="text-slate-300">Market Rasen LN8 3RH</div>
+                      <div className="text-slate-300">Market  LN8 3RH</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">

@@ -702,8 +702,8 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
                   <div className="max-w-80">
                     <p>
                       Ilex EnviroSciences Ltd <br /> 13a Brindely Close, Holly
-                      Lane Industrial Estate, Atherstone, Warwickshire Market
-                      Rasen CV9 2QZ, United Kingdom
+                      Lane Industrial Estate, Atherstone, Warwickshire
+                       CV9 2QZ, United Kingdom
                     </p>
                   </div>
                 </div>
