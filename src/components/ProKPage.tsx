@@ -608,7 +608,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
                   <MapPin className="h-6 w-6" />
                   <div className="max-w-80">
                     <p>
-                      Ilex EnviroSciences Ltd <br /> 13a Brindely Close, Holly
+                      Ilex EnviroSciences Ltd <br /> 13a brindley Close, Holly
                       Lane Industrial Estate, Atherstone, Warwickshire
                        CV9 2QZ, United Kingdom
                     </p>
@@ -622,7 +622,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>sales@ilexenvirosciences.com</p>
+                  <p>sales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

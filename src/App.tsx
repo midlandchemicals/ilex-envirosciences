@@ -498,7 +498,7 @@ function TermsConditionsModal({
               href="mailto:sales@ilex-envirosciences.com"
               className="text-blue-600 hover:text-blue-800 underline"
             >
-              sales@ilexenvirosciences.com
+              sales@ilex-envirosciences.com
             </a>
             .
           </p>
@@ -613,7 +613,7 @@ function TermsConditionsModal({
               href="mailto:sales@ilex-envirosciences.com"
               className="text-blue-600 hover:text-blue-800 underline"
             >
-              sales@ilexenvirosciences.com
+              sales@ilex-envirosciences.com
             </a>
             .
           </p>

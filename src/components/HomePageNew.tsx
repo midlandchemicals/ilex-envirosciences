@@ -1101,7 +1101,7 @@ export function HomePage() {
 
                   {/* Email */}
                   <motion.a
-                    href="mailto:sales@ilexenvirosciences.com?subject=Ilex%20Website%20Enquiry"
+                    href="mailto:sales@ilex-envirosciences.com?subject=Ilex%20Website%20Enquiry"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
