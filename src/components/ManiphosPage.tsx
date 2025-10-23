@@ -726,7 +726,7 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
                   <MapPin className="h-6 w-6" />
                   <div className="max-w-80">
                     <p>
-                      Ilex EnviroSciences Ltd <br /> 13a brindley Close, Holly
+                      Ilex EnviroSciences Ltd <br /> 13a Brindley Close, Holly
                       Lane Industrial Estate, Atherstone, Warwickshire
                        CV9 2QZ, United Kingdom
                     </p>
