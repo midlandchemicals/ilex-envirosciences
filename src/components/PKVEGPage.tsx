@@ -210,7 +210,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
 
   const pdfLinks = [
     {
-      title: "PK VEG Leaflet",
+      title: "PK VEG™ Leaflet",
       description:
         "Complete product information and application guidelines for vegetables",
       url: "https://ilex-envirosciences.com/wp-content/uploads/2027/07/PK-VEG-2003-i.pdf",

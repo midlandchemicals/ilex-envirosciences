@@ -56,7 +56,7 @@ interface ContactFormProps {
   }) => void;
 }
 
-export function StimplexPage({ onSubmit }: ContactFormProps) {
+export function Stimplex®Page({ onSubmit }: ContactFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -226,24 +226,24 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
 
   const pdfLinks = [
     {
-      title: "Stimplex Plus Leaflet",
+      title: "Stimplex® Plus Leaflet",
       description: "Complete product information and application guidelines",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2022/04/Stimplex_2203_vii.pdf",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2022/04/Stimplex®_2203_vii.pdf",
     },
     {
-      title: "Stimplex Action",
+      title: "Stimplex® Action",
       description: "Mode of action and scientific background",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Stimplex-Action-i.pdf",
+      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Stimplex®-Action-i.pdf",
     },
     {
-      title: "Stimplex Arcadian Brochure",
+      title: "Stimplex® Arcadian Brochure",
       description: "Comprehensive product brochure with case studies",
       url: "https://flipflashpages.uniflip.com/3/100974/1096744/pub/html5.html#page/1",
     },
     {
       title: "Case Study: Bell Brothers Nurseries Ltd",
       description: "Real-world application results and testimonials",
-      url: "https://ilex-envirosciences.com/stimplex/_wp_link_placeholder",
+      url: "https://ilex-envirosciences.com/Stimplex®/_wp_link_placeholder",
     },
     {
       title: "Organic Farmers and Growers Certificate",
@@ -253,10 +253,10 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other products",
-      url: "https://ilex-envirosciences.com/stimplex/_wp_link_placeholder",
+      url: "https://ilex-envirosciences.com/Stimplex®/_wp_link_placeholder",
     },
     {
-      title: "Stimplex Field Guide",
+      title: "Stimplex® Field Guide",
       description: "Practical field application guide",
       url: "https://interactivepdf.uniflip.com/2/100974/1088169/pub/html5.html#page/1",
     },
@@ -264,7 +264,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
 
   // ProductShowcase data
   const showcaseData = {
-    productName: "Stimplex",
+    productName: "Stimplex®",
     productDescription:
       "A concentrated liquid biostimulant containing key natural compounds and nutrients to enhance root growth, early plant development, photosynthesis, and nutrient usage, promoting overall plant health. Maximizes natural plant resistance to environmental stresses and improves quality and yield. Derived from pure sources of North Atlantic Ascophyllum nodosum using a uniquely benign extraction process that guarantees maximum performance and consistency.",
     keyFeatures: [
@@ -367,7 +367,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                 Premium North Atlantic Seaweed Biostimulant
               </Badge>
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
-                Stimplex
+                Stimplex®
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                 A concentrated liquid biostimulant containing key natural
@@ -388,7 +388,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                   size="lg"
                   className="bg-[#6abf4b] cursor-pointer hover:bg-[#5aa338] text-white text-lg px-8 py-4"
                   onClick={() =>
-                    smoothScrollToSection("application-guidelines-stimplexpage")
+                    smoothScrollToSection("application-guidelines-Stimplex®page")
                   }
                 >
                   Application Guidelines
@@ -399,7 +399,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                   size="lg"
                   className="text-lg cursor-pointer px-8 py-4 border-[#6abf4b] text-[#6abf4b] hover:bg-[#6abf4b]/10"
                   onClick={() =>
-                    smoothScrollToSection("technical-resources-stimplexpage")
+                    smoothScrollToSection("technical-resources-Stimplex®page")
                   }
                 >
                   View Technical Resources
@@ -418,8 +418,8 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
               <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
                 <div className="relative aspect-square w-full">
                   <ImageWithFallback
-                    src="/assets/product images/Biostimulants/Stimplex.png"
-                    alt="Stimplex - Premium Seaweed Biostimulant"
+                    src="/assets/product images/Biostimulants/Stimplex®.png"
+                    alt="Stimplex® - Premium Seaweed Biostimulant"
                     className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
@@ -463,7 +463,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
           <motion.div className="text-center mb-16" variants={fadeInUp}>
             <h2 className="text-4xl font-bold mb-6">Key Benefits</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover why Stimplex is the premium choice for natural crop
+              Discover why Stimplex® is the premium choice for natural crop
               biostimulation
             </p>
           </motion.div>
@@ -491,7 +491,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
       {/* Analysis Pie Chart */}
       <AnalysisPieChart
         analysis={analysisData}
-        title="Stimplex Biostimulant Composition"
+        title="Stimplex® Biostimulant Composition"
       />
 
       {/* Seaweed Technology Section */}
@@ -577,7 +577,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
               <div className="relative overflow-hidden rounded-2xl border-2 border-[#6abf4b]/20 bg-white p-4 shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:border-[#6abf4b]/30">
                 <div className="relative aspect-square w-full">
                   <ImageWithFallback
-                    src="/assets/product images/Biostimulants/Stimplex.png"
+                    src="/assets/product images/Biostimulants/Stimplex®.png"
                     alt="North Atlantic Seaweed Harvesting"
                     className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
@@ -641,7 +641,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
         viewport={{ once: true }}
       >
         <div
-          id="application-guidelines-stimplexpage"
+          id="application-guidelines-Stimplex®page"
           className="max-w-7xl mx-auto"
         >
           <div className="text-center mb-16">
@@ -733,8 +733,8 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
 
       {/* PDF Links Section */}
       <PDFLinks
-        id="technical-resources-stimplexpage"
-        productName="Stimplex"
+        id="technical-resources-Stimplex®page"
+        productName="Stimplex®"
         links={pdfLinks}
       />
 
@@ -781,7 +781,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
               <CardHeader>
                 <CardTitle className="text-white">Product Enquiry</CardTitle>
                 <CardDescription className="text-white/80">
-                  Contact us for more information about Stimplex
+                  Contact us for more information about Stimplex®
                 </CardDescription>
               </CardHeader>
               <CardContent>

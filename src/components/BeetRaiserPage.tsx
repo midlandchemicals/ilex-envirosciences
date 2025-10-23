@@ -184,8 +184,8 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
       url: "https://ilex-envirosciences.com/wp-content/uploads/2021/08/Beet-Raiser-2003-i.pdf",
     },
     {
-      title: "Sugar Beet Nutrition Guide",
-      description: "Comprehensive guide to sugar beet nutritional requirements",
+      title: "Phosphite Action Information Sheet",
+      description: "Comprehensive guide to phosphite action information sheet",
       url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/phosphites-1701-iv.pdf",
     },
     {

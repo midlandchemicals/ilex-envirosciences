@@ -200,7 +200,7 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
 
   const pdfLinks = [
     {
-      title: "Tensile Leaflet",
+      title: "Tensile™ Leaflet",
       description: "Complete product information and application guidelines",
       url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/TenSile-1606-i.pdf",
     },
