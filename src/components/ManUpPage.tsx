@@ -395,7 +395,7 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
                     <div className="flex items-start gap-3">
                       <Activity className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-2">
+                        <h4 className="font-semibold mb-2 text-[#6abf4b]">
                           High Manganese Content
                         </h4>
                         <p className="text-gray-600">
@@ -409,7 +409,7 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
                     <div className="flex items-start gap-3">
                       <Zap className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-2">Nitrate Nitrogen</h4>
+                        <h4 className="font-semibold mb-2 text-[#6abf4b]">Nitrate Nitrogen</h4>
                         <p className="text-gray-600">
                           6% nitrate nitrogen provides immediately available
                           nitrogen for rapid early growth and establishment.
@@ -420,7 +420,7 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
                     <div className="flex items-start gap-3">
                       <Droplets className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-2">
+                        <h4 className="font-semibold mb-2 text-[#6abf4b]">
                           Surfactant Technology
                         </h4>
                         <p className="text-gray-600">

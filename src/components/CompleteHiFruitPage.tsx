@@ -425,7 +425,7 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         6.1% Potassium (K₂O)
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Enhanced potassium content for situations with
                         restricted crop maturity or fruit development
                       </p>
@@ -435,7 +435,7 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         4.5% Nitrogen (N)
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Balanced nitrogen for healthy vegetative growth and
                         fruit development
                       </p>
@@ -445,7 +445,7 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         2.0% Phosphorus (P₂O₅)
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Essential for energy transfer, root development, and
                         flowering processes
                       </p>
@@ -455,7 +455,7 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Complete Mineral Enhancement
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Enhanced calcium (0.6%), magnesium (0.5%), and sulphur
                         (0.5%) for comprehensive fruit and flowering plant
                         nutrition.

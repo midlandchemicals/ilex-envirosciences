@@ -428,7 +428,7 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
                     <div className="flex items-start gap-3">
                       <Atom className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-2">Ureic Nitrogen</h4>
+                        <h4 className="font-semibold mb-2 text-[#6abf4b]">Ureic Nitrogen</h4>
                         <p className="text-gray-600">
                           4% ureic nitrogen provides readily available nitrogen
                           for immediate plant uptake and early growth
@@ -440,7 +440,7 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
                     <div className="flex items-start gap-3">
                       <Shield className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-2">
+                        <h4 className="font-semibold mb-2 text-[#6abf4b]">
                           Potassium Enhancement
                         </h4>
                         <p className="text-gray-600">
