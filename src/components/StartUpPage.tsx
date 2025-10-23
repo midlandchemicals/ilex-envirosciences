@@ -414,7 +414,7 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
                     <div className="flex items-start gap-3">
                       <Zap className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-2">
+                        <h4 className="font-semibold mb-2 text-[#6abf4b]">
                           Phosphite Technology
                         </h4>
                         <p className="text-gray-600">
