@@ -1114,7 +1114,7 @@ export function HomePage() {
                         Email
                       </h3>
                       <p className="text-gray-600 text-sm mb-0">
-                        sales@ilexenvirosciences.com
+                        sales@ilex-envirosciences.com
                       </p>
                     </div>
                   </motion.a>
