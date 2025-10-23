@@ -105,19 +105,76 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
     }
   };
 
-  const getProductImage = (productName: string) => {
-    // Return different images based on product type
+  const getProductImage = (productName: string, categoryLink?: string) => {
+    // Map product names to their actual image files
+    const productImageMap: { [key: string]: string } = {
+      // Phosphite Range
+      "Crop Rooter® Plus":
+        "/assets/product images/Phosphite/Crop-Rooter-plus.jpg",
+      "PK MAXX™ +": "/assets/product images/Phosphite/PKmaxx.jpg",
+      "OilSeed Raiser™": "/assets/product images/Phosphite/OilSeed Raiser.jpg",
+      "Tensile™": "/assets/product images/Phosphite/TenSile.jpg",
+      "Beet Raiser™": "/assets/product images/Phosphite/Beet Raiser 2.jpg",
+      "Maniphos™": "/assets/product images/Phosphite/Maniphos.jpg",
+      "PK VEG™": "/assets/product images/Phosphite/PK VEG.jpg",
+
+      // Foliar Range
+      "Mn SUPER™": "/assets/product images/Foliar/Mn Super 5L copy.jpg",
+      "Mag Plus™": "/assets/product images/Foliar/Mag plus.jpg",
+      "ful-oN™": "/assets/product images/Foliar/FullOn.jpg",
+      "Mn-Cu Plus™": "/assets/product images/Foliar/MnCuPlus.jpg",
+      "Foliar Boost™": "/assets/product images/Foliar/Foliar-Boost.jpg",
+      "Cu-Zin™": "/assets/product images/Foliar/Cu-Zin.jpg",
+      "Pro-K™": "/assets/product images/Foliar/ProK.png",
+      "Pro-Sul™": "/assets/product images/Foliar/pro-sul.png",
+
+      // Calcium Range
+      "Pro-Cal™": "/assets/product images/Calcium Supplements/ProCal.jpg",
+      "Advocate™": "/assets/product images/Calcium Supplements/Advocate.jpg",
+      "CaPITAL™": "/assets/product images/Calcium Supplements/Capital.png",
+
+      // Biostimulants
+      "Stimplex®": "/assets/product images/Biostimulants/Stimplex.png",
+      "Toggle®": "/assets/product images/Biostimulants/Toggle_tub.png",
+
+      // Seed Treatments
+      "Start-uP® MAXX":
+        "/assets/product images/Seed Treatments/Start-uP MAXX.jpg",
+      "Start-uP®": "/assets/product images/Seed Treatments/Start-uP.jpg",
+      "ProZest™": "/assets/product images/Seed Treatments/ProZeSt.jpg",
+      "Man-uP™": "/assets/product images/Seed Treatments/Man uP.jpg",
+
+      // Water Conditioners
+      "Modiphy Xtra":
+        "/assets/product images/Water Conditioner/ModipHy Xtra.jpg",
+
+      // Organic Range
+      "Complete™ (6-2-4)": "/assets/product images/Organic/Complete 6-2-4.jpg",
+      "Complete Hi-Fruit™ (4-2-6)":
+        "/assets/product images/Organic/Complete Hi-Fruit.jpg",
+      "K-Max™ (3-1-8)": "/assets/product images/Organic/K-Max.jpg",
+      "N-Max™ (7-2-2)": "/assets/product images/Organic/N-Max.jpg",
+      "Ultimate Gold™ (8-7-7)":
+        "/assets/product images/Organic/Ultimate Gold.jpg",
+    };
+
+    // Try exact match first
+    if (productImageMap[productName]) {
+      return productImageMap[productName];
+    }
+
+    // Fallback to keyword-based matching for any missing products
     if (productName.toLowerCase().includes("cal")) {
-      return "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop";
+      return "/assets/product images/Calcium Supplements/ProCal.jpg";
     } else if (productName.toLowerCase().includes("mag")) {
-      return "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=300&fit=crop";
+      return "/assets/product images/Foliar/Mag plus.jpg";
     } else if (
       productName.toLowerCase().includes("seed") ||
       productName.toLowerCase().includes("start")
     ) {
-      return "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=300&fit=crop";
+      return "/assets/product images/Seed Treatments/Start-uP.jpg";
     } else {
-      return "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=400&h=300&fit=crop";
+      return "/assets/product images/Phosphite/Maniphos.jpg";
     }
   };
 
@@ -165,21 +222,21 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
               >
                 <Card className="h-full flex flex-col border border-gray-100 hover:border-[#6abf4b] transition-all duration-300 overflow-hidden">
-                  <div className="h-48 bg-gray-50 flex items-center justify-center p-4">
+                  <div className="h-96 bg-gray-50 flex items-center justify-center p-4">
                     <ImageWithFallback
                       src={getProductImage(product.product)}
                       alt={product.product}
-                      className="w-full h-full object-contain p-4"
+                      className="w-full h-full object-contain p-2"
                     />
                   </div>
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg text-gray-800">
+                  <CardHeader className="!pt-0">
+                    <CardTitle className="text-lg  text-gray-800">
                       {product.product}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="pt-0 mt-auto">
                     <Button
-                      className="w-full bg-[#6abf4b] hover:bg-[#5aa338] text-white"
+                      className="w-full cursor-pointer bg-[#6abf4b] hover:bg-[#5aa338] text-white"
                       onClick={() => onPageChange("product", category, product)}
                     >
                       View Details
