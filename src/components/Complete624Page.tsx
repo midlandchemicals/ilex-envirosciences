@@ -422,7 +422,7 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         6.2% Nitrogen (N)
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Essential for vigorous green tissue development and
                         overall plant growth
                       </p>
@@ -432,7 +432,7 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         2.0% Phosphorus (P₂O₅)
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Critical for root development, flowering, and energy
                         transfer processes
                       </p>
@@ -442,7 +442,7 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         4.2% Potassium (K₂O)
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Essential for plant health, disease resistance, and
                         quality improvement
                       </p>
@@ -452,7 +452,7 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Complete Mineral Package
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Includes calcium (0.4%), magnesium (0.2%), sulphur
                         (0.5%), and trace elements for comprehensive plant
                         nutrition.
@@ -526,11 +526,11 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Droplets className="h-8 w-8 text-[#6abf4b]" />
-                  <h3 className="text-2xl font-semibold text-[#6abf4b]">
+                  <h3 className="text-2xl font-semibold text-[#000000]">
                     Foliar Application
                   </h3>
                 </div>
-                <p className="text-[#6abf4b] mb-6">
+                <p className="text-[#000000] mb-6">
                   Apply as a foliar spray for direct nutrient uptake through the
                   leaves. The free-flowing liquid disperses easily in water with
                   minimal mixing required.
@@ -562,11 +562,11 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Factory className="h-8 w-8 text-[#6abf4b]" />
-                  <h3 className="text-2xl font-semibold text-[#6abf4b]">
+                  <h3 className="text-2xl font-semibold text-[#000000]">
                     Fertigation
                   </h3>
                 </div>
-                <p className="text-[#6abf4b] mb-6">
+                <p className="text-[#000000] mb-6">
                   Apply through fertigation systems for root zone nutrition and
                   microbial enhancement. Carbohydrates and sugars fuel
                   beneficial soil microbes and fungi.
@@ -607,10 +607,10 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
                 <div className="flex items-start gap-3">
                   <Coffee className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
+                    <h3 className="text-lg font-semibold mb-2 text-[#000000]">
                       Microbial Enhancement
                     </h3>
-                    <p className="text-[#6abf4b]">
+                    <p className="text-[#000000]">
                       The carbohydrates and sugars from cane sugar molasses
                       provide a natural high-carbon source of fuel for
                       beneficial microbes and fungi, enhancing nutrient

@@ -485,7 +485,7 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Cost-Effective Application
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Super-value formulation designed for large-scale
                         broadfield crop production
                       </p>
@@ -495,7 +495,7 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Easy-to-Use Liquid
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Free from solids with pH suited to efficient uptake and
                         maximum tank-mix compatibility
                       </p>
@@ -505,7 +505,7 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Preventative & Curative
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Routine preventative treatment with excellent curative
                         properties for stress recovery
                       </p>
@@ -515,7 +515,7 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Natural Compounds
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Contains naturally balanced plant nutrients, vitamins,
                         and active compounds derived from North Atlantic
                         Ascophyllum nodosum.

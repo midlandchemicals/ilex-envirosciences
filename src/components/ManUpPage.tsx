@@ -123,14 +123,14 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
       crop: "Cereals",
       rate: "3.0 litres per tonne of seed",
       notes: "Enhanced establishment and winter hardiness",
-      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      color: "bg-[#6abf4b]/10 text-[#000000]",
       icon: <Wheat className="h-5 w-5 text-[#6abf4b]" />,
     },
     {
       crop: "Oilseed Rape",
       rate: "3.0 litres per tonne of seed",
       notes: "Improved winter survival and spring vigour",
-      color: "bg-[#6abf4b]/10 text-[#6abf4b]",
+      color: "bg-[#6abf4b]/10 text-[#000000]",
       icon: <Flower className="h-5 w-5 text-[#6abf4b]" />,
     },
   ];
@@ -435,7 +435,7 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Winter Hardiness
                       </h4>
-                      <p className="text-[#6abf4b]">
+                      <p className="text-[#000000]">
                         Specially formulated to promote winter hardiness in
                         autumn-sown crops for enhanced survival and spring
                         vigour.
@@ -549,7 +549,7 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
                     <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Application Method
                     </h3>
-                    <p className="text-[#6abf4b]">
+                    <p className="text-[#000000]">
                       Apply directly to the seed or after pre-diluting with
                       water. Formulated as a totally water-soluble liquid.
                       Agitate prior to use and apply through existing seed
@@ -568,7 +568,7 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
                     <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Compatibility & Limits
                     </h3>
-                    <p className="text-[#6abf4b]">
+                    <p className="text-[#000000]">
                       Fully compatible with other commonly used seed treatments.
                       Clean equipment thoroughly with water after treatment. Do
                       not exceed 3.0 litres per tonne of seed.

@@ -526,8 +526,8 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
                         Enhanced Formula
                       </h4>
                       <p className="text-#000000">
-                       <b>Pro-Sul™ includes nitrogen, potassium, and magnesium to
-                        support optimal sulphur utilisation and plant function.</b>
+                       Pro-Sul™ includes nitrogen, potassium, and magnesium to
+                        support optimal sulphur utilisation and plant function.
                       </p>
                     </div>
                   </div>

@@ -526,7 +526,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         North Atlantic Ascophyllum nodosum
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Sourced from pristine North Atlantic waters, providing
                         the highest quality bioactive compounds
                       </p>
@@ -536,7 +536,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Benign Extraction Process
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Uniquely gentle extraction method preserves maximum
                         bioactivity and consistency
                       </p>
@@ -546,7 +546,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Organic Certification
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Certified by the Soil Association and licensed by
                         Organic Farmers & Growers
                       </p>
@@ -556,7 +556,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Natural Compounds
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Contains naturally balanced plant nutrients, vitamins,
                         and bioactive compounds for comprehensive plant health
                         enhancement.

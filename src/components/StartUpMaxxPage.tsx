@@ -585,7 +585,7 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
                     <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Application Method
                     </h3>
-                    <p className="text-[#6abf4b]">
+                    <p className="text-[#000000]">
                       Apply directly to the seed or after pre-diluting with
                       water. Formulated as a totally water-soluble liquid.
                       Agitate prior to use and apply through existing seed
@@ -604,7 +604,7 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
                     <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
                       Compatibility
                     </h3>
-                    <p className="text-[#6abf4b]">
+                    <p className="text-[#000000]">
                       Fully compatible with other commonly used seed treatments.
                       Clean equipment thoroughly with water after treatment. Do
                       not exceed 3.0 litres per tonne of seed.

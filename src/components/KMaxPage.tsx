@@ -422,7 +422,7 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         8.2% Potassium (K₂O)
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Highest analysis of organically sourced potassium in
                         liquid form
                       </p>
@@ -432,7 +432,7 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         3.8% Nitrogen (N)
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Balanced nitrogen from plant protein sources for healthy
                         growth
                       </p>
@@ -442,7 +442,7 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         1.6% Phosphorus (P₂O₅)
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Essential phosphorus for energy transfer and
                         reproductive development
                       </p>
@@ -452,7 +452,7 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Plant Protein Source
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Derived from plant protein sources with complete trace
                         elements including sulphur (1.2%), calcium (0.3%), and
                         magnesium (0.1%) for comprehensive nutrition.
@@ -523,11 +523,11 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Droplets className="h-8 w-8 text-[#6abf4b]" />
-                  <h3 className="text-2xl font-semibold text-[#6abf4b]">
+                  <h3 className="text-2xl font-semibold text-[#000000]">
                     Foliar Application
                   </h3>
                 </div>
-                <p className="text-[#6abf4b] mb-6">
+                <p className="text-[#000000] mb-6">
                   Apply as a foliar spray for direct nutrient uptake. The liquid
                   formulation ensures rapid absorption and immediate
                   availability of nutrients during crucial growth stages.
@@ -559,11 +559,11 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Factory className="h-8 w-8 text-[#6abf4b]" />
-                  <h3 className="text-2xl font-semibold text-[#6abf4b]">
+                  <h3 className="text-2xl font-semibold text-[#000000]">
                     Fertigation
                   </h3>
                 </div>
-                <p className="text-[#6abf4b] mb-6">
+                <p className="text-[#000000] mb-6">
                   Apply through fertigation systems for root zone nutrition.
                   Particularly effective for supplying key nutrients at crucial
                   stages of growth in both protected and outdoor crops.
@@ -602,10 +602,10 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
                 <div className="flex items-start gap-3">
                   <Cherry className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
+                    <h3 className="text-lg font-semibold mb-2 text-[#000000]">
                       Reproductive Growth & Fruit Development
                     </h3>
-                    <p className="text-[#6abf4b]">
+                    <p className="text-[#000000]">
                       K-Max is particularly important for stimulating
                       reproductive growth and promoting fruit development. The
                       highest analysis of organically sourced potassium provides

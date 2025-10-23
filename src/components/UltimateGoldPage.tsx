@@ -431,7 +431,7 @@ export function UltimateGoldPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         8.0% Nitrogen (N)
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         High nitrogen content from fish extracts for vigorous
                         early growth and development
                       </p>
@@ -441,7 +441,7 @@ export function UltimateGoldPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         7.0% Phosphorus (P₂O₅)
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Exceptional phosphorus levels for enhanced root
                         development and energy transfer
                       </p>
@@ -451,7 +451,7 @@ export function UltimateGoldPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         7.0% Potassium (K₂O)
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         High potassium content for superior plant health and
                         stress tolerance
                       </p>
@@ -461,7 +461,7 @@ export function UltimateGoldPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Essential Micronutrients
                       </h4>
-                      <p className="text-[#6abf4b]">
+                      <p className="text-[#000000]">
                         Very high levels of all essential micronutrients from
                         fish extracts including calcium (0.3%), sulphur (0.5%),
                         and magnesium (0.1%) for comprehensive nutrition.
@@ -539,7 +539,7 @@ export function UltimateGoldPage({ onSubmit }: ContactFormProps) {
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Droplets className="h-8 w-8 text-[#6abf4b]" />
-                  <h3 className="text-2xl font-semibold text-[#6abf4b]">
+                  <h3 className="text-2xl font-semibold text-[#000000]">
                     Foliar Application
                   </h3>
                 </div>
@@ -575,7 +575,7 @@ export function UltimateGoldPage({ onSubmit }: ContactFormProps) {
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Factory className="h-8 w-8 text-[#6abf4b]" />
-                  <h3 className="text-2xl font-semibold text-[#6abf4b]">
+                  <h3 className="text-2xl font-semibold text-[#000000]">
                     Fertigation
                   </h3>
                 </div>
@@ -620,7 +620,7 @@ export function UltimateGoldPage({ onSubmit }: ContactFormProps) {
                 <div className="flex items-start gap-3">
                   <Home className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
+                    <h3 className="text-lg font-semibold mb-2 text-[#000000]">
                       Seedling & Plug Plant Specialist
                     </h3>
                     <p className="text-gray-700">

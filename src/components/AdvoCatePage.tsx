@@ -375,7 +375,7 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         9% Calcium (as CaO)
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         High concentration calcium complexed for exceptional
                         plant mobility
                       </p>
@@ -385,7 +385,7 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         7.5% Bio-Active Agents
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Natural sugars, amino acids & seaweed for enhanced
                         uptake
                       </p>
@@ -409,7 +409,7 @@ export function AdvoCatePage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Advanced Complexing
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Natural complexing agents ensure exceptional calcium
                         mobility within the crop for optimal physiological
                         function and disorder prevention.

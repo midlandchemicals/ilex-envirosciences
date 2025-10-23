@@ -430,7 +430,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         7.0% Nitrogen (N)
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Highest analysis of organically sourced nitrogen in
                         liquid form for maximum vegetative growth
                       </p>
@@ -440,7 +440,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         2.0% Phosphorus (P₂O₅)
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Essential phosphorus for energy transfer and root
                         development support
                       </p>
@@ -450,7 +450,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         2.0% Potassium (K₂O)
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Balanced potassium for overall plant health and stress
                         tolerance
                       </p>
@@ -460,7 +460,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Approved Organic Sources
                       </h4>
-                      <p className="text-[#6abf4b] text-sm">
+                      <p className="text-[#000000] text-sm">
                         Derived from approved molasses and plant protein sources
                         with trace elements including calcium (0.3%), sulphur
                         (0.5%), and magnesium (0.1%) for comprehensive
@@ -533,11 +533,11 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Droplets className="h-8 w-8 text-[#6abf4b]" />
-                  <h3 className="text-2xl font-semibold text-[#6abf4b]">
+                  <h3 className="text-2xl font-semibold text-[#000000]">
                     Foliar Application
                   </h3>
                 </div>
-                <p className="text-[#6abf4b] mb-6">
+                <p className="text-[#000000] mb-6">
                   Apply as a foliar spray for immediate nitrogen uptake. The
                   liquid formulation ensures rapid absorption and immediate
                   boost to green leaf area development.
@@ -569,11 +569,11 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
               <CardContent className="p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Factory className="h-8 w-8 text-[#6abf4b]" />
-                  <h3 className="text-2xl font-semibold text-[#6abf4b]">
+                  <h3 className="text-2xl font-semibold text-[#000000]">
                     Fertigation
                   </h3>
                 </div>
-                <p className="text-[#6abf4b] mb-6">
+                <p className="text-[#000000] mb-6">
                   Apply through fertigation systems for sustained root zone
                   nutrition. Provides lasting growth enhancement for both
                   protected and outdoor crop systems.
@@ -614,10 +614,10 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
                 <div className="flex items-start gap-3">
                   <Leaf className="h-6 w-6 text-[#6abf4b] mt-1" />
                   <div>
-                    <h3 className="text-lg font-semibold mb-2 text-[#6abf4b]">
+                    <h3 className="text-lg font-semibold mb-2 text-[#000000]">
                       Maximum Green Leaf Area Development
                     </h3>
-                    <p className="text-[#6abf4b]">
+                    <p className="text-[#000000]">
                       N-Max maximizes green leaf area and enhances vegetative
                       growth through the highest analysis of organically sourced
                       nitrogen. Provides immediate and lasting boost to crop
