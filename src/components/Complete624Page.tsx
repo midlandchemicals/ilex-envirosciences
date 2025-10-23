@@ -141,9 +141,9 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
   const analysisData = {
     "Nitrogen (N)": "6.2",
     "Phosphorus (P₂O₅)": "2.0",
-    "Potassium (K2O)": "4.2",
+    "Potassium (K₂O)": "4.2",
     "Calcium (CaO)": "0.4",
-    "Sulphur (SO3)": "0.5",
+    "Sulphur (SO₃)": "0.5",
     "Magnesium (MgO)": "0.2",
   };
 
@@ -440,7 +440,7 @@ export function Complete624Page({ onSubmit }: ContactFormProps) {
 
                     <div className="p-4 bg-[#6abf4b]/10 rounded-lg">
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
-                        4.2% Potassium (K2O)
+                        4.2% Potassium (K₂O)
                       </h4>
                       <p className="text-[#6abf4b] text-sm">
                         Essential for plant health, disease resistance, and

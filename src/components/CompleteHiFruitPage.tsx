@@ -139,9 +139,9 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
   const analysisData = {
     "Nitrogen (N)": "4.5",
     "Phosphorus (P₂O₅)": "2.0",
-    "Potassium (K2O)": "6.1",
+    "Potassium (K₂O)": "6.1",
     "Calcium (CaO)": "0.6",
-    "Sulphur (SO3)": "0.5",
+    "Sulphur (SO₃)": "0.5",
     "Magnesium (MgO)": "0.5",
   };
 
@@ -164,7 +164,7 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
     productDescription:
       "Offers higher potassium content for situations where restricted crop maturity or fruit development reduces yield potential. A free-flowing liquid with high water solubility and minimal sedimentation, used to boost plant health in outdoor vegetable and fruit crops under restricted soil fertility or poor weather, and in protected crops with increased potassium needs. Derived from cane sugar molasses and sustainable plant material, it includes carbohydrates and sugars to fuel beneficial microbes and fungi for better nutrient absorption.",
     keyFeatures: [
-      "Higher potassium content (6.1% K2O) for enhanced fruit development",
+      "Higher potassium content (6.1% K₂O) for enhanced fruit development",
       "Free-flowing liquid with high water solubility",
       "Minimal sedimentation for reliable application",
       "Derived from sustainable cane sugar molasses and plant material",
@@ -222,7 +222,7 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
       {
         title: "Higher Potassium Formulation",
         description:
-          "6.1% K2O provides enhanced potassium for situations with restricted crop maturity or fruit development",
+          "6.1% K₂O provides enhanced potassium for situations with restricted crop maturity or fruit development",
         icon: <Crown className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
@@ -423,7 +423,7 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
                   <div className="space-y-6">
                     <div className="p-4 bg-[#6abf4b]/10 rounded-lg">
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
-                        6.1% Potassium (K2O)
+                        6.1% Potassium (K₂O)
                       </h4>
                       <p className="text-[#6abf4b] text-sm">
                         Enhanced potassium content for situations with
@@ -663,7 +663,7 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
                       20L
                     </Badge>
                     <p className="text-gray-600">
-                      Perfect for specialized fruit and vegetable nutrition
+                      Perfect for specialised fruit and vegetable nutrition
                       programs
                     </p>
                   </div>

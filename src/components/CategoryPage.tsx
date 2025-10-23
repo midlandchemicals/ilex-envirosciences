@@ -95,7 +95,7 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
       case "biostimulants":
         return "Natural biostimulants derived from seaweed extracts that enhance plant growth, improve stress tolerance, and optimize nutrient utilization.";
       case "seed-treatments":
-        return "Specialized seed treatments that improve germination rates, enhance early plant vigor, and provide essential nutrients for optimal seedling development.";
+        return "Specialised seed treatments that improve germination rates, enhance early plant vigor, and provide essential nutrients for optimal seedling development.";
       case "water-conditioners":
         return "Advanced water conditioning solutions that optimize spray water quality for maximum efficacy of foliar applications.";
       case "organic-range":

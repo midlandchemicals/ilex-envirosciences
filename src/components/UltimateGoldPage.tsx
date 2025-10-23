@@ -149,9 +149,9 @@ export function UltimateGoldPage({ onSubmit }: ContactFormProps) {
   const analysisData = {
     "Nitrogen (N)": "8.0",
     "Phosphorus (P₂O₅)": "7.0",
-    "Potassium (K2O)": "7.0",
+    "Potassium (K₂O)": "7.0",
     "Calcium (CaO)": "0.3",
-    "Sulphur (SO3)": "0.5",
+    "Sulphur (SO₃)": "0.5",
     "Magnesium (MgO)": "0.1",
   };
 
@@ -449,7 +449,7 @@ export function UltimateGoldPage({ onSubmit }: ContactFormProps) {
 
                     <div className="p-4 bg-[#6abf4b]/10 rounded-lg">
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
-                        7.0% Potassium (K2O)
+                        7.0% Potassium (K₂O)
                       </h4>
                       <p className="text-[#6abf4b] text-sm">
                         High potassium content for superior plant health and
@@ -529,7 +529,7 @@ export function UltimateGoldPage({ onSubmit }: ContactFormProps) {
               Protected Cropping Applications
             </h2>
             <p className="text-xl text-gray-600">
-              Specialized applications for greenhouse and protected growing
+              Specialised applications for greenhouse and protected growing
               systems
             </p>
           </div>
@@ -670,7 +670,7 @@ export function UltimateGoldPage({ onSubmit }: ContactFormProps) {
                       20L
                     </Badge>
                     <p className="text-gray-600">
-                      Perfect for specialized seedling and plug plant production
+                      Perfect for specialised seedling and plug plant production
                     </p>
                   </div>
                   <div className="text-center p-6 bg-[#6abf4b]/20 rounded-lg">

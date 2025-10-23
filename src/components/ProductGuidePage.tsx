@@ -77,7 +77,7 @@ export function ProductGuidePage() {
     },
     {
       title: "Calcium Supplements",
-      description: "Specialized calcium formulations for cell wall strength",
+      description: "Specialised calcium formulations for cell wall strength",
       pages: "Pages 23-26",
       productCount: 4,
       icon: <Shield className="h-6 w-6 text-purple-600" />,

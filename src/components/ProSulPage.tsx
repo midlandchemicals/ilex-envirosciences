@@ -204,7 +204,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
   const analysisData = {
     "Sulfur (S)": "30.0",
     "Nitrogen (N)": "5.0",
-    "Potassium (K2O)": "8.0",
+    "Potassium (K₂O)": "8.0",
     "Magnesium (MgO)": "2.0",
   };
 

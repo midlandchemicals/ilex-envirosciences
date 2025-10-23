@@ -156,8 +156,8 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
 
   const analysisData = {
     "Phosphorus Pentoxide (P₂O₅)": "10.0",
-    "Potassium Oxide (K2O)": "2.0",
-    "Sulphur (SO3)": "18.5",
+    "Potassium Oxide (K₂O)": "2.0",
+    "Sulphur (SO₃)": "18.5",
     "Manganese (Mn)": "12.0",
   };
 

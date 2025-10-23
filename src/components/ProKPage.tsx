@@ -202,10 +202,10 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
   ];
 
   const analysisData = {
-    "Potassium Oxide (K2O)": "30.0",
+    "Potassium Oxide (K₂O)": "30.0",
     "Nitrogen (N)": "8.0",
     "Magnesium (MgO)": "2.0",
-    "Sulphur (SO3)": "3.0",
+    "Sulphur (SO₃)": "3.0",
   };
 
   const pdfLinks = [
@@ -242,7 +242,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
                 A premium potassium-focused foliar feed designed to maximize
-                crop quality and yield potential. With 30% K2O content, Pro-K™
+                crop quality and yield potential. With 30% K₂O content, Pro-K™
                 provides concentrated potassium nutrition when crops need it
                 most.
               </p>
@@ -402,7 +402,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
                           Quality Enhancement
                         </h4>
                         <p className="text-gray-600">
-                          30% K2O concentration directly improves crop quality,
+                          30% K₂O concentration directly improves crop quality,
                           color, flavor, and storage characteristics.
                         </p>
                       </div>

@@ -206,7 +206,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
     "Copper (Cu)": "5.0",
     "Nitrogen (N)": "6.0",
     "Magnesium (MgO)": "2.5",
-    "Sulphur (SO3)": "10.0",
+    "Sulphur (SO₃)": "10.0",
   };
 
   const pdfLinks = [
@@ -226,7 +226,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
   const showcaseData = {
     productName: "Mn-Cu Plus™",
     productDescription:
-      "A specialized dual micronutrient treatment combining manganese and copper in one efficient formulation. Designed to prevent and correct deficiencies of these essential micronutrients, supporting critical enzyme functions and optimizing crop performance. The product provides rapid uptake and immediate plant response when deficiency symptoms appear.",
+      "A specialised dual micronutrient treatment combining manganese and copper in one efficient formulation. Designed to prevent and correct deficiencies of these essential micronutrients, supporting critical enzyme functions and optimizing crop performance. The product provides rapid uptake and immediate plant response when deficiency symptoms appear.",
     keyFeatures: [
       "Dual micronutrient combination - Mn and Cu",
       "8% manganese and 5% copper content",
@@ -330,7 +330,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
                 <span className="text-[#0cc0df]">Cu</span> Plus™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-                A specialized dual micronutrient treatment combining manganese
+                A specialised dual micronutrient treatment combining manganese
                 and copper in one efficient formulation. Designed to prevent and
                 correct deficiencies of these essential micronutrients,
                 supporting critical enzyme functions and optimizing crop

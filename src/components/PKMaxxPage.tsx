@@ -191,8 +191,8 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
   const analysisData = {
     "Phosphorus Pentoxide (P₂O₅)": "31",
     "Nitrogen (N)": "2.6",
-    "Potassium (K2O)": "6.5",
-    "Sulphur (SO3)": "4.5",
+    "Potassium (K₂O)": "6.5",
+    "Sulphur (SO₃)": "4.5",
     "Magnesium (MgO)": "1.0",
     "Manganese (Mn)": "1.0",
     "Zinc (Zn)": "0.75",

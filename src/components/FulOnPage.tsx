@@ -195,7 +195,7 @@ export function FulOnPage({ onSubmit }: ContactFormProps) {
 
   const analysisData = {
     "Total Nitrogen (N)": "28",
-    "Potassium (K2O)": "2.0",
+    "Potassium (K₂O)": "2.0",
     "Fulvic Acid": "2.5",
   };
 
@@ -293,7 +293,7 @@ export function FulOnPage({ onSubmit }: ContactFormProps) {
       {
         title: "Protein Enhancement",
         description:
-          "Specialized applications for grain protein improvement in wheat",
+          "Specialised applications for grain protein improvement in wheat",
         icon: <Award className="h-6 w-6 text-[#6abf4b]" />,
       },
     ],

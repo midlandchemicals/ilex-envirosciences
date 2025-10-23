@@ -148,9 +148,9 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
   const analysisData = {
     "Nitrogen (N)": "7.0",
     "Phosphorus (P₂O₅)": "2.0",
-    "Potassium (K2O)": "2.0",
+    "Potassium (K₂O)": "2.0",
     "Calcium (CaO)": "0.3",
-    "Sulphur (SO3)": "0.5",
+    "Sulphur (SO₃)": "0.5",
     "Magnesium (MgO)": "0.1",
   };
 
@@ -448,7 +448,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
 
                     <div className="p-4 bg-[#6abf4b]/10 rounded-lg">
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
-                        2.0% Potassium (K2O)
+                        2.0% Potassium (K₂O)
                       </h4>
                       <p className="text-[#6abf4b] text-sm">
                         Balanced potassium for overall plant health and stress
@@ -664,7 +664,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
                       20L
                     </Badge>
                     <p className="text-gray-600">
-                      Perfect for specialized organic nitrogen nutrition
+                      Perfect for specialised organic nitrogen nutrition
                       programs
                     </p>
                   </div>

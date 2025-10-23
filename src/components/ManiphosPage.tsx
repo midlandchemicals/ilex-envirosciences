@@ -204,7 +204,7 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
   const analysisData = {
     "Manganese (Mn)": "10.0",
     "Phosphorus (P₂O₅)": "25.0",
-    "Potassium (K2O)": "12.0",
+    "Potassium (K₂O)": "12.0",
     "Nitrogen (N)": "5.0",
     "Magnesium (MgO)": "2.0",
   };
@@ -232,7 +232,7 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
   const showcaseData = {
     productName: "Maniphos™",
     productDescription:
-      "A specialized manganese treatment enhanced with proven phosphite technology. Designed to prevent and correct manganese deficiencies while supporting critical enzyme functions and optimizing photosynthesis. The phosphite delivery system ensures rapid uptake and immediate plant response when deficiency symptoms appear.",
+      "A specialised manganese treatment enhanced with proven phosphite technology. Designed to prevent and correct manganese deficiencies while supporting critical enzyme functions and optimizing photosynthesis. The phosphite delivery system ensures rapid uptake and immediate plant response when deficiency symptoms appear.",
     keyFeatures: [
       "Manganese with phosphite technology",
       "10% manganese content for rapid correction",
@@ -336,7 +336,7 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
                 iphos™
               </h1>
               <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-                A specialized manganese treatment treatment enhanced with proven
+                A specialised manganese treatment treatment enhanced with proven
                 phosphite technology. Designed to prevent and correct manganese
                 deficiencies while supporting critical enzyme functions and
                 optimizing photosynthesis for enhanced crop performance.

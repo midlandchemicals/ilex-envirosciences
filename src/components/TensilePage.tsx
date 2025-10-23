@@ -192,8 +192,8 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
   ];
 
   const analysisData = {
-    "Silicon (SiO2)": "8",
-    "Potassium Oxide (K2O)": "8",
+    "Silicon (SiO₂)": "8",
+    "Potassium Oxide (K₂O)": "8",
     "Phosphorus Pentoxide (P₂O₅)": "2",
     "Bio-active agents": "2",
   };

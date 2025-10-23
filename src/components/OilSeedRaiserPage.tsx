@@ -168,9 +168,9 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
   const analysisData = {
     "Nitrogen (N)": "8.0",
     "Phosphorus (P₂O₅)": "24.0",
-    "Potassium (K2O)": "14.0",
+    "Potassium (K₂O)": "14.0",
     "Magnesium (MgO)": "3.0",
-    "Sulphur (SO3)": "6.0",
+    "Sulphur (SO₃)": "6.0",
     "Boron (B)": "0.5",
     "Manganese (Mn)": "1.2",
   };
@@ -240,7 +240,7 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
       {
         title: "Oil Synthesis",
         description:
-          "Specialized nutrients support oil formation and quality development",
+          "Specialised nutrients support oil formation and quality development",
         icon: <Sunrise className="h-6 w-6 text-[#6abf4b]" />,
       },
       {

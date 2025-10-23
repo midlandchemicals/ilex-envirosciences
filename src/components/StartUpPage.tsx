@@ -146,7 +146,7 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
   const analysisData = {
     "Nitrogen (ureic N)": "4.0",
     "Phosphorus Pentoxide (P₂O₅)": "20.0",
-    "Potassium Oxide (K2O)": "6.0",
+    "Potassium Oxide (K₂O)": "6.0",
   };
 
   const pdfLinks = [

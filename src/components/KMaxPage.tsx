@@ -102,7 +102,7 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
       icon: <Crown className="h-8 w-8 text-[#6abf4b]" />,
       title: "Highest Analysis Organically Sourced Potassium",
       description:
-        "Offers the highest analysis of organically sourced potassium in liquid form (8.2% K2O)",
+        "Offers the highest analysis of organically sourced potassium in liquid form (8.2% K₂O)",
     },
     {
       icon: <Shield className="h-8 w-8 text-[#6abf4b]" />,
@@ -139,10 +139,10 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
   const analysisData = {
     "Nitrogen (N)": "3.8",
     "Phosphorus (P₂O₅)": "1.6",
-    "Potassium (K2O)": "8.2",
-    "Sodium (Na2O)": "0.3",
+    "Potassium (K₂O)": "8.2",
+    "Sodium (Na₂O)": "0.3",
     "Calcium (CaO)": "0.3",
-    "Sulphur (SO3)": "1.2",
+    "Sulphur (SO₃)": "1.2",
     "Magnesium (MgO)": "0.1",
   };
 
@@ -165,7 +165,7 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
     productDescription:
       "Offers the highest analysis of organically sourced potassium in liquid form. Improves crop potential in both protected and outdoor crops by supplying key nutrients at crucial stages of growth. Particularly important for stimulating reproductive growth and promoting fruit development. Derived from plant protein sources, it is a safe and effective fertilizer for organic cropping systems.",
     keyFeatures: [
-      "Highest analysis of organically sourced potassium (8.2% K2O)",
+      "Highest analysis of organically sourced potassium (8.2% K₂O)",
       "Derived from plant protein sources for organic systems",
       "Particularly effective for stimulating reproductive growth",
       "Promotes exceptional fruit development",
@@ -229,7 +229,7 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
       {
         title: "Highest Potassium Analysis",
         description:
-          "8.2% K2O - the highest analysis of organically sourced potassium in liquid form",
+          "8.2% K₂O - the highest analysis of organically sourced potassium in liquid form",
         icon: <Crown className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
@@ -420,7 +420,7 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
                   <div className="space-y-6">
                     <div className="p-4 bg-[#6abf4b]/10 rounded-lg">
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
-                        8.2% Potassium (K2O)
+                        8.2% Potassium (K₂O)
                       </h4>
                       <p className="text-[#6abf4b] text-sm">
                         Highest analysis of organically sourced potassium in
@@ -653,7 +653,7 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
                       20L
                     </Badge>
                     <p className="text-gray-600">
-                      Perfect for specialized organic fruit and reproductive
+                      Perfect for specialised organic fruit and reproductive
                       growth programs
                     </p>
                   </div>

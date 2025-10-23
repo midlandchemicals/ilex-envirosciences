@@ -168,9 +168,9 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
   const analysisData = {
     "Nitrogen (N)": "10.0",
     "Phosphorus (P₂O₅)": "20.0",
-    "Potassium (K2O)": "16.0",
+    "Potassium (K₂O)": "16.0",
     "Magnesium (MgO)": "4.0",
-    "Sulphur (SO3)": "8.0",
+    "Sulphur (SO₃)": "8.0",
     "Boron (B)": "0.8",
     "Manganese (Mn)": "1.5",
     "Sodium (Na)": "2.0",
@@ -225,7 +225,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
       {
         title: "Sugar Formation",
         description:
-          "Specialized nutrients support sugar synthesis and accumulation in roots",
+          "Specialised nutrients support sugar synthesis and accumulation in roots",
         icon: <Candy className="h-6 w-6 text-red-600" />,
       },
       {
@@ -506,7 +506,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
                           Root Development
                         </h4>
                         <p className="text-gray-600">
-                          Specialized nutrition supports root bulking and sugar
+                          Specialised nutrition supports root bulking and sugar
                           accumulation for maximum processing quality.
                         </p>
                       </div>

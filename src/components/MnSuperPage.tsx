@@ -151,7 +151,7 @@ export function MnSuperPage({ onSubmit }: ContactFormProps) {
 
   const analysisData = {
     "Manganese (Mn)": "25",
-    "Sulphur (SO3)": "15",
+    "Sulphur (SO₃)": "15",
     "Nitrogen (N)": "9",
     "Magnesium (MgO)": "3.3",
     "Zinc (Zn)": "1",
