@@ -134,7 +134,7 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
       "CaPITAL™": "/assets/product images/Calcium Supplements/Capital.png",
 
       // Biostimulants
-      "Stimplex®®": "/assets/product images/Biostimulants/Stimplex®.png",
+      "Stimplex®®®": "/assets/product images/Biostimulants/Stimplex®®.png",
       "Toggle®": "/assets/product images/Biostimulants/Toggle_tub.png",
 
       // Seed Treatments
