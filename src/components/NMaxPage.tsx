@@ -723,7 +723,9 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>sales@ilex-envirosciences.com</p>
+                  <p>ilexsales@ilex-envirosciences.com
+
+</p>
                 </div>
 
                 <div className="flex items-center gap-4">

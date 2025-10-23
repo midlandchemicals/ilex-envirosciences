@@ -495,10 +495,14 @@ function TermsConditionsModal({
             identification code or password, you must promptly notify us by
             contacting{" "}
             <a
-              href="mailto:sales@ilex-envirosciences.com"
+              href="mailto:ilexsales@ilex-envirosciences.com
+
+"
               className="text-blue-600 hover:text-blue-800 underline"
             >
-              sales@ilex-envirosciences.com
+              ilexsales@ilex-envirosciences.com
+
+
             </a>
             .
           </p>
@@ -610,10 +614,14 @@ function TermsConditionsModal({
           <p className="mb-4">
             To contact us, please email{" "}
             <a
-              href="mailto:sales@ilex-envirosciences.com"
+              href="mailto:ilexsales@ilex-envirosciences.com
+
+"
               className="text-blue-600 hover:text-blue-800 underline"
             >
-              sales@ilex-envirosciences.com
+              ilexsales@ilex-envirosciences.com
+
+
             </a>
             .
           </p>
