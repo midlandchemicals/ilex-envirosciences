@@ -167,7 +167,7 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
 
   const analysisData = {
     "Nitrogen (N)": "8.0",
-    "Phosphorus (P2O5)": "24.0",
+    "Phosphorus (P₂O₅)": "24.0",
     "Potassium (K2O)": "14.0",
     "Magnesium (MgO)": "3.0",
     "Sulphur (SO3)": "6.0",

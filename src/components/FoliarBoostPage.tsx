@@ -208,7 +208,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
 
   const analysisData = {
     "Nitrogen (N)": "12.0",
-    "Phosphorus (P2O5)": "8.0",
+    "Phosphorus (P₂O₅)": "8.0",
     "Potassium (K2O)": "10.0",
     "Magnesium (MgO)": "3.0",
     "Sulphur (SO3)": "5.0",
@@ -238,7 +238,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
       "A comprehensive multi-nutrient foliar solution designed to provide complete nutritional support across a wide range of crops. Combines major nutrients (N, P, K) with essential secondary nutrients and micronutrients to deliver optimal plant nutrition. Formulated for rapid uptake and immediate plant response during critical growth stages.",
     keyFeatures: [
       "Complete multi-nutrient formulation",
-      "Major nutrients: 12% N, 8% P2O5, 10% K2O",
+      "Major nutrients: 12% N, 8% P₂O₅, 10% K2O",
       "Essential micronutrients: Mg, S, B, Mn, Zn",
       "Rapid uptake and immediate response",
       "Broad spectrum crop compatibility",
@@ -492,7 +492,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
                       <div>
                         <h4 className="font-semibold mb-2">Major Nutrients</h4>
                         <p className="text-gray-600">
-                          12% Nitrogen, 8% P2O5, and 10% K2O provide essential
+                          12% Nitrogen, 8% P₂O₅, and 10% K2O provide essential
                           macronutrient foundation for plant growth and
                           development.
                         </p>

@@ -202,7 +202,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
   ];
 
   const analysisData = {
-    "Phosphorus Pentoxide (P2O5)": "20",
+    "Phosphorus Pentoxide (P₂O₅)": "20",
     "Potassium Oxide (K2O)": "16",
     "Magnesium (MgO)": "2.0",
     "Boron (B)": "0.5",
@@ -234,7 +234,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
       "A concentrated phosphite solution specifically formulated for field vegetable crops. Provides enhanced phosphorus and potassium nutrition using proven phosphite technology for rapid uptake and immediate plant response. The formulation is tailored to meet the specific nutritional requirements of vegetable crops during critical growth stages.",
     keyFeatures: [
       "Concentrated phosphite solution for vegetables",
-      "20% P2O5 and 16% K2O for optimal nutrition",
+      "20% P₂O₅ and 16% K2O for optimal nutrition",
       "Rapid uptake phosphite technology",
       "Specifically formulated for vegetable crop requirements",
       "Enhanced with magnesium and boron",

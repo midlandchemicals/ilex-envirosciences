@@ -189,7 +189,7 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
   ];
 
   const analysisData = {
-    "Phosphorus Pentoxide (P2O5)": "31",
+    "Phosphorus Pentoxide (P₂O₅)": "31",
     "Nitrogen (N)": "2.6",
     "Potassium (K2O)": "6.5",
     "Sulphur (SO3)": "4.5",

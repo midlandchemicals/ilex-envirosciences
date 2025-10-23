@@ -167,7 +167,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
 
   const analysisData = {
     "Nitrogen (N)": "10.0",
-    "Phosphorus (P2O5)": "20.0",
+    "Phosphorus (P₂O₅)": "20.0",
     "Potassium (K2O)": "16.0",
     "Magnesium (MgO)": "4.0",
     "Sulphur (SO3)": "8.0",

@@ -203,7 +203,7 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
 
   const analysisData = {
     "Manganese (Mn)": "10.0",
-    "Phosphorus (P2O5)": "25.0",
+    "Phosphorus (P₂O₅)": "25.0",
     "Potassium (K2O)": "12.0",
     "Nitrogen (N)": "5.0",
     "Magnesium (MgO)": "2.0",

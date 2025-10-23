@@ -148,7 +148,7 @@ export function UltimateGoldPage({ onSubmit }: ContactFormProps) {
 
   const analysisData = {
     "Nitrogen (N)": "8.0",
-    "Phosphorus (P2O5)": "7.0",
+    "Phosphorus (P₂O₅)": "7.0",
     "Potassium (K2O)": "7.0",
     "Calcium (CaO)": "0.3",
     "Sulphur (SO3)": "0.5",
@@ -439,7 +439,7 @@ export function UltimateGoldPage({ onSubmit }: ContactFormProps) {
 
                     <div className="p-4 bg-[#6abf4b]/10 rounded-lg">
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
-                        7.0% Phosphorus (P2O5)
+                        7.0% Phosphorus (P₂O₅)
                       </h4>
                       <p className="text-[#6abf4b] text-sm">
                         Exceptional phosphorus levels for enhanced root

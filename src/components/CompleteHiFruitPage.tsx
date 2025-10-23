@@ -138,7 +138,7 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
 
   const analysisData = {
     "Nitrogen (N)": "4.5",
-    "Phosphorus (P2O5)": "2.0",
+    "Phosphorus (P₂O₅)": "2.0",
     "Potassium (K2O)": "6.1",
     "Calcium (CaO)": "0.6",
     "Sulphur (SO3)": "0.5",
@@ -443,7 +443,7 @@ export function CompleteHiFruitPage({ onSubmit }: ContactFormProps) {
 
                     <div className="p-4 bg-[#6abf4b]/10 rounded-lg">
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
-                        2.0% Phosphorus (P2O5)
+                        2.0% Phosphorus (P₂O₅)
                       </h4>
                       <p className="text-[#6abf4b] text-sm">
                         Essential for energy transfer, root development, and

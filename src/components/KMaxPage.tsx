@@ -138,7 +138,7 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
 
   const analysisData = {
     "Nitrogen (N)": "3.8",
-    "Phosphorus (P2O5)": "1.6",
+    "Phosphorus (P₂O₅)": "1.6",
     "Potassium (K2O)": "8.2",
     "Sodium (Na2O)": "0.3",
     "Calcium (CaO)": "0.3",
@@ -440,7 +440,7 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
 
                     <div className="p-4 bg-[#6abf4b]/10 rounded-lg">
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
-                        1.6% Phosphorus (P2O5)
+                        1.6% Phosphorus (P₂O₅)
                       </h4>
                       <p className="text-[#6abf4b] text-sm">
                         Essential phosphorus for energy transfer and

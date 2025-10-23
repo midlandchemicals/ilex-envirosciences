@@ -169,7 +169,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
 
   const analysisData = {
     "Amino acids": "10",
-    "Phosphorus (P2O5)": "28",
+    "Phosphorus (P₂O₅)": "28",
     "Potassium (as K2SO)": "8",
     "Nitrogen (N)": "4",
   };
