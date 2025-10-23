@@ -509,7 +509,7 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
                       <Sun className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
-                          Enhanced Light Utilization
+                          Enhanced Light utilisation
                         </h4>
                         <p className="text-gray-600">
                           Stronger stems and improved leaf angle optimize light

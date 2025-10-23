@@ -103,7 +103,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
       icon: <Sun className="h-8 w-8 text-[#6abf4b]" />,
       title: "Increases Photosynthesis & Nutrient Usage",
       description:
-        "Optimizes photosynthetic efficiency and enhances nutrient uptake and utilization",
+        "Optimizes photosynthetic efficiency and enhances nutrient uptake and utilisation",
     },
     {
       icon: <Heart className="h-8 w-8 text-[#6abf4b]" />,

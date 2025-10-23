@@ -126,7 +126,7 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
       icon: <Award className="h-8 w-8 text-[#6abf4b]" />,
       title: "Enhanced Nutrient Uptake",
       description:
-        "Increased quality and yield potential through improved nutrient utilization",
+        "Increased quality and yield potential through improved nutrient utilisation",
     },
   ];
 

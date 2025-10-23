@@ -243,7 +243,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
         benefits: [
           "Enhanced grain protein content",
           "Improved baking quality",
-          "Better nitrogen utilization",
+          "Better nitrogen utilisation",
           "Increased resistance to lodging",
         ],
       },
@@ -525,9 +525,9 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
                       <h4 className="font-semibold text-[#6abf4b] mb-2">
                         Enhanced Formula
                       </h4>
-                      <p className="text-[#6abf4b]">
-                        Pro-Sul™ includes nitrogen, potassium, and magnesium to
-                        support optimal sulfur utilization and plant function.
+                      <p className="text-#000000">
+                       <b>Pro-Sul™ includes nitrogen, potassium, and magnesium to
+                        support optimal sulfur utilisation and plant function.</b>
                       </p>
                     </div>
                   </div>

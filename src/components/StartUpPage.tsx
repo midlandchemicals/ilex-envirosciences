@@ -122,7 +122,7 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
       icon: <Award className="h-8 w-8 text-[#6abf4b]" />,
       title: "Enhanced Nutrient Uptake",
       description:
-        "Increased quality and yield potential through improved nutrient utilization",
+        "Increased quality and yield potential through improved nutrient utilisation",
     },
   ];
 
@@ -225,7 +225,7 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
       {
         title: "Ureic Nitrogen",
         description:
-          "Readily available nitrogen source for immediate plant uptake and utilization",
+          "Readily available nitrogen source for immediate plant uptake and utilisation",
         icon: <Atom className="h-6 w-6 text-[#6abf4b]" />,
       },
       {

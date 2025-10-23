@@ -530,7 +530,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
                       </h4>
                       <p className="text-green-700">
                         Includes nitrogen, magnesium, and sulphur to support
-                        optimal micronutrient utilization and plant function.
+                        optimal micronutrient utilisation and plant function.
                       </p>
                     </div>
                   </div>

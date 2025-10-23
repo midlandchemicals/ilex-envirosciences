@@ -93,7 +93,7 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
       case "calcium-range":
         return "Essential calcium supplements that improve crop quality, enhance storage characteristics, and prevent calcium-related disorders in fruits and vegetables.";
       case "biostimulants":
-        return "Natural biostimulants derived from seaweed extracts that enhance plant growth, improve stress tolerance, and optimize nutrient utilization.";
+        return "Natural biostimulants derived from seaweed extracts that enhance plant growth, improve stress tolerance, and optimize nutrient utilisation.";
       case "seed-treatments":
         return "Specialised seed treatments that improve germination rates, enhance early plant vigor, and provide essential nutrients for optimal seedling development.";
       case "water-conditioners":
