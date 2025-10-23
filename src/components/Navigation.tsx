@@ -68,7 +68,7 @@ export function Navigation() {
       title: "Biostimulants",
       link: "biostimulants",
       products: [
-        { product: "Stimplex®®®", link: "Stimplex®®" },
+        { product: "Stimplex®", link: "stimplex" },
         { product: "Toggle®", link: "toggle" },
       ],
     },

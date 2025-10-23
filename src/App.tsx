@@ -36,7 +36,7 @@ import { ManUpPage } from "./components/ManUpPage";
 import { Complete624Page } from "./components/Complete624Page";
 import { CompleteHiFruitPage } from "./components/CompleteHiFruitPage";
 import { AdvoCatePage } from "./components/AdvoCatePage";
-import { Stimplex®®Page } from "./components/Stimplex®®Page";
+import { StimplexPage } from "./components/StimplexPage";
 import { TogglePage } from "./components/TogglePage";
 import { KMaxPage } from "./components/KMaxPage";
 import { NMaxPage } from "./components/NMaxPage";
@@ -89,7 +89,7 @@ const categoryData = {
     title: "Biostimulants",
     link: "biostimulants",
     products: [
-      { product: "Stimplex®®®", link: "Stimplex®®" },
+      { product: "Stimplex®", link: "stimplex" },
       { product: "Toggle®", link: "toggle" },
     ],
   },
@@ -239,8 +239,8 @@ function ProductRoute() {
         return <CompleteHiFruitPage onSubmit={handleFormSubmit} />;
       case "advocate":
         return <AdvoCatePage onSubmit={handleFormSubmit} />;
-      case "Stimplex®®":
-        return <Stimplex®®Page onSubmit={handleFormSubmit} />;
+      case "stimplex":
+        return <StimplexPage onSubmit={handleFormSubmit} />;
       case "toggle":
         return <TogglePage onSubmit={handleFormSubmit} />;
       case "k-max-3-1-8":
@@ -601,7 +601,7 @@ function TermsConditionsModal({
             trademarks of Ilex EnviroSciences Ltd.
           </p>
           <p className="mb-4">
-            Stimplex®®® and toggle® are trademarks of Acadian Plant Health Ltd.
+            Stimplex® and toggle® are trademarks of Acadian Plant Health Ltd.
           </p>
 
           <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-6">
