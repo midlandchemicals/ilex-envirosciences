@@ -56,7 +56,7 @@ const Form = () => {
     if (!validateForm()) return;
 
     try {
-      const response = await fetch("https://formspree.io/f/xrblpgvd", {
+      const response = await fetch("https://formspree.io/f/myznqarl", {
         method: "POST",
         headers: { Accept: "application/json" },
         body: JSON.stringify(formData),
@@ -87,7 +87,7 @@ const Form = () => {
 
       <CardContent>
         {isSubmitted ? (
-          <p className="text-green-400 text-center font-medium">
+          <p className="text-white text-center font-medium">
             ✅ Your message has been sent successfully!
           </p>
         ) : (

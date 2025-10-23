@@ -11,11 +11,10 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Badge } from "./ui/badge";
-import { Separator } from "./ui/separator";
-import { ProductShowcase } from "./ProductShowcase";
+
 import { PDFLinks } from "./PDFLinks";
 import { AnalysisPieChart } from "./AnalysisPieChart";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "./FallbackImage/ImageWithFallback";
 import { smoothScrollToSection } from "../utils/scrollHelpers";
 import {
   Leaf,
@@ -791,9 +790,9 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
                   <MapPin className="h-6 w-6" />
                   <div className="max-w-80">
                     <p>
-                      Ilex EnviroSciences Ltd 13a Brindely Close , Holly Lane
-                      Industrial Estate , Atherstone , Warwickshire Market Rasen
-                      LN8 3RH
+                      Ilex EnviroSciences Ltd <br /> 13a Brindely Close, Holly
+                      Lane Industrial Estate, Atherstone, Warwickshire Market
+                      Rasen CV9 2QZ, United Kingdom
                     </p>
                   </div>
                 </div>
@@ -805,7 +804,7 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>sales@ilex-envirosciences.com</p>
+                  <p>sales@ilexenvirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

@@ -58,6 +58,7 @@ function SplashScreen({ onComplete }: { onComplete: () => void }) {
 }
 
 // Brands Marquee Component
+
 function BrandsMarquee() {
   const brands = [
     "logo_foliarboost.png",
@@ -87,25 +88,51 @@ function BrandsMarquee() {
   const [velocity, setVelocity] = useState(0);
   const dragStartX = useRef(0);
   const lastX = useRef(0);
+  const [marqueeWidth, setMarqueeWidth] = useState(0);
 
+  // 🧠 Measure width dynamically (handles resizing)
+  useEffect(() => {
+    const updateWidth = () => {
+      if (marqueeRef.current) {
+        setMarqueeWidth(marqueeRef.current.scrollWidth / 2); // because doubled
+      }
+    };
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
+  // 🌀 Infinite animation loop
   useEffect(() => {
     let animationFrame: number;
     const baseSpeed = 0.75;
 
     const animate = () => {
-      if (!isPaused && !isDragging) {
-        setPosition((prev) => prev - baseSpeed);
-      } else if (!isDragging && velocity !== 0) {
-        setPosition((prev) => prev + velocity);
-        setVelocity((prev) => prev * 0.95);
-      }
+      setPosition((prev) => {
+        let newPos = prev;
+
+        if (!isPaused && !isDragging) {
+          newPos = prev - baseSpeed;
+        } else if (!isDragging && velocity !== 0) {
+          newPos = prev + velocity;
+          setVelocity((v) => v * 0.95);
+        }
+
+        // 🔁 Loop seamlessly when passing width
+        if (newPos <= -marqueeWidth) newPos = 0;
+        if (newPos > 0) newPos = -marqueeWidth;
+
+        return newPos;
+      });
+
       animationFrame = requestAnimationFrame(animate);
     };
 
     animationFrame = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationFrame);
-  }, [isPaused, isDragging, velocity]);
+  }, [isPaused, isDragging, velocity, marqueeWidth]);
 
+  // 🖱 Drag Controls
   const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true);
     setIsPaused(true);
@@ -137,16 +164,19 @@ function BrandsMarquee() {
           <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#6abf4b] rounded-full" />
         </h2>
       </div>
+
       <div
         className="relative overflow-hidden"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => !isDragging && setIsPaused(false)}
       >
+        {/* Left and right fade gradients */}
         <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
         <div
           ref={marqueeRef}
-          className="flex cursor-grab active:cursor-grabbing py-5"
+          className="flex cursor-grab active:cursor-grabbing py-5 select-none"
           style={{
             transform: `translateX(${position}px)`,
             willChange: "transform",
@@ -157,11 +187,7 @@ function BrandsMarquee() {
           onMouseLeave={handleMouseUp}
         >
           {doubledBrands.map((brand, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 px-10 select-none"
-              draggable={false}
-            >
+            <div key={index} className="flex-shrink-0 px-8" draggable={false}>
               <img
                 src={`/assets/${brand}`}
                 alt={brand}
@@ -175,6 +201,8 @@ function BrandsMarquee() {
     </section>
   );
 }
+
+export default BrandsMarquee;
 
 // Team Member Modal Interface and Component
 interface TeamMember {
@@ -363,8 +391,7 @@ export function HomePage() {
   // Testimonials Data
   const testimonials: Testimonial[] = [
     {
-      company:
-        "James Fountain<br>CJ Fountain and Son LTD<br>Peterborough, England",
+      company: "CJ Fountain and Son LTD",
       testimonial: `I have used a variety of Ilex products on various crops over the last 5 years and am always extremely pleased with the results. <p>My plants look stronger, healthier and root length is far more impressive than without Ilex treatment.<p>Service from Ilex is always professional, product delivery is usually received within 24 hrs. <p>The team are always on hand to help and advise. I highly recommend Ilex for both service and their range of excellent crop nutrition products.`,
     },
     {
@@ -380,7 +407,7 @@ export function HomePage() {
       testimonial: `The phosphite in the Crop Rooter Plus has definitely helped the cereals develop better root mass, which in turn has encouraged the crop to forage for nutrients further away from the plant.`,
     },
     {
-      company: "R & J Witters Farms<br>North Lincolnshire",
+      company: "R & J Witters Farms",
       testimonial: `Mn SUPER™ – "Never have we used such an effective manganese product, that in just one application clears up manganese deficiency in cereals! Would strongly recommend."`,
     },
   ];
@@ -491,11 +518,11 @@ export function HomePage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
-                className="bg-[#6abf4b] hover:bg-[#5aa338] cursor-pointer text-white px-7 py-6 text-lg font-bold rounded-md transition-all hover:-translate-y-0.5"
+                className="bg-[#6abf4b] hover:bg-[#5aa338] cursor-pointer text-white px-8 h-[60px] text-lg font-bold rounded-md transition-all hover:-translate-y-0.5 flex items-center justify-center"
                 onClick={() => {
                   const productsSection = document.getElementById("products");
                   if (productsSection) {
-                    const headerOffset = 80; // Adjust this value based on your header height
+                    const headerOffset = 80;
                     const elementPosition =
                       productsSection.getBoundingClientRect().top;
                     const offsetPosition =
@@ -510,13 +537,14 @@ export function HomePage() {
               >
                 Our Products
               </Button>
+
               <Button
                 variant="outline"
-                className="bg-white/20 border-2 cursor-pointer border-white text-white hover:bg-white hover:text-[#6abf4b] px-7 py-6 text-lg font-bold rounded-md transition-all"
+                className="bg-white/20 border-2 cursor-pointer border-white text-white hover:bg-white hover:text-[#6abf4b] px-8 h-[60px] text-lg font-bold rounded-md transition-all flex items-center justify-center"
                 onClick={() => {
                   const contactSection = document.getElementById("contact-us");
                   if (contactSection) {
-                    const headerOffset = 100; // Same offset as products button
+                    const headerOffset = 100;
                     const elementPosition =
                       contactSection.getBoundingClientRect().top;
                     const offsetPosition =
@@ -540,7 +568,7 @@ export function HomePage() {
 
         {/* About Section */}
         <section id="about-content" className="bg-white py-10 px-5">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="flex flex-wrap justify-center gap-8">
               {/* Mission Card */}
               <motion.div
@@ -560,7 +588,7 @@ export function HomePage() {
                 <h4 className="text-xl font-semibold text-center mb-3">
                   Our Mission
                 </h4>
-                <p className="text-gray-700 text-center leading-relaxed">
+                <p className="text-gray-700 text-center text-lg leading-relaxed">
                   To deliver innovative crop nutrition solutions that optimise
                   plant health, improve yields, and support sustainable farming
                   practices worldwide.
@@ -592,7 +620,7 @@ export function HomePage() {
                 <h4 className="text-xl font-semibold text-center mb-3">
                   Our Expertise
                 </h4>
-                <p className="text-gray-700 text-center leading-relaxed">
+                <p className="text-gray-700 text-lg text-center leading-relaxed">
                   With over 3 decades of manufacturing experience, Midland
                   Chemicals proudly own Ilex Envirosciences and continue to
                   ensure the highest standards of innovation, quality, and
@@ -669,7 +697,7 @@ export function HomePage() {
 
         {/* Products Section */}
         <section id="products" className="py-16 px-5 bg-white">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-8 relative pb-3">
               Our Products
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#6abf4b] rounded-full" />
@@ -682,7 +710,7 @@ export function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white border border-gray-200 border-l-4 border-l-[#6abf4b] rounded-lg p-6 shadow-sm hover:shadow-lg transition-all cursor-pointer group flex flex-col h-full"
+                  className="bg-white border border-gray-200 border-l-4 hover:border-[#6abf4b] border-l-[#6abf4b] rounded-lg p-6 shadow-sm hover:shadow-lg transition-all cursor-pointer group flex flex-col h-full"
                   onClick={() => navigate(`/products/${product.link}`)}
                 >
                   <div className="flex-1">
@@ -695,7 +723,7 @@ export function HomePage() {
                   </div>
                   <div className="mt-6">
                     <Button
-                      className="bg-gray-100 cursor-pointer hover:bg-[#6abf4b] text-[#6abf4b] hover:text-white w-full transition-colors"
+                      className="bg-[#f0f0f0] max-w-24 cursor-pointer hover:bg-[#6abf4b] text-[#6abf4b] hover:text-white w-full transition-colors"
                       onClick={(e) => {
                         e.stopPropagation();
                         navigate(`/products/${product.link}`);
@@ -772,18 +800,18 @@ export function HomePage() {
 
         {/* Regulatory & Industry Partnerships Section */}
         <section id="partnerships" className="py-16 px-5 bg-[#e1e1e1]">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-4xl font-bold mb-6 relative pb-3">
+              <h2 className="text-5xl font-bold mb-6 relative pb-3">
                 Regulatory & Industry Partnerships
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#6abf4b] rounded-full" />
               </h2>
-              <p className="text-base leading-relaxed max-w-4xl mx-auto">
+              <p className="text-lg leading-relaxed max-w-4xl mx-auto">
                 Ilex EnviroSciences is committed to supporting the safety and
                 quality of our products together with independent qualified data
                 to prove their value. Our membership of both EBIC & PBSG ensures
@@ -814,21 +842,21 @@ export function HomePage() {
                       className="w-24 h-auto object-contain"
                     />
                   </a>
-                  <div>
-                    <h4 className="text-lg font-bold text-gray-900">
+                  <div className="text-center">
+                    <h4 className="text-xl font-bold text-gray-900">
                       European Biostimulants Industry Council (EBIC)
                     </h4>
-                    <span className="text-xs font-semibold text-[#6abf4b] uppercase">
+                    <span className="text-lg font-semibold text-[#6abf4b] uppercase">
                       Active Member
                     </span>
                   </div>
                 </div>
-                <p className="text-gray-700 text-sm leading-relaxed mb-3">
+                <p className="text-gray-700 text-lg leading-relaxed mb-3">
                   EBIC fosters the role of the biostimulants sector in helping
                   farmers to grow adequate quantities of high quality crops
                   profitably while using resources wisely.
                 </p>
-                <p className="text-gray-700 text-sm leading-relaxed">
+                <p className="text-gray-700 text-lg leading-relaxed">
                   To do this, EBIC advocates an operating environment that
                   creates a truly European market for biostimulants and
                   recognises their contribution to sustainable agricultural
@@ -858,20 +886,20 @@ export function HomePage() {
                       className="w-24 h-auto object-contain"
                     />
                   </a>
-                  <div>
-                    <h4 className="text-lg font-bold text-gray-900">
+                  <div className="text-center">
+                    <h4 className="text-xl font-bold text-gray-900">
                       Phosphite Biostimulant Stewardship Group (PBSG)
                     </h4>
-                    <span className="text-xs font-semibold text-[#6abf4b] uppercase">
+                    <span className="text-lg font-semibold text-[#6abf4b] uppercase">
                       Active Member
                     </span>
                   </div>
                 </div>
-                <p className="text-gray-700 text-sm leading-relaxed mb-3">
+                <p className="text-gray-700 text-lg leading-relaxed mb-3">
                   The PBSG was created by a group of like-minded biostimulant
                   manufacturers to lobby Regulators for continued phosphite use.
                 </p>
-                <p className="text-gray-700 text-sm leading-relaxed">
+                <p className="text-gray-700 text-lg leading-relaxed">
                   Our aim is to lobby the Regulators to support the continued
                   use of phosphites as biostimulants to enable subsequent
                   registration under new EU and GB Regulations.
@@ -906,7 +934,7 @@ export function HomePage() {
 
         {/* Buying Groups Section */}
         <section id="buying-groups" className="py-16 px-5 bg-white">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -917,7 +945,7 @@ export function HomePage() {
                 Buying Groups
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#6abf4b] rounded-full" />
               </h2>
-              <p className="text-base leading-relaxed max-w-3xl mx-auto">
+              <p className="text-lg leading-relaxed max-w-7xl mx-auto">
                 Ilex EnviroSciences works with leading agricultural buying
                 groups to deliver reliable solutions and trusted partnerships
                 across the UK.
@@ -998,7 +1026,7 @@ export function HomePage() {
         {/* Testimonials Section */}
         <section id="testimonials" className="py-16 px-5 bg-white">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-12 relative pb-3">
+            <h2 className="text-3xl font-bold text-center mb-12 relative pb-3">
               What Our Clients Say
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#6abf4b] rounded-full" />
             </h2>
@@ -1010,16 +1038,16 @@ export function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-[#f5f5f5] rounded-lg p-4 cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col h-full"
+                  className="bg-[#f5f5f5] rounded-lg p-6 cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col h-full"
                   onClick={() => setSelectedTestimonial(index)}
                 >
                   <div className="flex-1 flex flex-col">
                     <p
-                      className="font-bold text-sm mb-2"
+                      className="font-bold text-lg text-center "
                       dangerouslySetInnerHTML={{ __html: testimonial.company }}
                     />
-                    <div className="mt-auto pt-4">
-                      <div className="flex justify-center gap-0.5">
+                    <div className="mt-auto ">
+                      <div className="flex justify-center pt-5 gap-0.5">
                         {[...Array(5)].map((_, i) => (
                           <Star
                             key={i}
@@ -1038,8 +1066,8 @@ export function HomePage() {
 
         {/* Contact Section */}
         <section id="contact-us" className="relative py-16 px-5">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#ececec] to-white" />
-          <div className="relative max-w-5xl mx-auto">
+          <div className="absolute inset-0 " />
+          <div className="relative max-w-6xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-4 relative pb-3">
               Get In Touch
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#6abf4b] rounded-full" />
@@ -1048,64 +1076,67 @@ export function HomePage() {
               We're here to answer your questions and discuss your needs.
             </p>
 
-            <div className="flex flex-col lg:flex-row gap-8">
-              {/* Contact Info */}
-              <div className="lg:w-2/5 flex flex-col gap-4">
+            <div className="flex flex-col lg:flex-row gap-8 items-stretch">
+              {/* Contact Info Column - 40% */}
+              <div className="lg:w-2/5 flex flex-wrap gap-4">
                 {/* Phone */}
-                <motion.a
-                  href="tel:+441827722911"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  className="bg-white border-l-4 border-[#6abf4b] rounded-lg p-5 shadow-sm hover:shadow-md transition-all flex items-center gap-4"
-                >
-                  <Phone size={24} className="text-[#6abf4b] flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                    <p className="text-gray-600 text-sm">+44 1827 722911</p>
-                  </div>
-                </motion.a>
+                <div className="flex flex-col w-full gap-y-10">
+                  <motion.a
+                    href="tel:+441827722911"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    className="bg-white border-l-[5px] min-h-40 border-[#6abf4b] rounded-lg p-4 shadow-sm hover:shadow-md transition-all flex items-center gap-4 flex-1 min-w-[calc(50%-0.5rem)] cursor-pointer relative"
+                  >
+                    <Phone size={24} className="text-[#6abf4b] flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-0 text-base">
+                        Phone
+                      </h3>
+                      <p className="text-gray-600 text-sm mb-0">
+                        +44 1827 722911
+                      </p>
+                    </div>
+                  </motion.a>
 
-                {/* Email */}
-                <motion.a
-                  href="mailto:sales@ilex-envirosciences.com?subject=Website%20Enquiry"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 }}
-                  className="bg-white border-l-4 border-[#6abf4b] rounded-lg p-5 shadow-sm hover:shadow-md transition-all flex items-center gap-4"
-                >
-                  <Mail size={24} className="text-[#6abf4b] flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                    <p className="text-gray-600 text-sm">
-                      sales@ilex-envirosciences.com
-                    </p>
-                  </div>
-                </motion.a>
+                  {/* Email */}
+                  <motion.a
+                    href="mailto:sales@ilexenvirosciences.com?subject=Ilex%20Website%20Enquiry"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    className="bg-white border-l-[5px] min-h-40 border-[#6abf4b] rounded-lg p-4 shadow-sm hover:shadow-md transition-all flex items-center gap-4 flex-1 min-w-[calc(50%-0.5rem)] cursor-pointer relative"
+                  >
+                    <Mail size={24} className="text-[#6abf4b] flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-0 text-base">
+                        Email
+                      </h3>
+                      <p className="text-gray-600 text-sm mb-0">
+                        sales@ilexenvirosciences.com
+                      </p>
+                    </div>
+                  </motion.a>
+                </div>
 
-                {/* Address */}
-                <motion.a
-                  href="https://maps.app.goo.gl/BmZ9EBrwdtC5yGwj7"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                {/* Address - Full Width */}
+                <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
-                  className="bg-white border-l-4 border-[#6abf4b] rounded-lg p-5 shadow-sm hover:shadow-md transition-all flex items-start gap-4"
+                  className="bg-white border-l-[5px] py-20 my-5 border-[#6abf4b] rounded-lg p-6 shadow-sm flex items-center gap-4 w-full"
                 >
-                  <MapPin
-                    size={24}
-                    className="text-[#6abf4b] flex-shrink-0 mt-1"
-                  />
+                  <MapPin size={24} className="text-[#6abf4b] flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">
+                    <h3 className="font-semibold text-gray-900 mb-3 text-base">
                       Our Headquarters
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      <strong>Ilex Envirosciences Ltd</strong>
-                      <br />
+                    <p className="text-gray-600 text-sm leading-relaxed mb-0">
+                      <strong className="block mb-2">
+                        Ilex Envirosciences Ltd
+                      </strong>
                       13a Brindley Close,
                       <br />
                       Holly Lane Industrial Estate,
@@ -1119,17 +1150,17 @@ export function HomePage() {
                       United Kingdom.
                     </p>
                   </div>
-                </motion.a>
+                </motion.div>
               </div>
 
-              {/* Contact Form */}
+              {/* Contact Form Column - 60% */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="lg:w-3/5 bg-white rounded-lg p-8 shadow-lg"
+                className="lg:w-3/5 bg-white w-full rounded-lg p-6 flex items-center justify-center"
               >
-                <form className="flex flex-col gap-4">
+                <form className="flex flex-col gap-4 w-full max-w-lg">
                   <div>
                     <label
                       htmlFor="name"
@@ -1143,7 +1174,7 @@ export function HomePage() {
                       name="name"
                       placeholder="Enter your name"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#6abf4b] focus:border-transparent"
+                      className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#6abf4b] focus:border-transparent transition-all"
                     />
                   </div>
 
@@ -1160,7 +1191,7 @@ export function HomePage() {
                       name="email"
                       placeholder="Enter your email"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#6abf4b] focus:border-transparent"
+                      className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#6abf4b] focus:border-transparent transition-all"
                     />
                   </div>
 
@@ -1177,11 +1208,11 @@ export function HomePage() {
                       name="subject"
                       placeholder="Enter subject"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#6abf4b] focus:border-transparent"
+                      className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#6abf4b] focus:border-transparent transition-all"
                     />
                   </div>
 
-                  <div className="flex-grow">
+                  <div className="flex-1 flex flex-col">
                     <label
                       htmlFor="message"
                       className="block text-sm font-semibold text-gray-700 mb-2"
@@ -1193,14 +1224,13 @@ export function HomePage() {
                       name="message"
                       placeholder="Type your message here..."
                       required
-                      rows={5}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#6abf4b] focus:border-transparent resize-vertical"
+                      className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#6abf4b] focus:border-transparent resize-vertical flex-1 min-h-[120px] transition-all"
                     />
                   </div>
 
                   <Button
                     type="submit"
-                    className="bg-[#6abf4b] hover:bg-[#5aa338] text-white px-8 py-3 rounded-md font-bold transition-all hover:shadow-lg"
+                    className="bg-[#6abf4b] cursor-pointer text-lg shadow-lg hover:bg-[#5aa338] text-white px-8 py-6 rounded-md font-bold transition-all hover:shadow-lg self-start mt-2"
                   >
                     Send Message
                   </Button>

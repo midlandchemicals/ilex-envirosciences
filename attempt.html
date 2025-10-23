@@ -1,0 +1,3040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ilex Envirosciences</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  body,html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Splash screen overlay */
+  #splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+  }
+
+  #splash-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .splash-content {
+    text-align: center;
+  }
+
+  .splash-logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  @keyframes pulse {
+    0%   { transform: scale(1); opacity: 1; }
+    50%  { transform: scale(1.05); opacity: 0.9; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  /* Contact form */
+  .contact-form {
+    max-width: 500px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .btn-submit {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    border: none;
+    background: #6abf4b;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .campaign-banner {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  background: #fff; /* optional */
+}
+
+.campaign-banner img {
+  max-width: 400px; /* adjust size here */
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+
+  .error-message {
+    color: red;
+    font-size: 0.8rem;
+  }
+</style>
+</head>
+<body>
+
+ <div id="splash-screen">
+  <div class="splash-content">
+        <img src="images/ilexlogonobg.png" alt="Ilex Logo" class="splash-logo">
+  </div>
+</div>
+
+<style>
+
+/* Reusable Content Styling */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px;
+}
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #6abf4b;
+    border-radius: 2px;
+}
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+.card h3 {
+    font-size: 1.4rem;
+    color: #6abf4b;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+
+/* --- Header & Navigation --- */
+header {
+    width: 100%;
+    background-color: #ececec;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between; /* logo left, menu+button right */
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* space between menu and button */
+}
+
+.main-menu {
+    display: flex;
+    gap: 10px; /* spacing between menu items */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-menu > li {
+    position: relative;
+}
+
+.main-menu > li > a {
+    font-weight: 600;
+    font-size: 0.82rem;
+    padding: 10px 0;
+    color: #333;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.main-menu > li > a:hover {
+    color: #6abf4b;
+}
+
+/* Dropdown Content */
+.desktop-dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    background: #ececec;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    z-index: 1000;
+}
+
+.menu-columns {
+    display: block;
+    padding: 0;
+}
+
+.column {
+    display: block;
+}
+
+.column a {
+    display: block;
+    padding: 8px 15px;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+    transition: background 0.3s, padding-left 0.3s, color 0.3s;
+}
+
+.column a:hover {
+    background: #ececec;
+    color: #6abf4b;
+    padding-left: 18px;
+}
+
+/* Desktop Hover Dropdown */
+@media (min-width: 768px) {
+    .main-menu li:hover > .desktop-dropdown-content {
+        max-height: 500px; /* adjust based on content */
+        opacity: 1;
+    }
+}
+
+/* Mobile Dropdown reset */
+@media (max-width: 767px) {
+    .desktop-dropdown-content {
+        max-height: 0;
+        opacity: 0;
+    }
+}
+@media (max-width: 767px) {
+    .header-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1001;
+        display: block;
+    }
+}
+
+/* --- Contact Us Button --- */
+.header-btn {
+    font-size: 0.82rem;
+    color: #fff !important;
+    padding: 12px 28px;
+    background: #6abf4b;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.header-btn:hover {
+    background: #5aa338;
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
+    background: url("https://images.unsplash.com/photo-1628407003079-820b34eee778?q=80&w=2344&auto=format&fit=crop") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+}
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+}
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.btn {
+    background: #6abf4b;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+.btn:hover {
+    background: #5aa338;
+    transform: translateY(-2px);
+}
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid #fff;
+}
+.btn-secondary:hover {
+    background: #fff;
+    color: #6abf4b;
+}
+
+html {
+  scroll-behavior: smooth; /* basic smooth scroll */
+}
+
+/* Optional: add offset for fixed header */
+:root {
+  --header-height: 70px; /* adjust to match your fixed header height */
+}
+.scroll-offset {
+  scroll-margin-top: var(--header-height);
+}
+
+/* Hamburger Toggle */
+.nav-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Brands/Marquee Section */
+.marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-flex;
+  will-change: transform;
+}
+
+.brand-item {
+  display: inline-block;
+  padding: 0 40px;
+  user-select: none;
+  cursor: grab;
+}
+
+.brand-item img {
+  height: 60px;
+  width: auto;
+  transition: filter 0.3s, opacity 0.3s;
+}
+
+.marquee-content img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none; /* optional: makes image not intercept mouse */
+}
+
+
+/* Fade edges */
+.marquee::before,
+.marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, #fff 0%, rgba(255,255,255,0) 100%);
+}
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, #fff 0%, rgba(255,255,255,0) 100%);
+}
+
+
+#brands {
+    padding: 0px 0 30px;
+}
+#brands .section-container {
+    padding: 10px 20px 20px;
+}
+#brands .section-title {
+    margin-bottom: 20px;
+}
+
+/* About Content (Mission & Expertise cards) */
+#about-content {
+  background-color: #fff;
+  padding: 10px 15px; /* Less padding */
+}
+
+.about-grid {
+  display: flex;
+  gap: 20px; /* Reduced gap */
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-card {
+  flex: 1;
+  min-width: 260px;
+  max-width: 380px;
+  border: 1px solid #ddd;
+  border-left: 5px solid #5bb63b;
+  border-radius: 8px;
+  padding: 20px; /* Reduced */
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+/* Container */
+#about-content {
+  background-color: #fff;
+  padding: 25px 15px; /* less vertical space */
+  box-sizing: border-box;
+}
+
+/* Grid */
+#about-content .about-grid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  align-items: stretch; /* ensure all cards same height */
+}
+
+/* Card: slimline & wide */
+#about-content .about-card {
+  flex: 0 1 420px;  /* width ~420px, can shrink if needed */
+  min-width: 320px;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center content horizontally */
+  text-align: center;
+  border: 1px solid #ddd;
+  border-left: 4px solid #5bb63b;
+  border-radius: 6px;
+  padding: 18px 20px; /* less vertical padding → slimmer */
+  background-color: #fff;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+}
+
+/* Logo container */
+#about-content .about-card .logo-icon {
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  margin: 0 0 12px 0; /* spacing below logo */
+}
+
+/* Logo images */
+#about-content .about-card .logo-icon img {
+  width: 130px;      /* consistent size */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover effect: grayscale -> color, slight scale */
+#about-content .about-card .logo-icon:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.08);
+}
+
+/* Midland logo nudge (keeps position, works with hover) */
+#about-content .about-grid .about-card:nth-child(2) .logo-icon img {
+  margin-top: -10px;
+}
+
+/* Card headings */
+#about-content .about-details h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Card paragraphs */
+#about-content .about-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
+  padding: 0 6px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 720px) {
+  #about-content .about-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  #about-content .about-card .logo-icon img {
+    width: 110px;
+  }
+}
+/* --- TEAM SECTION --- */
+/* ---------- About Section ---------- */
+#about-header {
+  background-color: #ececec; /* lighter feint grey */
+  color: #000;
+  padding: 5px 5px; /* reduced top/bottom padding */
+  text-align: center;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#about-header .header-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#about-header h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+#about-header p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 1000px;
+  text-align: center;
+}
+    
+
+#about-content {
+  background-color: #fff;
+  padding: 25px 15px; /* less vertical space */
+  box-sizing: border-box;
+}
+
+#about-content .about-grid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  align-items: stretch; /* ensure all cards same height */
+}
+
+#about-content .about-card {
+  flex: 0 1 420px;  /* width ~420px, can shrink if needed */
+  min-width: 320px;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-left: 4px solid #5bb63b;
+  border-radius: 6px;
+  padding: 18px 20px;
+  background-color: #fff;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+}
+
+#about-content .about-card .logo-icon {
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  margin: 0 0 12px 0;
+}
+
+#about-content .about-card .logo-icon img {
+  width: 130px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+#about-content .about-details h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+#about-content .about-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
+  padding: 0 6px;
+}
+
+@media (max-width: 720px) {
+  #about-content .about-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  #about-content .about-card .logo-icon img {
+    width: 110px;
+  }
+}
+
+#about-header {
+  background-color: #ececec; /* lighter feint grey */
+  color: #000;
+  padding: 5px 5px;
+  text-align: center;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#about-header .header-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#about-header h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+#about-header p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+/* ---------- Team Section ---------- */
+/* ---------- Team Grid ---------- */
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding-bottom: 60px;
+  background: #ececec;
+}
+
+/* ---------- Team Card ---------- */
+.team-card {
+  width: 220px;
+  text-align: center;
+  cursor: pointer;
+  background: transparent; /* invisible card */
+  border: none;
+  padding: 0;
+}
+
+/* ---------- Team Photo ---------- */
+.team-photo {
+  width: 180px;
+  height: 260px; /* portrait orientation */
+  margin: 0 auto 15px auto;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, filter 0.4s ease;
+  position: relative;
+}
+
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(70%); /* default grayscale */
+  transition: filter 0.4s ease, transform 0.3s ease;
+}
+
+.team-card:hover .team-photo img {
+  filter: grayscale(0%); /* color on hover */
+  transform: scale(1.03);
+}
+
+/* ---------- Team Info ---------- */
+.team-info {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.team-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #6abf4b; /* green */
+  margin-bottom: 4px;
+}
+
+.team-role {
+  font-size: 1rem;
+  color: #000; /* black for role */
+  margin-bottom: 8px;
+  font-weight: 600; /* makes it bold */
+}
+
+.team-email {
+  font-size: 0.95rem;
+  color: #000;
+  text-decoration: none;
+}
+
+.team-email i {
+  color: #6abf4b; /* icon green */
+  margin-right: 6px;
+
+}
+
+/* ---------- Modal ---------- */
+#team-modal {
+  display: none; /* hidden on page load */
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(236,236,236,0.95); /* semi-transparent #ececec overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto; /* allow scrolling if content too tall */
+  padding: 20px;    /* padding for small screens */
+}
+
+.modal-content {
+  background: #ececec;
+  padding: 20px 40px;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row; /* photo left, text right */
+  gap: 30px;
+  align-items: center;  /* <-- changed from flex-start to center */
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  transform: scale(0.95);
+  opacity: 0;
+  animation: modalShow 0.35s forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.modal-close:hover {
+  color: #5bb63b;
+}
+
+/* ---------- Modal Photo ---------- */
+.modal-photo {
+  width: 180px;
+  max-height: 100%;
+  border-radius: 3px;  /* sharp edges */
+  object-fit: cover;
+  filter: grayscale(0%);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
+
+/* ---------- Modal Text ---------- */
+.modal-text {
+  flex: 1 1 0;        /* grows/shrinks with content */
+  min-width: 200px;
+}
+
+.modal-name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #6abf4b;     /* green */
+  margin-bottom: 8px;
+}
+
+.modal-role {
+  font-size: 1.1rem;
+  font-weight: 600;   /* bold */
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.modal-desc {
+  font-size: 1rem;
+  color: rgba(0,0,0,0.8);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.modal-email {
+  font-size: 1rem;
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modal-email i {
+  color: #6abf4b;
+}
+
+
+
+/* ---------- Animations ---------- */
+@keyframes modalShow {
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .modal-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .modal-photo {
+    margin-bottom: 20px;
+  }
+
+  .modal-text {
+    width: 100%;
+  }
+
+  .modal-email {
+    justify-content: center;
+  }
+}
+
+
+
+/*PRODUCT*/
+
+#products .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#products .section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 10px;
+}
+#products .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #6abf4b;
+    border-radius: 2px;
+}
+
+/* Grid for 6 standard cards */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* Individual Product Card */
+.product-card {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-left: 5px solid #6abf4b;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: left;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card:hover {
+    border-color: #5aa338;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+}
+
+.product-card h3 {
+    color: #333;
+    font-size: 1.25rem;
+    margin: 0 0 10px 0;
+}
+
+.product-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0 0 15px 0;
+}
+
+/* Explore button inside cards */
+.btn-products {
+    display: inline-block;
+    background: #f0f0f0;
+    color: #6abf4b;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: background 0.3s, color 0.3s;
+    text-align: center;
+    width: fit-content;
+}
+.btn-products:hover {
+    background: #6abf4b;
+    color: #fff;
+}
+
+.organic-card {
+    grid-column: 1 / -1; /* spans full width */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* top-align text & icons */
+    background: #fff;
+    border: 1px solid #eee;
+    border-left: 5px solid #6abf4b; /* same left border as normal cards */
+    border-radius: 8px;
+    padding: 20px 30px;
+    gap: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.organic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.organic-text {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.organic-text h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.organic-text p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.organic-text .btn-products {
+    display: inline-block;
+    width: auto;
+    max-width: 160px;
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    background: #f0f0f0;
+    color: #6abf4b;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+    align-self: flex-start;
+}
+
+.organic-text .btn-products:hover {
+    background: #6abf4b;
+    color: #fff;
+}
+
+
+
+.organic-icons {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 10px;
+    margin-top: 30px
+}
+
+.organic-icons img {
+    max-width: 120px; 
+    height: auto;
+    object-fit: contain;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .organic-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .organic-icons {
+        flex-direction: row;
+        justify-content: flex-start; 
+        margin-top: 15px;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .organic-icons img {
+        max-width: 80px;
+        height: auto;
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ilex-organic-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .ilex-organic-content {
+        padding-right: 0;
+        margin-bottom: 15px;
+    }
+    .ilex-organic-logos {
+        flex-direction: row;
+        gap: 15px;
+    }
+}
+
+/* Desktop Dropdown Show */
+@media (min-width: 769px) {
+    .desktop-dropdown {
+        position: relative;
+    }
+    .desktop-dropdown:hover .desktop-dropdown-content,
+    .desktop-dropdown.open .desktop-dropdown-content {
+        max-height: 500px;
+        opacity: 1;
+    }
+}
+  
+  
+/* --- REGULATORY & INDUSTRY PARTNERSHIPS SECTION --- */
+
+/* Header Section */
+#partnerships-header {
+    background-color: #e1e1e1;
+    color: #000000;
+    padding: 20px 20px 60px;
+    text-align: center;
+}
+
+#partnerships-header .header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#partnerships-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+#partnerships-header p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.5;
+}
+
+/* Main Content Area */
+#partnerships-content {
+    background-color: #ffffff;
+    padding: 20px 0;
+}
+
+#partnerships-content .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#partnerships-content h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Cards Grid */
+.partnership-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Individual Partnership Card */
+.partner-card {
+    flex: 1 1 300px;
+    max-width: 550px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.partner-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Card Styling: EBIC */
+.partner-card.ebic .logo-icon {
+  width: auto;         /* remove fixed width */
+  flex: none;          /* if using flex */
+  display: block;      /* optional for centering */
+}
+.partner-card.ebic .logo-icon img {
+  max-width: 100px !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;      /* centers the logo */
+}
+
+.partner-card.pbsg .logo-icon {
+  width: auto;         /* remove fixed width */
+  flex: none;          /* if using flex */
+  display: block;      /* optional for centering */
+}
+.partner-card.pbsg .logo-icon img {
+  max-width: 10px !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;      /* centers the logo */
+}
+
+
+
+/* Logo Icon (Generic rule, used by Partnership section) */
+.logo-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    margin-right: 15px;
+    padding: 0; 
+}
+
+.logo-icon img {
+    width: 120%;
+    height: auto;
+    display: block;
+}
+
+/* Partner Details */
+.partner-details h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.partner-details .status {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #6abf4b;
+    margin-top: 4px;
+    text-transform: uppercase;
+}
+
+.partner-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+/* --- MOBILE RESPONSIVE FIX --- */
+@media (max-width: 768px) {
+    /* ... your existing mobile styles for partnerships ... */
+
+    /* FIX 1: Overrides the fixed 60px width on the logo container 
+       and allows it to expand, preventing horizontal overflow from the logo image. */
+    .partner-card-header .logo-icon {
+        width: 100%; 
+        height: auto;
+        /* Centers the logo within the card content area */
+        justify-content: center; 
+    }
+
+    /* FIX 2: Constrain the image to ensure it never exceeds the container's width,
+       making it fully responsive and eliminating the cut-off issue. */
+    .partner-card-header .logo-icon img {
+        max-width: 100%; 
+        width: auto; /* Overrides the global width: 120% for a responsive fit */
+    }
+
+    /* FIX 3 (Optional but recommended): Center the stacked header content for a cleaner mobile look.
+       Your current CSS is set to align-items: flex-start. Change this to center: */
+    .partner-card-header {
+        align-items: center; 
+    }
+    
+    /* FIX 4 (Optional but recommended): Center the partner details text to match the centered logo.
+       Your current CSS sets .partner-details to width: 100% [cite: 657] but inherits left-alignment. */
+    .partner-details {
+        text-align: center; 
+    }
+}
+
+#buying-groups {
+    background-color: #ffffff;
+    padding: 20px 20px 60px;
+}
+
+  #buying-groups .logo-item img {
+  max-height: 80px; /* adjust to taste */
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+
+#buying-groups .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center; 
+}
+
+#buying-groups .section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#buying-groups .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #6abf4b;
+    border-radius: 2px;
+}
+
+.logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.logo-item {
+    flex-basis: 180px;
+    max-width: 200px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    padding: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.logo-item img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    filter: grayscale(80%);
+    transition: filter 0.2s ease-in-out;
+}
+
+.logo-item:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.logo-item:hover img {
+    filter: grayscale(0%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .logo-grid {
+        gap: 20px;
+    }
+    .logo-item {
+        flex-basis: 140px;
+        height: 60px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+    nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #f8f8f8;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding-bottom: 10px;
+    }
+    nav.active {
+        display: block;
+    }
+    .main-menu {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+        gap: 0;
+    }
+    .main-menu > li {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+    .main-menu > li:last-child {
+        border-bottom: none;
+    }
+    .main-menu > li > a {
+        display: block;
+        padding: 15px 20px;
+        text-align: left;
+    }
+    .desktop-dropdown.open .desktop-dropdown-content {
+        max-height: 500px;
+        opacity: 1;
+        padding: 10px 20px 20px;
+        position: static;
+        box-shadow: none;
+    }
+    .desktop-dropdown-content .menu-columns {
+        flex-direction: column;
+    }
+    .desktop-dropdown-content .column a {
+        padding: 5px 0 5px 15px;
+    }
+}
+
+.testimonials-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.testimonial-cards {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.testimonial-stars {
+  margin-top: 0.5rem;
+}
+.testimonial-header {
+  display: flex;
+  flex-direction: column;   /* stack title and stars vertically */
+  align-items: center;      /* center horizontally */
+  justify-content: center;  /* center vertically if needed */
+  gap: 0rem;              /* space between title and stars */
+  text-align: center;       /* center text inside h2 */
+}
+.testimonial-stars i {
+  color: #6abf4b;
+  margin-right: 2px;
+  font-size: 1rem;
+}
+
+.testimonial-card {
+  background: #f5f5f5;
+  padding: 1rem;
+  width: 150px;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Modal animation */
+.prv-modal.show {
+  display: flex;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.prv-modal-content.animate {
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.prv-modal.show .prv-modal-content.animate {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Navigation arrows */
+.testimonial-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.testimonial-nav button {
+  background: #6abf4b;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 0.3rem;
+  transition: background 0.2s;
+}
+
+.testimonial-nav button:hover {
+  background: #6abf4b;
+}
+
+
+
+/* --- CONTACT SECTION STYLES --- */
+/* --- CONTACT US SECTION (Polished, Branded, Full-Width Background) --- */
+
+/* 1. Full-width outer container setup */
+.contact-section {
+    position: relative;
+    padding: 0; 
+    overflow: hidden; 
+}
+
+/* 2. Full-width background (the grey layer) */
+.contact-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensures full screen width */
+    height: 100%;
+    /* Subtle gradient using your white and #ececec */
+    background: linear-gradient(135deg, #ececec 0%, #ffffff 100%); 
+    opacity: 1; 
+    z-index: 0;
+}
+
+/* 3. Content wrapper (constrains content width and adds overall padding) */
+.contact-content-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px; /* Compact maximum width */
+    margin: 0 auto;
+    padding: 40px 20px 60px; /* Reduced top padding */
+    text-align: center;
+}
+
+.contact-main {
+    display: flex;
+    gap: 30px;
+    align-items: stretch; /* Ensures columns are the same height */
+    text-align: left;
+}
+
+/* Contact Info Column (Left) */
+.contact-info-column { 
+    flex: 4;
+    display: flex;
+    flex-wrap: wrap;       /* allow wrapping */
+    gap: 15px;
+    flex-direction: row;   /* row layout on desktop */
+} 
+
+/* Contact Form Column (Right) */
+.contact-form-column { 
+    flex: 6; /* New 60% width (relative to info's 4) */
+    padding: 30px; 
+    /* ... rest of styles ... */
+}
+
+/* ---------------------------------------------------- */
+/* INFO ITEMS (COMPACT HEIGHTS & STRETCHING) */
+/* ---------------------------------------------------- */
+.info-item {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #6abf4b; /* Branded accent */
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    transition: transform 0.2s;
+    position: relative;   /* needed for overlay link */
+    cursor: pointer;      /* whole card feels clickable */
+    flex: 1 1 calc(50% - 15px); /* 2 per row */
+    min-width: 250px;
+}
+
+.info-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Address Item: full width */
+.info-item.address { 
+    flex: 1 1 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.info-item i { 
+    font-size: 1.5rem;
+    color: #6abf4b; 
+    width: 35px; 
+    text-align: center; 
+    margin-right: 15px; 
+}
+
+.info-details {
+    flex-grow: 1; 
+}
+
+.info-details h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.info-details p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Clickable overlay for whole card */
+.info-link {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 2;
+}
+
+/* ---------------------------------------------------- */
+/* FORM STYLES */
+/* ---------------------------------------------------- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-grow: 1; /* Allows form to fill its column height */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #444;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    font-family: inherit; /* Ensures universal font is used */
+    width: 100%;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+    flex-grow: 1; /* Allows textarea to take up variable height */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #6abf4b;
+    box-shadow: 0 0 0 3px rgba(106, 191, 75, 0.2);
+    outline: none;
+}
+
+/* Submit Button */
+.btn-submit {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    border: none;
+    background: #6abf4b;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(106, 191, 75, 0.3);
+    margin-top: 10px; 
+    align-self: flex-start;
+}
+
+.error-message {
+    margin-top: 5px;
+    color: #5aa23c;
+    font-size: 0.85rem;
+}
+
+
+.btn-submit:hover {
+    background: #5aa23c;
+    transform: translateY(-1px);
+}
+.address .info-details h3 {
+  margin-bottom: 0.75rem; /* space below "Our Headquarters" */
+}
+
+.address .info-details p b {
+  display: block;
+  margin-bottom: 0.5rem; /* space below "Ilex Envirosciences Ltd" */
+}
+
+
+/* ---------------------------------------------------- */
+/* RESPONSIVE DESIGN (MOBILE) */
+/* ---------------------------------------------------- */
+@media (max-width: 768px) {
+    .contact-main {
+        flex-direction: column; /* Stack columns vertically */
+        gap: 40px;
+    }
+
+    .contact-info-column,
+    .contact-form-column {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .contact-info-column {
+        flex-direction: column; /* stack vertically */
+    }
+
+    .info-item {
+        flex: 1 1 100%; 
+        min-width: unset;
+        padding: 15px 15px;
+    }
+    
+    .info-item.address {
+        padding: 15px 15px; 
+        flex-grow: 0; 
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .info-item i {
+        align-self: center;
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .info-item {
+        flex: 1 1 100%; /* Stack all info boxes on very small screens */
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+
+/* General Footer Styles */
+.footer {
+  background-color: #ececec;
+  color: #555;
+  padding: 40px 20px 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-logo-img,
+.footer-partner-img {
+  max-width: 140px;
+  height: auto;
+  filter: grayscale(20%);
+  transition: filter 0.3s;
+}
+
+.footer-logo-img:hover,
+.footer-partner-img:hover {
+  filter: grayscale(0%);
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.footer-nav a:hover {
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.footer-copy {
+  text-align: center;
+  color: #888;
+  font-size: 0.875rem;
+  margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-nav {
+    gap: 15px;
+  }
+
+  .footer-logo-img,
+  .footer-partner-img {
+    max-width: 120px;
+  }
+}
+
+.prv-modal {
+  display: none; /* hidden by default */
+  opacity: 0;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+  transition: opacity 0.3s ease;
+}
+
+.prv-modal.show {
+  display: block;
+  opacity: 1;
+}
+
+.prv-modal-content {
+  background-color: #fff;
+  margin: 10% auto; /* Center smaller modal */
+  padding: 25px 20px 20px 20px;
+  border-radius: 12px;
+  width: 50%; /* smaller width */
+  max-width: 600px; /* max size on large screens */
+  max-height: 70vh; /* smaller height */
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(-30px);
+  transition: transform 0.3s ease;
+}
+
+.prv-modal.show .prv-modal-content {
+  transform: translateY(0);
+}
+
+/* Close Button */
+.prv-close-btn {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 32px; /* larger close button */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.prv-close-btn:hover {
+  color: #000;
+}
+
+.prv-modal-body p {
+  line-height: 1.6;
+}
+
+
+</style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="#" class="logo">
+                <img src="images/ilexlogonobg.png" alt="Ilex Logo">
+        </a>
+
+        <div class="nav-right">
+            <nav>
+                <ul class="main-menu">
+                    <li class="desktop-dropdown accordion-mobile">
+                        <a href="#">Phosphite Range</a>
+                        <div class="desktop-dropdown-content accordion-content">
+                            <div class="menu-columns">
+                                <div class="column">
+                                    <a href="#">Crop Rooter® Plus</a>
+                                    <a href="#">PK MAXX™ +</a>
+                                    <a href="#">OilSeed Raiser™</a>
+                                    <a href="#">CaPITAL™</a>
+                                    <a href="#">Tensile™</a>
+                                    <a href="#">Beet Raiser™</a>
+                                    <a href="#">Maniphos™</a>
+                                    <a href="#">PK VEG™</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="desktop-dropdown accordion-mobile">
+                        <a href="#">Foliar Range</a>
+                        <div class="desktop-dropdown-content accordion-content">
+                            <div class="menu-columns">
+                                <div class="column">
+                                    <a href="#">Mn SUPER™</a>
+                                    <a href="#">Mag Plus™</a>
+                                    <a href="#">ful-oN™</a>
+                                    <a href="#">Mn-Cu Plus™</a>
+                                    <a href="#">Foliar Boost™</a>
+                                    <a href="#">Cu-Zin™</a>
+                                    <a href="#">Pro-K™</a>
+                                    <a href="#">Pro-Sul™</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="desktop-dropdown accordion-mobile">
+                        <a href="#">Calcium Supplements</a>
+                        <div class="desktop-dropdown-content accordion-content">
+                            <div class="menu-columns">
+                                <div class="column">
+                                    <a href="#">Pro-Cal™</a>
+                                    <a href="#">AdvoCate™</a>
+                                    <a href="#">CaPITAL™</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="desktop-dropdown accordion-mobile">
+                        <a href="#">Biostimulants</a>
+                        <div class="desktop-dropdown-content accordion-content">
+                            <div class="menu-columns">
+                                <div class="column">
+                                    <a href="#">Stimplex®</a>
+                                    <a href="#">toggle®</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="desktop-dropdown accordion-mobile">
+                        <a href="#">Seed Treatments</a>
+                        <div class="desktop-dropdown-content accordion-content">
+                            <div class="menu-columns">
+                                <div class="column">
+                                    <a href="#">Start-uP® MAXX</a>
+                                    <a href="#">Start-uP®</a>
+                                    <a href="#">Man-uP™</a>
+                                    <a href="#">ProZeSt™</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="desktop-dropdown accordion-mobile">
+                        <a href="#">Water Conditioners</a>
+                        <div class="desktop-dropdown-content accordion-content">
+                            <div class="menu-columns">
+                                <div class="column">
+                                    <a href="#">ModipHy Xtra™</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="desktop-dropdown accordion-mobile">
+                        <a href="#">Ilex Organic Range</a>
+                        <div class="desktop-dropdown-content accordion-content">
+                            <div class="menu-columns">
+                                <div class="column">
+                                    <a href="#">Complete™ (6-2-4)</a>
+                                    <a href="#">Complete Hi-Fruit™ (4-2-6)</a>
+                                    <a href="#">N-Max™ (7-2-2)</a>
+                                    <a href="#">Ultimate Gold™ (8-7-7)</a>
+                                    <a href="#">K-Max™ (3-1-8)</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#contact-us" class="btn header-btn">Contact Us</a>
+        </div>  
+        <div class="nav-toggle" id="nav-toggle">☰</div>
+    </div>
+  
+</header>
+
+<section id="top">
+<section class="hero">
+    <div class="hero-content">
+        <h1>ADVANCED CROP NUTRITION</h1>
+
+        <p>
+            Manufacturers of a comprehensive range of <br>
+            <b>Concentrated Foliar Nutrients</b>, 
+            <b>Biostimulants</b> & 
+            <b>Seed Treatments</b>
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#products" class="btn scroll-link">Our Products</a>
+            <a href="#contact-us" class="btn btn-secondary scroll-link">Contact Us</a>
+        </div>
+    </div>
+</section>
+</section>
+
+<section id="brands">
+    <div class="section-container">
+        <h2 class="section-title">Our Brands</h2>
+    </div>
+   <div class="marquee">
+  <div class="marquee">
+  <div class="marquee-content">
+    <div class="brand-item"><img src="images/logo_foliarboost.png" alt="Foliar Boost Logo"></div>
+    <div class="brand-item"><img src="images/logo_advocate.png" alt="Advocate Logo"></div>
+    <div class="brand-item"><img src="images/logo_MnCuPlus.png" alt="MnCu Plus Logo"></div>
+    <div class="brand-item"><img src="images/logo_cuzin.png" alt="Cuzin Logo"></div>
+    <div class="brand-item"><img src="images/logo_startupmaxx.png" alt="Startup Maxx Logo"></div>
+    <div class="brand-item"><img src="images/logo_PKMaxx.png" alt="PK MAXX Logo"></div>
+    <div class="brand-item"><img src="images/logo_Tensile.png" alt="Tensile Logo"></div>
+    <div class="brand-item"><img src="images/logo_modiphyxtra.png" alt="Modiphy Xtra Logo"></div>
+    <div class="brand-item"><img src="images/logo_PKVeg.png" alt="PK Veg Logo"></div>
+    <div class="brand-item"><img src="images/logo_Capital.png" alt="CaPITAL™ Logo"></div>
+    <div class="brand-item"><img src="images/logo_croprooter.png" alt="Crop Rooter Logo"></div>
+    <div class="brand-item"><img src="images/logo_MNSuper.png" alt="MN Super Logo"></div>
+    <div class="brand-item"><img src="images/logo_procal.png" alt="ProCal Logo"></div>
+    <div class="brand-item"><img src="images/logo_BeetRaiser.png" alt="Beet Raiser Logo"></div>
+    <div class="brand-item"><img src="images/logo_Maniphos.png" alt="Maniphos Logo"></div>
+    <div class="brand-item"><img src="images/logo_OilSeedRaiser.png" alt="OilSeed Raiser Logo"></div>
+    <div class="brand-item"><img src="images/logo_MagPlus.png" alt="Mag Plus Logo"></div>
+    <div class="brand-item"><img src="images/logo_fulon.png" alt="Fulon Logo"></div>
+    <div class="brand-item"><img src="images/logo_foliarboost.png" alt="Foliar Boost Logo"></div>
+    <div class="brand-item"><img src="images/logo_advocate.png" alt="Advocate Logo"></div>
+    <div class="brand-item"><img src="images/logo_MnCuPlus.png" alt="MnCu Plus Logo"></div>
+    <div class="brand-item"><img src="images/logo_cuzin.png" alt="Cuzin Logo"></div>
+    <div class="brand-item"><img src="images/logo_startupmaxx.png" alt="Startup Maxx Logo"></div>
+    <div class="brand-item"><img src="images/logo_PKMaxx.png" alt="PK MAXX Logo"></div>
+    <div class="brand-item"><img src="images/logo_Tensile.png" alt="Tensile Logo"></div>
+    <div class="brand-item"><img src="images/logo_modiphyxtra.png" alt="Modiphy Xtra Logo"></div>
+    <div class="brand-item"><img src="images/logo_PKVeg.png" alt="PK Veg Logo"></div>
+    <div class="brand-item"><img src="images/logo_Capital.png" alt="CaPITAL™ Logo"></div>
+    <div class="brand-item"><img src="images/logo_croprooter.png" alt="Crop Rooter Logo"></div>
+    <div class="brand-item"><img src="images/logo_MNSuper.png" alt="MN Super Logo"></div>
+    <div class="brand-item"><img src="images/logo_procal.png" alt="ProCal Logo"></div>
+    <div class="brand-item"><img src="images/logo_BeetRaiser.png" alt="Beet Raiser Logo"></div>
+    <div class="brand-item"><img src="images/logo_Maniphos.png" alt="Maniphos Logo"></div>
+    <div class="brand-item"><img src="images/logo_OilSeedRaiser.png" alt="OilSeed Raiser Logo"></div>
+    <div class="brand-item"><img src="images/logo_MagPlus.png" alt="Mag Plus Logo"></div>
+    <div class="brand-item"><img src="images/logo_fulon.png" alt="Fulon Logo"></div>
+  </div>
+</div>
+
+</section>
+
+
+
+<section id="about-content">
+  <div class="about-grid">
+    <div class="about-card">
+      <div class="logo-icon">
+        <a href="#"><img src="images/ilexlogonobg.png" alt="Ilex Logo"></a>
+      </div>
+      <div class="about-details">
+        <h4>Our Mission</h4>
+      </div>
+      <p>To deliver innovative crop nutrition solutions that optimise plant health, improve yields, and support sustainable farming practices worldwide.</p>
+    </div>
+    <div class="about-card">
+      <div class="logo-icon">
+        <a href="https://www.midlandchem.com/" target="_blank"><img src="images/midchemnobg.png" alt="Midland Chem Logo"></a>
+      </div>
+      <div class="about-details">
+        <h4>Our Expertise</h4>
+      </div>
+      <p>With over 3 decades of manufacturing experience, Midland Chemicals proudly own Ilex Envirosciences and continue to ensure the highest standards of innovation, quality, and sustainable crop nutrition solutions.</p>
+    </div>
+  </div>
+</section>
+  <section id="about-header">
+    <div class="section-container">
+        <div class="header-content">
+            <h2 class="section-title">Our Team</h2>
+        </div>
+        <p><strong>Ilex EnviroSciences</strong> was formed in 2001 to develop and market innovative, highly effective crop nutrition products for UK and international markets.<br><br>We specialise in the manufacture of <b>advanced foliar nutrients</b> advanced foliar nutrients, <b>biostimulants</b> and <b>seed treatments</b>, designed to optimise plant health and maximise yield potential.</p>
+    </div>
+</section>
+
+
+<section id="team-content">
+  <div class="team-grid">
+   <div class="team-card"
+     data-name="Sunny Pathak"
+     data-role="Managing Director"
+     data-desc="<p>Sunny, founder of Midland Chemicals, has over 40 years of hands-on experience in the chemical industry.</p>
+                <p>For many years, before merging companies, Sunny worked closely with Ilex EnviroSciences, collaborating on complex formulation and process challenges. </p>
+                <p> His expertise and client-focused approach have consistently delivered practical, custom-made chemical solutions that help businesses succeed.</p>"
+     data-email="sunny@midlandchem.com"
+     data-img="images/sunny.png">
+
+  <div class="team-photo">
+    <img src="images/sunny.png" alt="Sunny Pathak">
+  </div>
+
+  <div class="team-info">
+    <div class="team-name">Sunny Pathak</div>
+    <div class="team-role">Managing Director</div>
+    <a href="mailto:sunny@midlandchem.com?subject=Ilex%20Website%20Enquiry" class="team-email">
+      <i class="fas fa-envelope"></i> sunny@midlandchem.com
+    </a>
+    </div>
+  </div>
+
+    <!-- Team Member 2 -->
+    <div class="team-card"
+     data-name="Brian Aconley"
+     data-role="Agricultural Consultant"
+     data-desc="<p>With more than 35 years’ experience in agricultural chemistry, Brian Aconley has helped farmers, growers, and agribusinesses across the UK and Europe with specialist crop nutrition and biostimulant products.</p>
+                <p>Previously one of the original Technical Directors at Ilex EnviroSciences, Brian brings his extensive expertise to Midland Chemicals.</p>
+                <p>He works closely with clients at every stage of the supply chain to design and develop bespoke, highly effective products tailored to their specific requirements.</p>""
+     data-email="brian@ilex-envirosciences.com"
+     data-img="images/Brian.png">
+
+  <div class="team-photo">
+    <img src="images/Brian.png" alt="Brian Aconley">
+  </div>
+
+  <div class="team-info">
+    <div class="team-name">Brian Aconley</div>
+    <div class="team-role">Agricultural Consultant</div>
+    <a href="mailto:brian@ilex-envirosciences.com?subject=Ilex%20Website%20Enquiry" class="team-email">
+      <i class="fas fa-envelope"></i> brian@ilex-envirosciences.com
+    </a>
+    </div>
+  </div>
+
+<!-- Team Member 3 -->
+<div class="team-card"
+     data-name="Robert Cameron"
+     data-role="Head of Quality Control"
+     data-desc="<p>Robert brings extensive expertise in analytical chemistry and quality assurance to Ilex EnviroSciences.</p>
+                <p>As Head of Quality Control, he ensures that every product meets the highest standards of consistency, safety, and performance.</p>
+                <p>With a practical, solutions-driven approach, Robert works closely with our production team to maintain regulatory compliance and deliver the reliability our customers depend on.</p>"
+     data-email="rob@midlandchem.com"
+     data-img="images/Rob.png">
+
+  <div class="team-photo">
+    <img src="images/Rob.png" alt="Robert Cameron">
+  </div>
+
+  <div class="team-info">
+    <div class="team-name">Robert Cameron</div>
+    <div class="team-role">Head of Quality Control</div>
+    <a href="mailto:rob@midlandchem.com?subject=Ilex%20Website%20Enquiry" class="team-email">
+      <i class="fas fa-envelope"></i> rob@midlandchem.com
+    </a>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+<div id="team-modal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <img src="" alt="Team Photo" class="modal-photo">
+    <div class="modal-text">
+      <div class="modal-name"></div>
+      <div class="modal-role"></div>
+      <div class="modal-desc"></div>
+      <a href="" class="modal-email">
+        <i class="fas fa-envelope"></i>
+        <span>Email</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+<section id="products">
+    <div class="section-container">
+        <h2 class="section-title">Our Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <h3>Phosphite Range</h3>
+                <p>The Phosphite range provides your crops with the nutrients they need, quickly and efficiently, and have shown consistent results in promoting root development.</p>
+                <a href="#" class="btn-products">Explore</a>
+            </div>
+            <div class="product-card">
+                <h3>Foliar Range</h3>
+                <p>The Foliar Range targets nutrient deficiencies more efficiently by using formulations that deliver nutrients in more readily plant-available forms.</p>
+                <a href="#" class="btn-products">Explore</a>
+            </div>
+            <div class="product-card">
+                <h3>Calcium Supplements</h3>
+                <p>Calcium supplements combine balanced nutrients with powerful biostimulants to boost uptake and activity.</p>
+                <a href="#" class="btn-products">Explore</a>
+            </div>
+            <div class="product-card">
+                <h3>Biostimulants</h3>
+                <p>target nutrient deficiencies more efficiently by using advanced foliar formulations that deliver nutrients in more readily plant-available forms.</p>
+                <a href="#" class="btn-products">Explore</a>
+            </div>
+            <div class="product-card">
+                <h3>Seed Treatments</h3>
+                <p>Our seed treatments combine the proven phosphite chemistry with bioactive agents and a nutrient-rich package to promote rapid establishment and early vigour in a variety of crops. </p>
+                <a href="#" class="btn-products">Explore</a>
+            </div>
+            <div class="product-card">
+                <h3>Water Conditioners</h3>
+                <p>Our solution optimises pH levels and improves coverage and leaf uptake, giving a more consistent product performance over a broad range of spraying conditions and crop situations. </p>
+                <a href="#" class="btn-products">Explore</a>
+            </div>
+            <div class="organic-card">
+                <div class="organic-text">
+                    <h3>Ilex Organic Range</h3>
+                    <p>The Ilex Organic Nutrition range delivers carefully balanced liquid formulations, offering easy to use supplementary feeds to improve crop development and alleviate nutritional stress. All products are certified by the Soil Association and licensed by Organic Farmers & Growers.</p>
+                    <a href="#" class="btn-products">Explore</a>
+                </div>
+                <div class="organic-icons">
+                    <div class="icon">
+                        <a href="https://www.soilassociation.org/" target="_blank">
+                            <img src="https://naturalgrower.co.uk/cdn/shop/articles/sa_approved_black_JPG_1_520x500_1c39d99c-69fb-4c44-921c-926c42ddf2a9.jpg?v=1734106804&width=496" alt="Soil Association Logo">
+                        </a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://ofgorganic.org/" target="_blank">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjWBfaTitAbWy4ygioex22HEmTEyNTfHz5WQ&s" alt="Organic Farmers & Growers Logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+<section id="partnerships-header">
+    <div class="header-content">
+        <h2 class="section-title">Regulatory & Industry Partnerships</h2>
+        <p>Ilex EnviroSciences is committed to supporting the safety and quality of our products together with independent qualified data to prove their value. Our membership of both EBIC & PBSG ensures our engagement with Regulators to defend and promote the value of Biostimulants.</p>
+    </div>
+
+    <div class="section-container">
+        <div class="partnership-grid">
+
+            <div class="partner-card ebic">
+                <div class="partner-card-header">
+                    <div class="logo-icon">
+                        <a href="https://biostimulants.eu/" target="_blank">
+                             <img src="images/ebic-logo.png" alt="EBIC Logo"></a>
+                        </a>
+                    </div>
+                    <div class="partner-details">
+                        <h4>European Biostimulants Industry Council (EBIC)</h4>
+                        <span class="status">Active Member</span>
+                    </div>
+                </div>
+                <p>EBIC fosters the role of the biostimulants sector in helping farmers to grow adequate quantities of high quality crops profitably while using resources wisely.</p>
+                <p>To do this, EBIC advocates an operating environment that creates a truly European market for biostimulants and recognises their contribution to sustainable agricultural production, green innovation, economic growth and other societal objectives.</p>
+            </div>
+
+            <div class="partner-card pbsg">
+                <div class="partner-card-header">
+                    <div class="logo-icon">
+                        <a href="https://phosphitebsg.com/" target="_blank">
+                            <img src="images/pbsg-logo.jpg" alt="PBSG Logo"></a>
+                    </div>
+                    <div class="partner-details">
+                        <h4>Phosphite Biostimulant Stewardship Group (PBSG)</h4>
+                        <span class="status">Active Member</span>
+                    </div>
+                </div>
+                <p>The PBSG was created by a group of like-minded biostimulant manufacturers to lobby Regulators for continued phosphite use.</p>
+                <p>Our aim is to lobby the Regulators to support the continued use of phosphites as biostimulants to enable subsequent registration under new EU and GB Regulations.</p>
+            </div>
+
+        </div>
+    </div>
+
+ <a href="https://www.nfuonline.com/stopfamilyfarmtax" target="_blank">
+  <img src="images/stop-family-farm-tax.png" 
+       alt="Stop The Family Farm Tax Campaign Banner"
+       style="width: 650px; height: auto;">
+</a>
+
+
+</section>
+
+
+<section id="buying-groups"> <div class="header-content">
+    <h2 class="section-title">Buying Groups</h2>
+    <p>Ilex EnviroSciences works with leading agricultural buying groups to deliver reliable solutions and trusted partnerships across the UK.</p>
+    <div class="logo-grid">
+        <div class="logo-item"> <a href="https://www.nhfarmers.co.uk/" target="_blank"> <img src="images/northherts.png" alt="North Herts Farmers Logo"> </a> </div>
+    <div class="logo-item"> <a href="https://www.samco.org.uk/" target="_blank"> <img src="images/samco.png" alt="Samco Logo"> </a> </div>
+    <div class="logo-item"> <a href="https://www.ouseandcherwell.co.uk/" target="_blank"> <img src="images/ouse.png" alt="Ouse & Cherwell Logo"> </a> </div>
+    <div class="logo-item"> <a href="https://www.woldmarsh.com/" target="_blank"> <img src="images/woldmarsh.png" alt="Woldmarsh Logo"> </a> </div>
+    <div class="logo-item"> <a href="https://af.farm/" target="_blank"> <img src="images/af.png" alt="AF Logo"> </a> </div>
+    <div class="logo-item"> <a href="https://www.ofg.org.uk/" target="_blank"> <img src="images/orion.png" alt="Orion Farming Group Logo"> </a> </div>
+    <div class="logo-item"> <a href="https://www.framfarmers.co.uk/" target="_blank"> <img src="image/framfarmers" alt="Fram Farmers Logo"> </a> </div>
+    <div class="logo-item"> <a href="https://www.agricure.co.uk/" target="_blank"> <img src="images/agricure.jpg" alt="Agricure Logo"> </a> </div>
+    <div class="logo-item"> <a href="https://derwentbuyersgroup.com/" target="_blank"> <img src="images/dbg.jpeg" alt="DBG Logo"> </a> </div>
+    <div class="logo-item"> <a href="https://www.bartholomews.co.uk/" target="_blank"> <img src="images/barthol.png" alt="Bartholomews Logo"> </a> </div> </div>
+</div> </section>
+
+<section class="testimonials-section">
+  <h2>What Our Clients Say</h2>
+  <div class="testimonial-cards">
+    <div class="testimonial-card" data-company="James Fountain <p> CJ Fountain and Son LTD <p> Peterborough, England" data-testimonial="I have used a variety of Ilex products on various crops over the last 5 years and am always extremely pleased with the results. <p>My plants look stronger, healthier and root length is far more impressive than without Ilex treatment.<p>Service from Ilex is always professional, product delivery is usually received within 24 hrs. <p>The team are always on hand to help and advise. I highly recommend Ilex for both service and their range of excellent crop nutrition products.”">
+      <p><b>CJ Fountain and Son LTD</b></p>        <div class="testimonial-stars">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+  </div>
+    </div>
+    <div class="testimonial-card" data-company="Grange Farms Northampton" data-testimonial="I was first introduced to Ilex EnviroSciences after commenting on how good the crops on my neighbouring farm looked. I was given the details of the local Ilex rep and was visited by my local sales manager who took the time to talk to me about their range of phosphite nutrition products and even walked my fields with me. This was in 2019 and am still very pleased with their products and level of service.”">
+      <p><b>Grange Farms Northampton</b></p>
+        <div class="testimonial-stars">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+  </div>
+    </div>
+       <div class="testimonial-card" data-company="Flagleaf Farming Licolnshire<p> Peterborough, England" data-testimonial="I have used a variety of Ilex products on various crops over the last 5 years and am always extremely pleased with the results. <p>My plants look stronger, healthier and root length is far more impressive than without Ilex treatment.<p>Service from Ilex is always professional, product delivery is usually received within 24 hrs. <p>The team are always on hand to help and advise. I highly recommend Ilex for both service and their range of excellent crop nutrition products.”">
+      <p><b>Flagleaf Farming Licolnshire</b></p>        <div class="testimonial-stars">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+  </div>
+    </div>
+       <div class="testimonial-card" data-company="Tall Oaks Farm North Yorkshire <p> Peterborough, England" data-testimonial="I have used a variety of Ilex products on various crops over the last 5 years and am always extremely pleased with the results. <p>My plants look stronger, healthier and root length is far more impressive than without Ilex treatment.<p>Service from Ilex is always professional, product delivery is usually received within 24 hrs. <p>The team are always on hand to help and advise. I highly recommend Ilex for both service and their range of excellent crop nutrition products.”">
+      <p><b>Tall Oaks Farm North Yorkshire</b></p>        <div class="testimonial-stars">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+  </div>
+    </div>
+       <div class="testimonial-card" data-company="R & J Witter Farms North lincolnshire" data-testimonial="I have used a variety of Ilex products on various crops over the last 5 years and am always extremely pleased with the results. <p>My plants look stronger, healthier and root length is far more impressive than without Ilex treatment.<p>Service from Ilex is always professional, product delivery is usually received within 24 hrs. <p>The team are always on hand to help and advise. I highly recommend Ilex for both service and their range of excellent crop nutrition products.”">
+      <p><b>R & J Witter Farms</b></p>        <div class="testimonial-stars">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+  </div>
+    </div>
+</section>
+
+<!-- Testimonial Modal -->
+<div id="testimonial-modal" class="prv-modal">
+  <div class="prv-modal-content animate">
+    <span class="prv-close-btn">&times;</span>
+    <div class="testimonial-header">
+      <h2 id="testimonial-company"></h2>
+      <div id="testimonial-stars" class="testimonial-stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+    </div>
+    <p id="testimonial-text"></p>
+    <div class="testimonial-nav">
+      <button id="prev-testimonial">&lt;</button>
+      <button id="next-testimonial">&gt;</button>
+    </div>
+  </div>
+</div>
+
+
+<section id="contact-us">
+    <div class="contact-content-wrapper">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">We're here to answer your questions and discuss your needs.</p>
+
+        <div class="contact-main">
+            <!-- Left Column: Contact Info -->
+            <div class="contact-info-column">
+                
+                <!-- Phone -->
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="info-details">
+                        <h3>Phone</h3>
+                        <p>+44 1827 722911</p>
+                    </div>
+                    <a href="tel:+441827722911" class="info-link"></a>
+                </div>
+
+                <!-- Email -->
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="info-details">
+                        <h3>Email</h3>
+                        <p>sales@ilex-envirosciences.com</p>
+                    </div>
+                    <a href="mailto:sales@ilex-envirosciences.com?subject=Website%20Enquiry" class="info-link"></a>
+                </div>
+
+                <!-- Address -->
+                <div class="info-item address">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="info-details">
+                        <h3>Our Headquarters</h3>
+                        <p><b>Ilex Envirosciences Ltd</b><br>
+                           13a Brindley Close,<br>
+                           Holly Lane Industrial Estate,<br>
+                           Atherstone,<br>
+                           Warwickshire,<br>
+                           CV9 2QZ,<br>
+                           United Kingdom.</p>
+                    </div>
+                    <a href="https://maps.app.goo.gl/BmZ9EBrwdtC5yGwj7" target="_blank" rel="noopener noreferrer" class="info-link"></a>
+                </div>
+
+            </div>
+            
+            <!-- Right Column: Contact Form -->
+            <div class="contact-form-column">
+                <form class="contact-form" action="#" method="POST">
+                    
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
+                    </div>
+                    
+                    <div class="form-group" style="flex-grow: 1;">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    
+    <!-- Left: Logo -->
+    <div class="footer-left">
+      <img src="images/ilexlogonobg.png" alt="Ilex Logo" class="footer-logo-img">
+    </div>
+
+    <!-- Center: Navigation -->
+    <nav class="footer-nav">
+      <a href="#top">Home</a>
+      <a href="#brands">About</a>
+      <a href="#products">Products</a>
+      <a href="#contact-us">Contact</a>
+      <a href="#" id="privacy-link">Privacy Policy</a>
+      <a href="#" id="tandc-link">Terms & Conditions</a>
+    </nav>
+
+    <!-- Right: Partner Logo -->
+    <div class="footer-right">
+       <a href="https://www.midlandchem.com/" target="_blank"><img src="images/midchemnobg.png" alt="Midland Chem Logo" class="footer-partner-img"></a>
+    </div>
+
+  </div>
+
+  <!-- Bottom copyright -->
+  <div class="footer-copy">
+    Company Registration Number: 04991822<br>
+    V.A.T Registration Number: 829419207
+  </div>
+
+  <div class="footer-copy">
+    <b>© 2025 Ilex EnviroSciences Ltd. All rights reserved.</b>
+  </div>
+</footer>
+
+<!-- Privacy Policy Modal -->
+<div id="prv-modal" class="prv-modal">
+  <div class="prv-modal-content">
+    <span class="prv-close-btn">&times;</span>
+    <h2>Privacy Policy</h2>
+    <div class="prv-modal-body">
+  <p>Ilex EnviroSciences Ltd (“We”) are committed to protecting and respecting your privacy.</p>
+
+  <p>This policy sets out the basis on which any personal data we collect from you, or that you provide to us, will be processed by us. Please read the following carefully to understand our views and practices regarding your personal data and how we will treat it. By providing personal data to us, you are accepting and consenting to the practices described in this policy.</p>
+
+  <p>For the purpose of the General Data Protection Regulation 2018 (the Act), the data controller is Ilex EnviroSciences Limited, 13a Brindley Close, Holly Lane Ind Est, Atherstone, Warwickshire, CV9 2QZ, United Kingdom.</p>
+
+  <h3>Information we may collect from you</h3>
+  <p>We may collect and process the following data about you:</p>
+
+  <h4>Information you give us</h4>
+  <p>This may arise from you filling in enquiry forms at an exhibition or by corresponding with us by phone, e-mail or otherwise and includes information you provide when you complete an account application form, when you change/update your personal details, contact preferences etc. The information you give us may include your name, address, e-mail address and phone number and financial information.</p>
+
+  <h4>Information we collect about you</h4>
+  <p>When you contact us to enquire about a product or when you place an order, we automatically collect the following information:</p>
+  <ul>
+    <li>Contact details i.e.- name, email address, telephone number</li>
+    <li>Information about your enquiry or order</li>
+    <li>Details of your delivery address or the address of your customer</li>
+  </ul>
+
+  <h3>Uses made of the information</h3>
+  <p>We use information held about you in the following ways:</p>
+  <ul>
+    <li>To administer your account</li>
+    <li>Providing always that you have given to us the necessary consent, to provide you with information about other goods and services we offer that are similar to those that you have already purchased or enquired about</li>
+    <li>To notify you about changes to our products and services</li>
+    <li>In-house research and statistical analysis Information we collect about you</li>
+  </ul>
+
+  <h3>Electronic Data Capture</h3>
+  <p>Our website and its owners take a proactive approach to user privacy and ensure the necessary steps are taken to protect the privacy of its users throughout their visiting experience. This website complies with all UK national laws and requirements for user privacy.</p>
+
+  <h3>Use of Cookies</h3>
+  <p>Our website uses cookies to better the users’ experience while visiting the website. Where applicable, this website uses a cookie control system allowing the user on their first visit to the website to allow or disallow the use of cookies on their computer/device. This complies with recent legislation requirements for websites to obtain explicit consent from users before leaving behind or reading files such as cookies on a user’s computer/device.</p>
+
+  <p>Cookies are small files saved to the user’s computer’s hard drive that track, save and store information about the user’s interactions and usage of the website. This allows the website, through its server, to provide users with a tailored experience within this website. Users are advised that if they wish to deny the use and saving of cookies from this website on to their computer’s hard drive, they should take necessary steps within their web browser’s security settings to block all cookies from this website and its external serving vendors.</p>
+
+  <p>This website uses tracking software to monitor its visitors to better understand how they use it. This software is provided by Google Analytics which uses cookies to track visitor usage. The software will save a cookie to your computer’s hard drive in order to track and monitor your engagement and usage of the website, but will not store, save or collect personal information. You can read Google’s privacy policy here for further information <a href="http://www.google.com/privacy.html" target="_blank">Google Privacy Policy</a>.</p>
+
+  <p>Other cookies may be stored to your computer’s hard drive by external vendors when this website uses referral programs, sponsored links or adverts. Such cookies are used for conversion and referral tracking and typically expire after 30 days, though some may take longer. No personal information is stored, saved or collected.</p>
+
+  <h3>Contact & Communication</h3>
+  <p>Users contacting Ilex EnviroSciences Ltd website and/or its owners do so at their own discretion and provide any such personal details requested at their own risk. Your personal information is kept private and stored securely until a time it is no longer required, or a request for deletion is initiated as detailed in the General Data Protection Policy 2018. Every effort has been made to ensure a safe and secure form to email submission process, but we advise users using such forms to email processes that they do so at their own risk.</p>
+
+  <p>This website and its owners use any information submitted to provide you with further information about the products/services they offer or to assist you in answering any questions or queries you may have submitted. This includes using your details to subscribe you to any email newsletter program the website operates but only if this was made clear to you and your express permission was granted when submitting any form to email process. Or whereby you, the consumer, have previously purchased from or enquired about purchasing from the company a product or service that the email newsletter relates to. This is by no means an entire list of your user rights in regard to receiving email marketing material. Your details are not passed on to any third parties.</p>
+
+  <h3>Email Newsletter</h3>
+  <p>This website operates an email newsletter program, used to inform subscribers about products and services supplied by this website. Users can subscribe through an online automated process should they wish to do so but do so at their own discretion. Some subscriptions may be manually processed through prior written agreement with the user.</p>
+
+  <p>Subscriptions are taken in compliance with UK Spam Laws detailed in the Privacy and Electronic Communications Regulations 2003. All personal details relating to subscriptions are held securely and in accordance with the General Data Protection Policy 2018. No personal details are passed on to third parties nor shared with companies/people outside of the company or those that operate this website. Under the General Data Protection Policy 2018 you may request a copy of personal information held about you by Ilex EnviroSciences Ltd.</p>
+
+  <p>If you would like a copy of the information held on you, please write to the business address at the bottom of this policy.</p>
+
+  <h3>Email marketing campaigns</h3>
+  <p>Email marketing campaigns published by this website or its owners may contain tracking facilities within the actual email. Subscriber activity is tracked and stored in a database for future analysis and evaluation. Such tracked activity may include; the opening of emails, forwarding of emails, the clicking of links within the email content, times, dates and frequency of activity. This information is used to refine future email campaigns and supply the user with more relevant content based around their activity.</p>
+
+  <h3>External Links</h3>
+  <p>Although this website only looks to include quality, safe and relevant external links, users are advised to adopt a policy of caution before clicking any external web links mentioned throughout our website. The owners of this website cannot guarantee or verify the contents of any externally linked website despite their best efforts. Users should therefore note they click on external links at their own risk and this website and its owners cannot be held liable for any damages or implications caused by visiting any external links mentioned.</p>
+
+  <h3>Adverts and Sponsored Links</h3>
+  <p>Our website may contain sponsored links and adverts. These will typically be served through our advertising partners; who may have detailed privacy policies relating directly to the adverts they serve. Clicking on any such adverts will send you to the advertiser's website through a referral program which may use cookies and will track the number of referrals sent from this website. Users should therefore note they click on sponsored external links at their own risk and this website and its owners cannot be held liable for any damages or implications caused by visiting any external links mentioned.</p>
+
+  <h3>Social Media</h3>
+  <p>Communication, engagement and actions taken through external social media platforms that this website and its owners participate on are subject to the terms and conditions as well as the privacy policies held with each social media platform respectively. Users are advised to use social media platforms wisely and communicate/engage upon them with due care and caution in regard to their own privacy and personal details. This website nor its owners will ever ask for personal or sensitive information through social media platforms and encourage users wishing to discuss sensitive details to contact them through primary communication channels such as by telephone or email.</p>
+
+  <h3>Shortened Links in Social Media</h3>
+  <p>This website and its owners through their social media platform accounts may share web links to relevant web pages. By default some social media platforms shorten lengthy URLs. Users are advised to take caution and good judgement before clicking any shortened URLs published on social media platforms by this website and its owners. Despite the best efforts to ensure only genuine URLs are published, many social media platforms are prone to spam and hacking and therefore this website and its owners cannot be held liable for any damages or implications caused by visiting any shortened links.</p>
+
+  <h3>Contact Details</h3>
+  <p>Specific information relating to the General Data Protection Regulation 2018, Privacy and Electronic Communications Regulations 2003, or any general enquiry can be requested in writing, to:</p>
+  <p>Ilex EnviroSciences Limited, 13a Brindley Close, Holly Lane Ind Est, Atherstone, Warwickshire, CV9 2QZ, United Kingdom.</p>
+</div>
+
+    </div>
+  </div>
+</div>
+
+<div id="tandc" class="prv-modal">
+  <div class="prv-modal-content">
+    <span class="prv-close-btn">&times;</span>
+    <h2>Terms and Conditions</h2>
+<div class="terms-modal-body">
+  <p>The term ‘Ilex EnviroSciences’ or ‘us’ or ‘we’ refers to the owner of the website Ilex EnviroSciences Ltd whose registered office is Ilex EnviroSciences Limited, 13a Brindley Close, Holly Lane Ind Est, Atherstone, Warwickshire, CV9 2QZ, United Kingdom. We are registered in England under company number 4991822. The term ‘you’ refers to the user or viewer of our website.</p>
+
+  <h3>Changes to these terms</h3>
+  <p>We may revise these Terms of Use at any time by amending this page. Please check this page from time to time to take notice of any changes we make.</p>
+
+  <h3>Site Content</h3>
+  <p>The content on our site is provided for general information only. It is not intended to amount to advice on which you should rely. Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. You must obtain professional or specialist advice before taking, or refraining from, any action on the basis of the content on our site. It shall be your own responsibility to ensure that any products, services or information available through this website meet your specific requirements.</p>
+
+  <p>Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials found or offered on this website for any particular purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.</p>
+
+  <p>The content of the site is subject to change without notice.</p>
+
+  <h3>Site Access</h3>
+  <p>Every effort is made to keep the website up and running smoothly. However, we take no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control.</p>
+
+  <h3>Password protected content</h3>
+  <p>If you are provided with or you choose a user identification code, password or any other piece of information as part of our security procedures, you must treat such information as confidential and not disclose it to any third party.</p>
+
+  <p>We have the right to disable any user identification code or password, whether chosen by you or allocated by us, at any time, if in our reasonable opinion you have failed to comply with any of the provisions of these terms of use.</p>
+
+  <p>If you know or suspect that anyone other than you knows your user identification code or password, you must promptly notify us by contacting <a href="mailto:sales@ilex-envirosciences.com">sales@ilex-envirosciences.com</a>.</p>
+
+  <h3>Legal and copyright</h3>
+  <p>This website contains material which is owned by or licensed to us. This material includes, but is not limited to, the design, layout, look, appearance and graphics. Reproduction is prohibited other than in accordance with the copyright notice, which forms part of these terms and conditions.</p>
+
+  <p>All trademarks reproduced in this website, which are not the property of, or licensed to the operator, are acknowledged on the website.</p>
+
+  <p>You must not modify the paper or digital copies of any materials you have printed off or downloaded in any way.</p>
+
+  <h3>Limitation of our liability</h3>
+  <p>The information contained within this website is, to the best of our knowledge, correct and is presented in good faith but no warranty, expressed or implied is given.</p>
+
+  <p>In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.</p>
+
+  <h3>Viruses and unauthorised use</h3>
+  <p>We do not guarantee that our site will be secure or free from bugs or viruses.</p>
+
+  <p>You are responsible for configuring your information technology, computer programmes and platform in order to access our site. You should use your own virus protection software.</p>
+
+  <p>You must not misuse our site by knowingly introducing viruses, trojans, worms, logic bombs or other material which is malicious or technologically harmful. You must not attempt to gain unauthorised access to our site, the server on which our site is stored or any server, computer or database connected to our site.</p>
+
+  <p>Unauthorised use of this website may give rise to a claim for damages and/or be a criminal offence.</p>
+
+  <h3>Third party links</h3>
+  <p>This website may include links to other websites. These links are provided for your convenience to provide further information. They do not signify that we endorse the website(s). We have no responsibility for the content of the linked website(s).</p>
+
+  <h3>Special Offers & Promotions</h3>
+  <p>Special offers are subject to availability and we reserve the right to change, cancel or amend these promotions without notice.</p>
+
+  <h3>Applicable law</h3>
+  <p>Your use of this website and any dispute arising out of such use of the website is subject to the laws of England, Northern Ireland, Scotland and Wales.</p>
+
+  <h3>Trademarks</h3>
+  <ul>
+    <li>Crop Rooter® and Start-uP® are UK registered trademarks of Ilex EnviroSciences Ltd.</li>
+    <li>Ilex EnviroSciences® and all of its product names are registered trademarks of Ilex EnviroSciences Ltd.</li>
+    <li>Stimplex® and toggle® are trademarks of Acadian Plant Health Ltd.</li>
+  </ul>
+
+  <h3>Contact</h3>
+  <p>To contact us, please email <a href="mailto:sales@ilex-envirosciences.com">sales@ilex-envirosciences.com</a>.</p>
+</div>
+
+
+    </div>
+  </div>
+</div>
+
+  
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ---------- About Cards ---------- */
+  document.querySelectorAll('.about-card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('active');
+    });
+  });
+
+  /* ---------- Mobile Navigation ---------- */
+  const navToggle = document.getElementById('nav-toggle');
+  const nav = document.querySelector('nav');
+  const accordionItems = document.querySelectorAll('.accordion-mobile');
+  const isMobile = () => window.innerWidth <= 768;
+
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      if (!nav.classList.contains('active')) {
+        accordionItems.forEach(item => item.classList.remove('open'));
+      }
+    });
+  }
+
+  accordionItems.forEach(item => {
+    const link = item.querySelector('a');
+    link.addEventListener('click', e => {
+      if (isMobile()) {
+        e.preventDefault();
+        accordionItems.forEach(otherItem => {
+          if (otherItem !== item) otherItem.classList.remove('open');
+        });
+        item.classList.toggle('open');
+      }
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (!isMobile()) {
+      nav.classList.remove('active');
+      accordionItems.forEach(item => item.classList.remove('open'));
+    }
+  });
+
+  /* ---------- Contact Form Validation ---------- */
+  const form = document.querySelector('.contact-form');
+  if (form) {
+    form.addEventListener('submit', e => {
+      let valid = true;
+      form.querySelectorAll('input, textarea').forEach(field => {
+        const error = field.parentElement.querySelector('.error-message');
+        if (error) error.remove();
+
+        if (!field.value.trim()) {
+          valid = false;
+          const msg = document.createElement('div');
+          msg.className = 'error-message';
+          msg.style.color = 'red';
+          msg.style.fontSize = '0.8rem';
+          msg.textContent = 'This field is required';
+          field.parentElement.appendChild(msg);
+        }
+      });
+      if (!valid) e.preventDefault();
+    });
+  }
+  /*Marquee*/
+const marquee = document.querySelector('.marquee-content');
+let position = 0;
+let baseSpeed = 0.75; // slower = smaller number
+let velocity = 0;
+let isPaused = false;
+let isDragging = false;
+let startX = 0;
+let lastX = 0;
+
+function loop() {
+  // Regular scrolling or momentum
+  if (!isPaused && !isDragging) {
+    position -= baseSpeed;
+  } else if (!isDragging) {
+    // apply momentum decay
+    position += velocity;
+    velocity *= 0.95;
+    if (Math.abs(velocity) < 0.01) velocity = 0;
+  }
+const totalWidth = marquee.scrollWidth / 2;
+position = ((position % totalWidth) + totalWidth) % totalWidth - totalWidth;
+
+
+  marquee.style.transform = `translateX(${position}px)`;
+  requestAnimationFrame(loop);
+}
+loop();
+
+function startDrag(x) {
+  isDragging = true;
+  isPaused = true;
+  startX = x;
+  lastX = x;
+  marquee.style.cursor = 'grabbing';
+  velocity = 0;
+}
+
+function moveDrag(x) {
+  if (!isDragging) return;
+  const delta = x - lastX;
+  position += delta;
+  velocity = delta; // store momentum
+  lastX = x;
+}
+
+function endDrag() {
+  isDragging = false;
+  isPaused = false;
+  marquee.style.cursor = 'grab';
+}
+
+// Hover pause
+marquee.addEventListener('mouseenter', () => isPaused = true);
+marquee.addEventListener('mouseleave', () => {
+  if (!isDragging) isPaused = false;
+});
+
+// Mouse events
+marquee.addEventListener('mousedown', e => {
+  startDrag(e.pageX);
+  moveDrag(e.pageX); // 👈 immediate movement fix
+  window.addEventListener('mousemove', onMouseMove);
+  window.addEventListener('mouseup', onMouseUp);
+});
+
+function onMouseMove(e) {
+  moveDrag(e.pageX);
+}
+
+function onMouseUp() {
+  endDrag();
+  window.removeEventListener('mousemove', onMouseMove);
+  window.removeEventListener('mouseup', onMouseUp);
+}
+
+const prvModal = document.getElementById('prv-modal');
+const prvLink = document.getElementById('privacy-link');
+const prvCloseBtn = document.querySelector('.prv-close-btn');
+
+prvLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  prvModal.classList.add('show'); // Only now the modal appears
+});
+
+prvCloseBtn.addEventListener('click', () => {
+  prvModal.classList.remove('show');
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target == prvModal) {
+    prvModal.classList.remove('show');
+  }
+});
+
+// Terms & Conditions Modal
+const tandcModal = document.getElementById('tandc');
+const tandcLink = document.getElementById('tandc-link');
+const tandcCloseBtn = tandcModal.querySelector('.prv-close-btn');
+
+tandcLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  tandcModal.classList.add('show');
+});
+
+tandcCloseBtn.addEventListener('click', () => {
+  tandcModal.classList.remove('show');
+});
+
+// Close modals when clicking outside
+window.addEventListener('click', (e) => {
+  if (e.target == prvModal) prvModal.classList.remove('show');
+  if (e.target == tandcModal) tandcModal.classList.remove('show');
+});
+
+
+// Touch events
+marquee.addEventListener('touchstart', e => {
+  const x = e.touches[0].pageX;
+  startDrag(x);
+  moveDrag(x); // 👈 immediate movement fix
+  window.addEventListener('touchmove', onTouchMove);
+  window.addEventListener('touchend', onTouchEnd);
+}, { passive: true });
+
+function onTouchMove(e) {
+  moveDrag(e.touches[0].pageX);
+}
+
+function onTouchEnd() {
+  endDrag();
+  window.removeEventListener('touchmove', onTouchMove);
+  window.removeEventListener('touchend', onTouchEnd);
+}
+
+  /* ---------- Team Modal ---------- */
+  const modal = document.getElementById('team-modal');
+  if (modal) {
+    const modalPhoto = modal.querySelector('.modal-photo');
+    const modalName = modal.querySelector('.modal-name');
+    const modalRole = modal.querySelector('.modal-role');
+    const modalDesc = modal.querySelector('.modal-desc');
+    const emailLink = modal.querySelector('.modal-email');
+    const closeBtn = modal.querySelector('.modal-close');
+
+    document.querySelectorAll('.team-card').forEach(card => {
+      card.addEventListener('click', () => {
+        modalPhoto.src = card.dataset.img;
+        modalName.textContent = card.dataset.name;
+        modalRole.textContent = card.dataset.role;
+        modalDesc.innerHTML = card.dataset.desc; // supports <p> tags
+        emailLink.href = `mailto:${card.dataset.email}?subject=Ilex Website Enquiry`;
+        emailLink.querySelector('span').textContent = card.dataset.email;
+        modal.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', e => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  }
+/* ---------- Testimonial Modal with Navigation ---------- */
+const testimonials = [
+  { 
+    company: "James Fountain <br>CJ Fountain and Son LTD <br>Peterborough, England", 
+    testimonial: "I have used a variety of Ilex products on various crops over the last 5 years and am always extremely pleased with the results. <p>My plants look stronger, healthier and root length is far more impressive than without Ilex treatment.<p>Service from Ilex is always professional, product delivery is usually received within 24 hrs. <p>The team are always on hand to help and advise. I highly recommend Ilex for both service and their range of excellent crop nutrition products."
+  },
+  { 
+    company: "Grange Farms Northampton", 
+    testimonial: "I was first introduced to Ilex EnviroSciences after commenting on how good the crops on my neighbouring farm looked. <p>I was given the details of the local Ilex rep and was visited by my local sales manager who took the time to talk to me about their range of phosphite nutrition products and even walked my fields with me. <p>This was in 2019 and am still very pleased with their products and level of service." 
+  },
+  { 
+    company: "Flagleaf Farming Licolnshire", 
+    testimonial: "We only really saw a visual difference in  crops where Crop Rooter Plus had been applied, particularly with a larger root mass and healthier plants. <p>We have also seen trial data that supports a 20% increase in rooting where Crop Rooter Plus has been applied. <p>In our own crops we have seen deeper roots and generally more volume, which must be a positive for crops, especially those that are drought stressed and nutrient hungry." 
+  },
+    { 
+    company: "Tall Oaks Farm. North Yorkshire", 
+    testimonial: "The phosphite in the Crop Rooter Plus has definitely helped the cereals develop better root mass, which in turn has encouraged the crop to forage for nutrients further away from the plant." 
+  },
+  { 
+    company: "R & J Witters Farms", 
+    testimonial: "Mn SUPER™ – “Never have we used such an effective manganese product, that in just one application clears up manganese deficiency in cereals! Would strongly recommend.”" 
+  }
+];
+
+
+const testimonialModal = document.getElementById('testimonial-modal');
+const testimonialCompany = document.getElementById('testimonial-company');
+const testimonialText = document.getElementById('testimonial-text');
+const testimonialClose = testimonialModal.querySelector('.prv-close-btn');
+const prevBtn = document.getElementById('prev-testimonial');
+const nextBtn = document.getElementById('next-testimonial');
+
+let currentTestimonial = 0;
+
+function openTestimonial(index) {
+  currentTestimonial = index;
+  const t = testimonials[currentTestimonial];
+  testimonialCompany.innerHTML = t.company;       // if you have <p> in company too
+  testimonialText.innerHTML = t.testimonial;      // render <p> tags correctly
+  testimonialModal.classList.add('show');
+}
+
+document.querySelectorAll('.testimonial-card').forEach((card, index) => {
+  card.addEventListener('click', () => openTestimonial(index));
+});
+
+testimonialClose.addEventListener('click', () => {
+  testimonialModal.classList.remove('show');
+});
+
+window.addEventListener('click', e => {
+  if (e.target === testimonialModal) testimonialModal.classList.remove('show');
+});
+
+// Navigation buttons
+prevBtn.addEventListener('click', () => {
+  currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+  openTestimonial(currentTestimonial);
+});
+
+nextBtn.addEventListener('click', () => {
+  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+  openTestimonial(currentTestimonial);
+});
+
+function openTestimonial(index) {
+  currentTestimonial = index;
+  const t = testimonials[currentTestimonial];
+  
+  testimonialCompany.innerHTML = t.company;       // render company HTML
+  testimonialText.innerHTML = t.testimonial;      // render testimonial HTML
+
+  testimonialModal.classList.add('show');
+}
+
+
+  /* ---------- Splash Screen ---------- */
+  const splash = document.getElementById('splash-screen');
+  if (splash) {
+    setTimeout(() => {
+      splash.classList.add('fade-out');
+      splash.addEventListener('transitionend', () => {
+        splash.style.display = 'none';
+      });
+    }, 3000); // show splash for 3 seconds
+  }
+
+});
+</script>
+
+
+</body>
+</html>

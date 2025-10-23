@@ -168,7 +168,7 @@ export function Navigation() {
                     {/* Desktop Dropdown */}
                     {openDropdown === item.link && (
                       <div
-                        className="absolute top-full left-1/2 -translate-x-1/2 bg-white min-w-[220px] z-[70] shadow-xl rounded-b-md overflow-hidden"
+                        className="absolute top-full  bg-white min-w-[220px] z-[70] shadow-xl rounded-b-md overflow-hidden"
                         onMouseEnter={() => handleMouseEnter(item.link)}
                         onMouseLeave={handleMouseLeave}
                       >
