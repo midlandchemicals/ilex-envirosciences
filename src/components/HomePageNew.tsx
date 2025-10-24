@@ -60,6 +60,7 @@ function SplashScreen({ onComplete }: { onComplete: () => void }) {
 // Brands Marquee Component
 
 function BrandsMarquee() {
+  const navigate = useNavigate();
   const brands = [
     "logo_foliarboost.png",
     "logo_advocate.png",
@@ -80,6 +81,28 @@ function BrandsMarquee() {
     "logo_MagPlus.png",
     "logo_fulon.png",
   ];
+
+  // Mapping between brand logo filenames and product links
+  const brandToProductMap: { [key: string]: { category: string; product: string } } = {
+    "logo_foliarboost.png": { category: "foliar-range", product: "foliar-boost" },
+    "logo_advocate.png": { category: "calcium-range", product: "advocate" },
+    "logo_MnCuPlus.png": { category: "foliar-range", product: "mn-cu-plus" },
+    "logo_cuzin.png": { category: "foliar-range", product: "cu-zin" },
+    "logo_startupmaxx.png": { category: "seed-treatments", product: "start-up-maxx" },
+    "logo_PKMaxx.png": { category: "phosphite-range", product: "pk-maxx" },
+    "logo_Tensile.png": { category: "phosphite-range", product: "tensile" },
+    "logo_modiphyxtra.png": { category: "water-conditioners", product: "modiphy-xtra" },
+    "logo_PKVeg.png": { category: "phosphite-range", product: "pk-veg" },
+    "logo_Capital.png": { category: "calcium-range", product: "capital" },
+    "logo_croprooter.png": { category: "phosphite-range", product: "crop-rooter-plus" },
+    "logo_MNSuper.png": { category: "foliar-range", product: "mn-super" },
+    "logo_procal.png": { category: "calcium-range", product: "pro-cal" },
+    "logo_BeetRaiser.png": { category: "phosphite-range", product: "beet-raiser" },
+    "logo_Maniphos.png": { category: "phosphite-range", product: "maniphos" },
+    "logo_OilSeedRaiser.png": { category: "phosphite-range", product: "oilseed-raiser" },
+    "logo_MagPlus.png": { category: "foliar-range", product: "mag-plus" },
+    "logo_fulon.png": { category: "foliar-range", product: "ful-on" },
+  };
 
   const marqueeRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
@@ -154,6 +177,14 @@ function BrandsMarquee() {
     setIsPaused(false);
   };
 
+  // Handle brand click navigation
+  const handleBrandClick = (brand: string) => {
+    const productInfo = brandToProductMap[brand];
+    if (productInfo) {
+      navigate(`/products/${productInfo.category}/${productInfo.product}`);
+    }
+  };
+
   const doubledBrands = [...brands, ...brands];
 
   return (
@@ -187,14 +218,19 @@ function BrandsMarquee() {
           onMouseLeave={handleMouseUp}
         >
           {doubledBrands.map((brand, index) => (
-            <div key={index} className="flex-shrink-0 px-8" draggable={false}>
+            <button
+              key={index}
+              className="flex-shrink-0 px-8 cursor-pointer hover:scale-105 transition-transform duration-200"
+              draggable={false}
+              onClick={() => handleBrandClick(brand)}
+            >
               <img
                 src={`/assets/${brand}`}
                 alt={brand}
                 className="h-16 w-auto object-contain pointer-events-none"
                 draggable={false}
               />
-            </div>
+            </button>
           ))}
         </div>
       </div>
@@ -1117,8 +1153,6 @@ export function HomePage() {
                       </h3>
                       <p className="text-gray-600 text-sm mb-0">
                         ilexsales@ilex-envirosciences.com
-
-
                       </p>
                     </div>
                   </motion.a>
