@@ -52,6 +52,7 @@ import {
   Trophy,
   Flame,
 } from "lucide-react";
+import Form from "./Form";
 
 interface ContactFormProps {
   onSubmit: (formData: {
@@ -699,8 +700,8 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
                   <div className="max-w-80">
                     <p>
                       Ilex EnviroSciences Ltd <br /> 13a Brindley Close, Holly
-                      Lane Industrial Estate, Atherstone, Warwickshire
-                       CV9 2QZ, United Kingdom
+                      Lane Industrial Estate, Atherstone, Warwickshire CV9 2QZ,
+                      United Kingdom
                     </p>
                   </div>
                 </div>
@@ -712,9 +713,7 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>ilexsales@ilex-envirosciences.com
-
-</p>
+                  <p>ilexsales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">
@@ -724,50 +723,7 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
               </div>
             </div>
 
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
-              <CardHeader>
-                <CardTitle className="text-white">Product Enquiry</CardTitle>
-                <CardDescription className="text-white/80">
-                  Contact us for more information about K-Max (3-1-8)
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <Input
-                    name="name"
-                    placeholder="Name *"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30"
-                  />
-                  <Input
-                    name="email"
-                    type="email"
-                    placeholder="Email *"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30"
-                  />
-                  <Textarea
-                    name="message"
-                    placeholder="Comment or Message *"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    rows={4}
-                    className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30"
-                  />
-                  <Button
-                    type="submit"
-                    className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
-                  >
-                    Submit Enquiry
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+            <Form></Form>
           </div>
         </div>
       </motion.section>

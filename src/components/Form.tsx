@@ -135,7 +135,7 @@ const Form = () => {
 
             <Button
               type="submit"
-              className="w-full bg-white text-[#6abf4b] hover:bg-gray-100"
+              className="w-full font-bold cursor-pointer bg-white text-[#6abf4b] hover:bg-gray-100"
             >
               Submit Enquiry
             </Button>
