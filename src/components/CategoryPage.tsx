@@ -182,30 +182,54 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
     <div className="min-h-screen bg-white pt-24">
       {/* Category Header */}
       <motion.header
-        className="bg-gradient-to-r from-[#6abf4b] to-[#5aa338] py-12 px-4 text-white"
+        className="bg-[#c9dec2] py-16 px-4 text-[#1a1a1a] flex items-center justify-center min-h-[40vh]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold mb-2">
-                {category.menu_item.replace("The Ilex ", "")}
-              </h1>
-              <p className="text-white/90 max-w-3xl">
-                {getCategoryDescription(category.link)}
-              </p>
-            </div>
-            <Badge className="bg-white text-[#5aa338] hover:bg-white/90 text-base px-4 py-2">
-              {category.products?.length || 0} Products
-            </Badge>
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-6">
+            <motion.h1
+              className="text-3xl md:text-4xl font-bold mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              {category.menu_item.replace("The Ilex ", "")}
+            </motion.h1>
+            <motion.p
+              className="text-[#2e2e2e] text-lg leading-relaxed mb-8 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              {getCategoryDescription(category.link)}
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <Button
+                className="bg-[#5bb33d] cursor-pointer text-xl hover:bg-[#4a9b32] text-white px-8 py-6 rounded-lg font-semibold transition-all duration-300 hover:translate-y-[-2px] shadow-lg"
+                onClick={() => {
+                  const productsSection =
+                    document.getElementById("products-section");
+                  if (productsSection) {
+                    productsSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              >
+                Learn More
+              </Button>
+            </motion.div>
           </div>
         </div>
       </motion.header>
 
       {/* Products Grid */}
       <motion.section
+        id="products-section"
         className="py-12 px-4"
         variants={staggerContainer}
         initial="initial"
