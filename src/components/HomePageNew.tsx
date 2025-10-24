@@ -83,23 +83,43 @@ function BrandsMarquee() {
   ];
 
   // Mapping between brand logo filenames and product links
-  const brandToProductMap: { [key: string]: { category: string; product: string } } = {
-    "logo_foliarboost.png": { category: "foliar-range", product: "foliar-boost" },
+  const brandToProductMap: {
+    [key: string]: { category: string; product: string };
+  } = {
+    "logo_foliarboost.png": {
+      category: "foliar-range",
+      product: "foliar-boost",
+    },
     "logo_advocate.png": { category: "calcium-range", product: "advocate" },
     "logo_MnCuPlus.png": { category: "foliar-range", product: "mn-cu-plus" },
     "logo_cuzin.png": { category: "foliar-range", product: "cu-zin" },
-    "logo_startupmaxx.png": { category: "seed-treatments", product: "start-up-maxx" },
+    "logo_startupmaxx.png": {
+      category: "seed-treatments",
+      product: "start-up-maxx",
+    },
     "logo_PKMaxx.png": { category: "phosphite-range", product: "pk-maxx" },
     "logo_Tensile.png": { category: "phosphite-range", product: "tensile" },
-    "logo_modiphyxtra.png": { category: "water-conditioners", product: "modiphy-xtra" },
+    "logo_modiphyxtra.png": {
+      category: "water-conditioners",
+      product: "modiphy-xtra",
+    },
     "logo_PKVeg.png": { category: "phosphite-range", product: "pk-veg" },
     "logo_Capital.png": { category: "calcium-range", product: "capital" },
-    "logo_croprooter.png": { category: "phosphite-range", product: "crop-rooter-plus" },
+    "logo_croprooter.png": {
+      category: "phosphite-range",
+      product: "crop-rooter-plus",
+    },
     "logo_MNSuper.png": { category: "foliar-range", product: "mn-super" },
     "logo_procal.png": { category: "calcium-range", product: "pro-cal" },
-    "logo_BeetRaiser.png": { category: "phosphite-range", product: "beet-raiser" },
+    "logo_BeetRaiser.png": {
+      category: "phosphite-range",
+      product: "beet-raiser",
+    },
     "logo_Maniphos.png": { category: "phosphite-range", product: "maniphos" },
-    "logo_OilSeedRaiser.png": { category: "phosphite-range", product: "oilseed-raiser" },
+    "logo_OilSeedRaiser.png": {
+      category: "phosphite-range",
+      product: "oilseed-raiser",
+    },
     "logo_MagPlus.png": { category: "foliar-range", product: "mag-plus" },
     "logo_fulon.png": { category: "foliar-range", product: "ful-on" },
   };
@@ -399,6 +419,16 @@ export function HomePage() {
     null
   );
 
+  // Form state
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   // Team Members Data
   const teamMembers: TeamMember[] = [
     {
@@ -496,6 +526,61 @@ export function HomePage() {
         ? (selectedTestimonial - 1 + testimonials.length) % testimonials.length
         : (selectedTestimonial + 1) % testimonials.length;
     setSelectedTestimonial(newIndex);
+  };
+
+  // Form validation function
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.email.trim()) newErrors.email = "Email is required";
+    if (!formData.subject.trim()) newErrors.subject = "Subject is required";
+    if (!formData.message.trim()) newErrors.message = "Message is required";
+
+    if (
+      formData.email.trim() &&
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
+    ) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // Input handler
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // Submit handler
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!validateForm()) return;
+
+    try {
+      const response = await fetch("https://formspree.io/f/myznqarl", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        setErrors({});
+      } else {
+        alert("Something went wrong! Please try again.");
+      }
+    } catch (error) {
+      alert(`Network error: ${error}. Please try again.`);
+    }
   };
 
   // Render the HomePage
@@ -1198,81 +1283,150 @@ export function HomePage() {
                 viewport={{ once: true }}
                 className="lg:w-3/5 bg-white w-full rounded-lg p-6 flex items-center justify-center"
               >
-                <form className="flex flex-col gap-4 w-full max-w-lg">
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-semibold text-gray-700 mb-2"
-                    >
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      placeholder="Enter your name"
-                      required
-                      className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#6abf4b] focus:border-transparent transition-all"
-                    />
+                {isSubmitted ? (
+                  <div className="text-center">
+                    <div className="mb-4">
+                      <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg
+                          className="w-8 h-8 text-green-600"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      </div>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                        Message Sent Successfully!
+                      </h3>
+                      <p className="text-gray-600 mb-6">
+                        Thank you for contacting us. We'll get back to you soon.
+                      </p>
+                      <Button
+                        onClick={() => setIsSubmitted(false)}
+                        className="bg-[#6abf4b] hover:bg-[#5aa338] text-white px-6 py-2 rounded-md transition-colors"
+                      >
+                        Send Another Message
+                      </Button>
+                    </div>
                   </div>
-
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-semibold text-gray-700 mb-2"
-                    >
-                      Your Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      placeholder="Enter your email"
-                      required
-                      className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#6abf4b] focus:border-transparent transition-all"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="subject"
-                      className="block text-sm font-semibold text-gray-700 mb-2"
-                    >
-                      Subject
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      name="subject"
-                      placeholder="Enter subject"
-                      required
-                      className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#6abf4b] focus:border-transparent transition-all"
-                    />
-                  </div>
-
-                  <div className="flex-1 flex flex-col">
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-semibold text-gray-700 mb-2"
-                    >
-                      Your Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      placeholder="Type your message here..."
-                      required
-                      className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#6abf4b] focus:border-transparent resize-vertical flex-1 min-h-[120px] transition-all"
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    className="bg-[#6abf4b] cursor-pointer text-lg shadow-lg hover:bg-[#5aa338] text-white px-8 py-6 rounded-md font-bold transition-all hover:shadow-lg self-start mt-2"
+                ) : (
+                  <form
+                    onSubmit={handleSubmit}
+                    className="flex flex-col gap-4 w-full max-w-lg"
                   >
-                    Send Message
-                  </Button>
-                </form>
+                    <div>
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-semibold text-gray-700 mb-2"
+                      >
+                        Your Name
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        className={`w-full px-4 py-2.5 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#6abf4b] focus:border-transparent transition-all ${
+                          errors.name ? "border-red-500" : "border-gray-300"
+                        }`}
+                      />
+                      {errors.name && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors.name}
+                        </p>
+                      )}
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-semibold text-gray-700 mb-2"
+                      >
+                        Your Email
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        className={`w-full px-4 py-2.5 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#6abf4b] focus:border-transparent transition-all ${
+                          errors.email ? "border-red-500" : "border-gray-300"
+                        }`}
+                      />
+                      {errors.email && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors.email}
+                        </p>
+                      )}
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="subject"
+                        className="block text-sm font-semibold text-gray-700 mb-2"
+                      >
+                        Subject
+                      </label>
+                      <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="Enter subject"
+                        value={formData.subject}
+                        onChange={handleInputChange}
+                        className={`w-full px-4 py-2.5 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#6abf4b] focus:border-transparent transition-all ${
+                          errors.subject ? "border-red-500" : "border-gray-300"
+                        }`}
+                      />
+                      {errors.subject && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors.subject}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="flex-1 flex flex-col">
+                      <label
+                        htmlFor="message"
+                        className="block text-sm font-semibold text-gray-700 mb-2"
+                      >
+                        Your Message
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Type your message here..."
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        className={`w-full px-4 py-2.5 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#6abf4b] focus:border-transparent resize-vertical flex-1 min-h-[120px] transition-all ${
+                          errors.message ? "border-red-500" : "border-gray-300"
+                        }`}
+                      />
+                      {errors.message && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <Button
+                      type="submit"
+                      className="bg-[#6abf4b] cursor-pointer text-lg shadow-lg hover:bg-[#5aa338] text-white px-8 py-6 rounded-md font-bold transition-all hover:shadow-lg self-start mt-2"
+                    >
+                      Send Message
+                    </Button>
+                  </form>
+                )}
               </motion.div>
             </div>
           </div>
