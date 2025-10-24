@@ -956,6 +956,24 @@ export default function App() {
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
   const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
 
+  // Smooth scroll to sections on home page
+  const scrollToSection = (sectionId: string) => {
+    if (location.pathname === "/") {
+      // If on home page, scroll to section
+      const section = document.getElementById(sectionId);
+      if (section) {
+        const headerOffset = 100;
+        const elementPosition = section.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Scroll to top on route change */}
@@ -1026,18 +1044,18 @@ export default function App() {
             >
               Home
             </Link>
-            <Link
-              to="/about"
-              className="text-[#555] font-medium hover:text-black hover:-translate-y-0.5 transition-all duration-200"
+            <button
+              onClick={() => scrollToSection("brands")}
+              className="text-[#555] cursor-pointer font-medium hover:text-black hover:-translate-y-0.5 transition-all duration-200"
             >
               About
-            </Link>
-            <Link
-              to="/products"
-              className="text-[#555] font-medium hover:text-black hover:-translate-y-0.5 transition-all duration-200"
+            </button>
+            <button
+              onClick={() => scrollToSection("products")}
+              className="text-[#555] cursor-pointer font-medium hover:text-black hover:-translate-y-0.5 transition-all duration-200"
             >
               Products
-            </Link>
+            </button>
 
             <button
               onClick={() => setIsPrivacyModalOpen(true)}
