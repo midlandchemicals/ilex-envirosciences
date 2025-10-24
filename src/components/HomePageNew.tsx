@@ -1253,25 +1253,31 @@ export function HomePage() {
                 >
                   <MapPin size={24} className="text-[#6abf4b] flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-3 text-base">
-                      Our Headquarters
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-0">
-                      <strong className="block mb-2">
-                        Ilex Envirosciences Ltd
-                      </strong>
-                      13a Brindley Close,
-                      <br />
-                      Holly Lane Industrial Estate,
-                      <br />
-                      Atherstone,
-                      <br />
-                      Warwickshire,
-                      <br />
-                      CV9 2QZ,
-                      <br />
-                      United Kingdom.
-                    </p>
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Ilex+EnviroSciences+Ltd+13a+Brindley+Close+Holly+Lane+Industrial+Estate+Atherstone+Warwickshire+CV9+2QZ+United+Kingdom"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <h3 className="font-semibold text-gray-900 mb-3 text-base">
+                        Our Headquarters
+                      </h3>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-0">
+                        <strong className="block mb-2">
+                          Ilex Envirosciences Ltd
+                        </strong>
+                        13a Brindley Close,
+                        <br />
+                        Holly Lane Industrial Estate,
+                        <br />
+                        Atherstone,
+                        <br />
+                        Warwickshire,
+                        <br />
+                        CV9 2QZ,
+                        <br />
+                        United Kingdom.
+                      </p>
+                    </a>
                   </div>
                 </motion.div>
               </div>

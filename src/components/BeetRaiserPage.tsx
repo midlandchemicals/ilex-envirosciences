@@ -641,6 +641,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
 
       {/* Contact Section */}
       <motion.section
+        id="contact-us"
         className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
@@ -653,23 +654,36 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
                 <div className="flex items-center gap-4">
                   <MapPin className="h-6 w-6" />
                   <div className="max-w-80">
-                    <p>
-                      Ilex EnviroSciences Ltd <br /> 13a Brindley Close, Holly
-                      Lane Industrial Estate, Atherstone, Warwickshire CV9 2QZ,
-                      United Kingdom
-                    </p>
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Ilex+EnviroSciences+Ltd+13a+Brindley+Close+Holly+Lane+Industrial+Estate+Atherstone+Warwickshire+CV9+2QZ+United+Kingdom"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white hover:text-gray-200 transition-colors cursor-pointer underline decoration-1 underline-offset-2"
+                    >
+                      <p>
+                        Ilex EnviroSciences Ltd <br /> 13a Brindley Close, Holly
+                        Lane Industrial Estate, Atherstone, Warwickshire CV9
+                        2QZ, United Kingdom
+                      </p>
+                    </a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4">
+                <a
+                  href="tel:+441827722911"
+                  className="flex items-center gap-4 text-white hover:text-gray-200 transition-colors cursor-pointer"
+                >
                   <Phone className="h-6 w-6" />
-                  <p>+44 1827722911</p>
-                </div>
+                  <p>+44 1827 722911</p>
+                </a>
 
-                <div className="flex items-center gap-4">
+                <a
+                  href="mailto:ilexsales@ilex-envirosciences.com?subject=Ilex%20Website%20Enquiry"
+                  className="flex items-center gap-4 text-white hover:text-gray-200 transition-colors cursor-pointer"
+                >
                   <Mail className="h-6 w-6" />
                   <p>ilexsales@ilex-envirosciences.com</p>
-                </div>
+                </a>
 
                 <div className="flex items-center gap-4">
                   <Clock className="h-6 w-6" />

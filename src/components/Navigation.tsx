@@ -134,7 +134,7 @@ export function Navigation() {
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
     } else {
-      // If not on homepage, navigate to homepage first
+      // If not on homepage and no contact section found, navigate to homepage contact
       if (location.pathname !== "/") {
         navigate("/#contact-us");
       }

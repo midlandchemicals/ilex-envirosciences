@@ -501,8 +501,6 @@ function TermsConditionsModal({
               className="text-blue-600 hover:text-blue-800 underline"
             >
               ilexsales@ilex-envirosciences.com
-
-
             </a>
             .
           </p>
@@ -620,8 +618,6 @@ function TermsConditionsModal({
               className="text-blue-600 hover:text-blue-800 underline"
             >
               ilexsales@ilex-envirosciences.com
-
-
             </a>
             .
           </p>
@@ -964,7 +960,8 @@ export default function App() {
       if (section) {
         const headerOffset = 100;
         const elementPosition = section.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset;
 
         window.scrollTo({
           top: offsetPosition,
@@ -1044,18 +1041,22 @@ export default function App() {
             >
               Home
             </Link>
-            <button
-              onClick={() => scrollToSection("brands")}
-              className="text-[#555] cursor-pointer font-medium hover:text-black hover:-translate-y-0.5 transition-all duration-200"
-            >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection("products")}
-              className="text-[#555] cursor-pointer font-medium hover:text-black hover:-translate-y-0.5 transition-all duration-200"
-            >
-              Products
-            </button>
+            {location.pathname === "/" && (
+              <>
+                <button
+                  onClick={() => scrollToSection("brands")}
+                  className="text-[#555] cursor-pointer font-medium hover:text-black hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  About
+                </button>
+                <button
+                  onClick={() => scrollToSection("products")}
+                  className="text-[#555] cursor-pointer font-medium hover:text-black hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  Products
+                </button>
+              </>
+            )}
 
             <button
               onClick={() => setIsPrivacyModalOpen(true)}
@@ -1067,7 +1068,7 @@ export default function App() {
               onClick={() => setIsTermsModalOpen(true)}
               className="text-[#555] cursor-pointer font-medium hover:text-black hover:-translate-y-0.5 transition-all duration-200"
             >
-              Terms & Condition
+              Terms & Conditions
             </button>
           </nav>
 

@@ -695,6 +695,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
 
       {/* Contact Section */}
       <motion.section
+        id="contact-us"
         className="py-20 px-4 bg-gradient-to-r from-[#6abf4b] to-[#5aa338] text-white"
         {...fadeInUp}
         viewport={{ once: true }}
