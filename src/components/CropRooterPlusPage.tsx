@@ -178,27 +178,27 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
     {
       title: "Crop Rooter® Plus Leaflet",
       description: "Complete product information and application guidelines",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2024/11/Crop-Rooter%C2%AE-Plus-Trials-1124-i.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/1.%20Crop%20Rooter%C2%AEPlus/Crop%20Rooter%C2%AE%20Plus%20Leaflet.pdf",
     },
     {
       title: "Phosphite Action Information Sheet",
       description: "Technical information about phosphite mode of action",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/phosphites-1701-iv.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/1.%20Crop%20Rooter%C2%AEPlus/Phosphite%20Action%20Information%20Sheet.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2023/10/Compatibility-Chart-0923-ii.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/1.%20Crop%20Rooter%C2%AEPlus/Compatibility%20Chart.pdf",
     },
     {
       title: "Crop Rooter® NIAB Trial Data",
       description: "Independent NIAB TAG trial results and analysis",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Crop-RooterPlus-NIAB-TAG-Spring-2019.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/1.%20Crop%20Rooter%C2%AEPlus/Crop%20Rooter%C2%AE%20NIAB%20Trial%20Data.pdf",
     },
     {
       title: "Crop Rooter® Velcourt Trial Data",
       description: "Comprehensive Velcourt field trial results",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2022/04/Crop-Rooter%C2%AE-Plus-Velcourt-2020-2021.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/1.%20Crop%20Rooter%C2%AEPlus/Crop%20Rooter%C2%AE%20Velcourt%20Trial%20Data.pdf",
     },
   ];
 
@@ -877,8 +877,8 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
                   <div className="max-w-80">
                     <p>
                       Ilex EnviroSciences Ltd <br /> 13a Brindley Close, Holly
-                      Lane Industrial Estate, Atherstone, Warwickshire
-                       CV9 2QZ, United Kingdom
+                      Lane Industrial Estate, Atherstone, Warwickshire CV9 2QZ,
+                      United Kingdom
                     </p>
                   </div>
                 </div>
@@ -890,9 +890,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>ilexsales@ilex-envirosciences.com
-
-</p>
+                  <p>ilexsales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

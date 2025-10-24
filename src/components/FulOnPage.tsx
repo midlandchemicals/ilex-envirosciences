@@ -203,12 +203,12 @@ export function FulOnPage({ onSubmit }: ContactFormProps) {
     {
       title: "ful-oN Leaflet",
       description: "Complete product information and application guidelines",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2023/03/ful-oN-0323i.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/11.%20ful-oN%E2%84%A2%20/ful-oN%E2%84%A2%20Leaflet.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2023/10/Compatibility-Chart-0923-ii.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/11.%20ful-oN%E2%84%A2%20/Compatibility%20Chart.pdf",
     },
   ];
 
@@ -725,8 +725,8 @@ export function FulOnPage({ onSubmit }: ContactFormProps) {
                   <div className="max-w-80">
                     <p>
                       Ilex EnviroSciences Ltd <br /> 13a Brindley Close, Holly
-                      Lane Industrial Estate, Atherstone, Warwickshire
-                       CV9 2QZ, United Kingdom
+                      Lane Industrial Estate, Atherstone, Warwickshire CV9 2QZ,
+                      United Kingdom
                     </p>
                   </div>
                 </div>
@@ -738,9 +738,7 @@ export function FulOnPage({ onSubmit }: ContactFormProps) {
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>ilexsales@ilex-envirosciences.com
-
-</p>
+                  <p>ilexsales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

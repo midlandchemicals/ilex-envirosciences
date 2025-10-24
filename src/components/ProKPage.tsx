@@ -212,12 +212,12 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
     {
       title: "Pro-K™ Leaflet",
       description: "Complete product information and application guidelines",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2022/04/ILEX-Pro-Arable-1703iii.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/15.%20Pro-K%E2%84%A2/Pro-K%E2%84%A2%20Leaflet.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2023/10/Compatibility-Chart-0923-ii.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/15.%20Pro-K%E2%84%A2/Compatibility%20Chart.pdf",
     },
   ];
 
@@ -609,8 +609,8 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
                   <div className="max-w-80">
                     <p>
                       Ilex EnviroSciences Ltd <br /> 13a Brindley Close, Holly
-                      Lane Industrial Estate, Atherstone, Warwickshire
-                       CV9 2QZ, United Kingdom
+                      Lane Industrial Estate, Atherstone, Warwickshire CV9 2QZ,
+                      United Kingdom
                     </p>
                   </div>
                 </div>
@@ -622,9 +622,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>ilexsales@ilex-envirosciences.com
-
-</p>
+                  <p>ilexsales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

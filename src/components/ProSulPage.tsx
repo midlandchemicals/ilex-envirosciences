@@ -212,13 +212,13 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
     {
       title: "Pro-Sul™ Leaflet",
       description: "Complete product information and application guidelines",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2023/03/ILEX-Pro-Arable-1703iii.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/16.%20Pro-Sul%E2%84%A2/Pro-Sul%E2%84%A2%20Leaflet.pdf",
     },
 
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2023/10/Compatibility-Chart-0923-ii.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/16.%20Pro-Sul%E2%84%A2/Compatibility%20Chart.pdf",
     },
   ];
 
@@ -526,7 +526,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
                         Enhanced Formula
                       </h4>
                       <p className="text-#000000">
-                       Pro-Sul™ includes nitrogen, potassium, and magnesium to
+                        Pro-Sul™ includes nitrogen, potassium, and magnesium to
                         support optimal sulphur utilisation and plant function.
                       </p>
                     </div>
@@ -708,8 +708,8 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
                   <div className="max-w-80">
                     <p>
                       Ilex EnviroSciences Ltd <br /> 13a Brindley Close, Holly
-                      Lane Industrial Estate, Atherstone, Warwickshire
-                       CV9 2QZ, United Kingdom
+                      Lane Industrial Estate, Atherstone, Warwickshire CV9 2QZ,
+                      United Kingdom
                     </p>
                   </div>
                 </div>
@@ -721,9 +721,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>ilexsales@ilex-envirosciences.com
-
-</p>
+                  <p>ilexsales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

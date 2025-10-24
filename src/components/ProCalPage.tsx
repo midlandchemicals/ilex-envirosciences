@@ -185,12 +185,12 @@ export function ProCalPage({ onSubmit }: ContactFormProps) {
     {
       title: "Pro-Cal™ Leaflet",
       description: "Complete product information and technical specifications",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Pro-Cal-Veg-1606-i.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/17.%20Pro-Cal%E2%84%A2/Pro-Cal%E2%84%A2%20Leaflet.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2023/10/Compatibility-Chart-0923-ii.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/17.%20Pro-Cal%E2%84%A2/Compatibility%20Chart.pdf",
     },
   ];
 
@@ -689,8 +689,8 @@ export function ProCalPage({ onSubmit }: ContactFormProps) {
                   <div className="max-w-80">
                     <p>
                       Ilex EnviroSciences Ltd <br /> 13a Brindley Close, Holly
-                      Lane Industrial Estate, Atherstone, Warwickshire
-                       CV9 2QZ, United Kingdom
+                      Lane Industrial Estate, Atherstone, Warwickshire CV9 2QZ,
+                      United Kingdom
                     </p>
                   </div>
                 </div>
@@ -702,9 +702,7 @@ export function ProCalPage({ onSubmit }: ContactFormProps) {
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>ilexsales@ilex-envirosciences.com
-
-</p>
+                  <p>ilexsales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

@@ -144,7 +144,7 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
     {
       title: "Man-uP Leaflet",
       description: "Complete product information and application guidelines",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Man-uP-1606-i.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/25.%20Man-uP/Man-uP%20Leaflet.pdf",
     },
   ];
 
@@ -409,7 +409,9 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
                     <div className="flex items-start gap-3">
                       <Zap className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-2 text-[#6abf4b]">Nitrate Nitrogen</h4>
+                        <h4 className="font-semibold mb-2 text-[#6abf4b]">
+                          Nitrate Nitrogen
+                        </h4>
                         <p className="text-gray-600">
                           6% nitrate nitrogen provides immediately available
                           nitrogen for rapid early growth and establishment.
@@ -642,8 +644,8 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
                   <div className="max-w-80">
                     <p>
                       Ilex EnviroSciences Ltd <br /> 13a Brindley Close, Holly
-                      Lane Industrial Estate, Atherstone, Warwickshire
-                       CV9 2QZ, United Kingdom
+                      Lane Industrial Estate, Atherstone, Warwickshire CV9 2QZ,
+                      United Kingdom
                     </p>
                   </div>
                 </div>
@@ -655,9 +657,7 @@ export function ManUpPage({ onSubmit }: ContactFormProps) {
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>ilexsales@ilex-envirosciences.com
-
-</p>
+                  <p>ilexsales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

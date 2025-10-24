@@ -181,17 +181,17 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
       title: "Beet Raiser™ Leaflet",
       description:
         "Complete product information and application guidelines for sugar beet",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/08/Beet-Raiser-2003-i.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/6.%20Beet%20Raiser%E2%84%A2/Beet%20Raiser%E2%84%A2%20Leaflet.pdf",
     },
     {
       title: "Phosphite Action Information Sheet",
       description: "Comprehensive guide to phosphite action information sheet",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/phosphites-1701-iv.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/6.%20Beet%20Raiser%E2%84%A2/Phosphite%20Action%20Information%20Sheet.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2023/10/Compatibility-Chart-0923-ii.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/6.%20Beet%20Raiser%E2%84%A2/Compatibility%20Chart.pdf",
     },
   ];
 
@@ -654,8 +654,8 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
                   <div className="max-w-80">
                     <p>
                       Ilex EnviroSciences Ltd <br /> 13a Brindley Close, Holly
-                      Lane Industrial Estate, Atherstone, Warwickshire
-                       CV9 2QZ, United Kingdom
+                      Lane Industrial Estate, Atherstone, Warwickshire CV9 2QZ,
+                      United Kingdom
                     </p>
                   </div>
                 </div>
@@ -667,9 +667,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>ilexsales@ilex-envirosciences.com
-
-</p>
+                  <p>ilexsales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

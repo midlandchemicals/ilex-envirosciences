@@ -127,33 +127,33 @@ export function ModipHyXtraPage({ onSubmit }: ContactFormProps) {
     {
       title: "ModipHy Xtra™ Leaflet",
       description: "Complete product information and application guidelines",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Modi-pHy-Xtra-1606-ii.pdf", // Placeholder; replace with actual URL
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/26.%20ModipHy%20Xtra%E2%84%A2/ModipHy%20Xtra%E2%84%A2%20%20Leaflet.pdf", // Placeholder; replace with actual URL
     },
     {
       title: "Phosphite Action Information Sheet",
       description: "Technical information about phosphite mode of action",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/phosphites-1701-iv.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/26.%20ModipHy%20Xtra%E2%84%A2/Phosphite%20Action%20Information%20Sheet.pdf",
     },
 
     {
       title: "ModipHy Xtra™ Case Study",
       description: "Real-world performance examples and results",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Case-Study-ModipHy-Xtra.pdf", // Placeholder; replace with actual URL
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/26.%20ModipHy%20Xtra%E2%84%A2/ModipHy%20Xtra%E2%84%A2%20Case%20Study%20.pdf", // Placeholder; replace with actual URL
     },
     {
       title: "Application Rate Calculator",
       description: "Tool for calculating precise application rates",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/ModipHy-Xtra-Calculator-1707-ii.pdf", // Placeholder; replace with actual URL
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/26.%20ModipHy%20Xtra%E2%84%A2/Application%20Rate%20Calculator%20.pdf", // Placeholder; replace with actual URL
     },
     {
       title: "Dosatron® Information Sheet",
       description: "Details on Dosatron integration and usage",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Dosetron.pdf", // Placeholder; replace with actual URL
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/26.%20ModipHy%20Xtra%E2%84%A2/Dosatron%C2%AE%20Information%20Sheet%20.pdf", // Placeholder; replace with actual URL
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2023/10/Compatibility-Chart-0923-ii.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/26.%20ModipHy%20Xtra%E2%84%A2/Compatibility%20Chart.pdf",
     },
   ];
 
@@ -729,8 +729,8 @@ export function ModipHyXtraPage({ onSubmit }: ContactFormProps) {
                   <div className="max-w-80">
                     <p>
                       Ilex EnviroSciences Ltd <br /> 13a Brindley Close, Holly
-                      Lane Industrial Estate, Atherstone, Warwickshire
-                       CV9 2QZ, United Kingdom
+                      Lane Industrial Estate, Atherstone, Warwickshire CV9 2QZ,
+                      United Kingdom
                     </p>
                   </div>
                 </div>
@@ -742,9 +742,7 @@ export function ModipHyXtraPage({ onSubmit }: ContactFormProps) {
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>ilexsales@ilex-envirosciences.com
-
-</p>
+                  <p>ilexsales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

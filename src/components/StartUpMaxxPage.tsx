@@ -165,17 +165,17 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
     {
       title: "Start-uP MAXX Leaflet",
       description: "Complete product information and application guidelines",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Start-uP-MAXX-1810-i.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/22.%20Start-uP%20MAXX/Start-uP%20MAXX%20Leaflet%20.pdf",
     },
     {
       title: "Phosphite Action Information Sheet",
       description: "Technical information about phosphite mode of action",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/phosphites-1701-iv.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/22.%20Start-uP%20MAXX/Phosphite%20Action%20Information%20Sheet.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other seed treatments",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2023/10/Compatibility-Chart-0923-ii.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/22.%20Start-uP%20MAXX/Compatibility%20Chart.pdf",
     },
   ];
 
@@ -678,8 +678,8 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
                   <div className="max-w-80">
                     <p>
                       Ilex EnviroSciences Ltd <br /> 13a Brindley Close, Holly
-                      Lane Industrial Estate, Atherstone, Warwickshire
-                       CV9 2QZ, United Kingdom
+                      Lane Industrial Estate, Atherstone, Warwickshire CV9 2QZ,
+                      United Kingdom
                     </p>
                   </div>
                 </div>
@@ -691,9 +691,7 @@ export function StartUpMaxxPage({ onSubmit }: ContactFormProps) {
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>ilexsales@ilex-envirosciences.com
-
-</p>
+                  <p>ilexsales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

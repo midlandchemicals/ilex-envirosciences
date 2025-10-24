@@ -153,17 +153,17 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
     {
       title: "Start-uP Leaflet",
       description: "Complete product information and application guidelines",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Start-Up-1606-i.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/23.%20Start-uP/Start-Up-Leaflet.pdf",
     },
     {
       title: "Phosphite Action Information Sheet",
       description: "Technical information about phosphite mode of action",
-      url: "https://ilex-envirosciences.com/start-up/_wp_link_placeholder",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/23.%20Start-uP/Phosphite%20Action%20Information%20Sheet.pdf",
     },
     {
       title: "Start-uP on Pulses",
       description: "Specific application guidelines for pulse crops",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Start-uP-Pulses.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/23.%20Start-uP/Start-uP-Pulses.pdf",
     },
   ];
 
@@ -428,7 +428,9 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
                     <div className="flex items-start gap-3">
                       <Atom className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
-                        <h4 className="font-semibold mb-2 text-[#6abf4b]">Ureic Nitrogen</h4>
+                        <h4 className="font-semibold mb-2 text-[#6abf4b]">
+                          Ureic Nitrogen
+                        </h4>
                         <p className="text-gray-600">
                           4% ureic nitrogen provides readily available nitrogen
                           for immediate plant uptake and early growth
@@ -632,8 +634,8 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
                   <div className="max-w-80">
                     <p>
                       Ilex EnviroSciences Ltd <br /> 13a Brindley Close, Holly
-                      Lane Industrial Estate, Atherstone, Warwickshire
-                       CV9 2QZ, United Kingdom
+                      Lane Industrial Estate, Atherstone, Warwickshire CV9 2QZ,
+                      United Kingdom
                     </p>
                   </div>
                 </div>
@@ -645,9 +647,7 @@ export function StartUpPage({ onSubmit }: ContactFormProps) {
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>ilexsales@ilex-envirosciences.com
-
-</p>
+                  <p>ilexsales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

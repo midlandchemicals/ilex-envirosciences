@@ -206,22 +206,22 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
     {
       title: "PK MAXX + Leaflet",
       description: "Complete product information and application guidelines",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2022/04/PK_MAXX__2201_i.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/2.%20PK%20MAXX%E2%84%A2%20%2B/PK%20MAXX%20%2B%20Leaflet.pdf",
     },
     {
       title: "Phosphite Action Information Sheet",
       description: "Technical information about phosphite mode of action",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/phosphites-1701-iv.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/2.%20PK%20MAXX%E2%84%A2%20%2B/Phosphite%20Action%20Information%20Sheet.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2023/10/Compatibility-Chart-0923-ii.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/2.%20PK%20MAXX%E2%84%A2%20%2B/Compatibility%20Chart.pdf",
     },
     {
       title: "Potato Field Trial Data",
       description: "Independent trial results showing yield improvements",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/PKMAXX-Field-Trials-Summary-2015-2016-2017.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/2.%20PK%20MAXX%E2%84%A2%20%2B/Potato%20Field%20Trial%20Data.pdf",
     },
   ];
 
@@ -691,8 +691,8 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
                   <div className="max-w-80">
                     <p>
                       Ilex EnviroSciences Ltd <br /> 13a Brindley Close, Holly
-                      Lane Industrial Estate, Atherstone, Warwickshire
-                       CV9 2QZ, United Kingdom
+                      Lane Industrial Estate, Atherstone, Warwickshire CV9 2QZ,
+                      United Kingdom
                     </p>
                   </div>
                 </div>
@@ -704,9 +704,7 @@ export function PKMaxxPage({ onSubmit }: ContactFormProps) {
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>ilexsales@ilex-envirosciences.com
-
-</p>
+                  <p>ilexsales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

@@ -165,7 +165,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
     {
       title: "ProZest Leaflet",
       description: "Complete product information and application guidelines",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/ProZeSt-1606i.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/24.%20ProZest/ProZeSt%20Leaflet.pdf",
     },
   ];
 
@@ -648,8 +648,8 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
                   <div className="max-w-80">
                     <p>
                       Ilex EnviroSciences Ltd <br /> 13a Brindley Close, Holly
-                      Lane Industrial Estate, Atherstone, Warwickshire
-                       CV9 2QZ, United Kingdom
+                      Lane Industrial Estate, Atherstone, Warwickshire CV9 2QZ,
+                      United Kingdom
                     </p>
                   </div>
                 </div>
@@ -661,9 +661,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>ilexsales@ilex-envirosciences.com
-
-</p>
+                  <p>ilexsales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

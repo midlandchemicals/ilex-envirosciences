@@ -202,106 +202,19 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
     {
       title: "Tensile™ Leaflet",
       description: "Complete product information and application guidelines",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/TenSile-1606-i.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/5.%20Tensile%E2%84%A2/Tensile%E2%84%A2%20Leaflet.pdf",
     },
     {
       title: "Phosphite Action Information Sheet",
       description: "Technical information about phosphite mode of action",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/phosphites-1701-iv.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/5.%20Tensile%E2%84%A2/Phosphite%20Action%20Information%20Sheet.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other agricultural products",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2023/10/Compatibility-Chart-0923-ii.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/5.%20Tensile%E2%84%A2/Compatibility%20Chart.pdf",
     },
   ];
-
-  // ProductShowcase data
-  const showcaseData = {
-    productName: "Tensile",
-    productDescription:
-      "A highly efficient liquid nutrient combining silicon and potassium with phosphite P and seaweed-derived natural biostimulants, formulated to improve crop strength, quality, and shelf life. Contains a soluble form of potassium silicate to strengthen stem and leaf tissue for healthier, more robust arable, vegetable, and salad crops.",
-    keyFeatures: [
-      "Soluble potassium silicate for enhanced plant strength",
-      "Phosphite P for rapid uptake and systemic movement",
-      "Seaweed-derived natural biostimulants from Ascophyllum Nodosum",
-      "Silicon deposition in cell walls for protection",
-      "Enhanced heat stress tolerance and reduced transpiration",
-      "Mechanical barrier against fungi and insects",
-    ],
-    targetCrops: [
-      {
-        name: "Cereals",
-        image:
-          "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=300&fit=crop",
-        benefits: [
-          "Stronger stems reduce lodging risk",
-          "Enhanced grain fill and quality",
-          "Better heat stress tolerance",
-          "Improved disease resistance",
-        ],
-      },
-      {
-        name: "Leafy Salads",
-        image:
-          "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop",
-        benefits: [
-          "Thicker, darker green leaves",
-          "Extended shelf life",
-          "Better presentation and quality",
-          "Enhanced nutritional content",
-        ],
-      },
-      {
-        name: "Vegetable Crops",
-        image:
-          "https://images.unsplash.com/photo-1590004953392-5aba2e72269a?w=400&h=300&fit=crop",
-        benefits: [
-          "Improved crop strength and structure",
-          "Enhanced storage quality",
-          "Better disease resistance",
-          "Increased market value",
-        ],
-      },
-      {
-        name: "Root Crops",
-        image:
-          "https://images.unsplash.com/photo-1445282768818-728615cc910a?w=400&h=300&fit=crop",
-        benefits: [
-          "Stronger root development",
-          "Enhanced storage characteristics",
-          "Better resistance to stress",
-          "Improved quality and yield",
-        ],
-      },
-    ],
-    scientificBenefits: [
-      {
-        title: "Silicon Technology",
-        description:
-          "Soluble silicon increases deposited in cell walls, forming a protective layer that strengthens plants",
-        icon: <Gem className="h-6 w-6 text-[#6abf4b]" />,
-      },
-      {
-        title: "Phosphite Action",
-        description:
-          "Rapid uptake and systemic movement of phosphite P enhances plant nutrition and defense",
-        icon: <Zap className="h-6 w-6 text-[#6abf4b]" />,
-      },
-      {
-        title: "Seaweed Biostimulants",
-        description:
-          "Natural compounds from Ascophyllum Nodosum enhance plant metabolism and stress tolerance",
-        icon: <Waves className="h-6 w-6 text-[#6abf4b]" />,
-      },
-      {
-        title: "Enhanced Photosynthesis",
-        description:
-          "Improved leaf presentation to light and increased chlorophyll concentration boost photosynthesis",
-        icon: <Sun className="h-6 w-6 text-[#6abf4b]" />,
-      },
-    ],
-  };
 
   return (
     <div className="min-h-screen mt-10 bg-gray-50">
@@ -826,8 +739,8 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
                   <div className="max-w-80">
                     <p>
                       Ilex EnviroSciences Ltd <br /> 13a Brindley Close, Holly
-                      Lane Industrial Estate, Atherstone, Warwickshire
-                       CV9 2QZ, United Kingdom
+                      Lane Industrial Estate, Atherstone, Warwickshire CV9 2QZ,
+                      United Kingdom
                     </p>
                   </div>
                 </div>
@@ -839,9 +752,7 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>ilexsales@ilex-envirosciences.com
-
-</p>
+                  <p>ilexsales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">

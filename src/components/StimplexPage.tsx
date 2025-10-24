@@ -228,37 +228,28 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
     {
       title: "Stimplex Plus Leaflet",
       description: "Complete product information and application guidelines",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2022/04/Stimplex_2203_vii.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/20.%20Stimplex/Stimplex%20Plus%20Leaflet%20.pdf",
     },
     {
       title: "Stimplex Action",
       description: "Mode of action and scientific background",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2021/07/Stimplex-Action-i.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/20.%20Stimplex/Stimplex%20Action%20.pdf",
     },
-    {
-      title: "Stimplex Arcadian Brochure",
-      description: "Comprehensive product brochure with case studies",
-      url: "https://flipflashpages.uniflip.com/3/100974/1096744/pub/html5.html#page/1",
-    },
+
     {
       title: "Case Study: Bell Brothers Nurseries Ltd",
       description: "Real-world application results and testimonials",
-      url: "https://ilex-envirosciences.com/stimplex/_wp_link_placeholder",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/20.%20Stimplex/Case%20Study-%20Bell%20Brothers%20Nurseries%20Ltd%20.pdf",
     },
     {
       title: "Organic Farmers and Growers Certificate",
       description: "Official organic certification documentation",
-      url: "https://ilex-envirosciences.com/wp-content/uploads/2022/02/OFG.pdf",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/20.%20Stimplex/Organic%20Farmers%20and%20Growers%20Certificate.pdf",
     },
     {
       title: "Compatibility Chart",
       description: "Tank mixing compatibility with other products",
-      url: "https://ilex-envirosciences.com/stimplex/_wp_link_placeholder",
-    },
-    {
-      title: "Stimplex Field Guide",
-      description: "Practical field application guide",
-      url: "https://interactivepdf.uniflip.com/2/100974/1088169/pub/html5.html#page/1",
+      url: "https://vutnh4xhalqycq9w.public.blob.vercel-storage.com/20.%20Stimplex/Compatibility%20Chart.pdf",
     },
   ];
 
@@ -754,8 +745,8 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
                   <div className="max-w-80">
                     <p>
                       Ilex EnviroSciences Ltd <br /> 13a Brindley Close, Holly
-                      Lane Industrial Estate, Atherstone, Warwickshire
-                       CV9 2QZ, United Kingdom
+                      Lane Industrial Estate, Atherstone, Warwickshire CV9 2QZ,
+                      United Kingdom
                     </p>
                   </div>
                 </div>
@@ -767,9 +758,7 @@ export function StimplexPage({ onSubmit }: ContactFormProps) {
 
                 <div className="flex items-center gap-4">
                   <Mail className="h-6 w-6" />
-                  <p>ilexsales@ilex-envirosciences.com
-
-</p>
+                  <p>ilexsales@ilex-envirosciences.com</p>
                 </div>
 
                 <div className="flex items-center gap-4">
