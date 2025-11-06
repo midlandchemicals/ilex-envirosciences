@@ -28,9 +28,7 @@ const categories = {
       { product: "Tensile™", description: "Combining silicon and potassium with phosphite P and seaweed-derived natural biostimulants, formulated to improve crop strength, quality and shelf life." },
       { product: "Beet Raiser™", description: "Formulated to boost root development, nutrient uptake and stress resistance, Beet Raiser helps sugar beet crops achieve their full potential." },
       { product: "Maniphos™", description: "Maniphos™ helps to prevent Manganese and Sulphur deficiencies. The zero nitrogen formulation makes it an ideal option for peas and beans." },
-      { product: "PK VEG™", description: "Specifically formulated together with potassium to promote strong root development and maintain healthy plant growth in vegetable and salad crops.
-
-" },
+      { product: "PK VEG™", description: "Specifically formulated together with potassium to promote strong root development and maintain healthy plant growth in vegetable and salad crops."},
     ],
   },
   "foliar-nutrients": {
