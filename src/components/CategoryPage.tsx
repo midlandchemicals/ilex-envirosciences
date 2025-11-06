@@ -44,23 +44,23 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
     // This map contains all your descriptions, keyed by the product name.
     const descriptionMap: { [key: string]: string } = {
       // Phosphite Range
-      "Crop Rooter® Plus": "Enhances root mass and vigor, providing a robust start for crops under stress.",
-      "PK MAXX™ +": "A high-analysis phosphite that boosts flowering and optimizes fruit set and fill.",
-      "OilSeed Raiser™": "Specifically formulated for oilseed crops to maximize canopy and root establishment.",
-      "Tensile™": "Supports plant structure and resilience, improving crop standability during rapid growth.",
-      "Beet Raiser™": "Targeted nutrition for sugar beet, improving leaf expansion and overall root quality.",
-      "Maniphos™": "Highly efficient manganese and phosphite combination for rapid deficiency correction.",
-      "PK VEG™": "Balanced NPK for vigorous vegetative growth and strong, healthy foliage.",
+      "Crop Rooter® Plus": "Our premium next generation NPK phosphite, formulated with 19 amino acids to target root development and stimulate healthy plant growth.",
+      "PK MAXX™ +": "A powerful multi-nutrient phosphite crop nutrient formulated to boost root and shoot development and stimulate healthy growth.",
+      "OilSeed Raiser™": "Oilseed Raiser™ is a nutritional supplement with phosphite- powered delivery designed to encourage oilseed rape crops to reach their full potential.",
+      "Tensile™": "Combining silicon and potassium with phosphite P and seaweed-derived natural biostimulants, formulated to improve crop strength, quality and shelf life.",
+      "Beet Raiser™": "Formulated to boost root development, nutrient uptake and stress resistance, Beet Raiser helps sugar beet crops achieve their full potential.",
+      "Maniphos™": "Maniphos™ helps to prevent Manganese and Sulphur deficiencies. The zero nitrogen formulation makes it an ideal option for peas and beans.",
+      "PK VEG™": "Specifically formulated together with potassium to promote strong root development and maintain healthy plant growth in vegetable and salad crops.",
 
       // Foliar Nutrients
-      "Mn SUPER™": "Concentrated manganese formulation for fast and effective treatment of deficiencies.",
-      "Mag Plus™": "Essential magnesium supplement to optimize photosynthesis and energy production.",
-      "ful-oN™": "A nitrogen and sulfur source that rapidly green-ups foliage and supports protein synthesis.",
-      "Mn-Cu Plus™": "Dual-action micronutrient complex for common deficiencies in cereals and root crops.",
-      "Foliar Boost™": "General-purpose micronutrient blend for overall crop health and deficiency prevention.",
-      "Cu-Zin™": "Combines copper and zinc to support enzyme function and early plant development.",
-      "Pro-K™": "A highly bioavailable potassium source for improved water regulation and fruit quality.",
-      "Pro-Sul™": "Quickly absorbed sulfur and nitrogen to support vigorous growth and yield potential.",
+      "Mn SUPER™": "A unique combination of soluble manganese, magnesium and zinc with nitrogen and sulphur for fast and effective treatment of deficiencies.",
+      "Mag Plus™": "Essential magnesium supplement to optimise photosynthesis and energy production.",
+      "ful-oN™": "Nitrogen, potassium with fulvic acid specially formulated as a foliar feed to improve plant nutrition status at key stages of crop development.",
+      "Mn-Cu Plus™": "Mn-Cu Plus offers a convenient method of correcting manganese and copper deficiencies in the developing crop",
+      "Foliar Boost™": "Foliar Boost represents a new development in the science of foliar nutrition, combining plant-available nitrogen and sulphur with key micronutrients manganese, magnesium, copper and zinc.",
+      "Cu-Zin™": "As well as preventing deficiencies, Cu-Zin has been manufactured to maintain increased levels of copper and zinc in the plant for extended periods of growth",
+      "Pro-K™": "Pro-K is formulated together with plant available potassium to supply this essential nutrient at key growth stages and improve transportation of nutrients within the plant. ",
+      "Pro-Sul™": "Pro-Sul is formulated together with plant available Sulphur to supply this essential nutrient at key growth stages.",
       
       // Calcium Range
       "Pro-Cal™": "A premium calcium formulation to strengthen cell walls and enhance produce shelf life.",
