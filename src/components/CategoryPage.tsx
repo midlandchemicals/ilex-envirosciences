@@ -47,14 +47,12 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
     <span key="p2">The <b>Ilex Phosphite</b> range delivers essential nutrients quickly and effectively, consistently promoting strong root development.</span>,
     "Our advanced formulations combine phosphite technology with key nutrients for rapid, systemic absorption, boosting crop health, root growth, and nutrient-use efficiency for greater yield potential."
   ];
-
- case "foliar-nutrients":
+      case "foliar-nutrients":
   return [
     "Foliar nutrients target deficiencies efficiently, delivering essential elements in highly plant-available forms for rapid uptake and maximum effectiveness.",
     <span key="p2"><b>Ilex concentrated liquid nutrients</b> are designed for easy application across a wide range of arable and horticultural crops, ensuring consistent growth and health.</span>,
     "Our advanced formulations enhance nutrient absorption, boost crop vigor, and improve overall yield potential through precise, systemic delivery."
-  ];
-
+         ];
       case "calcium-range":
         return [
           "Essential calcium supplements that improve crop quality, enhance storage characteristics, and prevent calcium-related disorders in fruits and vegetables."
