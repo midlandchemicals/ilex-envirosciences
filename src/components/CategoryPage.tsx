@@ -42,11 +42,12 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
   const getCategoryDescription = (link: string) => {
     switch (link) {
       case "phosphite-range":
-        return [
-          "Phosphite technology enhances foliar nutrition by improving nutrient uptake, stimulating root growth, and helping crops withstand stress from weather and nutrient imbalances.",
-          "The Ilex Foliar Phosphite range delivers essential nutrients quickly and effectively, consistently promoting strong root development.",
-          "Our advanced formulations combine phosphite technology with key nutrients for rapid, systemic absorption—boosting crop health, root growth, and nutrient-use efficiency for greater yield potential."
-        ];
+  return [
+    "Phosphite technology enhances foliar nutrition by improving nutrient uptake, stimulating root growth, and helping crops withstand stress from weather and nutrient imbalances.",
+    <span key="p2">The <b>Ilex Foliar Phosphite</b> range delivers essential nutrients quickly and effectively, consistently promoting strong root development.</span>,
+    "Our advanced formulations combine phosphite technology with key nutrients for rapid, systemic absorption—boosting crop health, root growth, and nutrient-use efficiency for greater yield potential."
+  ];
+
       case "foliar-range":
         return [
           "High-quality foliar nutrients designed for rapid absorption and maximum effectiveness, delivering essential micronutrients directly to plant leaves."
