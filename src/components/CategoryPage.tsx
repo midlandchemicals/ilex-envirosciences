@@ -22,13 +22,13 @@ const categories = {
     link: "phosphite-range",
     menu_item: "The Ilex Phosphite Range",
     products: [
-      { product: "<b>Crop Rooter® Plus</b>", description: "The next generation NPK phosphite, formulated with 19 amino acids to target root development and stimulate healthy plant growth." },
-      { product: "<b>PK MAXX™ +</b>", description: "A powerful multi-nutrient phosphite crop nutrient formulated to boost root and shoot development and stimulate healthy growth." },
-      { product: "<b>OilSeed Raiser™</b>", description: "Oilseed Raiser™ is a nutritional supplement with phosphite- powered delivery designed to encourage oilseed rape crops to reach their full potential." },
-      { product: "<b>Tensile™</b>", description: "Combining silicon and potassium with phosphite P and seaweed-derived natural biostimulants, formulated to improve crop strength, quality and shelf life." },
-      { product: "<b>Beet Raiser™</b>", description: "Formulated to boost root development, nutrient uptake and stress resistance, Beet Raiser helps sugar beet crops achieve their full potential." },
-      { product: "<b>Maniphos™</b>", description: "Maniphos™ helps to prevent Manganese and Sulphur deficiencies. The zero nitrogen formulation makes it an ideal option for peas and beans." },
-      { product: "<b>PK VEG™</b>", description: "Specifically formulated together with potassium to promote strong root development and maintain healthy plant growth in vegetable and salad crops."},
+      { product: "Crop Rooter® Plus", description: "The next generation NPK phosphite, formulated with 19 amino acids to target root development and stimulate healthy plant growth." },
+      { product: "PK MAXX™ +", description: "A powerful multi-nutrient phosphite crop nutrient formulated to boost root and shoot development and stimulate healthy growth." },
+      { product: "OilSeed Raiser™", description: "Oilseed Raiser™ is a nutritional supplement with phosphite- powered delivery designed to encourage oilseed rape crops to reach their full potential." },
+      { product: "Tensile™", description: "Combining silicon and potassium with phosphite P and seaweed-derived natural biostimulants, formulated to improve crop strength, quality and shelf life." },
+      { product: "Beet Raiser™", description: "Formulated to boost root development, nutrient uptake and stress resistance, Beet Raiser helps sugar beet crops achieve their full potential." },
+      { product: "Maniphos™", description: "Maniphos™ helps to prevent Manganese and Sulphur deficiencies. The zero nitrogen formulation makes it an ideal option for peas and beans." },
+      { product: "PK VEG™", description: "Specifically formulated together with potassium to promote strong root development and maintain healthy plant growth in vegetable and salad crops."},
     ],
   },
   "foliar-nutrients": {
@@ -192,7 +192,7 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
   };
 
   // --- FIX #1: Get the detailed data from the local 'categories' object ---
-  const categoryData = categories[category.link as keyof typeof categories];
+const categoryData = categories[category.link as keyof typeof categories];
 
   return (
     <div className="min-h-screen bg-white pt-24">
@@ -256,8 +256,8 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            
-            {/* --- FIX #2: Use categoryData.products here --- */}
+
+            {/* --- Products Mapping --- */}
             {categoryData.products?.map((product, index) => (
               <motion.div
                 key={index}
@@ -274,16 +274,23 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
                     />
                   </div>
                   <CardHeader className="!pt-0">
-                    <CardTitle className="text-lg text-gray-800">
+                    {/* FIX: Using font-bold Tailwind class to style the product name */}
+                    <CardTitle className="text-lg text-gray-800 **font-bold**">
                       {product.product}
                     </CardTitle>
-        // Alternative if the above fails
-                      <p
-                        className="text-sm text-gray-600 mt-1"
-                        dangerouslySetInnerHTML={{ 
-                          __html: (product.description || "No description available") as string 
-                        }}
-                      />
+                    
+                    {/* Descriptions are rendered as plain text (no HTML) */}
+                    <p className="text-sm text-gray-600 mt-1">
+                      {product.description || "No description available"}
+                    </p>
+                    
+                    {/* If you add HTML to descriptions later, use this instead:
+                    <p
+                      className="text-sm text-gray-600 mt-1"
+                      dangerouslySetInnerHTML={{ __html: product.description || "No description available" }}
+                    />
+                    */}
+
                   </CardHeader>
                   <CardContent className="pt-0 mt-auto">
                     <Button
