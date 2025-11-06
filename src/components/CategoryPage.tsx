@@ -16,6 +16,7 @@ interface CategoryPageProps {
 }
 
 // --- Full Product Lists per Category ---
+// [This object is correct and has the descriptions]
 const categories = {
   "phosphite-range": {
     link: "phosphite-range",
@@ -103,6 +104,7 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
   };
 
   const getCategoryDescription = (link: string) => {
+    // ... (this function is correct)
     const normalizedLink = link.trim().toLowerCase();
     switch (normalizedLink) {
       case "phosphite-range":
@@ -153,6 +155,7 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
   };
 
   const getProductImage = (productName: string) => {
+    // ... (this function is correct)
     const productImageMap: { [key: string]: string } = {
       "Crop Rooter® Plus": "/assets/product images/Phosphite/Crop-Rooter-plus.jpg",
       "PK MAXX™ +": "/assets/product images/Phosphite/PKmaxx.jpg",
@@ -187,6 +190,9 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
     };
     return productImageMap[productName] || "/assets/product images/Phosphite/Maniphos.jpg";
   };
+
+  // --- FIX #1: Get the detailed data from the local 'categories' object ---
+  const categoryData = categories[category.link as keyof typeof categories];
 
   return (
     <div className="min-h-screen bg-white pt-24">
@@ -250,7 +256,9 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {category.products?.map((product, index) => (
+            
+            {/* --- FIX #2: Use categoryData.products here --- */}
+            {categoryData.products?.map((product, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
@@ -270,6 +278,7 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
                       {product.product}
                     </CardTitle>
                     <p className="text-sm text-gray-600 mt-1">
+                      {/* This will now show the correct description */}
                       {product.description || "No description available"}
                     </p>
                   </CardHeader>
