@@ -3,15 +3,12 @@ import { motion } from "framer-motion";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "./ui/card";
 import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
 import { ImageWithFallback } from "./FallbackImage/ImageWithFallback";
 import {
-  ArrowRight,
   Beaker,
   Sprout,
   Shield,
@@ -42,82 +39,47 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
     },
   };
 
-  const getCategoryIcon = (link: string) => {
-    switch (link) {
-      case "phosphite-range":
-        return <Beaker className="h-12 w-12 text-blue-600" />;
-      case "foliar-range":
-        return <Sprout className="h-12 w-12 text-green-600" />;
-      case "calcium-range":
-        return <Shield className="h-12 w-12 text-orange-600" />;
-      case "biostimulants":
-        return <Leaf className="h-12 w-12 text-emerald-600" />;
-      case "seed-treatments":
-        return <Wheat className="h-12 w-12 text-amber-600" />;
-      case "water-conditioners":
-        return <Droplets className="h-12 w-12 text-cyan-600" />;
-      case "organic-range":
-        return <FlaskConical className="h-12 w-12 text-purple-600" />;
-      default:
-        return <Beaker className="h-12 w-12 text-blue-600" />;
-    }
-  };
-
-  const getCategoryGradient = (link: string) => {
-    switch (link) {
-      case "phosphite-range":
-        return "from-blue-50 via-white to-purple-50";
-      case "foliar-range":
-        return "from-green-50 via-white to-emerald-50";
-      case "calcium-range":
-        return "from-orange-50 via-white to-red-50";
-      case "biostimulants":
-        return "from-emerald-50 via-white to-teal-50";
-      case "seed-treatments":
-        return "from-amber-50 via-white to-yellow-50";
-      case "water-conditioners":
-        return "from-cyan-50 via-white to-blue-50";
-      case "organic-range":
-        return "from-purple-50 via-white to-pink-50";
-      default:
-        return "from-blue-50 via-white to-purple-50";
-    }
-  };
-
   const getCategoryDescription = (link: string) => {
     switch (link) {
       case "phosphite-range":
-  return (
-    <>
-      <p>Phosphite technology enhances foliar nutrition by improving nutrient uptake, stimulating root growth, and helping crops withstand stress from weather and nutrient imbalances.</p>
-      <p></p><p>The <b>Ilex Foliar Phosphite</b> range delivers essential nutrients quickly and effectively, consistently promoting strong root development.</p>
-      <p></p><p>Our advanced formulations combine phosphite technology with key nutrients for rapid, systemic absorption, boosting crop health, root growth, and nutrient-use efficiency for greater yield potential.</p>
-    </>
-  );
-
+        return [
+          "Phosphite technology enhances foliar nutrition by improving nutrient uptake, stimulating root growth, and helping crops withstand stress from weather and nutrient imbalances.",
+          "The Ilex Foliar Phosphite range delivers essential nutrients quickly and effectively, consistently promoting strong root development.",
+          "Our advanced formulations combine phosphite technology with key nutrients for rapid, systemic absorption—boosting crop health, root growth, and nutrient-use efficiency for greater yield potential."
+        ];
       case "foliar-range":
-        return "High-quality foliar nutrients designed for rapid absorption and maximum effectiveness, delivering essential micronutrients directly to plant leaves.";
+        return [
+          "High-quality foliar nutrients designed for rapid absorption and maximum effectiveness, delivering essential micronutrients directly to plant leaves."
+        ];
       case "calcium-range":
-        return "Essential calcium supplements that improve crop quality, enhance storage characteristics, and prevent calcium-related disorders in fruits and vegetables.";
+        return [
+          "Essential calcium supplements that improve crop quality, enhance storage characteristics, and prevent calcium-related disorders in fruits and vegetables."
+        ];
       case "biostimulants":
-        return "Natural biostimulants derived from seaweed extracts that enhance plant growth, improve stress tolerance, and optimize nutrient utilisation.";
+        return [
+          "Natural biostimulants derived from seaweed extracts that enhance plant growth, improve stress tolerance, and optimize nutrient utilisation."
+        ];
       case "seed-treatments":
-        return "Specialised seed treatments that improve germination rates, enhance early plant vigor, and provide essential nutrients for optimal seedling development.";
+        return [
+          "Specialised seed treatments that improve germination rates, enhance early plant vigor, and provide essential nutrients for optimal seedling development."
+        ];
       case "water-conditioners":
-        return "Advanced water conditioning solutions that optimize spray water quality for maximum efficacy of foliar applications.";
+        return [
+          "Advanced water conditioning solutions that optimize spray water quality for maximum efficacy of foliar applications."
+        ];
       case "organic-range":
-        return "Certified organic fertilizers that provide complete nutrition while maintaining organic certification and supporting sustainable farming practices.";
+        return [
+          "Certified organic fertilizers that provide complete nutrition while maintaining organic certification and supporting sustainable farming practices."
+        ];
       default:
-        return "Premium agricultural solutions designed to enhance crop performance and quality.";
+        return ["Premium agricultural solutions designed to enhance crop performance and quality."];
     }
   };
 
   const getProductImage = (productName: string, categoryLink?: string) => {
-    // Map product names to their actual image files
     const productImageMap: { [key: string]: string } = {
       // Phosphite Range
-      "Crop Rooter® Plus":
-        "/assets/product images/Phosphite/Crop-Rooter-plus.jpg",
+      "Crop Rooter® Plus": "/assets/product images/Phosphite/Crop-Rooter-plus.jpg",
       "PK MAXX™ +": "/assets/product images/Phosphite/PKmaxx.jpg",
       "OilSeed Raiser™": "/assets/product images/Phosphite/OilSeed Raiser.jpg",
       "Tensile™": "/assets/product images/Phosphite/TenSile.jpg",
@@ -145,92 +107,74 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
       "Toggle®": "/assets/product images/Biostimulants/Toggle_tub.png",
 
       // Seed Treatments
-      "Start-uP® MAXX":
-        "/assets/product images/Seed Treatments/Start-uP MAXX.jpg",
+      "Start-uP® MAXX": "/assets/product images/Seed Treatments/Start-uP MAXX.jpg",
       "Start-uP®": "/assets/product images/Seed Treatments/Start-uP.jpg",
       "ProZest™": "/assets/product images/Seed Treatments/ProZeSt.jpg",
       "Man-uP™": "/assets/product images/Seed Treatments/Man uP.jpg",
 
       // Water Conditioners
-      "Modiphy Xtra":
-        "/assets/product images/Water Conditioner/ModipHy Xtra.jpg",
+      "Modiphy Xtra": "/assets/product images/Water Conditioner/ModipHy Xtra.jpg",
 
       // Organic Range
       "Complete™ (6-2-4)": "/assets/product images/Organic/Complete 6-2-4.jpg",
-      "Complete Hi-Fruit™ (4-2-6)":
-        "/assets/product images/Organic/Complete Hi-Fruit.jpg",
+      "Complete Hi-Fruit™ (4-2-6)": "/assets/product images/Organic/Complete Hi-Fruit.jpg",
       "K-Max™ (3-1-8)": "/assets/product images/Organic/K-Max.jpg",
       "N-Max™ (7-2-2)": "/assets/product images/Organic/N-Max.jpg",
-      "Ultimate Gold™ (8-7-7)":
-        "/assets/product images/Organic/Ultimate Gold.jpg",
+      "Ultimate Gold™ (8-7-7)": "/assets/product images/Organic/Ultimate Gold.jpg",
     };
 
-    // Try exact match first
-    if (productImageMap[productName]) {
-      return productImageMap[productName];
-    }
-
-    // Fallback to keyword-based matching for any missing products
-    if (productName.toLowerCase().includes("cal")) {
-      return "/assets/product images/Calcium Supplements/ProCal.jpg";
-    } else if (productName.toLowerCase().includes("mag")) {
-      return "/assets/product images/Foliar/Mag plus.jpg";
-    } else if (
-      productName.toLowerCase().includes("seed") ||
-      productName.toLowerCase().includes("start")
-    ) {
-      return "/assets/product images/Seed Treatments/Start-uP.jpg";
-    } else {
-      return "/assets/product images/Phosphite/Maniphos.jpg";
-    }
+    return productImageMap[productName] || "/assets/product images/Phosphite/Maniphos.jpg";
   };
 
   return (
     <div className="min-h-screen bg-white pt-24">
       {/* Category Header */}
       <motion.header
-        className="bg-[#c9dec2] py-16 px-4 text-[#1a1a1a] flex items-center justify-center min-h-[40vh]"
+        className="bg-[#c9dec2] py-16 px-4 flex items-center justify-center min-h-[40vh]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-6">
-            <motion.h1
-              className="text-3xl md:text-4xl font-bold mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              {category.menu_item.replace("The Ilex ", "")}
-            </motion.h1>
+        <div className="max-w-4xl mx-auto text-center flex flex-col gap-6">
+          <motion.h1
+            className="text-3xl md:text-4xl font-bold"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            {category.menu_item.replace("The Ilex ", "")}
+          </motion.h1>
+
+          {/* Dynamic paragraphs */}
+          {getCategoryDescription(category.link).map((desc, idx) => (
             <motion.p
-              className="text-[#2e2e2e] text-lg leading-relaxed mb-8 max-w-3xl mx-auto"
+              key={idx}
+              className="text-[#2e2e2e] text-lg leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.2 * idx }}
             >
-              {getCategoryDescription(category.link)}
+              {desc}
             </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+          ))}
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+            <Button
+              className="bg-[#5bb33d] cursor-pointer text-xl hover:bg-[#4a9b32] text-white px-8 py-6 rounded-lg font-semibold transition-all duration-300 hover:translate-y-[-2px] shadow-lg"
+              onClick={() => {
+                const productsSection = document.getElementById("products-section");
+                if (productsSection) {
+                  productsSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
             >
-              <Button
-                className="bg-[#5bb33d] cursor-pointer text-xl hover:bg-[#4a9b32] text-white px-8 py-6 rounded-lg font-semibold transition-all duration-300 hover:translate-y-[-2px] shadow-lg"
-                onClick={() => {
-                  const productsSection =
-                    document.getElementById("products-section");
-                  if (productsSection) {
-                    productsSection.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
-              >
-                Learn More
-              </Button>
-            </motion.div>
-          </div>
+              Learn More
+            </Button>
+          </motion.div>
         </div>
       </motion.header>
 
@@ -261,7 +205,7 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
                     />
                   </div>
                   <CardHeader className="!pt-0">
-                    <CardTitle className="text-lg  text-gray-800">
+                    <CardTitle className="text-lg text-gray-800">
                       {product.product}
                     </CardTitle>
                   </CardHeader>
