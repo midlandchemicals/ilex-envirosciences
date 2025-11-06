@@ -47,43 +47,51 @@ const getCategoryDescription = (link: string) => {
     case "phosphite-range":
       return [
         "Phosphite technology enhances foliar nutrition by improving nutrient uptake, stimulating root growth, and helping crops withstand stress from weather and nutrient imbalances.",
-        <span key="p2">The <b>Ilex Phosphite</b> range delivers essential nutrients quickly and effectively, consistently promoting strong root development.</span>,
+        <span key="p2">The <b>Ilex Phosphite Range</b> delivers essential nutrients quickly and effectively, consistently promoting strong root development.</span>,
         "Our advanced formulations combine phosphite technology with key nutrients for rapid, systemic absorption, boosting crop health, root growth, and nutrient-use efficiency for greater yield potential."
       ];
 
     case "foliar-nutrients":
       return [
         "Foliar nutrients target deficiencies efficiently, delivering essential elements in highly plant-available forms for rapid uptake and maximum effectiveness.",
-        <span key="p2">The <b>Ilex Foliar Nutrients</b> range is designed for easy application across a wide range of arable and horticultural crops, ensuring consistent growth and health.</span>,
+        <span key="p2">The <b>Ilex Foliar Nutrients Range</b> is designed for easy application across a wide range of arable and horticultural crops, ensuring consistent growth and health.</span>,
         "Our advanced formulations enhance nutrient absorption, boost crop vigour, and improve overall yield potential through precise, systemic delivery."
       ];
 
     case "calcium-range":
       return [
     "Calcium supplements that enhance crop quality and strengthen plant structure for healthier, more resilient produce.",
-    <span key="p2">The <b>Ilex Calcium Range</b> delivers essential calcium efficiently, supporting optimal fruit and vegetable development from flowering to harvest.</span>,
+    <span key="p2">The <b>Ilex Calcium Supplement Range</b> delivers essential calcium efficiently, supporting optimal fruit and vegetable development from flowering to harvest.</span>,
       "Our advanced formulations prevent calcium-related disorders, improve storage characteristics, and help maximise yield and crop value."
       ];
-      
+
     case "biostimulants":
-      return [
-        "Natural biostimulants derived from seaweed extracts that enhance plant growth, improve stress tolerance, and optimise nutrient utilisation."
-      ];
+  return [
+    "Natural biostimulants derived from seaweed extracts that enhance plant growth and improve stress tolerance.",
+    <span key="p2">The <b>Ilex Biostimulant Range</b> provides essential compounds to support plant vigour and resilience across diverse crops.</span>,
+    "Our advanced formulations optimise nutrient utilisation and strengthen crop performance for healthier, more productive plants."
+     ];
 
     case "seed-treatments":
-      return [
-        "Specialised seed treatments that improve germination rates, enhance early plant vigour, and provide essential nutrients for optimal seedling development."
-      ];
+  return [
+    "Specialised seed treatments that improve germination rates and support early plant development.",
+    <span key="p2">The <b>Ilex Seed Treatment Range</b> delivers essential nutrients and protection for seedlings to ensure strong establishment.</span>,
+    "These formulations enhance seedling vigour, optimise nutrient uptake, and increase overall crop potential from the very start."
+    ];
 
     case "water-conditioners":
-      return [
-        "Advanced water conditioning solutions that optimise spray water quality for maximum efficacy of foliar applications."
-      ];
+  return [
+    "Advanced water conditioning solutions that optimise spray water quality for effective foliar applications.",
+    <span key="p2">The <b>Ilex Water Conditioner Range</b> ensures uniform nutrient delivery and maximises the performance of foliar sprays.</span>,
+    "Our formulations improve water efficiency, enhance nutrient absorption, and support consistent crop health and productivity."
+    ];
 
-    case "organic-range":
-      return [
-        "Certified organic fertilisers that provide complete nutrition while maintaining organic certification and supporting sustainable farming practices."
-      ];
+  case "organic-range":
+  return [
+    "Certified organic fertilisers that provide complete nutrition while maintaining organic certification.",
+    <span key="p2">The <b>Ilex Organic Fertiliser Range</b> supports sustainable farming practices and promotes healthy, productive crops.</span>,
+    "These formulations optimise nutrient uptake, improve soil health, and contribute to long-term agricultural sustainability."
+ ];
 
     default:
       return ["Premium agricultural solutions designed to enhance crop performance and quality."];
