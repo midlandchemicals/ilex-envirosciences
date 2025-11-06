@@ -54,15 +54,17 @@ const getCategoryDescription = (link: string) => {
     case "foliar-nutrients":
       return [
         "Foliar nutrients target deficiencies efficiently, delivering essential elements in highly plant-available forms for rapid uptake and maximum effectiveness.",
-        <span key="p2"><b>Ilex concentrated liquid nutrients</b> are designed for easy application across a wide range of arable and horticultural crops, ensuring consistent growth and health.</span>,
-        "Our advanced formulations enhance nutrient absorption, boost crop vigor, and improve overall yield potential through precise, systemic delivery."
+        <span key="p2">The <b>Ilex Foliar Nutrients</b> range is designed for easy application across a wide range of arable and horticultural crops, ensuring consistent growth and health.</span>,
+        "Our advanced formulations enhance nutrient absorption, boost crop vigour, and improve overall yield potential through precise, systemic delivery."
       ];
 
     case "calcium-range":
       return [
-        "Essential calcium supplements that improve crop quality, enhance storage characteristics, and prevent calcium-related disorders in fruits and vegetables."
+    "Calcium supplements that enhance crop quality and strengthen plant structure for healthier, more resilient produce.",
+    <span key="p2">The <b>Ilex Calcium Range</b> delivers essential calcium efficiently, supporting optimal fruit and vegetable development from flowering to harvest.</span>,
+      "Our advanced formulations prevent calcium-related disorders, improve storage characteristics, and help maximise yield and crop value."
       ];
-
+      
     case "biostimulants":
       return [
         "Natural biostimulants derived from seaweed extracts that enhance plant growth, improve stress tolerance, and optimise nutrient utilisation."
