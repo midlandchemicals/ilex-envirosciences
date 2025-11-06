@@ -39,67 +39,65 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
     },
   };
 
-const getCategoryDescription = (link: string) => {
-  // Normalize input: trim spaces and convert to lowercase
-  const normalizedLink = link.trim().toLowerCase();
+  const getCategoryDescription = (link: string) => {
+    const normalizedLink = link.trim().toLowerCase();
 
-  switch (normalizedLink) {
-    case "phosphite-range":
-      return [
-        "Phosphite technology enhances foliar nutrition by improving nutrient uptake, stimulating root growth, and helping crops withstand stress from weather and nutrient imbalances.",
-        <span key="p2">The <b>Ilex Phosphite Range</b> delivers essential nutrients quickly and effectively, consistently promoting strong root development.</span>,
-        "Our advanced formulations combine phosphite technology with key nutrients for rapid, systemic absorption, boosting crop health, root growth, and nutrient-use efficiency for greater yield potential."
-      ];
+    switch (normalizedLink) {
+      case "phosphite-range":
+        return [
+          "Phosphite technology enhances foliar nutrition by improving nutrient uptake, stimulating root growth, and helping crops withstand stress from weather and nutrient imbalances.",
+          <span key="p2">The <b>Ilex Phosphite Range</b> delivers essential nutrients quickly and effectively, consistently promoting strong root development.</span>,
+          "Our advanced formulations combine phosphite technology with key nutrients for rapid, systemic absorption, boosting crop health, root growth, and nutrient-use efficiency for greater yield potential."
+        ];
 
-    case "foliar-nutrients":
-      return [
-        "Foliar nutrients target deficiencies efficiently, delivering essential elements in highly plant-available forms for rapid uptake and maximum effectiveness.",
-        <span key="p2">The <b>Ilex Foliar Nutrients Range</b> is designed for easy application across a wide range of arable and horticultural crops, ensuring consistent growth and health.</span>,
-        "Our advanced formulations enhance nutrient absorption, boost crop vigour, and improve overall yield potential through precise, systemic delivery."
-      ];
+      case "foliar-nutrients":
+        return [
+          "Foliar nutrients target deficiencies efficiently, delivering essential elements in highly plant-available forms for rapid uptake and maximum effectiveness.",
+          <span key="p2">The <b>Ilex Foliar Nutrients Range</b> is designed for easy application across a wide range of arable and horticultural crops, ensuring consistent growth and health.</span>,
+          "Our advanced formulations enhance nutrient absorption, boost crop vigour, and improve overall yield potential through precise, systemic delivery."
+        ];
 
-    case "calcium-range":
-      return [
-    "Calcium supplements that enhance crop quality and strengthen plant structure for healthier, more resilient produce.",
-    <span key="p2">The <b>Ilex Calcium Supplement Range</b> delivers essential calcium efficiently, supporting optimal fruit and vegetable development from flowering to harvest.</span>,
-      "Our advanced formulations prevent calcium-related disorders, improve storage characteristics, and help maximise yield and crop value."
-      ];
+      case "calcium-range":
+        return [
+          "Calcium supplements that enhance crop quality and strengthen plant structure for healthier, more resilient produce.",
+          <span key="p2">The <b>Ilex Calcium Supplement Range</b> delivers essential calcium efficiently, supporting optimal fruit and vegetable development from flowering to harvest.</span>,
+          "Our advanced formulations prevent calcium-related disorders, improve storage characteristics, and help maximise yield and crop value."
+        ];
 
-    case "biostimulants":
-  return [
-    "Natural biostimulants derived from seaweed extracts that enhance plant growth and improve stress tolerance.",
-    <span key="p2">The <b>Ilex Biostimulant Range</b> provides essential compounds to support plant vigour and resilience across diverse crops.</span>,
-    "Our advanced formulations optimise nutrient utilisation and strengthen crop performance for healthier, more productive plants."
-     ];
+      case "biostimulants":
+        return [
+          "Natural biostimulants derived from seaweed extracts that enhance plant growth and improve stress tolerance.",
+          <span key="p2">The <b>Ilex Biostimulant Range</b> provides essential compounds to support plant vigour and resilience across diverse crops.</span>,
+          "Our advanced formulations optimise nutrient utilisation and strengthen crop performance for healthier, more productive plants."
+        ];
 
-    case "seed-treatments":
-  return [
-    "Specialised seed treatments that improve germination rates and support early plant development.",
-    <span key="p2">The <b>Ilex Seed Treatment Range</b> delivers essential nutrients and protection for seedlings to ensure strong establishment.</span>,
-    "These formulations enhance seedling vigour, optimise nutrient uptake, and increase overall crop potential from the very start."
-    ];
+      case "seed-treatments":
+        return [
+          "Specialised seed treatments that improve germination rates and support early plant development.",
+          <span key="p2">The <b>Ilex Seed Treatment Range</b> delivers essential nutrients and protection for seedlings to ensure strong establishment.</span>,
+          "These formulations enhance seedling vigour, optimise nutrient uptake, and increase overall crop potential from the very start."
+        ];
 
-    case "water-conditioners":
-  return [
-    "Advanced water conditioning solutions that optimise spray water quality for effective foliar applications.",
-    <span key="p2">The <b>Ilex Water Conditioner Range</b> ensures uniform nutrient delivery and maximises the performance of foliar sprays.</span>,
-    "Our formulations improve water efficiency, enhance nutrient absorption, and support consistent crop health and productivity."
-    ];
+      case "water-conditioners":
+        return [
+          "Advanced water conditioning solutions that optimise spray water quality for effective foliar applications.",
+          <span key="p2">The <b>Ilex Water Conditioner Range</b> ensures uniform nutrient delivery and maximises the performance of foliar sprays.</span>,
+          "Our formulations improve water efficiency, enhance nutrient absorption, and support consistent crop health and productivity."
+        ];
 
-  case "organic-range":
-  return [
-    "Certified organic fertilisers that provide complete nutrition while maintaining organic certification.",
-    <span key="p2">The <b>Ilex Organic Fertiliser Range</b> supports sustainable farming practices and promotes healthy, productive crops.</span>,
-    "These formulations optimise nutrient uptake, improve soil health, and contribute to long-term agricultural sustainability."
- ];
+      case "organic-range":
+        return [
+          "Certified organic fertilisers that provide complete nutrition while maintaining organic certification.",
+          <span key="p2">The <b>Ilex Organic Fertiliser Range</b> supports sustainable farming practices and promotes healthy, productive crops.</span>,
+          "These formulations optimise nutrient uptake, improve soil health, and contribute to long-term agricultural sustainability."
+        ];
 
-    default:
-      return ["Premium agricultural solutions designed to enhance crop performance and quality."];
-  }
-};
+      default:
+        return ["Premium agricultural solutions designed to enhance crop performance and quality."];
+    }
+  };
 
-
-  const getProductImage = (productName: string, categoryLink?: string) => {
+  const getProductImage = (productName: string) => {
     const productImageMap: { [key: string]: string } = {
       // Phosphite Range
       "Crop Rooter® Plus": "/assets/product images/Phosphite/Crop-Rooter-plus.jpg",
@@ -231,6 +229,10 @@ const getCategoryDescription = (link: string) => {
                     <CardTitle className="text-lg text-gray-800">
                       {product.product}
                     </CardTitle>
+                    {/* Description line */}
+                    <p className="text-sm text-gray-600 mt-1">
+                      {product.description || "No description available"}
+                    </p>
                   </CardHeader>
                   <CardContent className="pt-0 mt-auto">
                     <Button
