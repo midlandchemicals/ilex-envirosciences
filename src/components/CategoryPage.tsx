@@ -214,9 +214,10 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
               <motion.div
                 key={index}
                 variants={fadeInUp}
-                className="group **cursor-pointer**" // Added cursor-pointer
+                className="group cursor-pointer"
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                **onClick={() => onPageChange("product", category, product)}** // Navigate on card click
+                // THIS LINE MAKES THE ENTIRE CARD CLICKABLE
+                onClick={() => onPageChange("product", category, product)}
               >
                 <Card className="h-full flex flex-col border border-gray-100 hover:border-[#6abf4b] transition-all duration-300 overflow-hidden">
                   <div className="h-96 bg-gray-50 flex items-center justify-center p-4">
@@ -239,7 +240,8 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
                     <Button
                       className="w-full cursor-pointer bg-[#6abf4b] hover:bg-[#5aa338] text-white"
                       onClick={(e) => {
-                        **e.stopPropagation();** // Prevent card click handler from firing
+                        // THIS LINE ENSURES THE BUTTON CLICK DOESN'T ALSO TRIGGER THE CARD CLICK
+                        e.stopPropagation();
                         onPageChange("product", category, product);
                       }}
                     >
