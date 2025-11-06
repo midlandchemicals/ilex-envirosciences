@@ -39,7 +39,7 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
     },
   };
 
-  // --- NEW MANUAL DESCRIPTION FUNCTION ---
+  // --- START MANUAL DESCRIPTION FUNCTION (EDIT DESCRIPTIONS HERE) ---
   const getManualProductDescription = (productName: string): string => {
     // This map contains all your descriptions, keyed by the product name.
     const descriptionMap: { [key: string]: string } = {
@@ -93,7 +93,7 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
 
     return descriptionMap[productName] || descriptionMap.default;
   };
-  // --- END NEW MANUAL DESCRIPTION FUNCTION ---
+  // --- END MANUAL DESCRIPTION FUNCTION ---
 
 
   const getCategoryDescription = (link: string) => {
@@ -285,9 +285,10 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
                     />
                   </div>
                   <CardHeader className="!pt-0">
-                    <CardTitle className="text-lg text-gray-800">
-                      {product.product}
-                    </CardTitle>
+                    <CardTitle 
+                      className="text-lg text-gray-800 font-bold" 
+                      dangerouslySetInnerHTML={{ __html: `<strong>${product.product}</strong>` }}
+                    />
                     {/* Description line - NOW USES THE NEW MANUAL FUNCTION */}
                     <p className="text-sm text-gray-600 mt-1">
                       {getManualProductDescription(product.product)}
