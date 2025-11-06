@@ -87,7 +87,14 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
   const getCategoryDescription = (link: string) => {
     switch (link) {
       case "phosphite-range":
-        return "Advanced phosphite-based nutrients that enhance plant health, improve disease resistance, and boost overall crop performance through superior nutrient uptake.";
+  return (
+    <>
+      <p>Phosphite technology enhances foliar nutrition by improving nutrient uptake, stimulating root growth, and helping crops withstand stress from weather and nutrient imbalances.</p>
+      <p>The <b>Ilex Foliar Phosphite</b> range delivers essential nutrients quickly and effectively, consistently promoting strong root development.</p>
+      <p>Our advanced formulations combine phosphite technology with key nutrients for rapid, systemic absorption, boosting crop health, root growth, and nutrient-use efficiency for greater yield potential.</p>
+    </>
+  );
+
       case "foliar-range":
         return "High-quality foliar nutrients designed for rapid absorption and maximum effectiveness, delivering essential micronutrients directly to plant leaves.";
       case "calcium-range":
