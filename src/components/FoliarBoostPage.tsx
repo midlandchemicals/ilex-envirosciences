@@ -115,7 +115,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
       icon: <Activity className="h-8 w-8 text-[#6abf4b]" />,
       title: "Enhanced Crop Performance",
       description:
-        "Optimizes plant metabolism and photosynthesis for improved yield and quality",
+        "Optimises plant metabolism and photosynthesis for improved yield and quality",
     },
     {
       icon: <Shield className="h-8 w-8 text-[#6abf4b]" />,
@@ -143,7 +143,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
         {
           stage: "Stem extension",
           rate: "3-5 l/ha",
-          notes: "Growth optimization",
+          notes: "Growth optimisation",
         },
         {
           stage: "Grain filling",
@@ -182,7 +182,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
         {
           stage: "Canopy closure",
           rate: "3-5 l/ha",
-          notes: "Growth optimization",
+          notes: "Growth optimisation",
         },
       ],
       color: "bg-[#e6f4df] text-[#5aa338]",
@@ -199,7 +199,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
         {
           stage: "Tuber bulking",
           rate: "3-5 l/ha",
-          notes: "Yield optimization",
+          notes: "Yield optimisation",
         },
       ],
       color: "bg-[#e6f4df] text-[#5aa338]",
@@ -301,7 +301,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
       {
         title: "Synergistic Action",
         description:
-          "Nutrients work together to optimize plant metabolism and growth",
+          "Nutrients work together to optimise plant metabolism and growth",
         icon: <Activity className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
@@ -529,7 +529,7 @@ export function FoliarBoostPage({ onSubmit }: ContactFormProps) {
                         Synergistic Formula
                       </h4>
                       <p className="text-[#5aa338]">
-                        All nutrients work together to optimize plant
+                        All nutrients work together to optimise plant
                         metabolism, stress tolerance, and overall crop
                         performance.
                       </p>

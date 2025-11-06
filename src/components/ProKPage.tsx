@@ -113,7 +113,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
     },
     {
       icon: <Activity className="h-8 w-8 text-[#6abf4b]" />,
-      title: "Metabolic Optimization",
+      title: "Metabolic Optimisation",
       description:
         "Supports enzyme function, photosynthesis, and protein synthesis",
     },
@@ -172,7 +172,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
         {
           stage: "Canopy development",
           rate: "4-6 l/ha",
-          notes: "Growth optimization",
+          notes: "Growth optimisation",
         },
         {
           stage: "Sugar accumulation",
@@ -249,7 +249,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Enhances quality characteristics, improves stress tolerance, and
-                optimizes metabolic processes for superior crop performance
+                optimises metabolic processes for superior crop performance
                 across a wide range of agricultural applications.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -413,7 +413,7 @@ export function ProKPage({ onSubmit }: ContactFormProps) {
                       <Activity className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
-                          Metabolic Optimization
+                          Metabolic Optimisation
                         </h4>
                         <p className="text-gray-600">
                           Supports enzyme function, photosynthesis, and protein

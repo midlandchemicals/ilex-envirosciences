@@ -45,7 +45,7 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
   return [
     "Phosphite technology enhances foliar nutrition by improving nutrient uptake, stimulating root growth, and helping crops withstand stress from weather and nutrient imbalances.",
     <span key="p2">The <b>Ilex Foliar Phosphite</b> range delivers essential nutrients quickly and effectively, consistently promoting strong root development.</span>,
-    "Our advanced formulations combine phosphite technology with key nutrients for rapid, systemic absorption—boosting crop health, root growth, and nutrient-use efficiency for greater yield potential."
+    "Our advanced formulations combine phosphite technology with key nutrients for rapid, systemic absorption, boosting crop health, root growth, and nutrient-use efficiency for greater yield potential."
   ];
 
       case "foliar-range":
@@ -58,19 +58,19 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
         ];
       case "biostimulants":
         return [
-          "Natural biostimulants derived from seaweed extracts that enhance plant growth, improve stress tolerance, and optimize nutrient utilisation."
+          "Natural biostimulants derived from seaweed extracts that enhance plant growth, improve stress tolerance, and optimise nutrient utilisation."
         ];
       case "seed-treatments":
         return [
-          "Specialised seed treatments that improve germination rates, enhance early plant vigor, and provide essential nutrients for optimal seedling development."
+          "Specialised seed treatments that improve germination rates, enhance early plant vigour, and provide essential nutrients for optimal seedling development."
         ];
       case "water-conditioners":
         return [
-          "Advanced water conditioning solutions that optimize spray water quality for maximum efficacy of foliar applications."
+          "Advanced water conditioning solutions that optimise spray water quality for maximum efficacy of foliar applications."
         ];
       case "organic-range":
         return [
-          "Certified organic fertilizers that provide complete nutrition while maintaining organic certification and supporting sustainable farming practices."
+          "Certified organic fertilisers that provide complete nutrition while maintaining organic certification and supporting sustainable farming practices."
         ];
       default:
         return ["Premium agricultural solutions designed to enhance crop performance and quality."];

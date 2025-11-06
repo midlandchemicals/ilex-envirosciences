@@ -178,7 +178,7 @@ export function ProZestPage({ onSubmit }: ContactFormProps) {
     keyFeatures: [
       "Available in both liquid and powder formulations",
       "High zinc content (25-30%) for enzyme function",
-      "Sulphur (25-30%) for soil pH optimization",
+      "Sulphur (25-30%) for soil pH optimisation",
       "Calcium (8-10%) for storage quality",
       "At-planting application for immediate availability",
       "Prevents nutrition-related disorders",

@@ -240,7 +240,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
     keyFeatures: [
       "Up to 4.48% yield increase based on independent trials",
       "19 plant-derived amino acids for enhanced biostimulation",
-      "Optimizes nutrient uptake and improves establishment",
+      "Optimises nutrient uptake and improves establishment",
       "Flexible application timings with extensive compatibility",
       "Formulated as a true solution for easy mixing",
       "Minimal environmental impact with targeted application rates",
@@ -265,7 +265,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
           "17% average increase in root length",
           "4.48% yield increase in trials",
           "Enhanced grain weight and quality",
-          "Improved establishment vigor",
+          "Improved establishment vigour",
         ],
       },
       {
@@ -650,7 +650,7 @@ export function CropRooterPlusPage({ onSubmit }: ContactFormProps) {
                     <div className="flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-green-600" />
                       <span className="text-gray-700">
-                        More developed rooting structure for optimized uptake
+                        More developed rooting structure for optimised uptake
                       </span>
                     </div>
                   </div>

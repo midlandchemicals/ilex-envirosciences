@@ -103,7 +103,7 @@ export function ProductGuidePage() {
     },
     {
       title: "Water Conditioners",
-      description: "pH adjustment and water quality optimization solutions",
+      description: "pH adjustment and water quality optimisation solutions",
       pages: "Pages 34-36",
       productCount: 2,
       icon: <Droplets className="h-6 w-6 text-cyan-600" />,

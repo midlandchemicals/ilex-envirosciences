@@ -84,7 +84,7 @@ export function RegulatoryPage() {
       summary:
         "Over the past few months, EBIC has had frequent exchanges with DEFRA regarding the future for plant biostimulants in the UK.",
       content:
-        "DEFRA is keen to create an enabling framework for plant biostimulants in the UK and to ensure that its producers can export to the EU market. The UK government is also mindful that their farmers depend on products from the rest of Europe for their plant nutrition and soil fertility needs (e.g. up to 60% of mineral fertilizers used in the UK come from the EU), so they don't want to create non-tariff barriers to trade. EBIC welcomes the opportunity to support DEFRA in this initiative.",
+        "DEFRA is keen to create an enabling framework for plant biostimulants in the UK and to ensure that its producers can export to the EU market. The UK government is also mindful that their farmers depend on products from the rest of Europe for their plant nutrition and soil fertility needs (e.g. up to 60% of mineral fertiliser used in the UK come from the EU), so they don't want to create non-tariff barriers to trade. EBIC welcomes the opportunity to support DEFRA in this initiative.",
       category: "Regulatory",
       date: "2024",
       icon: <Building className="h-5 w-5 text-green-600" />,

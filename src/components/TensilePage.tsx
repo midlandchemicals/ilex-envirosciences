@@ -426,7 +426,7 @@ export function TensilePage({ onSubmit }: ContactFormProps) {
                           Enhanced Light utilisation
                         </h4>
                         <p className="text-gray-600">
-                          Stronger stems and improved leaf angle optimize light
+                          Stronger stems and improved leaf angle optimise light
                           interception and photosynthetic efficiency.
                         </p>
                       </div>

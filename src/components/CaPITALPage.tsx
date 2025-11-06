@@ -185,7 +185,7 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
   const showcaseData = {
     productName: "CaPITAL™",
     productDescription:
-      "A highly effective foliar treatment specifically formulated for vegetable and salad crops, using proven phosphite technology to optimize healthy plant growth through superior nutrition. Contains high levels of soluble calcium together with boron and zinc, important for root development, maintaining plant health, and strengthening cell walls for improved quality and shelf life.",
+      "A highly effective foliar treatment specifically formulated for vegetable and salad crops, using proven phosphite technology to optimise healthy plant growth through superior nutrition. Contains high levels of soluble calcium together with boron and zinc, important for root development, maintaining plant health, and strengthening cell walls for improved quality and shelf life.",
     keyFeatures: [
       "Proven phosphite technology for superior nutrition",
       "High levels of soluble calcium for cell wall strength",
@@ -600,7 +600,7 @@ export function CaPITALPage({ onSubmit }: ContactFormProps) {
               Application Rates & Timings
             </h2>
             <p className="text-xl text-gray-600">
-              Optimized application guidelines for vegetable and salad crops
+              Optimised application guidelines for vegetable and salad crops
             </p>
           </div>
 

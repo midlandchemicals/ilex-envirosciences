@@ -107,7 +107,7 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
       icon: <Sun className="h-8 w-8 text-[#6abf4b]" />,
       title: "Increases Photosynthesis & Nutrient Usage",
       description:
-        "Optimizes photosynthetic efficiency and enhances nutrient uptake and utilisation",
+        "Optimises photosynthetic efficiency and enhances nutrient uptake and utilisation",
     },
     {
       icon: <Heart className="h-8 w-8 text-[#6abf4b]" />,
@@ -168,7 +168,7 @@ export function TogglePage({ onSubmit }: ContactFormProps) {
       crop: "Cereals - Flag Leaf",
       rate: "1.5-3.0 l/ha",
       timing:
-        "Apply at flag leaf stage to optimize grain development and quality",
+        "Apply at flag leaf stage to optimise grain development and quality",
       color: "bg-[#6abf4b]/10 text-[#6abf4b]",
       icon: <Leaf className="h-5 w-5 text-[#6abf4b]" />,
     },

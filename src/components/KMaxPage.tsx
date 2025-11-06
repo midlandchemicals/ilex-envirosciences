@@ -164,7 +164,7 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
   const showcaseData = {
     productName: "K-Max (3-1-8)",
     productDescription:
-      "Offers the highest analysis of organically sourced potassium in liquid form. Improves crop potential in both protected and outdoor crops by supplying key nutrients at crucial stages of growth. Particularly important for stimulating reproductive growth and promoting fruit development. Derived from plant protein sources, it is a safe and effective fertilizer for organic cropping systems.",
+      "Offers the highest analysis of organically sourced potassium in liquid form. Improves crop potential in both protected and outdoor crops by supplying key nutrients at crucial stages of growth. Particularly important for stimulating reproductive growth and promoting fruit development. Derived from plant protein sources, it is a safe and effective fertiliser for organic cropping systems.",
     keyFeatures: [
       "Highest analysis of organically sourced potassium (8.2% K₂O)",
       "Derived from plant protein sources for organic systems",
@@ -276,7 +276,7 @@ export function KMaxPage({ onSubmit }: ContactFormProps) {
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Derived from plant protein sources, it is a safe and effective
-                fertilizer for organic cropping systems. Fully approved and
+                fertiliser for organic cropping systems. Fully approved and
                 certified for use in organic cropping systems in the UK by the
                 Soil Association.
               </p>

@@ -177,7 +177,7 @@ export function ManiphosPage({ onSubmit }: ContactFormProps) {
         {
           stage: "Canopy development",
           rate: "2.0-3.0 l/ha",
-          notes: "Growth optimization",
+          notes: "Growth optimisation",
         },
       ],
       color: "bg-[#6abf4b]/30 text-[#2e7c1f]",

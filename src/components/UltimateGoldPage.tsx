@@ -224,7 +224,7 @@ export function UltimateGoldPage({ onSubmit }: ContactFormProps) {
         benefits: [
           "Exceptional flowering performance",
           "Enhanced bloom quality",
-          "Superior plant vigor",
+          "Superior plant vigour",
           "Extended production cycles",
         ],
       },

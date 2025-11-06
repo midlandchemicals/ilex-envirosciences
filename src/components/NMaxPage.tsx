@@ -222,7 +222,7 @@ export function NMaxPage({ onSubmit }: ContactFormProps) {
           "https://images.unsplash.com/photo-1464822759356-8d6106e78f86?w=400&h=300&fit=crop",
         benefits: [
           "Strong vegetative growth",
-          "Enhanced crop vigor",
+          "Enhanced crop vigour",
           "Improved plant health",
           "Better yield potential",
         ],

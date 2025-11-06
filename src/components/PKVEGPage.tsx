@@ -297,7 +297,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
       {
         title: "Vegetable-Specific Formula",
         description:
-          "Tailored P:K ratio optimized for vegetable crop requirements",
+          "Tailored P:K ratio optimised for vegetable crop requirements",
         icon: <Apple className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
@@ -479,7 +479,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
                   <div className="flex items-center gap-3 mb-6">
                     <Apple className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-2xl font-semibold">
-                      Vegetable-Optimized Formula
+                      Vegetable-Optimised Formula
                     </h3>
                   </div>
                   <div className="space-y-6">
@@ -500,7 +500,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
                       <Target className="h-6 w-6 text-[#6abf4b] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2">
-                          Optimized P:K Ratio
+                          Optimised P:K Ratio
                         </h4>
                         <p className="text-gray-600">
                           20:16 P:K ratio specifically formulated to meet the
@@ -571,7 +571,7 @@ export function PKVEGPage({ onSubmit }: ContactFormProps) {
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.3 }}
               >
-                Optimized Nutrition
+                Optimised Nutrition
               </motion.div>
             </motion.div>
           </div>

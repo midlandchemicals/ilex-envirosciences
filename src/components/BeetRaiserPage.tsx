@@ -152,7 +152,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
       stage: "Root Bulking",
       timing: "Canopy closure to root growth",
       rate: "2-3 l/ha",
-      notes: "Optimize root size development and sugar accumulation",
+      notes: "Optimise root size development and sugar accumulation",
       color: "bg-[#6abf4b]/30 text-[#2e7c1f]",
       icon: <Package className="h-5 w-5 text-[#2e7c1f]" />,
     },
@@ -205,7 +205,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
       "Sugar beet specialist formulation",
       "Multi-stage application program",
       "Enhanced sugar accumulation support",
-      "Root quality optimization",
+      "Root quality optimisation",
       "Critical growth stage nutrition",
       "Proven UK field performance",
     ],
@@ -236,7 +236,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
         icon: <Package className="h-6 w-6 text-orange-600" />,
       },
       {
-        title: "Growth Optimization",
+        title: "Growth Optimisation",
         description:
           "Balanced nutrition for each critical sugar beet growth stage",
         icon: <Activity className="h-6 w-6 text-green-600" />,
@@ -496,7 +496,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
                   <div className="flex items-center gap-3 mb-6">
                     <Candy className="h-8 w-8 text-[#6abf4b]" />
                     <h3 className="text-2xl font-semibold text-gray-800">
-                      Sugar Beet-Optimized Formula
+                      Sugar Beet-Optimised Formula
                     </h3>
                   </div>
                   <div className="space-y-6">
@@ -530,7 +530,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
                       <Activity className="h-6 w-6 text-[#2e7c1f] mt-1" />
                       <div>
                         <h4 className="font-semibold mb-2 text-gray-800">
-                          Growth Optimization
+                          Growth Optimisation
                         </h4>
                         <p className="text-gray-600">
                           Strategic timing ensures nutrients are available
@@ -544,7 +544,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
                         Processing Quality
                       </h4>
                       <p className="text-[#4a9c2d]">
-                        Enhanced with sodium and other key nutrients to optimize
+                        Enhanced with sodium and other key nutrients to optimise
                         sugar beet processing characteristics and sugar
                         extraction efficiency.
                       </p>
@@ -588,7 +588,7 @@ export function BeetRaiserPage({ onSubmit }: ContactFormProps) {
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.3 }}
               >
-                Optimized Nutrition
+                Optimised Nutrition
               </motion.div>
             </motion.div>
           </div>

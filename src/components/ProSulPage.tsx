@@ -194,7 +194,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
         {
           stage: "Pod development",
           rate: "2-3 l/ha",
-          notes: "Quality optimization",
+          notes: "Quality optimisation",
         },
       ],
       color: "bg-[#6abf4b]/10 text-[#6abf4b]",
@@ -227,7 +227,7 @@ export function ProSulPage({ onSubmit }: ContactFormProps) {
   const showcaseData = {
     productName: "Pro-Sul™",
     productDescription:
-      "A premium sulphur foliar fertilizer designed to prevent and correct sulphur deficiencies while supporting essential plant functions. Essential for protein synthesis, oil quality, and overall crop performance. Formulated for rapid uptake and immediate plant response.",
+      "A premium sulphur foliar fertiliser designed to prevent and correct sulphur deficiencies while supporting essential plant functions. Essential for protein synthesis, oil quality, and overall crop performance. Formulated for rapid uptake and immediate plant response.",
     keyFeatures: [
       "30% sulphur content for maximum effectiveness",
       "Enhanced with nitrogen, potassium, and magnesium",

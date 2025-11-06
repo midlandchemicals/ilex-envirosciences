@@ -109,7 +109,7 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
       icon: <Target className="h-8 w-8 text-[#6abf4b]" />,
       title: "Critical Growth Stage Support",
       description:
-        "Optimized nutrition during key developmental periods for maximum impact",
+        "Optimised nutrition during key developmental periods for maximum impact",
     },
     {
       icon: <Activity className="h-8 w-8 text-[#6abf4b]" />,
@@ -152,7 +152,7 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
       stage: "Pre-Flowering",
       timing: "Bud visible to yellow bud",
       rate: "2-3 l/ha",
-      notes: "Optimize flower development and pod set",
+      notes: "Optimise flower development and pod set",
       color: "bg-yellow-100 text-yellow-800",
       icon: <Flower className="h-5 w-5 text-[#6abf4b]" />,
     },
@@ -210,7 +210,7 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
       "Multi-stage application program",
       "Enhanced oil synthesis support",
       "Winter hardiness improvement",
-      "Critical growth stage optimization",
+      "Critical growth stage optimisation",
       "Proven UK field performance",
     ],
     targetCrops: [
@@ -233,7 +233,7 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
           "Rapid establishment support",
           "Accelerated growth and development",
           "Enhanced flowering and pod set",
-          "Optimized oil quality",
+          "Optimised oil quality",
         ],
       },
     ],
@@ -251,7 +251,7 @@ export function OilSeedRaiserPage({ onSubmit }: ContactFormProps) {
         icon: <Shield className="h-6 w-6 text-[#6abf4b]" />,
       },
       {
-        title: "Growth Optimization",
+        title: "Growth Optimisation",
         description: "Balanced nutrition for each critical growth stage",
         icon: <Activity className="h-6 w-6 text-[#6abf4b]" />,
       },

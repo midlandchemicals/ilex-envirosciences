@@ -177,7 +177,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
         {
           stage: "Canopy development",
           rate: "2-3 l/ha",
-          notes: "Growth optimization",
+          notes: "Growth optimisation",
         },
       ],
       color: "bg-[#ececec] text-green-800",
@@ -298,7 +298,7 @@ export function MnCuPlusPage({ onSubmit }: ContactFormProps) {
       {
         title: "Synergistic Action",
         description:
-          "Combined Mn and Cu work together to optimize plant metabolism",
+          "Combined Mn and Cu work together to optimise plant metabolism",
         icon: <Combine className="h-6 w-6 text-[#6abf4b]" />,
       },
       {

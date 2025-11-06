@@ -481,7 +481,7 @@ export function ProductShowcase({
                         Control Group
                       </Badge>
                       <p className="text-sm text-gray-600">
-                        Standard fertilizer program
+                        Standard fertiliser program
                       </p>
                     </div>
 
@@ -497,7 +497,7 @@ export function ProductShowcase({
                         {productName} Treated
                       </Badge>
                       <p className="text-sm text-gray-600">
-                        Enhanced growth and vigor
+                        Enhanced growth and vigour
                       </p>
                     </div>
                   </div>
