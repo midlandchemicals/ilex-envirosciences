@@ -81,11 +81,11 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
       "Modiphy Xtra": "ModipHy Xtra™ is a high-performance water conditioner formulated to counter the effects of hard water and high pH levels by maximising product stability in the tank and mobility in the plant.",
 
       // Organic Range
-      "Complete™ (6-2-4)": "A balanced, certified organic NPK fertilizer for all stages of crop growth.",
-      "Complete Hi-Fruit™ (4-2-6)": "Organic formula enriched with potassium to support heavy fruiting and flowering.",
-      "K-Max™ (3-1-8)": "High-potassium organic fertilizer for quality and flavor development.",
-      "N-Max™ (7-2-2)": "Nitrogen-rich organic solution for robust leaf and shoot growth.",
-      "Ultimate Gold™ (8-7-7)": "Premium organic fertilizer providing complete and sustained nutrition.",
+      "Complete™ (6-2-4)": "Complete™ (6-2-4) is our most versatile analysis to provide the most rounded blend in the range.",
+      "Complete Hi-Fruit™ (4-2-6)": "Complete Hi-Fruit™ (4-2-6) offers higher potassium content for situations where conditions may restrict full crop maturity or fruit development.",
+      "K-Max™ (3-1-8)": "K-Max (3-1-8) offers the highest analysis of organically sourced potassium in liquid form.",
+      "N-Max™ (7-2-2)": "N-Max™ (7-2-2) offers the highest analysis of organically sourced nitrogen in liquid form.",
+      "Ultimate Gold™ (8-7-7)": "Ultimate Gold™ (8-7-7)* is a very high quality suspension of blended fish extracts. It is specifically for use in protected cropping situations.",
       
       // Default if a product is missing from the list (shouldn't happen if list is complete)
       default: "Advanced solution for improved crop performance and quality.",
