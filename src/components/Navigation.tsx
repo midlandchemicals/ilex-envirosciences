@@ -84,7 +84,7 @@ export function Navigation() {
     },
     {
       title: "Water Conditioners",
-      link: "water-conditioners",
+      link: "modiphy-xtra",
       products: [{ product: "ModipHy Xtra™", link: "modiphy-xtra" }],
     },
     {
