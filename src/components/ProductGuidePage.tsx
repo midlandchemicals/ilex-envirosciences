@@ -69,7 +69,9 @@ export function ProductGuidePage() {
     {
       title: "Foliar Nutrients",
       description:
-        "Complete foliar nutrition solutions for optimal crop performance",
+        "Phosphite technology enhances foliar nutrition by improving nutrient uptake, stimulating root growth, and helping crops withstand stress from weather and nutrient imbalances."
+        <p>"The Ilex Foliar Phosphite range delivers essential nutrients quickly and effectively, consistently promoting strong root development."
+        <p>"Our advanced formulations combine phosphite technology with key nutrients for rapid, systemic absorption—boosting crop health, root growth, and nutrient-use efficiency for greater yield potential.",
       pages: "Pages 13-22",
       productCount: 12,
       icon: <Leaf className="h-6 w-6 text-green-600" />,
