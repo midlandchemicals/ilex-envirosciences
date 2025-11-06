@@ -34,7 +34,7 @@ export type PageType =
   | 'product-guide'
   | 'events'
   | 'phosphite-range'
-  | 'foliar-range'
+  | 'foliar-nutrients'
   | 'calcium-range'
   | 'biostimulants'
   | 'seed-treatments'

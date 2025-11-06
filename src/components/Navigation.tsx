@@ -43,7 +43,7 @@ export function Navigation() {
     },
     {
       title: "Foliar Nutrients",
-      link: "foliar-range",
+      link: "foliar-nutrients",
       products: [
         { product: "Mn SUPER™", link: "mn-super" },
         { product: "Mag Plus™", link: "mag-plus" },

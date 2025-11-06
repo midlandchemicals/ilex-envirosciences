@@ -87,12 +87,12 @@ function BrandsMarquee() {
     [key: string]: { category: string; product: string };
   } = {
     "logo_foliarboost.png": {
-      category: "foliar-range",
+      category: "foliar-nutrients",
       product: "foliar-boost",
     },
     "logo_advocate.png": { category: "calcium-range", product: "advocate" },
-    "logo_MnCuPlus.png": { category: "foliar-range", product: "mn-cu-plus" },
-    "logo_cuzin.png": { category: "foliar-range", product: "cu-zin" },
+    "logo_MnCuPlus.png": { category: "foliar-nutrients", product: "mn-cu-plus" },
+    "logo_cuzin.png": { category: "foliar-nutrients", product: "cu-zin" },
     "logo_startupmaxx.png": {
       category: "seed-treatments",
       product: "start-up-maxx",
@@ -109,7 +109,7 @@ function BrandsMarquee() {
       category: "phosphite-range",
       product: "crop-rooter-plus",
     },
-    "logo_MNSuper.png": { category: "foliar-range", product: "mn-super" },
+    "logo_MNSuper.png": { category: "foliar-nutrients", product: "mn-super" },
     "logo_procal.png": { category: "calcium-range", product: "pro-cal" },
     "logo_BeetRaiser.png": {
       category: "phosphite-range",
@@ -120,8 +120,8 @@ function BrandsMarquee() {
       category: "phosphite-range",
       product: "oilseed-raiser",
     },
-    "logo_MagPlus.png": { category: "foliar-range", product: "mag-plus" },
-    "logo_fulon.png": { category: "foliar-range", product: "ful-on" },
+    "logo_MagPlus.png": { category: "foliar-nutrients", product: "mag-plus" },
+    "logo_fulon.png": { category: "foliar-nutrients", product: "ful-on" },
   };
 
   const marqueeRef = useRef<HTMLDivElement>(null);
@@ -490,7 +490,7 @@ export function HomePage() {
       title: "Foliar Nutrients",
       description:
         "The Foliar Nutrients targets nutrient deficiencies more efficiently by using formulations that deliver nutrients in more readily plant-available forms.",
-      link: "foliar-range",
+      link: "foliar-nutrients",
     },
     {
       title: "Calcium Supplements",

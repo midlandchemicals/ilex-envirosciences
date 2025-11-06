@@ -28,7 +28,7 @@ export const parseProductUrl = (category: string, productName: string) => {
 // Map category links to display names
 export const categoryDisplayNames: Record<string, string> = {
   'phosphite-range': 'The Ilex Phosphite Range',
-  'foliar-range': 'The Ilex Foliar Nutrient Range', 
+  'foliar-nutrients': 'The Ilex Foliar Nutrient Range', 
   'calcium-range': 'Calcium Supplements',
   'biostimulants': 'Biostimulants',
   'seed-treatments': 'Seed Treatments',

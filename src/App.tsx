@@ -62,9 +62,9 @@ const categoryData = {
       { product: "PK VEG™", link: "pk-veg" },
     ],
   },
-  "foliar-range": {
+  "foliar-nutrients": {
     title: "The Ilex Foliar Nutrient Range",
-    link: "foliar-range",
+    link: "foliar-nutrients",
     products: [
       { product: "Mn SUPER™", link: "mn-super" },
       { product: "Mag Plus™", link: "mag-plus" },
