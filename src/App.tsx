@@ -144,11 +144,24 @@ function CategoryRoute() {
 return (
   <CategoryPage
     category={categoryMenuItem}
-    onPageChange={(page, item, product) => {
+    // We only use the 'item' object (which is the MenuItem) passed from the CategoryPage
+    onPageChange={(page, item, product) => { 
+      
+      // Safety check: ensure we have the category data
+      if (!item) {
+        // Fallback if category data is missing for some reason
+        console.error("Missing category item for navigation.");
+        return;
+      }
+      
       // --- Custom redirect for Water Conditioners ---
-      if (item?.link === "water-conditioners") {
+      if (item.link === "water-conditioners") {
+        // Find the product by its specific link
         const modiphy = item.products?.find(p => p.link === "modiphy-xtra");
+        
+        // If the product is found, navigate directly to its specific page
         if (modiphy) {
+          // The correct path: /products/category-link/product-link
           navigate(`/products/${item.link}/${modiphy.link}`);
           return;
         }
@@ -156,10 +169,12 @@ return (
 
       // --- Normal routing logic ---
       if (page === "product" && product) {
-        navigate(`/products/${item?.link || category}/${product.link}`);
+        // Navigating from a product card inside the category
+        navigate(`/products/${item.link}/${product.link}`);
       } else if (page === "home") {
         navigate("/");
       } else {
+        // Navigating to other generic pages ('about', 'contact', etc.)
         navigate(`/${page}`);
       }
     }}
