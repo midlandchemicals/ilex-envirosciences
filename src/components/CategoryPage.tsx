@@ -21,13 +21,13 @@ const categories = {
     link: "phosphite-range",
     menu_item: "The Ilex Phosphite Range",
     products: [
-      { product: "Crop Rooter® Plus", description: "The next generation NPK phosphite, formulated with 19 amino acids to target root development and stimulate healthy plant growth." },
-      { product: "PK MAXX™ +", description: "A powerful multi-nutrient phosphite crop nutrient formulated to boost root and shoot development and stimulate healthy growth." },
-      { product: "OilSeed Raiser™", description: "Oilseed Raiser™ is a nutritional supplement with phosphite- powered delivery designed to encourage oilseed rape crops to reach their full potential." },
-      { product: "Tensile™", description: "Maniphos™ helps to prevent Manganese and Sulphur deficiencies. The zero nitrogen formulation makes it an ideal option for peas and beans." },
-      { product: "Beet Raiser™", description: "Formulated to boost root development, nutrient uptake and stress resistance, Beet Raiser helps sugar beet crops achieve their full potential." },
-      { product: "Maniphos™", description: "Combining silicon and potassium with phosphite P and seaweed-derived natural biostimulants, formulated to improve crop strength, quality and shelf life." },
-      { product: "PK VEG™", description: "Specifically formulated together with potassium to promote strong root development and maintain healthy plant growth in vegetable and salad crops." },
+      { product: "Crop Rooter® Plus", description: "Enhances root development and stimulates healthy plant growth." },
+      { product: "PK MAXX™ +", description: "Boosts root and shoot growth for stronger crops." },
+      { product: "OilSeed Raiser™", description: "Supports oilseed crops to reach full yield potential." },
+      { product: "Tensile™", description: "Prevents manganese and sulphur deficiencies in legumes." },
+      { product: "Beet Raiser™", description: "Promotes root growth and stress resistance in sugar beet." },
+      { product: "Maniphos™", description: "Improves crop strength, quality and shelf life." },
+      { product: "PK VEG™", description: "Maintains healthy growth and strong roots in vegetables." },
     ],
   },
   "foliar-nutrients": {
@@ -107,45 +107,45 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
     switch (normalizedLink) {
       case "phosphite-range":
         return [
-          "Phosphite technology enhances foliar nutrition by improving nutrient uptake, stimulating root growth, and helping crops withstand stress from weather and nutrient imbalances.",
-          <span key="p2">The <b>Ilex Phosphite Range</b> delivers essential nutrients quickly and effectively, consistently promoting strong root development.</span>,
-          "Our advanced formulations combine phosphite technology with key nutrients for rapid, systemic absorption, boosting crop health, root growth, and nutrient-use efficiency for greater yield potential."
+          "Phosphite technology enhances foliar nutrition by improving nutrient uptake, stimulating root growth, and helping crops withstand stress.",
+          <span key="p2">The <b>Ilex Phosphite Range</b> delivers essential nutrients quickly and effectively.</span>,
+          "Our formulations combine phosphite technology with key nutrients for rapid absorption, boosting crop health and nutrient-use efficiency."
         ];
       case "foliar-nutrients":
         return [
-          "Foliar nutrients target deficiencies efficiently, delivering essential elements in highly plant-available forms for rapid uptake and maximum effectiveness.",
-          <span key="p2">The <b>Ilex Foliar Nutrients Range</b> is designed for easy application across a wide range of arable and horticultural crops, ensuring consistent growth and health.</span>,
-          "Our advanced formulations enhance nutrient absorption, boost crop vigour, and improve overall yield potential through precise, systemic delivery."
+          "Foliar nutrients target deficiencies efficiently, delivering essential elements in plant-available forms for rapid uptake.",
+          <span key="p2">The <b>Ilex Foliar Nutrients Range</b> is designed for easy application across many crops.</span>,
+          "Advanced formulations enhance nutrient absorption, boost vigour, and improve overall yield potential."
         ];
       case "calcium-range":
         return [
-          "Calcium supplements that enhance crop quality and strengthen plant structure for healthier, more resilient produce.",
-          <span key="p2">The <b>Ilex Calcium Supplement Range</b> delivers essential calcium efficiently, supporting optimal fruit and vegetable development from flowering to harvest.</span>,
-          "Our advanced formulations prevent calcium-related disorders, improve storage characteristics, and help maximise yield and crop value."
+          "Calcium supplements improve crop quality and strengthen plant structure.",
+          <span key="p2">The <b>Ilex Calcium Supplement Range</b> supports fruit and vegetable development from flowering to harvest.</span>,
+          "Formulations prevent calcium-related disorders and improve storage characteristics."
         ];
       case "biostimulants":
         return [
-          "Natural biostimulants derived from seaweed extracts that enhance plant growth and improve stress tolerance.",
-          <span key="p2">The <b>Ilex Biostimulant Range</b> provides essential compounds to support plant vigour and resilience across diverse crops.</span>,
-          "Our advanced formulations optimise nutrient utilisation and strengthen crop performance for healthier, more productive plants."
+          "Natural biostimulants derived from seaweed extracts enhance plant growth and stress tolerance.",
+          <span key="p2">The <b>Ilex Biostimulant Range</b> supports plant vigour and resilience across crops.</span>,
+          "Formulations optimise nutrient utilisation and strengthen crop performance."
         ];
       case "seed-treatments":
         return [
-          "Specialised seed treatments that improve germination rates and support early plant development.",
-          <span key="p2">The <b>Ilex Seed Treatment Range</b> delivers essential nutrients and protection for seedlings to ensure strong establishment.</span>,
-          "These formulations enhance seedling vigour, optimise nutrient uptake, and increase overall crop potential from the very start."
+          "Specialised seed treatments improve germination rates and early plant development.",
+          <span key="p2">The <b>Ilex Seed Treatment Range</b> provides essential nutrients and protection for seedlings.</span>,
+          "Formulations enhance seedling vigour, optimise nutrient uptake, and increase crop potential."
         ];
       case "water-conditioners":
         return [
-          "Advanced water conditioning solutions that optimise spray water quality for effective foliar applications.",
-          <span key="p2">The <b>Ilex Water Conditioner Range</b> ensures uniform nutrient delivery and maximises the performance of foliar sprays.</span>,
-          "Our formulations improve water efficiency, enhance nutrient absorption, and support consistent crop health and productivity."
+          "Water conditioners optimise spray water quality for effective foliar applications.",
+          <span key="p2">The <b>Ilex Water Conditioner Range</b> ensures uniform nutrient delivery and maximises foliar spray performance.</span>,
+          "Formulations improve water efficiency and support consistent crop health."
         ];
       case "organic-range":
         return [
-          "Certified organic fertilisers that provide complete nutrition while maintaining organic certification.",
-          <span key="p2">The <b>Ilex Organic Fertiliser Range</b> supports sustainable farming practices and promotes healthy, productive crops.</span>,
-          "These formulations optimise nutrient uptake, improve soil health, and contribute to long-term agricultural sustainability."
+          "Certified organic fertilisers provide complete nutrition while maintaining organic certification.",
+          <span key="p2">The <b>Ilex Organic Fertiliser Range</b> supports sustainable farming practices and healthy crops.</span>,
+          "Formulations optimise nutrient uptake, improve soil health, and promote long-term sustainability."
         ];
       default:
         return ["Premium agricultural solutions designed to enhance crop performance and quality."];
@@ -154,7 +154,6 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
 
   const getProductImage = (productName: string) => {
     const productImageMap: { [key: string]: string } = {
-      // Phosphite Range
       "Crop Rooter® Plus": "/assets/product images/Phosphite/Crop-Rooter-plus.jpg",
       "PK MAXX™ +": "/assets/product images/Phosphite/PKmaxx.jpg",
       "OilSeed Raiser™": "/assets/product images/Phosphite/OilSeed Raiser.jpg",
@@ -162,7 +161,6 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
       "Beet Raiser™": "/assets/product images/Phosphite/Beet Raiser 2.jpg",
       "Maniphos™": "/assets/product images/Phosphite/Maniphos.jpg",
       "PK VEG™": "/assets/product images/Phosphite/PK VEG.jpg",
-      // Foliar Nutrients
       "Mn SUPER™": "/assets/product images/Foliar/Mn Super 5L copy.jpg",
       "Mag Plus™": "/assets/product images/Foliar/Mag plus.jpg",
       "ful-oN™": "/assets/product images/Foliar/FullOn.jpg",
@@ -171,28 +169,22 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
       "Cu-Zin™": "/assets/product images/Foliar/Cu-Zin.jpg",
       "Pro-K™": "/assets/product images/Foliar/ProK.png",
       "Pro-Sul™": "/assets/product images/Foliar/pro-sul.png",
-      // Calcium Range
       "Pro-Cal™": "/assets/product images/Calcium Supplements/ProCal.jpg",
       "Advocate™": "/assets/product images/Calcium Supplements/Advocate.jpg",
       "CaPITAL™": "/assets/product images/Calcium Supplements/Capital.png",
-      // Biostimulants
       "Stimplex®": "/assets/product images/Biostimulants/Stimplex.png",
       "Toggle®": "/assets/product images/Biostimulants/Toggle_tub.png",
-      // Seed Treatments
       "Start-uP® MAXX": "/assets/product images/Seed Treatments/Start-uP MAXX.jpg",
       "Start-uP®": "/assets/product images/Seed Treatments/Start-uP.jpg",
       "ProZest™": "/assets/product images/Seed Treatments/ProZeSt.jpg",
       "Man-uP™": "/assets/product images/Seed Treatments/Man uP.jpg",
-      // Water Conditioners
       "Modiphy Xtra": "/assets/product images/Water Conditioner/ModipHy Xtra.jpg",
-      // Organic Range
       "Complete™ (6-2-4)": "/assets/product images/Organic/Complete 6-2-4.jpg",
       "Complete Hi-Fruit™ (4-2-6)": "/assets/product images/Organic/Complete Hi-Fruit.jpg",
       "K-Max™ (3-1-8)": "/assets/product images/Organic/K-Max.jpg",
       "N-Max™ (7-2-2)": "/assets/product images/Organic/N-Max.jpg",
       "Ultimate Gold™ (8-7-7)": "/assets/product images/Organic/Ultimate Gold.jpg",
     };
-
     return productImageMap[productName] || "/assets/product images/Phosphite/Maniphos.jpg";
   };
 
@@ -215,7 +207,6 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
             {category.menu_item.replace("The Ilex ", "")}
           </motion.h1>
 
-          {/* Dynamic paragraphs */}
           {getCategoryDescription(category.link).map((desc, idx) => (
             <motion.p
               key={idx}
@@ -278,7 +269,6 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
                     <CardTitle className="text-lg text-gray-800">
                       {product.product}
                     </CardTitle>
-                    {/* Description line */}
                     <p className="text-sm text-gray-600 mt-1">
                       {product.description || "No description available"}
                     </p>
