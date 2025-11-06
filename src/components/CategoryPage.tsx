@@ -39,44 +39,55 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
     },
   };
 
-  const getCategoryDescription = (link: string) => {
-    switch (link) {
-      case "phosphite-range":
-  return [
-    "Phosphite technology enhances foliar nutrition by improving nutrient uptake, stimulating root growth, and helping crops withstand stress from weather and nutrient imbalances.",
-    <span key="p2">The <b>Ilex Phosphite</b> range delivers essential nutrients quickly and effectively, consistently promoting strong root development.</span>,
-    "Our advanced formulations combine phosphite technology with key nutrients for rapid, systemic absorption, boosting crop health, root growth, and nutrient-use efficiency for greater yield potential."
-  ];
-      case "foliar-nutrients":
-  return [
-    "Foliar nutrients target deficiencies efficiently, delivering essential elements in highly plant-available forms for rapid uptake and maximum effectiveness.",
-    <span key="p2"><b>Ilex concentrated liquid nutrients</b> are designed for easy application across a wide range of arable and horticultural crops, ensuring consistent growth and health.</span>,
-    "Our advanced formulations enhance nutrient absorption, boost crop vigor, and improve overall yield potential through precise, systemic delivery."
-         ];
-      case "calcium-range":
-        return [
-          "Essential calcium supplements that improve crop quality, enhance storage characteristics, and prevent calcium-related disorders in fruits and vegetables."
-        ];
-      case "biostimulants":
-        return [
-          "Natural biostimulants derived from seaweed extracts that enhance plant growth, improve stress tolerance, and optimise nutrient utilisation."
-        ];
-      case "seed-treatments":
-        return [
-          "Specialised seed treatments that improve germination rates, enhance early plant vigour, and provide essential nutrients for optimal seedling development."
-        ];
-      case "water-conditioners":
-        return [
-          "Advanced water conditioning solutions that optimise spray water quality for maximum efficacy of foliar applications."
-        ];
-      case "organic-range":
-        return [
-          "Certified organic fertilisers that provide complete nutrition while maintaining organic certification and supporting sustainable farming practices."
-        ];
-      default:
-        return ["Premium agricultural solutions designed to enhance crop performance and quality."];
-    }
-  };
+const getCategoryDescription = (link: string) => {
+  // Normalize input: trim spaces and convert to lowercase
+  const normalizedLink = link.trim().toLowerCase();
+
+  switch (normalizedLink) {
+    case "phosphite-range":
+      return [
+        "Phosphite technology enhances foliar nutrition by improving nutrient uptake, stimulating root growth, and helping crops withstand stress from weather and nutrient imbalances.",
+        <span key="p2">The <b>Ilex Phosphite</b> range delivers essential nutrients quickly and effectively, consistently promoting strong root development.</span>,
+        "Our advanced formulations combine phosphite technology with key nutrients for rapid, systemic absorption, boosting crop health, root growth, and nutrient-use efficiency for greater yield potential."
+      ];
+
+    case "foliar-nutrients":
+      return [
+        "Foliar nutrients target deficiencies efficiently, delivering essential elements in highly plant-available forms for rapid uptake and maximum effectiveness.",
+        <span key="p2"><b>Ilex concentrated liquid nutrients</b> are designed for easy application across a wide range of arable and horticultural crops, ensuring consistent growth and health.</span>,
+        "Our advanced formulations enhance nutrient absorption, boost crop vigor, and improve overall yield potential through precise, systemic delivery."
+      ];
+
+    case "calcium-range":
+      return [
+        "Essential calcium supplements that improve crop quality, enhance storage characteristics, and prevent calcium-related disorders in fruits and vegetables."
+      ];
+
+    case "biostimulants":
+      return [
+        "Natural biostimulants derived from seaweed extracts that enhance plant growth, improve stress tolerance, and optimise nutrient utilisation."
+      ];
+
+    case "seed-treatments":
+      return [
+        "Specialised seed treatments that improve germination rates, enhance early plant vigour, and provide essential nutrients for optimal seedling development."
+      ];
+
+    case "water-conditioners":
+      return [
+        "Advanced water conditioning solutions that optimise spray water quality for maximum efficacy of foliar applications."
+      ];
+
+    case "organic-range":
+      return [
+        "Certified organic fertilisers that provide complete nutrition while maintaining organic certification and supporting sustainable farming practices."
+      ];
+
+    default:
+      return ["Premium agricultural solutions designed to enhance crop performance and quality."];
+  }
+};
+
 
   const getProductImage = (productName: string, categoryLink?: string) => {
     const productImageMap: { [key: string]: string } = {
