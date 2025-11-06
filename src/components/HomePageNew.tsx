@@ -794,7 +794,7 @@ export function HomePage() {
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover grayscale-[70%] hover:grayscale-0 hover:scale-105 transition-all duration-400"
+                    className="w-full h-full object-cover grayscale-[0%] hover:grayscale-0 hover:scale-105 transition-all duration-400"
                   />
                 </div>
                 <h3 className="text-xl font-semibold text-[#6abf4b] mb-1">
@@ -1136,7 +1136,7 @@ export function HomePage() {
                   <img
                     src={group.logo}
                     alt={`${group.name} Logo`}
-                    className="max-h-20 w-auto object-contain grayscale-[80%] hover:grayscale-0 transition-all"
+                    className="max-h-20 w-auto object-contain grayscale-[0%] hover:grayscale-0 transition-all"
                   />
                 </motion.a>
               ))}
