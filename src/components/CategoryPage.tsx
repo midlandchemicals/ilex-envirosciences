@@ -39,6 +39,63 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
     },
   };
 
+  // --- NEW MANUAL DESCRIPTION FUNCTION ---
+  const getManualProductDescription = (productName: string): string => {
+    // This map contains all your descriptions, keyed by the product name.
+    const descriptionMap: { [key: string]: string } = {
+      // Phosphite Range
+      "Crop Rooter® Plus": "Enhances root mass and vigor, providing a robust start for crops under stress.",
+      "PK MAXX™ +": "A high-analysis phosphite that boosts flowering and optimizes fruit set and fill.",
+      "OilSeed Raiser™": "Specifically formulated for oilseed crops to maximize canopy and root establishment.",
+      "Tensile™": "Supports plant structure and resilience, improving crop standability during rapid growth.",
+      "Beet Raiser™": "Targeted nutrition for sugar beet, improving leaf expansion and overall root quality.",
+      "Maniphos™": "Highly efficient manganese and phosphite combination for rapid deficiency correction.",
+      "PK VEG™": "Balanced NPK for vigorous vegetative growth and strong, healthy foliage.",
+
+      // Foliar Nutrients
+      "Mn SUPER™": "Concentrated manganese formulation for fast and effective treatment of deficiencies.",
+      "Mag Plus™": "Essential magnesium supplement to optimize photosynthesis and energy production.",
+      "ful-oN™": "A nitrogen and sulfur source that rapidly green-ups foliage and supports protein synthesis.",
+      "Mn-Cu Plus™": "Dual-action micronutrient complex for common deficiencies in cereals and root crops.",
+      "Foliar Boost™": "General-purpose micronutrient blend for overall crop health and deficiency prevention.",
+      "Cu-Zin™": "Combines copper and zinc to support enzyme function and early plant development.",
+      "Pro-K™": "A highly bioavailable potassium source for improved water regulation and fruit quality.",
+      "Pro-Sul™": "Quickly absorbed sulfur and nitrogen to support vigorous growth and yield potential.",
+      
+      // Calcium Range
+      "Pro-Cal™": "A premium calcium formulation to strengthen cell walls and enhance produce shelf life.",
+      "Advocate™": "Designed to prevent calcium-related disorders like tip burn and bitter pit in high-value crops.",
+      "CaPITAL™": "Efficiently delivers calcium to critical growing points for structural integrity.",
+
+      // Biostimulants
+      "Stimplex®": "Natural seaweed extract providing hormones and nutrients to enhance plant stress tolerance.",
+      "Toggle®": "A powerful biostimulant that improves nutrient utilization and crop uniformity.",
+
+      // Seed Treatments
+      "Start-uP® MAXX": "Maximizes seedling vigor and root growth with concentrated starter nutrition.",
+      "Start-uP®": "Provides foundational nutrients for improved germination and establishment.",
+      "ProZest™": "A specialized blend to enhance early-season growth and defend against environmental stress.",
+      "Man-uP™": "Manganese-specific seed treatment to support crucial early physiological processes.",
+
+      // Water Conditioners
+      "Modiphy Xtra": "Optimizes spray water pH and hard-water issues, maximizing foliar spray effectiveness.",
+
+      // Organic Range
+      "Complete™ (6-2-4)": "A balanced, certified organic NPK fertilizer for all stages of crop growth.",
+      "Complete Hi-Fruit™ (4-2-6)": "Organic formula enriched with potassium to support heavy fruiting and flowering.",
+      "K-Max™ (3-1-8)": "High-potassium organic fertilizer for quality and flavor development.",
+      "N-Max™ (7-2-2)": "Nitrogen-rich organic solution for robust leaf and shoot growth.",
+      "Ultimate Gold™ (8-7-7)": "Premium organic fertilizer providing complete and sustained nutrition.",
+      
+      // Default if a product is missing from the list (shouldn't happen if list is complete)
+      default: "Advanced solution for improved crop performance and quality.",
+    };
+
+    return descriptionMap[productName] || descriptionMap.default;
+  };
+  // --- END NEW MANUAL DESCRIPTION FUNCTION ---
+
+
   const getCategoryDescription = (link: string) => {
     const normalizedLink = link.trim().toLowerCase();
 
@@ -231,9 +288,9 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
                     <CardTitle className="text-lg text-gray-800">
                       {product.product}
                     </CardTitle>
-                    {/* Description line */}
+                    {/* Description line - NOW USES THE NEW MANUAL FUNCTION */}
                     <p className="text-sm text-gray-600 mt-1">
-                      {product.description || "No description available"}
+                      {getManualProductDescription(product.product)}
                     </p>
                   </CardHeader>
                   <CardContent className="pt-0 mt-auto">
