@@ -44,14 +44,17 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
       case "phosphite-range":
   return [
     "Phosphite technology enhances foliar nutrition by improving nutrient uptake, stimulating root growth, and helping crops withstand stress from weather and nutrient imbalances.",
-    <span key="p2">The <b>Ilex Foliar Phosphite</b> range delivers essential nutrients quickly and effectively, consistently promoting strong root development.</span>,
+    <span key="p2">The <b>Ilex Phosphite</b> range delivers essential nutrients quickly and effectively, consistently promoting strong root development.</span>,
     "Our advanced formulations combine phosphite technology with key nutrients for rapid, systemic absorption, boosting crop health, root growth, and nutrient-use efficiency for greater yield potential."
   ];
 
-      case "foliar-range":
-        return [
-          "High-quality foliar nutrients designed for rapid absorption and maximum effectiveness, delivering essential micronutrients directly to plant leaves."
-        ];
+ case "foliar-nutrients":
+  return [
+    "Foliar nutrients target deficiencies efficiently, delivering essential elements in highly plant-available forms for rapid uptake and maximum effectiveness.",
+    <span key="p2"><b>Ilex concentrated liquid nutrients</b> are designed for easy application across a wide range of arable and horticultural crops, ensuring consistent growth and health.</span>,
+    "Our advanced formulations enhance nutrient absorption, boost crop vigor, and improve overall yield potential through precise, systemic delivery."
+  ];
+
       case "calcium-range":
         return [
           "Essential calcium supplements that improve crop quality, enhance storage characteristics, and prevent calcium-related disorders in fruits and vegetables."
@@ -88,7 +91,7 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
       "Maniphos™": "/assets/product images/Phosphite/Maniphos.jpg",
       "PK VEG™": "/assets/product images/Phosphite/PK VEG.jpg",
 
-      // Foliar Range
+      // Foliar Nutrients
       "Mn SUPER™": "/assets/product images/Foliar/Mn Super 5L copy.jpg",
       "Mag Plus™": "/assets/product images/Foliar/Mag plus.jpg",
       "ful-oN™": "/assets/product images/Foliar/FullOn.jpg",

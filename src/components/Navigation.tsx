@@ -42,7 +42,7 @@ export function Navigation() {
       ],
     },
     {
-      title: "Foliar Range",
+      title: "Foliar Nutrients",
       link: "foliar-range",
       products: [
         { product: "Mn SUPER™", link: "mn-super" },

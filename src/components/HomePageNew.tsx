@@ -487,9 +487,9 @@ export function HomePage() {
       link: "phosphite-range",
     },
     {
-      title: "Foliar Range",
+      title: "Foliar Nutrients",
       description:
-        "The Foliar Range targets nutrient deficiencies more efficiently by using formulations that deliver nutrients in more readily plant-available forms.",
+        "The Foliar Nutrients targets nutrient deficiencies more efficiently by using formulations that deliver nutrients in more readily plant-available forms.",
       link: "foliar-range",
     },
     {
