@@ -176,7 +176,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
   const showcaseData = {
     productName: "Mag Plus™",
     productDescription:
-      "Historically the prevention and correction of magnesium deficiency has involved time-consuming and bulky procedures involving bags of powdered product. To provide farmers with an effective alternative, Ilex have introduced the high concentration liquid Mag Plus as part of their new generation of foliar nutrients. Due to its enhanced formulation of soluble Magnesium with Nitrogen, Mag Plus is able to demonstrate superior performance even at low rates of application.",
+      "Historically the prevention and correction of magnesium deficiency has involved time-consuming and bulky procedures involving bags of powdered product. To provide farmers with an effective alternative, Ilex have introduced the high concentration liquid Mag Plus™ as part of their new generation of foliar nutrients. Due to its enhanced formulation of soluble Magnesium with Nitrogen, Mag Plus™ is able to demonstrate superior performance even at low rates of application.",
     keyFeatures: [
       "High concentration liquid formulation (13% MgO)",
       "Enhanced with nitrogen (9% N) for superior uptake",
@@ -288,9 +288,9 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 To provide farmers with an effective alternative Ilex have
-                introduced the high concentration liquid Mag Plus as part of
+                introduced the high concentration liquid Mag Plus™ as part of
                 their new generation of foliar nutrients. Due to its enhanced
-                formulation of soluble Magnesium with Nitrogen, Mag Plus is able
+                formulation of soluble Magnesium with Nitrogen, Mag Plus™ is able
                 to demonstrate superior performance even at low rates of
                 application.
               </p>
@@ -330,7 +330,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
                 <div className="relative aspect-square w-full">
                   <ImageWithFallback
                     src="/assets/product images/Foliar/Mag plus.jpg"
-                    alt="Mag Plus Product"
+                    alt="Mag Plus™ Product"
                     className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
@@ -549,7 +549,7 @@ export function MagPlusPage({ onSubmit }: ContactFormProps) {
               Application Rates & Timings
             </h2>
             <p className="text-xl text-gray-600">
-              Apply Mag Plus for the prevention and correction of magnesium
+              Apply Mag Plus™ for the prevention and correction of magnesium
               deficiency as follows
             </p>
           </div>
