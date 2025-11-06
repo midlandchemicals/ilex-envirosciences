@@ -105,7 +105,7 @@ const categoryData = {
   },
   "water-conditioners": {
     title: "Water Conditioners",
-    link: "modiphy-xtra",
+    link: "water-conditioners",
     products: [{ product: "Modiphy Xtra", link: "modiphy-xtra" }],
   },
   "organic-range": {
@@ -141,21 +141,31 @@ function CategoryRoute() {
     products: categoryInfo.products,
   };
 
-  return (
-    <CategoryPage
-      category={categoryMenuItem}
-      onPageChange={(page, item, product) => {
-        if (page === "product" && product) {
-          navigate(`/products/${category}/${product.link}`);
-        } else if (page === "home") {
-          navigate("/");
-        } else {
-          navigate(`/${page}`);
+return (
+  <CategoryPage
+    category={categoryMenuItem}
+    onPageChange={(page, item, product) => {
+      // --- Custom redirect for Water Conditioners ---
+      if (item?.link === "water-conditioners") {
+        const modiphy = item.products?.find(p => p.link === "modiphy-xtra");
+        if (modiphy) {
+          navigate(`/products/${item.link}/${modiphy.link}`);
+          return;
         }
-      }}
-    />
-  );
-}
+      }
+
+      // --- Normal routing logic ---
+      if (page === "product" && product) {
+        navigate(`/products/${item?.link || category}/${product.link}`);
+      } else if (page === "home") {
+        navigate("/");
+      } else {
+        navigate(`/${page}`);
+      }
+    }}
+  />
+);
+
 
 // Product Route Component
 function ProductRoute() {
