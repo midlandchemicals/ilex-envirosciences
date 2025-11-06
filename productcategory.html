@@ -50,10 +50,20 @@ html {
 /* Content */
 .hero-content {
   max-width: 650px;
+  margin: 0 auto;
   padding: 0 1rem;
-  animation: fadeInUp 1.2s ease-out forwards;
-  opacity: 0;
-  transform: translateY(25px);
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    max-width: 900px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero-content {
+    max-width: 1100px;
+  }
 }
 
 .hero-content h1 {
