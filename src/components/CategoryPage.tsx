@@ -277,10 +277,13 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
                     <CardTitle className="text-lg text-gray-800">
                       {product.product}
                     </CardTitle>
-                    <p className="text-sm text-gray-600 mt-1">
-                      {/* This will now show the correct description */}
-                      {product.description || "No description available"}
-                    </p>
+        // Alternative if the above fails
+                      <p
+                        className="text-sm text-gray-600 mt-1"
+                        dangerouslySetInnerHTML={{ 
+                          __html: (product.description || "No description available") as string 
+                        }}
+                      />
                   </CardHeader>
                   <CardContent className="pt-0 mt-auto">
                     <Button
