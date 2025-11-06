@@ -22,13 +22,15 @@ const categories = {
     link: "phosphite-range",
     menu_item: "The Ilex Phosphite Range",
     products: [
-      { product: "Crop Rooter® Plus", description: "Enhances root development and stimulates healthy plant growth." },
-      { product: "PK MAXX™ +", description: "Boosts root and shoot growth for stronger crops." },
-      { product: "OilSeed Raiser™", description: "Supports oilseed crops to reach full yield potential." },
-      { product: "Tensile™", description: "Prevents manganese and sulphur deficiencies in legumes." },
-      { product: "Beet Raiser™", description: "Promotes root growth and stress resistance in sugar beet." },
-      { product: "Maniphos™", description: "Improves crop strength, quality and shelf life." },
-      { product: "PK VEG™", description: "Maintains healthy growth and strong roots in vegetables." },
+      { product: "Crop Rooter® Plus", description: "The next generation NPK phosphite, formulated with 19 amino acids to target root development and stimulate healthy plant growth." },
+      { product: "PK MAXX™ +", description: "A powerful multi-nutrient phosphite crop nutrient formulated to boost root and shoot development and stimulate healthy growth." },
+      { product: "OilSeed Raiser™", description: "Oilseed Raiser™ is a nutritional supplement with phosphite- powered delivery designed to encourage oilseed rape crops to reach their full potential." },
+      { product: "Tensile™", description: "Combining silicon and potassium with phosphite P and seaweed-derived natural biostimulants, formulated to improve crop strength, quality and shelf life." },
+      { product: "Beet Raiser™", description: "Formulated to boost root development, nutrient uptake and stress resistance, Beet Raiser helps sugar beet crops achieve their full potential." },
+      { product: "Maniphos™", description: "Maniphos™ helps to prevent Manganese and Sulphur deficiencies. The zero nitrogen formulation makes it an ideal option for peas and beans." },
+      { product: "PK VEG™", description: "Specifically formulated together with potassium to promote strong root development and maintain healthy plant growth in vegetable and salad crops.
+
+" },
     ],
   },
   "foliar-nutrients": {
