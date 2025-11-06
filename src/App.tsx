@@ -105,7 +105,7 @@ const categoryData = {
   },
   "water-conditioners": {
     title: "Water Conditioners",
-    link: "modiphy-xtra",
+    link: "water-conditioners",
     products: [{ product: "Modiphy Xtra", link: "modiphy-xtra" }],
   },
   "organic-range": {
@@ -144,37 +144,23 @@ function CategoryRoute() {
 return (
   <CategoryPage
     category={categoryMenuItem}
-    // We only use the 'item' object (which is the MenuItem) passed from the CategoryPage
-    onPageChange={(page, item, product) => { 
+    onPageChange={(page, item, product) => {
       
-      // Safety check: ensure we have the category data
-      if (!item) {
-        // Fallback if category data is missing for some reason
-        console.error("Missing category item for navigation.");
+      // Check the actual link defined in your data for Water Conditioners: "modiphy-xtra"
+      if (item?.link === "modiphy-xtra") {
+        
+        // HARDWIRE: Navigate directly to the product's full URL
+        // Path structure: /products/category-link/product-link
+        navigate(`/products/modiphy-xtra/modiphy-xtra`);
         return;
       }
-      
-      // --- Custom redirect for Water Conditioners ---
-      if (item.link === "water-conditioners") {
-        // Find the product by its specific link
-        const modiphy = item.products?.find(p => p.link === "modiphy-xtra");
-        
-        // If the product is found, navigate directly to its specific page
-        if (modiphy) {
-          // The correct path: /products/category-link/product-link
-          navigate(`/products/${item.link}/${modiphy.link}`);
-          return;
-        }
-      }
 
-      // --- Normal routing logic ---
+      // --- Normal routing logic (for all other pages/products) ---
       if (page === "product" && product) {
-        // Navigating from a product card inside the category
-        navigate(`/products/${item.link}/${product.link}`);
+        navigate(`/products/${item?.link || category}/${product.link}`);
       } else if (page === "home") {
         navigate("/");
       } else {
-        // Navigating to other generic pages ('about', 'contact', etc.)
         navigate(`/${page}`);
       }
     }}
