@@ -63,22 +63,22 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
       "Pro-Sul™": "Pro-Sul is formulated together with plant available Sulphur to supply this essential nutrient at key growth stages.",
       
       // Calcium Range
-      "Pro-Cal™": "A premium calcium formulation to strengthen cell walls and enhance produce shelf life.",
-      "Advocate™": "Designed to prevent calcium-related disorders like tip burn and bitter pit in high-value crops.",
-      "CaPITAL™": "Efficiently delivers calcium to critical growing points for structural integrity.",
-
+      "Pro-Cal™": "Pro-Cal™ is formulated with amide Nitrogen to provide a regulated and readily available source of Calcium in combination with key nutrients.",
+      "Advocate™": "AdvoCate™ is a unique Calcium formulation combining key nutrients with bioactive agents to provide exceptional nutrient uptake and mobility.",
+      "CaPITAL™": "CaPITAL™ is a new generation phosphite, containing high levels of soluble calcium together with the key nutrients, boron and zinc.",
+      
       // Biostimulants
       "Stimplex®": "Natural seaweed extract providing hormones and nutrients to enhance plant stress tolerance.",
       "Toggle®": "A powerful biostimulant that improves nutrient utilization and crop uniformity.",
 
       // Seed Treatments
-      "Start-uP® MAXX": "Maximizes seedling vigor and root growth with concentrated starter nutrition.",
-      "Start-uP®": "Provides foundational nutrients for improved germination and establishment.",
-      "ProZest™": "A specialized blend to enhance early-season growth and defend against environmental stress.",
-      "Man-uP™": "Manganese-specific seed treatment to support crucial early physiological processes.",
+      "Start-uP® MAXX": "With the benefits of phosphite chemistry and  formulated with bioactive agents and a manganese-rich nutrient package to promote rapid establishment.",
+      "Start-uP®": "A powerful multi-nutrient phosphite crop nutrient formulated to boost root and shoot development and stimulate healthy growth.",
+      "ProZest™": "ProZest™ is a powder or liquid formulation of zinc, sulphur and calcium, for application to potatoes at planting to prevent and correct many nutrition-related disorders and improve yield potential.",
+      "Man-uP™": "To protect cereals from early deficiency problems, Man-uP™ provides a highly plant-available source of manganese to the germinating seed.",
 
       // Water Conditioners
-      "Modiphy Xtra": "Optimizes spray water pH and hard-water issues, maximizing foliar spray effectiveness.",
+      "Modiphy Xtra": "ModipHy Xtra™ is a high-performance water conditioner formulated to counter the effects of hard water and high pH levels by maximising product stability in the tank and mobility in the plant.",
 
       // Organic Range
       "Complete™ (6-2-4)": "A balanced, certified organic NPK fertilizer for all stages of crop growth.",
