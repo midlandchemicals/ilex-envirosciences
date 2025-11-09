@@ -763,7 +763,7 @@ export function HomePage() {
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#6abf4b] rounded-full" />
             </h2>
             <p className="text-base leading-relaxed max-w-3xl mx-auto">
-              <strong>Ilex EnviroSciences</strong> was formed in 2001 to develop
+              <strong>Ilex EnviroSciences</strong> was formed in 2004 to develop
               and market innovative, highly effective crop nutrition products
               for UK and international markets.
               <br />
