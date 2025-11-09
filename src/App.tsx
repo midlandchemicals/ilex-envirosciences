@@ -105,7 +105,7 @@ const categoryData = {
   },
   "water-conditioners": {
     title: "Water Conditioners",
-    link: "modiphy-xtra",
+    link: "water-conditioners",
     products: [{ product: "Modiphy Xtra", link: "modiphy-xtra" }],
   },
   "organic-range": {

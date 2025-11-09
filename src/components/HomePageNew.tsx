@@ -514,7 +514,7 @@ export function HomePage() {
       title: "Water Conditioners",
       description:
         "Our solution optimises pH levels and improves coverage and leaf uptake, giving a more consistent product performance over a broad range of spraying conditions and crop situations.",
-      link: "modiphy-xtra",
+      link: "water-conditioners",
     },
   ];
 
