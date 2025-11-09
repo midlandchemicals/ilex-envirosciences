@@ -34,7 +34,7 @@ function SplashScreen({ onComplete }: { onComplete: () => void }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       onComplete();
-    }, 3000);
+    }, 1500);
     return () => clearTimeout(timer);
   }, [onComplete]);
 
