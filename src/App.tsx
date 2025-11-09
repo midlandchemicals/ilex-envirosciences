@@ -105,7 +105,7 @@ const categoryData = {
   },
   "water-conditioners": {
     title: "Water Conditioners",
-    link: "water-conditioners",
+    link: "modiphy-xtra",
     products: [{ product: "Modiphy Xtra", link: "modiphy-xtra" }],
   },
   "organic-range": {
@@ -141,32 +141,21 @@ function CategoryRoute() {
     products: categoryInfo.products,
   };
 
-return (
-  <CategoryPage
-    category={categoryMenuItem}
-    onPageChange={(page, item, product) => {
-      
-      // Check the actual link defined in your data for Water Conditioners: "modiphy-xtra"
-      if (item?.link === "modiphy-xtra") {
-        
-        // HARDWIRE: Navigate directly to the product's full URL
-        // Path structure: /products/category-link/product-link
-        navigate(`/products/modiphy-xtra/modiphy-xtra`);
-        return;
-      }
-
-      // --- Normal routing logic (for all other pages/products) ---
-      if (page === "product" && product) {
-        navigate(`/products/${item?.link || category}/${product.link}`);
-      } else if (page === "home") {
-        navigate("/");
-      } else {
-        navigate(`/${page}`);
-      }
-    }}
-  />
-);
-
+  return (
+    <CategoryPage
+      category={categoryMenuItem}
+      onPageChange={(page, item, product) => {
+        if (page === "product" && product) {
+          navigate(`/products/${category}/${product.link}`);
+        } else if (page === "home") {
+          navigate("/");
+        } else {
+          navigate(`/${page}`);
+        }
+      }}
+    />
+  );
+}
 
 // Product Route Component
 function ProductRoute() {
