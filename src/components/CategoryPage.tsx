@@ -205,7 +205,7 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
   };
 
   return (
-<div className="min-h-screen bg-white **pt-0**">
+<div className="min-h-screen bg-white pt-20 md:pt-24">
     <motion.header
         className="bg-[#c9dec2] py-16 px-4 flex items-center justify-center min-h-[40vh]"
         initial={{ opacity: 0 }}
