@@ -1266,15 +1266,16 @@ export function HomePage() {
     rel="noopener noreferrer"
   >
     {/* --- ADDED LOGO HERE --- */}
-    <img 
-      src="/assets/midchemnobg.png" 
-      alt="Midland Chemicals Ltd Logo" 
-      className="w-auto h-10 mb-3" // Adjust w-auto and h-10 as needed for size
-    />
+
     
     <h3 className="font-semibold text-gray-900 mb-3 text-base">
       Our Headquarters
     </h3>
+        <img 
+      src="/assets/midchemnobg.png" 
+      alt="Midland Chemicals Ltd Logo" 
+      className="w-auto h-15 mb-3" // Adjust w-auto and h-10 as needed for size
+    />
     <p className="text-gray-600 text-sm leading-relaxed mb-0">
       <strong className="block mb-2">
         Midland Chemicals Ltd
