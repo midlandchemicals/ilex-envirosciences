@@ -1201,7 +1201,7 @@ export function HomePage() {
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#6abf4b] rounded-full" />
             </h2>
             <p className="text-center text-gray-600 mb-12">
-              We're here to answer your questions and discuss your needs.
+              As a primary manufacturer we are seeking to forge new partnerships throughout the agicultural and horticultural industries and would welcome all enquiries from within the UK and Overseas.
             </p>
 
             <div className="flex flex-col lg:flex-row gap-8 items-stretch">
