@@ -1061,7 +1061,7 @@ export function HomePage() {
         </section>
 
         {/* Buying Groups Section */}
-        <section id="buying-groups" className="py-16 px-5 bg-white">
+        <section id="buying-groups" style={{ display: 'none' }} className="py-16 px-5 bg-white">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1152,7 +1152,7 @@ export function HomePage() {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-16 px-5 bg-white">
+        <section id="testimonials" className="py-16 px-5 bg-[#ececec]">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 relative pb-3">
               What Our Clients Say
