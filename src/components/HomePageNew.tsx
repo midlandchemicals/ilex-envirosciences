@@ -1258,36 +1258,43 @@ export function HomePage() {
                   transition={{ delay: 0.2 }}
                   className="bg-white border-l-[5px] py-20 my-5 border-[#6abf4b] rounded-lg p-6 shadow-sm flex items-center gap-4 w-full"
                 >
-                  <MapPin size={24} className="text-[#6abf4b] flex-shrink-0" />
-                  <div>
-                    <a
-                      href="https://www.google.com/maps/search/?api=1&query=Ilex+EnviroSciences+Ltd+13a+Brindley+Close+Holly+Lane+Industrial+Estate+Atherstone+Warwickshire+CV9+2QZ+United+Kingdom"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <h3 className="font-semibold text-gray-900 mb-3 text-base">
-                        Our Headquarters
-                      </h3>
-                      <p className="text-gray-600 text-sm leading-relaxed mb-0">
-                        <strong className="block mb-2">
-                          Ilex Envirosciences Ltd
-                        </strong>
-                        13a Brindley Close,
-                        <br />
-                        Holly Lane Industrial Estate,
-                        <br />
-                        Atherstone,
-                        <br />
-                        Warwickshire,
-                        <br />
-                        CV9 2QZ,
-                        <br />
-                        United Kingdom.
-                      </p>
-                    </a>
-                  </div>
-                </motion.div>
-              </div>
+    <MapPin size={24} className="text-[#6abf4b] flex-shrink-0" />
+<div>
+  <a
+    href="https://www.google.com/maps/search/?api=1&query=Ilex+EnviroSciences+Ltd+13a+Brindley+Close+Holly+Lane+Industrial+Estate+Atherstone+Warwickshire+CV9+2QZ+United+Kingdom"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {/* --- ADDED LOGO HERE --- */}
+    <img 
+      src="/assets/midchemnobg.png" 
+      alt="Midland Chemicals Ltd Logo" 
+      className="w-auto h-10 mb-3" // Adjust w-auto and h-10 as needed for size
+    />
+    
+    <h3 className="font-semibold text-gray-900 mb-3 text-base">
+      Our Headquarters
+    </h3>
+    <p className="text-gray-600 text-sm leading-relaxed mb-0">
+      <strong className="block mb-2">
+        Midland Chemicals Ltd
+      </strong>
+      13a Brindley Close,
+      <br />
+      Holly Lane Industrial Estate,
+      <br />
+      Atherstone,
+      <br />
+      Warwickshire,
+      <br />
+      CV9 2QZ,
+      <br />
+      United Kingdom.
+    </p>
+  </a>
+</div>
+</motion.div>
+</div>
 
               {/* Contact Form Column - 60% */}
               <motion.div
