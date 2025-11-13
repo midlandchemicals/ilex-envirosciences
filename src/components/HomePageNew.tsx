@@ -763,8 +763,8 @@ export function HomePage() {
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#6abf4b] rounded-full" />
             </h2>
             <p className="text-base leading-relaxed max-w-3xl mx-auto">
-              <strong>Originally formed in 2003 as Ilex Organics, in 2009
-                Ilex Envirosciences</strong> was launched specialising in the
+              Originally formed in 2003 as Ilex Organics, in 2009
+                <strong>Ilex Envirosciences</strong> was launched specialising in the
                 supply of novel, cost-effective nutrition solutions to all areas
                 of conventional and organic crop production. We specialise in
                 the manufacture of advanced foliar nutrients advanced foliar nutrients,
