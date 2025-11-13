@@ -927,7 +927,7 @@ export function HomePage() {
         </section>
 
         {/* Regulatory & Industry Partnerships Section */}
-        <section id="partnerships" className="py-16 px-5 bg-[#e1e1e1]">
+        <section id="partnerships" style="display: none;" className="py-16 px-5 bg-[#e1e1e1]">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
