@@ -211,7 +211,7 @@ function BrandsMarquee() {
     <section id="brands" className="py-8 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-8 relative pb-3">
-          Our Brands
+          Our Products
           <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#6abf4b] rounded-full" />
         </h2>
       </div>
@@ -440,7 +440,7 @@ export function HomePage() {
     },
     {
       name: "Brian Aconley",
-      role: "Agricultural Consultant",
+      role: "Technical Consultant",
       email: "brian@ilex-envirosciences.com",
       description: `<p>With more than 35 years' experience in agricultural chemistry, Brian Aconley has helped farmers, growers, and agribusinesses across the UK and Europe with specialist crop nutrition and biostimulant products.</p><p>Previously one of the original Technical Directors at Ilex EnviroSciences, Brian brings his extensive expertise to Midland Chemicals.</p><p>He works closely with clients at every stage of the supply chain to design and develop bespoke, highly effective products tailored to their specific requirements.</p>`,
       image: brianImage,
@@ -742,10 +742,10 @@ export function HomePage() {
                   Our Expertise
                 </h4>
                 <p className="text-gray-700 text-lg text-center leading-relaxed">
-                  With over 3 decades of manufacturing experience, Midland
-                  Chemicals proudly own Ilex Envirosciences and continue to
-                  ensure the highest standards of innovation, quality, and
-                  sustainable crop nutrition solutions.
+                  Midland Chemicals three decades of experience in speciality chemicals
+                  production, is now combined with the specialist crop nutrition knowledge
+                  of Ilex Envirosciences, to further promote the highest standards
+                  in product innovation and quality.
                 </p>
               </motion.div>
             </div>
@@ -763,9 +763,13 @@ export function HomePage() {
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#6abf4b] rounded-full" />
             </h2>
             <p className="text-base leading-relaxed max-w-3xl mx-auto">
-              <strong>Ilex EnviroSciences</strong> was formed in 2004 to develop
-              and market innovative, highly effective crop nutrition products
-              for UK and international markets.
+              <strong>Originally formed in 2003 as Ilex Organics, in 2009
+                Ilex Envirosciences</strong> was launched specialising in the
+                supply of novel, cost-effective nutrition solutions to all areas
+                of conventional and organic crop production. We specialise in
+                the manufacture of advanced foliar nutrients advanced foliar nutrients,
+                biostimulants and seed treatments, designed to optimise plant health
+                and maximise yield potential.
               <br />
               <br />
               We specialise in the manufacture of{" "}
