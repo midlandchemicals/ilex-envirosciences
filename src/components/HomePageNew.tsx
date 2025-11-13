@@ -766,7 +766,10 @@ export function HomePage() {
               Originally formed in 2003 as Ilex Organics, in 2009
                 <strong> Ilex Envirosciences</strong> was launched specialising in the
                 supply of novel, cost-effective nutrition solutions to all areas
-                of conventional and organic crop production. We specialise in
+                of conventional and organic crop production.
+                 <br />
+              <br />
+                We specialise in
                 the manufacture of advanced foliar nutrients advanced foliar nutrients,
                 biostimulants and seed treatments, designed to optimise plant health
                 and maximise yield potential.
