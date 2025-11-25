@@ -46,6 +46,8 @@ import { ProductGuidePage } from "./components/ProductGuidePage";
 import { ModipHyXtraPage } from "./components/ModifyXtra";
 import { MenuItem } from "./types";
 
+import { Analytics } from "@vercel/analytics/next";
+
 // Product data organized by category
 const categoryData = {
   "phosphite-range": {
@@ -973,6 +975,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Analytics></Analytics>
       {/* Scroll to top on route change */}
       <ScrollToTopInstant />
       <Navigation />
