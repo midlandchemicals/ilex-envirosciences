@@ -46,7 +46,7 @@ import { ProductGuidePage } from "./components/ProductGuidePage";
 import { ModipHyXtraPage } from "./components/ModifyXtra";
 import { MenuItem } from "./types";
 
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 // Product data organized by category
 const categoryData = {
