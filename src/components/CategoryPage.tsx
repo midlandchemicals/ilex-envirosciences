@@ -53,6 +53,7 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
       "PK VEG™": "Specifically formulated together with potassium to promote strong root development and maintain healthy plant growth in vegetable and salad crops.",
 
       // Foliar Nutrients
+      "Maize Raiser": "A concentrated liquid foliar fertiliser designed mainly for Maize and Cereals to provide rapid nutrient availability.",
       "Mn SUPER™": "A unique combination of soluble manganese, magnesium and zinc with nitrogen and sulphur for fast and effective treatment of deficiencies.",
       "Mag Plus™": "Essential magnesium supplement to optimise photosynthesis and energy production.",
       "ful-oN™": "Nitrogen, potassium with fulvic acid specially formulated as a foliar feed to improve plant nutrition status at key stages of crop development.",
@@ -166,6 +167,7 @@ export function CategoryPage({ category, onPageChange }: CategoryPageProps) {
       "PK VEG™": "/assets/product images/Phosphite/PK VEG.jpg",
 
       // Foliar Nutrients
+      "Maize Raiser": "/assets/product images/Foliar/Maize-Raiser.png",
       "Mn SUPER™": "/assets/product images/Foliar/Mn Super 5L copy.jpg",
       "Mag Plus™": "/assets/product images/Foliar/Mag plus.jpg",
       "ful-oN™": "/assets/product images/Foliar/FullOn.jpg",

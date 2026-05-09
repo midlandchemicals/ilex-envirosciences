@@ -44,6 +44,7 @@ import { UltimateGoldPage } from "./components/UltimateGoldPage";
 import { RegulatoryPage } from "./components/RegulatoryPage";
 import { ProductGuidePage } from "./components/ProductGuidePage";
 import { ModipHyXtraPage } from "./components/ModifyXtra";
+import { MaizeRaiserPage } from "./components/MaizeRaiserPage";
 import { MenuItem } from "./types";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -67,6 +68,7 @@ const categoryData = {
     title: "The Ilex Foliar Nutrient Range",
     link: "foliar-nutrients",
     products: [
+      { product: "Maize Raiser", link: "maize-raiser" },
       { product: "Mn SUPER™", link: "mn-super" },
       { product: "Mag Plus™", link: "mag-plus" },
       { product: "ful-oN™", link: "ful-on" },
@@ -214,6 +216,8 @@ function ProductRoute() {
         return <ManiphosPage onSubmit={handleFormSubmit} />;
       case "pro-sul":
         return <ProSulPage onSubmit={handleFormSubmit} />;
+      case "maize-raiser":
+        return <MaizeRaiserPage onSubmit={handleFormSubmit} />;
       case "mn-super":
         return <MnSuperPage onSubmit={handleFormSubmit} />;
       case "ful-on":

@@ -45,6 +45,7 @@ export function Navigation() {
       title: "Foliar Nutrients",
       link: "foliar-nutrients",
       products: [
+        { product: "Maize Raiser", link: "maize-raiser" },
         { product: "Mn SUPER™", link: "mn-super" },
         { product: "Mag Plus™", link: "mag-plus" },
         { product: "ful-oN™", link: "ful-on" },
