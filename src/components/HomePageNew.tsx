@@ -91,7 +91,10 @@ function BrandsMarquee() {
       product: "foliar-boost",
     },
     "logo_advocate.png": { category: "calcium-range", product: "advocate" },
-    "logo_MnCuPlus.png": { category: "foliar-nutrients", product: "mn-cu-plus" },
+    "logo_MnCuPlus.png": {
+      category: "foliar-nutrients",
+      product: "mn-cu-plus",
+    },
     "logo_cuzin.png": { category: "foliar-nutrients", product: "cu-zin" },
     "logo_startupmaxx.png": {
       category: "seed-treatments",
@@ -416,7 +419,7 @@ export function HomePage() {
   const [selectedTeamMember, setSelectedTeamMember] =
     useState<TeamMember | null>(null);
   const [selectedTestimonial, setSelectedTestimonial] = useState<number | null>(
-    null
+    null,
   );
 
   // Form state
@@ -550,7 +553,7 @@ export function HomePage() {
 
   // Input handler
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({
       ...formData,
@@ -688,7 +691,7 @@ export function HomePage() {
         <BrandsMarquee />
 
         {/* Featured Product Section */}
-        <section className="bg-white pt-16 pb-8 px-5 text-center">
+        <section className="bg-white pt-4 pb-8 px-5 text-center">
           <div className="max-w-3xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -696,11 +699,13 @@ export function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <img 
-                src="/assets/product images/Foliar/Maize-Raiser.png" 
-                alt="Maize Raiser Logo" 
+              <img
+                src="/assets/product images/Foliar/maize-raiser.jpg?v=1"
+                alt="Maize Raiser Logo"
                 className="w-64 md:w-80 h-auto mx-auto mb-6 cursor-pointer hover:scale-105 transition-transform duration-300"
-                onClick={() => navigate("/products/foliar-nutrients/maize-raiser")}
+                onClick={() =>
+                  navigate("/products/foliar-nutrients/maize-raiser")
+                }
               />
               <div className="relative mb-6 inline-block">
                 <h2 className="text-3xl md:text-[32px] font-bold text-[#1f2937] pb-3">
@@ -709,7 +714,12 @@ export function HomePage() {
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#6abf4b] rounded-full" />
               </div>
               <p className="text-[17px] md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                <strong className="text-[#6abf4b] font-bold">MaizeRaiser</strong> is a foliar phosphate, delivering rapid nutrient availability to promote strong establishment, vigorous early growth and optimal crop performance in maize.
+                <strong className="text-[#6abf4b] font-bold">
+                  MaizeRaiser
+                </strong>{" "}
+                is a foliar phosphate, delivering rapid nutrient availability to
+                promote strong establishment, vigorous early growth and optimal
+                crop performance in maize.
               </p>
             </motion.div>
           </div>
@@ -770,10 +780,10 @@ export function HomePage() {
                   Our Expertise
                 </h4>
                 <p className="text-gray-700 text-lg text-center leading-relaxed">
-                  Midland Chemicals three decades of experience in speciality chemicals
-                  production, is now combined with the specialist crop nutrition knowledge
-                  of Ilex Envirosciences, to further promote the highest standards
-                  in product innovation and quality.
+                  Midland Chemicals three decades of experience in speciality
+                  chemicals production, is now combined with the specialist crop
+                  nutrition knowledge of Ilex Envirosciences, to further promote
+                  the highest standards in product innovation and quality.
                 </p>
               </motion.div>
             </div>
@@ -792,15 +802,14 @@ export function HomePage() {
             </h2>
             <p className="text-base leading-relaxed max-w-3xl mx-auto">
               Originally formed in 2003 as Ilex Organics, in 2009
-                <strong> Ilex Envirosciences</strong> was launched specialising in the
-                supply of novel, cost-effective nutrition solutions to all areas
-                of conventional and organic crop production.
-                 <br />
+              <strong> Ilex Envirosciences</strong> was launched specialising in
+              the supply of novel, cost-effective nutrition solutions to all
+              areas of conventional and organic crop production.
               <br />
-                We specialise in
-                the manufacture of advanced foliar nutrients advanced foliar nutrients,
-                biostimulants and seed treatments, designed to optimise plant health
-                and maximise yield potential.
+              <br />
+              We specialise in the manufacture of advanced foliar nutrients
+              advanced foliar nutrients, biostimulants and seed treatments,
+              designed to optimise plant health and maximise yield potential.
               <br />
               <br />
               We specialise in the manufacture of{" "}
@@ -955,7 +964,11 @@ export function HomePage() {
         </section>
 
         {/* Regulatory & Industry Partnerships Section */}
-        <section id="partnerships" style={{ display: 'none' }} className="py-16 px-5 bg-[#e1e1e1]">
+        <section
+          id="partnerships"
+          style={{ display: "none" }}
+          className="py-16 px-5 bg-[#e1e1e1]"
+        >
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1089,7 +1102,11 @@ export function HomePage() {
         </section>
 
         {/* Buying Groups Section */}
-        <section id="buying-groups" style={{ display: 'none' }} className="py-16 px-5 bg-white">
+        <section
+          id="buying-groups"
+          style={{ display: "none" }}
+          className="py-16 px-5 bg-white"
+        >
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1229,10 +1246,11 @@ export function HomePage() {
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#6abf4b] rounded-full" />
             </h2>
             <p className="text-center text-gray-600 mb-12">
-              As a primary manufacturer we are seeking to forge new partnerships throughout the agicultural and horticultural industries.
-               <br />
-                <br />
-               We welcome all enquiries from within the UK and Overseas.
+              As a primary manufacturer we are seeking to forge new partnerships
+              throughout the agicultural and horticultural industries.
+              <br />
+              <br />
+              We welcome all enquiries from within the UK and Overseas.
             </p>
 
             <div className="flex flex-col lg:flex-row gap-8 items-stretch">
@@ -1289,44 +1307,43 @@ export function HomePage() {
                   transition={{ delay: 0.2 }}
                   className="bg-white border-l-[5px] py-20 my-5 border-[#6abf4b] rounded-lg p-6 shadow-sm flex items-center gap-4 w-full"
                 >
-    <MapPin size={24} className="text-[#6abf4b] flex-shrink-0" />
-<div>
-  <a
-    href="https://www.google.com/maps/search/?api=1&query=Ilex+EnviroSciences+Ltd+13a+Brindley+Close+Holly+Lane+Industrial+Estate+Atherstone+Warwickshire+CV9+2QZ+United+Kingdom"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    {/* --- ADDED LOGO HERE --- */}
+                  <MapPin size={24} className="text-[#6abf4b] flex-shrink-0" />
+                  <div>
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Ilex+EnviroSciences+Ltd+13a+Brindley+Close+Holly+Lane+Industrial+Estate+Atherstone+Warwickshire+CV9+2QZ+United+Kingdom"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {/* --- ADDED LOGO HERE --- */}
 
-    
-    <h3 className="font-semibold text-gray-900 mb-3 text-base">
-      Our Headquarters
-    </h3>
-        <img 
-      src="/assets/midchemnobg.png" 
-      alt="Midland Chemicals Ltd Logo" 
-      className="w-auto h-15 mb-3" // Adjust w-auto and h-10 as needed for size
-    />
-    <p className="text-gray-600 text-sm leading-relaxed mb-0">
-      <strong className="block mb-2">
-        Midland Chemicals Ltd
-      </strong>
-      13a Brindley Close,
-      <br />
-      Holly Lane Industrial Estate,
-      <br />
-      Atherstone,
-      <br />
-      Warwickshire,
-      <br />
-      CV9 2QZ,
-      <br />
-      United Kingdom.
-    </p>
-  </a>
-</div>
-</motion.div>
-</div>
+                      <h3 className="font-semibold text-gray-900 mb-3 text-base">
+                        Our Headquarters
+                      </h3>
+                      <img
+                        src="/assets/midchemnobg.png"
+                        alt="Midland Chemicals Ltd Logo"
+                        className="w-auto h-15 mb-3" // Adjust w-auto and h-10 as needed for size
+                      />
+                      <p className="text-gray-600 text-sm leading-relaxed mb-0">
+                        <strong className="block mb-2">
+                          Midland Chemicals Ltd
+                        </strong>
+                        13a Brindley Close,
+                        <br />
+                        Holly Lane Industrial Estate,
+                        <br />
+                        Atherstone,
+                        <br />
+                        Warwickshire,
+                        <br />
+                        CV9 2QZ,
+                        <br />
+                        United Kingdom.
+                      </p>
+                    </a>
+                  </div>
+                </motion.div>
+              </div>
 
               {/* Contact Form Column - 60% */}
               <motion.div
