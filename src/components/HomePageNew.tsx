@@ -687,6 +687,34 @@ export function HomePage() {
         {/* Brands Marquee */}
         <BrandsMarquee />
 
+        {/* Featured Product Section */}
+        <section className="bg-white pt-16 pb-8 px-5 text-center">
+          <div className="max-w-3xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <img 
+                src="/assets/product images/Foliar/Maize-Raiser.png" 
+                alt="Maize Raiser Logo" 
+                className="w-64 md:w-80 h-auto mx-auto mb-6 cursor-pointer hover:scale-105 transition-transform duration-300"
+                onClick={() => navigate("/products/foliar-nutrients/maize-raiser")}
+              />
+              <div className="relative mb-6 inline-block">
+                <h2 className="text-3xl md:text-[32px] font-bold text-[#1f2937] pb-3">
+                  Introducing our latest product
+                </h2>
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#6abf4b] rounded-full" />
+              </div>
+              <p className="text-[17px] md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                <strong className="text-[#6abf4b] font-bold">MaizeRaiser</strong> is a foliar phosphate, delivering rapid nutrient availability to promote strong establishment, vigorous early growth and optimal crop performance in maize.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
         {/* About Section */}
         <section id="about-content" className="bg-white py-10 px-5">
           <div className="max-w-6xl mx-auto">
