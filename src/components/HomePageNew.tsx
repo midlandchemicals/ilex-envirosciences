@@ -1197,7 +1197,7 @@ export function HomePage() {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-16 px-5 bg-[#ececec]">
+        <section id="testimonials" className="hidden py-16 px-5 bg-[#ececec]"">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 relative pb-3">
               What Our Clients Say

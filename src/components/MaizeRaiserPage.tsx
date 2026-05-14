@@ -124,7 +124,7 @@ export function MaizeRaiserPage({ onSubmit }: ContactFormProps) {
     "Phosphorus Pentoxide (P₂O₅)": "40.0",
     "Potassium Oxide (K₂O)": "8.0",
     "Magnesium Oxide (MgO)": "6.0",
-    "Zinc (Zn)": "3.0",
+    "Zinc (Zn)": "4.0",
     "Calcium Oxide (CaO)": "1.2",
   };
 
@@ -624,6 +624,8 @@ export function MaizeRaiserPage({ onSubmit }: ContactFormProps) {
                 <div className="mt-8 pt-6 border-t border-white/20">
                   <p className="text-sm text-white/80">
                     Produced in the UK by Midland Chemicals Ltd.
+
+                    As a primary manufacturer we are seeking to forge new partnerships throughout the agicultural and horticultural industries and would welcome all enquiries from within the UK and overseas.
                   </p>
                 </div>
               </div>
