@@ -330,8 +330,8 @@ export function MaizeRaiserPage({ onSubmit }: ContactFormProps) {
                         Zinc (Zn)
                       </span>
                       <div className="flex items-center gap-2">
-                        <Badge variant="secondary">3.0%</Badge>
-                        <Badge variant="outline">30 g/l</Badge>
+                        <Badge variant="secondary">4.0%</Badge>
+                        <Badge variant="outline">40 g/l</Badge>
                       </div>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
